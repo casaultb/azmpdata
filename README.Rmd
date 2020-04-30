@@ -1,0 +1,36 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+# azmpdata
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of azmpdata is to ...
+
+## Installation
+
+You can install azmpdata from [GitHub](https://github.com) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("casaultb/azmpdata")
+```
+## Example
+
+This is a basic example which shows how to search which datasets contain chlorophyll data:
+
+```{r example}
+library(azmpdata)
+search_azmpdata("chlorophyll")
+```
+
