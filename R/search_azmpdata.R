@@ -8,6 +8,7 @@
 #' @export
 #'
 #' @examples
+#' search_azmpdata("chlorophyll")
 search_azmpdata <- function(str) {
 
   dir("/data/*.Rda")

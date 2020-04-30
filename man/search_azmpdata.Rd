@@ -15,3 +15,6 @@ character vector
 \description{
 Find variables in the azmpdata dataset that match a given keyword.
 }
+\examples{
+search_azmpdata("chlorophyll")
+}
