@@ -12,13 +12,17 @@ physical, biological and chemical variables.
 }
 \section{Physical variables}{
 
+The physical variables include temperature, salinity, ...
 }
 
 \section{Biological variables}{
 
+The biological variables include chlorophyll, phyto- and zooplankton
+abundance, and zooplankton biomass.
 }
 
 \section{Chemical variables}{
 
+The chemical variables in main nutrients (nitrate, silicate and phosphate).
 }
 
