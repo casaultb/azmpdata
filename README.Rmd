@@ -34,6 +34,7 @@ devtools::install_github("casaultb/azmpdata")
 The *azmpdata* package provides three categories of data products: physical, biological and chemical variables, which are summarized below. Each data product is provided as a data frame (in the *azmpdata/data* folder) or as a csv file (in the *azmpdata/data-raw* folder).
 
 #### Physical Data Products
+Table to come here.
 <!-- ``` r -->
 <!-- library(tibble) -->
 <!-- library(knitr) -->
@@ -101,7 +102,7 @@ search_azmpdata("chlorophyll")
 
 #### Plotting
 
-The function *plot_azmpdata* is a wrapper that allows to plot a given variable in a dataset.  Plot format differs according to the type of dataset (e.g. timeseries or annual means).  For example, the following command displays a plot of the *chlorophyll_0_100* variable from the *chlorophyll_inventory_annual_means_hl2* dataset:
+The function *plot_azmpdata* is a wrapper that allows to plot a given variable in a dataset.  Plot format differs according to the type of dataset (e.g. timeseries or annual means).  For example, the following command displays a plot of the *chl_0_100* variable from the *chlorophyll_inventory_annual_means_hl2* dataset:
 
 ```{r plot_annualmeans, warning=F}
 library(azmpdata)

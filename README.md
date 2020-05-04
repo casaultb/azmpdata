@@ -44,13 +44,8 @@ folder) or as a csv file (in the *azmpdata/data-raw* folder).
 
 #### Physical Data Products
 
-<!-- ``` r -->
-
-<!-- library(tibble) -->
-
-<!-- library(knitr) -->
-
-<!-- ``` -->
+Table to come here. <!-- ``` r --> <!-- library(tibble) -->
+<!-- library(knitr) --> <!-- ``` -->
 
 #### Chemical Data Products
 
@@ -107,7 +102,7 @@ search_azmpdata("chlorophyll")
 The function *plot\_azmpdata* is a wrapper that allows to plot a given
 variable in a dataset. Plot format differs according to the type of
 dataset (e.g. timeseries or annual means). For example, the following
-command displays a plot of the *chlorophyll\_0\_100* variable from the
+command displays a plot of the *chl\_0\_100* variable from the
 *chlorophyll\_inventory\_annual\_means\_hl2* dataset:
 
 ``` r
