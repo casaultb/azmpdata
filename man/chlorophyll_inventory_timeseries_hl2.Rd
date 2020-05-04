@@ -5,7 +5,7 @@
 \alias{chlorophyll_inventory_timeseries_hl2}
 \title{Timeseries of chlorophyll inventory at Halifax-2 station.}
 \format{A data frame with four variables: \code{year}, \code{month},
-  \code{day}, and \code{chlorophyll_0_100}. The chlorophyll inventory has
+  \code{day}, and \code{chl_0_100}. The chlorophyll inventory has
    units of mg chl/m2.}
 \usage{
 chlorophyll_inventory_timeseries_hl2

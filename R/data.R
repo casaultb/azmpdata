@@ -6,7 +6,7 @@
 #'  profiles.
 #'
 #' @format A data frame with four variables: \code{year}, \code{month},
-#'   \code{day}, and \code{chlorophyll_0_100}. The chlorophyll inventory has
+#'   \code{day}, and \code{chl_0_100}. The chlorophyll inventory has
 #'    units of mg chl/m2.
 "chlorophyll_inventory_timeseries_hl2"
 
@@ -18,7 +18,7 @@
 #'  \code{density ~ year + month} where density is \code{chlorophyll_0_100}, and
 #'  \code{year} and \code{month} are factors.
 #'
-#' @format A data frame with two variables: \code{year}, and \code{chlorophyll_0_100}.
+#' @format A data frame with two variables: \code{year}, and \code{chl_0_100}.
 #' The chlorophyll inventory has units of mg chl/m2.
 "chlorophyll_inventory_annual_means_hl2"
 
@@ -29,6 +29,6 @@
 #'   for individual profiles.
 #'
 #' @format A data frame with five variables: \code{year}, \code{month},
-#'   \code{day}, \code{nitrate_0_50}, and \code{nitrate_50_150}. The nitrate
+#'   \code{day}, \code{no3_0_50}, and \code{no3_50_150}. The nitrate
 #'   inventory has units of mmol N/m2.
 "nitrate_inventory_timeseries_hl2"

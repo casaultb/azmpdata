@@ -4,7 +4,7 @@
 \name{chlorophyll_inventory_annual_means_hl2}
 \alias{chlorophyll_inventory_annual_means_hl2}
 \title{Annual means of chlorophyll inventory at Halifax-2 station.}
-\format{A data frame with two variables: \code{year}, and \code{chlorophyll_0_100}.
+\format{A data frame with two variables: \code{year}, and \code{chl_0_100}.
 The chlorophyll inventory has units of mg chl/m2.}
 \usage{
 chlorophyll_inventory_annual_means_hl2

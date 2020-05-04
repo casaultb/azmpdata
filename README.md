@@ -1,7 +1,7 @@
 azmpdata R package
 ================
 Benoit Casault
-02 May, 2020
+04 May, 2020
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -54,16 +54,16 @@ folder) or as a csv file (in the *azmpdata/data-raw* folder).
 
 #### Chemical Data Products
 
-| Dataset                             | Description                                          |
-| :---------------------------------- | :--------------------------------------------------- |
-| nitrate\_inventory\_timeseries\_hl2 | Timeseries of nitrate inventory at Halifax-2 station |
+| Dataset                             | Description                                          | Variables                |
+| :---------------------------------- | :--------------------------------------------------- | :----------------------- |
+| nitrate\_inventory\_timeseries\_hl2 | Timeseries of nitrate inventory at Halifax-2 station | no3\_0\_50; no3\_50\_150 |
 
 #### Biological Data Products
 
-| Dataset                                    | Description                                                |
-| :----------------------------------------- | :--------------------------------------------------------- |
-| chlorophyll\_inventory\_timeseries\_hl2    | Timeseries of chlorophyll inventory at Halifax-2 station   |
-| chlorophyll\_inventory\_annual\_means\_hl2 | Annual means of chlorophyll inventory at Halifax-2 station |
+| Dataset                                    | Description                                                | Variables   |
+| :----------------------------------------- | :--------------------------------------------------------- | :---------- |
+| chlorophyll\_inventory\_timeseries\_hl2    | Timeseries of chlorophyll inventory at Halifax-2 station   | chl\_0\_100 |
+| chlorophyll\_inventory\_annual\_means\_hl2 | Annual means of chlorophyll inventory at Halifax-2 station | chl\_0\_100 |
 
 ## Package Functionality
 
@@ -101,3 +101,29 @@ search_azmpdata("chlorophyll")
 #> [1] "chlorophyll_inventory_annual_means_hl2"
 #> [2] "chlorophyll_inventory_timeseries_hl2"
 ```
+
+#### Plotting
+
+The function *plot\_azmpdata* is a wrapper that allows to plot a given
+variable in a dataset. Plot format differs according to the type of
+dataset (e.g. timeseries or annual means). For example, the following
+command displays a plot of the *chlorophyll\_0\_100* variable from the
+*chlorophyll\_inventory\_annual\_means\_hl2* dataset:
+
+``` r
+library(azmpdata)
+plot_azmpdata("chlorophyll_inventory_annual_means_hl2", "chl_0_100")
+```
+
+![](README_files/figure-gfm/plot_annualmeans-1.png)<!-- -->
+
+Aother example, the following command displays a plot of the
+*no3\_50\_150* variable from the *nitrate\_inventory\_timeseries\_hl2*
+dataset:
+
+``` r
+library(azmpdata)
+plot_azmpdata("nitrate_inventory_timeseries_hl2", "no3_50_150")
+```
+
+![](README_files/figure-gfm/plot_timeseries-1.png)<!-- -->

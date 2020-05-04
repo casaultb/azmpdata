@@ -17,4 +17,11 @@ Suggests:
 URL: https://github.com/casaultb/azmpdata
 BugReports: https://github.com/casaultb/azmpdata/issues
 Imports: 
-    stringr
+    stringr,
+    ggplot2,
+    grid,
+    dplyr,
+    tidyr,
+    tibble,
+    magrittr,
+    lubridate
