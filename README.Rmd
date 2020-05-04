@@ -1,33 +1,95 @@
 ---
+title: "azmpdata R package"
+author: "Benoit Casault"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r, include=F}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 ```
-# azmpdata
+# *azmpdata*
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of azmpdata is to ...
+The R package *azmpdata* provides a series of data products derived from raw data collected as part of the Atlantic Zone Monitoring Program ([AZMP](https://www.dfo-mpo.gc.ca/science/data-donnees/azmp-pmza/index-eng.html)). The data products provided in this package are used to generate the different figures contained in the Research Documents produced annually by Fisheries and Ocean Canada's Maritimes region.  The Research Documents describe the physical, chemical and biological conditions observed in Maritimes region since the inception of the AZMP program (see example documents for the [physical](http://www.dfo-mpo.gc.ca/csas-sccs/Publications/ResDocs-DocRech/2018/2018_016-eng.html) conditions and for the [optical, chemical and biological](http://www.dfo-mpo.gc.ca/csas-sccs/Publications/ResDocs-DocRech/2018/2018_017-eng.html) conditions).
 
-## Installation
+## Package Installation
 
-You can install azmpdata from [GitHub](https://github.com) with:
+The *azmpdata* R package can be installed from [GitHub](https://github.com) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("casaultb/azmpdata")
 ```
-## Example
 
-This is a basic example which shows how to search which datasets contain chlorophyll data:
+## Datasets
+
+The *azmpdata* package provides three categories of data products: physical, biological and chemical variables, which are summarized below. Each data product is provided as a data frame (in the *azmpdata/data* folder) or as a csv file (in the *azmpdata/data-raw* folder).
+
+#### Physical Data Products
+<!-- ``` r -->
+<!-- library(tibble) -->
+<!-- library(knitr) -->
+<!-- ``` -->
+
+#### Chemical Data Products
+```{r chemical, echo=F, warning=F}
+library(tibble)
+library(knitr)
+
+# populate tibble - chemical variables
+df <- tibble(Dataset = c("nitrate_inventory_timeseries_hl2"),
+Description = c("Timeseries of nitrate inventory at Halifax-2 station"))
+
+# generate table
+knitr::kable(df)
+```
+
+#### Biological Data Products
+```{r biological, echo=F, warning=F}
+library(tibble)
+library(knitr)
+
+# populate tibble - biological variables
+df <- tibble(Dataset = c("chlorophyll_inventory_timeseries_hl2",
+"chlorophyll_inventory_annual_means_hl2"),
+Description = c("Timeseries of chlorophyll inventory at Halifax-2 station",
+"Annual means of chlorophyll inventory at Halifax-2 station"))
+
+# generate table
+knitr::kable(df)
+```
+
+## Package Functionality
+
+Although the main goal of *azmpdata* is to provide easy access to a variety of data products, the package also supports a few basic functions for which examples are shown below.
+
+#### Dataset Documentation
+
+A detailed description of the whole package is available using the following command:
+
+```{r help_package, echo=T, eval=F}
+library(azmpdata)
+help("azmpdata")
+```
+
+In addition, each dataset is documented and the following command returns a detailed description about a given dataset:
+
+```{r help_dataset, echo=T, eval=F}
+library(azmpdata)
+help("chlorophyll_inventory_timeseries_hl2")
+```
+
+#### Keyword Search
+
+The function *search_azmpdata* allows to look up which datasets match a certain keyword criterion.  For example, the following command returns all the datasets containing *chlorophyll* data:
 
 ```{r example}
 library(azmpdata)

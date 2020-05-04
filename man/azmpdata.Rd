@@ -8,7 +8,8 @@
 The Atlantic Zone Monitoring Program (AZMP).}
 \description{
 The azmp package provides three categories of data products:
-physical, biological and chemical variables.
+physical, biological and chemical variables.  For a complete list of
+variables, use library(help = "azmpdata").
 }
 \section{Physical variables}{
 
