@@ -15,7 +15,7 @@
 #' The chlorophyll inventory consists in the integrated chlorophyll concentration
 #'  as obtained using trapezoidal integration over the 0-100m layer for individual
 #'  profiles. The annual means are obtained by fitting a linear model of the form
-#'  \code{density ~ year + month} where density is \code{chlorophyll_0_100}, and
+#'  \code{density ~ year + month} where density is \code{chl_0_100}, and
 #'  \code{year} and \code{month} are factors.
 #'
 #' @format A data frame with two variables: \code{year}, and \code{chl_0_100}.

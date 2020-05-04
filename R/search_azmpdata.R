@@ -11,8 +11,9 @@
 #' search_azmpdata("chlorophyll")
 search_azmpdata <- function(str) {
 
-    # lookup .rda files in /data
-  rda_list <- list.files(path = "data", pattern = "\\.rda")
+  # lookup .rda files in /data
+  rda_list <- utils::data(package="azmpdata")
+  rda_list <- rda_list$results[,3]
 
   # lookup files that match "str" keyword, and remove .rda extension
   matches <- stringr::str_remove(rda_list[stringr::str_detect(rda_list, str)], ".rda")
