@@ -1,7 +1,7 @@
 azmpdata R package
 ================
 Benoit Casault
-04 May, 2020
+05 May, 2020
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -38,9 +38,29 @@ devtools::install_github("casaultb/azmpdata")
 ## Datasets
 
 The *azmpdata* package provides three categories of data products:
-physical, biological and chemical variables, which are summarized below.
-Each data product is provided as a data frame (in the *azmpdata/data*
-folder) or as a csv file (in the *azmpdata/data-raw* folder).
+physical, chemical and biological variables, which are summarized below.
+Each data product is provided as a *data frame* or as a *csv* file.
+
+To access a dataset in data frame format:
+
+``` r
+library(azmpdata)
+head(chlorophyll_inventory_annual_means_hl2)
+#>   year chl_0_100
+#> 1 1999  67.95402
+#> 2 2000  52.10942
+#> 3 2001  68.24642
+#> 4 2002  47.73511
+#> 5 2003  96.57796
+#> 6 2004  66.61414
+```
+
+To access a dataset in csv format:
+
+``` r
+system.file("extdata", "chlorophyll_inventory_annual_means_hl2.csv", package = "azmpdata")
+#> [1] "C:/Users/Benoi/Documents/R/win-library/3.6/azmpdata/extdata/chlorophyll_inventory_annual_means_hl2.csv"
+```
 
 #### Physical Data Products
 

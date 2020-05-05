@@ -31,7 +31,18 @@ devtools::install_github("casaultb/azmpdata")
 
 ## Datasets
 
-The *azmpdata* package provides three categories of data products: physical, biological and chemical variables, which are summarized below. Each data product is provided as a data frame (in the *azmpdata/data* folder) or as a csv file (in the *azmpdata/data-raw* folder).
+The *azmpdata* package provides three categories of data products: physical, chemical and biological variables, which are summarized below. Each data product is provided as a *data frame* or as a *csv* file.
+
+To access a dataset in data frame format:
+```{r dataframe, echo=T, eval=T}
+library(azmpdata)
+head(chlorophyll_inventory_annual_means_hl2)
+```
+
+To access a dataset in csv format:
+```{r csv, echo=T, eval=T}
+system.file("extdata", "chlorophyll_inventory_annual_means_hl2.csv", package = "azmpdata")
+```
 
 #### Physical Data Products
 Table to come here.
