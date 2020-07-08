@@ -1,0 +1,52 @@
+---
+title: "Meeting Notes - July 7"
+output: html_document
+---
+
+
+Discussion of Maritimes environmental data access, July 7, 2020
+
+
+B. Casault, E. Chisholm, C. Layton, C. Johnson, M. McMahon
+
+## Meeting Minutes
+
+
+### Variable Names
+
+* Emily presented azmpmetrics.xlsx (available via Data Access Teams chat)
+* Options for variable naming schemes includes either 'made - up' custom names or standardized names following CF conventions
+* Group preference is for CF names
+  * provides most description, good for someone unfamiliar with data
+  * downside is that they are quite long names
+* __BC suggests to remove annual and monthly prefixes as this will be redundant with file names and other metadata__
+* discussion of whether to append regional names eg. 'ss' or 'gsl', this will make names more messy and long, will be difficult to compare or combine the same variable between regions
+  * remove emerald/misaine on variables as well
+* __Spreadsheet should also have column with name of azmpdata csv which data will be a part of for clarity and organization (EC/CL/BC)__
+  * what columns need to be included for each csv?
+  * using csv names provided by CJ after last meeting
+* zooplankton names
+  * occupations have abundance, annual has log abundance
+  * discussion about how to shorten names
+  * decided that 'log' information is important to include, 'abundance' is redundant
+  * __EC will update names__
+* some confusion with variables that are not actually in azmpdata, __EC will remove__
+* Calanus stages should be denoted C1...C6, __EC will update__
+* instead of 'biomass' should use wet/dry weight
+  * dry weight has only 'meso' size fraction, wet weight hasd 'macro', 'meso' and 'total' size fraction (__EC will update__)
+  
+  
+### Progress on azmpdata csvs
+
+* BC has produced some csvs
+  * needs to be updated to include 'day' column (__BC__)
+* Sample ID lookup table discussed to connect sample ID to missions 
+* need to decide on nominal vs actual position, especially for fixed station
+*CL created ASCII files
+  * includes some header metadata
+  * read into R as list, so that metadata is preserved along with dataframe
+  * similar to an oce structure but without becoming a complex S4 class
+  
+### Next time
+* __EC will keep notes about discussion between CL, BC, EC on organizing data into csvs__ notes will be provided to CJ
+* next group meeting will be July 22nd, 2pm
