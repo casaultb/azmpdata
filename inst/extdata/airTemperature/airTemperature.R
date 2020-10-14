@@ -7,12 +7,16 @@ files <- list.files(path = path,
 d <- lapply(files, read.physical)
 
 vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
-areaName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data']])[1])))
+stationName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data']])[1])))
 year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 
 df <- data.frame(year = year,
-                 area_name = areaName,
+                 station_name = stationName,
                  temperature_in_air = vardat)
 airTemperature <- df
 
-usethis::use_data(airTemperature, compress = "xz", overwrite = T)
+save(airTemperature, file = 'data-raw/airTemperature.rda')
+
+# usethis::use_data(airTemperature, compress = "xz", overwrite = T)
+
+write.csv(file.path(path, 'airTemperature.csv'), x = airTemperature, row.names = FALSE)

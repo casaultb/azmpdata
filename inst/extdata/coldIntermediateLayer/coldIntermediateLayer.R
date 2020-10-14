@@ -18,4 +18,8 @@ df <- data.frame(year = year,
                  minimum_temperature_in_cold_intermediate_layer = vardat2)
 coldIntermediateLayer <- df
 
-usethis::use_data(coldIntermediateLayer, compress = "xz", overwrite = T)
+save(coldIntermediateLayer, file = 'data-raw/coldIntermediateLayer.rda')
+
+# usethis::use_data(coldIntermediateLayer, compress = "xz", overwrite = T)
+
+write.csv(file.path(path, 'coldIntermediateLayer.csv'), x = coldIntermediateLayer, row.names = FALSE)

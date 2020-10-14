@@ -1,0 +1,859 @@
+"year","station_name","temperature_in_air"
+1872,"Boston",8.12
+1873,"Boston",7.83
+1874,"Boston",8.04
+1875,"Boston",6.95
+1876,"Boston",7.64
+1877,"Boston",8.84
+1878,"Boston",8.92
+1879,"Boston",7.93
+1880,"Boston",8.96
+1881,"Boston",8.58
+1882,"Boston",8.16
+1883,"Boston",7.65
+1884,"Boston",8.27
+1885,"Boston",7.55
+1886,"Boston",7.9
+1887,"Boston",7.99
+1888,"Boston",7.32
+1889,"Boston",9.19
+1890,"Boston",8.34
+1891,"Boston",9.03
+1892,"Boston",8.48
+1893,"Boston",7.22
+1894,"Boston",8.62
+1895,"Boston",8.33
+1896,"Boston",7.98
+1897,"Boston",8.39
+1898,"Boston",8.82
+1899,"Boston",8.49
+1900,"Boston",8.89
+1901,"Boston",7.85
+1902,"Boston",8.23
+1903,"Boston",8.11
+1904,"Boston",6.69
+1905,"Boston",7.81
+1906,"Boston",8.31
+1907,"Boston",7.39
+1908,"Boston",8.71
+1909,"Boston",8.35
+1910,"Boston",8.48
+1911,"Boston",8.56
+1912,"Boston",8.37
+1913,"Boston",9.33
+1914,"Boston",7.89
+1915,"Boston",8.73
+1916,"Boston",7.88
+1917,"Boston",6.92
+1918,"Boston",7.98
+1919,"Boston",8.67
+1920,"Boston",8.07
+1921,"Boston",9.37
+1922,"Boston",8.76
+1923,"Boston",8.23
+1924,"Boston",8.29
+1925,"Boston",9.01
+1926,"Boston",7.5
+1927,"Boston",9.05
+1928,"Boston",8.8
+1929,"Boston",8.78
+1930,"Boston",9.34
+1931,"Boston",9.7
+1932,"Boston",9.41
+1933,"Boston",9.18
+1934,"Boston",8.03
+1935,"Boston",8.05
+1936,"Boston",9.37
+1937,"Boston",10.29
+1938,"Boston",10.02
+1939,"Boston",9.42
+1940,"Boston",8.57
+1941,"Boston",10.02
+1942,"Boston",10
+1943,"Boston",9.51
+1944,"Boston",10.11
+1945,"Boston",10.18
+1946,"Boston",10.27
+1947,"Boston",10.19
+1948,"Boston",9.68
+1949,"Boston",11.58
+1950,"Boston",10.02
+1951,"Boston",10.82
+1952,"Boston",11
+1953,"Boston",11.37
+1954,"Boston",10.19
+1955,"Boston",10.54
+1956,"Boston",9.73
+1957,"Boston",10.76
+1958,"Boston",9.58
+1959,"Boston",10.46
+1960,"Boston",10.34
+1961,"Boston",10.01
+1962,"Boston",9.49
+1963,"Boston",10.01
+1964,"Boston",9.68
+1965,"Boston",9.3
+1966,"Boston",10.35
+1967,"Boston",9.28
+1968,"Boston",9.76
+1969,"Boston",10.25
+1970,"Boston",10.16
+1971,"Boston",10.11
+1972,"Boston",9.91
+1973,"Boston",11.19
+1974,"Boston",10.04
+1975,"Boston",10.44
+1976,"Boston",10.56
+1977,"Boston",10.41
+1978,"Boston",9.5
+1979,"Boston",10.65
+1980,"Boston",10.14
+1981,"Boston",10.54
+1982,"Boston",9.86
+1983,"Boston",11.46
+1984,"Boston",10.46
+1985,"Boston",10.3
+1986,"Boston",10.22
+1987,"Boston",9.88
+1988,"Boston",10.54
+1989,"Boston",10.19
+1990,"Boston",11.25
+1991,"Boston",11.67
+1992,"Boston",9.82
+1993,"Boston",10.66
+1994,"Boston",10.74
+1995,"Boston",10.57
+1996,"Boston",10.54
+1997,"Boston",10.81
+1998,"Boston",11.91
+1999,"Boston",11.71
+2000,"Boston",10.7
+2001,"Boston",11.42
+2002,"Boston",12.07
+2003,"Boston",10.19
+2004,"Boston",10.61
+2005,"Boston",10.77
+2006,"Boston",11.81
+2007,"Boston",11.12
+2008,"Boston",11.43
+2009,"Boston",10.64
+2010,"Boston",12.55
+2011,"Boston",11.87
+2012,"Boston",12.7
+2013,"Boston",11.46
+2014,"Boston",11.22
+2015,"Boston",11.48
+2016,"Boston",12.5
+2017,"Boston",12.03
+2018,"Boston",12.03
+2019,"Boston",11.83
+2020,"Boston",12.28
+1871,"Halifax",4.4
+1872,"Halifax",4.78
+1873,"Halifax",4.67
+1874,"Halifax",4.89
+1875,"Halifax",3.66
+1876,"Halifax",4.46
+1877,"Halifax",5.55
+1878,"Halifax",6.08
+1879,"Halifax",4.62
+1880,"Halifax",4.88
+1881,"Halifax",4.89
+1882,"Halifax",4.47
+1883,"Halifax",4.13
+1884,"Halifax",4.62
+1885,"Halifax",5.02
+1886,"Halifax",5.64
+1887,"Halifax",4.98
+1888,"Halifax",4.22
+1889,"Halifax",6.76
+1890,"Halifax",4.95
+1891,"Halifax",6.08
+1892,"Halifax",5.82
+1894,"Halifax",4.9
+1895,"Halifax",5.91
+1896,"Halifax",5.64
+1897,"Halifax",5.63
+1898,"Halifax",6.23
+1899,"Halifax",5.62
+1900,"Halifax",6.21
+1901,"Halifax",6.48
+1902,"Halifax",6.18
+1903,"Halifax",5.49
+1904,"Halifax",4
+1905,"Halifax",4.43
+1906,"Halifax",5.6
+1907,"Halifax",4.48
+1908,"Halifax",5.6
+1909,"Halifax",5.64
+1910,"Halifax",6
+1911,"Halifax",5.28
+1912,"Halifax",5.16
+1913,"Halifax",6.29
+1914,"Halifax",4.23
+1915,"Halifax",6
+1916,"Halifax",5.21
+1917,"Halifax",4.64
+1918,"Halifax",4.73
+1919,"Halifax",5.45
+1920,"Halifax",5.13
+1921,"Halifax",5.52
+1922,"Halifax",4.79
+1923,"Halifax",4.49
+1924,"Halifax",5.56
+1925,"Halifax",5.16
+1926,"Halifax",4.59
+1927,"Halifax",5.21
+1928,"Halifax",5.57
+1929,"Halifax",5.46
+1930,"Halifax",6.17
+1931,"Halifax",6.76
+1932,"Halifax",5.9
+1933,"Halifax",5.49
+1934,"Halifax",5.18
+1935,"Halifax",5.28
+1936,"Halifax",5.71
+1937,"Halifax",6.54
+1938,"Halifax",6.29
+1939,"Halifax",5.64
+1940,"Halifax",4.89
+1941,"Halifax",4.93
+1942,"Halifax",5.93
+1943,"Halifax",5.32
+1944,"Halifax",5.98
+1945,"Halifax",6.02
+1946,"Halifax",5.89
+1947,"Halifax",6.21
+1948,"Halifax",4.97
+1949,"Halifax",6.87
+1950,"Halifax",5.68
+1951,"Halifax",7.23
+1952,"Halifax",6.58
+1953,"Halifax",7.47
+1954,"Halifax",8.29
+1960,"Halifax",6.61
+1961,"Halifax",6.48
+1962,"Halifax",5.73
+1963,"Halifax",5.9
+1964,"Halifax",5.98
+1965,"Halifax",5.57
+1966,"Halifax",6.89
+1967,"Halifax",5.98
+1968,"Halifax",6.38
+1969,"Halifax",7.22
+1970,"Halifax",6
+1971,"Halifax",6.3
+1972,"Halifax",5.45
+1973,"Halifax",6.82
+1974,"Halifax",5.83
+1975,"Halifax",6.31
+1976,"Halifax",6.72
+1977,"Halifax",6.65
+1978,"Halifax",5.83
+1979,"Halifax",7.01
+1980,"Halifax",5.78
+1981,"Halifax",7.18
+1982,"Halifax",6.37
+1983,"Halifax",7.42
+1984,"Halifax",7.3
+1985,"Halifax",5.86
+1986,"Halifax",5.95
+1987,"Halifax",6.23
+1988,"Halifax",6.42
+1989,"Halifax",5.86
+1990,"Halifax",7.27
+1991,"Halifax",7.05
+1992,"Halifax",5.84
+1993,"Halifax",5.93
+1994,"Halifax",6.73
+1995,"Halifax",6.63
+1996,"Halifax",6.63
+1997,"Halifax",5.99
+1998,"Halifax",7.64
+1999,"Halifax",8.57
+2000,"Halifax",7.38
+2001,"Halifax",7.5
+2002,"Halifax",6.89
+2003,"Halifax",7.01
+2004,"Halifax",6.31
+2005,"Halifax",7.21
+2006,"Halifax",8.08
+2007,"Halifax",6.5
+2008,"Halifax",7.35
+2009,"Halifax",6.89
+2010,"Halifax",8.4
+2011,"Halifax",7.58
+2012,"Halifax",8.37
+2013,"Halifax",7.1
+2014,"Halifax",7.31
+2015,"Halifax",6.66
+2016,"Halifax",7.68
+2017,"Halifax",7.68
+2018,"Halifax",7.57
+2019,"Halifax",6.94
+2020,"Halifax",7.39
+1897,"Sable Island",5.619
+1898,"Sable Island",7.686
+1899,"Sable Island",7.245
+1900,"Sable Island",7.92
+1901,"Sable Island",8.145
+1902,"Sable Island",7.861
+1903,"Sable Island",6.878
+1904,"Sable Island",6.62
+1905,"Sable Island",6.361
+1906,"Sable Island",7.403
+1907,"Sable Island",6.57
+1908,"Sable Island",7.553
+1909,"Sable Island",7.503
+1910,"Sable Island",8.161
+1911,"Sable Island",6.886
+1912,"Sable Island",6.503
+1913,"Sable Island",7.52
+1914,"Sable Island",6.02
+1915,"Sable Island",6.978
+1916,"Sable Island",6.786
+1917,"Sable Island",6.97
+1918,"Sable Island",6.603
+1919,"Sable Island",6.703
+1920,"Sable Island",7.228
+1921,"Sable Island",5.916
+1922,"Sable Island",6.755
+1923,"Sable Island",6.02
+1924,"Sable Island",6.711
+1925,"Sable Island",6.478
+1926,"Sable Island",6.553
+1927,"Sable Island",7.67
+1928,"Sable Island",7.403
+1929,"Sable Island",6.986
+1930,"Sable Island",7.603
+1931,"Sable Island",8.47
+1932,"Sable Island",7.495
+1933,"Sable Island",7.445
+1934,"Sable Island",7.253
+1935,"Sable Island",6.403
+1936,"Sable Island",7.578
+1937,"Sable Island",8.144
+1938,"Sable Island",7.82
+1939,"Sable Island",6.661
+1940,"Sable Island",6.878
+1941,"Sable Island",6.286
+1942,"Sable Island",7.903
+1943,"Sable Island",7.086
+1944,"Sable Island",7.386
+1945,"Sable Island",7.661
+1946,"Sable Island",7.753
+1947,"Sable Island",7.771
+1948,"Sable Island",6.486
+1949,"Sable Island",8.353
+1950,"Sable Island",7.445
+1951,"Sable Island",9.328
+1952,"Sable Island",8.578
+1953,"Sable Island",8.478
+1954,"Sable Island",8.386
+1955,"Sable Island",7.061
+1956,"Sable Island",7.486
+1957,"Sable Island",7.403
+1958,"Sable Island",8.186
+1959,"Sable Island",6.736
+1960,"Sable Island",8.286
+1961,"Sable Island",7.628
+1962,"Sable Island",7.086
+1963,"Sable Island",7.203
+1964,"Sable Island",7.045
+1965,"Sable Island",6.503
+1966,"Sable Island",7.645
+1967,"Sable Island",7.995
+1968,"Sable Island",7.703
+1969,"Sable Island",8.286
+1970,"Sable Island",7.878
+1971,"Sable Island",7.953
+1972,"Sable Island",7.261
+1973,"Sable Island",7.578
+1974,"Sable Island",7.011
+1975,"Sable Island",7.061
+1976,"Sable Island",8.003
+1977,"Sable Island",7.753
+1978,"Sable Island",7.37
+1979,"Sable Island",8.103
+1980,"Sable Island",7.036
+1981,"Sable Island",8.628
+1982,"Sable Island",7.57
+1983,"Sable Island",8.678
+1984,"Sable Island",8.678
+1985,"Sable Island",6.77
+1986,"Sable Island",7.103
+1987,"Sable Island",7.328
+1988,"Sable Island",7.578
+1989,"Sable Island",7.47
+1990,"Sable Island",7.836
+1991,"Sable Island",7.853
+1992,"Sable Island",7.228
+1993,"Sable Island",7.661
+1994,"Sable Island",8.22
+1995,"Sable Island",7.744
+1996,"Sable Island",7.714
+1997,"Sable Island",7.136
+1998,"Sable Island",8.411
+1999,"Sable Island",9.645
+2000,"Sable Island",8.803
+2001,"Sable Island",8.278
+2002,"Sable Island",8.036
+2003,"Sable Island",7.961
+2004,"Sable Island",7.536
+2005,"Sable Island",8.495
+2006,"Sable Island",9.145
+2007,"Sable Island",7.653
+2008,"Sable Island",8.228
+2009,"Sable Island",8.335
+2010,"Sable Island",9.329
+2011,"Sable Island",8.595
+2012,"Sable Island",9.728
+2013,"Sable Island",8.778
+2014,"Sable Island",9.206
+2015,"Sable Island",8.969
+2016,"Sable Island",9.135
+2017,"Sable Island",8.628
+2018,"Sable Island",8.636
+2019,"Sable Island",7.786
+2020,"Sable Island",8.784
+1871,"Saint John",3
+1872,"Saint John",3.22
+1873,"Saint John",3.21
+1874,"Saint John",3.52
+1875,"Saint John",2.35
+1876,"Saint John",3.27
+1877,"Saint John",4.2
+1878,"Saint John",4.57
+1879,"Saint John",3.07
+1880,"Saint John",3.76
+1881,"Saint John",3.87
+1882,"Saint John",3.11
+1883,"Saint John",2.98
+1884,"Saint John",3.28
+1885,"Saint John",3.19
+1886,"Saint John",3.89
+1887,"Saint John",3.33
+1888,"Saint John",2.98
+1889,"Saint John",4.97
+1890,"Saint John",4
+1891,"Saint John",5.03
+1892,"Saint John",4.56
+1893,"Saint John",3.85
+1894,"Saint John",4.06
+1895,"Saint John",4.66
+1896,"Saint John",4.09
+1897,"Saint John",4.28
+1898,"Saint John",4.77
+1899,"Saint John",4.17
+1900,"Saint John",4.86
+1901,"Saint John",5.07
+1902,"Saint John",5.22
+1903,"Saint John",4.78
+1904,"Saint John",3.26
+1905,"Saint John",3.87
+1906,"Saint John",4.89
+1907,"Saint John",3.78
+1908,"Saint John",4.82
+1909,"Saint John",4.97
+1910,"Saint John",5.34
+1911,"Saint John",4.58
+1912,"Saint John",3.97
+1913,"Saint John",5.14
+1914,"Saint John",3.97
+1915,"Saint John",5.38
+1916,"Saint John",4.13
+1917,"Saint John",3.31
+1918,"Saint John",3.8
+1919,"Saint John",4.61
+1920,"Saint John",4.3
+1921,"Saint John",5.12
+1922,"Saint John",4.24
+1923,"Saint John",3.51
+1924,"Saint John",4.2
+1925,"Saint John",4.26
+1926,"Saint John",3.61
+1927,"Saint John",5.07
+1928,"Saint John",4.8
+1929,"Saint John",4.53
+1930,"Saint John",5.36
+1931,"Saint John",5.91
+1932,"Saint John",5.36
+1933,"Saint John",4.75
+1934,"Saint John",4.07
+1935,"Saint John",4.37
+1936,"Saint John",4.71
+1937,"Saint John",5.95
+1938,"Saint John",5.18
+1939,"Saint John",4.57
+1940,"Saint John",4.38
+1941,"Saint John",4.77
+1942,"Saint John",5.02
+1943,"Saint John",4.37
+1944,"Saint John",5.07
+1945,"Saint John",5.12
+1946,"Saint John",5.22
+1947,"Saint John",4.23
+1948,"Saint John",3.38
+1949,"Saint John",4.81
+1950,"Saint John",3.85
+1952,"Saint John",5.69
+1953,"Saint John",6.54
+1954,"Saint John",5.37
+1955,"Saint John",4.58
+1956,"Saint John",4.28
+1957,"Saint John",5.21
+1958,"Saint John",4.77
+1959,"Saint John",4.91
+1960,"Saint John",5.61
+1961,"Saint John",4.72
+1962,"Saint John",4.32
+1963,"Saint John",4.18
+1964,"Saint John",4.41
+1965,"Saint John",3.79
+1966,"Saint John",5.21
+1967,"Saint John",4.02
+1968,"Saint John",4.57
+1969,"Saint John",5.52
+1970,"Saint John",4.47
+1971,"Saint John",4.82
+1972,"Saint John",3.97
+1973,"Saint John",5.77
+1974,"Saint John",4.59
+1975,"Saint John",4.85
+1976,"Saint John",4.82
+1977,"Saint John",5.01
+1978,"Saint John",4.3
+1979,"Saint John",5.82
+1980,"Saint John",4.42
+1981,"Saint John",5.43
+1982,"Saint John",4.53
+1983,"Saint John",6.03
+1984,"Saint John",5.68
+1985,"Saint John",4.46
+1986,"Saint John",4.62
+1987,"Saint John",4.89
+1988,"Saint John",4.97
+1989,"Saint John",4.2
+1990,"Saint John",5.94
+1991,"Saint John",5.46
+1992,"Saint John",4.32
+1993,"Saint John",4.6
+1994,"Saint John",4.97
+1995,"Saint John",5.37
+1996,"Saint John",5.27
+1997,"Saint John",4.59
+1998,"Saint John",6.43
+1999,"Saint John",7.09
+2000,"Saint John",5.67
+2001,"Saint John",5.8
+2002,"Saint John",5.53
+2003,"Saint John",5.07
+2004,"Saint John",4.67
+2005,"Saint John",5.82
+2006,"Saint John",7.02
+2007,"Saint John",5.21
+2008,"Saint John",6.07
+2009,"Saint John",5.39
+2010,"Saint John",7.2
+2011,"Saint John",6.32
+2012,"Saint John",7
+2013,"Saint John",5.77
+2014,"Saint John",5.62
+2015,"Saint John",5.06
+2016,"Saint John",6.4
+2017,"Saint John",6.28
+2018,"Saint John",5.87
+2019,"Saint John",5.37
+2020,"Saint John",6.18
+1870,"Sydney",5.502
+1872,"Sydney",3.935
+1873,"Sydney",3.766
+1874,"Sydney",4.035
+1875,"Sydney",2.91
+1876,"Sydney",4.16
+1877,"Sydney",4.643
+1878,"Sydney",5.659
+1879,"Sydney",4.193
+1880,"Sydney",4.102
+1881,"Sydney",4.427
+1882,"Sydney",4.085
+1883,"Sydney",3.952
+1884,"Sydney",4.202
+1885,"Sydney",4.535
+1886,"Sydney",5.685
+1887,"Sydney",4.818
+1888,"Sydney",4.477
+1889,"Sydney",6.618
+1890,"Sydney",4.718
+1891,"Sydney",5.518
+1892,"Sydney",5.893
+1893,"Sydney",5.107
+1894,"Sydney",4.435
+1895,"Sydney",5.493
+1896,"Sydney",4.902
+1897,"Sydney",4.818
+1898,"Sydney",5.635
+1899,"Sydney",4.868
+1900,"Sydney",5.518
+1901,"Sydney",6.385
+1902,"Sydney",6.002
+1903,"Sydney",4.652
+1904,"Sydney",4.177
+1905,"Sydney",4.118
+1906,"Sydney",5.502
+1907,"Sydney",4.093
+1908,"Sydney",5.627
+1909,"Sydney",5.81
+1910,"Sydney",6.252
+1911,"Sydney",5.093
+1912,"Sydney",4.885
+1913,"Sydney",5.91
+1914,"Sydney",4.468
+1915,"Sydney",5.81
+1916,"Sydney",5.452
+1917,"Sydney",5.193
+1918,"Sydney",4.81
+1919,"Sydney",5.618
+1920,"Sydney",5.46
+1921,"Sydney",5.302
+1922,"Sydney",4.552
+1923,"Sydney",4.16
+1924,"Sydney",5.343
+1925,"Sydney",4.535
+1926,"Sydney",4.427
+1927,"Sydney",5.743
+1928,"Sydney",5.56
+1929,"Sydney",5.193
+1930,"Sydney",6.41
+1931,"Sydney",6.752
+1932,"Sydney",5.835
+1933,"Sydney",5.468
+1934,"Sydney",5.068
+1935,"Sydney",5.135
+1936,"Sydney",5.96
+1937,"Sydney",6.752
+1938,"Sydney",6.102
+1939,"Sydney",5.193
+1940,"Sydney",4.993
+1941,"Sydney",4.785
+1942,"Sydney",6.402
+1943,"Sydney",5.168
+1944,"Sydney",6.302
+1945,"Sydney",6.485
+1946,"Sydney",6.268
+1947,"Sydney",6.243
+1948,"Sydney",5.252
+1949,"Sydney",6.635
+1950,"Sydney",5.802
+1951,"Sydney",7.293
+1952,"Sydney",6.818
+1953,"Sydney",7.01
+1954,"Sydney",6.485
+1955,"Sydney",5.868
+1956,"Sydney",5.785
+1957,"Sydney",5.743
+1958,"Sydney",6.368
+1959,"Sydney",5.51
+1960,"Sydney",6.76
+1961,"Sydney",6.152
+1962,"Sydney",5.352
+1963,"Sydney",5.727
+1964,"Sydney",5.168
+1965,"Sydney",5.027
+1966,"Sydney",6.76
+1967,"Sydney",6.193
+1968,"Sydney",5.835
+1969,"Sydney",6.902
+1970,"Sydney",5.918
+1971,"Sydney",6.185
+1972,"Sydney",4.835
+1973,"Sydney",5.843
+1974,"Sydney",4.752
+1975,"Sydney",5.268
+1976,"Sydney",5.668
+1977,"Sydney",5.852
+1978,"Sydney",5.352
+1979,"Sydney",6.568
+1980,"Sydney",5.06
+1981,"Sydney",6.693
+1982,"Sydney",5.435
+1983,"Sydney",6.785
+1984,"Sydney",6.452
+1985,"Sydney",4.902
+1986,"Sydney",4.843
+1987,"Sydney",5.685
+1988,"Sydney",5.768
+1989,"Sydney",5.402
+1990,"Sydney",6.227
+1991,"Sydney",5.86
+1992,"Sydney",5.068
+1993,"Sydney",5.177
+1994,"Sydney",5.935
+1995,"Sydney",5.993
+1996,"Sydney",6.243
+1997,"Sydney",5.143
+1998,"Sydney",6.96
+1999,"Sydney",7.952
+2000,"Sydney",6.677
+2001,"Sydney",6.752
+2002,"Sydney",6.043
+2003,"Sydney",6.143
+2004,"Sydney",5.902
+2005,"Sydney",6.91
+2006,"Sydney",7.735
+2007,"Sydney",6.035
+2008,"Sydney",6.652
+2009,"Sydney",6.377
+2010,"Sydney",7.652
+2011,"Sydney",6.702
+2012,"Sydney",7.827
+2013,"Sydney",6.677
+2014,"Sydney",6.477
+2015,"Sydney",5.868
+2016,"Sydney",7.2
+2017,"Sydney",6.968
+2018,"Sydney",6.56
+2019,"Sydney",6.052
+2020,"Sydney",6.382
+1879,"Yarmouth",6.115
+1880,"Yarmouth",6.696
+1881,"Yarmouth",6.539
+1882,"Yarmouth",5.503
+1883,"Yarmouth",5.462
+1884,"Yarmouth",6.237
+1885,"Yarmouth",6.465
+1886,"Yarmouth",6.715
+1887,"Yarmouth",6.246
+1888,"Yarmouth",5.704
+1889,"Yarmouth",7.921
+1890,"Yarmouth",6.787
+1891,"Yarmouth",7.446
+1892,"Yarmouth",6.804
+1893,"Yarmouth",6.104
+1894,"Yarmouth",6.504
+1895,"Yarmouth",6.987
+1896,"Yarmouth",6.412
+1897,"Yarmouth",6.496
+1898,"Yarmouth",6.821
+1899,"Yarmouth",6.679
+1900,"Yarmouth",7.254
+1901,"Yarmouth",7.137
+1902,"Yarmouth",6.996
+1903,"Yarmouth",6.987
+1904,"Yarmouth",5.396
+1905,"Yarmouth",5.704
+1906,"Yarmouth",6.662
+1907,"Yarmouth",5.637
+1908,"Yarmouth",6.771
+1909,"Yarmouth",6.821
+1910,"Yarmouth",7.312
+1911,"Yarmouth",6.729
+1912,"Yarmouth",6.362
+1913,"Yarmouth",7.554
+1914,"Yarmouth",5.921
+1915,"Yarmouth",6.979
+1916,"Yarmouth",5.954
+1917,"Yarmouth",5.512
+1918,"Yarmouth",6.087
+1919,"Yarmouth",6.812
+1920,"Yarmouth",6.429
+1921,"Yarmouth",7.104
+1922,"Yarmouth",6.548
+1923,"Yarmouth",5.658
+1924,"Yarmouth",6.354
+1925,"Yarmouth",6.212
+1926,"Yarmouth",5.737
+1927,"Yarmouth",7.029
+1928,"Yarmouth",6.946
+1929,"Yarmouth",6.646
+1930,"Yarmouth",7.479
+1931,"Yarmouth",8.079
+1932,"Yarmouth",7.354
+1933,"Yarmouth",7.012
+1934,"Yarmouth",6.646
+1935,"Yarmouth",6.771
+1936,"Yarmouth",7.187
+1937,"Yarmouth",7.962
+1938,"Yarmouth",7.246
+1939,"Yarmouth",6.746
+1940,"Yarmouth",6.146
+1941,"Yarmouth",6.396
+1942,"Yarmouth",6.862
+1943,"Yarmouth",6.829
+1944,"Yarmouth",7.204
+1945,"Yarmouth",7.221
+1946,"Yarmouth",7.146
+1947,"Yarmouth",7.487
+1948,"Yarmouth",6.612
+1949,"Yarmouth",8.021
+1950,"Yarmouth",7.037
+1951,"Yarmouth",8.354
+1952,"Yarmouth",7.654
+1953,"Yarmouth",8.304
+1954,"Yarmouth",7.321
+1955,"Yarmouth",6.846
+1956,"Yarmouth",6.679
+1957,"Yarmouth",7.304
+1958,"Yarmouth",6.904
+1959,"Yarmouth",6.996
+1960,"Yarmouth",7.412
+1961,"Yarmouth",6.896
+1962,"Yarmouth",6.454
+1963,"Yarmouth",6.654
+1964,"Yarmouth",6.479
+1965,"Yarmouth",5.854
+1966,"Yarmouth",6.912
+1967,"Yarmouth",6.429
+1968,"Yarmouth",6.971
+1969,"Yarmouth",7.679
+1970,"Yarmouth",6.787
+1971,"Yarmouth",7.037
+1972,"Yarmouth",6.496
+1973,"Yarmouth",7.654
+1974,"Yarmouth",6.629
+1975,"Yarmouth",7.054
+1976,"Yarmouth",7.221
+1977,"Yarmouth",7.012
+1978,"Yarmouth",6.387
+1979,"Yarmouth",7.648
+1980,"Yarmouth",6.654
+1981,"Yarmouth",7.529
+1982,"Yarmouth",7.012
+1983,"Yarmouth",7.746
+1984,"Yarmouth",7.762
+1985,"Yarmouth",6.829
+1986,"Yarmouth",7.054
+1987,"Yarmouth",6.987
+1988,"Yarmouth",7.137
+1989,"Yarmouth",6.762
+1990,"Yarmouth",8.021
+1991,"Yarmouth",7.579
+1992,"Yarmouth",6.212
+1993,"Yarmouth",6.821
+1994,"Yarmouth",7.262
+1995,"Yarmouth",7.387
+1996,"Yarmouth",6.921
+1997,"Yarmouth",6.787
+1998,"Yarmouth",7.879
+1999,"Yarmouth",8.729
+2000,"Yarmouth",7.737
+2001,"Yarmouth",7.604
+2002,"Yarmouth",7.796
+2003,"Yarmouth",7.179
+2004,"Yarmouth",6.496
+2005,"Yarmouth",7.504
+2006,"Yarmouth",8.454
+2007,"Yarmouth",7.029
+2008,"Yarmouth",7.879
+2009,"Yarmouth",7.554
+2010,"Yarmouth",8.654
+2011,"Yarmouth",8.496
+2012,"Yarmouth",9.542
+2013,"Yarmouth",8.037
+2014,"Yarmouth",8.162
+2015,"Yarmouth",7.587
+2016,"Yarmouth",8.746
+2017,"Yarmouth",8.144
+2018,"Yarmouth",8.337
+2019,"Yarmouth",7.437
+2020,"Yarmouth",8.307

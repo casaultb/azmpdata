@@ -17,12 +17,17 @@ year <- unlist(lapply(d, function(k) format(as.Date(k[['data']][['time']]), form
 month <- unlist(lapply(d, function(k) format(as.Date(k[['data']][['time']]), format = '%m')))
 day <- unlist(lapply(d, function(k) format(as.Date(k[['data']][['time']]), format = '%d')))
 
-df <- data.frame(year = year,
-                 month = month,
-                 day = day,
+df <- data.frame(year = as.numeric(year),
+                 month = as.numeric(month),
+                 day = as.numeric(day),
                  station_name = stationName,
-                 sea_surface_height  = vardat2,
-                 sea_surface_height_residual= vardat3)
+                 sea_surface_height  = vardat2 #,
+                # sea_surface_height_residual= vardat3
+                 )
 seaLevelHeight <- df
 
-usethis::use_data(seaLevelHeight, compress = "xz", overwrite = T)
+save(seaLevelHeight, file = 'data-raw/seaLevelHeight.rda')
+
+# usethis::use_data(seaLevelHeight, compress = "xz", overwrite = T)
+
+write.csv(file.path(path, 'seaLevelHeight.csv'), x = seaLevelHeight, row.names = FALSE)
