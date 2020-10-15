@@ -1,0 +1,415 @@
+"year","area_name","temperature_at_sea_floor"
+1952,"Cabot Strait",4.872
+1953,"Cabot Strait",5.054
+1954,"Cabot Strait",5.362
+1955,"Cabot Strait",4.777
+1956,"Cabot Strait",4.867
+1957,"Cabot Strait",5.495
+1959,"Cabot Strait",4.772
+1960,"Cabot Strait",4.662
+1961,"Cabot Strait",4.9
+1962,"Cabot Strait",4.878
+1964,"Cabot Strait",4.409
+1965,"Cabot Strait",4.073
+1966,"Cabot Strait",4.018
+1967,"Cabot Strait",4.258
+1968,"Cabot Strait",4.591
+1969,"Cabot Strait",4.98
+1970,"Cabot Strait",5.299
+1971,"Cabot Strait",5.283
+1972,"Cabot Strait",5.188
+1973,"Cabot Strait",5.249
+1974,"Cabot Strait",5.397
+1975,"Cabot Strait",5.284
+1976,"Cabot Strait",5.901
+1977,"Cabot Strait",5.848
+1978,"Cabot Strait",6.105
+1979,"Cabot Strait",6.473
+1980,"Cabot Strait",5.979
+1981,"Cabot Strait",5.721
+1982,"Cabot Strait",5.512
+1983,"Cabot Strait",5.785
+1984,"Cabot Strait",5.856
+1985,"Cabot Strait",6.151
+1986,"Cabot Strait",6.081
+1987,"Cabot Strait",5.761
+1988,"Cabot Strait",5.679
+1989,"Cabot Strait",5.654
+1990,"Cabot Strait",5.344
+1991,"Cabot Strait",4.521
+1992,"Cabot Strait",5.25
+1993,"Cabot Strait",6.161
+1994,"Cabot Strait",5.61
+1995,"Cabot Strait",5.522
+1996,"Cabot Strait",5.469
+1997,"Cabot Strait",5.769
+1998,"Cabot Strait",5.326
+1999,"Cabot Strait",5.892
+2000,"Cabot Strait",5.705
+2001,"Cabot Strait",5.834
+2002,"Cabot Strait",5.973
+2003,"Cabot Strait",5.826
+2004,"Cabot Strait",5.832
+2005,"Cabot Strait",5.751
+2006,"Cabot Strait",5.734
+2007,"Cabot Strait",5.487
+2008,"Cabot Strait",5.522
+2009,"Cabot Strait",5.165
+2010,"Cabot Strait",5.933
+2011,"Cabot Strait",6.217
+2012,"Cabot Strait",6.599
+2013,"Cabot Strait",5.805
+2014,"Cabot Strait",6.499
+2015,"Cabot Strait",6.48
+2016,"Cabot Strait",6.798
+2017,"Cabot Strait",6.8
+2018,"Cabot Strait",6.574
+2019,"Cabot Strait",7.252
+1950,"E Georges Bank",8.05
+1951,"E Georges Bank",9.41
+1952,"E Georges Bank",8.35
+1953,"E Georges Bank",8.28
+1954,"E Georges Bank",9.57
+1955,"E Georges Bank",8.31
+1956,"E Georges Bank",7.58
+1957,"E Georges Bank",8.03
+1958,"E Georges Bank",7.81
+1959,"E Georges Bank",7.41
+1960,"E Georges Bank",6.84
+1961,"E Georges Bank",6.19
+1962,"E Georges Bank",6.25
+1963,"E Georges Bank",7.03
+1964,"E Georges Bank",6.38
+1965,"E Georges Bank",6.38
+1966,"E Georges Bank",6
+1967,"E Georges Bank",6.97
+1968,"E Georges Bank",6.87
+1969,"E Georges Bank",7.74
+1970,"E Georges Bank",6.79
+1971,"E Georges Bank",7.34
+1972,"E Georges Bank",7.43
+1973,"E Georges Bank",8.48
+1974,"E Georges Bank",8.78
+1975,"E Georges Bank",7.9
+1976,"E Georges Bank",8.44
+1977,"E Georges Bank",7.77
+1978,"E Georges Bank",7.57
+1979,"E Georges Bank",8.39
+1980,"E Georges Bank",8.62
+1981,"E Georges Bank",7.65
+1982,"E Georges Bank",7.16
+1983,"E Georges Bank",8.12
+1984,"E Georges Bank",8.21
+1985,"E Georges Bank",8.78
+1986,"E Georges Bank",8.07
+1987,"E Georges Bank",7.07
+1988,"E Georges Bank",7.8
+1989,"E Georges Bank",7.25
+1990,"E Georges Bank",8.11
+1991,"E Georges Bank",8.34
+1992,"E Georges Bank",7.46
+1993,"E Georges Bank",7.53
+1994,"E Georges Bank",8.26
+1995,"E Georges Bank",8.19
+1996,"E Georges Bank",7.58
+1997,"E Georges Bank",8.15
+1998,"E Georges Bank",7.51
+1999,"E Georges Bank",8.52
+2000,"E Georges Bank",8.55
+2001,"E Georges Bank",8.69
+2002,"E Georges Bank",8.7
+2003,"E Georges Bank",7.43
+2004,"E Georges Bank",6.47
+2005,"E Georges Bank",6.94
+2006,"E Georges Bank",7.98
+2007,"E Georges Bank",7.03
+2008,"E Georges Bank",7.82
+2009,"E Georges Bank",8.05
+2010,"E Georges Bank",8.48
+2011,"E Georges Bank",8.08
+2012,"E Georges Bank",9.65
+2013,"E Georges Bank",8.34
+2014,"E Georges Bank",8.7
+2015,"E Georges Bank",8.76
+2016,"E Georges Bank",8.75
+2017,"E Georges Bank",9.41
+2018,"E Georges Bank",8.33
+2019,"E Georges Bank",7.81
+1950,"Emerald Basin",7.52
+1951,"Emerald Basin",9
+1952,"Emerald Basin",8
+1953,"Emerald Basin",7.91
+1954,"Emerald Basin",8.91
+1955,"Emerald Basin",8.34
+1956,"Emerald Basin",8.37
+1957,"Emerald Basin",8.75
+1958,"Emerald Basin",8.16
+1959,"Emerald Basin",5.87
+1960,"Emerald Basin",7.15
+1961,"Emerald Basin",7.47
+1962,"Emerald Basin",7.9
+1963,"Emerald Basin",7.62
+1964,"Emerald Basin",5.85
+1965,"Emerald Basin",5.82
+1966,"Emerald Basin",4.83
+1967,"Emerald Basin",6.02
+1968,"Emerald Basin",7.6
+1969,"Emerald Basin",8.51
+1970,"Emerald Basin",8.51
+1971,"Emerald Basin",8.54
+1972,"Emerald Basin",8.79
+1973,"Emerald Basin",9.38
+1974,"Emerald Basin",9.6
+1975,"Emerald Basin",10.05
+1976,"Emerald Basin",8.66
+1977,"Emerald Basin",9.13
+1978,"Emerald Basin",7.36
+1979,"Emerald Basin",9.33
+1980,"Emerald Basin",8.99
+1981,"Emerald Basin",8.95
+1982,"Emerald Basin",7.42
+1983,"Emerald Basin",8.38
+1984,"Emerald Basin",9.33
+1985,"Emerald Basin",10.1
+1986,"Emerald Basin",10.29
+1987,"Emerald Basin",9.61
+1988,"Emerald Basin",8.66
+1989,"Emerald Basin",9.39
+1990,"Emerald Basin",9.53
+1991,"Emerald Basin",9.25
+1992,"Emerald Basin",9.35
+1993,"Emerald Basin",9.98
+1994,"Emerald Basin",9.88
+1995,"Emerald Basin",9.59
+1996,"Emerald Basin",9.83
+1997,"Emerald Basin",9.5
+1998,"Emerald Basin",6.97
+1999,"Emerald Basin",8.89
+2000,"Emerald Basin",9.38
+2001,"Emerald Basin",9.21
+2002,"Emerald Basin",9.27
+2003,"Emerald Basin",9.21
+2004,"Emerald Basin",9.62
+2005,"Emerald Basin",9.39
+2006,"Emerald Basin",9.55
+2007,"Emerald Basin",7.33
+2008,"Emerald Basin",8.29
+2009,"Emerald Basin",7.91
+2010,"Emerald Basin",9.78
+2011,"Emerald Basin",9.99
+2012,"Emerald Basin",9.87
+2013,"Emerald Basin",9.74
+2014,"Emerald Basin",10.51
+2015,"Emerald Basin",10.31
+2016,"Emerald Basin",10.76
+2017,"Emerald Basin",10.63
+2018,"Emerald Basin",10.75
+2019,"Emerald Basin",10.97
+1950,"Georges Basin",6.93
+1951,"Georges Basin",7.51
+1953,"Georges Basin",7.57
+1954,"Georges Basin",7.67
+1955,"Georges Basin",7.48
+1956,"Georges Basin",7.73
+1957,"Georges Basin",8
+1958,"Georges Basin",7.65
+1959,"Georges Basin",6.38
+1960,"Georges Basin",8.01
+1961,"Georges Basin",6.7
+1962,"Georges Basin",7.06
+1963,"Georges Basin",7.66
+1964,"Georges Basin",5.88
+1965,"Georges Basin",5.98
+1966,"Georges Basin",5.99
+1967,"Georges Basin",6.37
+1968,"Georges Basin",7.09
+1969,"Georges Basin",7.36
+1970,"Georges Basin",7.41
+1971,"Georges Basin",8.08
+1972,"Georges Basin",8.48
+1973,"Georges Basin",8.5
+1974,"Georges Basin",8.76
+1975,"Georges Basin",8.57
+1976,"Georges Basin",8.62
+1977,"Georges Basin",7.57
+1978,"Georges Basin",7.36
+1979,"Georges Basin",8.31
+1980,"Georges Basin",8.04
+1981,"Georges Basin",7.5
+1982,"Georges Basin",7.18
+1983,"Georges Basin",8.32
+1984,"Georges Basin",8.39
+1985,"Georges Basin",9
+1986,"Georges Basin",8.69
+1987,"Georges Basin",8.04
+1988,"Georges Basin",8.1
+1989,"Georges Basin",7.96
+1990,"Georges Basin",8.02
+1991,"Georges Basin",8.19
+1992,"Georges Basin",8.36
+1993,"Georges Basin",8.39
+1994,"Georges Basin",8.73
+1995,"Georges Basin",8.88
+1996,"Georges Basin",8.76
+1997,"Georges Basin",8.42
+1998,"Georges Basin",6.87
+1999,"Georges Basin",8.76
+2000,"Georges Basin",8.79
+2001,"Georges Basin",8.34
+2002,"Georges Basin",8.44
+2003,"Georges Basin",8.7
+2004,"Georges Basin",8.27
+2005,"Georges Basin",8.07
+2006,"Georges Basin",8.52
+2007,"Georges Basin",7.5
+2008,"Georges Basin",7.68
+2009,"Georges Basin",8.21
+2010,"Georges Basin",9.21
+2011,"Georges Basin",8.8
+2012,"Georges Basin",8.78
+2013,"Georges Basin",9.31
+2014,"Georges Basin",9.43
+2015,"Georges Basin",9.28
+2016,"Georges Basin",9.66
+2017,"Georges Basin",9.79
+2018,"Georges Basin",10.18
+2019,"Georges Basin",9.99
+1950,"Lurcher Shoal",6.91
+1951,"Lurcher Shoal",7.313
+1952,"Lurcher Shoal",6.14
+1953,"Lurcher Shoal",6.923
+1954,"Lurcher Shoal",6.455
+1955,"Lurcher Shoal",6.515
+1956,"Lurcher Shoal",6.267
+1957,"Lurcher Shoal",6.274
+1958,"Lurcher Shoal",6.446
+1959,"Lurcher Shoal",5.689
+1960,"Lurcher Shoal",5.718
+1961,"Lurcher Shoal",5.583
+1962,"Lurcher Shoal",5.898
+1963,"Lurcher Shoal",6.65
+1964,"Lurcher Shoal",4.948
+1965,"Lurcher Shoal",4.904
+1966,"Lurcher Shoal",5.113
+1967,"Lurcher Shoal",5.29
+1968,"Lurcher Shoal",5.988
+1969,"Lurcher Shoal",6.7
+1970,"Lurcher Shoal",6.566
+1971,"Lurcher Shoal",6.856
+1972,"Lurcher Shoal",6.769
+1973,"Lurcher Shoal",6.656
+1974,"Lurcher Shoal",7.498
+1975,"Lurcher Shoal",6.66
+1976,"Lurcher Shoal",8.142
+1977,"Lurcher Shoal",6.189
+1978,"Lurcher Shoal",6.103
+1979,"Lurcher Shoal",7.421
+1980,"Lurcher Shoal",6.63
+1981,"Lurcher Shoal",6.433
+1982,"Lurcher Shoal",6.789
+1983,"Lurcher Shoal",6.672
+1984,"Lurcher Shoal",7.051
+1985,"Lurcher Shoal",6.739
+1986,"Lurcher Shoal",7.3
+1987,"Lurcher Shoal",5.487
+1988,"Lurcher Shoal",5.224
+1989,"Lurcher Shoal",5.954
+1990,"Lurcher Shoal",6.637
+1991,"Lurcher Shoal",5.417
+1992,"Lurcher Shoal",5.266
+1993,"Lurcher Shoal",5.984
+1994,"Lurcher Shoal",6.321
+1995,"Lurcher Shoal",6.176
+1996,"Lurcher Shoal",5.667
+1997,"Lurcher Shoal",6.493
+1998,"Lurcher Shoal",5.346
+1999,"Lurcher Shoal",7.319
+2000,"Lurcher Shoal",7.841
+2001,"Lurcher Shoal",5.793
+2002,"Lurcher Shoal",7.38
+2003,"Lurcher Shoal",6.898
+2004,"Lurcher Shoal",5.528
+2005,"Lurcher Shoal",5.987
+2006,"Lurcher Shoal",7.65
+2007,"Lurcher Shoal",5.355
+2008,"Lurcher Shoal",6.457
+2009,"Lurcher Shoal",7.528
+2010,"Lurcher Shoal",6.435
+2011,"Lurcher Shoal",7.63
+2012,"Lurcher Shoal",9.462
+2013,"Lurcher Shoal",7.377
+2014,"Lurcher Shoal",8.066
+2015,"Lurcher Shoal",7.451
+2016,"Lurcher Shoal",7.296
+2018,"Lurcher Shoal",8.612
+2019,"Lurcher Shoal",6.645
+1950,"Misaine Bank",1.7553
+1951,"Misaine Bank",2.5359
+1952,"Misaine Bank",2.7611
+1953,"Misaine Bank",2.1154
+1954,"Misaine Bank",2.1021
+1955,"Misaine Bank",1.9474
+1956,"Misaine Bank",1.9161
+1957,"Misaine Bank",1.109
+1958,"Misaine Bank",2.12
+1959,"Misaine Bank",0.7352
+1960,"Misaine Bank",2.0899
+1961,"Misaine Bank",0.7997
+1962,"Misaine Bank",1.4636
+1963,"Misaine Bank",1.9534
+1964,"Misaine Bank",1.4924
+1965,"Misaine Bank",1.2272
+1966,"Misaine Bank",1.43
+1967,"Misaine Bank",1.8195
+1968,"Misaine Bank",1.8344
+1969,"Misaine Bank",1.7233
+1970,"Misaine Bank",2.1623
+1971,"Misaine Bank",2.1876
+1972,"Misaine Bank",1.6897
+1973,"Misaine Bank",1.1339
+1974,"Misaine Bank",1.3109
+1975,"Misaine Bank",1.7013
+1976,"Misaine Bank",1.6989
+1977,"Misaine Bank",2.6363
+1978,"Misaine Bank",2.1538
+1979,"Misaine Bank",1.918
+1980,"Misaine Bank",1.953
+1981,"Misaine Bank",2.4551
+1982,"Misaine Bank",0.9407
+1983,"Misaine Bank",1.574
+1984,"Misaine Bank",3.072
+1985,"Misaine Bank",1.2133
+1986,"Misaine Bank",0.5272
+1987,"Misaine Bank",0.936
+1988,"Misaine Bank",1.9343
+1989,"Misaine Bank",0.9186
+1990,"Misaine Bank",0.4586
+1991,"Misaine Bank",0.7353
+1992,"Misaine Bank",0.9
+1993,"Misaine Bank",1.3797
+1994,"Misaine Bank",1.4498
+1995,"Misaine Bank",1.189
+1996,"Misaine Bank",1.3039
+1997,"Misaine Bank",1.5204
+1998,"Misaine Bank",1.6686
+1999,"Misaine Bank",2.1498
+2000,"Misaine Bank",2.5021
+2001,"Misaine Bank",1.515
+2002,"Misaine Bank",1.6927
+2003,"Misaine Bank",0.6261
+2004,"Misaine Bank",0.9588
+2005,"Misaine Bank",1.7339
+2006,"Misaine Bank",2.2449
+2007,"Misaine Bank",1.2126
+2008,"Misaine Bank",1.5548
+2009,"Misaine Bank",1.9258
+2010,"Misaine Bank",1.954
+2011,"Misaine Bank",2.2734
+2012,"Misaine Bank",2.8033
+2013,"Misaine Bank",1.9178
+2014,"Misaine Bank",2.1184
+2015,"Misaine Bank",2.5405
+2016,"Misaine Bank",2.7416
+2017,"Misaine Bank",1.9393
+2018,"Misaine Bank",2.0626
+2019,"Misaine Bank",1.3149
