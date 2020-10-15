@@ -25,7 +25,7 @@ read.physical <- function(file){
   # 3. read in the data, the start line is the next one after the final metadata
   #    line and always has a 'header'
 
-  data <- read.table(file, header = TRUE, skip = metaLines[length(metaLines)], sep = ',', colClasses = 'numeric')
+  data <- read.table(file, header = TRUE, skip = metaLines[length(metaLines)], sep = ',') #  colClasses = numeric breaks some files with dates // , colClasses = 'numeric'
 
   # 4. get all the metadata
 
