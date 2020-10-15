@@ -1,0 +1,55 @@
+---
+title: "Meeting Notes - Sept 18"
+output: html_notebook
+---
+Discussion of Maritimes environmental data access, September 18, 2020
+
+B. Casault, E. Chisholm, C. Layton, C. Johnson, M. McMahon
+
+### Agenda
+* Update on anomalies  discussion of wrapper function
+* Regional Look up Table update on format and final version of function
+*	Azmpdata workplan progress
+
+
+
+### Meeting discussion
+* Discussion followed points from presentation available in TEAMS chat (Data Access Update.pptx)
+
+* Anomaly caluclations
+  * wrapper function works to avoid confusion in users
+  * BC and CL support IF statements used in `multivaR::calculate_anomaly()`
+  * designed to interact specfically with azmpdata formats
+  * Should seasonal anomaly produce error or warning if calculation is being used on a variable for which seasonal anomalies are not typically calculated?
+      * BC and CJ say no, there may be scenarios where this function is used on other data such as nutrients
+  * __CJ suggests table in documentation to explain the difference in use cases for each anomaly calculation function__
+  * __CL will write EC an anomaly summary to ensure physical anomalies ar eproperly implemented__
+  
+* Plot region function update
+  * BC posted example files in TEAMS chat (polygons_attributes.csv & polygons_geometry.csv)
+  * These files are only partially finished, will be filled out before final version but there is a sample of each data type
+  * attribute file contains metadata (name of station,k type of area, depth, etc)
+  * geometry file contains lat and lon
+  * tables are connected by `record` column
+  * __BBC working to bring these files into SF format for easy plotting__
+  
+  
+* Update mechanism
+  * EC has been developing update mechanism
+  * seperate data update and package update check systems supported by group
+  * version number scheme needs to be determined
+    * __Ec will send docs about version number schemes__
+
+* Workplan
+  * merges will happen regularly (Fridays) or if major changes have been made, developers need to maintian group contact
+  
+* Questions
+  * CJ: Where are we with Data loading?
+    * __Biological and chemical data is almost complete, just missing trawl and remote data (BC)__
+    * __CL workplan is very busy with AZMP, will let EC know if any tasks can be transferred__
+
+
+Next meeting will be October 1st (afternoon) - EC will follow with agenda
+
+  
+  

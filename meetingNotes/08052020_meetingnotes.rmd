@@ -1,0 +1,119 @@
+---
+title: "Meeting Notes - May 8 2020"
+output: html_notebook
+---
+
+
+## Data access packages
+### In attendance - Catherine Johnson, Benoit Casault, Mike McMahon, Chantelle Layton, Emily Chisholm (notetaker)
+
+
+
+
+#### Introductory Remarks/ Questions from CJ
+
+* In conversations between EC and CJ a plan has been developed for EC to implement a demonstration project which will test the data structure before proceeding with development
+    * Using multivariate metric function from Dan Reed's Silver Hake analysis, to test data structures for any bugs/ issues and ensure a solid foundation on which to build
+    * This analysis includes phys, zoo , and phenol metrics which span a wide range of data types and can test many areas
+* What is our preferred data structure/ organization?
+* What functions will need to be developed?
+* What variables are included in this data package? How are types distinguished (eg. phys, bio, chem)
+* Do all files have the same variable column structure including metadata or is there variation based on the temporal/ spatial structure of individual metrics
+  * Does this mean we are filling data columns with NAs?
+  * is this the only way to ensure functions interact uniformly with all data?
+* How is spatial information represented?
+  * stations, regions, positions?
+  * Is this a supplementary metadata set?
+
+
+#### Discussion
+
+* Benoit's data (in azmpdata) follows in house format - MM suggests minimal changes to data structure to maiantain consistency
+  * This requires smarter functions but less data formatting
+  * Does this get more complex with different position types? eg fixed station vs NAFO area
+  
+* A field could be added to denote position if data is to be combined by data type across positions (eg. All nitrate data is combined)
+* Data could also be combined by spatial location/ temporal scale
+
+* Reviewing Benoit and Chantelles' variable maps
+  * There is large temporal and spatial structure variation
+  * Some metrics will require different representation
+  * Could be represented with text column denoting spatial designation - where spatial designation is then defined in another table with documentation
+  * CL preference to include lat and lon values with data to avoid seperating position metadata from data
+  
+* Plan to use demo project to sort out structural bugs
+
+* combining Benoit and Chantelle's variable maps into one spreadsheet will help to identify overlap of metrics 
+  * this will hopefully highlight natural structure of data
+  
+* Multivariate project (from demo) includes metrics from Peter Galbraith
+  * BC suggests not modifying data from Peter's format to maintain consistency and avoid issues
+  * MM suggests connecting with Peter to ensure he is aware of his data being incorporated into this project and maintains his data structure consistency
+  * CJ tables issue
+    * First clarify what we need from Peter
+    * Check if his data is included in gslea
+    * If PG data is in gslea, match that format
+    * If not then discuss with PG
+
+* Benoit presenting azmpdata package (https://github.com/casaultb/azmpdata)
+  * Tester package (proof of concept)
+  * based on production for GoC portal
+  * includes data, basic docs and basic functions
+  * future format changes and doc ellaborations may be required
+  * furhter discussion of data formatting
+    * debate between grouping data by station, variable or other?
+    * CJ prefers data grouped by temporal resolution or spatial area (typical of OESD)
+    * grouping data by location puts a lot of variables in one file, if someone is only interested in chl analysis, they are downloading a lot of extra info
+    * EC concern about having too many small individual files, will be difficult to manage
+    * MM suggests implementing data formatting functions so that organizational structures can be changed based on analysis type 
+      * this allows data to be stored however, and then individuals can modify for their preference
+    * CJ suggest we could organize on sub levels eg all bottle data for a specific station, all zooplankton data for station (by type?)
+    * Hope that heirarchy and structures will become clearer once group analyzes BC and CL's variable map
+    * annual metrics and occupation specific data should be separated
+    * using smaller subsets of data products could allow some exploration of data
+      * eg create 50 line table heads for group to examine from a variaty of metrics
+      * share via develop github branch
+      
+* Benoit's flowchart
+
+-- ADD IMAGE HERE -- 
+
+  * left side encompasses data package (azmpdata)
+  * right side encompasses function packages 
+  * shiny app belong on far right, depending on both data and function packages
+  
+  
+#### Next steps
+
+* Next meeting will look at functionality plan for demo project, how multivariate metrics connect to azmpdata
+  * how they fit together structurally
+  
+* Demo project needs a name!
+
+* future meetings will be Fridays @ 2pm to avoid coffee talk conflicts
+
+* Next meeting scheduled May 22
+
+
+#### **Action Items**
+    
+    
+**CJ**
+
+  * send CL list of silver hake metrics
+  * update proposal to maintain focus of project
+  
+**BC**
+
+  * combine variable map with CL in xlsx format
+  * send examples of Peter Galbraith's data to group
+  * set up example data files on github
+  
+**CL**
+
+  * combine variable map with BC in xlsx format
+  
+**EC**
+
+  * Prepare presentation materials for next meeting, looking at functionality of multivar metrics demo project
+    
