@@ -4,9 +4,11 @@
 \name{nitrate_inventory_timeseries_hl2}
 \alias{nitrate_inventory_timeseries_hl2}
 \title{Timeseries of nitrate inventory at Halifax-2 station.}
-\format{A data frame with five variables: \code{year}, \code{month},
+\format{
+A data frame with five variables: \code{year}, \code{month},
   \code{day}, \code{no3_0_50}, and \code{no3_50_150}. The nitrate
-  inventory has units of mmol N/m2.}
+  inventory has units of mmol N/m2.
+}
 \usage{
 nitrate_inventory_timeseries_hl2
 }

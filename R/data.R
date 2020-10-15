@@ -33,3 +33,14 @@
 #'   \code{day}, \code{no3_0_50}, and \code{no3_50_150}. The nitrate
 #'   inventory has units of mmol N/m2.
 "nitrate_inventory_timeseries_hl2"
+
+#' Timeseries of averaged bottom temperature in defined NAFO zones.
+#'
+#'
+#' Timeseries of averaged bottom temperature in defined NAFO zones
+#' along the Scotia Shelf. This uses hydrographic data from the summer groundfish
+#' survey which generally occurs during July to early August.
+#'
+#' @format A data frame with three variables: \code{year}, \code{area_name},
+#' \code{temperature_at_seafloor}.
+"summerBottomTemperature"
