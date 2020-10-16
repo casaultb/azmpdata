@@ -1,0 +1,53 @@
+---
+title: "Meeting Notes - May 27"
+output: html_notebook
+---
+
+Discussion of Maritimes environmental data access, May 27, 2020
+
+B. Casault, E. Chisholm, C. Layton, C. Johnson, M. McMahon
+
+
+* Meeting centred around presentation by E. Chisholm describing structure of new package to add multivariate analyis functionality to azmpdata
+* new package (multivaR) will perform analysis tasks and output results for yearly repitition
+
+### Meeting Notes
+
+* azmpdata will include more then just azmp data and biochem data metrics, some external and remote sensing metrics will also be included
+* __EC will make clear which metrics are included in azmpdata and which are excluded, contacting BC, CL and CJ to confirm__
+* __EC will combine spreadsheet of multivaR metrics with CL/BC spreadsheet metrics for azmpdata__
+* Can we put all required multivaR data in azmpdata?
+
+--
+
+* keeping track of data updates
+* could use date stamp column within files, could compare local files to server files when package is loaded
+* MM: csv names could be appended with datestamps, avoids cluttering data with more columns
+* allows easy comparison between local and server version to ensure user has latest data products
+* new csv files will overwrite old files to avoid duplication
+
+--
+
+* QC will have already been completed before loaded into azmpdata
+* processing should include NA handling
+* anomolies could be calculated in processing step
+* secondary or intermediate products that are not in azmpdata (including zooplankton timing products) should be calculated here
+* BC: also include option to format data wide or long
+
+--
+
+* tidyverse vs data table
+* BC and EC are both more comfortable in tidyverse
+* MM has experience combining both
+* combining data table and tidyverse allows minimal reqrite effort to be expended while maintaining comfort level for code maintenance
+* can use conversion at end of functions to avoid compatibility issues/ bugs
+*__reccommendation for future work: translate all functions into one consistent data management package standard__
+
+--
+
+* PCA function
+* including subset columns as function argument allows for some built in error handling and formatting, avoids issues with formatting
+
+--
+
+* __BC + CL will meet to discuss common dat aformats for azmpdata - to be discussed at next meeting__

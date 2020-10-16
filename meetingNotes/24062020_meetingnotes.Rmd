@@ -1,0 +1,111 @@
+---
+title: "Meeting Notes - June 24"
+output: html_document
+---
+Discussion of Maritimes environmental data access, June 24, 2020
+
+B. Casault, E. Chisholm, C. Layton, C. Johnson, M. McMahon
+
+## Meeting Minutes
+
+### Discussion around Benoit's document
+
+![Figure 1. Organizational chart for structure of azmpdata](supp_files/azmpdata_chart.png)
+
+
+![Figure 2. Comments from Benoit on organizational chart / azmpdata structure.](supp_files/azmpdata_comments.png)
+
+
+
+
+* The structure of azmpdata (fig 1) makes sense to all team members
+* CIL and other non- depth-dependent variablesx will fit into derived/plankton category (fig 1)
+  * This box may need to branch off to include broad scale shelf data metrics
+  * This would also include climate metrics  eg AMO (annual, broad scale metrics)
+
+* Some variables will be listed as lower priority and structure can be expanded later to fit, but the structure should be robust enough to include future modifications
+* Remote sensing products
+  * want to avoid multivaR or other packages having to grab products from ftp servers
+  * would fit best in blue data structure box (fig 1)
+  * single values for statistical boxes, no sample IDs or event IDs may need work around
+  
+* There is a certain compromise on file size which is balanced well
+
+* varibale naming scheme
+  * would BODC or another standard vairable naming scheme be able to incorporate these metrics? likely only discrete..
+  * There is large benefit in brevity of variable names
+  * __EC will compile a list of variable names and circulate for discussion__
+  * any ambiguity will be resolved in data documentation
+  * should create look up table or style sheet
+  * discrete vs derived variables should be clear from naming
+  * look at intl standards from ICES, NOAA, BODC, etc
+  * potential to translate between naming schemes if needed
+  
+* data frame naming scheme
+  * using 'matrix'
+  * seperated by underscores
+  * first part of name defines variable type : discrete, derived, zooplankton, phytoplankton
+  * second part of name defines temporal scale: occupations, annual
+  * third part of name defines spatial scale: stations, sections, broadscale
+  * example name would be discrete_annual_stations.csv or derived_annual_broadscale.csv
+  
+* depth measures
+  * sampling depth and nominal depth should be included with data
+  * nominal depth is used for merging data
+  * sampling depth is often required for calculations eg. integrated chl
+  
+* anomolies
+  * will not be calculated in azmpdata
+  * CL and BC both have anomoly scripts
+  * __EC will gather scripts, compare and bring any discrepancies/conflicts to the group for attention__
+  * __EC will create new anomoly function for multivaR__
+  
+* Data from Peter
+  * Ice, NAO, AMO, RivSum
+  
+* Metadata files
+  * BC has created metadata file for HL2, P5 should be a simple addition
+  * these files contain 'nuts and bolts' detail info like sample IDs, precise lat and lon, event numbers etc
+  * They also include ODF filenames for reference to TS
+  * will be linked to data files through event and sample IDs
+  * would be mostly used by behind the scenes processers such as Benoit, not necessary for average user
+  * BC says they are easy to maintain
+  * Will be included for completeness and in case the info is needed for more detailed analyses
+  
+### UPDATES
+
+* CJ presented to working group
+* CL and BC have been quite busy but hope to dedicate more time over the next month
+* EC has been investigating questions from previous meetings and creating task list for multivaR
+
+* BC shared RNOAA package, NOAA data access repo which team members will look at for any inspiration
+
+### NEXT STEPS
+* Assembling csv's (BC/CL)
+* AZMP search and vis code
+* next meeting July 8th 2pm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

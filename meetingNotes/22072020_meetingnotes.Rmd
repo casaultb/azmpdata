@@ -1,0 +1,53 @@
+---
+title: "Meeting Notes - July 22"
+output: html_document
+---
+
+Discussion of Maritimes environmental data access, July 22, 2020
+
+B. Casault, E. Chisholm, C. Layton, C. Johnson, M. McMahon
+
+
+### Meeting Minutes
+
+* Discussed progress since last group meeting
+  * Emily, Chantelle and Benoit met to discuss organizing metrics into csv tables and worked on some metric names
+
+* Metadata names and organization needs to be discussed 
+  * some metadata will need to be merged into data tables
+  * some may be better in a seperate look up table
+  
+* __Make a list of metadata required for each csv__
+* want to minimize linking to look up tables
+  * example where linking will be necessary is NAFO regions, auxillary info will contain polygon definitions
+  
+* Bottom nutrients and oxygen should be reported in NAFO regions (future work BC)
+* gridded data will not be included in azmpdata but will go to Gordana's DB
+
+* __EC, CL and BC will work on defining lookup tables and any required regional definitions__
+
+* __ EC will intiate chat about remaining questionable variable names from azmpmetrics_v2.xlsx__
+
+* Do spatial definitions get included as flat files (eg. csv's) or as R spatial objects?
+  * MM concern that creating polygons from list of points is a hurdle for users
+  * Other side of that concern is that not all users may be familiar with spatial objects in R/ they may be unhappy with the type of spatial object (eg. sf vs sp packages)
+  * maybe there is some package functionality to plot/ visualize the polygons, which lets us control how the user sees the data
+  * If we use spatial objects can someone extract the points to use in a different format? 
+    * MM says a simple polygon would be easy to convert into a short flat file, but more complicated polygons may have thousands of points and be difficult to 'flatten'
+  * Best spatial package in R/ most popular right now is 'sf', Benoit supports this package
+  * CJ suggests starting with csv files for spatial info, then adding spatial objects later either in this package or more likely in another 'modular' package
+  * useful to include documentation on how to form csv files into polygons in R, and test to make sure the data included with the package is useable
+  
+* __Make a list of wgat regions need defining & decide on format__
+* __BC: What occupation metadata table will look like (for next time)__
+
+* Remote sensing data may be split off into a seperate package, __need to discuss with Emmanuel (CJ)__
+
+
+* starting to write azmpdata
+  * functions and documentation
+  * work needs to be outlined, prioritized and delegated
+  * __EC and BC will work on task list to share with group__
+  
+  
+* Next meeting (without Chantelle) will be August 19th at 2pm

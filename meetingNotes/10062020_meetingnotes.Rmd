@@ -1,0 +1,121 @@
+---
+title: "Meeting Notes - June 10"
+output: html_document
+---
+Discussion of Maritimes environmental data access, June 10, 2020
+
+B. Casault, E. Chisholm, C. Layton, C. Johnson, M. McMahon
+
+## Emily presented spreadsheet
+* This spreadsheet contains all required multivaR metrics as well as all metrics provided by Benoit and Chantelle in reporting
+* Details by category and variable
+* an 'x' in column azmpdata means that it is a multivar metric to be included in azmpdata, a '*' means another reporting metric (not required for multivaR)
+
+```{r}
+library(xlsx)
+
+f <- read.xlsx('supp_files/azmpmetrics.xlsx', sheetIndex = 1)
+
+head(f)
+```
+
+
+* first part of the meeting was used to discuss metrics which are required multivaR but not included in azmpdata
+* Chantelle has made some notes in spreadhseet about physical variables she is able to include in her outputs
+
+* St. Lawrence river flux
+  * should be included in azmpdata
+  * will require annual confirmation of URL
+  
+
+* Ice volume
+  * Included in Peter's products
+  * Peter produces SS metrics and GSL metrics, multivaR uses SS + GSL metrics
+  * __EC will investigate difference between SS+GSL and GSL, to determine if GSL metrics could be used as a valid proxy__
+
+* Zooplankton metrics are all included
+
+* SST warming metric will be included in azmpdata
+  * BC has script to produce this
+  * other option would be to put raw SST data in azmpdata and use BC script in multivaR to produce warming metric
+  * CL is producing SST by NAFO region (monthly and annual values)
+  * files come from Peter
+  * CJ leans toward keeping warming metric directly in azmpdata
+  
+* Final Ice Day
+  * __EC will invetsigate difference between SS+GSL and GSL__
+  * Determine if it is worth combining before inclusion in azmpdata or if can be input straight from Peter
+  
+* Peak in C. fin biomass & peak in C fin (I, II, III) proportion
+  * staged abundance will be included in azmpdata
+  * proportion of I, II, III or peak biomass to be calculated in multivaR
+  * CJ mention of hyperboreus abundance being included?
+  
+  
+## Presentation from Chantelle 
+
+
+* IDENTIFIED WHERE WATER IS SAMPLED VS AVERAGING DEPTHS FOR PHYSICAL DATA
+  * Not all physical avergaing depths align with biological sampling depths
+  * specific issues at P5 and AZMP transects
+  
+  
+```{r}
+
+
+f <- read.xlsx('supp_files/azmpDataFileColumns.xlsx', sheetIndex = 1)
+
+head(f)
+
+```
+
+
+```{r}
+
+
+f <- read.xlsx('supp_files/annualReportingProducts.xlsx', sheetIndex = 1)
+
+head(f)
+```
+* above data table shows potential groupings of similarly scaled data for insertion into azmpdata
+* Discussion about depth resolved data in azmpdata
+  * Cons:
+    * Large file size
+    * Repetitive of BioChem and other DBs
+  * Pros
+    * solves Benoit's problems when data is requested
+    * Eases difficulty accessing BioChem
+  * should be disscussed with ODIS
+  * spatial data will be in new DB being created by Gordana
+  * azmpdata should focus on calculated metrics and variables?
+  * could also be seperated into a distinct data package
+  * current plan: to include depth resolved data only at bottle depths
+  
+
+## Presentation from Benoit
+
+
+* Presented slides
+__ADD IMAGE__
+
+
+
+* Seperated data into groups of files
+* core and fixed stations are ditinct
+* CJ: zooplankton should be seperated carefully by group to avoid accidental summation of duplicated data in one file
+* would have 12 core stations files using this plan
+* naming scheme suggestions?
+* variables need consistent naming scheme
+* anomoly inclusion
+  * BC: No, due to changes in calculations and reference periods
+  * keep data in azmpdata and allow users to calculate anomolies
+  * __CJ: EC should make anomoly calculations in a seperate package__
+* BC: Goal to create another data package for remote sensing data
+* Include fixed station metadata files created by BC
+* Accessory files for polygons etc
+
+## Meeting will pick back up with discussion on materials from Benoit, June 24th @ 2pm
+
+
+
+

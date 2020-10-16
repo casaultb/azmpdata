@@ -1,0 +1,32 @@
+---
+title: "Meeting Notes - April 7"
+output: html_notebook
+---
+Discussion of Maritimes environmental data access, April 7, 2020
+
+B. Casault, E. Chisholm, C. Layton, C. Johnson, M. McMahon
+
+
+One of the objectives of the Working Group on Ecosystem Approach to Fisheries Management is to improve access to environmental, oceanographic and ecological data and data products, and support for work toward this objective is anticipated from the Fisheries Science and Ecosystems Research Program in 2020-21. 
+One model for improving the availability of environmental data is the Québec region’s ecosystem approach data matrix, which is available in an R package on github:
+https://github.com/duplisea/gslea
+The package provides a location where physical, chemical, planktonic, plankton phenological and fish survey data are compiled in one place. The package has a simple data table structure with a minimal set of functions to understand the structure, query data and plot data roughly for initial data exploration. Data can then be brought into various analyses for the GSL that may fall under the banner of an ecosystem approach. This package reduces pressure on staff to fulfill specific data requests. 
+This approach will be adapted to provide a location where Maritimes environmental data can be made accessible to stock assessment scientists and other interested clients. The Maritimes package will be adapted to fit data characteristics and client requirements in the region.
+Environmental data incorporated into the package will be data products produced annually for Maritimes AZMP reporting. 
+Steps toward implementing this approach will include the following:
+1.	Assess which data products should be included
+-Benoit and Chantelle will list all products from AZMP reporting
+-Benoit and Catherine will list all products included in the silver hake multivariate metrics
+-Emily will list all products in gslea
+-Mike will check in with PED staff
+*discuss the outcome at the next meeting
+
+2.	Identify a suitable format for the data products
+-Review and critique the strengths and weaknesses of the data format in gslea
+-Identify a suitable data format that complementary to format of Maritimes data products (e.g., multiple data frames rather than on huge file)
+-Benoit and Chantelle will join forces to update data products to a common format
+*discuss the proposed format at the next meeting
+
+3.	Review and critique the functions of gslea and decide what is useful 
+*discuss at next meeting
+[Emily will update the package for the Maritimes once decisions are made about the design]
