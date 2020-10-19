@@ -1,0 +1,49 @@
+---
+title: "Meeting Notes - September 4"
+output: html_document
+---
+
+Discussion of Maritimes environmental data access, September 4, 2020
+
+B. Casault, E. Chisholm, C. Johnson
+
+* supporting presentation from EC linked in Teams chat (Regional Look Up Tables.pptx)
+
+### Anomalies
+
+* Discussion of current status of anomalies
+* Anomaly functions are mostly completed with annual anomaly/ annual climatology function fully implemented
+* Seasonal anomaly function still required
+* seasonal anomalies are caluclated for zooplankton biomass and cal fin abundance
+* uses seasonal climatology
+* __BC will send EC anomaly code__
+* __EC will implement into seasonal anomaly function__
+* discussion of anomaly wrapper function which will allow data to be directed properly to appropriate anomaly caluclation method
+* __EC will have example of anomaly wrapper for next meeting__
+* Focus on azmpdata metrics, generalization of anomaly functions for generic data is outside the scope of this project
+
+
+### Regional tables
+* Single table vs multiple tables
+* compromise solution reached: we will use a single names table and single coordinates table
+  * this avoids the repetition of the single table format 
+  * also prevents the difficulties of finding ALL the various csv files within the package
+  * allows us to add metadata or other attributes to the names table without excessive repetition
+* moving forward will be referred to as 'attributes' table and 'geometry' table
+* __BC will send example files__
+* __EC will make final version of `plot_region()`__
+
+
+### azmpdata
+* looked through workplan available on Teams
+* BC will upload Rda and csv files (in progress)
+* __BC working on trawl and remote sensing data__
+* __EC will help by starting on vignette and documentation__
+* __EC and BC will meet (in the next week) to discuss delegation of tasks__
+
+
+### multivaR
+* EC will help with azmpdata to make sure packages match up well and there is not a backlog of work in coordinating them
+* __main priority is to get data in azmpdata__
+
+

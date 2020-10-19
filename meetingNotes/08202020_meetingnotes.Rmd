@@ -1,0 +1,59 @@
+---
+title: "Meeting Notes - August 19"
+output: html_document
+---
+Discussion of Maritimes environmental data access, April 7, 2020
+
+B. Casault, E. Chisholm, C. Johnson, M. McMahon
+
+### Review of metadata names 
+* review document in grouup chat: azmpmetrics_csv_organizer.doc
+* Linking look up tables with odf filename may be more difficult than sample ID or event ID
+  * should first standardize names and make sure they are consistent 
+  
+### Regional look up table
+* Emily's csv version is a sheet in azmpmetrics_v2.xlsx
+  * single table combining all types of coordinate data (stations, polygons), lots of repetition
+* Benoit's examples are csv files in group chat (eg. AZMP_sections_names.csv), with RData (sf objects) options as well (eg. AZMP_Sections.RData)
+  * seperate sections, stations, polygons into individual csv tables
+* needs more discussion and examples to see how each type would interact with code in multivaR/ azmpdata
+* NAFO polygons full or cut at 200m isobath?
+* sf objects?
+  * sf files are based on row IDs, possible to get mixed up?
+* concern for multiple files when searching for a region to plot/ visualize, will be more difficult to code if need to chack in multiple files
+* concern for single table being overwhelmingly large with excess repetition
+* compromise by adding type in ss_names?
+* create a look up table for regional look up tables, columns: name of region, csv filename
+* __Emily and Benoit will discuss further__
+* __EC will work on plotting functionality and see how each format would interact__
+* assemble all polygon data would be a good solid step forward
+* trawl survey strat data may also be included in polygon tables (very large)
+  * can sf handle this? holes in polygons?
+  * __BC will investigate__
+  * Scallop people in PED may have experience
+* Mike shared Oracle example of all 'types' of coordinate data in a single table
+
+### Occupations look up table
+* Benoit sent examples in group chat (eg. DIS_Occupations_HL2.csv )
+* currently have HL2, will be created for other stations
+* connect to data frames with sample ID or Event ID
+* some differences in event ID format in BioChem may be of concern (keep an eye out)
+* make sure there is consistency between data frames
+
+### Anomalies
+* Emily shared an RMD example (available at rpubs.com/e_chisholm/anomaly_example)
+* Benoit's method was not implemented correctly
+  * may be issue about section grouping
+  * __Benoit will clarify his method and help EC properly implement the code provided__
+* Use GLM method (AZMP standard)
+* need to decide on particular model
+  * differences based on type of data (stations, sections, time series, etc)
+* set up to use with azmpdata and other data
+* present resdoc anomalies (annual sections, trawl surveys, seasonal anomalies, monthly - Chantelle?)
+
+
+### Next meeting
+* update on regional look up table
+* plotting code for polygons
+* anomalies update
+* occupations tables from other stations

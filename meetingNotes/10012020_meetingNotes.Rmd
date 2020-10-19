@@ -1,0 +1,51 @@
+---
+title: "Meeting Notes - October 1"
+output: html_document
+---
+Discussion of Maritimes environmental data access, October 1, 2020
+
+B. Casault, E. Chisholm, C. Johnson, M. McMahon
+
+
+### Agenda
+
+* Update on data loading status (BC & CL)
+* Discussion of version numbers
+* Variable name look up table (EC)
+* Development updates (updateCheck - EC, query - BC)
+* Workplan overview
+
+
+## Data loading status
+* BC posted new data files in group chat (including remote and trawl data)
+* Updated zooplankton with season column
+* __BC Will update to gitHub soon__
+* CL has uploaded most of here data to her fork of azmpdata
+* __EC is working on converting it to RDA format__
+* __EC will also create csv version of CL data to maintain consistent format__
+
+## Version numbers
+* __BC will update in his fork of azmpdata__
+* version numbers will follow guidelines set by Wickham in his package development book (section 8.5)
+* format: major.minor.patch.development
+* minor number will represent year of latest data present in package
+* eg. starting at 0.2019.0.9000
+* When data is updated annually, minor number will be advanced, other updates during the year will increment patch number
+
+## variable name look up table
+* __EC will load table to package__
+* source column should be kept high level to avoid conflicts if BC/CL move on to other jobs
+  * __EC will ask Diana about using generic data shop email__
+* citation column will reflect resdoc citation
+  * __EC will base formatting on open data Canada (verbose text about method of access being package in vignette)__
+  * __BC will send EC link to example__
+
+## Development updates
+* EC: no update on update check, will test with new version number scheme
+* BC query function will be advance when EC pushes variable look up table to package
+
+* __EC to set up meeting with BC to go over gitHub pull requests and technical details__
+
+* MM suggests getting download counter started on website to track interactions with package from the start!
+  * __EC will ask Dan Kelley about this capability__
+  

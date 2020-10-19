@@ -1,0 +1,51 @@
+---
+title: "Meeting Notes - April 24"
+output: html_notebook
+---
+
+Data access project 
+Attending: Benoit Casault, Emily Chisholm, Catherine Johnson, Chantelle Layton, Mike McMahon
+
+Agenda
+-AZMP data products model (BC)
+-Standard AZMP physical data products (CL)
+-Adapting gslea approach to marea; functional improvements (EC)
+-Discussion
+
+1.	Benoit presented a conceptual model of how the Maritimes data access project could be structured. 
+ACTION: BC to provide an updated version of the AZMP_Data_Product_Model document reflecting outcomes of the discussion
+-Data should be accessible both as csv files and in R dataframes
+-The source data should be csv files, since git can track changes in csv but not R data frames
+-R data frames would be set up from csvs when the package is launched (or when called?)
+-MAR data access project should accommodate different types of data products (e.g., time series station data; annual anomalies; products representing a variety of different spatial polygons; limited observation-scale data for zooplankton data)
+-therefore, this approach must accommodate multiple source files, not everything in one large file as in gslea
+-Documentation of data products could utilize the same format as the R Datasets Package
+(https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html)
+-This would facilitate consistent dataset documentation and tracking back to source data used to create the data products
+-The data access project should utilize a modular design, including a data package to store and document standard data products and additional packages, added over time, that generate other data products or subsets of data that are commonly used by stock assessment scientists and other clients (self-serve for clients and also a repository for code for AZMP team).
+-Having a base data package is analogous to design of fisheries data tool:
+https://github.com/Maritimes/Mar.data
+-Also analogous to the oce and ocedata packages
+-Other modules/packages would have dependence on the data package. 
+-An alert can be implemented to show if there is an update of the data or package (similar to MM’s: https://github.com/Maritimes/Mar.utils/blob/master/R/updateCheck.R)
+
+2.	Chantelle presented a high level summary of MAR physical data products
+-Highlights the multiple different categories (annual, depth-resolved, NAFO regional, etc.) that need to be accommodated, contrasting with the gslea approach that serves products from a standard set of spatial regions
+-This kind of high level summary document should be incorporated into the data access approach to allow clients to identify what products suit their requirements
+-One next step is to refine the format of the summary and incorporate BCO data products
+
+3.	Emily presented MARea proposal reviewing the features of gslea 
+-ACTION: EC to provide the document to the group
+-The Location table component was not well developed in the gslea package yet but this function should be developed for MAR at some point
+-e.g., to refer to regional polygon definitions
+-potentially to be described in a “hex” type function as in Mike’s package
+-regional polygons potentially visualized in a vignette
+-gslea does not include position data, which MARea would require in some cases, while other cases would require a regional name 
+
+NEXT STEPS
+-Action items above
+-Identify data product categories that would encompass most of the data products (BC, CL, EC)
+-Consider the appropriate data formats for the most prevalent data product categories (fixed station, NAFO areas, …) and generate examples for discussion at the next meeting (BC, CL, EC)
+-Review Mar.data and ocedata as examples of approaches (EC)
+-ACTION: CLJ to schedule next meeting in about 2 weeks
+

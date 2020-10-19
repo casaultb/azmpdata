@@ -8,6 +8,7 @@
 #' @format A data frame with four variables: \code{year}, \code{month},
 #'   \code{day}, and \code{chl_0_100}. The chlorophyll inventory has
 #'    units of mg chl/m2.
+#'
 "chlorophyll_inventory_timeseries_hl2"
 
 #' Annual means of chlorophyll inventory at Halifax-2 station.
