@@ -75,15 +75,15 @@ for(i in 1:length(datnames)){
     # get temporal scale narrowed down
 
     if('year' %in% metacol ){
-      ndf2 <- grep(newdatfile, pattern = 'annual', value = TRUE)
+      ndf2 <- grep(newdatfile, pattern = 'Annual', value = TRUE)
     }
 
     if('year' %in% metacol && 'month' %in% metacol){
-      ndf2 <- grep(newdatfile, pattern = 'monthly', value = TRUE)
+      ndf2 <- grep(newdatfile, pattern = 'Monthly', value = TRUE)
     }
 
     if('year' %in% metacol && 'month' %in% metacol && 'day' %in% metacol){
-      ndf2 <- grep(newdatfile, pattern = 'occupations', value = TRUE)
+      ndf2 <- grep(newdatfile, pattern = 'Occupations', value = TRUE)
     }
 
     if(!exists('ndf2')){
@@ -96,13 +96,13 @@ for(i in 1:length(datnames)){
 
     if(length(newdatfile) > 1){
       if('station_name' %in% metacol){
-        ndf3 <- grep(newdatfile, pattern = 'station', value = TRUE)
+        ndf3 <- grep(newdatfile, pattern = 'Station', value = TRUE)
       }
       if('section_name' %in% metacol){
-        ndf3 <- grep(newdatfile, pattern = 'section', value = TRUE)
+        ndf3 <- grep(newdatfile, pattern = 'Section', value = TRUE)
       }
       if('area_name' %in% metacol){
-        ndf3 <- grep(newdatfile, pattern = 'broadscale', value = TRUE)
+        ndf3 <- grep(newdatfile, pattern = 'Broadscale', value = TRUE)
       }
       if(!exists('ndf3') | length(ndf3) == 0){
         stop('Could not find appropriate file to insert variable [', datnames[[i]], '] \n')
