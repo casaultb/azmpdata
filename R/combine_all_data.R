@@ -121,44 +121,83 @@ for(i in 1:length(datnames)){
 
 }
 
+
+# need to update if Benoit's data is already in formatted data files
+
+# load package data
+ dd <- data(package = 'azmpdata')
+ offdata <- dd$results[,3]
+
+ for (i in 1:length(filelist)){
+   # find which file data belongs in
+   original <- filelist[[i]]
+   varname <- names(original)
+
+   # catch for some varaibles which are in seperate files
+   for(ii in 1:length(original)){
+     ogfilename <- original[[ii]][['orig']]
+     newfilename <- original[[ii]][['new']]
+
+     # try to load in existing dataframe
+     eval(parse(text = paste("data(", newfilename, ")")))
+
+     # grab just one variable and all meta
+     eval(parse(text = paste("metacols <- names(",ogfilename,")[names(", ogfilename, ") %in% metanames]")))
+     eval(parse(text = paste("newdataframe <-", ogfilename," %>% select(c(all_of(metacols), all_of(varname)))")))
+
+     # if data is not already formatted, create new data frame
+     if(!exists(newfilename)){
+       eval(parse(text = paste(newfilename, "<- newdataframe")))
+     } else{ # else add data to existing df
+       eval(parse(text = paste(newfilename," <- ", newfilename , "%>% dplyr::full_join(newdataframe)")))
+     }
+
+
+   }
+
+ }
+
+
 # combine data into new files
+#
+# for (i in 1:length(filelist)){
+#   original <- filelist[[i]]
+#   varname <- names(original)
+#
+#   for(ii in 1:length(original)){
+#     ogfilename <- original[[ii]][['orig']]
+#
+#     eval(parse(text = paste("metacols <- names(",ogfilename,")[names(", ogfilename, ") %in% metanames]")))
+#
+#
+#     eval(parse(text = paste("newdataframe <-", ogfilename," %>% select(c(all_of(metacols), all_of(varname)))")))
+#
+#     newfilename <- original[[ii]][['new']]
+#
+#     # eval(parse(text = paste("data(", newfilename, ")")))
+#
+#     # check for existing data frame
+#
+#     #TODO change this system so that the same data is not added multiple times
+#     # maybe combine all data for particular frame first then write to RDA?
+#     # alldat <- data(package = 'azmpdata')
+#     # alldat <- alldat$results[,3]
+#
+#     if( exists(newfilename)){ # newfilename %in% alldat |
+#       # eval(parse(text = paste("data(", newfilename, ")")))
+#
+#       eval(parse(text = paste(newfilename," <- ", newfilename , "%>% dplyr::full_join(newdataframe)"))) # TODO untested check that we are not overwriting data and that join happens properly
+#
+#     }else{ # if we are creating the data frame for the first time
+#       eval(parse(text = paste(newfilename, "<- newdataframe")))
+#     }
+#
+#
+#   }
+#
+# }
+#
 
-for (i in 1:length(filelist)){
-  original <- filelist[[i]]
-  varname <- names(original)
-
-  for(ii in 1:length(original)){
-    ogfilename <- original[[ii]][['orig']]
-
-    eval(parse(text = paste("metacols <- names(",ogfilename,")[names(", ogfilename, ") %in% metanames]")))
-
-
-    eval(parse(text = paste("newdataframe <-", ogfilename," %>% select(c(all_of(metacols), all_of(varname)))")))
-
-    newfilename <- original[[ii]][['new']]
-
-    # eval(parse(text = paste("data(", newfilename, ")")))
-
-    # check for existing data frame
-
-    #TODO change this system so that the same data is not added multiple times
-    # maybe combine all data for particular frame first then write to RDA?
-    # alldat <- data(package = 'azmpdata')
-    # alldat <- alldat$results[,3]
-
-    if( exists(newfilename)){ # newfilename %in% alldat |
-      # eval(parse(text = paste("data(", newfilename, ")")))
-
-      eval(parse(text = paste(newfilename," <- ", newfilename , "%>% dplyr::full_join(newdataframe)"))) # TODO untested check that we are not overwriting data and that join happens properly
-
-    }else{ # if we are creating the data frame for the first time
-      eval(parse(text = paste(newfilename, "<- newdataframe")))
-    }
-
-
-  }
-
-}
 
 # GET ALL NEW DATA NAMES
 
@@ -169,8 +208,16 @@ allnewdd <- unique(alldd[ind])
 
  for (i in 1:length(allnewdd)){
 # save as RDA (move?)
- eval(parse(text = paste("usethis::use_data(", allnewdd[[i]], ", overwrite = TRUE)")))
+   eval(parse(text = paste("usethis::use_data(", allnewdd[[i]], ", overwrite = TRUE)")))
+
+   eval(parse(text = paste("write.csv(",allnewdd[[i]],", file = paste0('inst/extdata/', allnewdd[[i]], '.csv'), quote = FALSE, row.names = FALSE)")))
+
  }
+
+# save as csv files as well
+
+write.csv(allnewdd[[i]], file = paste0(allnewdd[[i]], '.csv'), quote = FALSE, row.names = FALSE)
+# readr::write_csv(Derived_Annual_Sections, "inst/extdata/Derived_Annual_Sections.csv")
 
 
 

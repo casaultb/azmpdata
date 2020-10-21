@@ -1,0 +1,983 @@
+year,station_name,temperature_in_air,integrated_chlorophyll_0_100,sea_surface_temperature_from_moorings
+1872,Boston,8.12,NA,NA
+1873,Boston,7.83,NA,NA
+1874,Boston,8.04,NA,NA
+1875,Boston,6.95,NA,NA
+1876,Boston,7.64,NA,NA
+1877,Boston,8.84,NA,NA
+1878,Boston,8.92,NA,NA
+1879,Boston,7.93,NA,NA
+1880,Boston,8.96,NA,NA
+1881,Boston,8.58,NA,NA
+1882,Boston,8.16,NA,NA
+1883,Boston,7.65,NA,NA
+1884,Boston,8.27,NA,NA
+1885,Boston,7.55,NA,NA
+1886,Boston,7.9,NA,NA
+1887,Boston,7.99,NA,NA
+1888,Boston,7.32,NA,NA
+1889,Boston,9.19,NA,NA
+1890,Boston,8.34,NA,NA
+1891,Boston,9.03,NA,NA
+1892,Boston,8.48,NA,NA
+1893,Boston,7.22,NA,NA
+1894,Boston,8.62,NA,NA
+1895,Boston,8.33,NA,NA
+1896,Boston,7.98,NA,NA
+1897,Boston,8.39,NA,NA
+1898,Boston,8.82,NA,NA
+1899,Boston,8.49,NA,NA
+1900,Boston,8.89,NA,NA
+1901,Boston,7.85,NA,NA
+1902,Boston,8.23,NA,NA
+1903,Boston,8.11,NA,NA
+1904,Boston,6.69,NA,NA
+1905,Boston,7.81,NA,NA
+1906,Boston,8.31,NA,NA
+1907,Boston,7.39,NA,NA
+1908,Boston,8.71,NA,NA
+1909,Boston,8.35,NA,NA
+1910,Boston,8.48,NA,NA
+1911,Boston,8.56,NA,NA
+1912,Boston,8.37,NA,NA
+1913,Boston,9.33,NA,NA
+1914,Boston,7.89,NA,NA
+1915,Boston,8.73,NA,NA
+1916,Boston,7.88,NA,NA
+1917,Boston,6.92,NA,NA
+1918,Boston,7.98,NA,NA
+1919,Boston,8.67,NA,NA
+1920,Boston,8.07,NA,NA
+1921,Boston,9.37,NA,NA
+1922,Boston,8.76,NA,NA
+1923,Boston,8.23,NA,NA
+1924,Boston,8.29,NA,NA
+1925,Boston,9.01,NA,NA
+1926,Boston,7.5,NA,NA
+1927,Boston,9.05,NA,NA
+1928,Boston,8.8,NA,NA
+1929,Boston,8.78,NA,NA
+1930,Boston,9.34,NA,NA
+1931,Boston,9.7,NA,NA
+1932,Boston,9.41,NA,NA
+1933,Boston,9.18,NA,NA
+1934,Boston,8.03,NA,NA
+1935,Boston,8.05,NA,NA
+1936,Boston,9.37,NA,NA
+1937,Boston,10.29,NA,NA
+1938,Boston,10.02,NA,NA
+1939,Boston,9.42,NA,NA
+1940,Boston,8.57,NA,NA
+1941,Boston,10.02,NA,NA
+1942,Boston,10,NA,NA
+1943,Boston,9.51,NA,NA
+1944,Boston,10.11,NA,NA
+1945,Boston,10.18,NA,NA
+1946,Boston,10.27,NA,NA
+1947,Boston,10.19,NA,NA
+1948,Boston,9.68,NA,NA
+1949,Boston,11.58,NA,NA
+1950,Boston,10.02,NA,NA
+1951,Boston,10.82,NA,NA
+1952,Boston,11,NA,NA
+1953,Boston,11.37,NA,NA
+1954,Boston,10.19,NA,NA
+1955,Boston,10.54,NA,NA
+1956,Boston,9.73,NA,NA
+1957,Boston,10.76,NA,NA
+1958,Boston,9.58,NA,NA
+1959,Boston,10.46,NA,NA
+1960,Boston,10.34,NA,NA
+1961,Boston,10.01,NA,NA
+1962,Boston,9.49,NA,NA
+1963,Boston,10.01,NA,NA
+1964,Boston,9.68,NA,NA
+1965,Boston,9.3,NA,NA
+1966,Boston,10.35,NA,NA
+1967,Boston,9.28,NA,NA
+1968,Boston,9.76,NA,NA
+1969,Boston,10.25,NA,NA
+1970,Boston,10.16,NA,NA
+1971,Boston,10.11,NA,NA
+1972,Boston,9.91,NA,NA
+1973,Boston,11.19,NA,NA
+1974,Boston,10.04,NA,NA
+1975,Boston,10.44,NA,NA
+1976,Boston,10.56,NA,NA
+1977,Boston,10.41,NA,NA
+1978,Boston,9.5,NA,NA
+1979,Boston,10.65,NA,NA
+1980,Boston,10.14,NA,NA
+1981,Boston,10.54,NA,NA
+1982,Boston,9.86,NA,NA
+1983,Boston,11.46,NA,NA
+1984,Boston,10.46,NA,NA
+1985,Boston,10.3,NA,NA
+1986,Boston,10.22,NA,NA
+1987,Boston,9.88,NA,NA
+1988,Boston,10.54,NA,NA
+1989,Boston,10.19,NA,NA
+1990,Boston,11.25,NA,NA
+1991,Boston,11.67,NA,NA
+1992,Boston,9.82,NA,NA
+1993,Boston,10.66,NA,NA
+1994,Boston,10.74,NA,NA
+1995,Boston,10.57,NA,NA
+1996,Boston,10.54,NA,NA
+1997,Boston,10.81,NA,NA
+1998,Boston,11.91,NA,NA
+1999,Boston,11.71,NA,NA
+2000,Boston,10.7,NA,NA
+2001,Boston,11.42,NA,NA
+2002,Boston,12.07,NA,NA
+2003,Boston,10.19,NA,NA
+2004,Boston,10.61,NA,NA
+2005,Boston,10.77,NA,NA
+2006,Boston,11.81,NA,NA
+2007,Boston,11.12,NA,NA
+2008,Boston,11.43,NA,NA
+2009,Boston,10.64,NA,NA
+2010,Boston,12.55,NA,NA
+2011,Boston,11.87,NA,NA
+2012,Boston,12.7,NA,NA
+2013,Boston,11.46,NA,NA
+2014,Boston,11.22,NA,NA
+2015,Boston,11.48,NA,NA
+2016,Boston,12.5,NA,NA
+2017,Boston,12.03,NA,NA
+2018,Boston,12.03,NA,NA
+2019,Boston,11.83,NA,NA
+2020,Boston,12.28,NA,NA
+1871,Halifax,4.4,NA,NA
+1872,Halifax,4.78,NA,NA
+1873,Halifax,4.67,NA,NA
+1874,Halifax,4.89,NA,NA
+1875,Halifax,3.66,NA,NA
+1876,Halifax,4.46,NA,NA
+1877,Halifax,5.55,NA,NA
+1878,Halifax,6.08,NA,NA
+1879,Halifax,4.62,NA,NA
+1880,Halifax,4.88,NA,NA
+1881,Halifax,4.89,NA,NA
+1882,Halifax,4.47,NA,NA
+1883,Halifax,4.13,NA,NA
+1884,Halifax,4.62,NA,NA
+1885,Halifax,5.02,NA,NA
+1886,Halifax,5.64,NA,NA
+1887,Halifax,4.98,NA,NA
+1888,Halifax,4.22,NA,NA
+1889,Halifax,6.76,NA,NA
+1890,Halifax,4.95,NA,NA
+1891,Halifax,6.08,NA,NA
+1892,Halifax,5.82,NA,NA
+1894,Halifax,4.9,NA,NA
+1895,Halifax,5.91,NA,NA
+1896,Halifax,5.64,NA,NA
+1897,Halifax,5.63,NA,NA
+1898,Halifax,6.23,NA,NA
+1899,Halifax,5.62,NA,NA
+1900,Halifax,6.21,NA,NA
+1901,Halifax,6.48,NA,NA
+1902,Halifax,6.18,NA,NA
+1903,Halifax,5.49,NA,NA
+1904,Halifax,4,NA,NA
+1905,Halifax,4.43,NA,NA
+1906,Halifax,5.6,NA,NA
+1907,Halifax,4.48,NA,NA
+1908,Halifax,5.6,NA,NA
+1909,Halifax,5.64,NA,NA
+1910,Halifax,6,NA,NA
+1911,Halifax,5.28,NA,NA
+1912,Halifax,5.16,NA,NA
+1913,Halifax,6.29,NA,NA
+1914,Halifax,4.23,NA,NA
+1915,Halifax,6,NA,NA
+1916,Halifax,5.21,NA,NA
+1917,Halifax,4.64,NA,NA
+1918,Halifax,4.73,NA,NA
+1919,Halifax,5.45,NA,NA
+1920,Halifax,5.13,NA,NA
+1921,Halifax,5.52,NA,NA
+1922,Halifax,4.79,NA,NA
+1923,Halifax,4.49,NA,NA
+1924,Halifax,5.56,NA,NA
+1925,Halifax,5.16,NA,NA
+1926,Halifax,4.59,NA,6.171
+1927,Halifax,5.21,NA,7.23
+1928,Halifax,5.57,NA,7.396
+1929,Halifax,5.46,NA,6.638
+1930,Halifax,6.17,NA,8.038
+1931,Halifax,6.76,NA,8.18
+1932,Halifax,5.9,NA,7.338
+1933,Halifax,5.49,NA,7.521
+1934,Halifax,5.18,NA,7.446
+1935,Halifax,5.28,NA,7.413
+1936,Halifax,5.71,NA,7.621
+1937,Halifax,6.54,NA,8.062
+1938,Halifax,6.29,NA,8.088
+1939,Halifax,5.64,NA,6.455
+1940,Halifax,4.89,NA,6.267
+1941,Halifax,4.93,NA,5.455
+1942,Halifax,5.93,NA,6.485
+1943,Halifax,5.32,NA,6.359
+1944,Halifax,5.98,NA,NA
+1945,Halifax,6.02,NA,NA
+1946,Halifax,5.89,NA,6.361
+1947,Halifax,6.21,NA,7.496
+1948,Halifax,4.97,NA,6.567
+1949,Halifax,6.87,NA,7.5
+1950,Halifax,5.68,NA,6.764
+1951,Halifax,7.23,NA,8.838
+1952,Halifax,6.58,NA,7.555
+1953,Halifax,7.47,NA,7.896
+1954,Halifax,8.29,NA,7.455
+1960,Halifax,6.61,NA,8.013
+1961,Halifax,6.48,NA,7.721
+1962,Halifax,5.73,NA,6.93
+1963,Halifax,5.9,NA,7.021
+1964,Halifax,5.98,NA,6.555
+1965,Halifax,5.57,NA,5.846
+1966,Halifax,6.89,NA,6.596
+1967,Halifax,5.98,NA,6.546
+1968,Halifax,6.38,NA,7.388
+1969,Halifax,7.22,NA,7.921
+1970,Halifax,6,NA,7.321
+1971,Halifax,6.3,NA,7.263
+1972,Halifax,5.45,NA,6.746
+1973,Halifax,6.82,NA,7.055
+1974,Halifax,5.83,NA,7.046
+1975,Halifax,6.31,NA,7.28
+1976,Halifax,6.72,NA,7.671
+1977,Halifax,6.65,NA,7.163
+1978,Halifax,5.83,NA,7.638
+1979,Halifax,7.01,NA,7.755
+1980,Halifax,5.78,NA,8.288
+1981,Halifax,7.18,NA,8.655
+1982,Halifax,6.37,NA,8.571
+1983,Halifax,7.42,NA,9.296
+1984,Halifax,7.3,NA,7.855
+1985,Halifax,5.86,NA,7.921
+1986,Halifax,5.95,NA,7.33
+1987,Halifax,6.23,NA,7.18
+1988,Halifax,6.42,NA,6.38
+1989,Halifax,5.86,NA,7.105
+1990,Halifax,7.27,NA,7.046
+1991,Halifax,7.05,NA,6.971
+1992,Halifax,5.84,NA,6.513
+1993,Halifax,5.93,NA,6.748
+1994,Halifax,6.73,NA,6.712
+1995,Halifax,6.63,NA,7.216
+1996,Halifax,6.63,NA,7.094
+1997,Halifax,5.99,NA,6.906
+1998,Halifax,7.64,NA,7.325
+1999,Halifax,8.57,NA,7.803
+2000,Halifax,7.38,NA,8.153
+2001,Halifax,7.5,NA,7.12
+2002,Halifax,6.89,NA,7.428
+2003,Halifax,7.01,NA,6.725
+2004,Halifax,6.31,NA,6.886
+2005,Halifax,7.21,NA,6.933
+2006,Halifax,8.08,NA,8.221
+2007,Halifax,6.5,NA,6.881
+2008,Halifax,7.35,NA,7.56
+2009,Halifax,6.89,NA,7.611
+2010,Halifax,8.4,NA,8.095
+2011,Halifax,7.58,NA,8.284
+2012,Halifax,8.37,NA,8.727
+2013,Halifax,7.1,NA,7.5
+2014,Halifax,7.31,NA,7.82
+2015,Halifax,6.66,NA,7.6
+2016,Halifax,7.68,NA,8.448
+2017,Halifax,7.68,NA,8.13
+2018,Halifax,7.57,NA,7.795
+2019,Halifax,6.94,NA,7.523
+2020,Halifax,7.39,NA,NA
+1897,Sable Island,5.619,NA,NA
+1898,Sable Island,7.686,NA,NA
+1899,Sable Island,7.245,NA,NA
+1900,Sable Island,7.92,NA,NA
+1901,Sable Island,8.145,NA,NA
+1902,Sable Island,7.861,NA,NA
+1903,Sable Island,6.878,NA,NA
+1904,Sable Island,6.62,NA,NA
+1905,Sable Island,6.361,NA,NA
+1906,Sable Island,7.403,NA,NA
+1907,Sable Island,6.57,NA,NA
+1908,Sable Island,7.553,NA,NA
+1909,Sable Island,7.503,NA,NA
+1910,Sable Island,8.161,NA,NA
+1911,Sable Island,6.886,NA,NA
+1912,Sable Island,6.503,NA,NA
+1913,Sable Island,7.52,NA,NA
+1914,Sable Island,6.02,NA,NA
+1915,Sable Island,6.978,NA,NA
+1916,Sable Island,6.786,NA,NA
+1917,Sable Island,6.97,NA,NA
+1918,Sable Island,6.603,NA,NA
+1919,Sable Island,6.703,NA,NA
+1920,Sable Island,7.228,NA,NA
+1921,Sable Island,5.916,NA,NA
+1922,Sable Island,6.755,NA,NA
+1923,Sable Island,6.02,NA,NA
+1924,Sable Island,6.711,NA,NA
+1925,Sable Island,6.478,NA,NA
+1926,Sable Island,6.553,NA,NA
+1927,Sable Island,7.67,NA,NA
+1928,Sable Island,7.403,NA,NA
+1929,Sable Island,6.986,NA,NA
+1930,Sable Island,7.603,NA,NA
+1931,Sable Island,8.47,NA,NA
+1932,Sable Island,7.495,NA,NA
+1933,Sable Island,7.445,NA,NA
+1934,Sable Island,7.253,NA,NA
+1935,Sable Island,6.403,NA,NA
+1936,Sable Island,7.578,NA,NA
+1937,Sable Island,8.144,NA,NA
+1938,Sable Island,7.82,NA,NA
+1939,Sable Island,6.661,NA,NA
+1940,Sable Island,6.878,NA,NA
+1941,Sable Island,6.286,NA,NA
+1942,Sable Island,7.903,NA,NA
+1943,Sable Island,7.086,NA,NA
+1944,Sable Island,7.386,NA,NA
+1945,Sable Island,7.661,NA,NA
+1946,Sable Island,7.753,NA,NA
+1947,Sable Island,7.771,NA,NA
+1948,Sable Island,6.486,NA,NA
+1949,Sable Island,8.353,NA,NA
+1950,Sable Island,7.445,NA,NA
+1951,Sable Island,9.328,NA,NA
+1952,Sable Island,8.578,NA,NA
+1953,Sable Island,8.478,NA,NA
+1954,Sable Island,8.386,NA,NA
+1955,Sable Island,7.061,NA,NA
+1956,Sable Island,7.486,NA,NA
+1957,Sable Island,7.403,NA,NA
+1958,Sable Island,8.186,NA,NA
+1959,Sable Island,6.736,NA,NA
+1960,Sable Island,8.286,NA,NA
+1961,Sable Island,7.628,NA,NA
+1962,Sable Island,7.086,NA,NA
+1963,Sable Island,7.203,NA,NA
+1964,Sable Island,7.045,NA,NA
+1965,Sable Island,6.503,NA,NA
+1966,Sable Island,7.645,NA,NA
+1967,Sable Island,7.995,NA,NA
+1968,Sable Island,7.703,NA,NA
+1969,Sable Island,8.286,NA,NA
+1970,Sable Island,7.878,NA,NA
+1971,Sable Island,7.953,NA,NA
+1972,Sable Island,7.261,NA,NA
+1973,Sable Island,7.578,NA,NA
+1974,Sable Island,7.011,NA,NA
+1975,Sable Island,7.061,NA,NA
+1976,Sable Island,8.003,NA,NA
+1977,Sable Island,7.753,NA,NA
+1978,Sable Island,7.37,NA,NA
+1979,Sable Island,8.103,NA,NA
+1980,Sable Island,7.036,NA,NA
+1981,Sable Island,8.628,NA,NA
+1982,Sable Island,7.57,NA,NA
+1983,Sable Island,8.678,NA,NA
+1984,Sable Island,8.678,NA,NA
+1985,Sable Island,6.77,NA,NA
+1986,Sable Island,7.103,NA,NA
+1987,Sable Island,7.328,NA,NA
+1988,Sable Island,7.578,NA,NA
+1989,Sable Island,7.47,NA,NA
+1990,Sable Island,7.836,NA,NA
+1991,Sable Island,7.853,NA,NA
+1992,Sable Island,7.228,NA,NA
+1993,Sable Island,7.661,NA,NA
+1994,Sable Island,8.22,NA,NA
+1995,Sable Island,7.744,NA,NA
+1996,Sable Island,7.714,NA,NA
+1997,Sable Island,7.136,NA,NA
+1998,Sable Island,8.411,NA,NA
+1999,Sable Island,9.645,NA,NA
+2000,Sable Island,8.803,NA,NA
+2001,Sable Island,8.278,NA,NA
+2002,Sable Island,8.036,NA,NA
+2003,Sable Island,7.961,NA,NA
+2004,Sable Island,7.536,NA,NA
+2005,Sable Island,8.495,NA,NA
+2006,Sable Island,9.145,NA,NA
+2007,Sable Island,7.653,NA,NA
+2008,Sable Island,8.228,NA,NA
+2009,Sable Island,8.335,NA,NA
+2010,Sable Island,9.329,NA,NA
+2011,Sable Island,8.595,NA,NA
+2012,Sable Island,9.728,NA,NA
+2013,Sable Island,8.778,NA,NA
+2014,Sable Island,9.206,NA,NA
+2015,Sable Island,8.969,NA,NA
+2016,Sable Island,9.135,NA,NA
+2017,Sable Island,8.628,NA,NA
+2018,Sable Island,8.636,NA,NA
+2019,Sable Island,7.786,NA,NA
+2020,Sable Island,8.784,NA,NA
+1871,Saint John,3,NA,NA
+1872,Saint John,3.22,NA,NA
+1873,Saint John,3.21,NA,NA
+1874,Saint John,3.52,NA,NA
+1875,Saint John,2.35,NA,NA
+1876,Saint John,3.27,NA,NA
+1877,Saint John,4.2,NA,NA
+1878,Saint John,4.57,NA,NA
+1879,Saint John,3.07,NA,NA
+1880,Saint John,3.76,NA,NA
+1881,Saint John,3.87,NA,NA
+1882,Saint John,3.11,NA,NA
+1883,Saint John,2.98,NA,NA
+1884,Saint John,3.28,NA,NA
+1885,Saint John,3.19,NA,NA
+1886,Saint John,3.89,NA,NA
+1887,Saint John,3.33,NA,NA
+1888,Saint John,2.98,NA,NA
+1889,Saint John,4.97,NA,NA
+1890,Saint John,4,NA,NA
+1891,Saint John,5.03,NA,NA
+1892,Saint John,4.56,NA,NA
+1893,Saint John,3.85,NA,NA
+1894,Saint John,4.06,NA,NA
+1895,Saint John,4.66,NA,NA
+1896,Saint John,4.09,NA,NA
+1897,Saint John,4.28,NA,NA
+1898,Saint John,4.77,NA,NA
+1899,Saint John,4.17,NA,NA
+1900,Saint John,4.86,NA,NA
+1901,Saint John,5.07,NA,NA
+1902,Saint John,5.22,NA,NA
+1903,Saint John,4.78,NA,NA
+1904,Saint John,3.26,NA,NA
+1905,Saint John,3.87,NA,NA
+1906,Saint John,4.89,NA,NA
+1907,Saint John,3.78,NA,NA
+1908,Saint John,4.82,NA,NA
+1909,Saint John,4.97,NA,NA
+1910,Saint John,5.34,NA,NA
+1911,Saint John,4.58,NA,NA
+1912,Saint John,3.97,NA,NA
+1913,Saint John,5.14,NA,NA
+1914,Saint John,3.97,NA,NA
+1915,Saint John,5.38,NA,NA
+1916,Saint John,4.13,NA,NA
+1917,Saint John,3.31,NA,NA
+1918,Saint John,3.8,NA,NA
+1919,Saint John,4.61,NA,NA
+1920,Saint John,4.3,NA,NA
+1921,Saint John,5.12,NA,NA
+1922,Saint John,4.24,NA,NA
+1923,Saint John,3.51,NA,NA
+1924,Saint John,4.2,NA,NA
+1925,Saint John,4.26,NA,NA
+1926,Saint John,3.61,NA,NA
+1927,Saint John,5.07,NA,NA
+1928,Saint John,4.8,NA,NA
+1929,Saint John,4.53,NA,NA
+1930,Saint John,5.36,NA,NA
+1931,Saint John,5.91,NA,NA
+1932,Saint John,5.36,NA,NA
+1933,Saint John,4.75,NA,NA
+1934,Saint John,4.07,NA,NA
+1935,Saint John,4.37,NA,NA
+1936,Saint John,4.71,NA,NA
+1937,Saint John,5.95,NA,NA
+1938,Saint John,5.18,NA,NA
+1939,Saint John,4.57,NA,NA
+1940,Saint John,4.38,NA,NA
+1941,Saint John,4.77,NA,NA
+1942,Saint John,5.02,NA,NA
+1943,Saint John,4.37,NA,NA
+1944,Saint John,5.07,NA,NA
+1945,Saint John,5.12,NA,NA
+1946,Saint John,5.22,NA,NA
+1947,Saint John,4.23,NA,NA
+1948,Saint John,3.38,NA,NA
+1949,Saint John,4.81,NA,NA
+1950,Saint John,3.85,NA,NA
+1952,Saint John,5.69,NA,NA
+1953,Saint John,6.54,NA,NA
+1954,Saint John,5.37,NA,NA
+1955,Saint John,4.58,NA,NA
+1956,Saint John,4.28,NA,NA
+1957,Saint John,5.21,NA,NA
+1958,Saint John,4.77,NA,NA
+1959,Saint John,4.91,NA,NA
+1960,Saint John,5.61,NA,NA
+1961,Saint John,4.72,NA,NA
+1962,Saint John,4.32,NA,NA
+1963,Saint John,4.18,NA,NA
+1964,Saint John,4.41,NA,NA
+1965,Saint John,3.79,NA,NA
+1966,Saint John,5.21,NA,NA
+1967,Saint John,4.02,NA,NA
+1968,Saint John,4.57,NA,NA
+1969,Saint John,5.52,NA,NA
+1970,Saint John,4.47,NA,NA
+1971,Saint John,4.82,NA,NA
+1972,Saint John,3.97,NA,NA
+1973,Saint John,5.77,NA,NA
+1974,Saint John,4.59,NA,NA
+1975,Saint John,4.85,NA,NA
+1976,Saint John,4.82,NA,NA
+1977,Saint John,5.01,NA,NA
+1978,Saint John,4.3,NA,NA
+1979,Saint John,5.82,NA,NA
+1980,Saint John,4.42,NA,NA
+1981,Saint John,5.43,NA,NA
+1982,Saint John,4.53,NA,NA
+1983,Saint John,6.03,NA,NA
+1984,Saint John,5.68,NA,NA
+1985,Saint John,4.46,NA,NA
+1986,Saint John,4.62,NA,NA
+1987,Saint John,4.89,NA,NA
+1988,Saint John,4.97,NA,NA
+1989,Saint John,4.2,NA,NA
+1990,Saint John,5.94,NA,NA
+1991,Saint John,5.46,NA,NA
+1992,Saint John,4.32,NA,NA
+1993,Saint John,4.6,NA,NA
+1994,Saint John,4.97,NA,NA
+1995,Saint John,5.37,NA,NA
+1996,Saint John,5.27,NA,NA
+1997,Saint John,4.59,NA,NA
+1998,Saint John,6.43,NA,NA
+1999,Saint John,7.09,NA,NA
+2000,Saint John,5.67,NA,NA
+2001,Saint John,5.8,NA,NA
+2002,Saint John,5.53,NA,NA
+2003,Saint John,5.07,NA,NA
+2004,Saint John,4.67,NA,NA
+2005,Saint John,5.82,NA,NA
+2006,Saint John,7.02,NA,NA
+2007,Saint John,5.21,NA,NA
+2008,Saint John,6.07,NA,NA
+2009,Saint John,5.39,NA,NA
+2010,Saint John,7.2,NA,NA
+2011,Saint John,6.32,NA,NA
+2012,Saint John,7,NA,NA
+2013,Saint John,5.77,NA,NA
+2014,Saint John,5.62,NA,NA
+2015,Saint John,5.06,NA,NA
+2016,Saint John,6.4,NA,NA
+2017,Saint John,6.28,NA,NA
+2018,Saint John,5.87,NA,NA
+2019,Saint John,5.37,NA,NA
+2020,Saint John,6.18,NA,NA
+1870,Sydney,5.502,NA,NA
+1872,Sydney,3.935,NA,NA
+1873,Sydney,3.766,NA,NA
+1874,Sydney,4.035,NA,NA
+1875,Sydney,2.91,NA,NA
+1876,Sydney,4.16,NA,NA
+1877,Sydney,4.643,NA,NA
+1878,Sydney,5.659,NA,NA
+1879,Sydney,4.193,NA,NA
+1880,Sydney,4.102,NA,NA
+1881,Sydney,4.427,NA,NA
+1882,Sydney,4.085,NA,NA
+1883,Sydney,3.952,NA,NA
+1884,Sydney,4.202,NA,NA
+1885,Sydney,4.535,NA,NA
+1886,Sydney,5.685,NA,NA
+1887,Sydney,4.818,NA,NA
+1888,Sydney,4.477,NA,NA
+1889,Sydney,6.618,NA,NA
+1890,Sydney,4.718,NA,NA
+1891,Sydney,5.518,NA,NA
+1892,Sydney,5.893,NA,NA
+1893,Sydney,5.107,NA,NA
+1894,Sydney,4.435,NA,NA
+1895,Sydney,5.493,NA,NA
+1896,Sydney,4.902,NA,NA
+1897,Sydney,4.818,NA,NA
+1898,Sydney,5.635,NA,NA
+1899,Sydney,4.868,NA,NA
+1900,Sydney,5.518,NA,NA
+1901,Sydney,6.385,NA,NA
+1902,Sydney,6.002,NA,NA
+1903,Sydney,4.652,NA,NA
+1904,Sydney,4.177,NA,NA
+1905,Sydney,4.118,NA,NA
+1906,Sydney,5.502,NA,NA
+1907,Sydney,4.093,NA,NA
+1908,Sydney,5.627,NA,NA
+1909,Sydney,5.81,NA,NA
+1910,Sydney,6.252,NA,NA
+1911,Sydney,5.093,NA,NA
+1912,Sydney,4.885,NA,NA
+1913,Sydney,5.91,NA,NA
+1914,Sydney,4.468,NA,NA
+1915,Sydney,5.81,NA,NA
+1916,Sydney,5.452,NA,NA
+1917,Sydney,5.193,NA,NA
+1918,Sydney,4.81,NA,NA
+1919,Sydney,5.618,NA,NA
+1920,Sydney,5.46,NA,NA
+1921,Sydney,5.302,NA,NA
+1922,Sydney,4.552,NA,NA
+1923,Sydney,4.16,NA,NA
+1924,Sydney,5.343,NA,NA
+1925,Sydney,4.535,NA,NA
+1926,Sydney,4.427,NA,NA
+1927,Sydney,5.743,NA,NA
+1928,Sydney,5.56,NA,NA
+1929,Sydney,5.193,NA,NA
+1930,Sydney,6.41,NA,NA
+1931,Sydney,6.752,NA,NA
+1932,Sydney,5.835,NA,NA
+1933,Sydney,5.468,NA,NA
+1934,Sydney,5.068,NA,NA
+1935,Sydney,5.135,NA,NA
+1936,Sydney,5.96,NA,NA
+1937,Sydney,6.752,NA,NA
+1938,Sydney,6.102,NA,NA
+1939,Sydney,5.193,NA,NA
+1940,Sydney,4.993,NA,NA
+1941,Sydney,4.785,NA,NA
+1942,Sydney,6.402,NA,NA
+1943,Sydney,5.168,NA,NA
+1944,Sydney,6.302,NA,NA
+1945,Sydney,6.485,NA,NA
+1946,Sydney,6.268,NA,NA
+1947,Sydney,6.243,NA,NA
+1948,Sydney,5.252,NA,NA
+1949,Sydney,6.635,NA,NA
+1950,Sydney,5.802,NA,NA
+1951,Sydney,7.293,NA,NA
+1952,Sydney,6.818,NA,NA
+1953,Sydney,7.01,NA,NA
+1954,Sydney,6.485,NA,NA
+1955,Sydney,5.868,NA,NA
+1956,Sydney,5.785,NA,NA
+1957,Sydney,5.743,NA,NA
+1958,Sydney,6.368,NA,NA
+1959,Sydney,5.51,NA,NA
+1960,Sydney,6.76,NA,NA
+1961,Sydney,6.152,NA,NA
+1962,Sydney,5.352,NA,NA
+1963,Sydney,5.727,NA,NA
+1964,Sydney,5.168,NA,NA
+1965,Sydney,5.027,NA,NA
+1966,Sydney,6.76,NA,NA
+1967,Sydney,6.193,NA,NA
+1968,Sydney,5.835,NA,NA
+1969,Sydney,6.902,NA,NA
+1970,Sydney,5.918,NA,NA
+1971,Sydney,6.185,NA,NA
+1972,Sydney,4.835,NA,NA
+1973,Sydney,5.843,NA,NA
+1974,Sydney,4.752,NA,NA
+1975,Sydney,5.268,NA,NA
+1976,Sydney,5.668,NA,NA
+1977,Sydney,5.852,NA,NA
+1978,Sydney,5.352,NA,NA
+1979,Sydney,6.568,NA,NA
+1980,Sydney,5.06,NA,NA
+1981,Sydney,6.693,NA,NA
+1982,Sydney,5.435,NA,NA
+1983,Sydney,6.785,NA,NA
+1984,Sydney,6.452,NA,NA
+1985,Sydney,4.902,NA,NA
+1986,Sydney,4.843,NA,NA
+1987,Sydney,5.685,NA,NA
+1988,Sydney,5.768,NA,NA
+1989,Sydney,5.402,NA,NA
+1990,Sydney,6.227,NA,NA
+1991,Sydney,5.86,NA,NA
+1992,Sydney,5.068,NA,NA
+1993,Sydney,5.177,NA,NA
+1994,Sydney,5.935,NA,NA
+1995,Sydney,5.993,NA,NA
+1996,Sydney,6.243,NA,NA
+1997,Sydney,5.143,NA,NA
+1998,Sydney,6.96,NA,NA
+1999,Sydney,7.952,NA,NA
+2000,Sydney,6.677,NA,NA
+2001,Sydney,6.752,NA,NA
+2002,Sydney,6.043,NA,NA
+2003,Sydney,6.143,NA,NA
+2004,Sydney,5.902,NA,NA
+2005,Sydney,6.91,NA,NA
+2006,Sydney,7.735,NA,NA
+2007,Sydney,6.035,NA,NA
+2008,Sydney,6.652,NA,NA
+2009,Sydney,6.377,NA,NA
+2010,Sydney,7.652,NA,NA
+2011,Sydney,6.702,NA,NA
+2012,Sydney,7.827,NA,NA
+2013,Sydney,6.677,NA,NA
+2014,Sydney,6.477,NA,NA
+2015,Sydney,5.868,NA,NA
+2016,Sydney,7.2,NA,NA
+2017,Sydney,6.968,NA,NA
+2018,Sydney,6.56,NA,NA
+2019,Sydney,6.052,NA,NA
+2020,Sydney,6.382,NA,NA
+1879,Yarmouth,6.115,NA,NA
+1880,Yarmouth,6.696,NA,NA
+1881,Yarmouth,6.539,NA,NA
+1882,Yarmouth,5.503,NA,NA
+1883,Yarmouth,5.462,NA,NA
+1884,Yarmouth,6.237,NA,NA
+1885,Yarmouth,6.465,NA,NA
+1886,Yarmouth,6.715,NA,NA
+1887,Yarmouth,6.246,NA,NA
+1888,Yarmouth,5.704,NA,NA
+1889,Yarmouth,7.921,NA,NA
+1890,Yarmouth,6.787,NA,NA
+1891,Yarmouth,7.446,NA,NA
+1892,Yarmouth,6.804,NA,NA
+1893,Yarmouth,6.104,NA,NA
+1894,Yarmouth,6.504,NA,NA
+1895,Yarmouth,6.987,NA,NA
+1896,Yarmouth,6.412,NA,NA
+1897,Yarmouth,6.496,NA,NA
+1898,Yarmouth,6.821,NA,NA
+1899,Yarmouth,6.679,NA,NA
+1900,Yarmouth,7.254,NA,NA
+1901,Yarmouth,7.137,NA,NA
+1902,Yarmouth,6.996,NA,NA
+1903,Yarmouth,6.987,NA,NA
+1904,Yarmouth,5.396,NA,NA
+1905,Yarmouth,5.704,NA,NA
+1906,Yarmouth,6.662,NA,NA
+1907,Yarmouth,5.637,NA,NA
+1908,Yarmouth,6.771,NA,NA
+1909,Yarmouth,6.821,NA,NA
+1910,Yarmouth,7.312,NA,NA
+1911,Yarmouth,6.729,NA,NA
+1912,Yarmouth,6.362,NA,NA
+1913,Yarmouth,7.554,NA,NA
+1914,Yarmouth,5.921,NA,NA
+1915,Yarmouth,6.979,NA,NA
+1916,Yarmouth,5.954,NA,NA
+1917,Yarmouth,5.512,NA,NA
+1918,Yarmouth,6.087,NA,NA
+1919,Yarmouth,6.812,NA,NA
+1920,Yarmouth,6.429,NA,NA
+1921,Yarmouth,7.104,NA,NA
+1922,Yarmouth,6.548,NA,NA
+1923,Yarmouth,5.658,NA,NA
+1924,Yarmouth,6.354,NA,NA
+1925,Yarmouth,6.212,NA,NA
+1926,Yarmouth,5.737,NA,NA
+1927,Yarmouth,7.029,NA,NA
+1928,Yarmouth,6.946,NA,NA
+1929,Yarmouth,6.646,NA,NA
+1930,Yarmouth,7.479,NA,NA
+1931,Yarmouth,8.079,NA,NA
+1932,Yarmouth,7.354,NA,NA
+1933,Yarmouth,7.012,NA,NA
+1934,Yarmouth,6.646,NA,NA
+1935,Yarmouth,6.771,NA,NA
+1936,Yarmouth,7.187,NA,NA
+1937,Yarmouth,7.962,NA,NA
+1938,Yarmouth,7.246,NA,NA
+1939,Yarmouth,6.746,NA,NA
+1940,Yarmouth,6.146,NA,NA
+1941,Yarmouth,6.396,NA,NA
+1942,Yarmouth,6.862,NA,NA
+1943,Yarmouth,6.829,NA,NA
+1944,Yarmouth,7.204,NA,NA
+1945,Yarmouth,7.221,NA,NA
+1946,Yarmouth,7.146,NA,NA
+1947,Yarmouth,7.487,NA,NA
+1948,Yarmouth,6.612,NA,NA
+1949,Yarmouth,8.021,NA,NA
+1950,Yarmouth,7.037,NA,NA
+1951,Yarmouth,8.354,NA,NA
+1952,Yarmouth,7.654,NA,NA
+1953,Yarmouth,8.304,NA,NA
+1954,Yarmouth,7.321,NA,NA
+1955,Yarmouth,6.846,NA,NA
+1956,Yarmouth,6.679,NA,NA
+1957,Yarmouth,7.304,NA,NA
+1958,Yarmouth,6.904,NA,NA
+1959,Yarmouth,6.996,NA,NA
+1960,Yarmouth,7.412,NA,NA
+1961,Yarmouth,6.896,NA,NA
+1962,Yarmouth,6.454,NA,NA
+1963,Yarmouth,6.654,NA,NA
+1964,Yarmouth,6.479,NA,NA
+1965,Yarmouth,5.854,NA,NA
+1966,Yarmouth,6.912,NA,NA
+1967,Yarmouth,6.429,NA,NA
+1968,Yarmouth,6.971,NA,NA
+1969,Yarmouth,7.679,NA,NA
+1970,Yarmouth,6.787,NA,NA
+1971,Yarmouth,7.037,NA,NA
+1972,Yarmouth,6.496,NA,NA
+1973,Yarmouth,7.654,NA,NA
+1974,Yarmouth,6.629,NA,NA
+1975,Yarmouth,7.054,NA,NA
+1976,Yarmouth,7.221,NA,NA
+1977,Yarmouth,7.012,NA,NA
+1978,Yarmouth,6.387,NA,NA
+1979,Yarmouth,7.648,NA,NA
+1980,Yarmouth,6.654,NA,NA
+1981,Yarmouth,7.529,NA,NA
+1982,Yarmouth,7.012,NA,NA
+1983,Yarmouth,7.746,NA,NA
+1984,Yarmouth,7.762,NA,NA
+1985,Yarmouth,6.829,NA,NA
+1986,Yarmouth,7.054,NA,NA
+1987,Yarmouth,6.987,NA,NA
+1988,Yarmouth,7.137,NA,NA
+1989,Yarmouth,6.762,NA,NA
+1990,Yarmouth,8.021,NA,NA
+1991,Yarmouth,7.579,NA,NA
+1992,Yarmouth,6.212,NA,NA
+1993,Yarmouth,6.821,NA,NA
+1994,Yarmouth,7.262,NA,NA
+1995,Yarmouth,7.387,NA,NA
+1996,Yarmouth,6.921,NA,NA
+1997,Yarmouth,6.787,NA,NA
+1998,Yarmouth,7.879,NA,NA
+1999,Yarmouth,8.729,NA,NA
+2000,Yarmouth,7.737,NA,NA
+2001,Yarmouth,7.604,NA,NA
+2002,Yarmouth,7.796,NA,NA
+2003,Yarmouth,7.179,NA,NA
+2004,Yarmouth,6.496,NA,NA
+2005,Yarmouth,7.504,NA,NA
+2006,Yarmouth,8.454,NA,NA
+2007,Yarmouth,7.029,NA,NA
+2008,Yarmouth,7.879,NA,NA
+2009,Yarmouth,7.554,NA,NA
+2010,Yarmouth,8.654,NA,NA
+2011,Yarmouth,8.496,NA,NA
+2012,Yarmouth,9.542,NA,NA
+2013,Yarmouth,8.037,NA,NA
+2014,Yarmouth,8.162,NA,NA
+2015,Yarmouth,7.587,NA,NA
+2016,Yarmouth,8.746,NA,NA
+2017,Yarmouth,8.144,NA,NA
+2018,Yarmouth,8.337,NA,NA
+2019,Yarmouth,7.437,NA,NA
+2020,Yarmouth,8.307,NA,NA
+1999,HL2,NA,67.9540166022969,NA
+2000,HL2,NA,52.1094159856983,NA
+2001,HL2,NA,68.2464238844857,NA
+2002,HL2,NA,47.7351104768828,NA
+2003,HL2,NA,96.5779573410645,NA
+2004,HL2,NA,66.6141368825154,NA
+2005,HL2,NA,52.552346668858,NA
+2006,HL2,NA,36.826059677836,NA
+2007,HL2,NA,99.5821330359284,NA
+2008,HL2,NA,34.0110295500563,NA
+2009,HL2,NA,74.8228940935921,NA
+2010,HL2,NA,35.1878215420457,NA
+2011,HL2,NA,35.5103671667243,NA
+2012,HL2,NA,60.9529268264785,NA
+2013,HL2,NA,23.6362519270248,NA
+2014,HL2,NA,78.6490145434608,NA
+2015,HL2,NA,88.4217586765976,NA
+2016,HL2,NA,33.5285105839895,NA
+2017,HL2,NA,53.4101238400168,NA
+2018,HL2,NA,65.5250473752204,NA
+1955,Halifax,NA,NA,7.155
+1956,Halifax,NA,NA,7.071
+1957,Halifax,NA,NA,6.463
+1958,Halifax,NA,NA,7.638
+1959,Halifax,NA,NA,7.496
+1921,St.Andrews,NA,NA,7.002
+1922,St.Andrews,NA,NA,5.977
+1923,St.Andrews,NA,NA,5.377
+1924,St.Andrews,NA,NA,6.352
+1925,St.Andrews,NA,NA,6.169
+1926,St.Andrews,NA,NA,5.819
+1927,St.Andrews,NA,NA,6.785
+1928,St.Andrews,NA,NA,7.277
+1929,St.Andrews,NA,NA,6.702
+1930,St.Andrews,NA,NA,7.044
+1931,St.Andrews,NA,NA,7.285
+1932,St.Andrews,NA,NA,6.935
+1933,St.Andrews,NA,NA,6.677
+1934,St.Andrews,NA,NA,6.244
+1935,St.Andrews,NA,NA,6.194
+1936,St.Andrews,NA,NA,6.71
+1937,St.Andrews,NA,NA,7.61
+1938,St.Andrews,NA,NA,7.119
+1939,St.Andrews,NA,NA,6.577
+1940,St.Andrews,NA,NA,6.052
+1941,St.Andrews,NA,NA,6.352
+1942,St.Andrews,NA,NA,6.569
+1943,St.Andrews,NA,NA,6.26
+1944,St.Andrews,NA,NA,6.844
+1945,St.Andrews,NA,NA,7.144
+1946,St.Andrews,NA,NA,7.16
+1947,St.Andrews,NA,NA,7.702
+1948,St.Andrews,NA,NA,6.519
+1949,St.Andrews,NA,NA,8.277
+1950,St.Andrews,NA,NA,7.627
+1951,St.Andrews,NA,NA,8.502
+1952,St.Andrews,NA,NA,7.81
+1953,St.Andrews,NA,NA,8.369
+1954,St.Andrews,NA,NA,8.135
+1955,St.Andrews,NA,NA,7.652
+1956,St.Andrews,NA,NA,6.744
+1957,St.Andrews,NA,NA,7.394
+1958,St.Andrews,NA,NA,7.435
+1959,St.Andrews,NA,NA,6.61
+1960,St.Andrews,NA,NA,7.377
+1961,St.Andrews,NA,NA,6.71
+1962,St.Andrews,NA,NA,6.76
+1963,St.Andrews,NA,NA,7.227
+1964,St.Andrews,NA,NA,6.452
+1965,St.Andrews,NA,NA,6.235
+1966,St.Andrews,NA,NA,6.785
+1967,St.Andrews,NA,NA,6.21
+1968,St.Andrews,NA,NA,6.869
+1969,St.Andrews,NA,NA,7.56
+1970,St.Andrews,NA,NA,7.594
+1971,St.Andrews,NA,NA,7.569
+1972,St.Andrews,NA,NA,6.819
+1973,St.Andrews,NA,NA,7.31
+1974,St.Andrews,NA,NA,7.219
+1975,St.Andrews,NA,NA,6.952
+1976,St.Andrews,NA,NA,8.285
+1977,St.Andrews,NA,NA,6.96
+1978,St.Andrews,NA,NA,7.302
+1979,St.Andrews,NA,NA,7.719
+1980,St.Andrews,NA,NA,7.027
+1981,St.Andrews,NA,NA,7.319
+1982,St.Andrews,NA,NA,7.369
+1983,St.Andrews,NA,NA,7.96
+1984,St.Andrews,NA,NA,7.335
+1985,St.Andrews,NA,NA,6.705
+1986,St.Andrews,NA,NA,6.835
+1987,St.Andrews,NA,NA,6.896
+1988,St.Andrews,NA,NA,6.069
+1989,St.Andrews,NA,NA,6.477
+1990,St.Andrews,NA,NA,6.994
+1991,St.Andrews,NA,NA,7.152
+1992,St.Andrews,NA,NA,7.169
+1993,St.Andrews,NA,NA,6.677
+1994,St.Andrews,NA,NA,7.635
+1995,St.Andrews,NA,NA,7.585
+1996,St.Andrews,NA,NA,7.315
+1997,St.Andrews,NA,NA,7.227
+1998,St.Andrews,NA,NA,7.557
+1999,St.Andrews,NA,NA,8.203
+2000,St.Andrews,NA,NA,8.104
+2001,St.Andrews,NA,NA,7.176
+2002,St.Andrews,NA,NA,7.91
+2003,St.Andrews,NA,NA,6.952
+2004,St.Andrews,NA,NA,6.449
+2005,St.Andrews,NA,NA,7.195
+2006,St.Andrews,NA,NA,8.585
+2007,St.Andrews,NA,NA,7.229
+2008,St.Andrews,NA,NA,7.443
+2009,St.Andrews,NA,NA,7.486
+2010,St.Andrews,NA,NA,8.356
+2011,St.Andrews,NA,NA,8.26
+2012,St.Andrews,NA,NA,9.163
+2013,St.Andrews,NA,NA,8.329
+2014,St.Andrews,NA,NA,7.914
+2015,St.Andrews,NA,NA,7.591
+2016,St.Andrews,NA,NA,8.766
+2017,St.Andrews,NA,NA,8.175
+2018,St.Andrews,NA,NA,8.36
+2019,St.Andrews,NA,NA,7.698
