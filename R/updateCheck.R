@@ -14,7 +14,9 @@
 #' on github.
 #' @family general_use
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}, Emily Chisholm
+#'
 #' @export
+#'
 updateCheck<-function(gitPkg = NULL){
 
   verCleaner<-function(dirtyVer = NULL){
