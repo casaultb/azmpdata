@@ -210,14 +210,12 @@ allnewdd <- unique(alldd[ind])
 # save as RDA (move?)
    eval(parse(text = paste("usethis::use_data(", allnewdd[[i]], ", overwrite = TRUE)")))
 
+# save as csv files as well
    eval(parse(text = paste("write.csv(",allnewdd[[i]],", file = paste0('inst/extdata/', allnewdd[[i]], '.csv'), quote = FALSE, row.names = FALSE)")))
 
  }
 
-# save as csv files as well
 
-write.csv(allnewdd[[i]], file = paste0(allnewdd[[i]], '.csv'), quote = FALSE, row.names = FALSE)
-# readr::write_csv(Derived_Annual_Sections, "inst/extdata/Derived_Annual_Sections.csv")
 
 
 
