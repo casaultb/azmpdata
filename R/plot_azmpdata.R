@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' plot_azmpdata("chlorophyll_inventory_annual_means_hl2", "chl_0_100")
+#'
 plot_azmpdata <- function(dataset, variable) {
 
   # declare empty list

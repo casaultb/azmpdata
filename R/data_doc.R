@@ -29,7 +29,7 @@
 #' * integrated_silicate_50_150
 #' * integrated_chlorophyll_0_100
 #'
-#' Data variables are described in more detail in */link{variable_table}*
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
 "Derived_Occupations_Stations"
 
 
@@ -83,8 +83,8 @@
 #' * calanus_abundance_stage_c6
 #'
 #'
-#' Data variables are described in more detail in */link{variable_table}*
-"Zooplankton_Occupations_Stations"
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+# "Zooplankton_Occupations_Stations"
 
 
 #' Phytoplankton Occupation Station data
@@ -105,7 +105,7 @@
 #' _Data_
 #' * microplankton_abundance
 #'
-#'  Data variables are described in more detail in */link{variable_table}*
+#'  Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
 "Phytoplankton_Occupations_Stations"
 
 
@@ -133,7 +133,7 @@
 #' * salinity
 #' * density
 #'
-#'  Data variables are described in more detail in */link{variable_table}*
+#'  Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
 "Discrete_Occupations_Stations"
 
 
@@ -150,8 +150,8 @@
 #' _Data_
 #' * sea_surface_height
 #'
-#'  Data variables are described in more detail in */link{variable_table}*
-"Derived_Monthly_Stations"
+#'  Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+# "Derived_Monthly_Stations"
 
 
 #' Derived Occupation Annual data
@@ -181,7 +181,7 @@
 #' * integrated_phosphate_50_150
 #'
 #'
-#' Data variables are described in more detail in */link{variable_table}*
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
 "Derived_Annual_Stations"
 
 #' Zooplankton Annual Stations data
@@ -220,8 +220,8 @@
 #' * zooplankton_macro_wet_weight
 #' * zooplankton_total_wet_weight
 #'
-#' Data variables are described in more detail in */link{variable_table}*
-"Zooplankton_Annual_Stations"
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+# "Zooplankton_Annual_Stations"
 
 #' Phytoplankton Annual Station data
 #'
@@ -235,7 +235,7 @@
 #' _Data_
 #' * microplankton_abundance_log10
 #'
-#' Data variables are described in more detail in */link{variable_table}*
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
 "Phytoplankton_Annual_Stations"
 
 
@@ -266,7 +266,7 @@
 #' * integrated_silicate_50_150
 #' * integrated_chlorophyll_0_100
 #'
-#'  Data variables are described in more detail in */link{variable_table}*
+#'  Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
 "Derived_Occupations_Sections"
 
 
@@ -321,8 +321,8 @@
 #' * calanus_abundance_stage_c5
 #' * calanus_abundance_stage_c6
 #'
-#' Data variables are described in more detail in */link{variable_table}*
-"Zooplankton_Occupations_Sections"
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+# "Zooplankton_Occupations_Sections"
 
 
 #' Discrete Occupation Section data
@@ -352,7 +352,7 @@
 #' * salinity
 #' * density
 #'
-#' Data variables are described in more detail in */link{variable_table}*
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
 "Discrete_Occupations_Sections"
 
 
@@ -374,7 +374,7 @@
 #' * integrated_silicate_50_150
 #' * integrated_chlorphyll_0_100
 #'
-#' Data variables are described in more detail in */link{variable_table}*
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
 "Derived_Annual_Sections"
 
 
@@ -411,8 +411,8 @@
 #' * zooplankton_macro_wet_weight
 #' * zooplankton_total_wet_weight
 #'
-#' Data variables are described in more detail in */link{variable_table}*
-"Zooplankton_Annual_Sections"
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+# "Zooplankton_Annual_Sections"
 
 
 #' Derived monthly broadscale data
@@ -426,8 +426,8 @@
 #' * sea_surface_temperature_from_satellite
 #' * sea_ice_area
 #'
-#' Data variables are described in more detail in */link{variable_table}*
-"Derived_Monthly_Broadscale"
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+# "Derived_Monthly_Broadscale"
 
 
 #' Derived annual broadscale data
@@ -462,9 +462,42 @@
 #' * oxygen_at_sea_floor
 #' * surface_chlorphyll_from_satellite
 #'
-#' Data variables are described in more detail in */link{variable_table}*
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
 "Derived_Annual_Broadscale"
 
+
+#' Remote Sensing Annual Broadscale data
+#'
+#'
+#' _Metadata_
+#' * area_name
+#' * year
+#'
+#' _Data_
+#' * surface_chlorophyll_log10
+#' * bloom_start
+#' * bloom_duration
+#' * bloom_amplitude
+#' * bloom_magnitude
+#'
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+# "RemoteSensing_Annual_Broadscale"
+
+
+#' Remote sesning weekly broadscale data
+#'
+#' _Metadata_
+#' * area_name
+#' * year
+#' * month
+#' * week
+#'
+#' _Data_
+#' * surface_chlorophyll
+#'
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+#'
+# "RemoteSensing_Weekly_Broadscale"
 
 
 
