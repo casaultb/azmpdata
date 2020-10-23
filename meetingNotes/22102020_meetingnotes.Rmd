@@ -1,0 +1,102 @@
+---
+title: "Meeting Notes - October 22"
+output: html_document
+---
+Discussion of Maritimes environmental data access, October 22, 2020
+
+B. Casault, E. Chisholm, C. Johnson, M. McMahon, C. Layton
+
+## Agenda 
+
+
+- update on work from Benoit
+
+               - update to github
+
+
+
+- update on work from Emily
+
+               - completed formatting Chantelle’s available data
+
+               - working on data structure and update mechanism
+
+               - writing documentation as I go
+
+               - variable name look up table complete and uploaded
+
+               - package download counter sorted
+
+ - update from Chantelle (if present)
+
+- update from Catherine on EAFM National meeting (if necessary)
+
+- Next steps
+
+               - need all data uploaded
+
+               - testing query function
+
+               - testing update function
+
+               - vignette writing
+               
+               
+                         
+## Minutes
+
+### Progress reports
+* Benoit's work
+    * variable look up function
+      * looks through RDA files an outputs table, case insensitive, search by keyword
+      
+* Emily's work
+    * formatting Chantelle's data complete
+    * data update structure and mechanism in progress (tweaks due to updated data structure from BC)
+    * variable name look up table uploaded
+    
+* Chantelle's work
+    * most data is loaded, waiting on fixed station and azmp data
+    
+* Catherine (update from National EAFM meeting)
+    * presentation was smooth with general interest from audience
+    * Questions
+        * using Travis in early development to avoid backlog of issues
+            * EC and CL agree that current state of package would not pass any Travis builds and implementing it now would only cause more errors and frustrations, will be implemented ASAP
+            
+            * Have we looked at CIOOS for providing data? CJ: project targets practical approach within DFO framework, CIOOS may add a level of complexity, future work? data tables in azmpdata will help facillitate sharing in the future. MM: PED has gotten overloaded by formats, very difficult to maintain all the various data bases, may be best to push back against submitting many data formats and instead encourage them to point to gitHub package and 'self serve' to avoid extra responsibility on our end
+            
+            * From Alida Bundy - Have we looked at Danielle Dempsey's project (R package), some interest in inserting data into other projects
+            
+### Technical issues
+
+
+* From Chantelle:
+  * check and build failed from Benoit's latest branch
+    * Mar.utils and Mar.data requirement - should be clearly stated in READ ME (__MM has a trick to insert github dependencies, will follow up with EC__)
+    * missing data object that is documented in data.R - __EC has fix in her branch, will Pull request on BC branch to solve__
+    * moving forward we should ensure that there are minimal/ no errors before commiting, package should build AT THE VERY LEAST
+    
+  * suggestion: In development functions should be kept in seperate sandbox folders to ensure package stays tidy
+    * BC is currently using 'tmp' folder, __EC will update with subfolders for each developer__
+    * __add tmp to R build ignore__
+    
+  * There should be continuity in .R file names and function names
+    * using underscores would match data file name conventions
+    * EC will rename files
+    
+  * Importing function from other packages
+    * EC and BC use pkgname::function(), CL uses importFrom()
+    * __EC will research which method is better/ more standard and get back to group, changing if necessary__
+    
+* CL and BC data is in very different formats
+  * BC has local data which is loaded striaght into organized tables
+  * CL has raw data in package which is formatted into intermediate RDA files and then combined into organized tables
+  * Large discrepancy in systems may cause problems down the road
+  * EC would like to have access to BC raw data through azmpdata package
+  * BC thinks this will overload package and is not necessary
+  * compromised on plan for BC to put raw data in another package (available on github) so that raw data is accessible to other developers
+  
+  
+            
+

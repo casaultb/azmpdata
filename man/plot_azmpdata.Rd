@@ -15,5 +15,5 @@ plot_azmpdata(dataset, variable)
 Plot a variable from a given dataset.
 }
 \examples{
-plot_azmpdata("chlorophyll_inventory_annual_means_hl2", "chl_0_100")
+
 }
