@@ -3,7 +3,7 @@
 
 .onAttach <- function(libname, pkgname) {
 
-  updateCheck(gitPkg = 'casaultb/azmpdata')
+  update_check(gitPkg = 'casaultb/azmpdata')
   # localVer = utils::packageDescription('azmpdata')$Version
   # packageStartupMessage(paste0("Version: ", localVer))
 

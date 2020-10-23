@@ -84,7 +84,7 @@
 #'
 #'
 #' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
-"Zooplankton_Occupations_Stations"
+# "Zooplankton_Occupations_Stations"
 
 
 #' Phytoplankton Occupation Station data
@@ -151,7 +151,7 @@
 #' * sea_surface_height
 #'
 #'  Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
-"Derived_Monthly_Stations"
+# "Derived_Monthly_Stations"
 
 
 #' Derived Occupation Annual data
@@ -221,7 +221,7 @@
 #' * zooplankton_total_wet_weight
 #'
 #' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
-"Zooplankton_Annual_Stations"
+# "Zooplankton_Annual_Stations"
 
 #' Phytoplankton Annual Station data
 #'
@@ -322,7 +322,7 @@
 #' * calanus_abundance_stage_c6
 #'
 #' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
-"Zooplankton_Occupations_Sections"
+# "Zooplankton_Occupations_Sections"
 
 
 #' Discrete Occupation Section data
@@ -412,7 +412,7 @@
 #' * zooplankton_total_wet_weight
 #'
 #' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
-"Zooplankton_Annual_Sections"
+# "Zooplankton_Annual_Sections"
 
 
 #' Derived monthly broadscale data
@@ -427,7 +427,7 @@
 #' * sea_ice_area
 #'
 #' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
-"Derived_Monthly_Broadscale"
+# "Derived_Monthly_Broadscale"
 
 
 #' Derived annual broadscale data
@@ -481,7 +481,7 @@
 #' * bloom_magnitude
 #'
 #' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
-"RemoteSensing_Annual_Broadscale"
+# "RemoteSensing_Annual_Broadscale"
 
 
 #' Remote sesning weekly broadscale data
@@ -497,7 +497,7 @@
 #'
 #' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
 #'
-"RemoteSensing_Weekly_Broadscale"
+# "RemoteSensing_Weekly_Broadscale"
 
 
 

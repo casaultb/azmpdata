@@ -6,7 +6,7 @@
 #' @family general_use
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}, Emily Chisholm
 #' @export
-updateCheck<-function(gitPkg = NULL){
+update_check<-function(gitPkg = NULL){
 
   verCleaner<-function(dirtyVer = NULL){
     if (length(dirtyVer)>1) dirtyVer = gsub(pattern = "Version: ",replacement = "", x = dirtyVer[grep(pattern = "Version:",x = dirtyVer)])
