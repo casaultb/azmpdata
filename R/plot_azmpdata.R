@@ -8,7 +8,7 @@
 #' @return NULL
 #' @export
 #'
-#' @examples
+#'
 #'
 plot_azmpdata <- function(dataset, variable) {
 

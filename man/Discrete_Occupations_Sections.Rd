@@ -61,7 +61,7 @@ _Data_
 * calanus_abundance_stage_c5
 * calanus_abundance_stage_c6
 
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 Discrete Occupation Section data
 
 This data frame includes
@@ -89,6 +89,6 @@ _Data_
 * salinity
 * density
 
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 }
 \keyword{datasets}
