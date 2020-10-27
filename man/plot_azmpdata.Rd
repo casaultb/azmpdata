@@ -14,6 +14,3 @@ plot_azmpdata(dataset, variable)
 \description{
 Plot a variable from a given dataset.
 }
-\examples{
-
-}
