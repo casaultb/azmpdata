@@ -216,7 +216,7 @@ allnewdd <- unique(alldd[ind])
 
 
 
-
-
+# update datadate.txt to keep track of last data update
+dataUpdate()
 
 }
