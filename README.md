@@ -1,7 +1,7 @@
 azmpdata R package
 ================
-Benoit Casault
-05 May, 2020
+Benoit Casault, Emily Chisholm
+26 October, 2020
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -37,48 +37,54 @@ devtools::install_github("casaultb/azmpdata")
 
 ## Datasets
 
-The *azmpdata* package provides three categories of data products:
-physical, chemical and biological variables, which are summarized below.
-Each data product is provided as a *data frame* or as a *csv* file.
+The *azmpdata* package provides three types of data products: physical,
+chemical and biological variables, which are summarized below. Each data
+product is organized into a data table by temporal and regional scale
+and category.
 
 To access a dataset in data frame format:
 
 ``` r
 library(azmpdata)
-head(chlorophyll_inventory_annual_means_hl2)
-#>   year chl_0_100
-#> 1 1999  67.95402
-#> 2 2000  52.10942
-#> 3 2001  68.24642
-#> 4 2002  47.73511
-#> 5 2003  96.57796
-#> 6 2004  66.61414
+#> 
+#>  casaultb/azmpdata status:
+#>  (Package ver: 0.2019.0.9000) Up to date
+#>  (Data ver:2020-10-23) is up to date
+data("Derived_Annual_Broadscale")
+head(Derived_Annual_Broadscale)
+#>   year     area_name density_gradient_0_50 temperature_at_sea_floor
+#> 1 1948 Scotion Shelf              -0.00139                       NA
+#> 2 1949 Scotion Shelf              -0.00968                       NA
+#> 3 1950 Scotion Shelf              -0.01883                       NA
+#> 4 1951 Scotion Shelf              -0.00092                       NA
+#> 5 1952 Scotion Shelf               0.00155                       NA
+#> 6 1953 Scotion Shelf              -0.00313                       NA
+#>   cold_intermediate_layer_volume minimum_temperature_in_cold_intermediate_layer
+#> 1                           <NA>                                           <NA>
+#> 2                           <NA>                                           <NA>
+#> 3                           <NA>                                           <NA>
+#> 4                           <NA>                                           <NA>
+#> 5                           <NA>                                           <NA>
+#> 6                           <NA>                                           <NA>
 ```
 
 To access a dataset in csv format:
 
 ``` r
-system.file("extdata", "chlorophyll_inventory_annual_means_hl2.csv", package = "azmpdata")
-#> [1] "C:/Users/Benoi/Documents/R/win-library/3.6/azmpdata/extdata/chlorophyll_inventory_annual_means_hl2.csv"
+system.file("extdata", "Derived_Annual_Broadscale.csv", package = "azmpdata")
+#> [1] "C:/Users/ChisholmE/Documents/R/R-4.0.2/library/azmpdata/extdata/Derived_Annual_Broadscale.csv"
 ```
 
-#### Physical Data Products
+### Variable Organization
 
-Table to come here. <!-- ``` r --> <!-- library(tibble) -->
-<!-- library(knitr) --> <!-- ``` -->
-
-#### Chemical Data Products
-
-| Dataset                             | Description                                          | Variables                |
-| :---------------------------------- | :--------------------------------------------------- | :----------------------- |
-| nitrate\_inventory\_timeseries\_hl2 | Timeseries of nitrate inventory at Halifax-2 station | no3\_0\_50; no3\_50\_150 |
-
-#### Biological Data Products
-
-| Dataset                                    | Description                                                | Variables   |
-| :----------------------------------------- | :--------------------------------------------------------- | :---------- |
-| chlorophyll\_inventory\_timeseries\_hl2    | Timeseries of chlorophyll inventory at Halifax-2 station   | chl\_0\_100 |
-| chlorophyll\_inventory\_annual\_means\_hl2 | Annual means of chlorophyll inventory at Halifax-2 station | chl\_0\_100 |
+Each table contains multiple variables, which fall under the temporal
+and regional scale in a particular category. The example shown above
+includes derived variables at an annual scale for broad regions (eg.
+Scotian Shelf or Gulf of Maine). Variables can be found via the search
+function `lookup_variable()`, which allows a user to search by variable
+name, keyword, scale or category. For more information see
+`?lookup_variable`. This function uses the information in the lookup
+table `extdata/lookup/variable_look_up.csv`
 
 ## Package Functionality
 
@@ -101,44 +107,13 @@ returns a detailed description about a given dataset:
 
 ``` r
 library(azmpdata)
-help("chlorophyll_inventory_timeseries_hl2")
-```
-
-#### Keyword Search
-
-The function *search\_azmpdata* allows to look up which datasets match a
-certain keyword criterion. For example, the following command returns
-all the datasets containing *chlorophyll* data:
-
-``` r
-library(azmpdata)
-search_azmpdata("chlorophyll")
-#> [1] "chlorophyll_inventory_annual_means_hl2"
-#> [2] "chlorophyll_inventory_timeseries_hl2"
+help("Derived_Annual_Broadscale")
 ```
 
 #### Plotting
 
-The function *plot\_azmpdata* is a wrapper that allows to plot a given
-variable in a dataset. Plot format differs according to the type of
-dataset (e.g. timeseries or annual means). For example, the following
-command displays a plot of the *chl\_0\_100* variable from the
-*chlorophyll\_inventory\_annual\_means\_hl2* dataset:
-
-``` r
-library(azmpdata)
-plot_azmpdata("chlorophyll_inventory_annual_means_hl2", "chl_0_100")
-```
-
-![](README_files/figure-gfm/plot_annualmeans-1.png)<!-- -->
-
-Aother example, the following command displays a plot of the
-*no3\_50\_150* variable from the *nitrate\_inventory\_timeseries\_hl2*
-dataset:
-
-``` r
-library(azmpdata)
-plot_azmpdata("nitrate_inventory_timeseries_hl2", "no3_50_150")
-```
-
-![](README_files/figure-gfm/plot_timeseries-1.png)<!-- -->
+–NEEDS TO BE UPDATED– The function *plot\_azmpdata* is a wrapper that
+allows to plot a given variable in a dataset. Plot format differs
+according to the type of dataset (e.g. timeseries or annual means). For
+example, the following command displays a plot of the *chl\_0\_100*
+variable from the *chlorophyll\_inventory\_annual\_means\_hl2* dataset:

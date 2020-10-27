@@ -34,15 +34,15 @@ update_check<-function(gitPkg = NULL){
 # Data Version ------------------------------------------------------------
   remoteData  <- tryCatch({
     remURLdata = paste("https://raw.githubusercontent.com/",gitPkg,"/master/inst/extdata/datadate.txt", sep = "")
-    read.delim(remURLdata)
+    utils::read.delim(remURLdata)
   },
   warning = function(cond) {
   })
   # check local data
 
-  remoteDataVer <- verCleaner(tail(remoteData,1))
+  remoteDataVer <- verCleaner(utils::tail(remoteData,1))
   if (length(remoteDataVer) == 0) remoteDataVer <- 0
-  localDataVerRaw <- tail(read.delim(system.file('extdata/', 'datadate.txt', package = 'azmpdata')),1)[,1]
+  localDataVerRaw <- utils::tail(utils::read.delim(system.file('extdata/', 'datadate.txt', package = 'azmpdata')),1)[,1]
   localDataVer <- verCleaner(localDataVerRaw)
 
 # User Messages: ----------------------------------------------------------

@@ -23,7 +23,7 @@ _Metadata_
 _Data_
 * sea_surface_height
 
- Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+ Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 Derived Occupation Annual data
 
  This data frame includes
@@ -51,6 +51,6 @@ _Data_
 * integrated_phosphate_50_150
 
 
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 }
 \keyword{datasets}

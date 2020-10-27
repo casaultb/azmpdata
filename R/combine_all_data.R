@@ -11,11 +11,10 @@
 #'
 #'  Step 3 of updating `azmpdata`, combines all `.rda` files from data-raw into organized package data tables based on temporal, spatial and categorical scales.
 #'
+#' @importFrom utils data read.csv
 #' @author Emily Chisholm
 #' @export
 #'
-#' @examples
-#' combine_all_data()
 #'
 combine_all_data <- function(){
   # add functionality to specify updating only particular data frames?

@@ -46,7 +46,7 @@ _Data_
 * zooplankton_macro_wet_weight
 * zooplankton_total_wet_weight
 
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 Phytoplankton Annual Station data
 
 This data frame includes
@@ -59,6 +59,6 @@ _Metadata_
 _Data_
 * microplankton_abundance_log10
 
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 }
 \keyword{datasets}

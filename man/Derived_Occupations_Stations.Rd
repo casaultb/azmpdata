@@ -39,6 +39,6 @@ _Data_
 * integrated_silicate_50_150
 * integrated_chlorophyll_0_100
 
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 }
 \keyword{datasets}
