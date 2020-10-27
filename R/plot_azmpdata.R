@@ -5,6 +5,9 @@
 #' @param dataset string (lowercase only)
 #' @param variable string (lowercase only)
 #'
+#'
+#' @importFrom stringr str_detect
+#' @import dplyr
 #' @return NULL
 #' @export
 #'

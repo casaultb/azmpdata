@@ -3,6 +3,10 @@
 #' github, and prompts the user to update.
 #' @param gitPkg default is \code{NULL}. This is the URL to the DESCRIPTION file
 #' on github.
+#'
+#'
+#' @importFrom utils packageDescription read.delim tail
+#'
 #' @family general_use
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}, Emily Chisholm
 #' @export

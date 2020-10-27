@@ -4,6 +4,7 @@
 #'
 #' @param ls_data list
 #'
+#' @import ggplot2
 #' @return ggplot2 object
 #' @export
 #'

@@ -4,6 +4,12 @@
 #'
 #' @param ls_data list
 #'
+#' @importFrom tidyr unite
+#' @import dplyr
+#' @importFrom tibble tibble
+#' @import ggplot2
+#'
+#'
 #' @return ggplot2 object
 #' @export
 #'
