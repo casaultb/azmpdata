@@ -46,7 +46,8 @@ update_check<-function(gitPkg = NULL){
 
   remoteDataVer <- verCleaner(utils::tail(remoteData,1))
   if (length(remoteDataVer) == 0) remoteDataVer <- 0
-  localDataVerRaw <- utils::tail(utils::read.delim(system.file('extdata/', 'datadate.txt', package = 'azmpdata')),1)[,1]
+ # localDataVerRaw <- utils::tail(utils::read.delim(system.file('extdata/', 'datadate.txt', package = 'azmpdata')),1)[,1]
+  localDataVerRaw <- readLines(system.file('extdata/', 'datadate.txt', package = 'azmpdata'))
   localDataVer <- verCleaner(localDataVerRaw)
 
 # User Messages: ----------------------------------------------------------

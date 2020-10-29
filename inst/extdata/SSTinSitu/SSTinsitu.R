@@ -16,7 +16,7 @@ year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 
 
 df <- data.frame(year = year,
-                 station_name = stationName,
+                 station = stationName,
                  sea_surface_temperature_from_moorings = vardat)
 SSTinSitu <- df
 

@@ -16,7 +16,7 @@ year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 
 
 df <- data.frame(year = year,
-                 area_name = areaName,
+                 area = areaName,
                  temperature_at_sea_floor = vardat) # verify this is correct variable name
 areasTemperature <- df
 
@@ -62,7 +62,7 @@ names(vardat) <- official_names[ofnm]
 # no are name? broadscale
 
 df <- data.frame(year = year[[1]],
-                 area_name = 'Scotion Shelf',
+                 area = 'Scotion Shelf',
                  as.data.frame(vardat))
 areasOther <- df
 

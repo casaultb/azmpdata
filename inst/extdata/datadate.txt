@@ -1,5 +1,1 @@
-Data Version
-Maybe some kind of description for folks who open this file?  The important date info is on the last line.
-
-2009-10-02
-2020-10-23
+2020-10-28

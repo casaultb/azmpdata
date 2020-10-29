@@ -1,785 +1,1545 @@
-year,area_name,density_gradient_0_50,temperature_at_sea_floor,cold_intermediate_layer_volume,minimum_temperature_in_cold_intermediate_layer
-1948,Scotion Shelf,-0.00139,NA,NA,NA
-1949,Scotion Shelf,-0.00968,NA,NA,NA
-1950,Scotion Shelf,-0.01883,NA,NA,NA
-1951,Scotion Shelf,-0.00092,NA,NA,NA
-1952,Scotion Shelf,0.00155,NA,NA,NA
-1953,Scotion Shelf,-0.00313,NA,NA,NA
-1954,Scotion Shelf,-0.0081,NA,NA,NA
-1955,Scotion Shelf,0.00138,NA,NA,NA
-1956,Scotion Shelf,-0.0107,NA,NA,NA
-1957,Scotion Shelf,0.00166,NA,NA,NA
-1958,Scotion Shelf,-0.01261,NA,NA,NA
-1959,Scotion Shelf,-0.0045,NA,NA,NA
-1960,Scotion Shelf,-0.00675,NA,NA,NA
-1961,Scotion Shelf,-0.00554,NA,NA,NA
-1962,Scotion Shelf,-0.00914,NA,NA,NA
-1963,Scotion Shelf,-0.00468,NA,NA,NA
-1964,Scotion Shelf,-0.0063,NA,NA,NA
-1965,Scotion Shelf,-0.00599,NA,NA,NA
-1966,Scotion Shelf,-0.00485,NA,NA,NA
-1967,Scotion Shelf,-0.00387,NA,NA,NA
-1968,Scotion Shelf,-0.00841,NA,NA,NA
-1969,Scotion Shelf,-0.00674,NA,NA,NA
-1970,Scotion Shelf,-0.00289,NA,NA,NA
-1971,Scotion Shelf,-0.00294,NA,NA,NA
-1972,Scotion Shelf,-0.00578,NA,NA,NA
-1973,Scotion Shelf,-0.00339,NA,NA,NA
-1974,Scotion Shelf,-0.01529,NA,NA,NA
-1975,Scotion Shelf,-0.00859,NA,NA,NA
-1976,Scotion Shelf,-0.00662,NA,NA,NA
-1977,Scotion Shelf,-0.00272,NA,NA,NA
-1978,Scotion Shelf,0.00044,NA,NA,NA
-1979,Scotion Shelf,-0.00531,NA,NA,NA
-1980,Scotion Shelf,-0.00796,NA,NA,NA
-1981,Scotion Shelf,-0.0014,NA,NA,NA
-1982,Scotion Shelf,-0.00486,NA,NA,NA
-1983,Scotion Shelf,0.00265,NA,NA,NA
-1984,Scotion Shelf,-0.00276,NA,NA,NA
-1985,Scotion Shelf,-0.01193,NA,NA,NA
-1986,Scotion Shelf,-0.00847,NA,NA,NA
-1987,Scotion Shelf,-0.00121,NA,NA,NA
-1988,Scotion Shelf,-0.00017,NA,NA,NA
-1989,Scotion Shelf,-0.00493,NA,NA,NA
-1990,Scotion Shelf,-0.00486,NA,NA,NA
-1991,Scotion Shelf,0.00107,NA,NA,NA
-1992,Scotion Shelf,-0.00285,NA,NA,NA
-1993,Scotion Shelf,-0.00067,NA,NA,NA
-1994,Scotion Shelf,0.0065,NA,NA,NA
-1995,Scotion Shelf,-2e-05,NA,NA,NA
-1996,Scotion Shelf,-0.0013,NA,NA,NA
-1997,Scotion Shelf,-0.00037,NA,NA,NA
-1998,Scotion Shelf,0.01015,NA,NA,NA
-1999,Scotion Shelf,0.00394,NA,NA,NA
-2000,Scotion Shelf,-0.00014,NA,NA,NA
-2001,Scotion Shelf,-0.00224,NA,NA,NA
-2002,Scotion Shelf,-0.00478,NA,NA,NA
-2003,Scotion Shelf,9e-04,NA,NA,NA
-2004,Scotion Shelf,-0.00396,NA,NA,NA
-2005,Scotion Shelf,0.00068,NA,NA,NA
-2006,Scotion Shelf,0.00374,NA,NA,NA
-2007,Scotion Shelf,0.00153,NA,NA,NA
-2008,Scotion Shelf,0.00379,NA,NA,NA
-2009,Scotion Shelf,-0.00242,NA,NA,NA
-2010,Scotion Shelf,0.00594,NA,NA,NA
-2011,Scotion Shelf,-0.00529,NA,NA,NA
-2012,Scotion Shelf,0.00596,NA,NA,NA
-2013,Scotion Shelf,0.00603,NA,NA,NA
-2014,Scotion Shelf,0.00143,NA,NA,NA
-2015,Scotion Shelf,-0.00128,NA,NA,NA
-2016,Scotion Shelf,0.00391,NA,NA,NA
-2017,Scotion Shelf,0.00281,NA,NA,NA
-2018,Scotion Shelf,-0.00271,NA,NA,NA
-2019,Scotion Shelf,0.00027,NA,NA,NA
-1952,Cabot Strait,NA,4.872,NA,NA
-1953,Cabot Strait,NA,5.054,NA,NA
-1954,Cabot Strait,NA,5.362,NA,NA
-1955,Cabot Strait,NA,4.777,NA,NA
-1956,Cabot Strait,NA,4.867,NA,NA
-1957,Cabot Strait,NA,5.495,NA,NA
-1959,Cabot Strait,NA,4.772,NA,NA
-1960,Cabot Strait,NA,4.662,NA,NA
-1961,Cabot Strait,NA,4.9,NA,NA
-1962,Cabot Strait,NA,4.878,NA,NA
-1964,Cabot Strait,NA,4.409,NA,NA
-1965,Cabot Strait,NA,4.073,NA,NA
-1966,Cabot Strait,NA,4.018,NA,NA
-1967,Cabot Strait,NA,4.258,NA,NA
-1968,Cabot Strait,NA,4.591,NA,NA
-1969,Cabot Strait,NA,4.98,NA,NA
-1970,Cabot Strait,NA,5.299,NA,NA
-1971,Cabot Strait,NA,5.283,NA,NA
-1972,Cabot Strait,NA,5.188,NA,NA
-1973,Cabot Strait,NA,5.249,NA,NA
-1974,Cabot Strait,NA,5.397,NA,NA
-1975,Cabot Strait,NA,5.284,NA,NA
-1976,Cabot Strait,NA,5.901,NA,NA
-1977,Cabot Strait,NA,5.848,NA,NA
-1978,Cabot Strait,NA,6.105,NA,NA
-1979,Cabot Strait,NA,6.473,NA,NA
-1980,Cabot Strait,NA,5.979,NA,NA
-1981,Cabot Strait,NA,5.721,NA,NA
-1982,Cabot Strait,NA,5.512,NA,NA
-1983,Cabot Strait,NA,5.785,NA,NA
-1984,Cabot Strait,NA,5.856,NA,NA
-1985,Cabot Strait,NA,6.151,NA,NA
-1986,Cabot Strait,NA,6.081,NA,NA
-1987,Cabot Strait,NA,5.761,NA,NA
-1988,Cabot Strait,NA,5.679,NA,NA
-1989,Cabot Strait,NA,5.654,NA,NA
-1990,Cabot Strait,NA,5.344,NA,NA
-1991,Cabot Strait,NA,4.521,NA,NA
-1992,Cabot Strait,NA,5.25,NA,NA
-1993,Cabot Strait,NA,6.161,NA,NA
-1994,Cabot Strait,NA,5.61,NA,NA
-1995,Cabot Strait,NA,5.522,NA,NA
-1996,Cabot Strait,NA,5.469,NA,NA
-1997,Cabot Strait,NA,5.769,NA,NA
-1998,Cabot Strait,NA,5.326,NA,NA
-1999,Cabot Strait,NA,5.892,NA,NA
-2000,Cabot Strait,NA,5.705,NA,NA
-2001,Cabot Strait,NA,5.834,NA,NA
-2002,Cabot Strait,NA,5.973,NA,NA
-2003,Cabot Strait,NA,5.826,NA,NA
-2004,Cabot Strait,NA,5.832,NA,NA
-2005,Cabot Strait,NA,5.751,NA,NA
-2006,Cabot Strait,NA,5.734,NA,NA
-2007,Cabot Strait,NA,5.487,NA,NA
-2008,Cabot Strait,NA,5.522,NA,NA
-2009,Cabot Strait,NA,5.165,NA,NA
-2010,Cabot Strait,NA,5.933,NA,NA
-2011,Cabot Strait,NA,6.217,NA,NA
-2012,Cabot Strait,NA,6.599,NA,NA
-2013,Cabot Strait,NA,5.805,NA,NA
-2014,Cabot Strait,NA,6.499,NA,NA
-2015,Cabot Strait,NA,6.48,NA,NA
-2016,Cabot Strait,NA,6.798,NA,NA
-2017,Cabot Strait,NA,6.8,NA,NA
-2018,Cabot Strait,NA,6.574,NA,NA
-2019,Cabot Strait,NA,7.252,NA,NA
-1950,E Georges Bank,NA,8.05,NA,NA
-1951,E Georges Bank,NA,9.41,NA,NA
-1952,E Georges Bank,NA,8.35,NA,NA
-1953,E Georges Bank,NA,8.28,NA,NA
-1954,E Georges Bank,NA,9.57,NA,NA
-1955,E Georges Bank,NA,8.31,NA,NA
-1956,E Georges Bank,NA,7.58,NA,NA
-1957,E Georges Bank,NA,8.03,NA,NA
-1958,E Georges Bank,NA,7.81,NA,NA
-1959,E Georges Bank,NA,7.41,NA,NA
-1960,E Georges Bank,NA,6.84,NA,NA
-1961,E Georges Bank,NA,6.19,NA,NA
-1962,E Georges Bank,NA,6.25,NA,NA
-1963,E Georges Bank,NA,7.03,NA,NA
-1964,E Georges Bank,NA,6.38,NA,NA
-1965,E Georges Bank,NA,6.38,NA,NA
-1966,E Georges Bank,NA,6,NA,NA
-1967,E Georges Bank,NA,6.97,NA,NA
-1968,E Georges Bank,NA,6.87,NA,NA
-1969,E Georges Bank,NA,7.74,NA,NA
-1970,E Georges Bank,NA,6.79,NA,NA
-1971,E Georges Bank,NA,7.34,NA,NA
-1972,E Georges Bank,NA,7.43,NA,NA
-1973,E Georges Bank,NA,8.48,NA,NA
-1974,E Georges Bank,NA,8.78,NA,NA
-1975,E Georges Bank,NA,7.9,NA,NA
-1976,E Georges Bank,NA,8.44,NA,NA
-1977,E Georges Bank,NA,7.77,NA,NA
-1978,E Georges Bank,NA,7.57,NA,NA
-1979,E Georges Bank,NA,8.39,NA,NA
-1980,E Georges Bank,NA,8.62,NA,NA
-1981,E Georges Bank,NA,7.65,NA,NA
-1982,E Georges Bank,NA,7.16,NA,NA
-1983,E Georges Bank,NA,8.12,NA,NA
-1984,E Georges Bank,NA,8.21,NA,NA
-1985,E Georges Bank,NA,8.78,NA,NA
-1986,E Georges Bank,NA,8.07,NA,NA
-1987,E Georges Bank,NA,7.07,NA,NA
-1988,E Georges Bank,NA,7.8,NA,NA
-1989,E Georges Bank,NA,7.25,NA,NA
-1990,E Georges Bank,NA,8.11,NA,NA
-1991,E Georges Bank,NA,8.34,NA,NA
-1992,E Georges Bank,NA,7.46,NA,NA
-1993,E Georges Bank,NA,7.53,NA,NA
-1994,E Georges Bank,NA,8.26,NA,NA
-1995,E Georges Bank,NA,8.19,NA,NA
-1996,E Georges Bank,NA,7.58,NA,NA
-1997,E Georges Bank,NA,8.15,NA,NA
-1998,E Georges Bank,NA,7.51,NA,NA
-1999,E Georges Bank,NA,8.52,NA,NA
-2000,E Georges Bank,NA,8.55,NA,NA
-2001,E Georges Bank,NA,8.69,NA,NA
-2002,E Georges Bank,NA,8.7,NA,NA
-2003,E Georges Bank,NA,7.43,NA,NA
-2004,E Georges Bank,NA,6.47,NA,NA
-2005,E Georges Bank,NA,6.94,NA,NA
-2006,E Georges Bank,NA,7.98,NA,NA
-2007,E Georges Bank,NA,7.03,NA,NA
-2008,E Georges Bank,NA,7.82,NA,NA
-2009,E Georges Bank,NA,8.05,NA,NA
-2010,E Georges Bank,NA,8.48,NA,NA
-2011,E Georges Bank,NA,8.08,NA,NA
-2012,E Georges Bank,NA,9.65,NA,NA
-2013,E Georges Bank,NA,8.34,NA,NA
-2014,E Georges Bank,NA,8.7,NA,NA
-2015,E Georges Bank,NA,8.76,NA,NA
-2016,E Georges Bank,NA,8.75,NA,NA
-2017,E Georges Bank,NA,9.41,NA,NA
-2018,E Georges Bank,NA,8.33,NA,NA
-2019,E Georges Bank,NA,7.81,NA,NA
-1950,Emerald Basin,NA,7.52,NA,NA
-1951,Emerald Basin,NA,9,NA,NA
-1952,Emerald Basin,NA,8,NA,NA
-1953,Emerald Basin,NA,7.91,NA,NA
-1954,Emerald Basin,NA,8.91,NA,NA
-1955,Emerald Basin,NA,8.34,NA,NA
-1956,Emerald Basin,NA,8.37,NA,NA
-1957,Emerald Basin,NA,8.75,NA,NA
-1958,Emerald Basin,NA,8.16,NA,NA
-1959,Emerald Basin,NA,5.87,NA,NA
-1960,Emerald Basin,NA,7.15,NA,NA
-1961,Emerald Basin,NA,7.47,NA,NA
-1962,Emerald Basin,NA,7.9,NA,NA
-1963,Emerald Basin,NA,7.62,NA,NA
-1964,Emerald Basin,NA,5.85,NA,NA
-1965,Emerald Basin,NA,5.82,NA,NA
-1966,Emerald Basin,NA,4.83,NA,NA
-1967,Emerald Basin,NA,6.02,NA,NA
-1968,Emerald Basin,NA,7.6,NA,NA
-1969,Emerald Basin,NA,8.51,NA,NA
-1970,Emerald Basin,NA,8.51,NA,NA
-1971,Emerald Basin,NA,8.54,NA,NA
-1972,Emerald Basin,NA,8.79,NA,NA
-1973,Emerald Basin,NA,9.38,NA,NA
-1974,Emerald Basin,NA,9.6,NA,NA
-1975,Emerald Basin,NA,10.05,NA,NA
-1976,Emerald Basin,NA,8.66,NA,NA
-1977,Emerald Basin,NA,9.13,NA,NA
-1978,Emerald Basin,NA,7.36,NA,NA
-1979,Emerald Basin,NA,9.33,NA,NA
-1980,Emerald Basin,NA,8.99,NA,NA
-1981,Emerald Basin,NA,8.95,NA,NA
-1982,Emerald Basin,NA,7.42,NA,NA
-1983,Emerald Basin,NA,8.38,NA,NA
-1984,Emerald Basin,NA,9.33,NA,NA
-1985,Emerald Basin,NA,10.1,NA,NA
-1986,Emerald Basin,NA,10.29,NA,NA
-1987,Emerald Basin,NA,9.61,NA,NA
-1988,Emerald Basin,NA,8.66,NA,NA
-1989,Emerald Basin,NA,9.39,NA,NA
-1990,Emerald Basin,NA,9.53,NA,NA
-1991,Emerald Basin,NA,9.25,NA,NA
-1992,Emerald Basin,NA,9.35,NA,NA
-1993,Emerald Basin,NA,9.98,NA,NA
-1994,Emerald Basin,NA,9.88,NA,NA
-1995,Emerald Basin,NA,9.59,NA,NA
-1996,Emerald Basin,NA,9.83,NA,NA
-1997,Emerald Basin,NA,9.5,NA,NA
-1998,Emerald Basin,NA,6.97,NA,NA
-1999,Emerald Basin,NA,8.89,NA,NA
-2000,Emerald Basin,NA,9.38,NA,NA
-2001,Emerald Basin,NA,9.21,NA,NA
-2002,Emerald Basin,NA,9.27,NA,NA
-2003,Emerald Basin,NA,9.21,NA,NA
-2004,Emerald Basin,NA,9.62,NA,NA
-2005,Emerald Basin,NA,9.39,NA,NA
-2006,Emerald Basin,NA,9.55,NA,NA
-2007,Emerald Basin,NA,7.33,NA,NA
-2008,Emerald Basin,NA,8.29,NA,NA
-2009,Emerald Basin,NA,7.91,NA,NA
-2010,Emerald Basin,NA,9.78,NA,NA
-2011,Emerald Basin,NA,9.99,NA,NA
-2012,Emerald Basin,NA,9.87,NA,NA
-2013,Emerald Basin,NA,9.74,NA,NA
-2014,Emerald Basin,NA,10.51,NA,NA
-2015,Emerald Basin,NA,10.31,NA,NA
-2016,Emerald Basin,NA,10.76,NA,NA
-2017,Emerald Basin,NA,10.63,NA,NA
-2018,Emerald Basin,NA,10.75,NA,NA
-2019,Emerald Basin,NA,10.97,NA,NA
-1950,Georges Basin,NA,6.93,NA,NA
-1951,Georges Basin,NA,7.51,NA,NA
-1953,Georges Basin,NA,7.57,NA,NA
-1954,Georges Basin,NA,7.67,NA,NA
-1955,Georges Basin,NA,7.48,NA,NA
-1956,Georges Basin,NA,7.73,NA,NA
-1957,Georges Basin,NA,8,NA,NA
-1958,Georges Basin,NA,7.65,NA,NA
-1959,Georges Basin,NA,6.38,NA,NA
-1960,Georges Basin,NA,8.01,NA,NA
-1961,Georges Basin,NA,6.7,NA,NA
-1962,Georges Basin,NA,7.06,NA,NA
-1963,Georges Basin,NA,7.66,NA,NA
-1964,Georges Basin,NA,5.88,NA,NA
-1965,Georges Basin,NA,5.98,NA,NA
-1966,Georges Basin,NA,5.99,NA,NA
-1967,Georges Basin,NA,6.37,NA,NA
-1968,Georges Basin,NA,7.09,NA,NA
-1969,Georges Basin,NA,7.36,NA,NA
-1970,Georges Basin,NA,7.41,NA,NA
-1971,Georges Basin,NA,8.08,NA,NA
-1972,Georges Basin,NA,8.48,NA,NA
-1973,Georges Basin,NA,8.5,NA,NA
-1974,Georges Basin,NA,8.76,NA,NA
-1975,Georges Basin,NA,8.57,NA,NA
-1976,Georges Basin,NA,8.62,NA,NA
-1977,Georges Basin,NA,7.57,NA,NA
-1978,Georges Basin,NA,7.36,NA,NA
-1979,Georges Basin,NA,8.31,NA,NA
-1980,Georges Basin,NA,8.04,NA,NA
-1981,Georges Basin,NA,7.5,NA,NA
-1982,Georges Basin,NA,7.18,NA,NA
-1983,Georges Basin,NA,8.32,NA,NA
-1984,Georges Basin,NA,8.39,NA,NA
-1985,Georges Basin,NA,9,NA,NA
-1986,Georges Basin,NA,8.69,NA,NA
-1987,Georges Basin,NA,8.04,NA,NA
-1988,Georges Basin,NA,8.1,NA,NA
-1989,Georges Basin,NA,7.96,NA,NA
-1990,Georges Basin,NA,8.02,NA,NA
-1991,Georges Basin,NA,8.19,NA,NA
-1992,Georges Basin,NA,8.36,NA,NA
-1993,Georges Basin,NA,8.39,NA,NA
-1994,Georges Basin,NA,8.73,NA,NA
-1995,Georges Basin,NA,8.88,NA,NA
-1996,Georges Basin,NA,8.76,NA,NA
-1997,Georges Basin,NA,8.42,NA,NA
-1998,Georges Basin,NA,6.87,NA,NA
-1999,Georges Basin,NA,8.76,NA,NA
-2000,Georges Basin,NA,8.79,NA,NA
-2001,Georges Basin,NA,8.34,NA,NA
-2002,Georges Basin,NA,8.44,NA,NA
-2003,Georges Basin,NA,8.7,NA,NA
-2004,Georges Basin,NA,8.27,NA,NA
-2005,Georges Basin,NA,8.07,NA,NA
-2006,Georges Basin,NA,8.52,NA,NA
-2007,Georges Basin,NA,7.5,NA,NA
-2008,Georges Basin,NA,7.68,NA,NA
-2009,Georges Basin,NA,8.21,NA,NA
-2010,Georges Basin,NA,9.21,NA,NA
-2011,Georges Basin,NA,8.8,NA,NA
-2012,Georges Basin,NA,8.78,NA,NA
-2013,Georges Basin,NA,9.31,NA,NA
-2014,Georges Basin,NA,9.43,NA,NA
-2015,Georges Basin,NA,9.28,NA,NA
-2016,Georges Basin,NA,9.66,NA,NA
-2017,Georges Basin,NA,9.79,NA,NA
-2018,Georges Basin,NA,10.18,NA,NA
-2019,Georges Basin,NA,9.99,NA,NA
-1950,Lurcher Shoal,NA,6.91,NA,NA
-1951,Lurcher Shoal,NA,7.313,NA,NA
-1952,Lurcher Shoal,NA,6.14,NA,NA
-1953,Lurcher Shoal,NA,6.923,NA,NA
-1954,Lurcher Shoal,NA,6.455,NA,NA
-1955,Lurcher Shoal,NA,6.515,NA,NA
-1956,Lurcher Shoal,NA,6.267,NA,NA
-1957,Lurcher Shoal,NA,6.274,NA,NA
-1958,Lurcher Shoal,NA,6.446,NA,NA
-1959,Lurcher Shoal,NA,5.689,NA,NA
-1960,Lurcher Shoal,NA,5.718,NA,NA
-1961,Lurcher Shoal,NA,5.583,NA,NA
-1962,Lurcher Shoal,NA,5.898,NA,NA
-1963,Lurcher Shoal,NA,6.65,NA,NA
-1964,Lurcher Shoal,NA,4.948,NA,NA
-1965,Lurcher Shoal,NA,4.904,NA,NA
-1966,Lurcher Shoal,NA,5.113,NA,NA
-1967,Lurcher Shoal,NA,5.29,NA,NA
-1968,Lurcher Shoal,NA,5.988,NA,NA
-1969,Lurcher Shoal,NA,6.7,NA,NA
-1970,Lurcher Shoal,NA,6.566,NA,NA
-1971,Lurcher Shoal,NA,6.856,NA,NA
-1972,Lurcher Shoal,NA,6.769,NA,NA
-1973,Lurcher Shoal,NA,6.656,NA,NA
-1974,Lurcher Shoal,NA,7.498,NA,NA
-1975,Lurcher Shoal,NA,6.66,NA,NA
-1976,Lurcher Shoal,NA,8.142,NA,NA
-1977,Lurcher Shoal,NA,6.189,NA,NA
-1978,Lurcher Shoal,NA,6.103,NA,NA
-1979,Lurcher Shoal,NA,7.421,NA,NA
-1980,Lurcher Shoal,NA,6.63,NA,NA
-1981,Lurcher Shoal,NA,6.433,NA,NA
-1982,Lurcher Shoal,NA,6.789,NA,NA
-1983,Lurcher Shoal,NA,6.672,NA,NA
-1984,Lurcher Shoal,NA,7.051,NA,NA
-1985,Lurcher Shoal,NA,6.739,NA,NA
-1986,Lurcher Shoal,NA,7.3,NA,NA
-1987,Lurcher Shoal,NA,5.487,NA,NA
-1988,Lurcher Shoal,NA,5.224,NA,NA
-1989,Lurcher Shoal,NA,5.954,NA,NA
-1990,Lurcher Shoal,NA,6.637,NA,NA
-1991,Lurcher Shoal,NA,5.417,NA,NA
-1992,Lurcher Shoal,NA,5.266,NA,NA
-1993,Lurcher Shoal,NA,5.984,NA,NA
-1994,Lurcher Shoal,NA,6.321,NA,NA
-1995,Lurcher Shoal,NA,6.176,NA,NA
-1996,Lurcher Shoal,NA,5.667,NA,NA
-1997,Lurcher Shoal,NA,6.493,NA,NA
-1998,Lurcher Shoal,NA,5.346,NA,NA
-1999,Lurcher Shoal,NA,7.319,NA,NA
-2000,Lurcher Shoal,NA,7.841,NA,NA
-2001,Lurcher Shoal,NA,5.793,NA,NA
-2002,Lurcher Shoal,NA,7.38,NA,NA
-2003,Lurcher Shoal,NA,6.898,NA,NA
-2004,Lurcher Shoal,NA,5.528,NA,NA
-2005,Lurcher Shoal,NA,5.987,NA,NA
-2006,Lurcher Shoal,NA,7.65,NA,NA
-2007,Lurcher Shoal,NA,5.355,NA,NA
-2008,Lurcher Shoal,NA,6.457,NA,NA
-2009,Lurcher Shoal,NA,7.528,NA,NA
-2010,Lurcher Shoal,NA,6.435,NA,NA
-2011,Lurcher Shoal,NA,7.63,NA,NA
-2012,Lurcher Shoal,NA,9.462,NA,NA
-2013,Lurcher Shoal,NA,7.377,NA,NA
-2014,Lurcher Shoal,NA,8.066,NA,NA
-2015,Lurcher Shoal,NA,7.451,NA,NA
-2016,Lurcher Shoal,NA,7.296,NA,NA
-2018,Lurcher Shoal,NA,8.612,NA,NA
-2019,Lurcher Shoal,NA,6.645,NA,NA
-1950,Misaine Bank,NA,1.7553,NA,NA
-1951,Misaine Bank,NA,2.5359,NA,NA
-1952,Misaine Bank,NA,2.7611,NA,NA
-1953,Misaine Bank,NA,2.1154,NA,NA
-1954,Misaine Bank,NA,2.1021,NA,NA
-1955,Misaine Bank,NA,1.9474,NA,NA
-1956,Misaine Bank,NA,1.9161,NA,NA
-1957,Misaine Bank,NA,1.109,NA,NA
-1958,Misaine Bank,NA,2.12,NA,NA
-1959,Misaine Bank,NA,0.7352,NA,NA
-1960,Misaine Bank,NA,2.0899,NA,NA
-1961,Misaine Bank,NA,0.7997,NA,NA
-1962,Misaine Bank,NA,1.4636,NA,NA
-1963,Misaine Bank,NA,1.9534,NA,NA
-1964,Misaine Bank,NA,1.4924,NA,NA
-1965,Misaine Bank,NA,1.2272,NA,NA
-1966,Misaine Bank,NA,1.43,NA,NA
-1967,Misaine Bank,NA,1.8195,NA,NA
-1968,Misaine Bank,NA,1.8344,NA,NA
-1969,Misaine Bank,NA,1.7233,NA,NA
-1970,Misaine Bank,NA,2.1623,NA,NA
-1971,Misaine Bank,NA,2.1876,NA,NA
-1972,Misaine Bank,NA,1.6897,NA,NA
-1973,Misaine Bank,NA,1.1339,NA,NA
-1974,Misaine Bank,NA,1.3109,NA,NA
-1975,Misaine Bank,NA,1.7013,NA,NA
-1976,Misaine Bank,NA,1.6989,NA,NA
-1977,Misaine Bank,NA,2.6363,NA,NA
-1978,Misaine Bank,NA,2.1538,NA,NA
-1979,Misaine Bank,NA,1.918,NA,NA
-1980,Misaine Bank,NA,1.953,NA,NA
-1981,Misaine Bank,NA,2.4551,NA,NA
-1982,Misaine Bank,NA,0.9407,NA,NA
-1983,Misaine Bank,NA,1.574,NA,NA
-1984,Misaine Bank,NA,3.072,NA,NA
-1985,Misaine Bank,NA,1.2133,NA,NA
-1986,Misaine Bank,NA,0.5272,NA,NA
-1987,Misaine Bank,NA,0.936,NA,NA
-1988,Misaine Bank,NA,1.9343,NA,NA
-1989,Misaine Bank,NA,0.9186,NA,NA
-1990,Misaine Bank,NA,0.4586,NA,NA
-1991,Misaine Bank,NA,0.7353,NA,NA
-1992,Misaine Bank,NA,0.9,NA,NA
-1993,Misaine Bank,NA,1.3797,NA,NA
-1994,Misaine Bank,NA,1.4498,NA,NA
-1995,Misaine Bank,NA,1.189,NA,NA
-1996,Misaine Bank,NA,1.3039,NA,NA
-1997,Misaine Bank,NA,1.5204,NA,NA
-1998,Misaine Bank,NA,1.6686,NA,NA
-1999,Misaine Bank,NA,2.1498,NA,NA
-2000,Misaine Bank,NA,2.5021,NA,NA
-2001,Misaine Bank,NA,1.515,NA,NA
-2002,Misaine Bank,NA,1.6927,NA,NA
-2003,Misaine Bank,NA,0.6261,NA,NA
-2004,Misaine Bank,NA,0.9588,NA,NA
-2005,Misaine Bank,NA,1.7339,NA,NA
-2006,Misaine Bank,NA,2.2449,NA,NA
-2007,Misaine Bank,NA,1.2126,NA,NA
-2008,Misaine Bank,NA,1.5548,NA,NA
-2009,Misaine Bank,NA,1.9258,NA,NA
-2010,Misaine Bank,NA,1.954,NA,NA
-2011,Misaine Bank,NA,2.2734,NA,NA
-2012,Misaine Bank,NA,2.8033,NA,NA
-2013,Misaine Bank,NA,1.9178,NA,NA
-2014,Misaine Bank,NA,2.1184,NA,NA
-2015,Misaine Bank,NA,2.5405,NA,NA
-2016,Misaine Bank,NA,2.7416,NA,NA
-2017,Misaine Bank,NA,1.9393,NA,NA
-2018,Misaine Bank,NA,2.0626,NA,NA
-2019,Misaine Bank,NA,1.3149,NA,NA
-1970,4V,NA,3.98,NA,NA
-1971,4V,NA,3.58,NA,NA
-1972,4V,NA,3.68,NA,NA
-1973,4V,NA,3.11,NA,NA
-1974,4V,NA,3.79,NA,NA
-1975,4V,NA,4.39,NA,NA
-1976,4V,NA,3.62,NA,NA
-1977,4V,NA,4.43,NA,NA
-1978,4V,NA,4.16,NA,NA
-1979,4V,NA,4.19,NA,NA
-1980,4V,NA,4.38,NA,NA
-1981,4V,NA,4.37,NA,NA
-1982,4V,NA,2.82,NA,NA
-1983,4V,NA,3.42,NA,NA
-1984,4V,NA,5.18,NA,NA
-1985,4V,NA,3.41,NA,NA
-1986,4V,NA,3.84,NA,NA
-1987,4V,NA,2.76,NA,NA
-1988,4V,NA,4.13,NA,NA
-1989,4V,NA,2.87,NA,NA
-1990,4V,NA,2.61,NA,NA
-1991,4V,NA,2.58,NA,NA
-1992,4V,NA,3.26,NA,NA
-1993,4V,NA,3.35,NA,NA
-1994,4V,NA,2.96,NA,NA
-1995,4V,NA,3.22,NA,NA
-1996,4V,NA,2.91,NA,NA
-1997,4V,NA,3.44,NA,NA
-1998,4V,NA,3.43,NA,NA
-1999,4V,NA,3.97,NA,NA
-2000,4V,NA,4.19,NA,NA
-2001,4V,NA,3.44,NA,NA
-2002,4V,NA,3.8,NA,NA
-2003,4V,NA,2.73,NA,NA
-2004,4V,NA,2.77,NA,NA
-2005,4V,NA,3.87,NA,NA
-2006,4V,NA,4.2,NA,NA
-2007,4V,NA,3.23,NA,NA
-2008,4V,NA,3.48,NA,NA
-2009,4V,NA,3.75,NA,NA
-2010,4V,NA,3.83,NA,NA
-2011,4V,NA,4.22,NA,NA
-2012,4V,NA,4.51,NA,NA
-2013,4V,NA,4.09,NA,NA
-2014,4V,NA,4.57,NA,NA
-2015,4V,NA,5.15,NA,NA
-2016,4V,NA,4.78,NA,NA
-2017,4V,NA,4.63,NA,NA
-2018,4V,NA,NA,NA,NA
-2019,4V,NA,4.32,NA,NA
-1970,4Vn,NA,4.349,NA,NA
-1971,4Vn,NA,4.057,NA,NA
-1972,4Vn,NA,3.814,NA,NA
-1973,4Vn,NA,3.469,NA,NA
-1974,4Vn,NA,4.374,NA,NA
-1975,4Vn,NA,3.641,NA,NA
-1976,4Vn,NA,3.4,NA,NA
-1977,4Vn,NA,4.522,NA,NA
-1978,4Vn,NA,4.742,NA,NA
-1979,4Vn,NA,4.716,NA,NA
-1980,4Vn,NA,4.864,NA,NA
-1981,4Vn,NA,4.644,NA,NA
-1982,4Vn,NA,3.786,NA,NA
-1983,4Vn,NA,3.544,NA,NA
-1984,4Vn,NA,4.863,NA,NA
-1985,4Vn,NA,3.961,NA,NA
-1986,4Vn,NA,4.445,NA,NA
-1987,4Vn,NA,3.934,NA,NA
-1988,4Vn,NA,4.351,NA,NA
-1989,4Vn,NA,4.007,NA,NA
-1990,4Vn,NA,3.617,NA,NA
-1991,4Vn,NA,3.326,NA,NA
-1992,4Vn,NA,3.644,NA,NA
-1993,4Vn,NA,3.962,NA,NA
-1994,4Vn,NA,3.813,NA,NA
-1995,4Vn,NA,3.694,NA,NA
-1996,4Vn,NA,3.128,NA,NA
-1997,4Vn,NA,4.326,NA,NA
-1998,4Vn,NA,3.548,NA,NA
-1999,4Vn,NA,4.52,NA,NA
-2000,4Vn,NA,4.131,NA,NA
-2001,4Vn,NA,4.303,NA,NA
-2002,4Vn,NA,4.106,NA,NA
-2003,4Vn,NA,3.743,NA,NA
-2004,4Vn,NA,3.566,NA,NA
-2005,4Vn,NA,4.302,NA,NA
-2006,4Vn,NA,4.67,NA,NA
-2007,4Vn,NA,3.937,NA,NA
-2008,4Vn,NA,4.034,NA,NA
-2009,4Vn,NA,3.889,NA,NA
-2010,4Vn,NA,4.205,NA,NA
-2011,4Vn,NA,4.669,NA,NA
-2012,4Vn,NA,4.473,NA,NA
-2013,4Vn,NA,4.202,NA,NA
-2014,4Vn,NA,5.159,NA,NA
-2015,4Vn,NA,4.915,NA,NA
-2016,4Vn,NA,4.864,NA,NA
-2017,4Vn,NA,4.67,NA,NA
-2018,4Vn,NA,NA,NA,NA
-2019,4Vn,NA,4.988,NA,NA
-1970,4Vs,NA,3.85,NA,NA
-1971,4Vs,NA,3.43,NA,NA
-1972,4Vs,NA,3.63,NA,NA
-1973,4Vs,NA,2.99,NA,NA
-1974,4Vs,NA,3.59,NA,NA
-1975,4Vs,NA,4.63,NA,NA
-1976,4Vs,NA,3.68,NA,NA
-1977,4Vs,NA,4.4,NA,NA
-1978,4Vs,NA,3.96,NA,NA
-1979,4Vs,NA,4.01,NA,NA
-1980,4Vs,NA,4.21,NA,NA
-1981,4Vs,NA,4.27,NA,NA
-1982,4Vs,NA,2.5,NA,NA
-1983,4Vs,NA,3.37,NA,NA
-1984,4Vs,NA,5.28,NA,NA
-1985,4Vs,NA,3.22,NA,NA
-1986,4Vs,NA,3.64,NA,NA
-1987,4Vs,NA,2.37,NA,NA
-1988,4Vs,NA,4.06,NA,NA
-1989,4Vs,NA,2.49,NA,NA
-1990,4Vs,NA,2.27,NA,NA
-1991,4Vs,NA,2.33,NA,NA
-1992,4Vs,NA,3.14,NA,NA
-1993,4Vs,NA,3.14,NA,NA
-1994,4Vs,NA,2.67,NA,NA
-1995,4Vs,NA,3.06,NA,NA
-1996,4Vs,NA,2.83,NA,NA
-1997,4Vs,NA,3.15,NA,NA
-1998,4Vs,NA,3.39,NA,NA
-1999,4Vs,NA,3.79,NA,NA
-2000,4Vs,NA,4.21,NA,NA
-2001,4Vs,NA,3.15,NA,NA
-2002,4Vs,NA,3.69,NA,NA
-2003,4Vs,NA,2.39,NA,NA
-2004,4Vs,NA,2.5,NA,NA
-2005,4Vs,NA,3.73,NA,NA
-2006,4Vs,NA,4.04,NA,NA
-2007,4Vs,NA,3,NA,NA
-2008,4Vs,NA,3.3,NA,NA
-2009,4Vs,NA,3.7,NA,NA
-2010,4Vs,NA,3.71,NA,NA
-2011,4Vs,NA,4.08,NA,NA
-2012,4Vs,NA,4.52,NA,NA
-2013,4Vs,NA,4.05,NA,NA
-2014,4Vs,NA,4.37,NA,NA
-2015,4Vs,NA,5.22,NA,NA
-2016,4Vs,NA,4.75,NA,NA
-2017,4Vs,NA,4.61,NA,NA
-2018,4Vs,NA,NA,NA,NA
-2019,4Vs,NA,4.1,NA,NA
-1970,4W,NA,5.63,NA,NA
-1971,4W,NA,6.56,NA,NA
-1972,4W,NA,6.58,NA,NA
-1973,4W,NA,5.98,NA,NA
-1974,4W,NA,7.23,NA,NA
-1975,4W,NA,6.34,NA,NA
-1976,4W,NA,7.05,NA,NA
-1977,4W,NA,7.52,NA,NA
-1978,4W,NA,6.18,NA,NA
-1979,4W,NA,7.2,NA,NA
-1980,4W,NA,7.07,NA,NA
-1981,4W,NA,6.98,NA,NA
-1982,4W,NA,5.73,NA,NA
-1983,4W,NA,6.44,NA,NA
-1984,4W,NA,7.96,NA,NA
-1985,4W,NA,7.64,NA,NA
-1986,4W,NA,7.37,NA,NA
-1987,4W,NA,5.89,NA,NA
-1988,4W,NA,5.84,NA,NA
-1989,4W,NA,6.12,NA,NA
-1990,4W,NA,6.05,NA,NA
-1991,4W,NA,5.81,NA,NA
-1992,4W,NA,6.23,NA,NA
-1993,4W,NA,6.74,NA,NA
-1994,4W,NA,6.78,NA,NA
-1995,4W,NA,6.65,NA,NA
-1996,4W,NA,6.21,NA,NA
-1997,4W,NA,6.28,NA,NA
-1998,4W,NA,4.99,NA,NA
-1999,4W,NA,6.75,NA,NA
-2000,4W,NA,7.46,NA,NA
-2001,4W,NA,5.84,NA,NA
-2002,4W,NA,6.76,NA,NA
-2003,4W,NA,5.8,NA,NA
-2004,4W,NA,4.75,NA,NA
-2005,4W,NA,6.4,NA,NA
-2006,4W,NA,7.39,NA,NA
-2007,4W,NA,5.62,NA,NA
-2008,4W,NA,5.38,NA,NA
-2009,4W,NA,6.64,NA,NA
-2010,4W,NA,6.89,NA,NA
-2011,4W,NA,6.55,NA,NA
-2012,4W,NA,8.09,NA,NA
-2013,4W,NA,6.94,NA,NA
-2014,4W,NA,8.33,NA,NA
-2015,4W,NA,7.94,NA,NA
-2016,4W,NA,8.12,NA,NA
-2017,4W,NA,7.22,NA,NA
-2018,4W,NA,NA,NA,NA
-2019,4W,NA,7.27,NA,NA
-1970,4X,NA,6.32,NA,NA
-1971,4X,NA,7.11,NA,NA
-1972,4X,NA,6.3,NA,NA
-1973,4X,NA,7.83,NA,NA
-1974,4X,NA,8.07,NA,NA
-1975,4X,NA,7.32,NA,NA
-1976,4X,NA,8.63,NA,NA
-1977,4X,NA,7.09,NA,NA
-1978,4X,NA,7.15,NA,NA
-1979,4X,NA,7.89,NA,NA
-1980,4X,NA,7.63,NA,NA
-1981,4X,NA,6.9,NA,NA
-1982,4X,NA,7.47,NA,NA
-1983,4X,NA,7.39,NA,NA
-1984,4X,NA,7.91,NA,NA
-1985,4X,NA,8.47,NA,NA
-1986,4X,NA,7.77,NA,NA
-1987,4X,NA,6.31,NA,NA
-1988,4X,NA,7.12,NA,NA
-1989,4X,NA,7.24,NA,NA
-1990,4X,NA,7.14,NA,NA
-1991,4X,NA,6.66,NA,NA
-1992,4X,NA,7.44,NA,NA
-1993,4X,NA,7.06,NA,NA
-1994,4X,NA,8.13,NA,NA
-1995,4X,NA,6.78,NA,NA
-1996,4X,NA,6.99,NA,NA
-1997,4X,NA,7.42,NA,NA
-1998,4X,NA,5.23,NA,NA
-1999,4X,NA,7.91,NA,NA
-2000,4X,NA,8.26,NA,NA
-2001,4X,NA,6.37,NA,NA
-2002,4X,NA,8.12,NA,NA
-2003,4X,NA,7.45,NA,NA
-2004,4X,NA,6.04,NA,NA
-2005,4X,NA,7.27,NA,NA
-2006,4X,NA,8.14,NA,NA
-2007,4X,NA,6.24,NA,NA
-2008,4X,NA,6.88,NA,NA
-2009,4X,NA,7.24,NA,NA
-2010,4X,NA,7.57,NA,NA
-2011,4X,NA,7.7,NA,NA
-2012,4X,NA,9.36,NA,NA
-2013,4X,NA,8.28,NA,NA
-2014,4X,NA,8.91,NA,NA
-2015,4X,NA,8.15,NA,NA
-2016,4X,NA,9.09,NA,NA
-2017,4X,NA,8.81,NA,NA
-2018,4X,NA,8.64,NA,NA
-2019,4X,NA,8.38,NA,NA
-1972,Scotian Shelf,NA,NA,4860,2.5
-1973,Scotian Shelf,NA,NA,5012,2.2
-1974,Scotian Shelf,NA,NA,4856,2.2
-1975,Scotian Shelf,NA,NA,4777,2.2
-1976,Scotian Shelf,NA,NA,4664,2.1
-1977,Scotian Shelf,NA,NA,4554,2.2
-1978,Scotian Shelf,NA,NA,4352,2.3
-1979,Scotian Shelf,NA,NA,4034,2.5
-1980,Scotian Shelf,NA,NA,4379,2.4
-1981,Scotian Shelf,NA,NA,4139,2.4
-1982,Scotian Shelf,NA,NA,4053,2.4
-1983,Scotian Shelf,NA,NA,4349,2.2
-1984,Scotian Shelf,NA,NA,4326,2.0
-1985,Scotian Shelf,NA,NA,4474,2.0
-1986,Scotian Shelf,NA,NA,4567,2.1
-1987,Scotian Shelf,NA,NA,5090,2.0
-1988,Scotian Shelf,NA,NA,  NA, NA
-1989,Scotian Shelf,NA,NA,  NA, NA
-1990,Scotian Shelf,NA,NA,5841,1.7
-1991,Scotian Shelf,NA,NA,6461,1.6
-1992,Scotian Shelf,NA,NA,6240,1.3
-1993,Scotian Shelf,NA,NA,6109,1.6
-1994,Scotian Shelf,NA,NA,5778,1.8
-1995,Scotian Shelf,NA,NA,5872,1.7
-1996,Scotian Shelf,NA,NA,5968,2.1
-1997,Scotian Shelf,NA,NA,6302,1.9
-1998,Scotian Shelf,NA,NA,7215,1.8
-1999,Scotian Shelf,NA,NA,4983,2.6
-2000,Scotian Shelf,NA,NA,3461,2.5
-2001,Scotian Shelf,NA,NA,6955,2.1
-2002,Scotian Shelf,NA,NA,5213,2.3
-2003,Scotian Shelf,NA,NA,6840,1.4
-2004,Scotian Shelf,NA,NA,7973,1.8
-2005,Scotian Shelf,NA,NA,4937,2.2
-2006,Scotian Shelf,NA,NA,4006,2.6
-2007,Scotian Shelf,NA,NA,6803,2.1
-2008,Scotian Shelf,NA,NA,6581,2.2
-2009,Scotian Shelf,NA,NA,4953,2.2
-2010,Scotian Shelf,NA,NA,4836,2.5
-2011,Scotian Shelf,NA,NA,4848,2.8
-2012,Scotian Shelf,NA,NA,2887,2.9
-2013,Scotian Shelf,NA,NA,5043,2.5
-2014,Scotian Shelf,NA,NA,3300,2.4
-2015,Scotian Shelf,NA,NA,4084,2.0
-2016,Scotian Shelf,NA,NA,4252,2.6
-2017,Scotian Shelf,NA,NA,4624,2.4
-2018,Scotian Shelf,NA,NA,  NA, NA
-2019,Scotian Shelf,NA,NA,5096,2.2
+year,area_name,density_gradient_0_50,temperature_at_sea_floor,cold_intermediate_layer_volume,minimum_temperature_in_cold_intermediate_layer,area
+1948,Scotion Shelf,-0.00139,NA,NA,NA,Scotion Shelf
+1949,Scotion Shelf,-0.00968,NA,NA,NA,Scotion Shelf
+1950,Scotion Shelf,-0.01883,NA,NA,NA,Scotion Shelf
+1951,Scotion Shelf,-0.00092,NA,NA,NA,Scotion Shelf
+1952,Scotion Shelf,0.00155,NA,NA,NA,Scotion Shelf
+1953,Scotion Shelf,-0.00313,NA,NA,NA,Scotion Shelf
+1954,Scotion Shelf,-0.0081,NA,NA,NA,Scotion Shelf
+1955,Scotion Shelf,0.00138,NA,NA,NA,Scotion Shelf
+1956,Scotion Shelf,-0.0107,NA,NA,NA,Scotion Shelf
+1957,Scotion Shelf,0.00166,NA,NA,NA,Scotion Shelf
+1958,Scotion Shelf,-0.01261,NA,NA,NA,Scotion Shelf
+1959,Scotion Shelf,-0.0045,NA,NA,NA,Scotion Shelf
+1960,Scotion Shelf,-0.00675,NA,NA,NA,Scotion Shelf
+1961,Scotion Shelf,-0.00554,NA,NA,NA,Scotion Shelf
+1962,Scotion Shelf,-0.00914,NA,NA,NA,Scotion Shelf
+1963,Scotion Shelf,-0.00468,NA,NA,NA,Scotion Shelf
+1964,Scotion Shelf,-0.0063,NA,NA,NA,Scotion Shelf
+1965,Scotion Shelf,-0.00599,NA,NA,NA,Scotion Shelf
+1966,Scotion Shelf,-0.00485,NA,NA,NA,Scotion Shelf
+1967,Scotion Shelf,-0.00387,NA,NA,NA,Scotion Shelf
+1968,Scotion Shelf,-0.00841,NA,NA,NA,Scotion Shelf
+1969,Scotion Shelf,-0.00674,NA,NA,NA,Scotion Shelf
+1970,Scotion Shelf,-0.00289,NA,NA,NA,Scotion Shelf
+1971,Scotion Shelf,-0.00294,NA,NA,NA,Scotion Shelf
+1972,Scotion Shelf,-0.00578,NA,NA,NA,Scotion Shelf
+1973,Scotion Shelf,-0.00339,NA,NA,NA,Scotion Shelf
+1974,Scotion Shelf,-0.01529,NA,NA,NA,Scotion Shelf
+1975,Scotion Shelf,-0.00859,NA,NA,NA,Scotion Shelf
+1976,Scotion Shelf,-0.00662,NA,NA,NA,Scotion Shelf
+1977,Scotion Shelf,-0.00272,NA,NA,NA,Scotion Shelf
+1978,Scotion Shelf,0.00044,NA,NA,NA,Scotion Shelf
+1979,Scotion Shelf,-0.00531,NA,NA,NA,Scotion Shelf
+1980,Scotion Shelf,-0.00796,NA,NA,NA,Scotion Shelf
+1981,Scotion Shelf,-0.0014,NA,NA,NA,Scotion Shelf
+1982,Scotion Shelf,-0.00486,NA,NA,NA,Scotion Shelf
+1983,Scotion Shelf,0.00265,NA,NA,NA,Scotion Shelf
+1984,Scotion Shelf,-0.00276,NA,NA,NA,Scotion Shelf
+1985,Scotion Shelf,-0.01193,NA,NA,NA,Scotion Shelf
+1986,Scotion Shelf,-0.00847,NA,NA,NA,Scotion Shelf
+1987,Scotion Shelf,-0.00121,NA,NA,NA,Scotion Shelf
+1988,Scotion Shelf,-0.00017,NA,NA,NA,Scotion Shelf
+1989,Scotion Shelf,-0.00493,NA,NA,NA,Scotion Shelf
+1990,Scotion Shelf,-0.00486,NA,NA,NA,Scotion Shelf
+1991,Scotion Shelf,0.00107,NA,NA,NA,Scotion Shelf
+1992,Scotion Shelf,-0.00285,NA,NA,NA,Scotion Shelf
+1993,Scotion Shelf,-0.00067,NA,NA,NA,Scotion Shelf
+1994,Scotion Shelf,0.0065,NA,NA,NA,Scotion Shelf
+1995,Scotion Shelf,-2e-05,NA,NA,NA,Scotion Shelf
+1996,Scotion Shelf,-0.0013,NA,NA,NA,Scotion Shelf
+1997,Scotion Shelf,-0.00037,NA,NA,NA,Scotion Shelf
+1998,Scotion Shelf,0.01015,NA,NA,NA,Scotion Shelf
+1999,Scotion Shelf,0.00394,NA,NA,NA,Scotion Shelf
+2000,Scotion Shelf,-0.00014,NA,NA,NA,Scotion Shelf
+2001,Scotion Shelf,-0.00224,NA,NA,NA,Scotion Shelf
+2002,Scotion Shelf,-0.00478,NA,NA,NA,Scotion Shelf
+2003,Scotion Shelf,9e-04,NA,NA,NA,Scotion Shelf
+2004,Scotion Shelf,-0.00396,NA,NA,NA,Scotion Shelf
+2005,Scotion Shelf,0.00068,NA,NA,NA,Scotion Shelf
+2006,Scotion Shelf,0.00374,NA,NA,NA,Scotion Shelf
+2007,Scotion Shelf,0.00153,NA,NA,NA,Scotion Shelf
+2008,Scotion Shelf,0.00379,NA,NA,NA,Scotion Shelf
+2009,Scotion Shelf,-0.00242,NA,NA,NA,Scotion Shelf
+2010,Scotion Shelf,0.00594,NA,NA,NA,Scotion Shelf
+2011,Scotion Shelf,-0.00529,NA,NA,NA,Scotion Shelf
+2012,Scotion Shelf,0.00596,NA,NA,NA,Scotion Shelf
+2013,Scotion Shelf,0.00603,NA,NA,NA,Scotion Shelf
+2014,Scotion Shelf,0.00143,NA,NA,NA,Scotion Shelf
+2015,Scotion Shelf,-0.00128,NA,NA,NA,Scotion Shelf
+2016,Scotion Shelf,0.00391,NA,NA,NA,Scotion Shelf
+2017,Scotion Shelf,0.00281,NA,NA,NA,Scotion Shelf
+2018,Scotion Shelf,-0.00271,NA,NA,NA,Scotion Shelf
+2019,Scotion Shelf,0.00027,NA,NA,NA,Scotion Shelf
+1952,Cabot Strait,NA,4.872,NA,NA,NA
+1953,Cabot Strait,NA,5.054,NA,NA,NA
+1954,Cabot Strait,NA,5.362,NA,NA,NA
+1955,Cabot Strait,NA,4.777,NA,NA,NA
+1956,Cabot Strait,NA,4.867,NA,NA,NA
+1957,Cabot Strait,NA,5.495,NA,NA,NA
+1959,Cabot Strait,NA,4.772,NA,NA,NA
+1960,Cabot Strait,NA,4.662,NA,NA,NA
+1961,Cabot Strait,NA,4.9,NA,NA,NA
+1962,Cabot Strait,NA,4.878,NA,NA,NA
+1964,Cabot Strait,NA,4.409,NA,NA,NA
+1965,Cabot Strait,NA,4.073,NA,NA,NA
+1966,Cabot Strait,NA,4.018,NA,NA,NA
+1967,Cabot Strait,NA,4.258,NA,NA,NA
+1968,Cabot Strait,NA,4.591,NA,NA,NA
+1969,Cabot Strait,NA,4.98,NA,NA,NA
+1970,Cabot Strait,NA,5.299,NA,NA,NA
+1971,Cabot Strait,NA,5.283,NA,NA,NA
+1972,Cabot Strait,NA,5.188,NA,NA,NA
+1973,Cabot Strait,NA,5.249,NA,NA,NA
+1974,Cabot Strait,NA,5.397,NA,NA,NA
+1975,Cabot Strait,NA,5.284,NA,NA,NA
+1976,Cabot Strait,NA,5.901,NA,NA,NA
+1977,Cabot Strait,NA,5.848,NA,NA,NA
+1978,Cabot Strait,NA,6.105,NA,NA,NA
+1979,Cabot Strait,NA,6.473,NA,NA,NA
+1980,Cabot Strait,NA,5.979,NA,NA,NA
+1981,Cabot Strait,NA,5.721,NA,NA,NA
+1982,Cabot Strait,NA,5.512,NA,NA,NA
+1983,Cabot Strait,NA,5.785,NA,NA,NA
+1984,Cabot Strait,NA,5.856,NA,NA,NA
+1985,Cabot Strait,NA,6.151,NA,NA,NA
+1986,Cabot Strait,NA,6.081,NA,NA,NA
+1987,Cabot Strait,NA,5.761,NA,NA,NA
+1988,Cabot Strait,NA,5.679,NA,NA,NA
+1989,Cabot Strait,NA,5.654,NA,NA,NA
+1990,Cabot Strait,NA,5.344,NA,NA,NA
+1991,Cabot Strait,NA,4.521,NA,NA,NA
+1992,Cabot Strait,NA,5.25,NA,NA,NA
+1993,Cabot Strait,NA,6.161,NA,NA,NA
+1994,Cabot Strait,NA,5.61,NA,NA,NA
+1995,Cabot Strait,NA,5.522,NA,NA,NA
+1996,Cabot Strait,NA,5.469,NA,NA,NA
+1997,Cabot Strait,NA,5.769,NA,NA,NA
+1998,Cabot Strait,NA,5.326,NA,NA,NA
+1999,Cabot Strait,NA,5.892,NA,NA,NA
+2000,Cabot Strait,NA,5.705,NA,NA,NA
+2001,Cabot Strait,NA,5.834,NA,NA,NA
+2002,Cabot Strait,NA,5.973,NA,NA,NA
+2003,Cabot Strait,NA,5.826,NA,NA,NA
+2004,Cabot Strait,NA,5.832,NA,NA,NA
+2005,Cabot Strait,NA,5.751,NA,NA,NA
+2006,Cabot Strait,NA,5.734,NA,NA,NA
+2007,Cabot Strait,NA,5.487,NA,NA,NA
+2008,Cabot Strait,NA,5.522,NA,NA,NA
+2009,Cabot Strait,NA,5.165,NA,NA,NA
+2010,Cabot Strait,NA,5.933,NA,NA,NA
+2011,Cabot Strait,NA,6.217,NA,NA,NA
+2012,Cabot Strait,NA,6.599,NA,NA,NA
+2013,Cabot Strait,NA,5.805,NA,NA,NA
+2014,Cabot Strait,NA,6.499,NA,NA,NA
+2015,Cabot Strait,NA,6.48,NA,NA,NA
+2016,Cabot Strait,NA,6.798,NA,NA,NA
+2017,Cabot Strait,NA,6.8,NA,NA,NA
+2018,Cabot Strait,NA,6.574,NA,NA,NA
+2019,Cabot Strait,NA,7.252,NA,NA,NA
+1950,E Georges Bank,NA,8.05,NA,NA,NA
+1951,E Georges Bank,NA,9.41,NA,NA,NA
+1952,E Georges Bank,NA,8.35,NA,NA,NA
+1953,E Georges Bank,NA,8.28,NA,NA,NA
+1954,E Georges Bank,NA,9.57,NA,NA,NA
+1955,E Georges Bank,NA,8.31,NA,NA,NA
+1956,E Georges Bank,NA,7.58,NA,NA,NA
+1957,E Georges Bank,NA,8.03,NA,NA,NA
+1958,E Georges Bank,NA,7.81,NA,NA,NA
+1959,E Georges Bank,NA,7.41,NA,NA,NA
+1960,E Georges Bank,NA,6.84,NA,NA,NA
+1961,E Georges Bank,NA,6.19,NA,NA,NA
+1962,E Georges Bank,NA,6.25,NA,NA,NA
+1963,E Georges Bank,NA,7.03,NA,NA,NA
+1964,E Georges Bank,NA,6.38,NA,NA,NA
+1965,E Georges Bank,NA,6.38,NA,NA,NA
+1966,E Georges Bank,NA,6,NA,NA,NA
+1967,E Georges Bank,NA,6.97,NA,NA,NA
+1968,E Georges Bank,NA,6.87,NA,NA,NA
+1969,E Georges Bank,NA,7.74,NA,NA,NA
+1970,E Georges Bank,NA,6.79,NA,NA,NA
+1971,E Georges Bank,NA,7.34,NA,NA,NA
+1972,E Georges Bank,NA,7.43,NA,NA,NA
+1973,E Georges Bank,NA,8.48,NA,NA,NA
+1974,E Georges Bank,NA,8.78,NA,NA,NA
+1975,E Georges Bank,NA,7.9,NA,NA,NA
+1976,E Georges Bank,NA,8.44,NA,NA,NA
+1977,E Georges Bank,NA,7.77,NA,NA,NA
+1978,E Georges Bank,NA,7.57,NA,NA,NA
+1979,E Georges Bank,NA,8.39,NA,NA,NA
+1980,E Georges Bank,NA,8.62,NA,NA,NA
+1981,E Georges Bank,NA,7.65,NA,NA,NA
+1982,E Georges Bank,NA,7.16,NA,NA,NA
+1983,E Georges Bank,NA,8.12,NA,NA,NA
+1984,E Georges Bank,NA,8.21,NA,NA,NA
+1985,E Georges Bank,NA,8.78,NA,NA,NA
+1986,E Georges Bank,NA,8.07,NA,NA,NA
+1987,E Georges Bank,NA,7.07,NA,NA,NA
+1988,E Georges Bank,NA,7.8,NA,NA,NA
+1989,E Georges Bank,NA,7.25,NA,NA,NA
+1990,E Georges Bank,NA,8.11,NA,NA,NA
+1991,E Georges Bank,NA,8.34,NA,NA,NA
+1992,E Georges Bank,NA,7.46,NA,NA,NA
+1993,E Georges Bank,NA,7.53,NA,NA,NA
+1994,E Georges Bank,NA,8.26,NA,NA,NA
+1995,E Georges Bank,NA,8.19,NA,NA,NA
+1996,E Georges Bank,NA,7.58,NA,NA,NA
+1997,E Georges Bank,NA,8.15,NA,NA,NA
+1998,E Georges Bank,NA,7.51,NA,NA,NA
+1999,E Georges Bank,NA,8.52,NA,NA,NA
+2000,E Georges Bank,NA,8.55,NA,NA,NA
+2001,E Georges Bank,NA,8.69,NA,NA,NA
+2002,E Georges Bank,NA,8.7,NA,NA,NA
+2003,E Georges Bank,NA,7.43,NA,NA,NA
+2004,E Georges Bank,NA,6.47,NA,NA,NA
+2005,E Georges Bank,NA,6.94,NA,NA,NA
+2006,E Georges Bank,NA,7.98,NA,NA,NA
+2007,E Georges Bank,NA,7.03,NA,NA,NA
+2008,E Georges Bank,NA,7.82,NA,NA,NA
+2009,E Georges Bank,NA,8.05,NA,NA,NA
+2010,E Georges Bank,NA,8.48,NA,NA,NA
+2011,E Georges Bank,NA,8.08,NA,NA,NA
+2012,E Georges Bank,NA,9.65,NA,NA,NA
+2013,E Georges Bank,NA,8.34,NA,NA,NA
+2014,E Georges Bank,NA,8.7,NA,NA,NA
+2015,E Georges Bank,NA,8.76,NA,NA,NA
+2016,E Georges Bank,NA,8.75,NA,NA,NA
+2017,E Georges Bank,NA,9.41,NA,NA,NA
+2018,E Georges Bank,NA,8.33,NA,NA,NA
+2019,E Georges Bank,NA,7.81,NA,NA,NA
+1950,Emerald Basin,NA,7.52,NA,NA,NA
+1951,Emerald Basin,NA,9,NA,NA,NA
+1952,Emerald Basin,NA,8,NA,NA,NA
+1953,Emerald Basin,NA,7.91,NA,NA,NA
+1954,Emerald Basin,NA,8.91,NA,NA,NA
+1955,Emerald Basin,NA,8.34,NA,NA,NA
+1956,Emerald Basin,NA,8.37,NA,NA,NA
+1957,Emerald Basin,NA,8.75,NA,NA,NA
+1958,Emerald Basin,NA,8.16,NA,NA,NA
+1959,Emerald Basin,NA,5.87,NA,NA,NA
+1960,Emerald Basin,NA,7.15,NA,NA,NA
+1961,Emerald Basin,NA,7.47,NA,NA,NA
+1962,Emerald Basin,NA,7.9,NA,NA,NA
+1963,Emerald Basin,NA,7.62,NA,NA,NA
+1964,Emerald Basin,NA,5.85,NA,NA,NA
+1965,Emerald Basin,NA,5.82,NA,NA,NA
+1966,Emerald Basin,NA,4.83,NA,NA,NA
+1967,Emerald Basin,NA,6.02,NA,NA,NA
+1968,Emerald Basin,NA,7.6,NA,NA,NA
+1969,Emerald Basin,NA,8.51,NA,NA,NA
+1970,Emerald Basin,NA,8.51,NA,NA,NA
+1971,Emerald Basin,NA,8.54,NA,NA,NA
+1972,Emerald Basin,NA,8.79,NA,NA,NA
+1973,Emerald Basin,NA,9.38,NA,NA,NA
+1974,Emerald Basin,NA,9.6,NA,NA,NA
+1975,Emerald Basin,NA,10.05,NA,NA,NA
+1976,Emerald Basin,NA,8.66,NA,NA,NA
+1977,Emerald Basin,NA,9.13,NA,NA,NA
+1978,Emerald Basin,NA,7.36,NA,NA,NA
+1979,Emerald Basin,NA,9.33,NA,NA,NA
+1980,Emerald Basin,NA,8.99,NA,NA,NA
+1981,Emerald Basin,NA,8.95,NA,NA,NA
+1982,Emerald Basin,NA,7.42,NA,NA,NA
+1983,Emerald Basin,NA,8.38,NA,NA,NA
+1984,Emerald Basin,NA,9.33,NA,NA,NA
+1985,Emerald Basin,NA,10.1,NA,NA,NA
+1986,Emerald Basin,NA,10.29,NA,NA,NA
+1987,Emerald Basin,NA,9.61,NA,NA,NA
+1988,Emerald Basin,NA,8.66,NA,NA,NA
+1989,Emerald Basin,NA,9.39,NA,NA,NA
+1990,Emerald Basin,NA,9.53,NA,NA,NA
+1991,Emerald Basin,NA,9.25,NA,NA,NA
+1992,Emerald Basin,NA,9.35,NA,NA,NA
+1993,Emerald Basin,NA,9.98,NA,NA,NA
+1994,Emerald Basin,NA,9.88,NA,NA,NA
+1995,Emerald Basin,NA,9.59,NA,NA,NA
+1996,Emerald Basin,NA,9.83,NA,NA,NA
+1997,Emerald Basin,NA,9.5,NA,NA,NA
+1998,Emerald Basin,NA,6.97,NA,NA,NA
+1999,Emerald Basin,NA,8.89,NA,NA,NA
+2000,Emerald Basin,NA,9.38,NA,NA,NA
+2001,Emerald Basin,NA,9.21,NA,NA,NA
+2002,Emerald Basin,NA,9.27,NA,NA,NA
+2003,Emerald Basin,NA,9.21,NA,NA,NA
+2004,Emerald Basin,NA,9.62,NA,NA,NA
+2005,Emerald Basin,NA,9.39,NA,NA,NA
+2006,Emerald Basin,NA,9.55,NA,NA,NA
+2007,Emerald Basin,NA,7.33,NA,NA,NA
+2008,Emerald Basin,NA,8.29,NA,NA,NA
+2009,Emerald Basin,NA,7.91,NA,NA,NA
+2010,Emerald Basin,NA,9.78,NA,NA,NA
+2011,Emerald Basin,NA,9.99,NA,NA,NA
+2012,Emerald Basin,NA,9.87,NA,NA,NA
+2013,Emerald Basin,NA,9.74,NA,NA,NA
+2014,Emerald Basin,NA,10.51,NA,NA,NA
+2015,Emerald Basin,NA,10.31,NA,NA,NA
+2016,Emerald Basin,NA,10.76,NA,NA,NA
+2017,Emerald Basin,NA,10.63,NA,NA,NA
+2018,Emerald Basin,NA,10.75,NA,NA,NA
+2019,Emerald Basin,NA,10.97,NA,NA,NA
+1950,Georges Basin,NA,6.93,NA,NA,NA
+1951,Georges Basin,NA,7.51,NA,NA,NA
+1953,Georges Basin,NA,7.57,NA,NA,NA
+1954,Georges Basin,NA,7.67,NA,NA,NA
+1955,Georges Basin,NA,7.48,NA,NA,NA
+1956,Georges Basin,NA,7.73,NA,NA,NA
+1957,Georges Basin,NA,8,NA,NA,NA
+1958,Georges Basin,NA,7.65,NA,NA,NA
+1959,Georges Basin,NA,6.38,NA,NA,NA
+1960,Georges Basin,NA,8.01,NA,NA,NA
+1961,Georges Basin,NA,6.7,NA,NA,NA
+1962,Georges Basin,NA,7.06,NA,NA,NA
+1963,Georges Basin,NA,7.66,NA,NA,NA
+1964,Georges Basin,NA,5.88,NA,NA,NA
+1965,Georges Basin,NA,5.98,NA,NA,NA
+1966,Georges Basin,NA,5.99,NA,NA,NA
+1967,Georges Basin,NA,6.37,NA,NA,NA
+1968,Georges Basin,NA,7.09,NA,NA,NA
+1969,Georges Basin,NA,7.36,NA,NA,NA
+1970,Georges Basin,NA,7.41,NA,NA,NA
+1971,Georges Basin,NA,8.08,NA,NA,NA
+1972,Georges Basin,NA,8.48,NA,NA,NA
+1973,Georges Basin,NA,8.5,NA,NA,NA
+1974,Georges Basin,NA,8.76,NA,NA,NA
+1975,Georges Basin,NA,8.57,NA,NA,NA
+1976,Georges Basin,NA,8.62,NA,NA,NA
+1977,Georges Basin,NA,7.57,NA,NA,NA
+1978,Georges Basin,NA,7.36,NA,NA,NA
+1979,Georges Basin,NA,8.31,NA,NA,NA
+1980,Georges Basin,NA,8.04,NA,NA,NA
+1981,Georges Basin,NA,7.5,NA,NA,NA
+1982,Georges Basin,NA,7.18,NA,NA,NA
+1983,Georges Basin,NA,8.32,NA,NA,NA
+1984,Georges Basin,NA,8.39,NA,NA,NA
+1985,Georges Basin,NA,9,NA,NA,NA
+1986,Georges Basin,NA,8.69,NA,NA,NA
+1987,Georges Basin,NA,8.04,NA,NA,NA
+1988,Georges Basin,NA,8.1,NA,NA,NA
+1989,Georges Basin,NA,7.96,NA,NA,NA
+1990,Georges Basin,NA,8.02,NA,NA,NA
+1991,Georges Basin,NA,8.19,NA,NA,NA
+1992,Georges Basin,NA,8.36,NA,NA,NA
+1993,Georges Basin,NA,8.39,NA,NA,NA
+1994,Georges Basin,NA,8.73,NA,NA,NA
+1995,Georges Basin,NA,8.88,NA,NA,NA
+1996,Georges Basin,NA,8.76,NA,NA,NA
+1997,Georges Basin,NA,8.42,NA,NA,NA
+1998,Georges Basin,NA,6.87,NA,NA,NA
+1999,Georges Basin,NA,8.76,NA,NA,NA
+2000,Georges Basin,NA,8.79,NA,NA,NA
+2001,Georges Basin,NA,8.34,NA,NA,NA
+2002,Georges Basin,NA,8.44,NA,NA,NA
+2003,Georges Basin,NA,8.7,NA,NA,NA
+2004,Georges Basin,NA,8.27,NA,NA,NA
+2005,Georges Basin,NA,8.07,NA,NA,NA
+2006,Georges Basin,NA,8.52,NA,NA,NA
+2007,Georges Basin,NA,7.5,NA,NA,NA
+2008,Georges Basin,NA,7.68,NA,NA,NA
+2009,Georges Basin,NA,8.21,NA,NA,NA
+2010,Georges Basin,NA,9.21,NA,NA,NA
+2011,Georges Basin,NA,8.8,NA,NA,NA
+2012,Georges Basin,NA,8.78,NA,NA,NA
+2013,Georges Basin,NA,9.31,NA,NA,NA
+2014,Georges Basin,NA,9.43,NA,NA,NA
+2015,Georges Basin,NA,9.28,NA,NA,NA
+2016,Georges Basin,NA,9.66,NA,NA,NA
+2017,Georges Basin,NA,9.79,NA,NA,NA
+2018,Georges Basin,NA,10.18,NA,NA,NA
+2019,Georges Basin,NA,9.99,NA,NA,NA
+1950,Lurcher Shoal,NA,6.91,NA,NA,NA
+1951,Lurcher Shoal,NA,7.313,NA,NA,NA
+1952,Lurcher Shoal,NA,6.14,NA,NA,NA
+1953,Lurcher Shoal,NA,6.923,NA,NA,NA
+1954,Lurcher Shoal,NA,6.455,NA,NA,NA
+1955,Lurcher Shoal,NA,6.515,NA,NA,NA
+1956,Lurcher Shoal,NA,6.267,NA,NA,NA
+1957,Lurcher Shoal,NA,6.274,NA,NA,NA
+1958,Lurcher Shoal,NA,6.446,NA,NA,NA
+1959,Lurcher Shoal,NA,5.689,NA,NA,NA
+1960,Lurcher Shoal,NA,5.718,NA,NA,NA
+1961,Lurcher Shoal,NA,5.583,NA,NA,NA
+1962,Lurcher Shoal,NA,5.898,NA,NA,NA
+1963,Lurcher Shoal,NA,6.65,NA,NA,NA
+1964,Lurcher Shoal,NA,4.948,NA,NA,NA
+1965,Lurcher Shoal,NA,4.904,NA,NA,NA
+1966,Lurcher Shoal,NA,5.113,NA,NA,NA
+1967,Lurcher Shoal,NA,5.29,NA,NA,NA
+1968,Lurcher Shoal,NA,5.988,NA,NA,NA
+1969,Lurcher Shoal,NA,6.7,NA,NA,NA
+1970,Lurcher Shoal,NA,6.566,NA,NA,NA
+1971,Lurcher Shoal,NA,6.856,NA,NA,NA
+1972,Lurcher Shoal,NA,6.769,NA,NA,NA
+1973,Lurcher Shoal,NA,6.656,NA,NA,NA
+1974,Lurcher Shoal,NA,7.498,NA,NA,NA
+1975,Lurcher Shoal,NA,6.66,NA,NA,NA
+1976,Lurcher Shoal,NA,8.142,NA,NA,NA
+1977,Lurcher Shoal,NA,6.189,NA,NA,NA
+1978,Lurcher Shoal,NA,6.103,NA,NA,NA
+1979,Lurcher Shoal,NA,7.421,NA,NA,NA
+1980,Lurcher Shoal,NA,6.63,NA,NA,NA
+1981,Lurcher Shoal,NA,6.433,NA,NA,NA
+1982,Lurcher Shoal,NA,6.789,NA,NA,NA
+1983,Lurcher Shoal,NA,6.672,NA,NA,NA
+1984,Lurcher Shoal,NA,7.051,NA,NA,NA
+1985,Lurcher Shoal,NA,6.739,NA,NA,NA
+1986,Lurcher Shoal,NA,7.3,NA,NA,NA
+1987,Lurcher Shoal,NA,5.487,NA,NA,NA
+1988,Lurcher Shoal,NA,5.224,NA,NA,NA
+1989,Lurcher Shoal,NA,5.954,NA,NA,NA
+1990,Lurcher Shoal,NA,6.637,NA,NA,NA
+1991,Lurcher Shoal,NA,5.417,NA,NA,NA
+1992,Lurcher Shoal,NA,5.266,NA,NA,NA
+1993,Lurcher Shoal,NA,5.984,NA,NA,NA
+1994,Lurcher Shoal,NA,6.321,NA,NA,NA
+1995,Lurcher Shoal,NA,6.176,NA,NA,NA
+1996,Lurcher Shoal,NA,5.667,NA,NA,NA
+1997,Lurcher Shoal,NA,6.493,NA,NA,NA
+1998,Lurcher Shoal,NA,5.346,NA,NA,NA
+1999,Lurcher Shoal,NA,7.319,NA,NA,NA
+2000,Lurcher Shoal,NA,7.841,NA,NA,NA
+2001,Lurcher Shoal,NA,5.793,NA,NA,NA
+2002,Lurcher Shoal,NA,7.38,NA,NA,NA
+2003,Lurcher Shoal,NA,6.898,NA,NA,NA
+2004,Lurcher Shoal,NA,5.528,NA,NA,NA
+2005,Lurcher Shoal,NA,5.987,NA,NA,NA
+2006,Lurcher Shoal,NA,7.65,NA,NA,NA
+2007,Lurcher Shoal,NA,5.355,NA,NA,NA
+2008,Lurcher Shoal,NA,6.457,NA,NA,NA
+2009,Lurcher Shoal,NA,7.528,NA,NA,NA
+2010,Lurcher Shoal,NA,6.435,NA,NA,NA
+2011,Lurcher Shoal,NA,7.63,NA,NA,NA
+2012,Lurcher Shoal,NA,9.462,NA,NA,NA
+2013,Lurcher Shoal,NA,7.377,NA,NA,NA
+2014,Lurcher Shoal,NA,8.066,NA,NA,NA
+2015,Lurcher Shoal,NA,7.451,NA,NA,NA
+2016,Lurcher Shoal,NA,7.296,NA,NA,NA
+2018,Lurcher Shoal,NA,8.612,NA,NA,NA
+2019,Lurcher Shoal,NA,6.645,NA,NA,NA
+1950,Misaine Bank,NA,1.7553,NA,NA,NA
+1951,Misaine Bank,NA,2.5359,NA,NA,NA
+1952,Misaine Bank,NA,2.7611,NA,NA,NA
+1953,Misaine Bank,NA,2.1154,NA,NA,NA
+1954,Misaine Bank,NA,2.1021,NA,NA,NA
+1955,Misaine Bank,NA,1.9474,NA,NA,NA
+1956,Misaine Bank,NA,1.9161,NA,NA,NA
+1957,Misaine Bank,NA,1.109,NA,NA,NA
+1958,Misaine Bank,NA,2.12,NA,NA,NA
+1959,Misaine Bank,NA,0.7352,NA,NA,NA
+1960,Misaine Bank,NA,2.0899,NA,NA,NA
+1961,Misaine Bank,NA,0.7997,NA,NA,NA
+1962,Misaine Bank,NA,1.4636,NA,NA,NA
+1963,Misaine Bank,NA,1.9534,NA,NA,NA
+1964,Misaine Bank,NA,1.4924,NA,NA,NA
+1965,Misaine Bank,NA,1.2272,NA,NA,NA
+1966,Misaine Bank,NA,1.43,NA,NA,NA
+1967,Misaine Bank,NA,1.8195,NA,NA,NA
+1968,Misaine Bank,NA,1.8344,NA,NA,NA
+1969,Misaine Bank,NA,1.7233,NA,NA,NA
+1970,Misaine Bank,NA,2.1623,NA,NA,NA
+1971,Misaine Bank,NA,2.1876,NA,NA,NA
+1972,Misaine Bank,NA,1.6897,NA,NA,NA
+1973,Misaine Bank,NA,1.1339,NA,NA,NA
+1974,Misaine Bank,NA,1.3109,NA,NA,NA
+1975,Misaine Bank,NA,1.7013,NA,NA,NA
+1976,Misaine Bank,NA,1.6989,NA,NA,NA
+1977,Misaine Bank,NA,2.6363,NA,NA,NA
+1978,Misaine Bank,NA,2.1538,NA,NA,NA
+1979,Misaine Bank,NA,1.918,NA,NA,NA
+1980,Misaine Bank,NA,1.953,NA,NA,NA
+1981,Misaine Bank,NA,2.4551,NA,NA,NA
+1982,Misaine Bank,NA,0.9407,NA,NA,NA
+1983,Misaine Bank,NA,1.574,NA,NA,NA
+1984,Misaine Bank,NA,3.072,NA,NA,NA
+1985,Misaine Bank,NA,1.2133,NA,NA,NA
+1986,Misaine Bank,NA,0.5272,NA,NA,NA
+1987,Misaine Bank,NA,0.936,NA,NA,NA
+1988,Misaine Bank,NA,1.9343,NA,NA,NA
+1989,Misaine Bank,NA,0.9186,NA,NA,NA
+1990,Misaine Bank,NA,0.4586,NA,NA,NA
+1991,Misaine Bank,NA,0.7353,NA,NA,NA
+1992,Misaine Bank,NA,0.9,NA,NA,NA
+1993,Misaine Bank,NA,1.3797,NA,NA,NA
+1994,Misaine Bank,NA,1.4498,NA,NA,NA
+1995,Misaine Bank,NA,1.189,NA,NA,NA
+1996,Misaine Bank,NA,1.3039,NA,NA,NA
+1997,Misaine Bank,NA,1.5204,NA,NA,NA
+1998,Misaine Bank,NA,1.6686,NA,NA,NA
+1999,Misaine Bank,NA,2.1498,NA,NA,NA
+2000,Misaine Bank,NA,2.5021,NA,NA,NA
+2001,Misaine Bank,NA,1.515,NA,NA,NA
+2002,Misaine Bank,NA,1.6927,NA,NA,NA
+2003,Misaine Bank,NA,0.6261,NA,NA,NA
+2004,Misaine Bank,NA,0.9588,NA,NA,NA
+2005,Misaine Bank,NA,1.7339,NA,NA,NA
+2006,Misaine Bank,NA,2.2449,NA,NA,NA
+2007,Misaine Bank,NA,1.2126,NA,NA,NA
+2008,Misaine Bank,NA,1.5548,NA,NA,NA
+2009,Misaine Bank,NA,1.9258,NA,NA,NA
+2010,Misaine Bank,NA,1.954,NA,NA,NA
+2011,Misaine Bank,NA,2.2734,NA,NA,NA
+2012,Misaine Bank,NA,2.8033,NA,NA,NA
+2013,Misaine Bank,NA,1.9178,NA,NA,NA
+2014,Misaine Bank,NA,2.1184,NA,NA,NA
+2015,Misaine Bank,NA,2.5405,NA,NA,NA
+2016,Misaine Bank,NA,2.7416,NA,NA,NA
+2017,Misaine Bank,NA,1.9393,NA,NA,NA
+2018,Misaine Bank,NA,2.0626,NA,NA,NA
+2019,Misaine Bank,NA,1.3149,NA,NA,NA
+1970,4V,NA,3.98,NA,NA,NA
+1971,4V,NA,3.58,NA,NA,NA
+1972,4V,NA,3.68,NA,NA,NA
+1973,4V,NA,3.11,NA,NA,NA
+1974,4V,NA,3.79,NA,NA,NA
+1975,4V,NA,4.39,NA,NA,NA
+1976,4V,NA,3.62,NA,NA,NA
+1977,4V,NA,4.43,NA,NA,NA
+1978,4V,NA,4.16,NA,NA,NA
+1979,4V,NA,4.19,NA,NA,NA
+1980,4V,NA,4.38,NA,NA,NA
+1981,4V,NA,4.37,NA,NA,NA
+1982,4V,NA,2.82,NA,NA,NA
+1983,4V,NA,3.42,NA,NA,NA
+1984,4V,NA,5.18,NA,NA,NA
+1985,4V,NA,3.41,NA,NA,NA
+1986,4V,NA,3.84,NA,NA,NA
+1987,4V,NA,2.76,NA,NA,NA
+1988,4V,NA,4.13,NA,NA,NA
+1989,4V,NA,2.87,NA,NA,NA
+1990,4V,NA,2.61,NA,NA,NA
+1991,4V,NA,2.58,NA,NA,NA
+1992,4V,NA,3.26,NA,NA,NA
+1993,4V,NA,3.35,NA,NA,NA
+1994,4V,NA,2.96,NA,NA,NA
+1995,4V,NA,3.22,NA,NA,NA
+1996,4V,NA,2.91,NA,NA,NA
+1997,4V,NA,3.44,NA,NA,NA
+1998,4V,NA,3.43,NA,NA,NA
+1999,4V,NA,3.97,NA,NA,NA
+2000,4V,NA,4.19,NA,NA,NA
+2001,4V,NA,3.44,NA,NA,NA
+2002,4V,NA,3.8,NA,NA,NA
+2003,4V,NA,2.73,NA,NA,NA
+2004,4V,NA,2.77,NA,NA,NA
+2005,4V,NA,3.87,NA,NA,NA
+2006,4V,NA,4.2,NA,NA,NA
+2007,4V,NA,3.23,NA,NA,NA
+2008,4V,NA,3.48,NA,NA,NA
+2009,4V,NA,3.75,NA,NA,NA
+2010,4V,NA,3.83,NA,NA,NA
+2011,4V,NA,4.22,NA,NA,NA
+2012,4V,NA,4.51,NA,NA,NA
+2013,4V,NA,4.09,NA,NA,NA
+2014,4V,NA,4.57,NA,NA,NA
+2015,4V,NA,5.15,NA,NA,NA
+2016,4V,NA,4.78,NA,NA,NA
+2017,4V,NA,4.63,NA,NA,NA
+2018,4V,NA,NA,NA,NA,NA
+2019,4V,NA,4.32,NA,NA,NA
+1970,4Vn,NA,4.349,NA,NA,NA
+1971,4Vn,NA,4.057,NA,NA,NA
+1972,4Vn,NA,3.814,NA,NA,NA
+1973,4Vn,NA,3.469,NA,NA,NA
+1974,4Vn,NA,4.374,NA,NA,NA
+1975,4Vn,NA,3.641,NA,NA,NA
+1976,4Vn,NA,3.4,NA,NA,NA
+1977,4Vn,NA,4.522,NA,NA,NA
+1978,4Vn,NA,4.742,NA,NA,NA
+1979,4Vn,NA,4.716,NA,NA,NA
+1980,4Vn,NA,4.864,NA,NA,NA
+1981,4Vn,NA,4.644,NA,NA,NA
+1982,4Vn,NA,3.786,NA,NA,NA
+1983,4Vn,NA,3.544,NA,NA,NA
+1984,4Vn,NA,4.863,NA,NA,NA
+1985,4Vn,NA,3.961,NA,NA,NA
+1986,4Vn,NA,4.445,NA,NA,NA
+1987,4Vn,NA,3.934,NA,NA,NA
+1988,4Vn,NA,4.351,NA,NA,NA
+1989,4Vn,NA,4.007,NA,NA,NA
+1990,4Vn,NA,3.617,NA,NA,NA
+1991,4Vn,NA,3.326,NA,NA,NA
+1992,4Vn,NA,3.644,NA,NA,NA
+1993,4Vn,NA,3.962,NA,NA,NA
+1994,4Vn,NA,3.813,NA,NA,NA
+1995,4Vn,NA,3.694,NA,NA,NA
+1996,4Vn,NA,3.128,NA,NA,NA
+1997,4Vn,NA,4.326,NA,NA,NA
+1998,4Vn,NA,3.548,NA,NA,NA
+1999,4Vn,NA,4.52,NA,NA,NA
+2000,4Vn,NA,4.131,NA,NA,NA
+2001,4Vn,NA,4.303,NA,NA,NA
+2002,4Vn,NA,4.106,NA,NA,NA
+2003,4Vn,NA,3.743,NA,NA,NA
+2004,4Vn,NA,3.566,NA,NA,NA
+2005,4Vn,NA,4.302,NA,NA,NA
+2006,4Vn,NA,4.67,NA,NA,NA
+2007,4Vn,NA,3.937,NA,NA,NA
+2008,4Vn,NA,4.034,NA,NA,NA
+2009,4Vn,NA,3.889,NA,NA,NA
+2010,4Vn,NA,4.205,NA,NA,NA
+2011,4Vn,NA,4.669,NA,NA,NA
+2012,4Vn,NA,4.473,NA,NA,NA
+2013,4Vn,NA,4.202,NA,NA,NA
+2014,4Vn,NA,5.159,NA,NA,NA
+2015,4Vn,NA,4.915,NA,NA,NA
+2016,4Vn,NA,4.864,NA,NA,NA
+2017,4Vn,NA,4.67,NA,NA,NA
+2018,4Vn,NA,NA,NA,NA,NA
+2019,4Vn,NA,4.988,NA,NA,NA
+1970,4Vs,NA,3.85,NA,NA,NA
+1971,4Vs,NA,3.43,NA,NA,NA
+1972,4Vs,NA,3.63,NA,NA,NA
+1973,4Vs,NA,2.99,NA,NA,NA
+1974,4Vs,NA,3.59,NA,NA,NA
+1975,4Vs,NA,4.63,NA,NA,NA
+1976,4Vs,NA,3.68,NA,NA,NA
+1977,4Vs,NA,4.4,NA,NA,NA
+1978,4Vs,NA,3.96,NA,NA,NA
+1979,4Vs,NA,4.01,NA,NA,NA
+1980,4Vs,NA,4.21,NA,NA,NA
+1981,4Vs,NA,4.27,NA,NA,NA
+1982,4Vs,NA,2.5,NA,NA,NA
+1983,4Vs,NA,3.37,NA,NA,NA
+1984,4Vs,NA,5.28,NA,NA,NA
+1985,4Vs,NA,3.22,NA,NA,NA
+1986,4Vs,NA,3.64,NA,NA,NA
+1987,4Vs,NA,2.37,NA,NA,NA
+1988,4Vs,NA,4.06,NA,NA,NA
+1989,4Vs,NA,2.49,NA,NA,NA
+1990,4Vs,NA,2.27,NA,NA,NA
+1991,4Vs,NA,2.33,NA,NA,NA
+1992,4Vs,NA,3.14,NA,NA,NA
+1993,4Vs,NA,3.14,NA,NA,NA
+1994,4Vs,NA,2.67,NA,NA,NA
+1995,4Vs,NA,3.06,NA,NA,NA
+1996,4Vs,NA,2.83,NA,NA,NA
+1997,4Vs,NA,3.15,NA,NA,NA
+1998,4Vs,NA,3.39,NA,NA,NA
+1999,4Vs,NA,3.79,NA,NA,NA
+2000,4Vs,NA,4.21,NA,NA,NA
+2001,4Vs,NA,3.15,NA,NA,NA
+2002,4Vs,NA,3.69,NA,NA,NA
+2003,4Vs,NA,2.39,NA,NA,NA
+2004,4Vs,NA,2.5,NA,NA,NA
+2005,4Vs,NA,3.73,NA,NA,NA
+2006,4Vs,NA,4.04,NA,NA,NA
+2007,4Vs,NA,3,NA,NA,NA
+2008,4Vs,NA,3.3,NA,NA,NA
+2009,4Vs,NA,3.7,NA,NA,NA
+2010,4Vs,NA,3.71,NA,NA,NA
+2011,4Vs,NA,4.08,NA,NA,NA
+2012,4Vs,NA,4.52,NA,NA,NA
+2013,4Vs,NA,4.05,NA,NA,NA
+2014,4Vs,NA,4.37,NA,NA,NA
+2015,4Vs,NA,5.22,NA,NA,NA
+2016,4Vs,NA,4.75,NA,NA,NA
+2017,4Vs,NA,4.61,NA,NA,NA
+2018,4Vs,NA,NA,NA,NA,NA
+2019,4Vs,NA,4.1,NA,NA,NA
+1970,4W,NA,5.63,NA,NA,NA
+1971,4W,NA,6.56,NA,NA,NA
+1972,4W,NA,6.58,NA,NA,NA
+1973,4W,NA,5.98,NA,NA,NA
+1974,4W,NA,7.23,NA,NA,NA
+1975,4W,NA,6.34,NA,NA,NA
+1976,4W,NA,7.05,NA,NA,NA
+1977,4W,NA,7.52,NA,NA,NA
+1978,4W,NA,6.18,NA,NA,NA
+1979,4W,NA,7.2,NA,NA,NA
+1980,4W,NA,7.07,NA,NA,NA
+1981,4W,NA,6.98,NA,NA,NA
+1982,4W,NA,5.73,NA,NA,NA
+1983,4W,NA,6.44,NA,NA,NA
+1984,4W,NA,7.96,NA,NA,NA
+1985,4W,NA,7.64,NA,NA,NA
+1986,4W,NA,7.37,NA,NA,NA
+1987,4W,NA,5.89,NA,NA,NA
+1988,4W,NA,5.84,NA,NA,NA
+1989,4W,NA,6.12,NA,NA,NA
+1990,4W,NA,6.05,NA,NA,NA
+1991,4W,NA,5.81,NA,NA,NA
+1992,4W,NA,6.23,NA,NA,NA
+1993,4W,NA,6.74,NA,NA,NA
+1994,4W,NA,6.78,NA,NA,NA
+1995,4W,NA,6.65,NA,NA,NA
+1996,4W,NA,6.21,NA,NA,NA
+1997,4W,NA,6.28,NA,NA,NA
+1998,4W,NA,4.99,NA,NA,NA
+1999,4W,NA,6.75,NA,NA,NA
+2000,4W,NA,7.46,NA,NA,NA
+2001,4W,NA,5.84,NA,NA,NA
+2002,4W,NA,6.76,NA,NA,NA
+2003,4W,NA,5.8,NA,NA,NA
+2004,4W,NA,4.75,NA,NA,NA
+2005,4W,NA,6.4,NA,NA,NA
+2006,4W,NA,7.39,NA,NA,NA
+2007,4W,NA,5.62,NA,NA,NA
+2008,4W,NA,5.38,NA,NA,NA
+2009,4W,NA,6.64,NA,NA,NA
+2010,4W,NA,6.89,NA,NA,NA
+2011,4W,NA,6.55,NA,NA,NA
+2012,4W,NA,8.09,NA,NA,NA
+2013,4W,NA,6.94,NA,NA,NA
+2014,4W,NA,8.33,NA,NA,NA
+2015,4W,NA,7.94,NA,NA,NA
+2016,4W,NA,8.12,NA,NA,NA
+2017,4W,NA,7.22,NA,NA,NA
+2018,4W,NA,NA,NA,NA,NA
+2019,4W,NA,7.27,NA,NA,NA
+1970,4X,NA,6.32,NA,NA,NA
+1971,4X,NA,7.11,NA,NA,NA
+1972,4X,NA,6.3,NA,NA,NA
+1973,4X,NA,7.83,NA,NA,NA
+1974,4X,NA,8.07,NA,NA,NA
+1975,4X,NA,7.32,NA,NA,NA
+1976,4X,NA,8.63,NA,NA,NA
+1977,4X,NA,7.09,NA,NA,NA
+1978,4X,NA,7.15,NA,NA,NA
+1979,4X,NA,7.89,NA,NA,NA
+1980,4X,NA,7.63,NA,NA,NA
+1981,4X,NA,6.9,NA,NA,NA
+1982,4X,NA,7.47,NA,NA,NA
+1983,4X,NA,7.39,NA,NA,NA
+1984,4X,NA,7.91,NA,NA,NA
+1985,4X,NA,8.47,NA,NA,NA
+1986,4X,NA,7.77,NA,NA,NA
+1987,4X,NA,6.31,NA,NA,NA
+1988,4X,NA,7.12,NA,NA,NA
+1989,4X,NA,7.24,NA,NA,NA
+1990,4X,NA,7.14,NA,NA,NA
+1991,4X,NA,6.66,NA,NA,NA
+1992,4X,NA,7.44,NA,NA,NA
+1993,4X,NA,7.06,NA,NA,NA
+1994,4X,NA,8.13,NA,NA,NA
+1995,4X,NA,6.78,NA,NA,NA
+1996,4X,NA,6.99,NA,NA,NA
+1997,4X,NA,7.42,NA,NA,NA
+1998,4X,NA,5.23,NA,NA,NA
+1999,4X,NA,7.91,NA,NA,NA
+2000,4X,NA,8.26,NA,NA,NA
+2001,4X,NA,6.37,NA,NA,NA
+2002,4X,NA,8.12,NA,NA,NA
+2003,4X,NA,7.45,NA,NA,NA
+2004,4X,NA,6.04,NA,NA,NA
+2005,4X,NA,7.27,NA,NA,NA
+2006,4X,NA,8.14,NA,NA,NA
+2007,4X,NA,6.24,NA,NA,NA
+2008,4X,NA,6.88,NA,NA,NA
+2009,4X,NA,7.24,NA,NA,NA
+2010,4X,NA,7.57,NA,NA,NA
+2011,4X,NA,7.7,NA,NA,NA
+2012,4X,NA,9.36,NA,NA,NA
+2013,4X,NA,8.28,NA,NA,NA
+2014,4X,NA,8.91,NA,NA,NA
+2015,4X,NA,8.15,NA,NA,NA
+2016,4X,NA,9.09,NA,NA,NA
+2017,4X,NA,8.81,NA,NA,NA
+2018,4X,NA,8.64,NA,NA,NA
+2019,4X,NA,8.38,NA,NA,NA
+1972,Scotian Shelf,NA,NA,4860,2.5,NA
+1973,Scotian Shelf,NA,NA,5012,2.2,NA
+1974,Scotian Shelf,NA,NA,4856,2.2,NA
+1975,Scotian Shelf,NA,NA,4777,2.2,NA
+1976,Scotian Shelf,NA,NA,4664,2.1,NA
+1977,Scotian Shelf,NA,NA,4554,2.2,NA
+1978,Scotian Shelf,NA,NA,4352,2.3,NA
+1979,Scotian Shelf,NA,NA,4034,2.5,NA
+1980,Scotian Shelf,NA,NA,4379,2.4,NA
+1981,Scotian Shelf,NA,NA,4139,2.4,NA
+1982,Scotian Shelf,NA,NA,4053,2.4,NA
+1983,Scotian Shelf,NA,NA,4349,2.2,NA
+1984,Scotian Shelf,NA,NA,4326,2.0,NA
+1985,Scotian Shelf,NA,NA,4474,2.0,NA
+1986,Scotian Shelf,NA,NA,4567,2.1,NA
+1987,Scotian Shelf,NA,NA,5090,2.0,NA
+1988,Scotian Shelf,NA,NA,  NA, NA,NA
+1989,Scotian Shelf,NA,NA,  NA, NA,NA
+1990,Scotian Shelf,NA,NA,5841,1.7,NA
+1991,Scotian Shelf,NA,NA,6461,1.6,NA
+1992,Scotian Shelf,NA,NA,6240,1.3,NA
+1993,Scotian Shelf,NA,NA,6109,1.6,NA
+1994,Scotian Shelf,NA,NA,5778,1.8,NA
+1995,Scotian Shelf,NA,NA,5872,1.7,NA
+1996,Scotian Shelf,NA,NA,5968,2.1,NA
+1997,Scotian Shelf,NA,NA,6302,1.9,NA
+1998,Scotian Shelf,NA,NA,7215,1.8,NA
+1999,Scotian Shelf,NA,NA,4983,2.6,NA
+2000,Scotian Shelf,NA,NA,3461,2.5,NA
+2001,Scotian Shelf,NA,NA,6955,2.1,NA
+2002,Scotian Shelf,NA,NA,5213,2.3,NA
+2003,Scotian Shelf,NA,NA,6840,1.4,NA
+2004,Scotian Shelf,NA,NA,7973,1.8,NA
+2005,Scotian Shelf,NA,NA,4937,2.2,NA
+2006,Scotian Shelf,NA,NA,4006,2.6,NA
+2007,Scotian Shelf,NA,NA,6803,2.1,NA
+2008,Scotian Shelf,NA,NA,6581,2.2,NA
+2009,Scotian Shelf,NA,NA,4953,2.2,NA
+2010,Scotian Shelf,NA,NA,4836,2.5,NA
+2011,Scotian Shelf,NA,NA,4848,2.8,NA
+2012,Scotian Shelf,NA,NA,2887,2.9,NA
+2013,Scotian Shelf,NA,NA,5043,2.5,NA
+2014,Scotian Shelf,NA,NA,3300,2.4,NA
+2015,Scotian Shelf,NA,NA,4084,2.0,NA
+2016,Scotian Shelf,NA,NA,4252,2.6,NA
+2017,Scotian Shelf,NA,NA,4624,2.4,NA
+2018,Scotian Shelf,NA,NA,  NA, NA,NA
+2019,Scotian Shelf,NA,NA,5096,2.2,NA
+1952,NA,NA,4.872,NA,NA,Cabot Strait
+1953,NA,NA,5.054,NA,NA,Cabot Strait
+1954,NA,NA,5.362,NA,NA,Cabot Strait
+1955,NA,NA,4.777,NA,NA,Cabot Strait
+1956,NA,NA,4.867,NA,NA,Cabot Strait
+1957,NA,NA,5.495,NA,NA,Cabot Strait
+1959,NA,NA,4.772,NA,NA,Cabot Strait
+1960,NA,NA,4.662,NA,NA,Cabot Strait
+1961,NA,NA,4.9,NA,NA,Cabot Strait
+1962,NA,NA,4.878,NA,NA,Cabot Strait
+1964,NA,NA,4.409,NA,NA,Cabot Strait
+1965,NA,NA,4.073,NA,NA,Cabot Strait
+1966,NA,NA,4.018,NA,NA,Cabot Strait
+1967,NA,NA,4.258,NA,NA,Cabot Strait
+1968,NA,NA,4.591,NA,NA,Cabot Strait
+1969,NA,NA,4.98,NA,NA,Cabot Strait
+1970,NA,NA,5.299,NA,NA,Cabot Strait
+1971,NA,NA,5.283,NA,NA,Cabot Strait
+1972,NA,NA,5.188,NA,NA,Cabot Strait
+1973,NA,NA,5.249,NA,NA,Cabot Strait
+1974,NA,NA,5.397,NA,NA,Cabot Strait
+1975,NA,NA,5.284,NA,NA,Cabot Strait
+1976,NA,NA,5.901,NA,NA,Cabot Strait
+1977,NA,NA,5.848,NA,NA,Cabot Strait
+1978,NA,NA,6.105,NA,NA,Cabot Strait
+1979,NA,NA,6.473,NA,NA,Cabot Strait
+1980,NA,NA,5.979,NA,NA,Cabot Strait
+1981,NA,NA,5.721,NA,NA,Cabot Strait
+1982,NA,NA,5.512,NA,NA,Cabot Strait
+1983,NA,NA,5.785,NA,NA,Cabot Strait
+1984,NA,NA,5.856,NA,NA,Cabot Strait
+1985,NA,NA,6.151,NA,NA,Cabot Strait
+1986,NA,NA,6.081,NA,NA,Cabot Strait
+1987,NA,NA,5.761,NA,NA,Cabot Strait
+1988,NA,NA,5.679,NA,NA,Cabot Strait
+1989,NA,NA,5.654,NA,NA,Cabot Strait
+1990,NA,NA,5.344,NA,NA,Cabot Strait
+1991,NA,NA,4.521,NA,NA,Cabot Strait
+1992,NA,NA,5.25,NA,NA,Cabot Strait
+1993,NA,NA,6.161,NA,NA,Cabot Strait
+1994,NA,NA,5.61,NA,NA,Cabot Strait
+1995,NA,NA,5.522,NA,NA,Cabot Strait
+1996,NA,NA,5.469,NA,NA,Cabot Strait
+1997,NA,NA,5.769,NA,NA,Cabot Strait
+1998,NA,NA,5.326,NA,NA,Cabot Strait
+1999,NA,NA,5.892,NA,NA,Cabot Strait
+2000,NA,NA,5.705,NA,NA,Cabot Strait
+2001,NA,NA,5.834,NA,NA,Cabot Strait
+2002,NA,NA,5.973,NA,NA,Cabot Strait
+2003,NA,NA,5.826,NA,NA,Cabot Strait
+2004,NA,NA,5.832,NA,NA,Cabot Strait
+2005,NA,NA,5.751,NA,NA,Cabot Strait
+2006,NA,NA,5.734,NA,NA,Cabot Strait
+2007,NA,NA,5.487,NA,NA,Cabot Strait
+2008,NA,NA,5.522,NA,NA,Cabot Strait
+2009,NA,NA,5.165,NA,NA,Cabot Strait
+2010,NA,NA,5.933,NA,NA,Cabot Strait
+2011,NA,NA,6.217,NA,NA,Cabot Strait
+2012,NA,NA,6.599,NA,NA,Cabot Strait
+2013,NA,NA,5.805,NA,NA,Cabot Strait
+2014,NA,NA,6.499,NA,NA,Cabot Strait
+2015,NA,NA,6.48,NA,NA,Cabot Strait
+2016,NA,NA,6.798,NA,NA,Cabot Strait
+2017,NA,NA,6.8,NA,NA,Cabot Strait
+2018,NA,NA,6.574,NA,NA,Cabot Strait
+2019,NA,NA,7.252,NA,NA,Cabot Strait
+1950,NA,NA,8.05,NA,NA,E Georges Bank
+1951,NA,NA,9.41,NA,NA,E Georges Bank
+1952,NA,NA,8.35,NA,NA,E Georges Bank
+1953,NA,NA,8.28,NA,NA,E Georges Bank
+1954,NA,NA,9.57,NA,NA,E Georges Bank
+1955,NA,NA,8.31,NA,NA,E Georges Bank
+1956,NA,NA,7.58,NA,NA,E Georges Bank
+1957,NA,NA,8.03,NA,NA,E Georges Bank
+1958,NA,NA,7.81,NA,NA,E Georges Bank
+1959,NA,NA,7.41,NA,NA,E Georges Bank
+1960,NA,NA,6.84,NA,NA,E Georges Bank
+1961,NA,NA,6.19,NA,NA,E Georges Bank
+1962,NA,NA,6.25,NA,NA,E Georges Bank
+1963,NA,NA,7.03,NA,NA,E Georges Bank
+1964,NA,NA,6.38,NA,NA,E Georges Bank
+1965,NA,NA,6.38,NA,NA,E Georges Bank
+1966,NA,NA,6,NA,NA,E Georges Bank
+1967,NA,NA,6.97,NA,NA,E Georges Bank
+1968,NA,NA,6.87,NA,NA,E Georges Bank
+1969,NA,NA,7.74,NA,NA,E Georges Bank
+1970,NA,NA,6.79,NA,NA,E Georges Bank
+1971,NA,NA,7.34,NA,NA,E Georges Bank
+1972,NA,NA,7.43,NA,NA,E Georges Bank
+1973,NA,NA,8.48,NA,NA,E Georges Bank
+1974,NA,NA,8.78,NA,NA,E Georges Bank
+1975,NA,NA,7.9,NA,NA,E Georges Bank
+1976,NA,NA,8.44,NA,NA,E Georges Bank
+1977,NA,NA,7.77,NA,NA,E Georges Bank
+1978,NA,NA,7.57,NA,NA,E Georges Bank
+1979,NA,NA,8.39,NA,NA,E Georges Bank
+1980,NA,NA,8.62,NA,NA,E Georges Bank
+1981,NA,NA,7.65,NA,NA,E Georges Bank
+1982,NA,NA,7.16,NA,NA,E Georges Bank
+1983,NA,NA,8.12,NA,NA,E Georges Bank
+1984,NA,NA,8.21,NA,NA,E Georges Bank
+1985,NA,NA,8.78,NA,NA,E Georges Bank
+1986,NA,NA,8.07,NA,NA,E Georges Bank
+1987,NA,NA,7.07,NA,NA,E Georges Bank
+1988,NA,NA,7.8,NA,NA,E Georges Bank
+1989,NA,NA,7.25,NA,NA,E Georges Bank
+1990,NA,NA,8.11,NA,NA,E Georges Bank
+1991,NA,NA,8.34,NA,NA,E Georges Bank
+1992,NA,NA,7.46,NA,NA,E Georges Bank
+1993,NA,NA,7.53,NA,NA,E Georges Bank
+1994,NA,NA,8.26,NA,NA,E Georges Bank
+1995,NA,NA,8.19,NA,NA,E Georges Bank
+1996,NA,NA,7.58,NA,NA,E Georges Bank
+1997,NA,NA,8.15,NA,NA,E Georges Bank
+1998,NA,NA,7.51,NA,NA,E Georges Bank
+1999,NA,NA,8.52,NA,NA,E Georges Bank
+2000,NA,NA,8.55,NA,NA,E Georges Bank
+2001,NA,NA,8.69,NA,NA,E Georges Bank
+2002,NA,NA,8.7,NA,NA,E Georges Bank
+2003,NA,NA,7.43,NA,NA,E Georges Bank
+2004,NA,NA,6.47,NA,NA,E Georges Bank
+2005,NA,NA,6.94,NA,NA,E Georges Bank
+2006,NA,NA,7.98,NA,NA,E Georges Bank
+2007,NA,NA,7.03,NA,NA,E Georges Bank
+2008,NA,NA,7.82,NA,NA,E Georges Bank
+2009,NA,NA,8.05,NA,NA,E Georges Bank
+2010,NA,NA,8.48,NA,NA,E Georges Bank
+2011,NA,NA,8.08,NA,NA,E Georges Bank
+2012,NA,NA,9.65,NA,NA,E Georges Bank
+2013,NA,NA,8.34,NA,NA,E Georges Bank
+2014,NA,NA,8.7,NA,NA,E Georges Bank
+2015,NA,NA,8.76,NA,NA,E Georges Bank
+2016,NA,NA,8.75,NA,NA,E Georges Bank
+2017,NA,NA,9.41,NA,NA,E Georges Bank
+2018,NA,NA,8.33,NA,NA,E Georges Bank
+2019,NA,NA,7.81,NA,NA,E Georges Bank
+1950,NA,NA,7.52,NA,NA,Emerald Basin
+1951,NA,NA,9,NA,NA,Emerald Basin
+1952,NA,NA,8,NA,NA,Emerald Basin
+1953,NA,NA,7.91,NA,NA,Emerald Basin
+1954,NA,NA,8.91,NA,NA,Emerald Basin
+1955,NA,NA,8.34,NA,NA,Emerald Basin
+1956,NA,NA,8.37,NA,NA,Emerald Basin
+1957,NA,NA,8.75,NA,NA,Emerald Basin
+1958,NA,NA,8.16,NA,NA,Emerald Basin
+1959,NA,NA,5.87,NA,NA,Emerald Basin
+1960,NA,NA,7.15,NA,NA,Emerald Basin
+1961,NA,NA,7.47,NA,NA,Emerald Basin
+1962,NA,NA,7.9,NA,NA,Emerald Basin
+1963,NA,NA,7.62,NA,NA,Emerald Basin
+1964,NA,NA,5.85,NA,NA,Emerald Basin
+1965,NA,NA,5.82,NA,NA,Emerald Basin
+1966,NA,NA,4.83,NA,NA,Emerald Basin
+1967,NA,NA,6.02,NA,NA,Emerald Basin
+1968,NA,NA,7.6,NA,NA,Emerald Basin
+1969,NA,NA,8.51,NA,NA,Emerald Basin
+1970,NA,NA,8.51,NA,NA,Emerald Basin
+1971,NA,NA,8.54,NA,NA,Emerald Basin
+1972,NA,NA,8.79,NA,NA,Emerald Basin
+1973,NA,NA,9.38,NA,NA,Emerald Basin
+1974,NA,NA,9.6,NA,NA,Emerald Basin
+1975,NA,NA,10.05,NA,NA,Emerald Basin
+1976,NA,NA,8.66,NA,NA,Emerald Basin
+1977,NA,NA,9.13,NA,NA,Emerald Basin
+1978,NA,NA,7.36,NA,NA,Emerald Basin
+1979,NA,NA,9.33,NA,NA,Emerald Basin
+1980,NA,NA,8.99,NA,NA,Emerald Basin
+1981,NA,NA,8.95,NA,NA,Emerald Basin
+1982,NA,NA,7.42,NA,NA,Emerald Basin
+1983,NA,NA,8.38,NA,NA,Emerald Basin
+1984,NA,NA,9.33,NA,NA,Emerald Basin
+1985,NA,NA,10.1,NA,NA,Emerald Basin
+1986,NA,NA,10.29,NA,NA,Emerald Basin
+1987,NA,NA,9.61,NA,NA,Emerald Basin
+1988,NA,NA,8.66,NA,NA,Emerald Basin
+1989,NA,NA,9.39,NA,NA,Emerald Basin
+1990,NA,NA,9.53,NA,NA,Emerald Basin
+1991,NA,NA,9.25,NA,NA,Emerald Basin
+1992,NA,NA,9.35,NA,NA,Emerald Basin
+1993,NA,NA,9.98,NA,NA,Emerald Basin
+1994,NA,NA,9.88,NA,NA,Emerald Basin
+1995,NA,NA,9.59,NA,NA,Emerald Basin
+1996,NA,NA,9.83,NA,NA,Emerald Basin
+1997,NA,NA,9.5,NA,NA,Emerald Basin
+1998,NA,NA,6.97,NA,NA,Emerald Basin
+1999,NA,NA,8.89,NA,NA,Emerald Basin
+2000,NA,NA,9.38,NA,NA,Emerald Basin
+2001,NA,NA,9.21,NA,NA,Emerald Basin
+2002,NA,NA,9.27,NA,NA,Emerald Basin
+2003,NA,NA,9.21,NA,NA,Emerald Basin
+2004,NA,NA,9.62,NA,NA,Emerald Basin
+2005,NA,NA,9.39,NA,NA,Emerald Basin
+2006,NA,NA,9.55,NA,NA,Emerald Basin
+2007,NA,NA,7.33,NA,NA,Emerald Basin
+2008,NA,NA,8.29,NA,NA,Emerald Basin
+2009,NA,NA,7.91,NA,NA,Emerald Basin
+2010,NA,NA,9.78,NA,NA,Emerald Basin
+2011,NA,NA,9.99,NA,NA,Emerald Basin
+2012,NA,NA,9.87,NA,NA,Emerald Basin
+2013,NA,NA,9.74,NA,NA,Emerald Basin
+2014,NA,NA,10.51,NA,NA,Emerald Basin
+2015,NA,NA,10.31,NA,NA,Emerald Basin
+2016,NA,NA,10.76,NA,NA,Emerald Basin
+2017,NA,NA,10.63,NA,NA,Emerald Basin
+2018,NA,NA,10.75,NA,NA,Emerald Basin
+2019,NA,NA,10.97,NA,NA,Emerald Basin
+1950,NA,NA,6.93,NA,NA,Georges Basin
+1951,NA,NA,7.51,NA,NA,Georges Basin
+1953,NA,NA,7.57,NA,NA,Georges Basin
+1954,NA,NA,7.67,NA,NA,Georges Basin
+1955,NA,NA,7.48,NA,NA,Georges Basin
+1956,NA,NA,7.73,NA,NA,Georges Basin
+1957,NA,NA,8,NA,NA,Georges Basin
+1958,NA,NA,7.65,NA,NA,Georges Basin
+1959,NA,NA,6.38,NA,NA,Georges Basin
+1960,NA,NA,8.01,NA,NA,Georges Basin
+1961,NA,NA,6.7,NA,NA,Georges Basin
+1962,NA,NA,7.06,NA,NA,Georges Basin
+1963,NA,NA,7.66,NA,NA,Georges Basin
+1964,NA,NA,5.88,NA,NA,Georges Basin
+1965,NA,NA,5.98,NA,NA,Georges Basin
+1966,NA,NA,5.99,NA,NA,Georges Basin
+1967,NA,NA,6.37,NA,NA,Georges Basin
+1968,NA,NA,7.09,NA,NA,Georges Basin
+1969,NA,NA,7.36,NA,NA,Georges Basin
+1970,NA,NA,7.41,NA,NA,Georges Basin
+1971,NA,NA,8.08,NA,NA,Georges Basin
+1972,NA,NA,8.48,NA,NA,Georges Basin
+1973,NA,NA,8.5,NA,NA,Georges Basin
+1974,NA,NA,8.76,NA,NA,Georges Basin
+1975,NA,NA,8.57,NA,NA,Georges Basin
+1976,NA,NA,8.62,NA,NA,Georges Basin
+1977,NA,NA,7.57,NA,NA,Georges Basin
+1978,NA,NA,7.36,NA,NA,Georges Basin
+1979,NA,NA,8.31,NA,NA,Georges Basin
+1980,NA,NA,8.04,NA,NA,Georges Basin
+1981,NA,NA,7.5,NA,NA,Georges Basin
+1982,NA,NA,7.18,NA,NA,Georges Basin
+1983,NA,NA,8.32,NA,NA,Georges Basin
+1984,NA,NA,8.39,NA,NA,Georges Basin
+1985,NA,NA,9,NA,NA,Georges Basin
+1986,NA,NA,8.69,NA,NA,Georges Basin
+1987,NA,NA,8.04,NA,NA,Georges Basin
+1988,NA,NA,8.1,NA,NA,Georges Basin
+1989,NA,NA,7.96,NA,NA,Georges Basin
+1990,NA,NA,8.02,NA,NA,Georges Basin
+1991,NA,NA,8.19,NA,NA,Georges Basin
+1992,NA,NA,8.36,NA,NA,Georges Basin
+1993,NA,NA,8.39,NA,NA,Georges Basin
+1994,NA,NA,8.73,NA,NA,Georges Basin
+1995,NA,NA,8.88,NA,NA,Georges Basin
+1996,NA,NA,8.76,NA,NA,Georges Basin
+1997,NA,NA,8.42,NA,NA,Georges Basin
+1998,NA,NA,6.87,NA,NA,Georges Basin
+1999,NA,NA,8.76,NA,NA,Georges Basin
+2000,NA,NA,8.79,NA,NA,Georges Basin
+2001,NA,NA,8.34,NA,NA,Georges Basin
+2002,NA,NA,8.44,NA,NA,Georges Basin
+2003,NA,NA,8.7,NA,NA,Georges Basin
+2004,NA,NA,8.27,NA,NA,Georges Basin
+2005,NA,NA,8.07,NA,NA,Georges Basin
+2006,NA,NA,8.52,NA,NA,Georges Basin
+2007,NA,NA,7.5,NA,NA,Georges Basin
+2008,NA,NA,7.68,NA,NA,Georges Basin
+2009,NA,NA,8.21,NA,NA,Georges Basin
+2010,NA,NA,9.21,NA,NA,Georges Basin
+2011,NA,NA,8.8,NA,NA,Georges Basin
+2012,NA,NA,8.78,NA,NA,Georges Basin
+2013,NA,NA,9.31,NA,NA,Georges Basin
+2014,NA,NA,9.43,NA,NA,Georges Basin
+2015,NA,NA,9.28,NA,NA,Georges Basin
+2016,NA,NA,9.66,NA,NA,Georges Basin
+2017,NA,NA,9.79,NA,NA,Georges Basin
+2018,NA,NA,10.18,NA,NA,Georges Basin
+2019,NA,NA,9.99,NA,NA,Georges Basin
+1950,NA,NA,6.91,NA,NA,Lurcher Shoal
+1951,NA,NA,7.313,NA,NA,Lurcher Shoal
+1952,NA,NA,6.14,NA,NA,Lurcher Shoal
+1953,NA,NA,6.923,NA,NA,Lurcher Shoal
+1954,NA,NA,6.455,NA,NA,Lurcher Shoal
+1955,NA,NA,6.515,NA,NA,Lurcher Shoal
+1956,NA,NA,6.267,NA,NA,Lurcher Shoal
+1957,NA,NA,6.274,NA,NA,Lurcher Shoal
+1958,NA,NA,6.446,NA,NA,Lurcher Shoal
+1959,NA,NA,5.689,NA,NA,Lurcher Shoal
+1960,NA,NA,5.718,NA,NA,Lurcher Shoal
+1961,NA,NA,5.583,NA,NA,Lurcher Shoal
+1962,NA,NA,5.898,NA,NA,Lurcher Shoal
+1963,NA,NA,6.65,NA,NA,Lurcher Shoal
+1964,NA,NA,4.948,NA,NA,Lurcher Shoal
+1965,NA,NA,4.904,NA,NA,Lurcher Shoal
+1966,NA,NA,5.113,NA,NA,Lurcher Shoal
+1967,NA,NA,5.29,NA,NA,Lurcher Shoal
+1968,NA,NA,5.988,NA,NA,Lurcher Shoal
+1969,NA,NA,6.7,NA,NA,Lurcher Shoal
+1970,NA,NA,6.566,NA,NA,Lurcher Shoal
+1971,NA,NA,6.856,NA,NA,Lurcher Shoal
+1972,NA,NA,6.769,NA,NA,Lurcher Shoal
+1973,NA,NA,6.656,NA,NA,Lurcher Shoal
+1974,NA,NA,7.498,NA,NA,Lurcher Shoal
+1975,NA,NA,6.66,NA,NA,Lurcher Shoal
+1976,NA,NA,8.142,NA,NA,Lurcher Shoal
+1977,NA,NA,6.189,NA,NA,Lurcher Shoal
+1978,NA,NA,6.103,NA,NA,Lurcher Shoal
+1979,NA,NA,7.421,NA,NA,Lurcher Shoal
+1980,NA,NA,6.63,NA,NA,Lurcher Shoal
+1981,NA,NA,6.433,NA,NA,Lurcher Shoal
+1982,NA,NA,6.789,NA,NA,Lurcher Shoal
+1983,NA,NA,6.672,NA,NA,Lurcher Shoal
+1984,NA,NA,7.051,NA,NA,Lurcher Shoal
+1985,NA,NA,6.739,NA,NA,Lurcher Shoal
+1986,NA,NA,7.3,NA,NA,Lurcher Shoal
+1987,NA,NA,5.487,NA,NA,Lurcher Shoal
+1988,NA,NA,5.224,NA,NA,Lurcher Shoal
+1989,NA,NA,5.954,NA,NA,Lurcher Shoal
+1990,NA,NA,6.637,NA,NA,Lurcher Shoal
+1991,NA,NA,5.417,NA,NA,Lurcher Shoal
+1992,NA,NA,5.266,NA,NA,Lurcher Shoal
+1993,NA,NA,5.984,NA,NA,Lurcher Shoal
+1994,NA,NA,6.321,NA,NA,Lurcher Shoal
+1995,NA,NA,6.176,NA,NA,Lurcher Shoal
+1996,NA,NA,5.667,NA,NA,Lurcher Shoal
+1997,NA,NA,6.493,NA,NA,Lurcher Shoal
+1998,NA,NA,5.346,NA,NA,Lurcher Shoal
+1999,NA,NA,7.319,NA,NA,Lurcher Shoal
+2000,NA,NA,7.841,NA,NA,Lurcher Shoal
+2001,NA,NA,5.793,NA,NA,Lurcher Shoal
+2002,NA,NA,7.38,NA,NA,Lurcher Shoal
+2003,NA,NA,6.898,NA,NA,Lurcher Shoal
+2004,NA,NA,5.528,NA,NA,Lurcher Shoal
+2005,NA,NA,5.987,NA,NA,Lurcher Shoal
+2006,NA,NA,7.65,NA,NA,Lurcher Shoal
+2007,NA,NA,5.355,NA,NA,Lurcher Shoal
+2008,NA,NA,6.457,NA,NA,Lurcher Shoal
+2009,NA,NA,7.528,NA,NA,Lurcher Shoal
+2010,NA,NA,6.435,NA,NA,Lurcher Shoal
+2011,NA,NA,7.63,NA,NA,Lurcher Shoal
+2012,NA,NA,9.462,NA,NA,Lurcher Shoal
+2013,NA,NA,7.377,NA,NA,Lurcher Shoal
+2014,NA,NA,8.066,NA,NA,Lurcher Shoal
+2015,NA,NA,7.451,NA,NA,Lurcher Shoal
+2016,NA,NA,7.296,NA,NA,Lurcher Shoal
+2018,NA,NA,8.612,NA,NA,Lurcher Shoal
+2019,NA,NA,6.645,NA,NA,Lurcher Shoal
+1950,NA,NA,1.7553,NA,NA,Misaine Bank
+1951,NA,NA,2.5359,NA,NA,Misaine Bank
+1952,NA,NA,2.7611,NA,NA,Misaine Bank
+1953,NA,NA,2.1154,NA,NA,Misaine Bank
+1954,NA,NA,2.1021,NA,NA,Misaine Bank
+1955,NA,NA,1.9474,NA,NA,Misaine Bank
+1956,NA,NA,1.9161,NA,NA,Misaine Bank
+1957,NA,NA,1.109,NA,NA,Misaine Bank
+1958,NA,NA,2.12,NA,NA,Misaine Bank
+1959,NA,NA,0.7352,NA,NA,Misaine Bank
+1960,NA,NA,2.0899,NA,NA,Misaine Bank
+1961,NA,NA,0.7997,NA,NA,Misaine Bank
+1962,NA,NA,1.4636,NA,NA,Misaine Bank
+1963,NA,NA,1.9534,NA,NA,Misaine Bank
+1964,NA,NA,1.4924,NA,NA,Misaine Bank
+1965,NA,NA,1.2272,NA,NA,Misaine Bank
+1966,NA,NA,1.43,NA,NA,Misaine Bank
+1967,NA,NA,1.8195,NA,NA,Misaine Bank
+1968,NA,NA,1.8344,NA,NA,Misaine Bank
+1969,NA,NA,1.7233,NA,NA,Misaine Bank
+1970,NA,NA,2.1623,NA,NA,Misaine Bank
+1971,NA,NA,2.1876,NA,NA,Misaine Bank
+1972,NA,NA,1.6897,NA,NA,Misaine Bank
+1973,NA,NA,1.1339,NA,NA,Misaine Bank
+1974,NA,NA,1.3109,NA,NA,Misaine Bank
+1975,NA,NA,1.7013,NA,NA,Misaine Bank
+1976,NA,NA,1.6989,NA,NA,Misaine Bank
+1977,NA,NA,2.6363,NA,NA,Misaine Bank
+1978,NA,NA,2.1538,NA,NA,Misaine Bank
+1979,NA,NA,1.918,NA,NA,Misaine Bank
+1980,NA,NA,1.953,NA,NA,Misaine Bank
+1981,NA,NA,2.4551,NA,NA,Misaine Bank
+1982,NA,NA,0.9407,NA,NA,Misaine Bank
+1983,NA,NA,1.574,NA,NA,Misaine Bank
+1984,NA,NA,3.072,NA,NA,Misaine Bank
+1985,NA,NA,1.2133,NA,NA,Misaine Bank
+1986,NA,NA,0.5272,NA,NA,Misaine Bank
+1987,NA,NA,0.936,NA,NA,Misaine Bank
+1988,NA,NA,1.9343,NA,NA,Misaine Bank
+1989,NA,NA,0.9186,NA,NA,Misaine Bank
+1990,NA,NA,0.4586,NA,NA,Misaine Bank
+1991,NA,NA,0.7353,NA,NA,Misaine Bank
+1992,NA,NA,0.9,NA,NA,Misaine Bank
+1993,NA,NA,1.3797,NA,NA,Misaine Bank
+1994,NA,NA,1.4498,NA,NA,Misaine Bank
+1995,NA,NA,1.189,NA,NA,Misaine Bank
+1996,NA,NA,1.3039,NA,NA,Misaine Bank
+1997,NA,NA,1.5204,NA,NA,Misaine Bank
+1998,NA,NA,1.6686,NA,NA,Misaine Bank
+1999,NA,NA,2.1498,NA,NA,Misaine Bank
+2000,NA,NA,2.5021,NA,NA,Misaine Bank
+2001,NA,NA,1.515,NA,NA,Misaine Bank
+2002,NA,NA,1.6927,NA,NA,Misaine Bank
+2003,NA,NA,0.6261,NA,NA,Misaine Bank
+2004,NA,NA,0.9588,NA,NA,Misaine Bank
+2005,NA,NA,1.7339,NA,NA,Misaine Bank
+2006,NA,NA,2.2449,NA,NA,Misaine Bank
+2007,NA,NA,1.2126,NA,NA,Misaine Bank
+2008,NA,NA,1.5548,NA,NA,Misaine Bank
+2009,NA,NA,1.9258,NA,NA,Misaine Bank
+2010,NA,NA,1.954,NA,NA,Misaine Bank
+2011,NA,NA,2.2734,NA,NA,Misaine Bank
+2012,NA,NA,2.8033,NA,NA,Misaine Bank
+2013,NA,NA,1.9178,NA,NA,Misaine Bank
+2014,NA,NA,2.1184,NA,NA,Misaine Bank
+2015,NA,NA,2.5405,NA,NA,Misaine Bank
+2016,NA,NA,2.7416,NA,NA,Misaine Bank
+2017,NA,NA,1.9393,NA,NA,Misaine Bank
+2018,NA,NA,2.0626,NA,NA,Misaine Bank
+2019,NA,NA,1.3149,NA,NA,Misaine Bank
+1970,NA,NA,3.98,NA,NA,4V
+1971,NA,NA,3.58,NA,NA,4V
+1972,NA,NA,3.68,NA,NA,4V
+1973,NA,NA,3.11,NA,NA,4V
+1974,NA,NA,3.79,NA,NA,4V
+1975,NA,NA,4.39,NA,NA,4V
+1976,NA,NA,3.62,NA,NA,4V
+1977,NA,NA,4.43,NA,NA,4V
+1978,NA,NA,4.16,NA,NA,4V
+1979,NA,NA,4.19,NA,NA,4V
+1980,NA,NA,4.38,NA,NA,4V
+1981,NA,NA,4.37,NA,NA,4V
+1982,NA,NA,2.82,NA,NA,4V
+1983,NA,NA,3.42,NA,NA,4V
+1984,NA,NA,5.18,NA,NA,4V
+1985,NA,NA,3.41,NA,NA,4V
+1986,NA,NA,3.84,NA,NA,4V
+1987,NA,NA,2.76,NA,NA,4V
+1988,NA,NA,4.13,NA,NA,4V
+1989,NA,NA,2.87,NA,NA,4V
+1990,NA,NA,2.61,NA,NA,4V
+1991,NA,NA,2.58,NA,NA,4V
+1992,NA,NA,3.26,NA,NA,4V
+1993,NA,NA,3.35,NA,NA,4V
+1994,NA,NA,2.96,NA,NA,4V
+1995,NA,NA,3.22,NA,NA,4V
+1996,NA,NA,2.91,NA,NA,4V
+1997,NA,NA,3.44,NA,NA,4V
+1998,NA,NA,3.43,NA,NA,4V
+1999,NA,NA,3.97,NA,NA,4V
+2000,NA,NA,4.19,NA,NA,4V
+2001,NA,NA,3.44,NA,NA,4V
+2002,NA,NA,3.8,NA,NA,4V
+2003,NA,NA,2.73,NA,NA,4V
+2004,NA,NA,2.77,NA,NA,4V
+2005,NA,NA,3.87,NA,NA,4V
+2006,NA,NA,4.2,NA,NA,4V
+2007,NA,NA,3.23,NA,NA,4V
+2008,NA,NA,3.48,NA,NA,4V
+2009,NA,NA,3.75,NA,NA,4V
+2010,NA,NA,3.83,NA,NA,4V
+2011,NA,NA,4.22,NA,NA,4V
+2012,NA,NA,4.51,NA,NA,4V
+2013,NA,NA,4.09,NA,NA,4V
+2014,NA,NA,4.57,NA,NA,4V
+2015,NA,NA,5.15,NA,NA,4V
+2016,NA,NA,4.78,NA,NA,4V
+2017,NA,NA,4.63,NA,NA,4V
+2018,NA,NA,NA,NA,NA,4V
+2019,NA,NA,4.32,NA,NA,4V
+1970,NA,NA,4.349,NA,NA,4Vn
+1971,NA,NA,4.057,NA,NA,4Vn
+1972,NA,NA,3.814,NA,NA,4Vn
+1973,NA,NA,3.469,NA,NA,4Vn
+1974,NA,NA,4.374,NA,NA,4Vn
+1975,NA,NA,3.641,NA,NA,4Vn
+1976,NA,NA,3.4,NA,NA,4Vn
+1977,NA,NA,4.522,NA,NA,4Vn
+1978,NA,NA,4.742,NA,NA,4Vn
+1979,NA,NA,4.716,NA,NA,4Vn
+1980,NA,NA,4.864,NA,NA,4Vn
+1981,NA,NA,4.644,NA,NA,4Vn
+1982,NA,NA,3.786,NA,NA,4Vn
+1983,NA,NA,3.544,NA,NA,4Vn
+1984,NA,NA,4.863,NA,NA,4Vn
+1985,NA,NA,3.961,NA,NA,4Vn
+1986,NA,NA,4.445,NA,NA,4Vn
+1987,NA,NA,3.934,NA,NA,4Vn
+1988,NA,NA,4.351,NA,NA,4Vn
+1989,NA,NA,4.007,NA,NA,4Vn
+1990,NA,NA,3.617,NA,NA,4Vn
+1991,NA,NA,3.326,NA,NA,4Vn
+1992,NA,NA,3.644,NA,NA,4Vn
+1993,NA,NA,3.962,NA,NA,4Vn
+1994,NA,NA,3.813,NA,NA,4Vn
+1995,NA,NA,3.694,NA,NA,4Vn
+1996,NA,NA,3.128,NA,NA,4Vn
+1997,NA,NA,4.326,NA,NA,4Vn
+1998,NA,NA,3.548,NA,NA,4Vn
+1999,NA,NA,4.52,NA,NA,4Vn
+2000,NA,NA,4.131,NA,NA,4Vn
+2001,NA,NA,4.303,NA,NA,4Vn
+2002,NA,NA,4.106,NA,NA,4Vn
+2003,NA,NA,3.743,NA,NA,4Vn
+2004,NA,NA,3.566,NA,NA,4Vn
+2005,NA,NA,4.302,NA,NA,4Vn
+2006,NA,NA,4.67,NA,NA,4Vn
+2007,NA,NA,3.937,NA,NA,4Vn
+2008,NA,NA,4.034,NA,NA,4Vn
+2009,NA,NA,3.889,NA,NA,4Vn
+2010,NA,NA,4.205,NA,NA,4Vn
+2011,NA,NA,4.669,NA,NA,4Vn
+2012,NA,NA,4.473,NA,NA,4Vn
+2013,NA,NA,4.202,NA,NA,4Vn
+2014,NA,NA,5.159,NA,NA,4Vn
+2015,NA,NA,4.915,NA,NA,4Vn
+2016,NA,NA,4.864,NA,NA,4Vn
+2017,NA,NA,4.67,NA,NA,4Vn
+2018,NA,NA,NA,NA,NA,4Vn
+2019,NA,NA,4.988,NA,NA,4Vn
+1970,NA,NA,3.85,NA,NA,4Vs
+1971,NA,NA,3.43,NA,NA,4Vs
+1972,NA,NA,3.63,NA,NA,4Vs
+1973,NA,NA,2.99,NA,NA,4Vs
+1974,NA,NA,3.59,NA,NA,4Vs
+1975,NA,NA,4.63,NA,NA,4Vs
+1976,NA,NA,3.68,NA,NA,4Vs
+1977,NA,NA,4.4,NA,NA,4Vs
+1978,NA,NA,3.96,NA,NA,4Vs
+1979,NA,NA,4.01,NA,NA,4Vs
+1980,NA,NA,4.21,NA,NA,4Vs
+1981,NA,NA,4.27,NA,NA,4Vs
+1982,NA,NA,2.5,NA,NA,4Vs
+1983,NA,NA,3.37,NA,NA,4Vs
+1984,NA,NA,5.28,NA,NA,4Vs
+1985,NA,NA,3.22,NA,NA,4Vs
+1986,NA,NA,3.64,NA,NA,4Vs
+1987,NA,NA,2.37,NA,NA,4Vs
+1988,NA,NA,4.06,NA,NA,4Vs
+1989,NA,NA,2.49,NA,NA,4Vs
+1990,NA,NA,2.27,NA,NA,4Vs
+1991,NA,NA,2.33,NA,NA,4Vs
+1992,NA,NA,3.14,NA,NA,4Vs
+1993,NA,NA,3.14,NA,NA,4Vs
+1994,NA,NA,2.67,NA,NA,4Vs
+1995,NA,NA,3.06,NA,NA,4Vs
+1996,NA,NA,2.83,NA,NA,4Vs
+1997,NA,NA,3.15,NA,NA,4Vs
+1998,NA,NA,3.39,NA,NA,4Vs
+1999,NA,NA,3.79,NA,NA,4Vs
+2000,NA,NA,4.21,NA,NA,4Vs
+2001,NA,NA,3.15,NA,NA,4Vs
+2002,NA,NA,3.69,NA,NA,4Vs
+2003,NA,NA,2.39,NA,NA,4Vs
+2004,NA,NA,2.5,NA,NA,4Vs
+2005,NA,NA,3.73,NA,NA,4Vs
+2006,NA,NA,4.04,NA,NA,4Vs
+2007,NA,NA,3,NA,NA,4Vs
+2008,NA,NA,3.3,NA,NA,4Vs
+2009,NA,NA,3.7,NA,NA,4Vs
+2010,NA,NA,3.71,NA,NA,4Vs
+2011,NA,NA,4.08,NA,NA,4Vs
+2012,NA,NA,4.52,NA,NA,4Vs
+2013,NA,NA,4.05,NA,NA,4Vs
+2014,NA,NA,4.37,NA,NA,4Vs
+2015,NA,NA,5.22,NA,NA,4Vs
+2016,NA,NA,4.75,NA,NA,4Vs
+2017,NA,NA,4.61,NA,NA,4Vs
+2018,NA,NA,NA,NA,NA,4Vs
+2019,NA,NA,4.1,NA,NA,4Vs
+1970,NA,NA,5.63,NA,NA,4W
+1971,NA,NA,6.56,NA,NA,4W
+1972,NA,NA,6.58,NA,NA,4W
+1973,NA,NA,5.98,NA,NA,4W
+1974,NA,NA,7.23,NA,NA,4W
+1975,NA,NA,6.34,NA,NA,4W
+1976,NA,NA,7.05,NA,NA,4W
+1977,NA,NA,7.52,NA,NA,4W
+1978,NA,NA,6.18,NA,NA,4W
+1979,NA,NA,7.2,NA,NA,4W
+1980,NA,NA,7.07,NA,NA,4W
+1981,NA,NA,6.98,NA,NA,4W
+1982,NA,NA,5.73,NA,NA,4W
+1983,NA,NA,6.44,NA,NA,4W
+1984,NA,NA,7.96,NA,NA,4W
+1985,NA,NA,7.64,NA,NA,4W
+1986,NA,NA,7.37,NA,NA,4W
+1987,NA,NA,5.89,NA,NA,4W
+1988,NA,NA,5.84,NA,NA,4W
+1989,NA,NA,6.12,NA,NA,4W
+1990,NA,NA,6.05,NA,NA,4W
+1991,NA,NA,5.81,NA,NA,4W
+1992,NA,NA,6.23,NA,NA,4W
+1993,NA,NA,6.74,NA,NA,4W
+1994,NA,NA,6.78,NA,NA,4W
+1995,NA,NA,6.65,NA,NA,4W
+1996,NA,NA,6.21,NA,NA,4W
+1997,NA,NA,6.28,NA,NA,4W
+1998,NA,NA,4.99,NA,NA,4W
+1999,NA,NA,6.75,NA,NA,4W
+2000,NA,NA,7.46,NA,NA,4W
+2001,NA,NA,5.84,NA,NA,4W
+2002,NA,NA,6.76,NA,NA,4W
+2003,NA,NA,5.8,NA,NA,4W
+2004,NA,NA,4.75,NA,NA,4W
+2005,NA,NA,6.4,NA,NA,4W
+2006,NA,NA,7.39,NA,NA,4W
+2007,NA,NA,5.62,NA,NA,4W
+2008,NA,NA,5.38,NA,NA,4W
+2009,NA,NA,6.64,NA,NA,4W
+2010,NA,NA,6.89,NA,NA,4W
+2011,NA,NA,6.55,NA,NA,4W
+2012,NA,NA,8.09,NA,NA,4W
+2013,NA,NA,6.94,NA,NA,4W
+2014,NA,NA,8.33,NA,NA,4W
+2015,NA,NA,7.94,NA,NA,4W
+2016,NA,NA,8.12,NA,NA,4W
+2017,NA,NA,7.22,NA,NA,4W
+2018,NA,NA,NA,NA,NA,4W
+2019,NA,NA,7.27,NA,NA,4W
+1970,NA,NA,6.32,NA,NA,4X
+1971,NA,NA,7.11,NA,NA,4X
+1972,NA,NA,6.3,NA,NA,4X
+1973,NA,NA,7.83,NA,NA,4X
+1974,NA,NA,8.07,NA,NA,4X
+1975,NA,NA,7.32,NA,NA,4X
+1976,NA,NA,8.63,NA,NA,4X
+1977,NA,NA,7.09,NA,NA,4X
+1978,NA,NA,7.15,NA,NA,4X
+1979,NA,NA,7.89,NA,NA,4X
+1980,NA,NA,7.63,NA,NA,4X
+1981,NA,NA,6.9,NA,NA,4X
+1982,NA,NA,7.47,NA,NA,4X
+1983,NA,NA,7.39,NA,NA,4X
+1984,NA,NA,7.91,NA,NA,4X
+1985,NA,NA,8.47,NA,NA,4X
+1986,NA,NA,7.77,NA,NA,4X
+1987,NA,NA,6.31,NA,NA,4X
+1988,NA,NA,7.12,NA,NA,4X
+1989,NA,NA,7.24,NA,NA,4X
+1990,NA,NA,7.14,NA,NA,4X
+1991,NA,NA,6.66,NA,NA,4X
+1992,NA,NA,7.44,NA,NA,4X
+1993,NA,NA,7.06,NA,NA,4X
+1994,NA,NA,8.13,NA,NA,4X
+1995,NA,NA,6.78,NA,NA,4X
+1996,NA,NA,6.99,NA,NA,4X
+1997,NA,NA,7.42,NA,NA,4X
+1998,NA,NA,5.23,NA,NA,4X
+1999,NA,NA,7.91,NA,NA,4X
+2000,NA,NA,8.26,NA,NA,4X
+2001,NA,NA,6.37,NA,NA,4X
+2002,NA,NA,8.12,NA,NA,4X
+2003,NA,NA,7.45,NA,NA,4X
+2004,NA,NA,6.04,NA,NA,4X
+2005,NA,NA,7.27,NA,NA,4X
+2006,NA,NA,8.14,NA,NA,4X
+2007,NA,NA,6.24,NA,NA,4X
+2008,NA,NA,6.88,NA,NA,4X
+2009,NA,NA,7.24,NA,NA,4X
+2010,NA,NA,7.57,NA,NA,4X
+2011,NA,NA,7.7,NA,NA,4X
+2012,NA,NA,9.36,NA,NA,4X
+2013,NA,NA,8.28,NA,NA,4X
+2014,NA,NA,8.91,NA,NA,4X
+2015,NA,NA,8.15,NA,NA,4X
+2016,NA,NA,9.09,NA,NA,4X
+2017,NA,NA,8.81,NA,NA,4X
+2018,NA,NA,8.64,NA,NA,4X
+2019,NA,NA,8.38,NA,NA,4X
+1972,NA,NA,NA,4860,NA,Scotian Shelf
+1973,NA,NA,NA,5012,NA,Scotian Shelf
+1974,NA,NA,NA,4856,NA,Scotian Shelf
+1975,NA,NA,NA,4777,NA,Scotian Shelf
+1976,NA,NA,NA,4664,NA,Scotian Shelf
+1977,NA,NA,NA,4554,NA,Scotian Shelf
+1978,NA,NA,NA,4352,NA,Scotian Shelf
+1979,NA,NA,NA,4034,NA,Scotian Shelf
+1980,NA,NA,NA,4379,NA,Scotian Shelf
+1981,NA,NA,NA,4139,NA,Scotian Shelf
+1982,NA,NA,NA,4053,NA,Scotian Shelf
+1983,NA,NA,NA,4349,NA,Scotian Shelf
+1984,NA,NA,NA,4326,NA,Scotian Shelf
+1985,NA,NA,NA,4474,NA,Scotian Shelf
+1986,NA,NA,NA,4567,NA,Scotian Shelf
+1987,NA,NA,NA,5090,NA,Scotian Shelf
+1988,NA,NA,NA,  NA,NA,Scotian Shelf
+1989,NA,NA,NA,  NA,NA,Scotian Shelf
+1990,NA,NA,NA,5841,NA,Scotian Shelf
+1991,NA,NA,NA,6461,NA,Scotian Shelf
+1992,NA,NA,NA,6240,NA,Scotian Shelf
+1993,NA,NA,NA,6109,NA,Scotian Shelf
+1994,NA,NA,NA,5778,NA,Scotian Shelf
+1995,NA,NA,NA,5872,NA,Scotian Shelf
+1996,NA,NA,NA,5968,NA,Scotian Shelf
+1997,NA,NA,NA,6302,NA,Scotian Shelf
+1998,NA,NA,NA,7215,NA,Scotian Shelf
+1999,NA,NA,NA,4983,NA,Scotian Shelf
+2000,NA,NA,NA,3461,NA,Scotian Shelf
+2001,NA,NA,NA,6955,NA,Scotian Shelf
+2002,NA,NA,NA,5213,NA,Scotian Shelf
+2003,NA,NA,NA,6840,NA,Scotian Shelf
+2004,NA,NA,NA,7973,NA,Scotian Shelf
+2005,NA,NA,NA,4937,NA,Scotian Shelf
+2006,NA,NA,NA,4006,NA,Scotian Shelf
+2007,NA,NA,NA,6803,NA,Scotian Shelf
+2008,NA,NA,NA,6581,NA,Scotian Shelf
+2009,NA,NA,NA,4953,NA,Scotian Shelf
+2010,NA,NA,NA,4836,NA,Scotian Shelf
+2011,NA,NA,NA,4848,NA,Scotian Shelf
+2012,NA,NA,NA,2887,NA,Scotian Shelf
+2013,NA,NA,NA,5043,NA,Scotian Shelf
+2014,NA,NA,NA,3300,NA,Scotian Shelf
+2015,NA,NA,NA,4084,NA,Scotian Shelf
+2016,NA,NA,NA,4252,NA,Scotian Shelf
+2017,NA,NA,NA,4624,NA,Scotian Shelf
+2018,NA,NA,NA,  NA,NA,Scotian Shelf
+2019,NA,NA,NA,5096,NA,Scotian Shelf
+1972,NA,NA,NA,NA,2.5,Scotian Shelf
+1973,NA,NA,NA,NA,2.2,Scotian Shelf
+1974,NA,NA,NA,NA,2.2,Scotian Shelf
+1975,NA,NA,NA,NA,2.2,Scotian Shelf
+1976,NA,NA,NA,NA,2.1,Scotian Shelf
+1977,NA,NA,NA,NA,2.2,Scotian Shelf
+1978,NA,NA,NA,NA,2.3,Scotian Shelf
+1979,NA,NA,NA,NA,2.5,Scotian Shelf
+1980,NA,NA,NA,NA,2.4,Scotian Shelf
+1981,NA,NA,NA,NA,2.4,Scotian Shelf
+1982,NA,NA,NA,NA,2.4,Scotian Shelf
+1983,NA,NA,NA,NA,2.2,Scotian Shelf
+1984,NA,NA,NA,NA,2.0,Scotian Shelf
+1985,NA,NA,NA,NA,2.0,Scotian Shelf
+1986,NA,NA,NA,NA,2.1,Scotian Shelf
+1987,NA,NA,NA,NA,2.0,Scotian Shelf
+1988,NA,NA,NA,NA, NA,Scotian Shelf
+1989,NA,NA,NA,NA, NA,Scotian Shelf
+1990,NA,NA,NA,NA,1.7,Scotian Shelf
+1991,NA,NA,NA,NA,1.6,Scotian Shelf
+1992,NA,NA,NA,NA,1.3,Scotian Shelf
+1993,NA,NA,NA,NA,1.6,Scotian Shelf
+1994,NA,NA,NA,NA,1.8,Scotian Shelf
+1995,NA,NA,NA,NA,1.7,Scotian Shelf
+1996,NA,NA,NA,NA,2.1,Scotian Shelf
+1997,NA,NA,NA,NA,1.9,Scotian Shelf
+1998,NA,NA,NA,NA,1.8,Scotian Shelf
+1999,NA,NA,NA,NA,2.6,Scotian Shelf
+2000,NA,NA,NA,NA,2.5,Scotian Shelf
+2001,NA,NA,NA,NA,2.1,Scotian Shelf
+2002,NA,NA,NA,NA,2.3,Scotian Shelf
+2003,NA,NA,NA,NA,1.4,Scotian Shelf
+2004,NA,NA,NA,NA,1.8,Scotian Shelf
+2005,NA,NA,NA,NA,2.2,Scotian Shelf
+2006,NA,NA,NA,NA,2.6,Scotian Shelf
+2007,NA,NA,NA,NA,2.1,Scotian Shelf
+2008,NA,NA,NA,NA,2.2,Scotian Shelf
+2009,NA,NA,NA,NA,2.2,Scotian Shelf
+2010,NA,NA,NA,NA,2.5,Scotian Shelf
+2011,NA,NA,NA,NA,2.8,Scotian Shelf
+2012,NA,NA,NA,NA,2.9,Scotian Shelf
+2013,NA,NA,NA,NA,2.5,Scotian Shelf
+2014,NA,NA,NA,NA,2.4,Scotian Shelf
+2015,NA,NA,NA,NA,2.0,Scotian Shelf
+2016,NA,NA,NA,NA,2.6,Scotian Shelf
+2017,NA,NA,NA,NA,2.4,Scotian Shelf
+2018,NA,NA,NA,NA, NA,Scotian Shelf
+2019,NA,NA,NA,NA,2.2,Scotian Shelf
