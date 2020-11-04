@@ -10,8 +10,7 @@
 #' @return ggplot2 object
 #' @export
 #'
-#' @examples
-#' "No example"
+#'
 plot_annual_means <- function(df_data, variable) {
 
   # prepare data

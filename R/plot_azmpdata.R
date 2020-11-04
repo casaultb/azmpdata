@@ -8,7 +8,7 @@
 #'
 #' @importFrom stringr str_detect
 #' @import dplyr
-#' @return NULL
+#'
 #' @export
 #'
 #'

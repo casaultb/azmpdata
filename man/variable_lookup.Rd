@@ -9,9 +9,6 @@ variable_lookup(keywords)
 \arguments{
 \item{keywords}{Search keywords}
 }
-\value{
-
-}
 \description{
 Search through RDA variable names
 }

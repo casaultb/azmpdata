@@ -8,10 +8,10 @@
 #' @import stringr
 #'
 #'
-#' @return
+#'
 #' @export
 #'
-#' @examples
+#'
 variable_lookup <- function(keywords){
 
   # # required packages
