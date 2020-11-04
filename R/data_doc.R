@@ -86,7 +86,7 @@
 #'
 #'
 #' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-# "Zooplankton_Occupations_Stations"
+ "Zooplankton_Occupations_Stations"
 
 
 #' Phytoplankton Occupation Station data
@@ -223,7 +223,7 @@
 #' * zooplankton_total_wet_weight
 #'
 #' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-# "Zooplankton_Annual_Stations"
+ "Zooplankton_Annual_Stations"
 
 #' Phytoplankton Annual Station data
 #'
@@ -324,7 +324,7 @@
 #' * calanus_abundance_stage_c6
 #'
 #' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-# "Zooplankton_Occupations_Sections"
+ "Zooplankton_Occupations_Sections"
 
 
 #' Discrete Occupation Section data
@@ -414,7 +414,7 @@
 #' * zooplankton_total_wet_weight
 #'
 #' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-# "Zooplankton_Annual_Sections"
+ "Zooplankton_Annual_Sections"
 
 
 #' Derived monthly broadscale data
@@ -499,7 +499,7 @@
 #'
 #' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 #'
-# "RemoteSensing_Weekly_Broadscale"
+ "RemoteSensing_Weekly_Broadscale"
 
 
 
