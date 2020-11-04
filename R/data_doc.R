@@ -8,7 +8,7 @@
 #'
 #' This data frame includes
 #' _Metadata_
-#' * station_name
+#' * station
 #' * latitude
 #' * longitude
 #' * year
@@ -39,7 +39,7 @@
 #'
 #' This data frame includes
 #' _Metadata_
-#' * station_name
+#' * station
 #' * latitude
 #' * longitude
 #' * year
@@ -93,7 +93,7 @@
 #'
 #'  This data frame includes
 #' _Metadata_
-#' * station_name
+#' * station
 #' * latitude
 #' * longitude
 #' * year
@@ -115,7 +115,7 @@
 #'
 #' This data frame includes
 #' _Metadata_
-#' * station_name
+#' * station
 #' * latitude
 #' * longitude
 #' * year
@@ -156,11 +156,11 @@
 # "Derived_Monthly_Stations"
 
 
-#' Derived Occupation Annual data
+#' Derived Annual station data
 #'
 #'  This data frame includes
 #' _Metadata_
-#' * station_name
+#' * station
 #' * latitude
 #' * longitude
 #' * year
@@ -190,7 +190,7 @@
 #'
 #' This data frame includes
 #' _Metadata_
-#' * station_name
+#' * station
 #' * latitude
 #' * longitude
 #' * year
@@ -229,7 +229,7 @@
 #'
 #' This data frame includes
 #' _Metadata_
-#' * station_name
+#' * station
 #' * latitude
 #' * longitude
 #' * year
@@ -245,8 +245,8 @@
 #'
 #' This data frame includes
 #' _Metadata_
-#' * section_name
-#' * station_name
+#' * section
+#' * station
 #' * latitude
 #' * longitude
 #' * year
@@ -276,8 +276,8 @@
 #'
 #' This data frame includes
 #' _Metadata_
-#' * section_name
-#' * station_name
+#' * section
+#' * station
 #' * latitude
 #' * longitude
 #' * year
@@ -331,8 +331,8 @@
 #'
 #' This data frame includes
 #' _Metadata_
-#' * section_name
-#' * station_name
+#' * section
+#' * station
 #' * latitude
 #' * longitude
 #' * year
@@ -361,7 +361,7 @@
 #' Derived Annual Section data
 #'
 #' _Metadata_
-#' * section_name
+#' * section
 #' * year
 #'
 #' _Data_
@@ -383,7 +383,7 @@
 #' Zooplankton Annual Section data
 #'
 #'  _Metadata_
-#' * section_name
+#' * section
 #' * year
 #'
 #' _Data_
@@ -420,7 +420,7 @@
 #' Derived monthly broadscale data
 #'
 #' _Metadata_
-#' * area_name
+#' * area
 #' * year
 #' * month
 #'
@@ -435,7 +435,7 @@
 #' Derived annual broadscale data
 #'
 #' _Metadata_
-#' * area_name
+#' * area
 #' * year
 #'
 #' _Data_
@@ -472,7 +472,7 @@
 #'
 #'
 #' _Metadata_
-#' * area_name
+#' * area
 #' * year
 #'
 #' _Data_
@@ -489,7 +489,7 @@
 #' Remote sesning weekly broadscale data
 #'
 #' _Metadata_
-#' * area_name
+#' * area
 #' * year
 #' * month
 #' * week
@@ -508,7 +508,7 @@
 #'
 #' _Metadata_
 #' * year
-#' * area_name
+#' * area
 #'
 #' _Data_
 #' * salinity
@@ -519,7 +519,7 @@
 #' Remote sensing Annual broadscale data
 #'
 #' _Metadata_
-#' * region_name
+#' * area
 #' * year
 #'
 #' _Data_
@@ -533,7 +533,58 @@
 "RemoteSensing_Annual_Broadscale"
 
 
+#' Zooplankton Occupations Broadscale
+#'
+#'
+#' _Metadata_
+#' * area
+#' * year
+#' * month
+#' * day
+#'
+#'
+#' _Data_
+#' * calanus_finmarchicus_abundance
+#' * zooplankton_meso_dry_weight
+#' * zooplankton_total_wet_weight
+#'
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+#'
+"Zooplankton_Occupations_Broadscale"
 
+
+#' Zooplankton Seasonal Broadscale
+#'
+#' _Metadata_
+#' * area
+#' * year
+#' * season
+#'
+#' _Data_
+#' * calanus_finmarchicus_log10
+#' * zooplankton_meso_dry_weight
+#' * zooplankton_total_wet_Weight
+#'
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+#'
+"Zooplankton_Seasonal_Broadscale"
+
+
+#' Zooplankton Seasonal Sections
+#'
+#' _Metadata_
+#' * section
+#' * year
+#' * season
+#'
+#' _Data_
+#' * calanus_finmarchicus_log10
+#' * zooplankton_meso_dry_weight
+#' * zooplankton_total_wet_weight
+#'
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+#'
+"Zooplankton_Seasonal_Sections"
 
 
 
