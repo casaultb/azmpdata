@@ -2,7 +2,8 @@
 #'
 #' Plot a variable from a given "timeseries" dataset.
 #'
-#' @param ls_data list
+#' @param df_data dataframe loaded from azmpdata
+#' @param variable variable from dataframe to be plotted
 #'
 #' @importFrom tidyr unite
 #' @import dplyr
@@ -15,10 +16,34 @@
 #'
 #' @examples
 #' "No example"
-plot_timeseries <- function(ls_data) {
+plot_timeseries <- function(df_data, variable) {
+
+  orig_data <- df_data
+
+  # check that data is correct scale
+
+  if(!'month' %in% names(df_data) && !'day' %in% names(df_data)){
+    stop('Data provided is not at occupation scale! Please use a different plotting function or convert data')
+  }
+  # check variable
+  if(!variable %in% names(df_data)){
+    stop('Variable not found in dataframe provided!')
+  }
+
+  # check for metadata
+  metanames <- c('year', 'month', 'day', 'area', 'section', 'station' )
+  meta_df <- names(df_data)[names(df_data) %in% metanames]
+
+  group <- meta_df[!meta_df %in% c('year', 'month', 'day')]
+
+  df_data <- df_data %>%
+    dplyr::select(., all_of(meta_df), all_of(variable) ) %>%
+    dplyr::rename(., 'value' = all_of(variable) ) %>%
+    dplyr::rename(., 'group' = all_of(group)) #TODO some dataframes do not have groups!?
+
 
   # prepare data
-  df_data <- ls_data$data %>%
+  df_data <- df_data %>%
     tidyr::unite(date, year, month, day, sep="-", remove=F) %>%
     dplyr::mutate(year_dec=lubridate::decimal_date(lubridate::ymd(date))) %>%
     dplyr::select(year, year_dec, value)
@@ -38,6 +63,7 @@ plot_timeseries <- function(ls_data) {
                                   ymin=y_limits[1], ymax=y_limits[2])
 
   # plot data
+  # TODO need to add groupings and legend
   p <-  ggplot2::ggplot() +
     # plot shaded rectangles
     ggplot2::geom_rect(data=df_rectangles,
