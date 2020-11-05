@@ -3,12 +3,10 @@
 \docType{data}
 \name{Derived_Annual_Broadscale}
 \alias{Derived_Annual_Broadscale}
-
 \title{Derived monthly broadscale data}
 \format{
 An object of class \code{data.frame} with 784 rows and 6 columns.
 }
-
 \usage{
 Derived_Annual_Broadscale
 }
