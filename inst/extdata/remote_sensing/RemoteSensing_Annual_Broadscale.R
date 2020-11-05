@@ -3,15 +3,24 @@
 library(dplyr)
 library(tidyr)
 library(readr)
+library(tibble)
 library(usethis)
+
+# load dropbox lookup table
+db_lookup <- readr::read_csv(file="inst/extdata/dropbox_lookup.csv", comment="#")
+db_lookup <- tibble::deframe(db_lookup)
 
 # load data
 # chl data
 chl_env <- new.env()
-load("~/Projects/AZMP_Reporting_2020/outputs/remote_sensing/Surface_Chl_Weekly_MODIS.RData", envir=chl_env)
+con <- url(unname(db_lookup["Surface_Chl_Weekly_MODIS.RData"]))
+load(con, envir=chl_env)
+close(con)
 # bloom data
 bloom_env <- new.env()
-load("~/Projects/AZMP_Reporting_2020/outputs/remote_sensing/Bloom_parameters_Weekly_MODIS.RData", envir=bloom_env)
+con <- url(unname(db_lookup["Bloom_parameters_Weekly_MODIS.RData"]))
+load(con, envir=bloom_env)
+close(con)
 
 # assemble data
 RemoteSensing_Annual_Broadscale <- dplyr::bind_rows(chl_env$df_log_means_annual_l %>%
@@ -47,7 +56,7 @@ RemoteSensing_Annual_Broadscale <- RemoteSensing_Annual_Broadscale %>%
   dplyr::select(., region, year, unname(target_var))
 
 # save data to csv
-readr::write_csv(RemoteSensing_Annual_Broadscale, "inst/extdata/RemoteSensing_Annual_Broadscale.csv")
+readr::write_csv(RemoteSensing_Annual_Broadscale, "inst/extdata/remote_sensing/RemoteSensing_Annual_Broadscale.csv")
 
 # save data to rda
 usethis::use_data(RemoteSensing_Annual_Broadscale, overwrite = TRUE)

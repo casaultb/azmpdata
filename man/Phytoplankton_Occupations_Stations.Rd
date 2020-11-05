@@ -4,9 +4,7 @@
 \name{Phytoplankton_Occupations_Stations}
 \alias{Phytoplankton_Occupations_Stations}
 \title{Zooplankton Occupations Stations data}
-\format{
-An object of class \code{data.frame} with 659 rows and 13 columns.
-}
+\format{An object of class \code{data.frame} with 659 rows and 13 columns.}
 \usage{
 Phytoplankton_Occupations_Stations
 }
@@ -58,11 +56,10 @@ _Data_
 * calanus_abundance_stage_c5
 * calanus_abundance_stage_c6
 
-
 Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
 Phytoplankton Occupation Station data
 
- This data frame includes
+This data frame includes
 _Metadata_
 * station_name
 * latitude
@@ -78,6 +75,6 @@ _Metadata_
 _Data_
 * microplankton_abundance
 
- Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
 }
 \keyword{datasets}

@@ -4,7 +4,8 @@
 \alias{lookup_variable}
 \title{Search Variable look-up table}
 \usage{
-lookup_variable(variable, keyword, temporal_scale, geographic_scale, category)
+lookup_variable(variable, keyword, temporal_scale, geographic_scale,
+  category)
 }
 \arguments{
 \item{variable}{search by variable name}

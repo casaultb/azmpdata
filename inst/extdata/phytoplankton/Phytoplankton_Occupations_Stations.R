@@ -3,10 +3,16 @@
 library(dplyr)
 library(tidyr)
 library(readr)
+library(tibble)
 library(usethis)
 
+# load dropbox lookup table
+db_lookup <- readr::read_csv(file="inst/extdata/dropbox_lookup.csv", comment="#")
+db_lookup <- tibble::deframe(db_lookup)
+
 # load data
-load("~/Projects/AZMP_Reporting_2020/outputs/microplankton/Microplankton.RData")
+con <- url(unname(db_lookup["Microplankton.RData"]))
+load(con)
 
 # clean up
 rm(list=setdiff(ls(), "df_abundance_grouped_l"))
@@ -46,7 +52,7 @@ tidyr::spread(., variable, value) %>%
                 unname(target_var))
 
 # save data to csv
-readr::write_csv(Phytoplankton_Occupations_Stations, "inst/extdata/Phytoplankton_Occupations_Stations.csv")
+readr::write_csv(Phytoplankton_Occupations_Stations, "inst/extdata/phytoplankton/Phytoplankton_Occupations_Stations.csv")
 
 # save data to rda
 usethis::use_data(Phytoplankton_Occupations_Stations, overwrite = TRUE)

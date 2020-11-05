@@ -3,10 +3,17 @@
 library(dplyr)
 library(tidyr)
 library(readr)
+library(tibble)
 library(usethis)
 
+# load dropbox lookup table
+db_lookup <- readr::read_csv(file="inst/extdata/dropbox_lookup.csv", comment="#")
+db_lookup <- tibble::deframe(db_lookup)
+
 # load data
-load("~/Projects/AZMP_Reporting_2020/outputs/biochem/DIS_MAR_AZMP_ChlNut.RData")
+con <- url(unname(db_lookup["DIS_MAR_AZMP_ChlNut.RData"]))
+load(con)
+close(con)
 
 # clean up
 rm(list=setdiff(ls(), c("df_data_averaged_l", "df_sample_filtered")))
@@ -59,7 +66,7 @@ Discrete_Occupations_Sections <- dplyr::left_join(df_data_averaged_l %>%
                 sample_id, depth, standard_depth, unname(target_var))
 
 # save data to csv
-readr::write_csv(Discrete_Occupations_Sections, "inst/extdata/Discrete_Occupations_Sections.csv")
+readr::write_csv(Discrete_Occupations_Sections, "inst/extdata/discrete_derived/Discrete_Occupations_Sections.csv")
 
 # save data to rda
 usethis::use_data(Discrete_Occupations_Sections, overwrite = TRUE)
