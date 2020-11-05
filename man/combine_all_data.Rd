@@ -8,6 +8,7 @@ combine_all_data()
 }
 \description{
 Step 3 of updating `azmpdata`, combines all `.rda` files from data-raw into organized package data tables based on temporal, spatial and categorical scales.
+ WARNING SHOULD ONLY BE USED BY DEVELOPERS OR DATA MANAGERS!
 }
 \author{
 Emily Chisholm

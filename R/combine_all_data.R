@@ -2,22 +2,24 @@
 
 # get all dataframes
 
-# library(azmpdata)
-
-# test
-
 
 #' Combine RDA files into package data tables
 #'
 #'  Step 3 of updating `azmpdata`, combines all `.rda` files from data-raw into organized package data tables based on temporal, spatial and categorical scales.
+#'  WARNING SHOULD ONLY BE USED BY DEVELOPERS OR DATA MANAGERS!
 #'
 #' @importFrom utils data read.csv
 #' @importFrom usethis use_data
 #' @author Emily Chisholm
-#' @export
+#'
 #'
 #'
 combine_all_data <- function(){
+
+
+  # TODO add section which runs all of Benoit's .R scripts to recreate his dataframe as well
+
+
   # add functionality to specify updating only particular data frames?
 # dd <- data(package = 'azmpdata')
 # allpkgdata <- dd$results[,3]
