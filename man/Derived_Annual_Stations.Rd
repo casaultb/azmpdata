@@ -4,9 +4,7 @@
 \name{Derived_Annual_Stations}
 \alias{Derived_Annual_Stations}
 \title{Derived Occupation Monthly data}
-\format{
-An object of class \code{data.frame} with 1004 rows and 12 columns.
-}
+\format{An object of class \code{data.frame} with 1004 rows and 12 columns.}
 \usage{
 Derived_Annual_Stations
 }
@@ -23,10 +21,13 @@ _Metadata_
 _Data_
 * sea_surface_height
 
- Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+
+
 Derived Annual station data
 
- This data frame includes
+This data frame includes
 _Metadata_
 * station
 * latitude
@@ -50,7 +51,11 @@ _Data_
 * integrated_phosphate_0_50
 * integrated_phosphate_50_150
 
+<<<<<<< HEAD
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+=======
 
 Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+>>>>>>> d1a556953fcf1189b8625cb6a8034e8b0fdb0fdd
 }
 \keyword{datasets}

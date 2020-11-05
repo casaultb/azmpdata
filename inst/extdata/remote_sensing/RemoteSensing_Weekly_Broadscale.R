@@ -3,10 +3,17 @@
 library(dplyr)
 library(tidyr)
 library(readr)
+library(tibble)
 library(usethis)
 
+# load dropbox lookup table
+db_lookup <- readr::read_csv(file="inst/extdata/dropbox_lookup.csv", comment="#")
+db_lookup <- tibble::deframe(db_lookup)
+
 # load data
-load("~/Projects/AZMP_Reporting_2020/outputs/remote_sensing/Surface_Chl_Weekly_MODIS.RData")
+con <- url(unname(db_lookup["Surface_Chl_Weekly_MODIS.RData"]))
+load(con)
+close(con)
 
 # clean up
 rm(list=setdiff(ls(), "df_data_filtered"))
@@ -34,7 +41,7 @@ RemoteSensing_Weekly_Broadscale <- df_data_filtered %>%
   dplyr::select(., region, year, month, week, unname(target_var))
 
 # save data to csv
-readr::write_csv(RemoteSensing_Weekly_Broadscale, "inst/extdata/RemoteSensing_Weekly_Broadscale.csv")
+readr::write_csv(RemoteSensing_Weekly_Broadscale, "inst/extdata/remote_sensing/RemoteSensing_Weekly_Broadscale.csv")
 
 # save data to rda
 usethis::use_data(RemoteSensing_Weekly_Broadscale, overwrite = TRUE)

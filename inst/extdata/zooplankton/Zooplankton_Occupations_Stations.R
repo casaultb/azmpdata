@@ -3,19 +3,36 @@
 library(dplyr)
 library(tidyr)
 library(readr)
+library(tibble)
 library(usethis)
+
+# load dropbox lookup table
+db_lookup <- readr::read_csv(file="inst/extdata/dropbox_lookup.csv", comment="#")
+db_lookup <- tibble::deframe(db_lookup)
 
 # load data
 # HL2
+# abundance data
 HL2_abundance_env <- new.env()
-load("~/Projects/AZMP_Reporting_2020/outputs/biochem/PL_HL2_Abundance.RData", envir=HL2_abundance_env)
+con <- url(unname(db_lookup["PL_HL2_Abundance.RData"]))
+load(con, envir=HL2_abundance_env)
+close(con)
+# biomass data
 HL2_biomass_env <- new.env()
-load("~/Projects/AZMP_Reporting_2020/outputs/biochem/PL_HL2_Biomass.RData", envir=HL2_biomass_env)
+con <- url(unname(db_lookup["PL_HL2_Biomass.RData"]))
+load(con, envir=HL2_biomass_env)
+close(con)
 # P5
+# abundance data
 P5_abundance_env <- new.env()
-load("~/Projects/AZMP_Reporting_2020/outputs/biochem/PL_P5_Abundance.RData", envir=P5_abundance_env)
+con <- url(unname(db_lookup["PL_P5_Abundance.RData"]))
+load(con, envir=P5_abundance_env)
+close(con)
+# biomass data
 P5_biomass_env <- new.env()
-load("~/Projects/AZMP_Reporting_2020/outputs/biochem/PL_P5_Biomass.RData", envir=P5_biomass_env)
+con <- url(unname(db_lookup["PL_P5_Biomass.RData"]))
+load(con, envir=P5_biomass_env)
+close(con)
 
 # assemble data
 Zooplankton_Occupations_Stations <- dplyr::bind_rows(HL2_abundance_env$df_abundance_grouped_l %>%
@@ -98,7 +115,7 @@ Zooplankton_Occupations_Stations <- Zooplankton_Occupations_Stations %>%
                 unname(target_var))
 
 # save data to csv
-readr::write_csv(Zooplankton_Occupations_Stations, "inst/extdata/Zooplankton_Occupations_Stations.csv")
+readr::write_csv(Zooplankton_Occupations_Stations, "inst/extdata/zooplankton/Zooplankton_Occupations_Stations.csv")
 
 # save data to rda
 usethis::use_data(Zooplankton_Occupations_Stations, overwrite = TRUE)
