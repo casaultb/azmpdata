@@ -3,52 +3,20 @@
 \docType{data}
 \name{Derived_Annual_Broadscale}
 \alias{Derived_Annual_Broadscale}
-\title{Zooplankton Annual Section data}
-\format{An object of class \code{data.frame} with 784 rows and 6 columns.}
+\title{Derived monthly broadscale data}
+\format{
+An object of class \code{data.frame} with 784 rows and 6 columns.
+}
 \usage{
 Derived_Annual_Broadscale
 }
 \description{
 _Metadata_
-* section_name
-* year
-}
-\details{
-_Data_
- * calanus_finmarchicus_log10
-* calanus_hyperboreus_log10
-* calanus_glacialis_log10
-* pseudocalanus_log10
-* metridia_longa_log10
-* metridia_lucens_log10
-* metridia_spp_log10
-* temora_spp_log10
-* microcalanus_spp_log10
-* oithona_spp_log10
-* oithona_similis_log10
-* oithona_atlantica_log10
-* paracalanus_spp_log10
-* centropages_typicus_log10
-* centropages_spp_log10
-* scolecithricella_minor_log10
-* larvacae_log10
-* gastropoda_log10
-* bivalvia_log10
-* euphasiacea_log10
-* zooplankton_abundance_log10
-* zooplankton_meso_dry_weight
-* zooplankton_meso_wet_weight
-* zooplankton_macro_wet_weight
-* zooplankton_total_wet_weight
-
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-Derived monthly broadscale data
-
-_Metadata_
-* area_name
+* area
 * year
 * month
-
+}
+\details{
 _Data_
 * sea_surface_temperature_from_satellite
 * sea_ice_area
@@ -57,7 +25,7 @@ Data variables are described in more detail in variable look-up table (see \code
 Derived annual broadscale data
 
 _Metadata_
-* area_name
+* area
 * year
 
 _Data_

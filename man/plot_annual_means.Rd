@@ -4,17 +4,16 @@
 \alias{plot_annual_means}
 \title{Plot azmpdata dataset variable}
 \usage{
-plot_annual_means(ls_data)
+plot_annual_means(df_data, variable)
 }
 \arguments{
-\item{ls_data}{list}
+\item{df_data}{dataframe loaded from azmpdata}
+
+\item{variable}{variable from dataframe to be plotted}
 }
 \value{
 ggplot2 object
 }
 \description{
 Plot a variable from a given "annual means" dataset.
-}
-\examples{
-"No example"
 }

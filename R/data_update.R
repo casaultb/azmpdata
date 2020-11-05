@@ -3,13 +3,13 @@
 # E. Chisholm, Sept. 2020
 
 
-dataUpdate <- function(date = NULL){
+data_update <- function(date = NULL){
   # datefn <- system.file('extdata/', 'datadate.txt', package = 'azmpdata')
 
     fnpath <- system.file('extdata/', package = 'azmpdata')
     # create file
     sink(file = file.path(fnpath, 'datadate.txt'))
-      Sys.time()
+      format(Sys.time(), format = '%Y-%m-%d')
     sink()
 
 }

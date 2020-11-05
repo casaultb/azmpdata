@@ -19,37 +19,38 @@ lookup_variable <- function(variable, keyword, time_scale, regional_scale, categ
   vartable <- read.csv('inst/extdata/lookup/variable_look_up.csv')
 
   # see which search terms user has entered
-
   allterms <- c('variable', 'keyword', 'time_scale','regional_scale', 'category' )
   searchterms <- list()
+  termval <- NA
   for (i in 1:length(allterms)){
     term <- allterms[[i]]
-    eval(parse(text = paste("if(exists(term)){termval <- ", term, "}")))
+    eval(parse(text = paste("if(!missing(",term, ")){termval <- ", term, "}")))
     searchterms[[i]] <- termval
-    if(exists(term)){names(searchterms)[[i]] <- term}
-    termval <- NULL
+    if(!missing(term)){names(searchterms)[[i]] <- term}
+    termval <- NA
   }
 
-  if('variable' %in% names(searchterms)){
+
+  if(!is.na(searchterms$variable)){
     vartable <- vartable[vartable$variable_name == searchterms$variable,]
   }
 
 
-  if('keyword' %in% names(searchterms)){
+  if(!is.na(searchterms$keyword)){
     ind <- grep(vartable$variable_definition, pattern = searchterms$keyword)
 
     vartable <- vartable[ind, ]
   }
 
-  if('time_scale' %in% names(searchterms)){
+  if(!is.na(searchterms$time_scale)){
     vartable <- vartable[vartable$time_scale == searchterms$time_scale,]
   }
 
-  if('regional_scale' %in% names(searchterms)){
+  if(!is.na(searchterms$regional_scale)){
     vartable <- vartable[vartable$regional_scale == searchterms$regional_scale,]
   }
 
-  if('category' %in% names(searchterms)){
+  if(!is.na(searchterms$category)){
     vartable <- vartable[vartable$category == searchterms$category,]
   }
 

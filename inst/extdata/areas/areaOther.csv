@@ -1,4 +1,4 @@
-"year","area_name","salinity","density_gradient_0_50","sea_temperature"
+"year","area","salinity","density_gradient_0_50","sea_temperature"
 1948,"Scotion Shelf",0.068,-0.00139,-1.396
 1949,"Scotion Shelf",0.252,-0.00968,0.545
 1950,"Scotion Shelf",0.511,-0.01883,-0.373

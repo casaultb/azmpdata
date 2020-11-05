@@ -4,13 +4,15 @@
 \name{Derived_Annual_Sections}
 \alias{Derived_Annual_Sections}
 \title{Derived Annual Section data}
-\format{An object of class \code{data.frame} with 82 rows and 9 columns.}
+\format{
+An object of class \code{data.frame} with 82 rows and 9 columns.
+}
 \usage{
 Derived_Annual_Sections
 }
 \description{
 _Metadata_
-* section_name
+* section
 * year
 }
 \details{

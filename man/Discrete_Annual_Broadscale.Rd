@@ -3,7 +3,7 @@
 \docType{data}
 \name{Discrete_Annual_Broadscale}
 \alias{Discrete_Annual_Broadscale}
-\title{Remote Sensing Annual Broadscale data}
+\title{Discrete annual broadscale data}
 \format{
 An object of class \code{data.frame} with 72 rows and 4 columns.
 }
@@ -12,37 +12,10 @@ Discrete_Annual_Broadscale
 }
 \description{
 _Metadata_
-* area_name
 * year
+* area
 }
 \details{
-_Data_
-* surface_chlorophyll_log10
-* bloom_start
-* bloom_duration
-* bloom_amplitude
-* bloom_magnitude
-
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-Remote sesning weekly broadscale data
-
-_Metadata_
-* area_name
-* year
-* month
-* week
-
-_Data_
-* surface_chlorophyll
-
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-
-Discrete annual broadscale data
-
-_Metadata_
-* year
-* area_name
-
 _Data_
 * salinity
 * sea_temperature

@@ -13,7 +13,7 @@ areaName <- unlist(lapply(d, function(k) rep(k[['areaName']], dim(k[['data']])[1
 year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 
 df <- data.frame(year = year,
-                 area_name = areaName,
+                 area = areaName,
                  cold_intermediate_layer_volume = vardat1,
                  minimum_temperature_in_cold_intermediate_layer = vardat2)
 coldIntermediateLayer <- df

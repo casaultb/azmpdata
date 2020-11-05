@@ -4,6 +4,8 @@
 #'
 #' @param str string (lowercase only)
 #'
+#' @importFrom utils data
+#' @importFrom stringr str_remove
 #' @return character vector
 #' @export
 #'

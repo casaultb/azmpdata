@@ -1,9 +1,23 @@
+#' Search through RDA variable names
+#'
+#' @param keywords Search keywords
+#'
+#'
+#' @import dplyr
+#' @import tibble
+#' @import stringr
+#'
+#'
+#'
+#' @export
+#'
+#'
 variable_lookup <- function(keywords){
 
-  # required packages
-  library(dplyr)
-  library(tibble)
-  library(stringr)
+  # # required packages
+  # library(dplyr)
+  # library(tibble)
+  # library(stringr)
 
   # declare empty data frame
   tb_main <- tibble::tibble(variable=character(0),
