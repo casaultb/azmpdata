@@ -11,7 +11,7 @@ areaName <- unlist(lapply(d, function(k) rep(k[['divisionName']], dim(k[['data']
 year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 
 df <- data.frame(year = year,
-                 area_name = areaName,
+                 area = areaName,
                  temperature_at_sea_floor = tasf)
 summerBottomTemperature <- df
 

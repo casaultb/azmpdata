@@ -3,7 +3,7 @@
 \docType{data}
 \name{Discrete_Occupations_Sections}
 \alias{Discrete_Occupations_Sections}
-\title{Zooplankton Occupation Section data}
+\title{Discrete Occupation Section data}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 12055 rows and 15 columns.
 }
@@ -13,8 +13,8 @@ Discrete_Occupations_Sections
 \description{
 This data frame includes
 _Metadata_
-* section_name
-* station_name
+* section
+* station
 * latitude
 * longitude
 * year
@@ -28,58 +28,6 @@ _Metadata_
 * odf_filename
 }
 \details{
-_Data_
-* calanus_finmarchicus_abundance
-* calanus_hyperboreus_abundance
-* calanus_glacialis_abundance
-* pseudocalanus_abundance
-* metridia_longa_abundance
-* metridia_lucens_abundance
-* metridia_spp_abundance
-* temora_spp_abundance
-* microcalanus_spp_abundance
-* oithona_spp_abundance
-* oithona_similis_abundance
-* oithona_atlantica_abundance
-* paracalanus_spp_abundance
-* centropages_typicus_abundance
-* centropages_spp_abundance
-* scolecithricella_minor_abundance
-* larvacae_abundance
-* gastropoda_abundance
-* bivalvia_abundance
-* euphasiacea_abundance
-* zooplankton_abundance
-* zooplankton_meso_dry_weight
-* zooplankton_meso_wet_weight
-* zooplankton_macro_wet_weight
-* zooplankton_total_wet_Weight
-* calanus_abundance_stage_c1
-* calanus_abundance_stage_c2
-* calanus_abundance_stage_c3
-* calanus_abundance_stage_c4
-* calanus_abundance_stage_c5
-* calanus_abundance_stage_c6
-
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-Discrete Occupation Section data
-
-This data frame includes
-_Metadata_
-* section_name
-* station_name
-* latitude
-* longitude
-* year
-* month
-* day
-* event_id
-* cruise_id
-* sample_id
-* depth
-* nominal_depth
-* odf_filename
-
 _Data_
 * nitrate
 * silicate

@@ -13,8 +13,8 @@ Derived_Occupations_Sections
 \description{
 This data frame includes
 _Metadata_
-* section_name
-* station_name
+* section
+* station
 * latitude
 * longitude
 * year

@@ -3,15 +3,24 @@
 library(dplyr)
 library(tidyr)
 library(readr)
+library(tibble)
 library(usethis)
+
+# load dropbox lookup table
+db_lookup <- readr::read_csv(file="inst/extdata/dropbox_lookup.csv", comment="#")
+db_lookup <- tibble::deframe(db_lookup)
 
 # load data
 # abundance data
 abundance_env <- new.env()
-load("~/Projects/AZMP_Reporting_2020/outputs/biochem/PL_MAR_AZMP_Abundance.RData", envir=abundance_env)
+con <- url(unname(db_lookup["PL_MAR_AZMP_Abundance.RData"]))
+load(con, envir=abundance_env)
+close(con)
 # biomass data
 biomass_env <- new.env()
-load("~/Projects/AZMP_Reporting_2020/outputs/biochem/PL_MAR_AZMP_Biomass.RData", envir=biomass_env)
+con <- url(unname(db_lookup["PL_MAR_AZMP_Biomass.RData"]))
+load(con, envir=biomass_env)
+close(con)
 
 # assemble data
 Zooplankton_Annual_Sections <- dplyr::bind_rows(abundance_env$df_log_abundance_means_annual_l %>%
@@ -50,7 +59,7 @@ Zooplankton_Annual_Sections <- Zooplankton_Annual_Sections %>%
   dplyr::select(., section, year, unname(target_var))
 
 # save data to csv
-readr::write_csv(Zooplankton_Annual_Sections, "inst/extdata/Zooplankton_Annual_Sections.csv")
+readr::write_csv(Zooplankton_Annual_Sections, "inst/extdata/zooplankton/Zooplankton_Annual_Sections.csv")
 
 # save data to rda
 usethis::use_data(Zooplankton_Annual_Sections, overwrite = TRUE)

@@ -11,7 +11,7 @@ stationName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data
 year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 
 df <- data.frame(year = year,
-                 station_name = stationName,
+                 station = stationName,
                  temperature_in_air = vardat)
 airTemperature <- df
 

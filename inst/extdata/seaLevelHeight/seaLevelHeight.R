@@ -20,7 +20,7 @@ day <- unlist(lapply(d, function(k) format(as.Date(k[['data']][['time']]), forma
 df <- data.frame(year = as.numeric(year),
                  month = as.numeric(month),
                  day = as.numeric(day),
-                 station_name = stationName,
+                 station = stationName,
                  sea_surface_height  = vardat2 #,
                 # sea_surface_height_residual= vardat3
                  )

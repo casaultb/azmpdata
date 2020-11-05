@@ -2,21 +2,24 @@
 
 # get all dataframes
 
-# library(azmpdata)
-
-# test
-
 
 #' Combine RDA files into package data tables
 #'
 #'  Step 3 of updating `azmpdata`, combines all `.rda` files from data-raw into organized package data tables based on temporal, spatial and categorical scales.
+#'  WARNING SHOULD ONLY BE USED BY DEVELOPERS OR DATA MANAGERS!
 #'
 #' @importFrom utils data read.csv
+#' @importFrom usethis use_data
 #' @author Emily Chisholm
-#' @export
+#'
 #'
 #'
 combine_all_data <- function(){
+
+
+  # TODO add section which runs all of Benoit's .R scripts to recreate his dataframe as well
+
+
   # add functionality to specify updating only particular data frames?
 # dd <- data(package = 'azmpdata')
 # allpkgdata <- dd$results[,3]
@@ -38,7 +41,7 @@ for(i in 1:length(pkgdata)){
 names(varnames) <- pkgdata
 
 # remove metadata names
-metanames <- c('year', 'month', 'day', 'area_name', 'section_name', 'station_name' )
+metanames <- c('year', 'month', 'day', 'area', 'section', 'station' )
 
 datnames <- unlist(varnames)[!unlist(varnames) %in% metanames]
 
@@ -94,13 +97,13 @@ for(i in 1:length(datnames)){
     # narrow down geographic scale
 
     if(length(newdatfile) > 1){
-      if('station_name' %in% metacol){
+      if('station' %in% metacol){
         ndf3 <- grep(newdatfile, pattern = 'Station', value = TRUE)
       }
-      if('section_name' %in% metacol){
+      if('section' %in% metacol){
         ndf3 <- grep(newdatfile, pattern = 'Section', value = TRUE)
       }
-      if('area_name' %in% metacol){
+      if('area' %in% metacol){
         ndf3 <- grep(newdatfile, pattern = 'Broadscale', value = TRUE)
       }
       if(!exists('ndf3') | length(ndf3) == 0){
@@ -216,7 +219,7 @@ allnewdd <- unique(alldd[ind])
 
 
 
-
-
+# update datadate.txt to keep track of last data update
+data_update()
 
 }

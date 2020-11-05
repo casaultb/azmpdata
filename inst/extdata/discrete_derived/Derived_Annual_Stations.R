@@ -3,15 +3,24 @@
 library(dplyr)
 library(tidyr)
 library(readr)
+library(tibble)
 library(usethis)
+
+# load dropbox lookup table
+db_lookup <- readr::read_csv(file="inst/extdata/dropbox_lookup.csv", comment="#")
+db_lookup <- tibble::deframe(db_lookup)
 
 # load data
 # HL2
 HL2_env <- new.env()
-load("~/Projects/AZMP_Reporting_2020/outputs/biochem/DIS_HL2_ChlNut.RData", envir=HL2_env)
+con <- url(unname(db_lookup["DIS_HL2_ChlNut.RData"]))
+load(con, envir=HL2_env)
+close(con)
 # P5
 P5_env <- new.env()
-load("~/Projects/AZMP_Reporting_2020/outputs/biochem/DIS_P5_ChlNut.RData", envir=P5_env)
+con <- url(unname(db_lookup["DIS_P5_ChlNut.RData"]))
+load(con, envir=P5_env)
+close(con)
 
 # assemble data
 Derived_Annual_Stations <- dplyr::bind_rows(HL2_env$df_means_annual_l %>%
@@ -52,7 +61,7 @@ Derived_Annual_Stations <- Derived_Annual_Stations %>%
 
 
 # save data to csv
-readr::write_csv(Derived_Annual_Stations, "inst/extdata/Derived_Annual_Stations.csv")
+readr::write_csv(Derived_Annual_Stations, "inst/extdata/discrete_derived/Derived_Annual_Stations.csv")
 
 # save data to rda
 usethis::use_data(Derived_Annual_Stations, overwrite = TRUE)

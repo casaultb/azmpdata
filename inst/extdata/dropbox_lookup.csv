@@ -1,0 +1,20 @@
+data_file,db_link
+# zooplankton abundance data
+PL_HL2_Abundance.RData, https://www.dropbox.com/s/40znurczwoi2415/PL_HL2_Abundance.RData?dl=1
+PL_P5_Abundance.RData, https://www.dropbox.com/s/pjjz2apdlh9knhn/PL_P5_Abundance.RData?dl=1
+PL_MAR_AZMP_Abundance.RData, https://www.dropbox.com/s/8byl03w26cryzpd/PL_MAR_AZMP_Abundance.RData?dl=1
+PL_MAR_TS_Abundance.RData, https://www.dropbox.com/s/tscln9mtnxxfb98/PL_MAR_TS_Abundance.RData?dl=1
+# zooplankton biomass data
+PL_HL2_Biomass.RData, https://www.dropbox.com/s/yqopz3cqs126s2p/PL_HL2_Biomass.RData?dl=1
+PL_P5_Biomass.RData, https://www.dropbox.com/s/vhci9qocebv2nep/PL_P5_Biomass.RData?dl=1
+PL_MAR_AZMP_Biomass.RData, https://www.dropbox.com/s/tavspr8fjt2f2eo/PL_MAR_AZMP_Biomass.RData?dl=1
+PL_MAR_TS_Biomass.RData, https://www.dropbox.com/s/ndu828biuj69nxv/PL_MAR_TS_Biomass.RData?dl=1
+# chlorophyll and nutrients data
+DIS_HL2_ChlNut.RData, https://www.dropbox.com/s/fqs032afcrfptt2/DIS_HL2_ChlNut.RData?dl=1
+DIS_P5_ChlNut.RData, https://www.dropbox.com/s/5qv9s8azz4kofsa/DIS_P5_ChlNut.RData?dl=1
+DIS_MAR_AZMP_ChlNut.RData, https://www.dropbox.com/s/w6yfnt57ykl77n5/DIS_MAR_AZMP_ChlNut.RData?dl=1
+# phytoplankton abundance data
+Microplankton.RData, https://www.dropbox.com/s/yl0q9m2d3r58l8a/Microplankton.RData?dl=1
+# remote sensing data
+Surface_Chl_Weekly_MODIS.RData, https://www.dropbox.com/s/eo2jv07tsyc4h2a/Surface_Chl_Weekly_MODIS.RData?dl=1
+Bloom_parameters_Weekly_MODIS.RData, https://www.dropbox.com/s/oidhepeajfn9xty/Bloom_parameters_Weekly_MODIS.RData?dl=1

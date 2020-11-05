@@ -2,7 +2,7 @@
 # From Mike MacMahon
 
 # avoid warnings in check() from dplyr syntax
-utils::globalVariables(c('year', 'value', 'month', 'day', 'year_dec', 'xmin', 'xmax', 'ymin', 'ymax'))
+utils::globalVariables(c('year', 'value', 'month', 'day', 'year_dec', 'xmin', 'xmax', 'ymin', 'ymax', '.', 'ls_data', 'variable', 'tmp_variable', 'keyword', 'dataframe'))
 
 
 .onAttach <- function(libname, pkgname) {

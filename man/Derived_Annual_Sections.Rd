@@ -12,7 +12,7 @@ Derived_Annual_Sections
 }
 \description{
 _Metadata_
-* section_name
+* section
 * year
 }
 \details{

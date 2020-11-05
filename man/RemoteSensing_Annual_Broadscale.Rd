@@ -12,7 +12,7 @@ RemoteSensing_Annual_Broadscale
 }
 \description{
 _Metadata_
-* region_name
+* area
 * year
 }
 \details{

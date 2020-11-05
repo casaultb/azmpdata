@@ -4,10 +4,12 @@
 \alias{plot_timeseries}
 \title{Plot azmpdata dataset variable}
 \usage{
-plot_timeseries(ls_data)
+plot_timeseries(df_data, variable)
 }
 \arguments{
-\item{ls_data}{list}
+\item{df_data}{dataframe loaded from azmpdata}
+
+\item{variable}{variable from dataframe to be plotted}
 }
 \value{
 ggplot2 object

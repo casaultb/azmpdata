@@ -3,7 +3,7 @@
 \docType{data}
 \name{Phytoplankton_Annual_Stations}
 \alias{Phytoplankton_Annual_Stations}
-\title{Zooplankton Annual Stations data}
+\title{Phytoplankton Annual Station data}
 \format{
 An object of class \code{data.frame} with 42 rows and 6 columns.
 }
@@ -13,49 +13,12 @@ Phytoplankton_Annual_Stations
 \description{
 This data frame includes
 _Metadata_
-* station_name
+* station
 * latitude
 * longitude
 * year
 }
 \details{
-_Data_
-* calanus_finmarchicus_log10
-* calanus_hyperboreus_log10
-* calanus_glacialis_log10
-* pseudocalanus_log10
-* metridia_longa_log10
-* metridia_lucens_log10
-* metridia_spp_log10
-* temora_spp_log10
-* microcalanus_spp_log10
-* oithona_spp_log10
-* oithona_similis_log10
-* oithona_atlantica_log10
-* paracalanus_spp_log10
-* centropages_typicus_log10
-* centropages_spp_log10
-* scolecithricella_minor_log10
-* larvacae_log10
-* gastropoda_log10
-* bivalvia_log10
-* euphasiacea_log10
-* zooplankton_abundance_log10
-* zooplankton_meso_dry_weight
-* zooplankton_meso_wet_weight
-* zooplankton_macro_wet_weight
-* zooplankton_total_wet_weight
-
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-Phytoplankton Annual Station data
-
-This data frame includes
-_Metadata_
-* station_name
-* latitude
-* longitude
-* year
-
 _Data_
 * microplankton_abundance_log10
 

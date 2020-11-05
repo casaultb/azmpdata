@@ -3,6 +3,10 @@
 #' github, and prompts the user to update.
 #' @param gitPkg default is \code{NULL}. This is the URL to the DESCRIPTION file
 #' on github.
+#'
+#'
+#' @importFrom utils packageDescription read.delim tail
+#'
 #' @family general_use
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}, Emily Chisholm
 #' @export
@@ -42,7 +46,8 @@ update_check<-function(gitPkg = NULL){
 
   remoteDataVer <- verCleaner(utils::tail(remoteData,1))
   if (length(remoteDataVer) == 0) remoteDataVer <- 0
-  localDataVerRaw <- utils::tail(utils::read.delim(system.file('extdata/', 'datadate.txt', package = 'azmpdata')),1)[,1]
+ # localDataVerRaw <- utils::tail(utils::read.delim(system.file('extdata/', 'datadate.txt', package = 'azmpdata')),1)[,1]
+  localDataVerRaw <- readLines(system.file('extdata/', 'datadate.txt', package = 'azmpdata'))
   localDataVer <- verCleaner(localDataVerRaw)
 
 # User Messages: ----------------------------------------------------------

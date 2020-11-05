@@ -5,7 +5,7 @@
 \alias{Derived_Occupations_Stations}
 \title{Derived Occupation Station data}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 10992 rows and 11 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 737 rows and 14 columns.
 }
 \usage{
 Derived_Occupations_Stations
@@ -16,7 +16,7 @@ Metrics derived from data collected at fixed station locations during individual
 \details{
 This data frame includes
 _Metadata_
-* station_name
+* station
 * latitude
 * longitude
 * year
