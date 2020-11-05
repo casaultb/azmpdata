@@ -29,19 +29,26 @@ plot_azmpdata <- function(dataset, variable) {
 
   # data resolution
   # TODO add more data resolutions?
-  data_res <- ifelse(stringr::str_detect(dataset, "Occupations"), "timeseries",
-                     ifelse(stringr::str_detect(dataset, "Annual"), "annual_means", NULL))
+  data_res <- ifelse(test = stringr::str_detect(dataset, "Occupations"), yes = "timeseries",
+                      no = ifelse(test = stringr::str_detect(dataset, "Annual"), yes =  "annual_means", no = NA))
 
+
+  res <- tryCatch(get(dataset),
+           error=function(error_condition) {
+             message(paste("Dataset does not exist:", dataset))
+             # Choose a return value in case of error
+             return(NA)
+           })
 
   if(data_res == 'annual_means'){
     p <- plot_annual_means(df_data = get(dataset), variable = variable)
   }
 
   if(data_res == 'timeseries'){
-    p <- plot_timeseries()
+    p <- plot_timeseries(df_data = get(dataset), variable = variable)
   }
 
-  if(is.null(data_res)){
+  if(is.na(data_res)){
     stop('Incompatible data resolution, could not find appropriate plotting function')
   }
 

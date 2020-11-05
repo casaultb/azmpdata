@@ -18,7 +18,7 @@ plot_annual_means <- function(df_data, variable) {
   orig_data <- df_data
 
   # check that data is annual # TODO improve system
-  if(c('month', 'day') %in% names(df_data)){
+  if('month' %in% names(df_data) | 'day' %in% names(df_data)){
     stop('Data provided is not annual scale! Please use a different plotting function or convert data')
   }
 

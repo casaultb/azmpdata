@@ -46,7 +46,7 @@ plot_timeseries <- function(df_data, variable) {
   df_data <- df_data %>%
     tidyr::unite(date, year, month, day, sep="-", remove=F) %>%
     dplyr::mutate(year_dec=lubridate::decimal_date(lubridate::ymd(date))) %>%
-    dplyr::select(year, year_dec, value)
+    dplyr::select(year, year_dec, value, group)
 
   # set x-axis
   x_limits <- c(min(df_data$year), max(df_data$year)+1)
@@ -68,18 +68,15 @@ plot_timeseries <- function(df_data, variable) {
     # plot shaded rectangles
     ggplot2::geom_rect(data=df_rectangles,
                        mapping=ggplot2::aes(xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax),
-                       show.legend=F,
                        fill="gray90", alpha=0.8) +
     # plot data - line
     ggplot2::geom_line(data=df_data,
-                       mapping=ggplot2::aes(x=year_dec, y=value),
-                       show.legend=F,
-                       colour="black", size=.5) +
+                       mapping=ggplot2::aes(x=year_dec, y=value, col = group),
+                        size=.5) +
     # plot data - dots
     ggplot2::geom_point(data=df_data,
-                        mapping=ggplot2::aes(x=year_dec, y=value),
-                        show.legend=F,
-                        colour="black", size=1) +
+                        mapping=ggplot2::aes(x=year_dec, y=value, col = group),
+                        size=1) +
     # set coordinates system and axes
     ggplot2::coord_cartesian() +
     ggplot2::scale_x_continuous(name="Year", limits=x_limits, breaks=x_breaks, labels=x_labels, expand=c(0,0)) +
@@ -88,7 +85,7 @@ plot_timeseries <- function(df_data, variable) {
   # customize theme
   p <- p +
     ggplot2::theme_bw() +
-    ggplot2::ggtitle(paste(ls_data$dataset, ls_data$variable, ls_data$units, sep=" : " )) +
+    ggplot2::ggtitle(paste(group, variable,  sep=" : " )) +
     ggplot2::theme(
       text=ggplot2::element_text(size=8),
       axis.text.x=ggplot2::element_text(colour="black", angle=90, hjust=0.5, vjust=0.5),
