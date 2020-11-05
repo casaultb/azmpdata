@@ -12,7 +12,7 @@ RemoteSensing_Weekly_Broadscale
 }
 \description{
 _Metadata_
-* area_name
+* area
 * year
 }
 \details{
@@ -27,7 +27,7 @@ Data variables are described in more detail in variable look-up table (see \code
 Remote sesning weekly broadscale data
 
 _Metadata_
-* area_name
+* area
 * year
 * month
 * week

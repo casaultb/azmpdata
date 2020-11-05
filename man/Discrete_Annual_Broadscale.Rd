@@ -13,7 +13,7 @@ Discrete_Annual_Broadscale
 \description{
 _Metadata_
 * year
-* area_name
+* area
 }
 \details{
 _Data_

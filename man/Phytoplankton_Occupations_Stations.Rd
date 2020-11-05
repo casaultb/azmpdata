@@ -13,7 +13,7 @@ Phytoplankton_Occupations_Stations
 \description{
 This data frame includes
 _Metadata_
-* station_name
+* station
 * latitude
 * longitude
 * year

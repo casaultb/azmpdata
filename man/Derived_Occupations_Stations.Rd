@@ -16,7 +16,7 @@ Metrics derived from data collected at fixed station locations during individual
 \details{
 This data frame includes
 _Metadata_
-* station_name
+* station
 * latitude
 * longitude
 * year

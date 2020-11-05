@@ -24,11 +24,11 @@ _Data_
 * sea_surface_height
 
  Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-Derived Occupation Annual data
+Derived Annual station data
 
  This data frame includes
 _Metadata_
-* station_name
+* station
 * latitude
 * longitude
 * year
