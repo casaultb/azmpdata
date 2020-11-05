@@ -56,7 +56,12 @@ _Data_
 * calanus_abundance_stage_c5
 * calanus_abundance_stage_c6
 
+<<<<<<< HEAD
 Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+=======
+
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+>>>>>>> d1a556953fcf1189b8625cb6a8034e8b0fdb0fdd
 Phytoplankton Occupation Station data
 
 This data frame includes
@@ -75,6 +80,10 @@ _Metadata_
 _Data_
 * microplankton_abundance
 
+<<<<<<< HEAD
 Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+=======
+ Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+>>>>>>> d1a556953fcf1189b8625cb6a8034e8b0fdb0fdd
 }
 \keyword{datasets}

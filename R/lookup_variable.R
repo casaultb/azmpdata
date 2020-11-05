@@ -12,8 +12,8 @@
 #' @return a section of the variable look up table based on search parameters
 #' @export
 #'
-#' @examples
-lookup_variable <- function(variable, keyword, temporal_scale, geographic_scale, category ){
+#'
+lookup_variable <- function(variable, keyword, time_scale, regional_scale, category ){
   # read in var table
 
   vartable <- read.csv('inst/extdata/lookup/variable_look_up.csv')

@@ -32,6 +32,10 @@ _Data_
 * salinity
 * density
 
+<<<<<<< HEAD
 Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+=======
+ Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+>>>>>>> d1a556953fcf1189b8625cb6a8034e8b0fdb0fdd
 }
 \keyword{datasets}

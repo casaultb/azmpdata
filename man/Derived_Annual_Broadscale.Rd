@@ -41,7 +41,7 @@ _Data_
 * zooplankton_macro_wet_weight
 * zooplankton_total_wet_weight
 
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 Derived monthly broadscale data
 
 _Metadata_
@@ -53,7 +53,7 @@ _Data_
 * sea_surface_temperature_from_satellite
 * sea_ice_area
 
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 Derived annual broadscale data
 
 _Metadata_
@@ -86,6 +86,6 @@ _Data_
 * oxygen_at_sea_floor
 * surface_chlorphyll_from_satellite
 
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 }
 \keyword{datasets}

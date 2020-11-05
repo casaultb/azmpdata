@@ -4,19 +4,23 @@
 \alias{lookup_variable}
 \title{Search Variable look-up table}
 \usage{
+<<<<<<< HEAD
 lookup_variable(variable, keyword, temporal_scale, geographic_scale,
   category)
+=======
+lookup_variable(variable, keyword, time_scale, regional_scale, category)
+>>>>>>> d1a556953fcf1189b8625cb6a8034e8b0fdb0fdd
 }
 \arguments{
 \item{variable}{search by variable name}
 
 \item{keyword}{search for a keyword within variable definitions}
 
-\item{category}{search by data category (options are 'physical', 'biochemical', 'phenology', 'zooplankton', 'remote sensing')}
-
 \item{time_scale}{search by temporal scale (options are 'occupations', 'weekly', 'monthly', 'annual')}
 
 \item{regional_scale}{search by geographic scale (options are 'sections', 'stations', 'broadscale')}
+
+\item{category}{search by data category (options are 'physical', 'biochemical', 'phenology', 'zooplankton', 'remote sensing')}
 }
 \value{
 a section of the variable look up table based on search parameters
