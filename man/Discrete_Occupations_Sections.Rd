@@ -3,10 +3,12 @@
 \docType{data}
 \name{Discrete_Occupations_Sections}
 \alias{Discrete_Occupations_Sections}
+
 \title{Discrete Occupation Section data}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 12055 rows and 15 columns.
 }
+
 \usage{
 Discrete_Occupations_Sections
 }

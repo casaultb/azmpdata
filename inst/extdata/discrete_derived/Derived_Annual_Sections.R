@@ -3,10 +3,17 @@
 library(dplyr)
 library(tidyr)
 library(readr)
+library(tibble)
 library(usethis)
 
+# load dropbox lookup table
+db_lookup <- readr::read_csv(file="inst/extdata/dropbox_lookup.csv", comment="#")
+db_lookup <- tibble::deframe(db_lookup)
+
 # load data
-load("~/Projects/AZMP_Reporting_2020/outputs/biochem/DIS_MAR_AZMP_ChlNut.RData")
+con <- url(unname(db_lookup["DIS_MAR_AZMP_ChlNut.RData"]))
+load(con)
+close(con)
 
 # clean up
 rm(list=setdiff(ls(), "df_means_annual_l"))
@@ -37,7 +44,7 @@ Derived_Annual_Sections <- df_means_annual_l %>%
   dplyr::select(., section, year, unname(target_var))
 
 # save data to csv
-readr::write_csv(Derived_Annual_Sections, "inst/extdata/Derived_Annual_Sections.csv")
+readr::write_csv(Derived_Annual_Sections, "inst/extdata/discrete_derived/Derived_Annual_Sections.csv")
 
 # save data to rda
 usethis::use_data(Derived_Annual_Sections, overwrite = TRUE)

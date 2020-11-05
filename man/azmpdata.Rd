@@ -3,6 +3,7 @@
 \docType{package}
 \name{azmpdata}
 \alias{azmpdata}
+\alias{azmpdata-package}
 \title{azmpdata: A package providing data products derived from data collected as part of
 The Atlantic Zone Monitoring Program (AZMP).}
 \description{

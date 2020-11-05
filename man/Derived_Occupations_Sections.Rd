@@ -4,9 +4,7 @@
 \name{Derived_Occupations_Sections}
 \alias{Derived_Occupations_Sections}
 \title{Derived Occupation Section data}
-\format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1103 rows and 15 columns.
-}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 1103 rows and 15 columns.}
 \usage{
 Derived_Occupations_Sections
 }
@@ -37,6 +35,10 @@ _Data_
 * integrated_silicate_50_150
 * integrated_chlorophyll_0_100
 
+<<<<<<< HEAD
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
+=======
  Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+>>>>>>> d1a556953fcf1189b8625cb6a8034e8b0fdb0fdd
 }
 \keyword{datasets}
