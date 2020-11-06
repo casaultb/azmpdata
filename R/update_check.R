@@ -38,7 +38,8 @@ update_check<-function(gitPkg = NULL){
 # Data Version ------------------------------------------------------------
   remoteData  <- tryCatch({
     remURLdata = paste("https://raw.githubusercontent.com/",gitPkg,"/master/inst/extdata/datadate.txt", sep = "")
-    utils::read.delim(remURLdata)
+    #utils::read.delim(remURLdata)
+    readLines(remURLdata)
   },
   warning = function(cond) {
   })

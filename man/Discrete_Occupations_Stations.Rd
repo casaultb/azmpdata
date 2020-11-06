@@ -4,7 +4,9 @@
 \name{Discrete_Occupations_Stations}
 \alias{Discrete_Occupations_Stations}
 \title{Discrete Occupation Station data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 5869 rows and 14 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 5869 rows and 14 columns.
+}
 \usage{
 Discrete_Occupations_Stations
 }
@@ -32,10 +34,6 @@ _Data_
 * salinity
 * density
 
-<<<<<<< HEAD
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
-=======
  Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
->>>>>>> d1a556953fcf1189b8625cb6a8034e8b0fdb0fdd
 }
 \keyword{datasets}
