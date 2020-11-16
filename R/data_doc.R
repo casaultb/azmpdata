@@ -1,6 +1,57 @@
 # data set documentation
 
 
+#' Zooplankton seasonal section data
+#'
+#' This data frame includes
+#' _Metadata_
+#' * section
+#' * year
+#' * season
+#'
+#' _Data_
+#' * Calanus_finmarchicus_log10
+#' * zooplankton_meso_dry_weight
+#' * zooplankton_total_wet_weight
+#'
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+"Zooplankton_Seasonal_Sections"
+
+#' Zooplankton seasonal broadscale data
+#'
+#' This data frame includes
+#' _Metadata_
+#' * region
+#' * year
+#' * season
+#'
+#' _Data_
+#' * Calanus_finmarchicus_log10
+#' * zooplankton_meso_dry_weight
+#' * zooplankton_total_wet_weight
+#'
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+"Zooplankton_Seasonal_Broadscale"
+
+#' Zooplankton Occupation Broadscale data
+#'
+#' This data frame includes
+#' _Metadata_
+#' * latitude
+#' * longitude
+#' * year
+#' * month
+#' * day
+#' * season
+#' * sample_id
+#'
+#' _Data_
+#' * Calanus_finmarchicus_abundance
+#' * zooplankton_meso_dry_weight
+#' * zooplankton_total_wet_weight
+#'
+#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+"Zooplankton_Occupations_Broadscale"
 
 #' Derived Occupation Station data
 #'

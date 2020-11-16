@@ -3,20 +3,37 @@
 \docType{data}
 \name{Zooplankton_Seasonal_Broadscale}
 \alias{Zooplankton_Seasonal_Broadscale}
-\title{Zooplankton Seasonal Broadscale}
+\title{Zooplankton seasonal broadscale data}
 \format{
+An object of class \code{data.frame} with 40 rows and 6 columns.
+
 An object of class \code{data.frame} with 40 rows and 6 columns.
 }
 \usage{
 Zooplankton_Seasonal_Broadscale
+
+Zooplankton_Seasonal_Broadscale
 }
 \description{
+This data frame includes
+_Metadata_
+* region
+* year
+* season
+
 _Metadata_
 * area
 * year
 * season
 }
 \details{
+_Data_
+* Calanus_finmarchicus_log10
+* zooplankton_meso_dry_weight
+* zooplankton_total_wet_weight
+
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+
 _Data_
 * calanus_finmarchicus_log10
 * zooplankton_meso_dry_weight

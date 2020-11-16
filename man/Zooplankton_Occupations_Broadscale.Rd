@@ -3,14 +3,28 @@
 \docType{data}
 \name{Zooplankton_Occupations_Broadscale}
 \alias{Zooplankton_Occupations_Broadscale}
-\title{Zooplankton Occupations Broadscale}
+\title{Zooplankton Occupation Broadscale data}
 \format{
+An object of class \code{data.frame} with 1177 rows and 10 columns.
+
 An object of class \code{data.frame} with 1177 rows and 10 columns.
 }
 \usage{
 Zooplankton_Occupations_Broadscale
+
+Zooplankton_Occupations_Broadscale
 }
 \description{
+This data frame includes
+_Metadata_
+* latitude
+* longitude
+* year
+* month
+* day
+* season
+* sample_id
+
 _Metadata_
 * area
 * year
@@ -18,6 +32,13 @@ _Metadata_
 * day
 }
 \details{
+_Data_
+* Calanus_finmarchicus_abundance
+* zooplankton_meso_dry_weight
+* zooplankton_total_wet_weight
+
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+
 _Data_
 * calanus_finmarchicus_abundance
 * zooplankton_meso_dry_weight
