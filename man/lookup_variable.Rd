@@ -2,7 +2,7 @@
 % Please edit documentation in R/lookup_variable.R
 \name{lookup_variable}
 \alias{lookup_variable}
-\title{Search Variable look-up table}
+\title{Search Variable look-up table - deprecated}
 \usage{
 lookup_variable(variable, keyword, time_scale, regional_scale, category)
 }
@@ -21,5 +21,5 @@ lookup_variable(variable, keyword, time_scale, regional_scale, category)
 a section of the variable look up table based on search parameters
 }
 \description{
-Search Variable look-up table
+Search Variable look-up table - deprecated
 }
