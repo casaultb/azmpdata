@@ -3,12 +3,8 @@
 \docType{data}
 \name{Phytoplankton_Occupations_Stations}
 \alias{Phytoplankton_Occupations_Stations}
-
 \title{Phytoplankton Occupation Station data}
-\format{
-An object of class \code{data.frame} with 659 rows and 13 columns.
-}
-
+\format{An object of class \code{data.frame} with 659 rows and 13 columns.}
 \usage{
 Phytoplankton_Occupations_Stations
 }
@@ -28,42 +24,8 @@ _Metadata_
 }
 \details{
 _Data_
+* microplankton_abundance
 
-* calanus_finmarchicus_abundance
-* calanus_hyperboreus_abundance
-* calanus_glacialis_abundance
-* pseudocalanus_abundance
-* metridia_longa_abundance
-* metridia_lucens_abundance
-* metridia_spp_abundance
-* temora_spp_abundance
-* microcalanus_spp_abundance
-* oithona_spp_abundance
-* oithona_similis_abundance
-* oithona_atlantica_abundance
-* paracalanus_spp_abundance
-* centropages_typicus_abundance
-* centropages_spp_abundance
-* scolecithricella_minor_abundance
-* larvacae_abundance
-* gastropoda_abundance
-* bivalvia_abundance
-* euphasiacea_abundance
-* zooplankton_abundance
-* zooplankton_meso_dry_weight
-* zooplankton_meso_wet_weight
-* zooplankton_macro_wet_weight
-* zooplankton_total_wet_Weight
-* calanus_abundance_stage_c1
-* calanus_abundance_stage_c2
-* calanus_abundance_stage_c3
-* calanus_abundance_stage_c4
-* calanus_abundance_stage_c5
-* calanus_abundance_stage_c6
-
-
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable()}})
-
-
+Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 }
 \keyword{datasets}

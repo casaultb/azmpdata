@@ -25,7 +25,7 @@ variable_lookup <- function(keywords){
                             file=character(0))
 
   # get list of rda files
-  file_names <- list.files("~/Projects/azmpdata/data/", pattern="*.rda", full.names=T)
+  file_names <- list.files("data/", pattern="*.rda", full.names=T)
 
   # loop through files
   for(i_file in file_names){
