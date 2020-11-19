@@ -1,4 +1,4 @@
-section,year,season,Calanus_finmarchicus_log10,mesozooplankton_dry_biomass,zooplankton_wet_biomass
+section,year,season,Calanus_finmarchicus_log10,zooplankton_meso_dry_weight,zooplankton_total_wet_weight
 CSL,1999,Spring,4.073732782123906,NA,66.19498498956357
 CSL,1999,Fall,4.472849539798032,NA,90.19884515055908
 CSL,2000,Spring,3.687483510832838,NA,53.57575462651302

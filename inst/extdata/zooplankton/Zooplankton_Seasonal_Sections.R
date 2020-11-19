@@ -35,8 +35,8 @@ rm(list=c("abundance_env", "biomass_env"))
 
 # target variables to include
 target_var <- c("Calanus finmarchicus" = "Calanus_finmarchicus_log10",
-                "dw2_S" = "mesozooplankton_dry_biomass",
-                "ww2_T" = "zooplankton_wet_biomass")
+                "dw2_S" = "zooplankton_meso_dry_weight",
+                "ww2_T" = "zooplankton_total_wet_weight")
 
 # print order
 # section
@@ -60,7 +60,7 @@ Zooplankton_Seasonal_Sections <- Zooplankton_Seasonal_Sections %>%
   dplyr::select(., section, year, season, unname(target_var))
 
 # save data to csv
-readr::write_csv(Zooplankton_Seasonal_Sections, "inst/extdata/zooplankton/Zooplankton_Seasonal_Sections.csv")
+readr::write_csv(Zooplankton_Seasonal_Sections, "inst/extdata/csv/Zooplankton_Seasonal_Sections.csv")
 
 # save data to rda
 usethis::use_data(Zooplankton_Seasonal_Sections, overwrite = TRUE)

@@ -47,23 +47,23 @@ Zooplankton_Occupations_Stations <- dplyr::bind_rows(HL2_abundance_env$df_abunda
 rm(list=c("HL2_abundance_env", "HL2_biomass_env", "P5_abundance_env", "P5_biomass_env"))
 
 # target variables to include
-target_var <- c("Acartia" = "Acartia",
-                "Calanus finmarchicus" = "Calanus_finmarchicus",
-                "Calanus glacialis" = "Calanus_glacialis",
-                "Calanus hyperboreus" = "Calanus_hyperboreus",
-                "Centropages" = "Centropages",
-                "Centropages typicus" = "Centropages_typicus",
-                "Eurytemora" = "Eurytemora",
-                "Metridia" = "Metridia",
-                "Metridia longa" = "Metridia_longa",
-                "Metridia lucens" = "Metridia_lucens",
-                "Microcalanus" = "Microcalanus",
-                "Oithona" = "Oithona",
-                "Oithona atlantica" = "Oithona_atlantica",
-                "Oithona similis" = "Oithona_similis",
-                "Paracalanus" = "Paracalanus",
-                "Pseudocalanus" ="Pseudocalanus" ,
-                "Temora longicornis" = "Temora_longicornis",
+target_var <- c("Acartia" = "Acartia_abundance",
+                "Calanus finmarchicus" = "Calanus_finmarchicus_abundance",
+                "Calanus glacialis" = "Calanus_glacialis_abundance",
+                "Calanus hyperboreus" = "Calanus_hyperboreus_abundance",
+                "Centropages" = "Centropages_spp_abundance",
+                "Centropages typicus" = "Centropages_typicus_abundance",
+                "Eurytemora" = "Eurytemora_abundance",
+                "Metridia" = "Metridia_spp_abundance",
+                "Metridia longa" = "Metridia_longa_abundance",
+                "Metridia lucens" = "Metridia_lucens_abundance",
+                "Microcalanus" = "Microcalanus_spp_abundance",
+                "Oithona" = "Oithona_spp_abundance",
+                "Oithona atlantica" = "Oithona_atlantica_abundance",
+                "Oithona similis" = "Oithona_similis_abundance",
+                "Paracalanus" = "Paracalanus_spp_abundance",
+                "Pseudocalanus" ="Pseudocalanus_abundance" ,
+                "Temora longicornis" = "Temora_longicornis_abundance",
                 "Other copepods HL2" = "other_copepods",
                 "Other copepods P5" = "other_copepods",
                 "Copepods" = "copepods",
@@ -71,12 +71,12 @@ target_var <- c("Acartia" = "Acartia",
                 "Arctic Calanus" = "Arctic_Calanus_species",
                 "Warm Offshore" = "warm_offshore_copepods",
                 "Warm Shelf" = "warm_shelf_copepods",
-                "dw2_S" = "mesozooplankton_dry_biomass",
-                "dw2_L" = "macrozooplankton_dry_biomass",
-                "dw2_T" = "zooplankton_dry_biomass",
-                "ww2_S" = "mesozooplankton_wet_biomass",
-                "ww2_L" = "macrozooplankton_wet_biomass",
-                "ww2_T" = "zooplankton_wet_biomass")
+                "dw2_S" = "zooplankton_meso_dry_weight",
+                "dw2_L" = "zooplankton_macro_dry_weight",
+                "dw2_T" = "zooplankton_total_dry_weight",
+                "ww2_S" = "zooplankton_meso_wet_weight",
+                "ww2_L" = "zooplankton_macro_wet_weight",
+                "ww2_T" = "zooplankton_total_wet_weight")
 
 # include those ??
 # "Bivalvia total"
@@ -115,7 +115,7 @@ Zooplankton_Occupations_Stations <- Zooplankton_Occupations_Stations %>%
                 unname(target_var))
 
 # save data to csv
-readr::write_csv(Zooplankton_Occupations_Stations, "inst/extdata/zooplankton/Zooplankton_Occupations_Stations.csv")
+readr::write_csv(Zooplankton_Occupations_Stations, "inst/extdata/csv/Zooplankton_Occupations_Stations.csv")
 
 # save data to rda
 usethis::use_data(Zooplankton_Occupations_Stations, overwrite = TRUE)

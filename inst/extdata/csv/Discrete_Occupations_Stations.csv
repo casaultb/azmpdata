@@ -1,4 +1,4 @@
-station,latitude,longitude,year,month,day,event_id,sample_id,depth,standard_depth,chlorophyll,nitrate,phosphate,silicate
+station,latitude,longitude,year,month,day,event_id,sample_id,depth,nominal_depth,chlorophyll,nitrate,phosphate,silicate
 HL2,44.265,-63.3175,1999,1,13,18VA99666_99666001,99666001_201201,1,1,0.50703,4.7615,0.6015,5.468500000000001
 HL2,44.265,-63.3175,1999,1,13,18VA99666_99666001,99666001_201202,5,5,0.54292,4.681,0.627,5.4350000000000005
 HL2,44.265,-63.3175,1999,1,13,18VA99666_99666001,99666001_201203,10,10,0.4801,4.732,0.5595,5.5280000000000005

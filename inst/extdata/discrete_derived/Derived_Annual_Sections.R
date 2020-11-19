@@ -44,7 +44,7 @@ Derived_Annual_Sections <- df_means_annual_l %>%
   dplyr::select(., section, year, unname(target_var))
 
 # save data to csv
-readr::write_csv(Derived_Annual_Sections, "inst/extdata/discrete_derived/Derived_Annual_Sections.csv")
+readr::write_csv(Derived_Annual_Sections, "inst/extdata/csv/Derived_Annual_Sections.csv")
 
 # save data to rda
 usethis::use_data(Derived_Annual_Sections, overwrite = TRUE)

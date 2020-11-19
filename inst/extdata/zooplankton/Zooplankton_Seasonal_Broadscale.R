@@ -37,8 +37,8 @@ rm(list=c("abundance_env", "biomass_env"))
 
 # target variables to include
 target_var <- c("Calanus finmarchicus" = "Calanus_finmarchicus_log10",
-                "dw2_S" = "mesozooplankton_dry_biomass",
-                "ww2_T" = "zooplankton_wet_biomass")
+                "dw2_S" = "zooplankton_meso_dry_weight",
+                "ww2_T" = "zooplankton_total_wet_weight")
 
 # print order
 print_order <- c("Georges Bank" = 1,
@@ -53,8 +53,12 @@ Zooplankton_Seasonal_Broadscale <- Zooplankton_Seasonal_Broadscale %>%
   dplyr::arrange(., order, year) %>%
   dplyr::select(., region, year, season, unname(target_var))
 
+# fix metadata
+Zooplankton_Seasonal_Broadscale <- Zooplankton_Seasonal_Broadscale %>%
+  dplyr::rename(., area = region)
+
 # save data to csv
-readr::write_csv(Zooplankton_Seasonal_Broadscale, "inst/extdata/zooplankton/Zooplankton_Seasonal_Broadscale.csv")
+readr::write_csv(Zooplankton_Seasonal_Broadscale, "inst/extdata/csv/Zooplankton_Seasonal_Broadscale.csv")
 
 # save data to rda
 usethis::use_data(Zooplankton_Seasonal_Broadscale, overwrite = TRUE)

@@ -68,8 +68,13 @@ Discrete_Occupations_Stations <- dplyr::left_join(Discrete_Occupations_Stations 
   dplyr::select(., station, latitude, longitude, year, month, day, event_id, sample_id,
                 depth, standard_depth, unname(target_var))
 
+
+# fix metadata names
+Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>%
+  dplyr::rename(., nominal_depth = standard_depth)
+
 # save data to csv
-readr::write_csv(Discrete_Occupations_Stations, "inst/extdata/discrete_derived/Discrete_Occupations_Stations.csv")
+readr::write_csv(Discrete_Occupations_Stations, "inst/extdata/csv/Discrete_Occupations_Stations.csv")
 
 # save data to rda
 usethis::use_data(Discrete_Occupations_Stations, overwrite = TRUE)

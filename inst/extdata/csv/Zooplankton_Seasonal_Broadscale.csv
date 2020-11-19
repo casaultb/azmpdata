@@ -1,4 +1,4 @@
-region,year,season,Calanus_finmarchicus_log10,mesozooplankton_dry_biomass,zooplankton_wet_biomass
+area,year,season,Calanus_finmarchicus_log10,zooplankton_meso_dry_weight,zooplankton_total_wet_weight
 Georges Bank,2000,Winter,NA,2.078651920526224,28.860304497053043
 Georges Bank,2001,Winter,3.7244290266376887,1.9321561293935607,15.829386859357754
 Georges Bank,2002,Winter,3.952364545997234,0.7887609087236913,9.285211237481823
