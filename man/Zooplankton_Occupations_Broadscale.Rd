@@ -4,9 +4,7 @@
 \name{Zooplankton_Occupations_Broadscale}
 \alias{Zooplankton_Occupations_Broadscale}
 \title{Zooplankton Occupations Broadscale}
-\format{
-An object of class \code{data.frame} with 1177 rows and 10 columns.
-}
+\format{An object of class \code{data.frame} with 1177 rows and 10 columns.}
 \usage{
 Zooplankton_Occupations_Broadscale
 }

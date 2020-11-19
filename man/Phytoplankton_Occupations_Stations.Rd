@@ -27,7 +27,5 @@ _Metadata_
 \details{
 _Data_
 * microplankton_abundance
-
  Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-}
 \keyword{datasets}

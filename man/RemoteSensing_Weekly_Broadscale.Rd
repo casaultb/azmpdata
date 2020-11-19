@@ -4,9 +4,7 @@
 \name{RemoteSensing_Weekly_Broadscale}
 \alias{RemoteSensing_Weekly_Broadscale}
 \title{Remote Sensing Annual Broadscale data}
-\format{
-An object of class \code{data.frame} with 5016 rows and 5 columns.
-}
+\format{An object of class \code{data.frame} with 5016 rows and 5 columns.}
 \usage{
 RemoteSensing_Weekly_Broadscale
 }
