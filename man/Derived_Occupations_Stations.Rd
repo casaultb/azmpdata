@@ -4,9 +4,7 @@
 \name{Derived_Occupations_Stations}
 \alias{Derived_Occupations_Stations}
 \title{Derived Occupation Station data}
-\format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 737 rows and 14 columns.
-}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 737 rows and 14 columns.}
 \usage{
 Derived_Occupations_Stations
 }

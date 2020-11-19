@@ -4,9 +4,7 @@
 \name{Zooplankton_Annual_Sections}
 \alias{Zooplankton_Annual_Sections}
 \title{Zooplankton Annual Section data}
-\format{
-An object of class \code{data.frame} with 83 rows and 11 columns.
-}
+\format{An object of class \code{data.frame} with 83 rows and 11 columns.}
 \usage{
 Zooplankton_Annual_Sections
 }
