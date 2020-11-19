@@ -1,0 +1,77 @@
+---
+title: "Meeting Notes - November 12"
+output: html_document
+---
+Discussion of Maritimes environmental data access, September 4, 2020
+
+B. Casault, E. Chisholm, C. Johnson, M. McMahon, C. Layton
+
+
+## Agenda: 
+*	Progress reports from Benoit, Emily and Chantelle
+*	Review CMD check for azmpdata (EC)
+*	Update on import standards (EC)
+*	Update on raw data access (BC)
+*	Data issues & documentation (EC)
+*	Review next steps and to do list
+
+
+* Catherine also wanted to discuss sharing acces to azmp data and multivaR with Calanus group. No objections.
+
+
+### Update from Benoit
+
+* Raw data access
+* solution is currently through dropbox
+* intermediate data products, which should not be available for public only developers of azmpdata
+* EC and BC had troubles in attempting to implement a private github repo that users could use to access data through links (not downloading repo in traditional sense but linking to repo through scripts using internet links)
+* BC has current working example with dropbox
+* CJ has concerns about stability of dropbox (experienced loss of files)
+* looking at OneDrive as a alt. solution, links are very long and inconvenient
+* onedrive links are also not stable and can change which would break scripts
+* FTP server may be solution? DFO FTP?
+* remote sensing group has FTP server for their data
+* may not be the 'official' GC solution
+* CJ has experience with IT not supporting FTP
+* Talk to Carla Caverhill and Emmanual Devred about the remote FTP
+* may be able to piggy back on their existing server (this would also benefit because azmpdata needs to pull data from this source anyway)
+* Could also use shared drive? concerns about VPN and remote access
+* Chantelle has experience setting up FTP for glider data - ended up using Dal server because DFO server was unreliable
+* Clark Richards might be able to provide details about glider FTP
+* MM has IT contact (Christopher Collins) who has FTP set up experience (_MM will contact directly if needed__)
+* __BC will continue to look into FTP solution__
+* could we load data into the main package repo with some kind of encryption so not everyone has access? (__EC will look into this github based solution__)
+* data has two main purposes
+  * to update package
+  * to make raw data accessible to DFO users who need it (including figures, etc)
+
+
+### Updates from Emily
+
+* __EC will change metadata names so they are consistent between dataframes and documentation__
+* EC will implement Travis (on azmpdata and multivaR)__
+* azmpdata Travis will be implemented on BC repo, __set meeting to go through this with BC__
+* 3 search functions in azmpdata need to be combined
+* __meeting with CL, EC, BC and MM will be set to go over this__
+* some spelling errors in metadata
+* could we create function to automate this checking? __EC will develop__
+* __EC will post all data issues in chat__
+* __EC will work on style sheet to clarify requirements for data moving forawrd__
+* this could be best as a package vignette so that it is self contained
+
+* package will be presented to R group (for a 'friday session' in 2021)
+* package demo will also be required for FSERP group
+* __EC will develop base demo that could be used multipurpose__
+
+
+### Update from Chantelle
+* When should we upload 2020 data? 
+* CL is almost ready with this year's data
+* CJ suggests after AZMP meeting (no reason to hold back physical data though - bio data will be slower)
+* will need to cretae development branch to seperate complete 2019 data set from partial 2020 dataset
+
+_
+
+
+
+

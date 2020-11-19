@@ -40,7 +40,7 @@ Phytoplankton_Annual_Stations <- df_log_abundance_means_annual_glm_l %>%
   dplyr::select(., station, year, unname(target_var))
 
 # save data to csv
-readr::write_csv(Phytoplankton_Annual_Stations, "inst/extdata/phytoplankton/Phytoplankton_Annual_Stations.csv")
+readr::write_csv(Phytoplankton_Annual_Stations, "inst/extdata/csv/Phytoplankton_Annual_Stations.csv")
 
 # save data to rda
 usethis::use_data(Phytoplankton_Annual_Stations, overwrite = TRUE)

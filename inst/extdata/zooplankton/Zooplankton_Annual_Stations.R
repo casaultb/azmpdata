@@ -50,17 +50,17 @@ rm(list=c("HL2_abundance_env", "HL2_biomass_env", "P5_abundance_env", "P5_biomas
 target_var <- c("Acartia" = "Acartia_log10",
                 "Calanus finmarchicus" = "Calanus_finmarchicus_log10",
                 "Calanus hyperboreus" = "Calanus_hyperboreus_log10",
-                "Centropages" = "Centropages_log10",
+                "Centropages" = "Centropages_spp_log10",
                 "Centropages typicus" = "Centropages_typicus_log10",
                 "Eurytemora" = "Eurytemora_log10",
-                "Metridia" = "Metridia_log10",
+                "Metridia" = "Metridia_spp_log10",
                 "Metridia longa" = "Metridia_longa_log10",
                 "Metridia lucens" = "Metridia_lucens_log10",
-                "Microcalanus" = "Microcalanus_log10",
-                "Oithona" = "Oithona_log10",
+                "Microcalanus" = "Microcalanus_spp_log10",
+                "Oithona" = "Oithona_spp_log10",
                 "Oithona atlantica" = "Oithona_atlantica_log10",
                 "Oithona similis" = "Oithona_similis_log10",
-                "Paracalanus" = "Paracalanus_log10",
+                "Paracalanus" = "Paracalanus_spp_log10",
                 "Pseudocalanus" ="Pseudocalanus_log10" ,
                 "Temora longicornis" = "Temora_longicornis_log10",
                 "Other copepods HL2" = "other_copepods_log10",
@@ -70,8 +70,8 @@ target_var <- c("Acartia" = "Acartia_log10",
                 "Arctic Calanus" = "Arctic_Calanus_species_log10",
                 "Warm Offshore" = "warm_offshore_copepods_log10",
                 "Warm Shelf" = "warm_shelf_copepods_log10",
-                "dw2_S" = "mesozooplankton_dry_biomass",
-                "ww2_T" = "zooplankton_wet_biomass")
+                "dw2_S" = "zooplankton_meso_dry_weight",
+                "ww2_T" = "zooplankton_total_wet_weight")
 
 # print order
 print_order <- c("HL2" = 1,
@@ -87,7 +87,7 @@ Zooplankton_Annual_Stations <- Zooplankton_Annual_Stations %>%
   dplyr::select(., station, year, unname(target_var))
 
 # save data to csv
-readr::write_csv(Zooplankton_Annual_Stations, "inst/extdata/zooplankton/Zooplankton_Annual_Stations.csv")
+readr::write_csv(Zooplankton_Annual_Stations, "inst/extdata/csv/Zooplankton_Annual_Stations.csv")
 
 # save data to rda
 usethis::use_data(Zooplankton_Annual_Stations, overwrite = TRUE)

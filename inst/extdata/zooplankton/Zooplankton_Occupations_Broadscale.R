@@ -40,9 +40,9 @@ metadata <- dplyr::bind_rows(abundance_env$df_sample_filtered,
 rm(list=c("abundance_env", "biomass_env"))
 
 # target variables to include
-target_var <- c("Calanus finmarchicus" = "Calanus_finmarchicus",
-                "dw2_S" = "mesozooplankton_dry_biomass",
-                "ww2_T" = "zooplankton_wet_biomass")
+target_var <- c("Calanus finmarchicus" = "Calanus_finmarchicus_abundance",
+                "dw2_S" = "zooplankton_meso_dry_weight",
+                "ww2_T" = "zooplankton_total_wet_weight")
 
 # print order
 # season
@@ -63,7 +63,7 @@ Zooplankton_Occupations_Broadscale <- dplyr::left_join(Zooplankton_Occupations_B
                 unname(target_var))
 
 # save data to csv
-readr::write_csv(Zooplankton_Occupations_Broadscale, "inst/extdata/zooplankton/Zooplankton_Occupations_Broadscale.csv")
+readr::write_csv(Zooplankton_Occupations_Broadscale, "inst/extdata/csv/Zooplankton_Occupations_Broadscale.csv")
 
 # save data to rda
 usethis::use_data(Zooplankton_Occupations_Broadscale, overwrite = TRUE)

@@ -41,19 +41,19 @@ metadata <- dplyr::bind_rows(abundance_env$df_sample_filtered,
 rm(list=c("abundance_env", "biomass_env"))
 
 # target variables to include
-target_var <- c("Calanus finmarchicus" = "Calanus_finmarchicus",
-                "Pseudocalanus" = "Pseudocalanus",
+target_var <- c("Calanus finmarchicus" = "Calanus_finmarchicus_abundance",
+                "Pseudocalanus" = "Pseudocalanus_abundance",
                 "Copepods" = "copepods",
                 "Non-copepods" = "non_copepods",
                 "Arctic Calanus" = "Arctic_Calanus_species",
                 "Warm Offshore" = "warm_offshore_copepods",
                 "Warm Shelf" = "warm_shelf_copepods",
-                "dw2_S" = "mesozooplankton_dry_biomass",
-                "dw2_L" = "macrozooplankton_dry_biomass",
-                "dw2_T" = "zooplankton_dry_biomass",
-                "ww2_S" = "mesozooplankton_wet_biomass",
-                "ww2_L" = "macrozooplankton_wet_biomass",
-                "ww2_T" = "zooplankton_wet_biomass")
+                "dw2_S" = "zooplankton_meso_dry_weight",
+                "dw2_L" = "zooplankton_macro_dry_weight",
+                "dw2_T" = "zooplankton_total_dry_weight",
+                "ww2_S" = "zooplankton_meso_wet_weight",
+                "ww2_L" = "zooplankton_macro_wet_weight",
+                "ww2_T" = "zooplankton_total_wet_weight")
 
 # include those ??
 # "Amphipoda total"
@@ -102,7 +102,7 @@ Zooplankton_Occupations_Sections <- dplyr::left_join(Zooplankton_Occupations_Sec
                 unname(target_var))
 
 # save data to csv
-readr::write_csv(Zooplankton_Occupations_Sections, "inst/extdata/zooplankton/Zooplankton_Occupations_Sections.csv")
+readr::write_csv(Zooplankton_Occupations_Sections, "inst/extdata/csv/Zooplankton_Occupations_Sections.csv")
 
 # save data to rda
 usethis::use_data(Zooplankton_Occupations_Sections, overwrite = TRUE)

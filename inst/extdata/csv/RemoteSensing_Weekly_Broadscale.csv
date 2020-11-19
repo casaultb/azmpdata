@@ -1,4 +1,4 @@
-region,year,month,week,surface_chlorophyll
+area,year,month,week,surface_chlorophyll
 CS,2002,7,1,NA
 CS,2002,7,2,0.66283
 CS,2002,7,3,0.67243

@@ -1,37 +1,154 @@
 # data set documentation
 
 
+#' Zooplankton seasonal section data
+#'
+#' A dataframe containing seasonal section zooplankton data.
+#' The variables are as follows:
+#'
+#' @format A dataframe with 152 observations of 6 variables:
+#'
+#' \describe{
+#'    \item{section}{Section name where data was collected}
+#'    \item{year}{The year in which data was collected}
+#'    \item{season}{The season in which data was collected (Northern Hemisphere)}
+#'
+#'    \item{Calanus_finmarchicus_log10}{Abundance of Calanus finmarchicus with a log10 transform}
+#'    \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
+#'    \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton sampled}
+#' }
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Seasonal}
+#'    \item{regional_scale}{Section}
+#'    \item{category}{Zooplankton, biological, biochemical}
+#'    }
+#'
+#'
+#'
+#' @details The data can be cited as follows:
+#'   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+#'   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+#'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+#'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
+"Zooplankton_Seasonal_Sections"
+
+#' Zooplankton seasonal broadscale data
+#'
+#' A dataframe containing seasonal broadscale zooplankton data.
+#' The variables are as follows:
+#'
+#' @format A dataframe containing 40 observations of 6 variables:
+#' \describe{
+#'    \item{region}{The region in which data was collected}
+#'    \item{year}{The year in which data was collected}
+#'    \item{season}{The season in which data was collected (Northern Hemisphere)}
+#'
+#'
+#'    \item{Calanus_finmarchicus_log10}{Abundance of Calanus finmarchicus with a log10 transform}
+#'    \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
+#'    \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton sampled}
+#' }
+#'
+#'  @note
+#' \describe{
+#'    \item{time_scale}{Seasonal}
+#'    \item{regional_scale}{Broadscale}
+#'    \item{category}{Zooplankton, biological, biochemical}
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+#'   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+#'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+#'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
+"Zooplankton_Seasonal_Broadscale"
+
+#' Zooplankton Occupation Broadscale data
+#'
+#' A dataframe containing seasonal broadscale zooplankton data.
+#' The variables are as follows:
+#'
+#' @format A dataframe containing 1177 obesrvations of 10 variables
+#' \describe{
+#'    \item{latitude}{The latitude at which data was collected}
+#'    \item{longitude}{The longitude at which data was collected}
+#'    \item{year}{The year in which data was collected}
+#'    \item{month}{The month in which data was collected (numeric)}
+#'    \item{day}{The day on which data was collected}
+#'    \item{season}{The season in which data was collected (Northern Hemisphere)}
+#'    \item{sample_id}{A unique identifier for each sample}
+#'
+#'    \item{Calanus_finmarchicus_abundance}{Abundance of Calanus finmarchicus}
+#'    \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
+#'    \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton sampled}
+#' }
+#'
+#'  @note
+#' \describe{
+#'    \item{time_scale}{Occupation}
+#'    \item{regional_scale}{Broadscale}
+#'    \item{category}{Zooplankton, biological, biochemical}
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+#'   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+#'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+#'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
+"Zooplankton_Occupations_Broadscale"
 
 #' Derived Occupation Station data
 #'
 #' Metrics derived from data collected at fixed station locations during individual occupations.
 #'
-#' This data frame includes
-#' _Metadata_
-#' * station
-#' * latitude
-#' * longitude
-#' * year
-#' * month
-#' * day
-#' * event_id
-#' * sample_id
-#' * depth
-#' * nominal_depth
+#' The variables are as follows:
 #'
-#' _Data_
-#' * mixed_layer_depth
-#' * density_gradient_0_50
-#' * euphotic_depth
-#' * integrated_nitrate_0_50
-#' * integrated_nitrate_50_150
-#' * integrated_phosphate_0_50
-#' * integrated_phosphate_50_150
-#' * integrated_silicate_0_50
-#' * integrated_silicate_50_150
-#' * integrated_chlorophyll_0_100
+#' @format A dataframe with 737 observations of 14 variables
+#' \describe{
+#'    \item{station}{The name of the station where data was collected}
+#'    \item{latitude}{The latitude at which data was collected}
+#'    \item{longitude}{The longitude at which data was collected}
+#'    \item{year}{The year in which data was collected}
+#'    \item{month}{The month in which data was collected (numeric)}
+#'    \item{day}{The day on which data was collected}
+#'    \item{event_id}{A unique identifier for the sampling event}
+#'    \item{sample_id}{A unique identifier for the sample}
+#'    \item{depth}{The depth at which data was actually collected}
+#'    \item{nominal_depth}{The depth at which data was planned to be collected - sometime differs slightly from actual collection depth}
 #'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+#'    \item{mixed_layer_depth}{The depth of the well mixed surface layer at fixed stations}
+#'    \item{density_gradient_0_50}{An index of stratification, measured as the density difference between 0 and 50 metres}
+#'    \item{euphotic_depth}{The depth of the euphotic zone measured at fixed stations}
+#'    \item{integrated_nitrate_0_50}{Nitrate concentrations integrated between 0 and 50 metres}
+#'    \item{integrated_nitrate_50_150}{Nitrate concentrations integrated between 50 and 150 metres}
+#'    \item{integrated_phosphate_0_50}{Phosphate concentrations integrated between 0 and 50 metres}
+#'    \item{integrated_phosphate_50_150}{Phosphate concentrations integrated between 50 and 150 metres}
+#'    \item{integrated_silicate_0_50}{Silicate concentrations integrated between 0 and 50 metres}
+#'    \item{integrated_silicate_50_150}{Silicate concentrations integrated between 50 and 150 metres}
+#'    \item{integrated_chlorophyll_0_100}{Chlorophyll concentrations integrated between 0 and 100 metres}
+#' }
+#'
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Occupation}
+#'    \item{regional_scale}{Station}
+#'    \item{category}{ biological, biochemical, physical}
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+#'   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+#'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+#'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
+#'
+#'   Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
+#'   Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
+#'   Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
+#'
+#'
 "Derived_Occupations_Stations"
 
 
@@ -85,7 +202,6 @@
 #' * calanus_abundance_stage_c6
 #'
 #'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
  "Zooplankton_Occupations_Stations"
 
 
@@ -107,7 +223,6 @@
 #' _Data_
 #' * microplankton_abundance
 #'
-#'  Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 "Phytoplankton_Occupations_Stations"
 
 
@@ -135,7 +250,6 @@
 #' * salinity
 #' * density
 #'
-#'  Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 "Discrete_Occupations_Stations"
 
 
@@ -152,7 +266,6 @@
 #' _Data_
 #' * sea_surface_height
 #'
-#'  Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 # "Derived_Monthly_Stations"
 
 
@@ -183,7 +296,6 @@
 #' * integrated_phosphate_50_150
 #'
 #'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 "Derived_Annual_Stations"
 
 #' Zooplankton Annual Stations data
@@ -222,7 +334,6 @@
 #' * zooplankton_macro_wet_weight
 #' * zooplankton_total_wet_weight
 #'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
  "Zooplankton_Annual_Stations"
 
 #' Phytoplankton Annual Station data
@@ -237,7 +348,6 @@
 #' _Data_
 #' * microplankton_abundance_log10
 #'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 "Phytoplankton_Annual_Stations"
 
 
@@ -268,7 +378,6 @@
 #' * integrated_silicate_50_150
 #' * integrated_chlorophyll_0_100
 #'
-#'  Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 "Derived_Occupations_Sections"
 
 
@@ -323,7 +432,6 @@
 #' * calanus_abundance_stage_c5
 #' * calanus_abundance_stage_c6
 #'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
  "Zooplankton_Occupations_Sections"
 
 
@@ -354,7 +462,6 @@
 #' * salinity
 #' * density
 #'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 "Discrete_Occupations_Sections"
 
 
@@ -376,7 +483,6 @@
 #' * integrated_silicate_50_150
 #' * integrated_chlorphyll_0_100
 #'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 "Derived_Annual_Sections"
 
 
@@ -413,7 +519,6 @@
 #' * zooplankton_macro_wet_weight
 #' * zooplankton_total_wet_weight
 #'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
  "Zooplankton_Annual_Sections"
 
 
@@ -464,7 +569,6 @@
 #' * oxygen_at_sea_floor
 #' * surface_chlorphyll_from_satellite
 #'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 "Derived_Annual_Broadscale"
 
 
@@ -497,7 +601,6 @@
 #' _Data_
 #' * surface_chlorophyll
 #'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 #'
  "RemoteSensing_Weekly_Broadscale"
 
@@ -529,62 +632,13 @@
 #' * bloom_amplitude
 #' * bloom_magnitude
 #'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 "RemoteSensing_Annual_Broadscale"
 
 
-#' Zooplankton Occupations Broadscale
-#'
-#'
-#' _Metadata_
-#' * area
-#' * year
-#' * month
-#' * day
-#'
-#'
-#' _Data_
-#' * calanus_finmarchicus_abundance
-#' * zooplankton_meso_dry_weight
-#' * zooplankton_total_wet_weight
-#'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-#'
-"Zooplankton_Occupations_Broadscale"
 
 
-#' Zooplankton Seasonal Broadscale
-#'
-#' _Metadata_
-#' * area
-#' * year
-#' * season
-#'
-#' _Data_
-#' * calanus_finmarchicus_log10
-#' * zooplankton_meso_dry_weight
-#' * zooplankton_total_wet_Weight
-#'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-#'
-"Zooplankton_Seasonal_Broadscale"
 
 
-#' Zooplankton Seasonal Sections
-#'
-#' _Metadata_
-#' * section
-#' * year
-#' * season
-#'
-#' _Data_
-#' * calanus_finmarchicus_log10
-#' * zooplankton_meso_dry_weight
-#' * zooplankton_total_wet_weight
-#'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-#'
-"Zooplankton_Seasonal_Sections"
 
 
 

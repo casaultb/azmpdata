@@ -54,14 +54,10 @@ Derived_Annual_Stations <- Derived_Annual_Stations %>%
   dplyr::select(., station, year, unname(target_var))
 
 
-# rename station column to match meta conventions
-# NEEDS TO BE RUN BY BENOIT
-Derived_Annual_Stations <- Derived_Annual_Stations %>%
-  dplyr::rename(., station_name = station)
 
 
 # save data to csv
-readr::write_csv(Derived_Annual_Stations, "inst/extdata/discrete_derived/Derived_Annual_Stations.csv")
+readr::write_csv(Derived_Annual_Stations, "inst/extdata/csv/Derived_Annual_Stations.csv")
 
 # save data to rda
 usethis::use_data(Derived_Annual_Stations, overwrite = TRUE)

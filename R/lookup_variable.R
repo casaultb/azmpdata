@@ -1,7 +1,7 @@
 # get variable name lookup table
 
 
-#' Search Variable look-up table
+#' Search Variable look-up table - deprecated
 #'
 #' @param variable search by variable name
 #' @param keyword search for a keyword within variable definitions
@@ -10,10 +10,11 @@
 #' @param category search by data category (options are 'physical', 'biochemical', 'phenology', 'zooplankton', 'remote sensing')
 #'
 #' @return a section of the variable look up table based on search parameters
-#' @export
+#'
 #'
 #'
 lookup_variable <- function(variable, keyword, time_scale, regional_scale, category ){
+  .Deprecated("variable_lookup")
   # read in var table
 
   vartable <- read.csv('inst/extdata/lookup/variable_look_up.csv')
