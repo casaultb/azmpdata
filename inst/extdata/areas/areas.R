@@ -1,6 +1,6 @@
 library(usethis)
 library(azmpdata)
-path <- 'inst/extdata/areas//'
+path <- 'inst/extdata/areas/'
 files <- list.files(path = path,
                     pattern = 'areasTemperatureAnnualAnomaly\\w+\\.dat',
                     full.names = TRUE)
@@ -45,9 +45,19 @@ names(vardat) <- lapply(d, function(k) k[['variable']])
 year <- lapply(d, function(k) k[['data']][['year']])
 
 # check that years are all the same
-checkyear <- identical(year[[1]], year[[2]], year[[3]])
-if(checkyear == FALSE){
+#checkyear <- identical(year[[1]], year[[2]], year[[3]])
+# reduce breaking code by using sapply, assuming year[[1]]
+# is our 'gold standard'
+checkyear <- all(sapply(year[2:length(year)], identical, year[[1]]))
+if(!checkyear){
   stop('Data years vary between variables! Please code for this!')
+}
+
+# check that all areaNames are the same
+areaNames <- lapply(d, function(k) k[['areaName']])
+checkAreaName <- all(sapply(areaNames[2:length(areaNames)], identical, areaNames[[1]]))
+if(!checkAreaName){
+  stop('The area name between files does not match.')
 }
 
 # match variable names to official names
@@ -60,9 +70,10 @@ ofnm <- match(names(vardat), names(official_names))
 names(vardat) <- official_names[ofnm]
 
 # no are name? broadscale
-
+# since we've passted the checkyear and checkAreaName above
+#   we'll use the area name and year from the first file
 df <- data.frame(year = year[[1]],
-                 area = 'Scotion Shelf',
+                 area = d[[1]][['areaName']],
                  as.data.frame(vardat))
 areasOther <- df
 
