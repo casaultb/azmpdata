@@ -3,7 +3,6 @@
 \docType{data}
 \name{Zooplankton_Seasonal_Sections}
 \alias{Zooplankton_Seasonal_Sections}
-
 \title{Zooplankton seasonal section data}
 \format{
 A dataframe with 152 observations of 6 variables:
@@ -18,7 +17,6 @@ A dataframe with 152 observations of 6 variables:
    \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton sampled}
 }
 }
-
 \usage{
 Zooplankton_Seasonal_Sections
 }

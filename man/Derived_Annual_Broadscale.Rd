@@ -4,7 +4,9 @@
 \name{Derived_Annual_Broadscale}
 \alias{Derived_Annual_Broadscale}
 \title{Derived monthly broadscale data}
-\format{An object of class \code{data.frame} with 784 rows and 6 columns.}
+\format{
+An object of class \code{data.frame} with 784 rows and 6 columns.
+}
 \usage{
 Derived_Annual_Broadscale
 }
@@ -51,7 +53,5 @@ _Data_
 * primary_production_from_satellite
 * oxygen_at_sea_floor
 * surface_chlorphyll_from_satellite
-
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 }
 \keyword{datasets}

@@ -4,7 +4,9 @@
 \name{Derived_Annual_Sections}
 \alias{Derived_Annual_Sections}
 \title{Derived Annual Section data}
-\format{An object of class \code{data.frame} with 82 rows and 9 columns.}
+\format{
+An object of class \code{data.frame} with 82 rows and 9 columns.
+}
 \usage{
 Derived_Annual_Sections
 }
@@ -25,7 +27,5 @@ _Data_
 * integrated_silicate_0_50
 * integrated_silicate_50_150
 * integrated_chlorphyll_0_100
-
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 }
 \keyword{datasets}

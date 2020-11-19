@@ -4,7 +4,9 @@
 \name{Zooplankton_Annual_Sections}
 \alias{Zooplankton_Annual_Sections}
 \title{Zooplankton Annual Section data}
-\format{An object of class \code{data.frame} with 83 rows and 11 columns.}
+\format{
+An object of class \code{data.frame} with 83 rows and 11 columns.
+}
 \usage{
 Zooplankton_Annual_Sections
 }
@@ -40,7 +42,5 @@ _Data_
 * zooplankton_meso_wet_weight
 * zooplankton_macro_wet_weight
 * zooplankton_total_wet_weight
-
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 }
 \keyword{datasets}

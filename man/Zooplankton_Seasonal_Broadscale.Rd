@@ -3,7 +3,6 @@
 \docType{data}
 \name{Zooplankton_Seasonal_Broadscale}
 \alias{Zooplankton_Seasonal_Broadscale}
-
 \title{Zooplankton seasonal broadscale data}
 \format{
 A dataframe containing 40 observations of 6 variables:
@@ -25,7 +24,6 @@ A dataframe containing 40 observations of 6 variables:
    \item{category}{Zooplankton, biological, biochemical}
    }
 }
-
 \usage{
 Zooplankton_Seasonal_Broadscale
 }

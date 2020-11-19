@@ -4,7 +4,9 @@
 \name{RemoteSensing_Annual_Broadscale}
 \alias{RemoteSensing_Annual_Broadscale}
 \title{Remote sensing Annual broadscale data}
-\format{An object of class \code{data.frame} with 108 rows and 7 columns.}
+\format{
+An object of class \code{data.frame} with 108 rows and 7 columns.
+}
 \usage{
 RemoteSensing_Annual_Broadscale
 }
@@ -20,7 +22,5 @@ _Data_
 * bloom_duration
 * bloom_amplitude
 * bloom_magnitude
-
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 }
 \keyword{datasets}

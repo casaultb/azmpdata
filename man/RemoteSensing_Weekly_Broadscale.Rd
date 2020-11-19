@@ -4,7 +4,9 @@
 \name{RemoteSensing_Weekly_Broadscale}
 \alias{RemoteSensing_Weekly_Broadscale}
 \title{Remote Sensing Annual Broadscale data}
-\format{An object of class \code{data.frame} with 5016 rows and 5 columns.}
+\format{
+An object of class \code{data.frame} with 5016 rows and 5 columns.
+}
 \usage{
 RemoteSensing_Weekly_Broadscale
 }
@@ -32,7 +34,5 @@ _Metadata_
 
 _Data_
 * surface_chlorophyll
-
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 }
 \keyword{datasets}

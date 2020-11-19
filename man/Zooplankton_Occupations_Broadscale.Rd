@@ -3,7 +3,6 @@
 \docType{data}
 \name{Zooplankton_Occupations_Broadscale}
 \alias{Zooplankton_Occupations_Broadscale}
-
 \title{Zooplankton Occupation Broadscale data}
 \format{
 A dataframe containing 1177 obesrvations of 10 variables

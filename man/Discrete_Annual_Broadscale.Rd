@@ -4,7 +4,9 @@
 \name{Discrete_Annual_Broadscale}
 \alias{Discrete_Annual_Broadscale}
 \title{Discrete annual broadscale data}
-\format{An object of class \code{data.frame} with 72 rows and 4 columns.}
+\format{
+An object of class \code{data.frame} with 72 rows and 4 columns.
+}
 \usage{
 Discrete_Annual_Broadscale
 }
