@@ -4,9 +4,7 @@
 \name{Zooplankton_Occupations_Stations}
 \alias{Zooplankton_Occupations_Stations}
 \title{Zooplankton Occupations Stations data}
-\format{
-An object of class \code{data.frame} with 684 rows and 36 columns.
-}
+\format{An object of class \code{data.frame} with 684 rows and 36 columns.}
 \usage{
 Zooplankton_Occupations_Stations
 }
@@ -57,7 +55,6 @@ _Data_
 * calanus_abundance_stage_c4
 * calanus_abundance_stage_c5
 * calanus_abundance_stage_c6
-
 
 Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 }

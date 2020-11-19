@@ -4,9 +4,9 @@
 \name{Phytoplankton_Occupations_Stations}
 \alias{Phytoplankton_Occupations_Stations}
 \title{Phytoplankton Occupation Station data}
-\format{
-An object of class \code{data.frame} with 659 rows and 13 columns.
-}
+
+\format{An object of class \code{data.frame} with 659 rows and 13 columns.}
+
 \usage{
 Phytoplankton_Occupations_Stations
 }
@@ -28,6 +28,5 @@ _Metadata_
 _Data_
 * microplankton_abundance
 
- Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 }
 \keyword{datasets}

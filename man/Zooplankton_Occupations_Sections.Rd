@@ -4,9 +4,7 @@
 \name{Zooplankton_Occupations_Sections}
 \alias{Zooplankton_Occupations_Sections}
 \title{Zooplankton Occupation Section data}
-\format{
-An object of class \code{data.frame} with 1050 rows and 22 columns.
-}
+\format{An object of class \code{data.frame} with 1050 rows and 22 columns.}
 \usage{
 Zooplankton_Occupations_Sections
 }
