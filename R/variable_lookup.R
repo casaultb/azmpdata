@@ -1,6 +1,12 @@
-#' Search through RDA variable names
+#' Search through azmpdata
 #'
-#' @param keywords Search keywords
+#' Search through azmpdata datasets by keywords. Defualt searches through all
+#' dataset variable names, but options (`help_search`) can be used to search
+#' through all `azmpdata` help documentation text including variable definitions
+#' and metadata.
+#'
+#' @param keywords Search keywords (if using multiple, create a vector of character strings using `c()`)
+#' @param search_help a logcial value determining whether or not help documentation text should also be searched
 #'
 #'
 #' @import dplyr

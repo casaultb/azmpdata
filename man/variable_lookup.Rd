@@ -2,13 +2,18 @@
 % Please edit documentation in R/variable_lookup.R
 \name{variable_lookup}
 \alias{variable_lookup}
-\title{Search through RDA variable names}
+\title{Search through azmpdata}
 \usage{
-variable_lookup(keywords)
+variable_lookup(keywords, search_help = FALSE)
 }
 \arguments{
-\item{keywords}{Search keywords}
+\item{keywords}{Search keywords (if using multiple, create a vector of character strings using `c()`)}
+
+\item{search_help}{a logcial value determining whether or not help documentation text should also be searched}
 }
 \description{
-Search through RDA variable names
+Search through azmpdata datasets by keywords. Defualt searches through all
+dataset variable names, but options (`help_search`) can be used to search
+through all `azmpdata` help documentation text including variable definitions
+and metadata.
 }
