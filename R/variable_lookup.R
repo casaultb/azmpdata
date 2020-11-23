@@ -17,31 +17,47 @@ variable_lookup <- function(keywords, search_help = FALSE){
 
   # declare empty data frame
   tb_main <- tibble::tibble(variable=character(0),
-                            dataframe=character(0),
-                            file=character(0))
+                            dataframe=character(0)
+                            #,
+                            #file=character(0)
+                            )
 
   # get list of rda files
-  fp <- system.file('data', package = 'azmpdata') # make generic file path
-  file_names <- list.files(fp, pattern="*.rda", full.names=T)
+  # this method doesn't work through colab
+  # fp <- system.file('data', package = 'azmpdata') # make generic file path
+  # file_names <- list.files(fp, pattern="*.rda", full.names=T)
+  #
+  # TODO find a method that works when package is downloaded to colab, will be more robust
+
+  res <- data(package = 'azmpdata')
+
+  file_names <- res$results[,3]
 
   # loop through files
+
   for(i_file in file_names){
-    load(i_file, tmp_env <- new.env())
+    df <- get(i_file)
+    #load(i_file, tmp_env <- new.env())
     # get list of data frames in each rda file
-    df_names <- ls(tmp_env)
+    # removed: there should only be one dataframe in each datafile
+    # df_names <- ls(tmp_env)
     # loop through data frames
-    for(i_df in df_names){
-      var_names <- names(get(i_df, envir=tmp_env))
+    #for(i_df in df_names){
+      #var_names <- names(get(i_df, envir=tmp_env))
+      var_names <- names(df)
       # append to tb_main
       tb_main <- dplyr::bind_rows(tb_main,
                                   tibble::tibble(variable=var_names,
-                                                 dataframe=i_df,
-                                                 file=basename(i_file)))
-    }
+                                                 dataframe=i_file #,
+                                                 #file=basename(i_file)
+                                                 ))
+    #}
+      # clean up
+      remove(i_file)
   }
 
   # clean up
-  rm("tmp_env")
+  # rm("tmp_env")
 
   # list of variable names not to match with
   no_match <- c("id")
@@ -60,7 +76,7 @@ variable_lookup <- function(keywords, search_help = FALSE){
     dplyr::mutate(keyword = keywords[keyword]) %>%
     dplyr::filter(keyword %in% keywords) %>%
     dplyr::arrange(keyword, variable) %>%
-    dplyr::select(keyword, variable, dataframe, file)
+    dplyr::select(keyword, variable, dataframe)
 
   # output
   if(search_help == FALSE){
