@@ -12,12 +12,8 @@
 #' @export
 #'
 #'
-variable_lookup <- function(keywords){
+variable_lookup <- function(keywords, search_help = FALSE){
 
-  # # required packages
-  # library(dplyr)
-  # library(tibble)
-  # library(stringr)
 
   # declare empty data frame
   tb_main <- tibble::tibble(variable=character(0),
@@ -25,7 +21,8 @@ variable_lookup <- function(keywords){
                             file=character(0))
 
   # get list of rda files
-  file_names <- list.files("data/", pattern="*.rda", full.names=T)
+  fp <- system.file('data', package = 'azmpdata') # make generic file path
+  file_names <- list.files(fp, pattern="*.rda", full.names=T)
 
   # loop through files
   for(i_file in file_names){
@@ -55,8 +52,7 @@ variable_lookup <- function(keywords){
     dplyr::distinct() %>%
     dplyr::arrange(variable)
 
-  # find matches
-  # keywords <- c("Chl", "no3")
+  # find matches (only searches variable names)
   names(keywords) <- tolower(keywords)
   tb_match <- tb_main %>%
     dplyr::mutate(tmp_variable = tolower(variable)) %>%
@@ -67,5 +63,25 @@ variable_lookup <- function(keywords){
     dplyr::select(keyword, variable, dataframe, file)
 
   # output
+  if(search_help == FALSE){
   return(tb_match)
+  }else{
+  # development
+
+  # search through help files
+
+  # load all help files
+  datafile <- system.file('R/data.r', package = 'azmpdata')
+
+  # parse help text
+  dd <- parse_file(datafile)
+
+  # name each chunk based on dataframe name
+  for(i in 1:length(dd)){
+    names(dd)[i] <- dd[[i]]$call
+  }
+
+
+} # end else statement if help is true
+
 }
