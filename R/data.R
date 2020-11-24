@@ -85,7 +85,7 @@
 #'    \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton sampled}
 #' }
 #'
-#'  @note
+#' @note
 #' \describe{
 #'    \item{time_scale}{Occupation}
 #'    \item{regional_scale}{Broadscale}
