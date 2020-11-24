@@ -7,7 +7,11 @@
 #'
 #' @param keywords Search keywords (if using multiple, create a vector of character strings using `c()`)
 #' @param search_help a logcial value determining whether or not help documentation text should also be searched
-#'
+#' @param lib.loc (optional) passed to find.package to find help documentation
+#'   through which to search - a character vector describing the location of R
+#'   library trees to search through, or NULL. The default value of NULL
+#'   corresponds to checking the loaded namespace, then all libraries
+#'   currently known in .libPaths().
 #'
 #' @import dplyr
 #' @import tibble
@@ -18,7 +22,7 @@
 #' @export
 #'
 #'
-variable_lookup <- function(keywords, search_help = FALSE){
+variable_lookup <- function(keywords, search_help = FALSE, lib.loc = NULL){
 
 
   # declare empty data frame
@@ -104,10 +108,11 @@ variable_lookup <- function(keywords, search_help = FALSE){
 
     #function from github
     # https://stackoverflow.com/questions/9192589/how-can-i-extract-text-from-rs-help-command
-  extract_help <- function(pkg, fn = NULL, to = c("txt", "html", "latex", "ex"))
+    # this function only works if the package is found in the actual library and not the unbuilt version from github
+  extract_help <- function(pkg, fn = NULL, to = c("txt", "html", "latex", "ex"), lib.loc = NULL)
   {
     to <- match.arg(to)
-    rdbfile <- file.path(find.package(pkg), "help", pkg)
+    rdbfile <- file.path(find.package(pkg, lib.loc = lib.loc), "help", pkg)
     rdb <- tools:::fetchRdDB(rdbfile, key = fn)
     convertor <- switch(to,
                         txt   = tools::Rd2txt,
@@ -121,12 +126,21 @@ variable_lookup <- function(keywords, search_help = FALSE){
 
   d <- extract_help(pkg = 'azmpdata')
 
+
   d_ans <- list()
   for(i in 1:length(keywords)){
   d_ans[[i]] <- grep(d, pattern = keywords[[i]])
   }
   names(d_ans) <- keywords
+  # pad with NAs for dataframe
+  ll <- lengths(d_ans)
+  if(diff(range(ll)) != 0){
+    lmax <- max(ll)
+    ddf <- as.data.frame(lapply(d_ans, `length<-`, lmax))
+
+  }else{
   ddf <- as.data.frame(d_ans)
+  }
   ddf <- tidyr::gather(ddf, key = keyword)
 
 
