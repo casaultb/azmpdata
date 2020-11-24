@@ -4,12 +4,18 @@
 \alias{variable_lookup}
 \title{Search through azmpdata}
 \usage{
-variable_lookup(keywords, search_help = FALSE)
+variable_lookup(keywords, search_help = FALSE, lib.loc = NULL)
 }
 \arguments{
 \item{keywords}{Search keywords (if using multiple, create a vector of character strings using `c()`)}
 
 \item{search_help}{a logcial value determining whether or not help documentation text should also be searched}
+
+\item{lib.loc}{(optional) passed to find.package to find help documentation
+through which to search - a character vector describing the location of R
+library trees to search through, or NULL. The default value of NULL
+corresponds to checking the loaded namespace, then all libraries
+currently known in .libPaths().}
 }
 \description{
 Search through azmpdata datasets by keywords. Defualt searches through all
