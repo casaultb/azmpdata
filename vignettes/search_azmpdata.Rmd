@@ -87,5 +87,9 @@ df <- get(ans$dataframe[[1]])
 
 ```
 
+### Conclusion
+
+azmpdata contains a wealth of datasets, we hope these search functions make it easier to find exactly what you need. For more information on base R search functions please feel free to do your own research, for questions about the custom azmpdata search please contact developers or bring an issue to the github board (listed in the package description under BugReports). 
+
 
 
