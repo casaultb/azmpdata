@@ -129,7 +129,7 @@ variable_lookup <- function(keywords, search_help = FALSE, lib.loc = NULL){
 
   d_ans <- list()
   for(i in 1:length(keywords)){
-  d_ans[[i]] <- grep(d, pattern = keywords[[i]])
+  d_ans[[i]] <- grep(d, pattern = keywords[[i]], ignore.case = TRUE)
   }
   names(d_ans) <- keywords
   # pad with NAs for dataframe
