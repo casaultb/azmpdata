@@ -3,7 +3,7 @@ title: "azmpdata - searching"
 author: Emily Chisholm
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{update_azmpdata}
+  %\VignetteIndexEntry{azmpdata - searching}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
