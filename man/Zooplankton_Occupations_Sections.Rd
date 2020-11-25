@@ -24,8 +24,6 @@ _Metadata_
 * cruise_id
 * sample_id
 * depth
-* nominal_depth
-* odf_filename
 }
 \details{
 _Data_

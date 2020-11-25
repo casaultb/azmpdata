@@ -13,19 +13,13 @@ A dataframe containing 1177 obesrvations of 10 variables
    \item{month}{The month in which data was collected (numeric)}
    \item{day}{The day on which data was collected}
    \item{season}{The season in which data was collected (Northern Hemisphere)}
-   \item{sample_id}{A unique identifier for each sample}
+   \item{sample_id}{A unique identifier for each sample, sample id
+   appended by the cruise number to ensure uniqueness}
 
    \item{Calanus_finmarchicus_abundance}{Abundance of Calanus finmarchicus}
    \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
    \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton sampled}
 }
-
- @note
-\describe{
-   \item{time_scale}{Occupation}
-   \item{regional_scale}{Broadscale}
-   \item{category}{Zooplankton, biological, biochemical}
-   }
 }
 \usage{
 Zooplankton_Occupations_Broadscale
@@ -40,5 +34,12 @@ The data can be cited as follows:
   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
+}
+\note{
+\describe{
+   \item{time_scale}{Occupation}
+   \item{regional_scale}{Broadscale}
+   \item{category}{Zooplankton, biological, biochemical}
+   }
 }
 \keyword{datasets}

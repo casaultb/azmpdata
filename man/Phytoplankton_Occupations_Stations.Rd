@@ -22,7 +22,6 @@ _Metadata_
 * event_id
 * sample_id
 * depth
-* nominal_depth
 }
 \details{
 _Data_

@@ -14,8 +14,6 @@ Phytoplankton_Annual_Stations
 This data frame includes
 _Metadata_
 * station
-* latitude
-* longitude
 * year
 }
 \details{
