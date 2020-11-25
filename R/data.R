@@ -78,7 +78,8 @@
 #'    \item{month}{The month in which data was collected (numeric)}
 #'    \item{day}{The day on which data was collected}
 #'    \item{season}{The season in which data was collected (Northern Hemisphere)}
-#'    \item{sample_id}{A unique identifier for each sample}
+#'    \item{sample_id}{A unique identifier for each sample, sample id
+#'    appended by the cruise number to ensure uniqueness}
 #'
 #'    \item{Calanus_finmarchicus_abundance}{Abundance of Calanus finmarchicus}
 #'    \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
@@ -165,7 +166,6 @@
 #' * event_id
 #' * sample_id
 #' * depth
-#' * nominal_depth
 #'
 #'
 #' _Data_
@@ -218,7 +218,6 @@
 #' * event_id
 #' * sample_id
 #' * depth
-#' * nominal_depth
 #'
 #' _Data_
 #' * microplankton_abundance
@@ -274,8 +273,6 @@
 #'  This data frame includes
 #' _Metadata_
 #' * station
-#' * latitude
-#' * longitude
 #' * year
 #'
 #' _Data_
@@ -303,8 +300,6 @@
 #' This data frame includes
 #' _Metadata_
 #' * station
-#' * latitude
-#' * longitude
 #' * year
 #'
 #' _Data_
@@ -341,8 +336,6 @@
 #' This data frame includes
 #' _Metadata_
 #' * station
-#' * latitude
-#' * longitude
 #' * year
 #'
 #' _Data_
@@ -364,9 +357,6 @@
 #' * day
 #' * event_id
 #' * cruise_id
-#' * sample_id
-#' * depth
-#' * nominal_depth
 #' * odf_filename
 #'
 #' _Data_
@@ -396,8 +386,6 @@
 #' * cruise_id
 #' * sample_id
 #' * depth
-#' * nominal_depth
-#' * odf_filename
 #'
 #' _Data_
 #' * calanus_finmarchicus_abundance
