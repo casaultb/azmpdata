@@ -99,10 +99,10 @@ _day_ is given as numeric as the number of days elapsed in the given month
 _season_ is given as a character value, describing the Northern Hemisphere season (fall, winter, spring or summer)
 
 #### Location
-_station_, _section_, or _area_ is given as character value, typically representing the short name for a given location. Care should be taken to ensure that any names used in the datasets are also represented in the spatial data included with the multivaR package so that users are able to find definitions for the areas included. 
+_station_, _section_, or _area_ is given as character value, typically representing the short name for a given location. Care should be taken to ensure that any names used in the datasets are also represented in the spatial data included with the multivaR package so that users are able to find definitions for the areas included. AZMP transects are represented by accronyms, for example Halifax Line is written as HL, Brown's Bank Line is BBL. Stations along each of these lines are numbered and written without any dashes, underscores or leading zeros (eg. HL2, BBL7, P5). 
 
 #### Identifiers
-_sample_id_ is currently given as a combination of original data sample_id, appended (with an underscore) by the cruise_id. This ensures that there is no duplication of sample_id's between cruises, which is a problem in other databases. 
+_sample_id_ is currently given as a combination of original data sample_id, appended (with an underscore) by the cruise_id. This ensures that there is no duplication of sample_id's between cruises, which is a problem in other databases. The format is cruiseid_sampleid. 
 
 _event_id_ is given as numeric
 
