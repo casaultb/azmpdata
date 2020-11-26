@@ -155,100 +155,156 @@
 
 #' Zooplankton Occupations Stations data
 #'
-#' This data frame includes
-#' _Metadata_
-#' * station
-#' * latitude
-#' * longitude
-#' * year
-#' * month
-#' * day
-#' * event_id
-#' * sample_id
-#' * depth
+#' Zooplankton data collected at fixed stations during individual occupations.
+#'
+#' The variables are as follows:
+#'
+#' @format A dataframe
+#' \describe{
+#'     \item{station}{The name of the station where data was collected}
+#'     \item{latitude}{The latitude at which data was collected}
+#'     \item{longitude}{The longitude at which data was collected}
+#'     \item{year}{The year in which data was collected}
+#'     \item{month}{The month in which data was collected (numeric)}
+#'     \item{day}{The day on which data was collected}
+#'     \item{event_id}{A unique identifier for the sampling event}
+#'     \item{sample_id}{A unique identifier for the sample}
+#'     \item{depth}{The depth at which data was actually collected}
+#'
+#'     \item{calanus_finmarchicus_abundance}{Abundance of calanus finmarchicus }
+#'     \item{calanus_hyperboreus_abundance}{Abundance of Calanus Hyperboreus}
+#'     \item{calanus_glacialis_abundance}{Abundance of Calanus Glacialis}
+#'     \item{pseudocalanus_abundance}{Abundance of pseudocalanus}
+#'     \item{metridia_longa_abundance}{Abundance of Metridia longa}
+#'     \item{metridia_lucens_abundance}{Abundance of Metridia lucens}
+#'     \item{metridia_spp_abundance}{Abundance of Metridia spp}
+#'     \item{temora_spp_abundance}{Abundance of Temora spp}
+#'     \item{microcalanus_spp_abundance}{Abundance of microcalanus}
+#'     \item{oithona_spp_abundance}{Abundance of Oithona spp}
+#'     \item{oithona_similis_abundance}{Abundance of Oithona similis}
+#'     \item{oithona_atlantica_abundance}{Abundance of Oithona atlantica}
+#'     \item{paracalanus_spp_abundance}{Abundance of paracalanus}
+#'     \item{centropages_typicus_abundance}{Abundance of Centropages typicus}
+#'     \item{centropages_spp_abundance}{Abundance of Centropages spp}
+#'     \item{scolecithricella_minor_abundance}{Abundance of scolecithricella minor}
+#'     \item{larvacae_abundance}{Abundance of larvacae}
+#'     \item{gastropoda_abundance}{Abundance of gastropoda}
+#'     \item{bivalvia_abundance}{Abundance of bilvalvia}
+#'     \item{euphasiacea_abundance}{Abundance of euphasiacea}
+#'     \item{zooplankton_abundance}{Abundance of all zooplankton}
+#'     \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
+#'     \item{zooplankton_meso_wet_weight}{Wet weight of meso zooplankton}
+#'     \item{zooplankton_macro_wet_weight}{Wet weight of macro zooplankton}
+#'     \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton}
+#'     \item{calanus_abundance_stage_c1}{Stage seperated calanus abundance (stage c1)}
+#'     \item{calanus_abundance_stage_c2}{Stage seperated calanus abundance (stage c2)}
+#'     \item{calanus_abundance_stage_c3}{Stage seperated calanus abundance (stage c3)}
+#'     \item{calanus_abundance_stage_c4}{Stage seperated calanus abundance (stage c4)}
+#'     \item{calanus_abundance_stage_c5}{Stage seperated calanus abundance (stage c5)}
+#'     \item{calanus_abundance_stage_c6}{Stage seperated calanus abundance (stage c6)}
+#'}
 #'
 #'
-#' _Data_
-#' * calanus_finmarchicus_abundance
-#' * calanus_hyperboreus_abundance
-#' * calanus_glacialis_abundance
-#' * pseudocalanus_abundance
-#' * metridia_longa_abundance
-#' * metridia_lucens_abundance
-#' * metridia_spp_abundance
-#' * temora_spp_abundance
-#' * microcalanus_spp_abundance
-#' * oithona_spp_abundance
-#' * oithona_similis_abundance
-#' * oithona_atlantica_abundance
-#' * paracalanus_spp_abundance
-#' * centropages_typicus_abundance
-#' * centropages_spp_abundance
-#' * scolecithricella_minor_abundance
-#' * larvacae_abundance
-#' * gastropoda_abundance
-#' * bivalvia_abundance
-#' * euphasiacea_abundance
-#' * zooplankton_abundance
-#' * zooplankton_meso_dry_weight
-#' * zooplankton_meso_wet_weight
-#' * zooplankton_macro_wet_weight
-#' * zooplankton_total_wet_Weight
-#' * calanus_abundance_stage_c1
-#' * calanus_abundance_stage_c2
-#' * calanus_abundance_stage_c3
-#' * calanus_abundance_stage_c4
-#' * calanus_abundance_stage_c5
-#' * calanus_abundance_stage_c6
+#' @note
+#' \describe{
+#'    \item{time_scale}{Occupation}
+#'    \item{regional_scale}{Station}
+#'    \item{category}{ biological, zooplankton}
+#'    }
 #'
+#' @details The data can be cited as follows:
+#'   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+#'   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+#'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+#'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
 #'
  "Zooplankton_Occupations_Stations"
 
 
 #' Phytoplankton Occupation Station data
 #'
-#'  This data frame includes
-#' _Metadata_
-#' * station
-#' * latitude
-#' * longitude
-#' * year
-#' * month
-#' * day
-#' * event_id
-#' * sample_id
-#' * depth
+#' Phytoplankton data collected at fixed stations during individual occupations.
 #'
-#' _Data_
-#' * microplankton_abundance
+#' The variables are as follows:
+#'
+#' @format A dataframe
+#' \describe{
+#'     \item{station}{The name of the station where data was collected}
+#'     \item{latitude}{The latitude at which data was collected}
+#'     \item{longitude}{The longitude at which data was collected}
+#'     \item{year}{The year in which data was collected}
+#'     \item{month}{The month in which data was collected (numeric)}
+#'     \item{day}{The day on which data was collected}
+#'     \item{event_id}{A unique identifier for the sampling event}
+#'     \item{sample_id}{A unique identifier for the sample}
+#'     \item{depth}{The depth at which data was actually collected}
+#'
+#'     \item{microplankton_abundance}{Abundance of microplankton at fixed stations (phytoplankton and protists)}
+#' }
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Occupation}
+#'    \item{regional_scale}{Station}
+#'    \item{category}{ biological, phytoplankton}
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+#'   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+#'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+#'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
 #'
 "Phytoplankton_Occupations_Stations"
 
 
 #' Discrete Occupation Station data
 #'
-#' This data frame includes
-#' _Metadata_
-#' * station
-#' * latitude
-#' * longitude
-#' * year
-#' * month
-#' * day
-#' * event_id
-#' * sample_id
-#' * depth
-#' * nominal_depth
+#' Discrete data collected at fixed stations during individual occupations.
 #'
-#' _Data_
-#' * nitrate
-#' * silicate
-#' * phosphate
-#' * chlorophyll
-#' * temperature
-#' * salinity
-#' * density
+#' The variables are as follows:
 #'
+#' @format A dataframe
+#' \describe{
+#'     \item{station}{The name of the station where data was collected}
+#'     \item{latitude}{The latitude at which data was collected}
+#'     \item{longitude}{The longitude at which data was collected}
+#'     \item{year}{The year in which data was collected}
+#'     \item{month}{The month in which data was collected (numeric)}
+#'     \item{day}{The day on which data was collected}
+#'     \item{event_id}{A unique identifier for the sampling event}
+#'     \item{sample_id}{A unique identifier for the sample}
+#'     \item{depth}{The depth at which data was actually collected}
+#'     \item{nominal_depth}{The depth at which data was planned to be collected - sometime differs slightly from actual collection depth}
+#'
+#'     \item{nitrate}{Discrete measurements of nitrate concentration in the water column at a range of depths }
+#'     \item{silicate}{Discrete measurements of silicate concentration in the water column at a range of depths }
+#'     \item{phosphate}{Discrete measurements of phosphate concentration in the water column at a range of depths }
+#'     \item{chlorophyll}{Discrete measurements of chlorophyll concentration in the water column at a range of depths }
+#'     \item{sea_temperature}{Discrete sea temperature measurements over a range of depths}
+#'     \item{salinity}{Discrete salinity measurements over a range of depths}
+#'     \item{density}{Discrete density measurements over a range of depths}
+#'
+#' }
+#'
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Occupation}
+#'    \item{regional_scale}{Station}
+#'    \item{category}{ biological, phytoplankton, biochemical, physical}
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+#'   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+#'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+#'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
+#'
+#'   Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
+#'   Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
+#'   Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
+
 "Discrete_Occupations_Stations"
 
 
@@ -380,6 +436,7 @@
 #' * latitude
 #' * longitude
 #' * year
+#' * season
 #' * month
 #' * day
 #' * event_id

@@ -18,6 +18,7 @@ _Metadata_
 * latitude
 * longitude
 * year
+* season
 * month
 * day
 * event_id
