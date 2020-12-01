@@ -1,5 +1,5 @@
 ---
-title: "style_guide"
+title: "Style Guide"
 author: "E. Chisholm"
 date: "11/25/2020"
 output: rmarkdown::html_vignette
