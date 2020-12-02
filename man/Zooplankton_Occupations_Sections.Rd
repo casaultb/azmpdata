@@ -5,59 +5,74 @@
 \alias{Zooplankton_Occupations_Sections}
 \title{Zooplankton Occupation Section data}
 \format{
-An object of class \code{data.frame} with 1050 rows and 22 columns.
+A dataframe
+\describe{
+    \item{section}{Section name where data was collected}
+    \item{station}{The name of the station where data was collected}
+    \item{latitude}{The latitude at which data was collected}
+    \item{longitude}{The longitude at which data was collected}
+    \item{year}{The year in which data was collected}
+    \item{season}{The season in which data was collected (Northern Hemisphere)}
+    \item{month}{The month in which data was collected (numeric)}
+    \item{day}{The day on which data was collected}
+    \item{event_id}{A unique identifier for the sampling event}
+    \item{cruise_id}{A unique identifier for the mission/cruise}
+    \item{sample_id}{A unique identifier for the sample}
+    \item{depth}{The depth at which data was actually collected}
+
+    \item{calanus_finmarchicus_abundance}{Abundance of calanus finmarchicus }
+    \item{calanus_hyperboreus_abundance}{Abundance of calanus hyperboreus }
+    \item{calanus_glacialis_abundance}{Abundance of calanus glacialis }
+    \item{pseudocalanus_abundance}{Abundance of pseudocalanus  }
+    \item{metridia_longa_abundance}{Abundance of metridia longa  }
+    \item{metridia_lucens_abundance}{Abundance of metridia lucens  }
+    \item{metridia_spp_abundance}{Abundance of metridia species  }
+    \item{temora_spp_abundance}{Abundance of temora species}
+    \item{microcalanus_spp_abundance}{Abundance of microcalanus  }
+    \item{oithona_spp_abundance}{Abundance of oithona species  }
+    \item{oithona_similis_abundance}{Abundance of oithona similis}
+    \item{oithona_atlantica_abundance}{Abundance of oithona atlantica}
+    \item{paracalanus_spp_abundance}{Abundance of paracalanus  }
+    \item{centropages_typicus_abundance}{Abundance of centropages typicus  }
+    \item{centropages_spp_abundance}{Abundance of centropages species  }
+    \item{scolecithricella_minor_abundance}{Abundance of scolecithricella minor  }
+    \item{larvacae_abundance}{Abundance of larvacae group}
+    \item{gastropoda_abundance}{Abundance of gastropoda group}
+    \item{bivalvia_abundance}{Abundance of bivalvia group}
+    \item{euphasiacea_abundance}{Abundance of euphasiacea group}
+    \item{zooplankton_abundance}{Abundance of zooplankton at fixed stations}
+    \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
+    \item{zooplankton_meso_wet_weight}{Wet weight of meso zooplankton}
+    \item{zooplankton_macro_wet_weight}{Wet weight of macro zooplankton}
+    \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton from sampling}
+    \item{calanus_abundance_stage_c1}{Stage seperated calanus abundance (stage c1)}
+    \item{calanus_abundance_stage_c2}{Stage seperated calanus abundance (stage c2)}
+    \item{calanus_abundance_stage_c3}{Stage seperated calanus abundance (stage c3)}
+    \item{calanus_abundance_stage_c4}{Stage seperated calanus abundance (stage c4)}
+    \item{calanus_abundance_stage_c5}{Stage seperated calanus abundance (stage c5)}
+    \item{calanus_abundance_stage_c6}{Stage seperated calanus abundance (stage c6)}
+}
 }
 \usage{
 Zooplankton_Occupations_Sections
 }
 \description{
-This data frame includes
-_Metadata_
-* section
-* station
-* latitude
-* longitude
-* year
-* season
-* month
-* day
-* event_id
-* cruise_id
-* sample_id
-* depth
+Zooplankton data collected along AZMP transects during individual occupations.
 }
 \details{
-_Data_
-* calanus_finmarchicus_abundance
-* calanus_hyperboreus_abundance
-* calanus_glacialis_abundance
-* pseudocalanus_abundance
-* metridia_longa_abundance
-* metridia_lucens_abundance
-* metridia_spp_abundance
-* temora_spp_abundance
-* microcalanus_spp_abundance
-* oithona_spp_abundance
-* oithona_similis_abundance
-* oithona_atlantica_abundance
-* paracalanus_spp_abundance
-* centropages_typicus_abundance
-* centropages_spp_abundance
-* scolecithricella_minor_abundance
-* larvacae_abundance
-* gastropoda_abundance
-* bivalvia_abundance
-* euphasiacea_abundance
-* zooplankton_abundance
-* zooplankton_meso_dry_weight
-* zooplankton_meso_wet_weight
-* zooplankton_macro_wet_weight
-* zooplankton_total_wet_Weight
-* calanus_abundance_stage_c1
-* calanus_abundance_stage_c2
-* calanus_abundance_stage_c3
-* calanus_abundance_stage_c4
-* calanus_abundance_stage_c5
-* calanus_abundance_stage_c6
+The variables are as follows:
+
+The data can be cited as follows:
+  Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+  Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+  on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+  Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
+}
+\note{
+\describe{
+   \item{time_scale}{Occupation}
+   \item{regional_scale}{Section}
+   \item{category}{ biological, zooplankton }
+   }
 }
 \keyword{datasets}
