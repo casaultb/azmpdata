@@ -28,7 +28,7 @@ A dataframe
     \item{metridia_lucens_abundance}{Abundance of metridia lucens  }
     \item{metridia_spp_abundance}{Abundance of metridia species  }
     \item{temora_spp_abundance}{Abundance of temora species}
-    \item{microcalanus_spp_abundance}{Abundance of microcalanus  }
+    \item{microcalanus_spp_abundance}{Abundance of microcalanus}
     \item{oithona_spp_abundance}{Abundance of oithona species  }
     \item{oithona_similis_abundance}{Abundance of oithona similis}
     \item{oithona_atlantica_abundance}{Abundance of oithona atlantica}

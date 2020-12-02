@@ -540,7 +540,7 @@
 #'     \item{metridia_lucens_abundance}{Abundance of metridia lucens  }
 #'     \item{metridia_spp_abundance}{Abundance of metridia species  }
 #'     \item{temora_spp_abundance}{Abundance of temora species}
-#'     \item{microcalanus_spp_abundance}{Abundance of microcalanus  }
+#'     \item{microcalanus_spp_abundance}{Abundance of microcalanus}
 #'     \item{oithona_spp_abundance}{Abundance of oithona species  }
 #'     \item{oithona_similis_abundance}{Abundance of oithona similis}
 #'     \item{oithona_atlantica_abundance}{Abundance of oithona atlantica}
@@ -585,30 +585,52 @@
 
 #' Discrete Occupation Section data
 #'
-#' This data frame includes
-#' _Metadata_
-#' * section
-#' * station
-#' * latitude
-#' * longitude
-#' * year
-#' * month
-#' * day
-#' * event_id
-#' * cruise_id
-#' * sample_id
-#' * depth
-#' * nominal_depth
-#' * odf_filename
+#' Discrete data collected along AZMP transects during individual occupations.
 #'
-#' _Data_
-#' * nitrate
-#' * silicate
-#' * phosphate
-#' * chlorophyll
-#' * temperature
-#' * salinity
-#' * density
+#' The variables are as follows:
+#'
+#' @format A dataframe
+#' \describe{
+#'     \item{section}{Section name where data was collected}
+#'     \item{station}{The name of the station where data was collected}
+#'     \item{latitude}{The latitude at which data was collected}
+#'     \item{longitude}{The longitude at which data was collected}
+#'     \item{year}{The year in which data was collected}
+#'     \item{month}{The month in which data was collected (numeric)}
+#'     \item{day}{The day on which data was collected}
+#'     \item{event_id}{A unique identifier for the sampling event}
+#'     \item{cruise_id}{A unique identifier for the mission/cruise}
+#'     \item{sample_id}{A unique identifier for the sample}
+#'     \item{depth}{The depth at which data was actually collected}
+#'     \item{nominal_depth}{The depth at which data was planned to be collected - sometime differs slightly from actual collection depth}
+#'     \item{odf_filename}{The original data file name}
+#'
+#'     \item{nitrate}{Discrete measurements of nitrate concentration in the water column at a range of depths }
+#'     \item{silicate}{Discrete measurements of silicate concentration in the water column at a range of depths }
+#'     \item{phosphate}{Discrete measurements of phosphate concentration in the water column at a range of depths }
+#'     \item{chlorophyll}{Discrete measurements of chlorophyll concentration in the water column at a range of depths }
+#'     \item{sea_temperature}{Discrete sea temperature measurements over a range of depths}
+#'     \item{salinity}{Discrete salinity measurements over a range of depths}
+#'     \item{density}{Discrete density measurements over a range of depths}
+#' }
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Occupation}
+#'    \item{regional_scale}{Section}
+#'    \item{category}{ biological, biochemical, physical }
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+#'   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+#'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+#'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
+#'
+#'   Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
+#'   Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
+#'   Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
+#'
 #'
 "Discrete_Occupations_Sections"
 
