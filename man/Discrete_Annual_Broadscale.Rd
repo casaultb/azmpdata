@@ -5,20 +5,34 @@
 \alias{Discrete_Annual_Broadscale}
 \title{Discrete annual broadscale data}
 \format{
-An object of class \code{data.frame} with 216 rows and 4 columns.
+A dataframe
+\describe{
+    \item{year}{The year in which data was collected}
+    \item{area}{Area name where data was collected}
+
+    \item{salinity}{Discrete salinity measurements over a range of depths}
+    \item{sea_temperature}{Discrete sea temperature measurements over a range of depths}
+}
 }
 \usage{
 Discrete_Annual_Broadscale
 }
 \description{
-_Metadata_
-* year
-* area
+Discrete data averaged over broad regions and years.
 }
 \details{
-_Data_
-* salinity
-* sea_temperature
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+The variables are as follows:
+
+The data can be cited as follows:
+Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
+  Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
+  Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
+}
+\note{
+\describe{
+   \item{time_scale}{Annual}
+   \item{regional_scale}{Broadscale}
+   \item{category}{ physical }
+   }
 }
 \keyword{datasets}

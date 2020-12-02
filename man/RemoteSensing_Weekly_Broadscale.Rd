@@ -3,36 +3,34 @@
 \docType{data}
 \name{RemoteSensing_Weekly_Broadscale}
 \alias{RemoteSensing_Weekly_Broadscale}
-\title{Remote Sensing Annual Broadscale data}
+\title{Remote sensing weekly broadscale data}
 \format{
-An object of class \code{data.frame} with 5016 rows and 5 columns.
+A dataframe
+\describe{
+    \item{area}{Area name where data was collected}
+    \item{year}{The year in which data was collected}
+    \item{month}{The month in which data was collected (numeric)}
+    \item{week}{The week in which data was collected (numeric)}
+
+    \item{surface_chlorophyll}{Average surface chlorophyll as inferred from satellite (remote sensing) measurements}
+}
 }
 \usage{
 RemoteSensing_Weekly_Broadscale
 }
 \description{
-_Metadata_
-* area
-* year
+Remote Sensing data averaged over broad regions and weeks.
 }
 \details{
-_Data_
-* surface_chlorophyll_log10
-* bloom_start
-* bloom_duration
-* bloom_amplitude
-* bloom_magnitude
+The variables are as follows:
 
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-Remote sesning weekly broadscale data
-
-_Metadata_
-* area
-* year
-* month
-* week
-
-_Data_
-* surface_chlorophyll
+The data can be cited as follows:
+}
+\note{
+\describe{
+   \item{time_scale}{Weekly}
+   \item{regional_scale}{Broadscale}
+   \item{category}{ biological, biochemical, satellite }
+   }
 }
 \keyword{datasets}

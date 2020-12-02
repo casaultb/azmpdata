@@ -637,57 +637,97 @@
 
 #' Derived Annual Section data
 #'
-#' _Metadata_
-#' * section
-#' * year
+#' Derived data collected along AZMP transects each year.
 #'
-#' _Data_
-#' * density
-#' * temperature
-#' * salinity
-#' * integrated_nitrate_0_50
-#' * integrated_nitrate_50_150
-#' * integrated_phosphate_0_50
-#' * integrated_phosphate_50_150
-#' * integrated_silicate_0_50
-#' * integrated_silicate_50_150
-#' * integrated_chlorphyll_0_100
+#' The variables are as follows:
+#'
+#' @format A dataframe
+#' \describe{
+#'     \item{section}{Section name where data was collected}
+#'     \item{year}{The year in which data was collected}
+#'
+#'     \item{density}{Discrete density measurements over a range of depths}
+#'     \item{sea_temperature}{Discrete sea temperature measurements over a range of depths}
+#'     \item{salinity}{Discrete salinity measurements over a range of depths}
+#'     \item{integrated_nitrate_0_50}{Nitrate concentrations integrated between 0 and 50 metres}
+#'     \item{integrated_nitrate_50_150}{Nitrate concentrations integrated between 50 and 150 metres}
+#'     \item{integrated_phosphate_0_50}{Phosphate concentrations integrated between 0 and 50 metres}
+#'     \item{integrated_phosphate_50_150}{Phosphate concentrations integrated between 50 and 150 metres}
+#'     \item{integrated_silicate_0_50}{Silicate concentrations integrated between 0 and 50 metres}
+#'     \item{integrated_silicate_50_150}{Silicate concentrations integrated between 50 and 150 metres}
+#'     \item{integrated_chlorphyll_0_100}{Chlorophyll concentrations integrated between 0 and 100 metres}
+#' }
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Annual}
+#'    \item{regional_scale}{Section}
+#'    \item{category}{ biological, biochemical, physical }
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+#'   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+#'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+#'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
+#'
+#'   Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
+#'   Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
+#'   Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
 #'
 "Derived_Annual_Sections"
 
 
 #' Zooplankton Annual Section data
 #'
-#'  _Metadata_
-#' * section
-#' * year
+#' Zooplankton data collected along AZMP transects each year.
 #'
-#' _Data_
-#'  * calanus_finmarchicus_log10
-#' * calanus_hyperboreus_log10
-#' * calanus_glacialis_log10
-#' * pseudocalanus_log10
-#' * metridia_longa_log10
-#' * metridia_lucens_log10
-#' * metridia_spp_log10
-#' * temora_spp_log10
-#' * microcalanus_spp_log10
-#' * oithona_spp_log10
-#' * oithona_similis_log10
-#' * oithona_atlantica_log10
-#' * paracalanus_spp_log10
-#' * centropages_typicus_log10
-#' * centropages_spp_log10
-#' * scolecithricella_minor_log10
-#' * larvacae_log10
-#' * gastropoda_log10
-#' * bivalvia_log10
-#' * euphasiacea_log10
-#' * zooplankton_abundance_log10
-#' * zooplankton_meso_dry_weight
-#' * zooplankton_meso_wet_weight
-#' * zooplankton_macro_wet_weight
-#' * zooplankton_total_wet_weight
+#' The variables are as follows:
+#'
+#' @format A dataframe
+#' \describe{
+#'     \item{section}{Section name where data was collected}
+#'     \item{year}{The year in which data was collected}
+#'
+#'     \item{calanus_finmarchicus_log10}{Abundance of calanus finmarchicus with a log 10 transform }
+#'     \item{calanus_hyperboreus_log10}{Abundance of calanus hyperboreus with a log 10 transform }
+#'     \item{calanus_glacialis_log10}{Abundance of calanus glacialis with a log 10 transform }
+#'     \item{pseudocalanus_log10}{Abundance of pseudocalanus  with a log 10 transform }
+#'     \item{metridia_longa_log10}{Abundance of metridia longa  with a log 10 transform }
+#'     \item{metridia_lucens_log10}{Abundance of metridia lucens  with a log 10 transform }
+#'     \item{metridia_spp_log10}{Abundance of metridia spp  with a log 10 transform }
+#'     \item{temora_spp_log10}{Abundance of temora spp  with a log 10 transform }
+#'     \item{microcalanus_spp_log10}{Abundance of microcalanus  with a log 10 transform }
+#'     \item{oithona_spp_log10}{Abundance of oithona species  with a log 10 transform }
+#'     \item{oithona_similis_log10}{Abundance of oithona similis  with a log 10 transform }
+#'     \item{oithona_atlantica_log10}{Abundance of oithona atlantica  with a log 10 transform }
+#'     \item{paracalanus_spp_log10}{Abundance of paracalanus  with a log 10 transform }
+#'     \item{centropages_typicus_log10}{Abundance of centropages typicus  with a log 10 transform }
+#'     \item{centropages_spp_log10}{Abundance of centropages species  with a log 10 transform }
+#'     \item{scolecithricella_minor_log10}{Abundance of scolecithricella minor  with a log 10 transform }
+#'     \item{larvacae_log10}{Abundance of larvacae group  with a log 10 transform }
+#'     \item{gastropoda_log10}{Abundance of gastropoda group  with a log 10 transform }
+#'     \item{bivalvia_log10}{Abundance of bivalvia group  with a log 10 transform }
+#'     \item{euphasiacea_log10}{Abundance of euphasiacea group  with a log 10 transform }
+#'     \item{zooplankton_abundance_log10}{Abundance of zooplankton at fixed stations with a log 10 transform}
+#'     \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
+#'     \item{zooplankton_meso_wet_weight}{Wet weight of meso zooplankton}
+#'     \item{zooplankton_macro_wet_weight}{Wet weight of macro zooplankton}
+#'     \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton from sampling}
+#' }
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Annual}
+#'    \item{regional_scale}{Section}
+#'    \item{category}{ biological, biochemical, zooplankton }
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+#'   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+#'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+#'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
 #'
  "Zooplankton_Annual_Sections"
 
@@ -709,67 +749,87 @@
 
 #' Derived annual broadscale data
 #'
-#' _Metadata_
-#' * area
-#' * year
+#' Derived data averaged over broad regions and years.
 #'
-#' _Data_
-#' * sea_temperature_at_sea_floor_july
-#' * sea_surface_temperature
-#' * north_atlantic_oscillation
-#' * atlantic_multidecadal_oscillation
-#' * river_flux
-#' * cold_intermediate_layer_volume
-#' * sea_ice_volume
-#' * density_gradient_0_50
-#' * temperature_at_sea_floor
-#' * minimum_temperature_in_cold_intermediate_layer
-#' * salinity
-#' * temperature
-#' * sea_surface_temperature_from_satellite
-#' * sea_surface_temperature_warming
-#' * final_day_of_sea_ice
-#' * sea_ice_area
-#' * start_of_phytoplankton_bloom
-#' * duration_of_phytoplankton_bloom
-#' * amplitude_of_phytoplankton_bloom
-#' * magnitude_of_phytoplankton_bloom
-#' * nitrate_at_sea_Floor
-#' * primary_production_from_satellite
-#' * oxygen_at_sea_floor
-#' * surface_chlorphyll_from_satellite
+#' The variables are as follows:
+#'
+#' @format A dataframe
+#' \describe{
+#'     \item{area}{Area name where data was collected}
+#'     \item{year}{The year in which data was collected}
+#'
+#'     \item{sea_temperature_at_sea_floor_july}{Temperature at sea floor during the month of July, averaged over NAFO areas 4X, 4W and 4V.}
+#'     \item{sea_surface_temperature}{Temperature at sea surface averaged over NAFO regions 4V, 4X and 4W as well as regional areas (Bay of Fundy + Gulf of Maine)}
+#'     \item{north_atlantic_oscillation}{North Atlantic Oscillation Index (NAO), calculated using sea level pressure difference between subtropical high and subpolar low}
+#'     \item{atlantic_multidecadal_oscillation}{Atlantic Multidecadal Oscillation Index (AMO), based on anomalies of sea surface temperatures in North Atlantic basin. }
+#'     \item{river_flux}{A measure of the flux exiting from the St. Lawrence river into the Gulf of St. Lawrence. }
+#'     \item{cold_intermediate_layer_volume}{A measure of the volume of the cold intermediate layer throughout the Gulf of St. Lawrence}
+#'     \item{sea_ice_volume}{Average ice volume for January - March in the Gulf of St. Lawrence, can be reasonably used as a proxy to represent sea ice volume on the Scotian Shelf. }
+#'     \item{density_gradient_0_50}{An index of stratification, measured as the density difference between 0 and 50 metres}
+#'     \item{temperature_at_sea_floor}{Averaged water temperatures at sea floor, over NAFO areas 4X, 4V and 4W}
+#'     \item{minimum_temperature_in_cold_intermediate_layer}{Minimum temperature in the cold intermediate layer within the Gulf of St. Lawrence }
+#'     \item{salinity}{Discrete salinity measurements over a range of depths}
+#'     \item{sea_temperature}{Discrete sea temperature measurements over a range of depths}
+#'     \item{sea_surface_temperature_from_satellite}{Averages of sea surface temperatures infered from remote sensing (satellite) measurements}
+#'     \item{sea_surface_temperature_warming}{Derived metric calculating the warming of sea surface temperature averages over the Scotian Shelf}
+#'     \item{final_day_of_sea_ice}{The final day of sea ice observed in the Gulf of St. Lawrence. Note that this metric can be used as a reasonable proxy for the Scotian Shelf}
+#'     \item{sea_ice_area}{Average  of sea ice area, seaward of Cabot Strait}
+#'     \item{start_of_phytoplankton_bloom}{The timing (start) of the phytoplankton bloom on the Scotian Shelf}
+#'     \item{duration_of_phytoplankton_bloom}{The duration of the Scotian Shelf phytoplankton bloom}
+#'     \item{amplitude_of_phytoplankton_bloom}{An average measure of the amplitude of the phytoplankton bloom on the Scotian Shelf}
+#'     \item{magnitude_of_phytoplankton_bloom}{An average measure of the magnitude of the phytoplankton bloom on the Scotian Shelf}
+#'     \item{nitrate_at_sea_floor}{Nitrate concentrations at the bottom of the water column}
+#'     \item{primary_production_from_satellite}{Average primary production as inferred from satellite (remote sensing) measurements}
+#'     \item{oxygen_at_sea_floor}{Oxygen concentrations at the bottom of the water column}
+#'     \item{surface_chlorphyll}{Average surface chlorophyll as inferred from satellite (remote sensing) measurements}
+#' }
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Annual}
+#'    \item{regional_scale}{Broadscale}
+#'    \item{category}{ biological, biochemical, physical }
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+#'   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+#'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+#'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
+#'
+#'   Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
+#'   Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
+#'   Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
 #'
 "Derived_Annual_Broadscale"
 
 
-#' Remote Sensing Annual Broadscale data
-#'
-#'
-#' _Metadata_
-#' * area
-#' * year
-#'
-#' _Data_
-#' * surface_chlorophyll_log10
-#' * bloom_start
-#' * bloom_duration
-#' * bloom_amplitude
-#' * bloom_magnitude
-#'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-# "RemoteSensing_Annual_Broadscale"
 
-
-#' Remote sesning weekly broadscale data
+#' Remote sensing weekly broadscale data
 #'
-#' _Metadata_
-#' * area
-#' * year
-#' * month
-#' * week
+#' Remote Sensing data averaged over broad regions and weeks.
 #'
-#' _Data_
-#' * surface_chlorophyll
+#' The variables are as follows:
+#'
+#' @format A dataframe
+#' \describe{
+#'     \item{area}{Area name where data was collected}
+#'     \item{year}{The year in which data was collected}
+#'     \item{month}{The month in which data was collected (numeric)}
+#'     \item{week}{The week in which data was collected (numeric)}
+#'
+#'     \item{surface_chlorophyll}{Average surface chlorophyll as inferred from satellite (remote sensing) measurements}
+#' }
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Weekly}
+#'    \item{regional_scale}{Broadscale}
+#'    \item{category}{ biological, biochemical, satellite }
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'
 #'
 #'
  "RemoteSensing_Weekly_Broadscale"
@@ -779,28 +839,61 @@
 
 #' Discrete annual broadscale data
 #'
-#' _Metadata_
-#' * year
-#' * area
+#' Discrete data averaged over broad regions and years.
 #'
-#' _Data_
-#' * salinity
-#' * sea_temperature
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+#' The variables are as follows:
+#'
+#' @format A dataframe
+#' \describe{
+#'     \item{year}{The year in which data was collected}
+#'     \item{area}{Area name where data was collected}
+#'
+#'     \item{salinity}{Discrete salinity measurements over a range of depths}
+#'     \item{sea_temperature}{Discrete sea temperature measurements over a range of depths}
+#' }
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Annual}
+#'    \item{regional_scale}{Broadscale}
+#'    \item{category}{ physical }
+#'    }
+#'
+#' @details The data can be cited as follows:
+#' Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
+#'   Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
+#'   Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
+#'
 "Discrete_Annual_Broadscale"
+
 
 #' Remote sensing Annual broadscale data
 #'
-#' _Metadata_
-#' * area
-#' * year
+#' Remote Sensing data averaged over broad regions and years.
 #'
-#' _Data_
-#' * surface_chlorophyll_log10
-#' * bloom_start
-#' * bloom_duration
-#' * bloom_amplitude
-#' * bloom_magnitude
+#' The variables are as follows:
+#'
+#' @format A dataframe
+#' \describe{
+#'     \item{area}{Area name where data was collected}
+#'     \item{year}{The year in which data was collected}
+#'
+#'     \item{surface_chlorophyll_log10}{Average surface chlorophyll as inferred from satellite (remote sensing) measurements, with a log 10 transform}
+#'     \item{bloom_start}{Start of pythoplankton bloom, from satellite}
+#'     \item{bloom_duration}{Length of phytoplankton bloom, from satellite}
+#'     \item{bloom_amplitude}{Amplitude of phytoplankton bloom, from satellite}
+#'     \item{bloom_magnitude}{Magnitude of phytoplankton bloom, from satellite}
+#' }
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Annual}
+#'    \item{regional_scale}{Broadscale}
+#'    \item{category}{ biolgocial, biochemical, satellite }
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'
 #'
 "RemoteSensing_Annual_Broadscale"
 

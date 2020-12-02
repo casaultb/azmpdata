@@ -5,22 +5,34 @@
 \alias{RemoteSensing_Annual_Broadscale}
 \title{Remote sensing Annual broadscale data}
 \format{
-An object of class \code{data.frame} with 108 rows and 7 columns.
+A dataframe
+\describe{
+    \item{area}{Area name where data was collected}
+    \item{year}{The year in which data was collected}
+
+    \item{surface_chlorophyll_log10}{Average surface chlorophyll as inferred from satellite (remote sensing) measurements, with a log 10 transform}
+    \item{bloom_start}{Start of pythoplankton bloom, from satellite}
+    \item{bloom_duration}{Length of phytoplankton bloom, from satellite}
+    \item{bloom_amplitude}{Amplitude of phytoplankton bloom, from satellite}
+    \item{bloom_magnitude}{Magnitude of phytoplankton bloom, from satellite}
+}
 }
 \usage{
 RemoteSensing_Annual_Broadscale
 }
 \description{
-_Metadata_
-* area
-* year
+Remote Sensing data averaged over broad regions and years.
 }
 \details{
-_Data_
-* surface_chlorophyll_log10
-* bloom_start
-* bloom_duration
-* bloom_amplitude
-* bloom_magnitude
+The variables are as follows:
+
+The data can be cited as follows:
+}
+\note{
+\describe{
+   \item{time_scale}{Annual}
+   \item{regional_scale}{Broadscale}
+   \item{category}{ biolgocial, biochemical, satellite }
+   }
 }
 \keyword{datasets}
