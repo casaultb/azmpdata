@@ -28,7 +28,8 @@ Imports:
     magrittr,
     lubridate,
     utils,
-    usethis
+    usethis,
+    tools
 Depends: 
     R (>= 2.10)
 VignetteBuilder: knitr

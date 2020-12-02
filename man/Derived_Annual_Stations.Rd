@@ -5,48 +5,69 @@
 \alias{Derived_Annual_Stations}
 \title{Derived Occupation Monthly data}
 \format{
-An object of class \code{data.frame} with 42 rows and 9 columns.
-}
-\usage{
-Derived_Annual_Stations
-}
-\description{
-This data frame includes
-_Metadata_
+A dataframe
+
 * station_name
 * latitude
 * longitude
 * year
 * month
-}
-\details{
+
 _Data_
 * sea_surface_height
 
 Derived Annual station data
 
- This data frame includes
-_Metadata_
-* station
-* latitude
-* longitude
-* year
+Derived data collected at fixed stations by year.
 
-_Data_
-* temperature_in_air
-* denisty
-* sea_temperature
-* salinity
-* integrated_sea_temperature_0_50
-* integrated_salinity_0_50
-* integrated_density_0_50
-* temperature_0
-* temperature_90
-* sea_surface_temperature_from_moorings
-* sea_surface_height
-* integrated_nitrate_0_50
-* integrated_nitrate_50_150
-* integrated_phosphate_0_50
-* integrated_phosphate_50_150
+The variables are as follows:
+
+A dataframe
+\describe{
+    \item{station}{The name of the station where data was collected}
+    \item{year}{The year in which data was collected}
+
+    \item{temperature_in_air}{Average air temperatures over annual scales at specific stations including Sable Island}
+    \item{denisty}{Discrete density measurements over a range of depths}
+    \item{sea_temperature}{Discrete sea temperature measurements over a range of depths}
+    \item{salinity}{Discrete salinity measurements over a range of depths}
+    \item{integrated_sea_temperature_0_50}{Averages of temperature measurements, integrated between 0 and 50 metres}
+    \item{integrated_salinity_0_50}{Averages of salinity measurements, integrated between 0 and 50 metres}
+    \item{integrated_density_0_50}{Averages of density measurements, integrated between 0 and 50 metres}
+    \item{temperature_0}{Averages for temperature at 0 metres at Prince 5 (P5) and Halifax 2 (HL2) stations}
+    \item{temperature_90}{Averages for temperature at 90 metres at Prince 5 (P5) and Halifax 2 (HL2) stations}
+    \item{sea_surface_temperature_from_moorings}{Averages of sea surface temperatures recorded by mooring at Halifax, NS and St. Andrews, NB}
+    \item{sea_surface_height}{Average of sea surface height at Yarmouth and Halifax NS}
+    \item{integrated_nitrate_0_50}{Nitrate concentrations integrated between 0 and 50 metres}
+    \item{integrated_nitrate_50_150}{Nitrate concentrations integrated between 50 and 150 metres}
+    \item{integrated_phosphate_0_50}{Phosphate concentrations integrated between 0 and 50 metres}
+    \item{integrated_phosphate_50_150}{Phosphate concentrations integrated between 50 and 150 metres}
+}
+}
+\usage{
+Derived_Annual_Stations
+}
+\description{
+Derived data from fixed stations by month.
+}
+\details{
+The variables are as follows:
+
+The data can be cited as follows:
+  Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+  Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+  on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+  Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
+
+  Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
+  Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
+  Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
+}
+\note{
+\describe{
+   \item{time_scale}{Annual}
+   \item{regional_scale}{Station}
+   \item{category}{ biological, phytoplankton, biochemical, physical}
+   }
 }
 \keyword{datasets}

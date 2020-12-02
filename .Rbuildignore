@@ -6,4 +6,6 @@
 ^tmp$
 meetingNotes
 azmpdata_demo
+^doc$
+^Meta$
 ^\.travis\.yml$

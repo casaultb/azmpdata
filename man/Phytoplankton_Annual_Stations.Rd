@@ -5,21 +5,35 @@
 \alias{Phytoplankton_Annual_Stations}
 \title{Phytoplankton Annual Station data}
 \format{
-An object of class \code{data.frame} with 42 rows and 6 columns.
+A dataframe
+\describe{
+    \item{station}{The name of the station where data was collected}
+    \item{year}{The year in which data was collected}
+
+    \item{microplankton_abundance_log10}{Abundance of microplankton
+    (phytoplankton and protists) at fixed stations with a log 10 transform}
+}
 }
 \usage{
 Phytoplankton_Annual_Stations
 }
 \description{
-This data frame includes
-_Metadata_
-* station
-* latitude
-* longitude
-* year
+Phytoplankton data collected at fixed stations by year.
 }
 \details{
-_Data_
-* microplankton_abundance_log10
+The variables are as follows:
+
+The data can be cited as follows:
+  Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+  Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+  on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+  Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
+}
+\note{
+\describe{
+   \item{time_scale}{Annual}
+   \item{regional_scale}{Station}
+   \item{category}{ biological, phytoplankton}
+   }
 }
 \keyword{datasets}

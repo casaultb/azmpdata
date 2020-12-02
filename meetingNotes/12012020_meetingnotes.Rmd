@@ -1,0 +1,77 @@
+---
+title: "Meeting Notes - December 1st 2020"
+author: "E. Chisholm"
+date: "12/1/2020"
+output: html_document
+---
+
+Discussion of Maritimes environmental data access, December , 2020
+
+B. Casault, E. Chisholm, C. Johnson, M. MacMahon, C. Layton
+
+
+## Agenda
+
+* Progress update from Benoit, Emily & Chantelle
+* Search function update (EC)
+*	FTP update (BC)
+* Data completion timeline?
+* Check in on workplan progress
+
+
+## Progress updates
+
+### Emily
+
+* Data issues almost completely resolved - some metadata discrepancies discussed with BC
+* search function complete, waiting for testing
+* demo presentation nearing completion
+
+
+### Benoit
+
+* Working with CL on mission ID discrepanicies between physical and biological data
+  * biological uses mission_descriptor, physical uses mission_name (both in BioChem with some issues)
+  * __CL will summarize issues to report to BioChem data management__ (Shelley Bond?, AZMP committee?)
+
+
+### Chantelle
+
+* completed P5 upload
+  * waiting in a pull request on main branch due to mission identifier issues
+* Will be working on HL2/ other azmp data in the next few weeks
+* will need to be hooked into bio data with some scripts
+
+
+## Search function
+
+* EC reviewed search function capabilities
+  * multiple keywords
+  * search through var names
+  * search through help files
+  
+* Testing will take place this week with CL and BC
+* Vignette rough draft on how to use the search capabilities of azmpdata and general R searching tactics (__EC will share with group__)
+
+
+## FTP server
+
+* BC has FTP server access
+* Successful tests with data
+* __BC will update package scripts to pull data from FTP links instead of dropbox__
+* 10 GB avaialable (not fixed space, may need to share!)
+* content typically purged every 2 months, admins have removed this for azmpdata
+* __BC will share login info__
+* __BC will write up info on FTP to keep record with package for future reference__
+
+## Workplan
+
+* Workplan in group chat updated (azmpdatatasklist.xlsx)
+
+* adding plotting vignette to workplan
+  * __EC will rough draft a plotting vignette__
+  * simple examples in base, ggplot2, and oce
+  * using code from Benoit's plotting functions
+  * compare with gslea package plotting capabilities
+  * reproduce example plots from gslea in azmpdata for direct inter-region comparison
+  

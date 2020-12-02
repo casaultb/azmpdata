@@ -213,7 +213,7 @@ allnewdd <- unique(alldd[ind])
    eval(parse(text = paste("usethis::use_data(", allnewdd[[i]], ", overwrite = TRUE)")))
 
 # save as csv files as well
-   eval(parse(text = paste("write.csv(",allnewdd[[i]],", file = paste0('inst/extdata/', allnewdd[[i]], '.csv'), quote = FALSE, row.names = FALSE)")))
+   eval(parse(text = paste("write.csv(",allnewdd[[i]],", file = paste0('inst/extdata/csv/', allnewdd[[i]], '.csv'), quote = FALSE, row.names = FALSE)")))
 
  }
 

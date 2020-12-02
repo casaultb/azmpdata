@@ -5,45 +5,66 @@
 \alias{Zooplankton_Annual_Stations}
 \title{Zooplankton Annual Stations data}
 \format{
-An object of class \code{data.frame} with 42 rows and 26 columns.
+A dataframe
+\describe{
+    \item{station}{The name of the station where data was collected}
+    \item{year}{The year in which data was collected}
+
+    \item{calanus_finmarchicus_log10}{Abundance of calanus finmarchicus with
+    a log 10 transform }
+    \item{calanus_hyperboreus_log10}{Abundance of calanus hyperboreus with a
+    log 10 transform }
+    \item{calanus_glacialis_log10}{Abundance of calanus glacialis with a log
+    10 transform }
+    \item{pseudocalanus_log10}{Abundance of pseudocalanus  with a log 10 transform }
+    \item{metridia_longa_log10}{Abundance of metridia longa  with a log 10 transform }
+    \item{metridia_lucens_log10}{Abundance of metridia lucens  with a log 10 transform }
+    \item{metridia_spp_log10}{Abundance of metridia spp  with a log 10 transform }
+    \item{temora_spp_log10}{Abundance of temora spp  with a log 10 transform }
+    \item{microcalanus_spp_log10}{Abundance of microcalanus  with a log 10 transform }
+    \item{oithona_spp_log10}{Abundance of oithona species  with a log 10 transform }
+    \item{oithona_similis_log10}{Abundance of oithona similis  with a log 10 transform }
+    \item{oithona_atlantica_log10}{Abundance of oithona atlantica  with a log
+    10 transform }
+    \item{paracalanus_spp_log10}{Abundance of paracalanus  with a log 10 transform }
+    \item{centropages_typicus_log10}{Abundance of centropages typicus  with a
+    log 10 transform }
+    \item{centropages_spp_log10}{Abundance of centropages species  with a log
+    10 transform }
+    \item{scolecithricella_minor_log10}{Abundance of scolecithricella minor
+    with a log 10 transform }
+    \item{larvacae_log10}{Abundance of larvacae group  with a log 10 transform }
+    \item{gastropoda_log10}{Abundance of gastropoda group  with a log 10 transform }
+    \item{bivalvia_log10}{Abundance of bivalvia group  with a log 10 transform }
+    \item{euphasiacea_log10}{Abundance of euphasiacea group  with a log 10 transform }
+    \item{zooplankton_abundance_log10}{Abundance of zooplankton at fixed
+    stations with a log 10 transform}
+    \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
+    \item{zooplankton_meso_wet_weight}{Wet weight of meso zooplankton}
+    \item{zooplankton_macro_wet_weight}{Wet weight of macro zooplankton}
+    \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton from sampling}
+}
 }
 \usage{
 Zooplankton_Annual_Stations
 }
 \description{
-This data frame includes
-_Metadata_
-* station
-* latitude
-* longitude
-* year
+Zooplankton data collected at fixed stations by year.
 }
 \details{
-_Data_
-* calanus_finmarchicus_log10
-* calanus_hyperboreus_log10
-* calanus_glacialis_log10
-* pseudocalanus_log10
-* metridia_longa_log10
-* metridia_lucens_log10
-* metridia_spp_log10
-* temora_spp_log10
-* microcalanus_spp_log10
-* oithona_spp_log10
-* oithona_similis_log10
-* oithona_atlantica_log10
-* paracalanus_spp_log10
-* centropages_typicus_log10
-* centropages_spp_log10
-* scolecithricella_minor_log10
-* larvacae_log10
-* gastropoda_log10
-* bivalvia_log10
-* euphasiacea_log10
-* zooplankton_abundance_log10
-* zooplankton_meso_dry_weight
-* zooplankton_meso_wet_weight
-* zooplankton_macro_wet_weight
-* zooplankton_total_wet_weight
+The variables are as follows:
+
+The data can be cited as follows:
+  Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+  Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+  on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+  Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
+}
+\note{
+\describe{
+   \item{time_scale}{Annual}
+   \item{regional_scale}{Station}
+   \item{category}{ biological, zooplankton}
+   }
 }
 \keyword{datasets}
