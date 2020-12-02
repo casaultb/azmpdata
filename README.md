@@ -1,7 +1,7 @@
 azmpdata R package
 ================
 Benoit Casault, Emily Chisholm
-26 October, 2020
+24 November, 2020
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -9,6 +9,8 @@ Benoit Casault, Emily Chisholm
 
 <!-- badges: start -->
 
+[![Travis build
+status](https://travis-ci.org/casaultb/azmpdata.svg?branch=master)](https://travis-ci.org/casaultb/azmpdata)
 <!-- badges: end -->
 
 The R package *azmpdata* provides a series of data products derived from
@@ -49,7 +51,7 @@ library(azmpdata)
 #> 
 #>  casaultb/azmpdata status:
 #>  (Package ver: 0.2019.0.9000) Up to date
-#>  (Data ver:2020-10-23) is up to date
+#>  (Data ver:2020-10-28) is up to date
 data("Derived_Annual_Broadscale")
 head(Derived_Annual_Broadscale)
 #>   year     area_name density_gradient_0_50 temperature_at_sea_floor
@@ -72,7 +74,7 @@ To access a dataset in csv format:
 
 ``` r
 system.file("extdata", "Derived_Annual_Broadscale.csv", package = "azmpdata")
-#> [1] "C:/Users/ChisholmE/Documents/R/R-4.0.2/library/azmpdata/extdata/Derived_Annual_Broadscale.csv"
+#> [1] "C:/Users/Benoi/Documents/R/win-library/3.6/azmpdata/extdata/Derived_Annual_Broadscale.csv"
 ```
 
 ### Variable Organization
@@ -112,7 +114,7 @@ help("Derived_Annual_Broadscale")
 
 #### Plotting
 
-–NEEDS TO BE UPDATED– The function *plot\_azmpdata* is a wrapper that
+–NEEDS TO BE UPDATED- The function *plot\_azmpdata* is a wrapper that
 allows to plot a given variable in a dataset. Plot format differs
 according to the type of dataset (e.g. timeseries or annual means). For
 example, the following command displays a plot of the *chl\_0\_100*
