@@ -40,8 +40,12 @@ RemoteSensing_Weekly_Broadscale <- df_data_filtered %>%
   dplyr::arrange(., order, year) %>%
   dplyr::select(., region, year, month, week, unname(target_var))
 
+# fix metadata
+RemoteSensing_Weekly_Broadscale <- RemoteSensing_Weekly_Broadscale %>%
+  dplyr::rename(., area = region)
+
 # save data to csv
-readr::write_csv(RemoteSensing_Weekly_Broadscale, "inst/extdata/remote_sensing/RemoteSensing_Weekly_Broadscale.csv")
+readr::write_csv(RemoteSensing_Weekly_Broadscale, "inst/extdata/csv/RemoteSensing_Weekly_Broadscale.csv")
 
 # save data to rda
 usethis::use_data(RemoteSensing_Weekly_Broadscale, overwrite = TRUE)

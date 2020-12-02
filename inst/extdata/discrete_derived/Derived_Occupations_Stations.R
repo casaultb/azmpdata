@@ -54,7 +54,7 @@ Derived_Occupations_Stations <- Derived_Occupations_Stations %>%
   dplyr::select(., station, latitude, longitude, year, month, day, event_id, unname(target_var))
 
 # save data to csv
-readr::write_csv(Derived_Occupations_Stations, "inst/extdata/discrete_derived/Derived_Occupations_Stations.csv")
+readr::write_csv(Derived_Occupations_Stations, "inst/extdata/csv/Derived_Occupations_Stations.csv")
 
 # save data to rda
 usethis::use_data(Derived_Occupations_Stations, overwrite = TRUE)

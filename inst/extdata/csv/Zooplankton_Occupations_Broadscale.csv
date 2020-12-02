@@ -1,4 +1,4 @@
-latitude,longitude,year,month,day,season,sample_id,Calanus_finmarchicus,mesozooplankton_dry_biomass,zooplankton_wet_biomass
+latitude,longitude,year,month,day,season,sample_id,Calanus_finmarchicus_abundance,zooplankton_meso_dry_weight,zooplankton_total_wet_weight
 44.26,-63.31,1999,7,5,Summer,99025001_99025102001001,32958.146650639275,2.1146635028178027,48.05143856253025
 44.07,-62.88,1999,7,6,Summer,99025002_99025102002001,27065.043199554068,5.788080929487179,90.71509615384616
 43.82,-63.25,1999,7,6,Summer,99025003_99025102003001,11987.778397736307,2.1893674815677144,32.79795627991204

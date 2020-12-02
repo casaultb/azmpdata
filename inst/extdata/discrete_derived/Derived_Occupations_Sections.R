@@ -56,7 +56,7 @@ Derived_Occupations_Sections <- df_data_integrated_l %>%
                 unname(target_var))
 
 # save data to csv
-readr::write_csv(Derived_Occupations_Sections, "inst/extdata/discrete_derived/Derived_Occupations_Sections.csv")
+readr::write_csv(Derived_Occupations_Sections, "inst/extdata/csv/Derived_Occupations_Sections.csv")
 
 # save data to rda
 usethis::use_data(Derived_Occupations_Sections, overwrite = TRUE)

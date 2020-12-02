@@ -66,7 +66,7 @@ Discrete_Occupations_Sections <- dplyr::left_join(df_data_averaged_l %>%
                 sample_id, depth, standard_depth, unname(target_var))
 
 # save data to csv
-readr::write_csv(Discrete_Occupations_Sections, "inst/extdata/discrete_derived/Discrete_Occupations_Sections.csv")
+readr::write_csv(Discrete_Occupations_Sections, "inst/extdata/csv/Discrete_Occupations_Sections.csv")
 
 # save data to rda
 usethis::use_data(Discrete_Occupations_Sections, overwrite = TRUE)

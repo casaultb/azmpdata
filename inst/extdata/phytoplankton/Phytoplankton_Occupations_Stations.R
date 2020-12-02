@@ -52,7 +52,7 @@ tidyr::spread(., variable, value) %>%
                 unname(target_var))
 
 # save data to csv
-readr::write_csv(Phytoplankton_Occupations_Stations, "inst/extdata/phytoplankton/Phytoplankton_Occupations_Stations.csv")
+readr::write_csv(Phytoplankton_Occupations_Stations, "inst/extdata/csv/Phytoplankton_Occupations_Stations.csv")
 
 # save data to rda
 usethis::use_data(Phytoplankton_Occupations_Stations, overwrite = TRUE)

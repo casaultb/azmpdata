@@ -1,4 +1,4 @@
-region,year,surface_chlorophyll_log10,bloom_start,bloom_duration,bloom_amplitude,bloom_magnitude
+area,year,surface_chlorophyll_log10,bloom_start,bloom_duration,bloom_amplitude,bloom_magnitude
 CS,2002,0.3314026654329223,NA,NA,NA,NA
 CS,2003,0.29065021982339456,104.596509041908,18.8595153852238,7.72091222640255,78.7152508827091
 CS,2004,0.27747930347748834,106.761339051611,16.5233479355951,4.3269971615793,41.0378476925714

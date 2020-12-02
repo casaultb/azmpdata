@@ -55,8 +55,12 @@ RemoteSensing_Annual_Broadscale <- RemoteSensing_Annual_Broadscale %>%
   dplyr::arrange(., order, year) %>%
   dplyr::select(., region, year, unname(target_var))
 
+# fix metadata
+RemoteSensing_Annual_Broadscale <- RemoteSensing_Annual_Broadscale %>%
+  dplyr::rename(., area = region)
+
 # save data to csv
-readr::write_csv(RemoteSensing_Annual_Broadscale, "inst/extdata/remote_sensing/RemoteSensing_Annual_Broadscale.csv")
+readr::write_csv(RemoteSensing_Annual_Broadscale, "inst/extdata/csv/RemoteSensing_Annual_Broadscale.csv")
 
 # save data to rda
 usethis::use_data(RemoteSensing_Annual_Broadscale, overwrite = TRUE)
