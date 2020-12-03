@@ -95,42 +95,64 @@ variable_lookup <- function(keywords, search_help = FALSE, lib.loc = NULL){
 
   # search through help files
 
-  # # load all help files
-  # datafile <- system.file('man', package = 'azmpdata')
-  #
-  # # parse help text
-  # dd <- roxygen2::parse_file(datafile)
-  #
-  # # name each chunk based on dataframe name
-  # for(i in 1:length(dd)){
-  #   names(dd)[i] <- dd[[i]]$call
-  # }
-
+ # deprecated this method in favor of less buggy new version below
     #function from github
     # https://stackoverflow.com/questions/9192589/how-can-i-extract-text-from-rs-help-command
     # this function only works if the package is found in the actual library and not the unbuilt version from github
-  extract_help <- function(pkg, fn = NULL, to = c("txt", "html", "latex", "ex"), lib.loc = NULL)
-  {
-    to <- match.arg(to)
-    rdbfile <- file.path(find.package(pkg, lib.loc = lib.loc), "help", pkg)
-    rdb <- tools:::fetchRdDB(rdbfile, key = fn)
-    convertor <- switch(to,
-                        txt   = tools::Rd2txt,
-                        html  = tools::Rd2HTML,
-                        latex = tools::Rd2latex,
-                        ex    = tools::Rd2ex
-    )
-    f <- function(x) capture.output(convertor(x))
-    if(is.null(fn)) lapply(rdb, f) else f(rdb)
-  }
+  # extract_help <- function(pkg, fn = NULL, to = c("txt", "html", "latex", "ex"), lib.loc = NULL)
+  # {
+  #   to <- match.arg(to)
+  #   rdbfile <- file.path(find.package(pkg, lib.loc = lib.loc), "help", pkg)
+  #   rdb <- tools:::fetchRdDB(rdbfile, key = fn)
+  #   convertor <- switch(to,
+  #                       txt   = tools::Rd2txt,
+  #                       html  = tools::Rd2HTML,
+  #                       latex = tools::Rd2latex,
+  #                       ex    = tools::Rd2ex
+  #   )
+  #   f <- function(x) capture.output(convertor(x))
+  #   if(is.null(fn)) lapply(rdb, f) else f(rdb)
+  # }
+  # d <- extract_help(pkg = 'azmpdata')
 
-  d <- extract_help(pkg = 'azmpdata')
+
+  ## attempt to work around bug here function above can't find built package with help file
+
+  d <- ls.str('package:azmpdata')
+
+  help_list <- list()
+  for(i in 1:length(d)){
+    help_list[[i]] <- d[i] %>%
+      help(azmpdata)%>%
+      utils:::.getHelpFile()
+  }
+  names(help_list) <- d
+
+
+
+   # original solution from stack! (if you want to target search to specific sections of help file)
+  # lsf.str("package:azmpdata") %>%
+  #   help("azmpdata") %>%
+  #   utils:::.getHelpFile() %>%
+  #   keep(~attr(.x, "Rd_tag") == "\\format") %>%
+  #   map(as.character) %>%
+  #   flatten_chr() %>%
+  #   paste0(., collapse="")lsf.str("package:azmpdata") %>%
+  #   help("azmpdata") %>%
+  #   utils:::.getHelpFile() %>%
+  #   keep(~attr(.x, "Rd_tag") == "\\format") %>%
+  #   map(as.character) %>%
+  #   flatten_chr() %>%
+  #   paste0(., collapse="")
+
 
 
   d_ans <- list()
   for(i in 1:length(keywords)){
-  d_ans[[i]] <- grep(d, pattern = keywords[[i]], ignore.case = TRUE)
+  ind <- grep(help_list, pattern = keywords[[i]], ignore.case = TRUE)
+  d_ans[[i]] <- names(help_list)[ind]
   }
+
   names(d_ans) <- keywords
   # pad with NAs for dataframe
   ll <- lengths(d_ans)
@@ -146,7 +168,7 @@ variable_lookup <- function(keywords, search_help = FALSE, lib.loc = NULL){
 
   help_tb <- data.frame(keyword = ddf$keyword,
                         variable = NA,
-                        dataframe = names(d)[ddf$value])
+                        dataframe = ddf$value)
 
   tb_match <-
     full_join(tb_match, help_tb)
