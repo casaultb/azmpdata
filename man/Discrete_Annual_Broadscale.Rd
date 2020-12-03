@@ -21,8 +21,6 @@ Discrete_Annual_Broadscale
 Discrete data averaged over broad regions and years.
 }
 \details{
-The variables are as follows:
-
 The data can be cited as follows:
 Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
   Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO

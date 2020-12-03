@@ -22,7 +22,6 @@ Zooplankton_Seasonal_Sections
 }
 \description{
 A dataframe containing seasonal section zooplankton data.
-The variables are as follows:
 }
 \details{
 The data can be cited as follows:

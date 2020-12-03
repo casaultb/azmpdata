@@ -22,8 +22,6 @@ RemoteSensing_Weekly_Broadscale
 Remote Sensing data averaged over broad regions and weeks.
 }
 \details{
-The variables are as follows:
-
 The data can be cited as follows:
 Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions

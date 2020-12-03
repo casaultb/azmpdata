@@ -3,7 +3,7 @@
 \docType{data}
 \name{Derived_Annual_Broadscale}
 \alias{Derived_Annual_Broadscale}
-\title{Derived monthly broadscale data}
+\title{Derived annual broadscale data}
 \format{
 A dataframe
 \describe{
@@ -40,23 +40,9 @@ A dataframe
 Derived_Annual_Broadscale
 }
 \description{
-_Metadata_
-* area
-* year
-* month
+Derived data averaged over broad regions and years.
 }
 \details{
-_Data_
-* sea_surface_temperature_from_satellite
-* sea_ice_area
-
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-Derived annual broadscale data
-
-Derived data averaged over broad regions and years.
-
-The variables are as follows:
-
 The data can be cited as follows:
   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions

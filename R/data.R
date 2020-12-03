@@ -4,7 +4,7 @@
 #' Zooplankton seasonal section data
 #'
 #' A dataframe containing seasonal section zooplankton data.
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe with 152 observations of 6 variables:
 #'
@@ -37,7 +37,7 @@
 #' Zooplankton seasonal broadscale data
 #'
 #' A dataframe containing seasonal broadscale zooplankton data.
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe containing 40 observations of 6 variables:
 #' \describe{
@@ -68,7 +68,7 @@
 #' Zooplankton Occupation Broadscale data
 #'
 #' A dataframe containing seasonal broadscale zooplankton data.
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe containing 1177 obesrvations of 10 variables
 #' \describe{
@@ -104,7 +104,7 @@
 #'
 #' Metrics derived from data collected at fixed station locations during individual occupations.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe with 737 observations of 14 variables
 #' \describe{
@@ -157,7 +157,7 @@
 #'
 #' Zooplankton data collected at fixed stations during individual occupations.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
@@ -225,7 +225,7 @@
 #'
 #' Phytoplankton data collected at fixed stations during individual occupations.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
@@ -262,7 +262,7 @@
 #'
 #' Discrete data collected at fixed stations during individual occupations.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
@@ -308,31 +308,31 @@
 "Discrete_Occupations_Stations"
 
 
-#' Derived Occupation Monthly data
-#'
-#' Derived data from fixed stations by month.
-#'
-#' The variables are as follows:
-#'
-#' @format A dataframe
-#'
-#' * station_name
-#' * latitude
-#' * longitude
-#' * year
-#' * month
-#'
-#' _Data_
-#' * sea_surface_height
-#'
-# "Derived_Monthly_Stations"
+# Derived Occupation Monthly data
+#
+# Derived data from fixed stations by month.
+#
+#
+#
+# @format A dataframe
+#
+# * station_name
+# * latitude
+# * longitude
+# * year
+# * month
+#
+# _Data_
+# * sea_surface_height
+#
+# # "Derived_Monthly_Stations
 
 
 #' Derived Annual station data
 #'
 #' Derived data collected at fixed stations by year.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
@@ -378,7 +378,7 @@
 #'
 #' Zooplankton data collected at fixed stations by year.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
@@ -440,7 +440,7 @@
 #'
 #' Phytoplankton data collected at fixed stations by year.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
@@ -471,7 +471,7 @@
 #'
 #' Derived data collected along AZMP transects during individual occupations.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
@@ -515,7 +515,7 @@
 #'
 #' Zooplankton data collected along AZMP transects during individual occupations.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
@@ -587,7 +587,7 @@
 #'
 #' Discrete data collected along AZMP transects during individual occupations.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
@@ -639,7 +639,7 @@
 #'
 #' Derived data collected along AZMP transects each year.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
@@ -682,7 +682,7 @@
 #'
 #' Zooplankton data collected along AZMP transects each year.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
@@ -732,18 +732,18 @@
  "Zooplankton_Annual_Sections"
 
 
-#' Derived monthly broadscale data
-#'
-#' _Metadata_
-#' * area
-#' * year
-#' * month
-#'
-#' _Data_
-#' * sea_surface_temperature_from_satellite
-#' * sea_ice_area
-#'
-#' Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
+# Derived monthly broadscale data
+#
+# _Metadata_
+# * area
+# * year
+# * month
+#
+# _Data_
+# * sea_surface_temperature_from_satellite
+# * sea_ice_area
+#
+# Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
 # "Derived_Monthly_Broadscale"
 
 
@@ -751,7 +751,7 @@
 #'
 #' Derived data averaged over broad regions and years.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
@@ -809,7 +809,7 @@
 #'
 #' Remote Sensing data averaged over broad regions and weeks.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
@@ -844,7 +844,7 @@
 #'
 #' Discrete data averaged over broad regions and years.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
@@ -874,7 +874,7 @@
 #'
 #' Remote Sensing data averaged over broad regions and years.
 #'
-#' The variables are as follows:
+#'
 #'
 #' @format A dataframe
 #' \describe{
