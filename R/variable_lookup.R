@@ -16,7 +16,7 @@
 #' @import dplyr
 #' @import tibble
 #' @import stringr
-#' @importFrom utils capture.output
+#' @importFrom utils capture.output help ls.str
 #'
 #'
 #' @export
@@ -118,13 +118,34 @@ variable_lookup <- function(keywords, search_help = FALSE, lib.loc = NULL){
 
   ## attempt to work around bug here function above can't find built package with help file
 
-  d <- ls.str('package:azmpdata')
+    # use function from utils which is not exported
+    # https://rdrr.io/cran/shinyAce/src/R/utils.R
+    .utils <- asNamespace("utils")
+    get_help_file <- function(...) {
+      dots <- list(...)
+      if (is.character(dots$package) && nchar(dots$package) == 0)
+        dots$package <- NULL
+
+      tryCatch({
+        h <- do.call(help, dots)
+        if (length(h) > 1) h <- do.call(structure, c(h[1], attributes(h)))
+        if (!length(h)) NULL
+        else .utils$.getHelpFile(h)
+      }, error = function(e) {
+        #shinyAce_debug("Error while trying to retrieve help files: \n", e$message)
+        NULL
+      })
+    }
+
+
+  d <- ls.str('package:azmpdata') # sometimes this pulls other libraries? TODO fix this bug
 
   help_list <- list()
   for(i in 1:length(d)){
-    help_list[[i]] <- d[i] %>%
-      help(azmpdata)%>%
-      utils:::.getHelpFile()
+    # help_list[[i]] <- d[i] %>%
+      # help(azmpdata)%>%
+      #utils:::.getHelpFile()
+      help_list[[i]] <- get_help_file(d[i]) # this solution avoids build check error but slows down SIGNIFICANTLY
   }
   names(help_list) <- d
 
