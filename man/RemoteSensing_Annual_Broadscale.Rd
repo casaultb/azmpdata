@@ -27,6 +27,10 @@ Remote Sensing data averaged over broad regions and years.
 The variables are as follows:
 
 The data can be cited as follows:
+Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+  Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+  on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+  Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
 }
 \note{
 \describe{
