@@ -1,7 +1,9 @@
 azmpdata R package
 ================
 Benoit Casault, Emily Chisholm
+
 04 December, 2020
+
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -9,6 +11,8 @@ Benoit Casault, Emily Chisholm
 
 <!-- badges: start -->
 
+[![Travis build
+status](https://travis-ci.org/casaultb/azmpdata.svg?branch=master)](https://travis-ci.org/casaultb/azmpdata)
 <!-- badges: end -->
 
 The R package *azmpdata* provides a series of data products derived from
@@ -71,8 +75,10 @@ head(Derived_Annual_Broadscale)
 To access a dataset in csv format:
 
 ``` r
-system.file("extdata/csv", "Derived_Annual_Broadscale.csv", package = "azmpdata")
-#> [1] "C:/Users/ChisholmE/Documents/R/R-4.0.2/library/azmpdata/extdata/csv/Derived_Annual_Broadscale.csv"
+
+system.file("extdata", "Derived_Annual_Broadscale.csv", package = "azmpdata")
+#> [1] "C:/Users/Benoi/Documents/R/win-library/3.6/azmpdata/extdata/Derived_Annual_Broadscale.csv"
+
 ```
 
 ### Variable Organization
