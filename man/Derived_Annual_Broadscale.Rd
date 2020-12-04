@@ -3,55 +3,61 @@
 \docType{data}
 \name{Derived_Annual_Broadscale}
 \alias{Derived_Annual_Broadscale}
-\title{Derived monthly broadscale data}
+\title{Derived annual broadscale data}
 \format{
-An object of class \code{data.frame} with 856 rows and 6 columns.
+A dataframe
+\describe{
+    \item{area}{Area name where data was collected}
+    \item{year}{The year in which data was collected}
+
+    \item{sea_temperature_at_sea_floor_july}{Temperature at sea floor during the month of July, averaged over NAFO areas 4X, 4W and 4V.}
+    \item{sea_surface_temperature}{Temperature at sea surface averaged over NAFO regions 4V, 4X and 4W as well as regional areas (Bay of Fundy + Gulf of Maine)}
+    \item{north_atlantic_oscillation}{North Atlantic Oscillation Index (NAO), calculated using sea level pressure difference between subtropical high and subpolar low}
+    \item{atlantic_multidecadal_oscillation}{Atlantic Multidecadal Oscillation Index (AMO), based on anomalies of sea surface temperatures in North Atlantic basin. }
+    \item{river_flux}{A measure of the flux exiting from the St. Lawrence river into the Gulf of St. Lawrence. }
+    \item{cold_intermediate_layer_volume}{A measure of the volume of the cold intermediate layer throughout the Gulf of St. Lawrence}
+    \item{sea_ice_volume}{Average ice volume for January - March in the Gulf of St. Lawrence, can be reasonably used as a proxy to represent sea ice volume on the Scotian Shelf. }
+    \item{density_gradient_0_50}{An index of stratification, measured as the density difference between 0 and 50 metres}
+    \item{temperature_at_sea_floor}{Averaged water temperatures at sea floor, over NAFO areas 4X, 4V and 4W}
+    \item{minimum_temperature_in_cold_intermediate_layer}{Minimum temperature in the cold intermediate layer within the Gulf of St. Lawrence }
+    \item{salinity}{Discrete salinity measurements over a range of depths}
+    \item{sea_temperature}{Discrete sea temperature measurements over a range of depths}
+    \item{sea_surface_temperature_from_satellite}{Averages of sea surface temperatures infered from remote sensing (satellite) measurements}
+    \item{sea_surface_temperature_warming}{Derived metric calculating the warming of sea surface temperature averages over the Scotian Shelf}
+    \item{final_day_of_sea_ice}{The final day of sea ice observed in the Gulf of St. Lawrence. Note that this metric can be used as a reasonable proxy for the Scotian Shelf}
+    \item{sea_ice_area}{Average  of sea ice area, seaward of Cabot Strait}
+    \item{start_of_phytoplankton_bloom}{The timing (start) of the phytoplankton bloom on the Scotian Shelf}
+    \item{duration_of_phytoplankton_bloom}{The duration of the Scotian Shelf phytoplankton bloom}
+    \item{amplitude_of_phytoplankton_bloom}{An average measure of the amplitude of the phytoplankton bloom on the Scotian Shelf}
+    \item{magnitude_of_phytoplankton_bloom}{An average measure of the magnitude of the phytoplankton bloom on the Scotian Shelf}
+    \item{nitrate_at_sea_floor}{Nitrate concentrations at the bottom of the water column}
+    \item{primary_production_from_satellite}{Average primary production as inferred from satellite (remote sensing) measurements}
+    \item{oxygen_at_sea_floor}{Oxygen concentrations at the bottom of the water column}
+    \item{surface_chlorphyll}{Average surface chlorophyll as inferred from satellite (remote sensing) measurements}
+}
 }
 \usage{
 Derived_Annual_Broadscale
 }
 \description{
-_Metadata_
-* area
-* year
-* month
+Derived data averaged over broad regions and years.
 }
 \details{
-_Data_
-* sea_surface_temperature_from_satellite
-* sea_ice_area
+The data can be cited as follows:
+  Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
+  Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
+  on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
+  Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
 
-Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-Derived annual broadscale data
-
-_Metadata_
-* area
-* year
-
-_Data_
-* sea_temperature_at_sea_floor_july
-* sea_surface_temperature
-* north_atlantic_oscillation
-* atlantic_multidecadal_oscillation
-* river_flux
-* cold_intermediate_layer_volume
-* sea_ice_volume
-* density_gradient_0_50
-* temperature_at_sea_floor
-* minimum_temperature_in_cold_intermediate_layer
-* salinity
-* temperature
-* sea_surface_temperature_from_satellite
-* sea_surface_temperature_warming
-* final_day_of_sea_ice
-* sea_ice_area
-* start_of_phytoplankton_bloom
-* duration_of_phytoplankton_bloom
-* amplitude_of_phytoplankton_bloom
-* magnitude_of_phytoplankton_bloom
-* nitrate_at_sea_Floor
-* primary_production_from_satellite
-* oxygen_at_sea_floor
-* surface_chlorphyll_from_satellite
+  Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
+  Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
+  Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
+}
+\note{
+\describe{
+   \item{time_scale}{Annual}
+   \item{regional_scale}{Broadscale}
+   \item{category}{ biological, biochemical, physical }
+   }
 }
 \keyword{datasets}

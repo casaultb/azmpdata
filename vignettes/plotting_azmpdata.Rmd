@@ -1,0 +1,105 @@
+---
+title: "Plotting in azmpdata"
+author: "E. Chisholm"
+date: "12/4/2020"
+output: html_document
+vignette: >
+  %\VignetteIndexEntry{Plotting in azmpdata}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+library(azmpdata)
+```
+## Introduction
+The purpose of this vignette is to demonstrate how to plot data which is pulled from the `azmpdata` package. We show brief examples of various plotting methods including base plot, ggplot2 and oce plotting methods. 
+
+## The Data
+We will use sample data from the azmpdata package for each example. Data can be called using
+
+```{r}
+df <- get('Derived_Annual_Stations')
+head(df)
+```
+
+## Base plot
+Using base R to create plots can often be the simplest way for a novice to explore a dataset. 
+
+If we wanted to create a simple plot of a variable over time, it might look like this
+
+```{r}
+plot(df$year, df$temperature_in_air, xlab = 'Year', ylab = 'temperature_in_air')
+```
+
+Obviously there are many more advanced plots that can be made using base plot but we leave these up to the individual users to explore. 
+
+
+## ggplot2
+
+Using ggplot2 can give great simple exploratory plots, using a different 'grammar'. 
+
+If a user wanted to compare different variables over time, ggplot2 has functions which make this very simple.
+
+```{r}
+library(ggplot2)
+
+p <- ggplot(data = df) +
+  geom_line(aes(x = year, y = temperature_in_air, colour = 'air_temperature'), show.legend = TRUE) +
+  geom_point(aes(x = year, y = sea_surface_temperature_from_moorings, colour = 'sea_surface_temperature_from_moorings'), show.legend = TRUE)+
+  labs(y = 'degrees C' ) +
+  scale_color_manual(name = "variables",
+                     breaks = c('air_temperature', 'sea_surface_temperature_from_moorings'),
+                     values = c('air_temperature' = 'red', 'sea_surface_temperature_from_moorings' = 'blue'))
+  
+
+print(p)
+```
+
+## oce
+
+`oce` is an oceanographic data processing and visualization package. It often has some helpful default plots for ocenaogrpahic data as well as relevant spatial data.
+
+```{r}
+library(oce)
+
+```
+
+
+## gslea
+
+`gslea` was a package developed to support ecosystem approach research in the gulf region. It contains a plotting function `EA.plot.f()` which can be replicated using `azmpdata`.
+
+Note these plots may appear very small in the notebook format. 
+
+```{r}
+dat <- get('Derived_Annual_Stations')
+
+  actual.EARs= unique(dat$station) # get regions to plot 
+  #variables not metadata
+  dat.only <- dat[,3:11] # isolate data variables to plot (not metadata)
+  no.plots= length(dat.only)*length(actual.EARs) # claculate number of plots ot be displayed
+  # set par info based on number of plots (max 25 per page)
+  if(no.plots>25) {par(mfcol=c(5, 5),mar=c(1.3,2,3.2,1),omi=c(.1,.1,.1,.1), ask=T)}
+  if(no.plots<=25){ par(mfcol=c(length(dat.only), length(actual.EARs)),mar=c(1.3,2,3.2,1),omi=c(.1,.1,.1,.1))}
+  
+  counter=1
+  for(i in actual.EARs){ # loop through regions
+    ear.dat= dat[dat$station == i,]
+    for(ii in 1:length(dat.only)){ # loop by variables
+      var.dat= data.frame('value' = ear.dat[[names(dat.only)[[ii]]]], 'station' = ear.dat$station, 'year' = ear.dat$year) # get only one variable for one region
+      if(!is.na(diff(range(var.dat$value)))){ # if all values are NA skip over plotting
+        # plot
+      if(nrow(var.dat)<1) plot(0, xlab="", ylab="", xaxt="n",yaxt="n",main=paste("Station",i,names(dat.only)[[ii]]))
+      if(nrow(var.dat)>0) plot(var.dat$year, var.dat$value, xlab="", ylab="", main=paste("Station",i,names(dat.only)[[ii]]))
+      }
+    }
+    counter= counter+1
+  }
+  # set par info
+  par(mfcol=c(1,1),omi=c(0,0,0,0),mar= c(5.1, 4.1, 4.1, 2.1), ask=F)
+```
+
+
+
+

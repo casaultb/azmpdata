@@ -21,8 +21,6 @@ Phytoplankton_Annual_Stations
 Phytoplankton data collected at fixed stations by year.
 }
 \details{
-The variables are as follows:
-
 The data can be cited as follows:
   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
