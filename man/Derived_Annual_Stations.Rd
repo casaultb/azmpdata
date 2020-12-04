@@ -3,25 +3,8 @@
 \docType{data}
 \name{Derived_Annual_Stations}
 \alias{Derived_Annual_Stations}
-\title{Derived Occupation Monthly data}
+\title{Derived Annual station data}
 \format{
-A dataframe
-
-* station_name
-* latitude
-* longitude
-* year
-* month
-
-_Data_
-* sea_surface_height
-
-Derived Annual station data
-
-Derived data collected at fixed stations by year.
-
-The variables are as follows:
-
 A dataframe
 \describe{
     \item{station}{The name of the station where data was collected}
@@ -48,11 +31,9 @@ A dataframe
 Derived_Annual_Stations
 }
 \description{
-Derived data from fixed stations by month.
+Derived data collected at fixed stations by year.
 }
 \details{
-The variables are as follows:
-
 The data can be cited as follows:
   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions

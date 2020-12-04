@@ -27,8 +27,6 @@ Phytoplankton_Occupations_Stations
 Phytoplankton data collected at fixed stations during individual occupations.
 }
 \details{
-The variables are as follows:
-
 The data can be cited as follows:
   Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
   Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions

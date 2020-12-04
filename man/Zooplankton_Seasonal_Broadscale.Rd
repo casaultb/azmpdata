@@ -29,7 +29,6 @@ Zooplankton_Seasonal_Broadscale
 }
 \description{
 A dataframe containing seasonal broadscale zooplankton data.
-The variables are as follows:
 }
 \details{
 The data can be cited as follows:
