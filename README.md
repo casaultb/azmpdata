@@ -1,7 +1,7 @@
 azmpdata R package
 ================
 Benoit Casault, Emily Chisholm
-26 October, 2020
+04 December, 2020
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -49,10 +49,10 @@ library(azmpdata)
 #> 
 #>  casaultb/azmpdata status:
 #>  (Package ver: 0.2019.0.9000) Up to date
-#>  (Data ver:2020-10-23) is up to date
+#>  (Data ver:2020-11-26) is up to date
 data("Derived_Annual_Broadscale")
 head(Derived_Annual_Broadscale)
-#>   year     area_name density_gradient_0_50 temperature_at_sea_floor
+#>   year          area density_gradient_0_50 temperature_at_sea_floor
 #> 1 1948 Scotion Shelf              -0.00139                       NA
 #> 2 1949 Scotion Shelf              -0.00968                       NA
 #> 3 1950 Scotion Shelf              -0.01883                       NA
@@ -71,8 +71,8 @@ head(Derived_Annual_Broadscale)
 To access a dataset in csv format:
 
 ``` r
-system.file("extdata", "Derived_Annual_Broadscale.csv", package = "azmpdata")
-#> [1] "C:/Users/ChisholmE/Documents/R/R-4.0.2/library/azmpdata/extdata/Derived_Annual_Broadscale.csv"
+system.file("extdata/csv", "Derived_Annual_Broadscale.csv", package = "azmpdata")
+#> [1] "C:/Users/ChisholmE/Documents/R/R-4.0.2/library/azmpdata/extdata/csv/Derived_Annual_Broadscale.csv"
 ```
 
 ### Variable Organization
@@ -81,10 +81,11 @@ Each table contains multiple variables, which fall under the temporal
 and regional scale in a particular category. The example shown above
 includes derived variables at an annual scale for broad regions (eg.
 Scotian Shelf or Gulf of Maine). Variables can be found via the search
-function `lookup_variable()`, which allows a user to search by variable
+function `variable_lookup()`, which allows a user to search by variable
 name, keyword, scale or category. For more information see
-`?lookup_variable`. This function uses the information in the lookup
-table `extdata/lookup/variable_look_up.csv`
+`?variable_lookup`. This function searches through variable names and
+(optionally) help files from each dataset including metadata and
+variable definitions.
 
 ## Package Functionality
 
@@ -112,7 +113,7 @@ help("Derived_Annual_Broadscale")
 
 #### Plotting
 
-–NEEDS TO BE UPDATED– The function *plot\_azmpdata* is a wrapper that
+–NEEDS TO BE UPDATED- The function *plot\_azmpdata* is a wrapper that
 allows to plot a given variable in a dataset. Plot format differs
 according to the type of dataset (e.g. timeseries or annual means). For
 example, the following command displays a plot of the *chl\_0\_100*

@@ -42,12 +42,12 @@ head(Derived_Annual_Broadscale)
 
 To access a dataset in csv format:
 ```{r csv, echo=T, eval=T}
-system.file("extdata", "Derived_Annual_Broadscale.csv", package = "azmpdata")
+system.file("extdata/csv", "Derived_Annual_Broadscale.csv", package = "azmpdata")
 ```
 
 ### Variable Organization
 
-Each table contains multiple variables, which fall under the temporal and regional scale in a particular category. The example shown above includes derived variables at an annual scale for broad regions (eg. Scotian Shelf or Gulf of Maine). Variables can be found via the search function `lookup_variable()`, which allows a user to search by variable name, keyword, scale or category. For more information see `?lookup_variable`. This function uses the information in the lookup table `extdata/lookup/variable_look_up.csv`
+Each table contains multiple variables, which fall under the temporal and regional scale in a particular category. The example shown above includes derived variables at an annual scale for broad regions (eg. Scotian Shelf or Gulf of Maine). Variables can be found via the search function `variable_lookup()`, which allows a user to search by variable name, keyword, scale or category. For more information see `?variable_lookup`. This function searches through variable names and (optionally) help files from each dataset including metadata and variable definitions. 
 
 
 
