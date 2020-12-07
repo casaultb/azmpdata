@@ -3,22 +3,17 @@
 library(dplyr)
 library(tidyr)
 library(readr)
-library(tibble)
 library(usethis)
-
-# load dropbox lookup table
-db_lookup <- readr::read_csv(file="inst/extdata/dropbox_lookup.csv", comment="#")
-db_lookup <- tibble::deframe(db_lookup)
 
 # load data
 # abundance data
 abundance_env <- new.env()
-con <- url(unname(db_lookup["PL_MAR_AZMP_Abundance.RData"]))
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_MAR_AZMP_Abundance.RData")
 load(con, envir=abundance_env)
 close(con)
 # biomass data
 biomass_env <- new.env()
-con <- url(unname(db_lookup["PL_MAR_AZMP_Biomass.RData"]))
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_MAR_AZMP_Biomass.RData")
 load(con, envir=biomass_env)
 close(con)
 
@@ -57,8 +52,6 @@ Zooplankton_Annual_Sections <- Zooplankton_Annual_Sections %>%
   tidyr::spread(., variable, value) %>%
   dplyr::arrange(., order, year) %>%
   dplyr::select(., section, year, unname(target_var))
-
-
 
 # save data to csv
 readr::write_csv(Zooplankton_Annual_Sections, "inst/extdata/csv/Zooplankton_Annual_Sections.csv")
