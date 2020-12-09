@@ -1,9 +1,7 @@
 azmpdata R package
 ================
 Benoit Casault, Emily Chisholm
-
-04 December, 2020
-
+09 December, 2020
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -75,10 +73,8 @@ head(Derived_Annual_Broadscale)
 To access a dataset in csv format:
 
 ``` r
-
-system.file("extdata", "Derived_Annual_Broadscale.csv", package = "azmpdata")
-#> [1] "C:/Users/Benoi/Documents/R/win-library/3.6/azmpdata/extdata/Derived_Annual_Broadscale.csv"
-
+system.file("extdata/csv", "Derived_Annual_Broadscale.csv", package = "azmpdata")
+#> [1] "C:/Users/ChisholmE/Documents/R/R-4.0.2/library/azmpdata/extdata/csv/Derived_Annual_Broadscale.csv"
 ```
 
 ### Variable Organization
@@ -88,10 +84,9 @@ and regional scale in a particular category. The example shown above
 includes derived variables at an annual scale for broad regions (eg.
 Scotian Shelf or Gulf of Maine). Variables can be found via the search
 function `variable_lookup()`, which allows a user to search by variable
-name, keyword, scale or category. For more information see
-`?variable_lookup`. This function searches through variable names and
-(optionally) help files from each dataset including metadata and
-variable definitions.
+name or keyword. For more information see `?variable_lookup`. This
+function searches through variable names and (optionally) help files
+from each dataset including metadata and variable definitions.
 
 ## Package Functionality
 
@@ -116,11 +111,3 @@ returns a detailed description about a given dataset:
 library(azmpdata)
 help("Derived_Annual_Broadscale")
 ```
-
-#### Plotting
-
-–NEEDS TO BE UPDATED- The function *plot\_azmpdata* is a wrapper that
-allows to plot a given variable in a dataset. Plot format differs
-according to the type of dataset (e.g. timeseries or annual means). For
-example, the following command displays a plot of the *chl\_0\_100*
-variable from the *chlorophyll\_inventory\_annual\_means\_hl2* dataset:

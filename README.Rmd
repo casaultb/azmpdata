@@ -48,7 +48,7 @@ system.file("extdata/csv", "Derived_Annual_Broadscale.csv", package = "azmpdata"
 
 ### Variable Organization
 
-Each table contains multiple variables, which fall under the temporal and regional scale in a particular category. The example shown above includes derived variables at an annual scale for broad regions (eg. Scotian Shelf or Gulf of Maine). Variables can be found via the search function `variable_lookup()`, which allows a user to search by variable name, keyword, scale or category. For more information see `?variable_lookup`. This function searches through variable names and (optionally) help files from each dataset including metadata and variable definitions. 
+Each table contains multiple variables, which fall under the temporal and regional scale in a particular category. The example shown above includes derived variables at an annual scale for broad regions (eg. Scotian Shelf or Gulf of Maine). Variables can be found via the search function `variable_lookup()`, which allows a user to search by variable name or keyword. For more information see `?variable_lookup`. This function searches through variable names and (optionally) help files from each dataset including metadata and variable definitions. 
 
 
 
@@ -72,8 +72,4 @@ library(azmpdata)
 help("Derived_Annual_Broadscale")
 ```
 
-
-#### Plotting
---NEEDS TO BE UPDATED-
-The function *plot_azmpdata* is a wrapper that allows to plot a given variable in a dataset.  Plot format differs according to the type of dataset (e.g. timeseries or annual means).  For example, the following command displays a plot of the *chl_0_100* variable from the *chlorophyll_inventory_annual_means_hl2* dataset:
 

@@ -12,11 +12,11 @@ library(azmpdata)
 ```
 ## Introduction
 
-This vignette will describe how to search the data contained in the `azmpdata` package. We will demonstrate using the built in search function as well as other convenient ways to find data within the package using R studio built in functionality.
+This vignette will describe how to search the data contained in the `azmpdata` package. We will demonstrate using the built in search function, as well as other convenient ways to find data within the package, using R studio's built in functionality.
 
 
 ### Listing all dataframes
-Listing all the avaialbel dataframes in package can be a quick way to see an high level overview of the datasets. The output from the following code will display all the dataframe names as well as brief high level descriptions. This data will appear in a new window.
+Listing all the available dataframes in a package can be a quick way to see a high level overview of the datasets. The output from the following code will display all the dataframe names as well as brief, high-level descriptions. This data will appear in a new window.
 
 ```{r}
 
@@ -27,7 +27,7 @@ data(package = 'azmpdata')
 
 ### Calling for help
 
-You can browse through the help documentation for all datasets and functions in the package by calling the code below. This information will come up in the R studio help window. 
+You can browse through the help documentation for all datasets, and functions in the package by calling the code below. This information will come up in the R studio help window. 
 
 ```{r}
 
@@ -35,12 +35,12 @@ help(package = 'azmpdata')
 
 ```
 
-Clicking on a specific dataframe name or function will bring you to a detailed help page. For dataframes this help page will include variable names and definitions (including data and metadata), as well as information about the source of the data and how to properly cite the data.
+Clicking on a specific dataframe name or function in the help window will bring you to a detailed help page. For dataframes, this help page will include variable names and definitions, as well as information about the source of the data and the proper citation.
 
 
 ### Searching help files
 
-R studio provides some built in functionality to be able to search through the help files for a given package. The function `help.search()` can be used to search through titles and descriptions of help files in a package. 
+R studio provides some built in capability to be able to search through the help files for a given package. The function `help.search()` can be used to search through titles and descriptions of help files in a package. 
 
 ```{r}
 
@@ -48,14 +48,14 @@ help.search(pattern = 'section', package = 'azmpdata')
 
 ```
 
-This code will bring up all the help files (in the R studio help window), which match the `pattern` provided. Note that this does not search through the entire text of the help file, for more details see `lookup_variable()` in the next section.
+This code will bring up all the help files (in the R studio help window), which match the `pattern` provided. Note, that this does not search through the __entire text__ of the help file, for more details see `lookup_variable()` in the next section.
 
 
 ### Custom azmpdata search
 
-We have created a custom search function in azmpdata which allows a user to search the package in two ways. One, search for keywords in the names of all variables included in all datasets of the package. Two, Search for keywords in the entirity of the package help text (including the `details` sections, which often contains variable definitions and is not searched through when using `help.search()`).
+We have created a custom search function in azmpdata which allows a user to search the package in two ways. One, search for keywords in the names of all variables, included in all datasets of the package. Two, Search for keywords in the entirity of the package help text (including the `details` sections, which often contains variable definitions and is not searched through when using `help.search()`).
 
-The output of this function will be a table with three columns, `keyword` which will be the search keyword which you provided (this is useful if providing multiple keywords), `variable` which will return the name of the variable which matched your keyword search, and `dataframe` which will be the name of the dataframe in which your matched variable is contained, or if searching through the help text, the name of the dataframe where your keyword was found in the help text. 
+The output of this function will be a table with three columns, `keyword` which will be the search keyword which you provided which has been matched (this is useful if providing multiple keywords), `variable`, the name of the variable which matched your keyword search, and `dataframe` which will be the name of the dataframe in which your matched variable is contained, or if searching through the help text, the name of the dataframe where your keyword was found in the help text. 
 
 This function can be provided with a single keyword,
 ```{r}
@@ -74,11 +74,12 @@ In order to search through the help text, use the option `search_help`
 variable_lookup('nitrate', search_help = TRUE)
 ```
 
-Note that if the search returns a match to your keyword in the text of a help file, the output will not return a specific variable name in the `variable` column (NA), but will give you only the dataframe name in the `dataframe` column. 
+Note, that if the search returns a match to your keyword in the text of a help file, the output will not return a specific variable name in the `variable` column (instead it will return NA), and will give you only the dataframe name in the `dataframe` column. 
+
 
 ### Calling the data
 
-Once you have your search results, you may want to call the dataframe which matched your search terms. This is very straightforward if using our custom search function `variable_lookup()`
+Once you have your search results, you may want to call the dataframe which matched your search terms. This is very straight-forward if using our custom search function `variable_lookup()`
 
 ```{r}
 ans <- variable_lookup(keywords = 'wet weight', search_help = TRUE)
