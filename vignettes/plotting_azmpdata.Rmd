@@ -56,6 +56,142 @@ p <- ggplot(data = df) +
 print(p)
 ```
 
+The next two examples contain generic code that could be modified to plot any dataframe (of the same time scale).
+
+
+Another common plotting task would be to plot the annual means of a given dataframe. This method is fairly generic and could be used for any annual dataset.
+
+```{r}
+
+ df_data <- get('Derived_Annual_Broadscale') # get data
+ variable <- 'temperature_at_sea_floor' # select variable to plot
+
+  # check for metadata and seperate
+  metanames <- c('year', 'month', 'day', 'area', 'section', 'station' )
+  meta_df <- names(df_data)[names(df_data) %in% metanames]
+
+  group <- meta_df[meta_df != 'year']
+
+  df_data <- df_data %>%
+    dplyr::select(., all_of(meta_df), all_of(variable) ) %>%
+    dplyr::rename(., 'value' = all_of(variable) ) %>%
+    dplyr::rename(., 'group' = all_of(group))
+
+  # set x-axis
+  x_limits <- c(min(df_data$year)-1, max(df_data$year)+1)
+  x_breaks <- seq(x_limits[1], x_limits[2], by=1)
+  x_labels <- x_breaks
+
+  # set y-axis
+  y_limits <- c(min(df_data$value, na.rm=T) - 0.1*mean(df_data$value, na.rm=T),
+                max(df_data$value, na.rm=T) + 0.1*mean(df_data$value, na.rm=T))
+
+  # plot data
+  p <-  ggplot2::ggplot() +
+    # plot data - line
+    ggplot2::geom_line(data=df_data,
+                       mapping=ggplot2::aes(x=year, y=value, col = group),
+                        size=.5) +
+    # plot data - dots
+    ggplot2::geom_point(data=df_data,
+                       mapping=ggplot2::aes(x=year, y=value, col = group),
+                        size=1) +
+    # set coordinates system and axes
+    ggplot2::coord_cartesian() +
+    ggplot2::scale_x_continuous(name="Year", limits=x_limits, breaks=x_breaks, labels=x_labels, expand=c(0,0)) +
+    ggplot2::scale_y_continuous(name="", limits=y_limits, expand=c(0,0))
+
+  # customize theme
+  p <- p +
+    ggplot2::theme_bw() +
+    ggplot2::ggtitle(paste(group, variable, sep=" : " )) +
+    ggplot2::theme(
+      text=ggplot2::element_text(size=8),
+      axis.text.x=ggplot2::element_text(colour="black", angle=90, hjust=0.5, vjust=0.5),
+      plot.title=ggplot2::element_text(colour="black", hjust=0, vjust=0, size=8),
+      panel.grid.major=ggplot2::element_blank(),
+      panel.border=ggplot2::element_rect(size=0.25, colour="black"),
+      plot.margin=grid::unit(c(0.1,0.1,0.1,0.1), "cm"))
+
+print(p)
+```
+
+
+A user may also want to plot a timeseries. This method is also fairly generic and could be modified to plot any Occupations dataset.
+
+```{r}
+  df_data <- get('Discrete_Occupations_Stations') # get data
+  variable <- 'chlorophyll' # choose variable to plot
+  
+
+  # check for metadata
+  metanames <- c('year', 'month', 'day', 'area', 'section', 'station' )
+  meta_df <- names(df_data)[names(df_data) %in% metanames]
+
+  group <- meta_df[!meta_df %in% c('year', 'month', 'day')]
+
+  df_data <- df_data %>%
+    dplyr::select(., all_of(meta_df), all_of(variable) ) %>%
+    dplyr::rename(., 'value' = all_of(variable) ) %>%
+    dplyr::rename(., 'group' = all_of(group)) #TODO some dataframes do not have groups!?
+
+
+  # prepare data
+  df_data <- df_data %>%
+    tidyr::unite(date, year, month, day, sep="-", remove=F) %>%
+    dplyr::mutate(year_dec=lubridate::decimal_date(lubridate::ymd(date))) %>%
+    dplyr::select(year, year_dec, value, group)
+
+  # set x-axis
+  x_limits <- c(min(df_data$year), max(df_data$year)+1)
+  x_breaks <- seq(x_limits[1]+.5, x_limits[2]-.5, by=1)
+  x_labels <- x_breaks-.5
+
+  # set y-axis
+  y_limits <- c(min(df_data$value, na.rm=T) - 0.1*mean(df_data$value, na.rm=T),
+                max(df_data$value, na.rm=T) + 0.1*mean(df_data$value, na.rm=T))
+
+  ## set shaded rectangles breaks
+  df_rectangles <- tibble::tibble(xmin=seq(x_limits[1], x_limits[2], by=2),
+                                  xmax=seq(x_limits[1], x_limits[2], by=2)+1,
+                                  ymin=y_limits[1], ymax=y_limits[2])
+
+  # plot data
+ 
+  p <-  ggplot2::ggplot() +
+    # plot shaded rectangles
+    ggplot2::geom_rect(data=df_rectangles,
+                       mapping=ggplot2::aes(xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax),
+                       fill="gray90", alpha=0.8) +
+    # plot data - line
+    ggplot2::geom_line(data=df_data,
+                       mapping=ggplot2::aes(x=year_dec, y=value, col = group),
+                        size=.5) +
+    # plot data - dots
+    ggplot2::geom_point(data=df_data,
+                        mapping=ggplot2::aes(x=year_dec, y=value, col = group),
+                        size=1) +
+    # set coordinates system and axes
+    ggplot2::coord_cartesian() +
+    ggplot2::scale_x_continuous(name="Year", limits=x_limits, breaks=x_breaks, labels=x_labels, expand=c(0,0)) +
+    ggplot2::scale_y_continuous(name="", limits=y_limits, expand=c(0,0))
+
+  # customize theme
+  p <- p +
+    ggplot2::theme_bw() +
+    ggplot2::ggtitle(paste(group, variable,  sep=" : " )) +
+    ggplot2::theme(
+      text=ggplot2::element_text(size=8),
+      axis.text.x=ggplot2::element_text(colour="black", angle=90, hjust=0.5, vjust=0.5),
+      plot.title=ggplot2::element_text(colour="black", hjust=0, vjust=0, size=8),
+      panel.grid.major=ggplot2::element_blank(),
+      panel.border=ggplot2::element_rect(size=0.25, colour="black"),
+      plot.margin=grid::unit(c(0.1,0.1,0.1,0.1), "cm"))
+
+print(p)
+```
+
+
 
 ## gslea
 
