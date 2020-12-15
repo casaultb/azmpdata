@@ -30,6 +30,8 @@ For physical data: Raw data files (in either .dat or .csv) can be added to `inst
 
 For biological data: Raw data files are uploaded to the FTP server at 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs'. The formatting of these data files is important and should be maintained between years.
 
+For more details on the formatting of data, please see the `style_guide` vignette. 
+
 ### Step 2
 __Pre- process raw data into R format__
 
@@ -39,7 +41,7 @@ Once raw physical data has been added to the appropriate folder the user should 
 source('inst/extdata/airTemperature/airTemperature.R')
 ```
 
-Biological data is loaded into the package using individual scripts for each dataframe. These scripts are contained in `inst/extdata` and organized by folder depending on the data type. These scripts output packae data objects but note that after running these scripts the package data will only contain biological data and must be completed with the physical data by completeing the next steps. 
+Biological data is loaded into the package using individual scripts for each dataframe. These scripts are contained in `inst/extdata` and organized by folder depending on the data type. These scripts output package data objects but __note that after running these scripts the package data will only contain biological data and must be completed with the physical data by completeing the next steps__. 
 
 ### Step 3
 __Combine rda files into final package form__

@@ -1,7 +1,7 @@
 azmpdata R package
 ================
 Benoit Casault, Emily Chisholm
-09 December, 2020
+15 December, 2020
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -94,6 +94,31 @@ Although the main goal of *azmpdata* is to provide easy access to a
 variety of data products, the package also supports a few basic
 functions for which examples are shown below.
 
+#### Searching Data
+
+A custom search function has been developed in order to allow users to
+find specific data. The function `variable_lookup()` can be used to
+search through variable names in all `azmpdata` dataframes. Using the
+argument `search_help`, this function can also search through all the
+help text for package data. A sample use of this search function may
+look as below:
+
+``` r
+res <- variable_lookup(keywords = c('nitrate', 'phosphate'), search_help = TRUE)
+#> Joining, by = c("keyword", "variable", "dataframe")
+
+head(res)
+#> # A tibble: 6 x 3
+#>   keyword variable                  dataframe                   
+#>   <chr>   <chr>                     <chr>                       
+#> 1 nitrate integrated_nitrate_0_50   Derived_Annual_Sections     
+#> 2 nitrate integrated_nitrate_0_50   Derived_Annual_Stations     
+#> 3 nitrate integrated_nitrate_0_50   Derived_Occupations_Sections
+#> 4 nitrate integrated_nitrate_50_150 Derived_Annual_Sections     
+#> 5 nitrate integrated_nitrate_50_150 Derived_Annual_Stations     
+#> 6 nitrate integrated_nitrate_50_150 Derived_Occupations_Sections
+```
+
 #### Dataset Documentation
 
 A detailed description of the whole package is available using the
@@ -111,3 +136,15 @@ returns a detailed description about a given dataset:
 library(azmpdata)
 help("Derived_Annual_Broadscale")
 ```
+
+#### Plotting
+
+Plotting `azmpdata` is covered in a detailed vignette
+`plotting_azmpdata`.
+
+## For developers
+
+Data managers and developers may need to update data within the package.
+For more details on this process, please see the vignette
+`update_azmpdata`. The vignette `style_guide` also provides more details
+on the formatting of new data.
