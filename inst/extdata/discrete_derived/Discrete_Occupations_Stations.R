@@ -3,17 +3,22 @@
 library(dplyr)
 library(tidyr)
 library(readr)
+library(tibble)
 library(usethis)
+
+# load dropbox lookup table
+db_lookup <- readr::read_csv(file="inst/extdata/dropbox_lookup.csv", comment="#")
+db_lookup <- tibble::deframe(db_lookup)
 
 # load data
 # HL2
 HL2_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/DIS_HL2_ChlNut.RData")
+con <- url(unname(db_lookup["DIS_HL2_ChlNut.RData"]))
 load(con, envir=HL2_env)
 close(con)
 # P5
 P5_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/DIS_P5_ChlNut.RData")
+con <- url(unname(db_lookup["DIS_P5_ChlNut.RData"]))
 load(con, envir=P5_env)
 close(con)
 

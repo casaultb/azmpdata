@@ -4,34 +4,34 @@ author: "E. Chisholm"
 date: "11/25/2020"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Style Guide}
+  %\VignetteIndexEntry{style_guide}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ## Introduction
 
-The purpose of this guide is to provide a reference for the formatting and style of data which is to be uploaded into the azmpdata package. This is meant as a reference for developers and data managers, data upload should not be attempted by individual package users. 
+The purpose of this guide is to provide a reference for the formatting and style of data which is to be uploaded into the azmpdata package. This is meant as a reference for developers and data managers and data upload should not be attempted by individual package users. 
 
 ## Data format
-Biological and chemical data is uploaded using a standard procedure. Raw data may vary significantly in format and style, it is then massaged into azmpdata style and format through R scripts before being finalized in exported data tables. This guide will focus on the final form and style of exported data products within the package. 
+Biological and chemical data is uploaded using a standard procedure. Raw data may vary significantly in format and style, it is then massaged into azmpdata style and format through R scripts before being finalized in exported data tables. This guide will focus on the final form and style of exported data products from within the package. 
 
-The format of all package dataframes should be the same, they should be exported through the `usethis::use_data()` function as dataframe objects. Each column should correspond to a single data or metadata variable (wide format data). Metadata should be included as unique columns even if that requires repetitive entries for all rows of data. 
+The format of all dataframes should be the same, they should be exported through the `usethis::use_data()` function as dataframe objects. Each column should correspond to a single data or metadata variable (wide format data). Metadata should be included as unique columns even if that requires repetitive entries for all rows of data. 
 
 ## Data style
 
-This section will mainly focus on naming conventions. For all data variable names, please ensure that there are matching entries in the look-up table 'variable_look_up.csv' (located in `inst/extdata/lookup`). 
+This section will mainly focus on naming conventions. For all data variable names, please ensure that there are matching entries in the look-up table 'variable_look_up.csv' (located in inst/extdata/lookup). 
 
-Data variables have been named based on CF principles (https://cfconventions.org/standard-names.html). These principles dictate that variable names are verbose and descriptive, with words seperated by underscores and no capitalization. This guidelines docucment (https://cfconventions.org/Data/cf-standard-names/docs/guidelines.html) is quite helpful in determining phrasing, for example using '..._at_sea_floor' to append a variable which was collected at the bottom of the water column, instead of 'bottom...'.
+Data variables have been named based on CF principles (see https://cfconventions.org/standard-names.html). These principles dictate that vairable names are verbose and descriptive, with words seperated by underscores. This guidelines docucment (https://cfconventions.org/Data/cf-standard-names/docs/guidelines.html) is quite helpful in determining the phrasing, for example using '..._at_sea_floor' to append a variable which was collected at the bottom of the water column, instead of 'bottom...'.
 
 These conventions help to make variable names very clear for new and experienced users. The same tenants should be followed when naming new variables.
 
 
-Metadata names have been kept fairly simple compared to data names. The same style principles are used when relevant, such as underscore seperation and no capitalization. Metadata names are not appended by '_name', for example we would use 'station' rather than 'station_name', this keeps names brief. 
+Metadata names have been kept fairly simple compared to data names. The same style principles are used when relevant, such as underscore seperation and no capitalization. Metadata names are not appended by '_name', for example we would use 'station' rather than 'station_name'. this keeps names brief. 
 
 ## Metadata requirements
 
-All of the azmpdata datasets include quite extensive metadata in order to make the dataframes stand-alone products. This section gives some general requirements of the type of metadata which should be included if new data is added. 
+All of the azmpdata datasets include quite extensive metadata in order to make the dataframes stand-alone products as much as possible. This section gives some general requirements of the type of metadata which should be included if new data is added. 
 
 
 #### Occupations
@@ -92,9 +92,9 @@ _year_ is given as a four digit numeric value
 
 _month_ is given as a numeric value (where 1 is January and 12 is December)
 
-_week_ is given as numeric, the number of weeks elapsed in the given month
+_week_ is given as numeric as the number of weeks elapsed in the given month
 
-_day_ is given as numeric, the number of days elapsed in the given month
+_day_ is given as numeric as the number of days elapsed in the given month
 
 _season_ is given as a character value, describing the Northern Hemisphere season (fall, winter, spring or summer)
 

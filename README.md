@@ -1,7 +1,9 @@
 azmpdata R package
 ================
 Benoit Casault, Emily Chisholm
-15 December, 2020
+
+04 December, 2020
+
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -73,8 +75,10 @@ head(Derived_Annual_Broadscale)
 To access a dataset in csv format:
 
 ``` r
-system.file("extdata/csv", "Derived_Annual_Broadscale.csv", package = "azmpdata")
-#> [1] "C:/Users/ChisholmE/Documents/R/R-4.0.2/library/azmpdata/extdata/csv/Derived_Annual_Broadscale.csv"
+
+system.file("extdata", "Derived_Annual_Broadscale.csv", package = "azmpdata")
+#> [1] "C:/Users/Benoi/Documents/R/win-library/3.6/azmpdata/extdata/Derived_Annual_Broadscale.csv"
+
 ```
 
 ### Variable Organization
@@ -84,40 +88,16 @@ and regional scale in a particular category. The example shown above
 includes derived variables at an annual scale for broad regions (eg.
 Scotian Shelf or Gulf of Maine). Variables can be found via the search
 function `variable_lookup()`, which allows a user to search by variable
-name or keyword. For more information see `?variable_lookup`. This
-function searches through variable names and (optionally) help files
-from each dataset including metadata and variable definitions.
+name, keyword, scale or category. For more information see
+`?variable_lookup`. This function searches through variable names and
+(optionally) help files from each dataset including metadata and
+variable definitions.
 
 ## Package Functionality
 
 Although the main goal of *azmpdata* is to provide easy access to a
 variety of data products, the package also supports a few basic
 functions for which examples are shown below.
-
-#### Searching Data
-
-A custom search function has been developed in order to allow users to
-find specific data. The function `variable_lookup()` can be used to
-search through variable names in all `azmpdata` dataframes. Using the
-argument `search_help`, this function can also search through all the
-help text for package data. A sample use of this search function may
-look as below:
-
-``` r
-res <- variable_lookup(keywords = c('nitrate', 'phosphate'), search_help = TRUE)
-#> Joining, by = c("keyword", "variable", "dataframe")
-
-head(res)
-#> # A tibble: 6 x 3
-#>   keyword variable                  dataframe                   
-#>   <chr>   <chr>                     <chr>                       
-#> 1 nitrate integrated_nitrate_0_50   Derived_Annual_Sections     
-#> 2 nitrate integrated_nitrate_0_50   Derived_Annual_Stations     
-#> 3 nitrate integrated_nitrate_0_50   Derived_Occupations_Sections
-#> 4 nitrate integrated_nitrate_50_150 Derived_Annual_Sections     
-#> 5 nitrate integrated_nitrate_50_150 Derived_Annual_Stations     
-#> 6 nitrate integrated_nitrate_50_150 Derived_Occupations_Sections
-```
 
 #### Dataset Documentation
 
@@ -139,12 +119,8 @@ help("Derived_Annual_Broadscale")
 
 #### Plotting
 
-Plotting `azmpdata` is covered in a detailed vignette
-`plotting_azmpdata`.
-
-## For developers
-
-Data managers and developers may need to update data within the package.
-For more details on this process, please see the vignette
-`update_azmpdata`. The vignette `style_guide` also provides more details
-on the formatting of new data.
+–NEEDS TO BE UPDATED- The function *plot\_azmpdata* is a wrapper that
+allows to plot a given variable in a dataset. Plot format differs
+according to the type of dataset (e.g. timeseries or annual means). For
+example, the following command displays a plot of the *chl\_0\_100*
+variable from the *chlorophyll\_inventory\_annual\_means\_hl2* dataset:

@@ -3,29 +3,34 @@
 library(dplyr)
 library(tidyr)
 library(readr)
+library(tibble)
 library(usethis)
+
+# load dropbox lookup table
+db_lookup <- readr::read_csv(file="inst/extdata/dropbox_lookup.csv", comment="#")
+db_lookup <- tibble::deframe(db_lookup)
 
 # load data
 # HL2
 # abundance data
 HL2_abundance_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_HL2_Abundance.RData")
+con <- url(unname(db_lookup["PL_HL2_Abundance.RData"]))
 load(con, envir=HL2_abundance_env)
 close(con)
 # biomass data
 HL2_biomass_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_HL2_Biomass.RData")
+con <- url(unname(db_lookup["PL_HL2_Biomass.RData"]))
 load(con, envir=HL2_biomass_env)
 close(con)
 # P5
 # abundance data
 P5_abundance_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_P5_Abundance.RData")
+con <- url(unname(db_lookup["PL_P5_Abundance.RData"]))
 load(con, envir=P5_abundance_env)
 close(con)
 # biomass data
 P5_biomass_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_P5_Biomass.RData")
+con <- url(unname(db_lookup["PL_P5_Biomass.RData"]))
 load(con, envir=P5_biomass_env)
 close(con)
 
