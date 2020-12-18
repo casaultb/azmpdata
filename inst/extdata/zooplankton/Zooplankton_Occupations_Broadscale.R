@@ -3,17 +3,22 @@
 library(dplyr)
 library(tidyr)
 library(readr)
+library(tibble)
 library(usethis)
+
+# load dropbox lookup table
+db_lookup <- readr::read_csv(file="inst/extdata/dropbox_lookup.csv", comment="#")
+db_lookup <- tibble::deframe(db_lookup)
 
 # load data
 # abundance data
 abundance_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_MAR_TS_Abundance.RData")
+con <- url(unname(db_lookup["PL_MAR_TS_Abundance.RData"]))
 load(con, envir=abundance_env)
 close(con)
 # biomass data
 biomass_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_MAR_TS_Biomass.RData")
+con <- url(unname(db_lookup["PL_MAR_TS_Biomass.RData"]))
 load(con, envir=biomass_env)
 close(con)
 

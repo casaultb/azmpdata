@@ -29,7 +29,8 @@ Imports:
     lubridate,
     utils,
     usethis,
-    tools
+    tools,
+    oce
 Depends: 
     R (>= 2.10)
 VignetteBuilder: knitr

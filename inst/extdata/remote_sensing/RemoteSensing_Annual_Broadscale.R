@@ -3,17 +3,22 @@
 library(dplyr)
 library(tidyr)
 library(readr)
+library(tibble)
 library(usethis)
+
+# load dropbox lookup table
+db_lookup <- readr::read_csv(file="inst/extdata/dropbox_lookup.csv", comment="#")
+db_lookup <- tibble::deframe(db_lookup)
 
 # load data
 # chl data
 chl_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/Surface_Chl_Weekly_MODIS.RData")
+con <- url(unname(db_lookup["Surface_Chl_Weekly_MODIS.RData"]))
 load(con, envir=chl_env)
 close(con)
 # bloom data
 bloom_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/Bloom_parameters_Weekly_MODIS.RData")
+con <- url(unname(db_lookup["Bloom_parameters_Weekly_MODIS.RData"]))
 load(con, envir=bloom_env)
 close(con)
 
