@@ -3,15 +3,10 @@
 library(dplyr)
 library(tidyr)
 library(readr)
-library(tibble)
 library(usethis)
 
-# load dropbox lookup table
-db_lookup <- readr::read_csv(file="inst/extdata/dropbox_lookup.csv", comment="#")
-db_lookup <- tibble::deframe(db_lookup)
-
 # load data
-con <- url(unname(db_lookup["DIS_MAR_AZMP_ChlNut.RData"]))
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/DIS_MAR_AZMP_ChlNut.RData")
 load(con)
 close(con)
 
