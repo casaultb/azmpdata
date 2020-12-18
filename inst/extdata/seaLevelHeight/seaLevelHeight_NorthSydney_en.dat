@@ -1,10 +1,10 @@
 # Filename: seaLevelHeight_NorthSydney_en.dat
-# Creation date: 2020-07-13 17:59:12
+# Creation date: 2020-12-09 19:04:46
 # Contact: Chantelle Layton <Chantelle.Layton@dfo-mpo.gc.ca>
 # Description: 
 # Station name: North Sydney
 # Station ID: 612
-# Longitude: 60.25
+# Longitude: -60.25
 # Latitude: 46.216667
 # Slope: 39.2 cm/century
 time,elevation,elevationResidual

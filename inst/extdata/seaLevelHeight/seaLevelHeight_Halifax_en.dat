@@ -1,10 +1,10 @@
 # Filename: seaLevelHeight_Halifax_en.dat
-# Creation date: 2020-07-13 17:59:12
+# Creation date: 2020-12-09 19:04:46
 # Contact: Chantelle Layton <Chantelle.Layton@dfo-mpo.gc.ca>
 # Description: 
 # Station name: Halifax
 # Station ID: 490
-# Longitude: 63.583333
+# Longitude: -63.583333
 # Latitude: 44.666667
 # Slope: 33.2 cm/century
 time,elevation,elevationResidual
