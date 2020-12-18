@@ -48,13 +48,26 @@ system.file("extdata/csv", "Derived_Annual_Broadscale.csv", package = "azmpdata"
 
 ### Variable Organization
 
-Each table contains multiple variables, which fall under the temporal and regional scale in a particular category. The example shown above includes derived variables at an annual scale for broad regions (eg. Scotian Shelf or Gulf of Maine). Variables can be found via the search function `variable_lookup()`, which allows a user to search by variable name, keyword, scale or category. For more information see `?variable_lookup`. This function searches through variable names and (optionally) help files from each dataset including metadata and variable definitions. 
+Each table contains multiple variables, which fall under the temporal and regional scale in a particular category. The example shown above includes derived variables at an annual scale for broad regions (eg. Scotian Shelf or Gulf of Maine). Variables can be found via the search function `variable_lookup()`, which allows a user to search by variable name or keyword. For more information see `?variable_lookup`. This function searches through variable names and (optionally) help files from each dataset including metadata and variable definitions. 
 
 
 
 ## Package Functionality
 
 Although the main goal of *azmpdata* is to provide easy access to a variety of data products, the package also supports a few basic functions for which examples are shown below.
+
+#### Searching Data
+
+A custom search function has been developed in order to allow users to find specific data. The function `variable_lookup()` can be used to search through variable names in all `azmpdata` dataframes. Using the argument `search_help`, this function can also search through all the help text for package data. A sample use of this search function may look as below:
+
+```{r}
+res <- variable_lookup(keywords = c('nitrate', 'phosphate'), search_help = TRUE)
+
+head(res)
+
+```
+
+
 
 #### Dataset Documentation
 
@@ -72,8 +85,10 @@ library(azmpdata)
 help("Derived_Annual_Broadscale")
 ```
 
-
 #### Plotting
---NEEDS TO BE UPDATED-
-The function *plot_azmpdata* is a wrapper that allows to plot a given variable in a dataset.  Plot format differs according to the type of dataset (e.g. timeseries or annual means).  For example, the following command displays a plot of the *chl_0_100* variable from the *chlorophyll_inventory_annual_means_hl2* dataset:
 
+Plotting `azmpdata` is covered in a detailed vignette `plotting_azmpdata`. 
+
+
+## For developers
+Data managers and developers may need to update data within the package. For more details on this process, please see the vignette `update_azmpdata`. The vignette `style_guide` also provides more details on the formatting of new data. 
