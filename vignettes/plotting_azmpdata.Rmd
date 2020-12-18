@@ -13,10 +13,12 @@ vignette: >
 library(azmpdata)
 ```
 ## Introduction
+
 The purpose of this vignette is to demonstrate how to plot data which is pulled from the `azmpdata` package. We show brief examples of various plotting methods including base plot, and ggplot2. We also review how to recreate default plots from the `gslea` package which has similar functionality to `azmpdata` but contains Gulf and Quebec region data products. 
 
 ## The Data
-We will use sample data from the azmpdata package for each example. Data can be called using
+
+We will use sample data from the `azmpdata` package for each example. Data can be called using
 
 ```{r}
 df <- get('Derived_Annual_Stations')
@@ -24,6 +26,7 @@ head(df)
 ```
 
 ## Base plot
+
 Using base R to create plots can often be the simplest way for a novice to explore a dataset. 
 
 If we wanted to create a simple plot of a variable over time, it might look like this
@@ -232,6 +235,7 @@ dat <- get('Derived_Annual_Stations')
 ```
 
 ## Conclusion
+
 There are many varied plotting methods which can be used once `azmpdata` is loaded. We hope these examples help you to explore the possibilities. For more help on plotting please use the resources below:
 
 * https://ggplot2.tidyverse.org/
