@@ -16,6 +16,7 @@ This vignette will describe how to search the data contained in the `azmpdata` p
 
 
 ### Listing all dataframes
+
 Listing all the available dataframes in a package can be a quick way to see a high level overview of the datasets. The output from the following code will display all the dataframe names as well as brief, high-level descriptions. This data will appear in a new window.
 
 ```{r}
@@ -58,6 +59,7 @@ We have created a custom search function in azmpdata which allows a user to sear
 The output of this function will be a table with three columns, `keyword` which will be the search keyword which you provided which has been matched (this is useful if providing multiple keywords), `variable`, the name of the variable which matched your keyword search, and `dataframe` which will be the name of the dataframe in which your matched variable is contained, or if searching through the help text, the name of the dataframe where your keyword was found in the help text. 
 
 This function can be provided with a single keyword,
+
 ```{r}
 variable_lookup('nitrate')
 ```
