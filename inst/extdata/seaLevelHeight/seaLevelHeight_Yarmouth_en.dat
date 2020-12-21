@@ -1,10 +1,10 @@
 # Filename: seaLevelHeight_Yarmouth_en.dat
-# Creation date: 2020-07-13 17:59:12
+# Creation date: 2020-12-09 19:04:46
 # Contact: Chantelle Layton <Chantelle.Layton@dfo-mpo.gc.ca>
 # Description: 
 # Station name: Yarmouth
 # Station ID: 365
-# Longitude: 66.116667
+# Longitude: -66.116667
 # Latitude: 43.833333
 # Slope: 37.3 cm/century
 time,elevation,elevationResidual

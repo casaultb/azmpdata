@@ -1,6 +1,6 @@
 library(usethis)
 library(azmpdata)
-path <- 'inst/extdata/seaLevelHeight//'
+path <- 'inst/extdata/seaLevelHeight/'
 files <- list.files(path = path,
                     pattern = 'seaLevelHeight\\w+\\.dat',
                     full.names = TRUE)
