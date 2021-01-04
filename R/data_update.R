@@ -9,7 +9,7 @@ data_update <- function(date = NULL){
     fnpath <- system.file('extdata/', package = 'azmpdata')
     # create file
     sink(file = file.path(fnpath, 'datadate.txt'))
-      cat(format(Sys.time(), format = '%Y-%m-%d'))
+      cat(format(Sys.time(), format = '%Y-%m-%d'), '\n')
     sink()
 
 }
