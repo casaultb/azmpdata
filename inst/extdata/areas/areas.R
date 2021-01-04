@@ -69,11 +69,13 @@ ofnm <- match(names(vardat), names(official_names))
 
 names(vardat) <- official_names[ofnm]
 
-# no are name? broadscale
+# update spatial name to differentiate between definitions of scotian shelf
+areaNames <- gsub(x = areaNames, pattern = 'Scotian Shelf', replacement = 'scotian_shelf_box')
+
 # since we've passted the checkyear and checkAreaName above
 #   we'll use the area name and year from the first file
 df <- data.frame(year = year[[1]],
-                 area = d[[1]][['areaName']],
+                 area = unique(areaNames),
                  as.data.frame(vardat))
 areasOther <- df
 

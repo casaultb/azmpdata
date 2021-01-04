@@ -12,6 +12,10 @@ vardat2 <- unlist(lapply(d, function(k) k[['data']][['minimumTemperature']]))
 areaName <- unlist(lapply(d, function(k) rep(k[['areaName']], dim(k[['data']])[1])))
 year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 
+# update spatial name to differentiate between definitions of scotian shelf
+areaName <- gsub(x = areaName, pattern = 'Scotian Shelf', replacement = 'scotian_shelf_grid')
+
+
 df <- data.frame(year = year,
                  area = areaName,
                  cold_intermediate_layer_volume = vardat1,
