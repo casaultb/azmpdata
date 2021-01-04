@@ -1,4 +1,4 @@
-"station","cruiseNumber","year","month","day","longitude","latitude","pressure","temperature","salinity","sigmaTheta","descriptor"
+"station","cruiseNumber","year","month","day","longitude","latitude","depth","sea_temperature","salinity","sigmaTheta","descriptor"
 "P5","99669",1999,1,14,-66.85,44.9333,0,3.35,32.06,25.51,"18VA99669"
 "P5","99669",1999,1,14,-66.85,44.9333,10,3.36,32.06,25.51,"18VA99669"
 "P5","99669",1999,1,14,-66.85,44.9333,25,3.37,32.06,25.51,"18VA99669"
