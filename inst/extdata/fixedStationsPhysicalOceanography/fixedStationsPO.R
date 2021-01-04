@@ -26,6 +26,14 @@ idx <- apply(d, 1, function(k) {ok <- which(missions[['mission_name']] == k[['cr
 d <- cbind(d, descriptor = missions[['mission_descriptor']][idx])
 
 fixedStationsPO <- d
+
+
+
+# rename variables
+fixedStationsPO <- fixedStationsPO %>%
+  dplyr::rename(., sea_temperature = temperature) %>%
+  dplyr::rename(., depth = pressure)
+
 # 4. save data
 save(fixedStationsPO, file = 'data-raw/fixedStationsPO.rda')
 write.csv(file.path(dataPath, 'fixedStationsPO.csv'), x = fixedStationsPO, row.names = FALSE)
