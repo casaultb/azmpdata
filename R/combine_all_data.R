@@ -41,7 +41,7 @@ for(i in 1:length(pkgdata)){
 names(varnames) <- pkgdata
 
 # remove metadata names
-metanames <- c('year', 'month', 'day', 'area', 'section', 'station' )
+metanames <- c('year', 'month', 'day', 'area', 'section', 'station', 'cruiseNumber', 'longitude', 'latitude', 'descriptor' , 'depth', 'nominal_depth')
 
 datnames <- unlist(varnames)[!unlist(varnames) %in% metanames]
 
