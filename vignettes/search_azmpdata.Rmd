@@ -18,7 +18,7 @@ This vignette will describe how to search the data contained in the `azmpdata` p
 ### Listing all dataframes
 Listing all the available dataframes in a package can be a quick way to see a high level overview of the datasets. The output from the following code will display all the dataframe names as well as brief, high-level descriptions. This data will appear in a new window.
 
-```{r}
+```{r, eval = FALSE}
 
 data(package = 'azmpdata')
 
@@ -29,7 +29,7 @@ data(package = 'azmpdata')
 
 You can browse through the help documentation for all datasets, and functions in the package by calling the code below. This information will come up in the R studio help window. 
 
-```{r}
+```{r, eval = FALSE}
 
 help(package = 'azmpdata')
 
@@ -42,7 +42,7 @@ Clicking on a specific dataframe name or function in the help window will bring 
 
 R studio provides some built in capability to be able to search through the help files for a given package. The function `help.search()` can be used to search through titles and descriptions of help files in a package. 
 
-```{r}
+```{r, eval = FALSE}
 
 help.search(pattern = 'section', package = 'azmpdata')
 
