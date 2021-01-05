@@ -38,7 +38,8 @@ RoxygenNote: 7.1.1
 Suggests: 
     testthat (>= 2.1.0),
     knitr,
-    rmarkdown
+    rmarkdown,
+    pkgdown
 URL: https://github.com/casaultb/azmpdata
 BugReports: https://github.com/casaultb/azmpdata/issues
 Imports: 
@@ -52,8 +53,7 @@ Imports:
     lubridate,
     utils,
     usethis,
-    tools,
-    pkgdown
+    tools
 Depends: 
     R (>= 2.10)
 VignetteBuilder: knitr
