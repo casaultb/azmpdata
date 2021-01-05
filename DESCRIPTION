@@ -1,5 +1,5 @@
 Package: azmpdata
-Title: What the Package Does (One Line, Title Case)
+Title: A data package to share derived metrics from AZMP research documents
 Version: 0.2019.0.9000
 Authors@R: c(
     person(given = "Benoit",
@@ -8,17 +8,17 @@ Authors@R: c(
            email = "Benoit.Casualt@dfo-mpo.gc.ca"),
     person(given = "Emily",
            family = "Chisholm",
-           role = c("aut", "cre"),
+           role = c("aut"),
            email = "Emily.Chisholm@dfo-mpo.gc.ca",
            comment = c(ORCID = "https://orcid.org/0000-0002-1072-5879")),
     person(given = "Chantelle",
            family = "Layton",
-           role = c("aut", "cre"),
+           role = c("aut"),
            email = "Chantelle.Layton@dfo-mpo.gc.ca",
            comment = c(ORCID = "https://orcid.org/0000-0002-3199-5763")),
     person(given = "Chantelle",
            family = "Layton",
-           role = c("aut", "cre"),
+           role = c("aut"),
            email = "Chantelle.Layton@dfo-mpo.gc.ca",
            comment = c(ORCID = "https://orcid.org/0000-0002-3199-5763")),
     person(given = "Catherine",
@@ -30,8 +30,7 @@ Authors@R: c(
            role = c("ctb"),
            email = "Mike.Macmahon@dfo-mpo.gc.ca")
            )
-           
-Description: What the package does (one paragraph).
+Description: A package which allows users to easily access AZMP data. The goal is to allow AZMP research metrics to be easily shared and incorporated into other research. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -53,7 +52,8 @@ Imports:
     lubridate,
     utils,
     usethis,
-    tools
+    tools,
+    pkgdown
 Depends: 
     R (>= 2.10)
 VignetteBuilder: knitr
