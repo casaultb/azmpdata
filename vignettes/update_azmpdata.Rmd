@@ -24,6 +24,7 @@ This package should be updated on an annual basis or whenever there are major ch
 
 
 ### Step 1
+
 __Add new raw data files__
 
 For physical data: Raw data files (in either .dat or .csv) can be added to `inst/extdata`. It is best if this folder is kept organized by variable, for example the `inst/extdata/airTemperature` folder contains all the raw airTemperature data. It is important that the raw data format be identical to the previously used formats for that specific variable. The format does vary between variables but should be kept the same between years within a variable. If you are unsure of the correct format, please open an existing data file and review the format before uploading new raw data!
@@ -41,7 +42,7 @@ Once raw physical data has been added to the appropriate folder the user should 
 source('inst/extdata/airTemperature/airTemperature.R')
 ```
 
-Biological data is loaded into the package using individual scripts for each dataframe. These scripts are contained in `inst/extdata` and organized by folder depending on the data type. These scripts output package data objects but __note that after running these scripts the package data will only contain biological data and must be completed with the physical data by completeing the next steps__. 
+Biological data is loaded into the package using individual scripts for each dataframe. These scripts are contained in `inst/extdata` and organized by folder depending on the data type. These scripts output package data objects but __note that after running these scripts the package data will only contain biological data and must be completed with the physical data by completing the next steps__. 
 
 ### Step 3
 __Combine rda files into final package form__

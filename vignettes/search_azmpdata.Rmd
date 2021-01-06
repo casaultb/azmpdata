@@ -16,9 +16,10 @@ This vignette will describe how to search the data contained in the `azmpdata` p
 
 
 ### Listing all dataframes
+
 Listing all the available dataframes in a package can be a quick way to see a high level overview of the datasets. The output from the following code will display all the dataframe names as well as brief, high-level descriptions. This data will appear in a new window.
 
-```{r}
+```{r, eval=FALSE}
 
 data(package = 'azmpdata')
 
@@ -29,7 +30,7 @@ data(package = 'azmpdata')
 
 You can browse through the help documentation for all datasets, and functions in the package by calling the code below. This information will come up in the R studio help window. 
 
-```{r}
+```{r, eval=FALSE}
 
 help(package = 'azmpdata')
 
@@ -42,7 +43,7 @@ Clicking on a specific dataframe name or function in the help window will bring 
 
 R studio provides some built in capability to be able to search through the help files for a given package. The function `help.search()` can be used to search through titles and descriptions of help files in a package. 
 
-```{r}
+```{r, eval=FALSE}
 
 help.search(pattern = 'section', package = 'azmpdata')
 
@@ -53,11 +54,12 @@ This code will bring up all the help files (in the R studio help window), which 
 
 ### Custom azmpdata search
 
-We have created a custom search function in azmpdata which allows a user to search the package in two ways. One, search for keywords in the names of all variables, included in all datasets of the package. Two, Search for keywords in the entirity of the package help text (including the `details` sections, which often contains variable definitions and is not searched through when using `help.search()`).
+We have created a custom search function in `azmpdata` which allows a user to search the package in two ways. One, search for keywords in the names of all variables, included in all datasets of the package. Two, search for keywords in the entirety of the package help text (including the `details` sections, which often contains variable definitions and is not searched through when using `help.search()`).
 
-The output of this function will be a table with three columns, `keyword` which will be the search keyword which you provided which has been matched (this is useful if providing multiple keywords), `variable`, the name of the variable which matched your keyword search, and `dataframe` which will be the name of the dataframe in which your matched variable is contained, or if searching through the help text, the name of the dataframe where your keyword was found in the help text. 
+The output of this function will be a table with three columns, `keyword`, or the search keyword that was provided, that has been matched (this is useful if providing multiple keywords), `variable`, the name of the variable which matched your keyword search, and `dataframe` which will be the name of the dataframe in which your matched variable is contained, or if searching through the help text, the name of the dataframe where your keyword was found in the help text. 
 
 This function can be provided with a single keyword,
+
 ```{r}
 variable_lookup('nitrate')
 ```
@@ -81,16 +83,16 @@ Note, that if the search returns a match to your keyword in the text of a help f
 
 Once you have your search results, you may want to call the dataframe which matched your search terms. This is very straight-forward if using our custom search function `variable_lookup()`
 
-```{r}
+```{r, eval=FALSE}
 ans <- variable_lookup(keywords = 'wet weight', search_help = TRUE)
 
-df <- get(ans$dataframe[[1]])
+df <- get(ans$dataframe[1])
 
 ```
 
 ### Conclusion
 
-azmpdata contains a wealth of datasets, we hope these search functions make it easier to find exactly what you need. For more information on base R search functions please feel free to do your own research, for questions about the custom azmpdata search please contact developers or bring an issue to the github board (listed in the package description under BugReports). 
+The package `azmpdata` contains a wealth of datasets and we hope these search functions make it easier to find exactly what you need. For more information on base R search functions please feel free to do your own research. For questions about the custom `azmpdata` search please contact developers or bring an issue to the github board (listed in the package description under BugReports). 
 
 
 
