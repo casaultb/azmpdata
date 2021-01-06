@@ -23,6 +23,16 @@ RemoteSensing_Annual_Broadscale <- dplyr::bind_rows(chl_env$df_log_means_annual_
                                                       dplyr::select(., region, year, variable, value),
                                                     bloom_env$df_data_filtered_l %>%
                                                        dplyr::select(., region, year, variable, value))
+
+# rename regions
+RemoteSensing_Annual_Broadscale$region <- gsub(RemoteSensing_Annual_Broadscale$region, pattern = '^CS$', replacement = 'CS_remote_sensing')
+RemoteSensing_Annual_Broadscale$region <- gsub(RemoteSensing_Annual_Broadscale$region, pattern = '^ESS$', replacement = 'ESS_remote_sensing')
+RemoteSensing_Annual_Broadscale$region <- gsub(RemoteSensing_Annual_Broadscale$region, pattern = '^CSS$', replacement = 'CSS_remote_sensing')
+RemoteSensing_Annual_Broadscale$region <- gsub(RemoteSensing_Annual_Broadscale$region, pattern = '^WSS$', replacement = 'WSS_remote_sensing')
+RemoteSensing_Annual_Broadscale$region <- gsub(RemoteSensing_Annual_Broadscale$region, pattern = '^GB$', replacement = 'GB_remote_sensing')
+RemoteSensing_Annual_Broadscale$region <- gsub(RemoteSensing_Annual_Broadscale$region, pattern = '^LS$', replacement = 'LS_remote_sensing')
+
+
 # clean up
 rm(list=c("chl_env", "bloom_env"))
 
@@ -34,12 +44,12 @@ target_var <- c("chl" = "surface_chlorophyll_log10",
                 "magnitude" = "bloom_magnitude")
 
 # print order
-print_order <- c("CS" = 1,
-                 "ESS" = 2,
-                 "CSS" = 3,
-                 "WSS" = 4,
-                 "GB" = 5,
-                 "LS" = 6)
+print_order <- c("CS_remote_sensing" = 1,
+                 "ESS_remote_sensing" = 2,
+                 "CSS_remote_sensing" = 3,
+                 "WSS_remote_sensing" = 4,
+                 "GB_remote_sensing" = 5,
+                 "LS_remote_sensing" = 6)
 
 # reformat data
 RemoteSensing_Annual_Broadscale <- RemoteSensing_Annual_Broadscale %>%

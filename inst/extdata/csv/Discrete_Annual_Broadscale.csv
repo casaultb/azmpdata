@@ -1,217 +1,145 @@
-year,area,salinity,sea_temperature
-1948,Scotion Shelf,0.068,-1.396
-1949,Scotion Shelf,0.252,0.545
-1950,Scotion Shelf,0.511,-0.373
-1951,Scotion Shelf,0.08,1.364
-1952,Scotion Shelf,-0.043,0.5
-1953,Scotion Shelf,0.059,0.248
-1954,Scotion Shelf,0.266,-0.57
-1955,Scotion Shelf,-0.168,-0.331
-1956,Scotion Shelf,0.508,-0.123
-1957,Scotion Shelf,-0.185,-0.164
-1958,Scotion Shelf,0.137,-0.994
-1959,Scotion Shelf,0.136,-0.562
-1960,Scotion Shelf,0.486,-0.908
-1961,Scotion Shelf,0.139,-1.184
-1962,Scotion Shelf,0.158,-1.783
-1963,Scotion Shelf,0.292,0.293
-1964,Scotion Shelf,0.311,-1.782
-1965,Scotion Shelf,0.318,-1.591
-1966,Scotion Shelf,0.393,-0.395
-1967,Scotion Shelf,0.192,-1.051
-1968,Scotion Shelf,0.352,-0.552
-1969,Scotion Shelf,0.377,-0.085
-1970,Scotion Shelf,-0.024,0.244
-1971,Scotion Shelf,-0.176,-1.003
-1972,Scotion Shelf,0.335,-0.053
-1973,Scotion Shelf,-0.136,-0.669
-1974,Scotion Shelf,0.417,-1.458
-1975,Scotion Shelf,0.165,-0.685
-1976,Scotion Shelf,0.241,-0.379
-1977,Scotion Shelf,0.273,-0.862
-1978,Scotion Shelf,-0.128,0.059
-1979,Scotion Shelf,0.207,-0.048
-1980,Scotion Shelf,0.259,-0.727
-1981,Scotion Shelf,0.071,-0.036
-1982,Scotion Shelf,0.275,0.103
-1983,Scotion Shelf,-0.036,0.915
-1984,Scotion Shelf,-0.167,0.03
-1985,Scotion Shelf,0.171,-1.855
-1986,Scotion Shelf,0.142,-0.881
-1987,Scotion Shelf,0.282,0.348
-1988,Scotion Shelf,0.088,-0.093
-1989,Scotion Shelf,0.294,-0.251
-1990,Scotion Shelf,0.405,-0.571
-1991,Scotion Shelf,-0.176,-0.416
-1992,Scotion Shelf,0.027,-0.956
-1993,Scotion Shelf,0.098,-0.715
-1994,Scotion Shelf,-0.322,0.294
-1995,Scotion Shelf,-0.136,-0.436
-1996,Scotion Shelf,-0.033,-0.915
-1997,Scotion Shelf,-0.14,-0.575
-1998,Scotion Shelf,-0.415,0.112
-1999,Scotion Shelf,0.023,0.873
-2000,Scotion Shelf,0.141,0.855
-2001,Scotion Shelf,0.113,-0.167
-2002,Scotion Shelf,0.114,-0.366
-2003,Scotion Shelf,0.347,-0.056
-2004,Scotion Shelf,0.187,-0.714
-2005,Scotion Shelf,0.091,0.081
-2006,Scotion Shelf,-0.047,0.587
-2007,Scotion Shelf,0.04,-0.505
-2008,Scotion Shelf,-0.02,0.349
-2009,Scotion Shelf,0.126,0.15
-2010,Scotion Shelf,0.009,1.737
-2011,Scotion Shelf,-0.068,-0.462
-2012,Scotion Shelf,-0.087,2.236
-2013,Scotion Shelf,-0.094,0.882
-2014,Scotion Shelf,0.267,1.178
-2015,Scotion Shelf,0.206,0.367
-2016,Scotion Shelf,0.015,1.337
-2017,Scotion Shelf,-0.141,0.991
-2018,Scotion Shelf,0.048,0.577
-2019,Scotion Shelf,-0.321,-0.041
-1948,Scotian Shelf,0.068,NA
-1949,Scotian Shelf,0.252,NA
-1950,Scotian Shelf,0.511,NA
-1951,Scotian Shelf,0.08,NA
-1952,Scotian Shelf,-0.043,NA
-1953,Scotian Shelf,0.059,NA
-1954,Scotian Shelf,0.266,NA
-1955,Scotian Shelf,-0.168,NA
-1956,Scotian Shelf,0.508,NA
-1957,Scotian Shelf,-0.185,NA
-1958,Scotian Shelf,0.137,NA
-1959,Scotian Shelf,0.136,NA
-1960,Scotian Shelf,0.486,NA
-1961,Scotian Shelf,0.139,NA
-1962,Scotian Shelf,0.158,NA
-1963,Scotian Shelf,0.292,NA
-1964,Scotian Shelf,0.311,NA
-1965,Scotian Shelf,0.318,NA
-1966,Scotian Shelf,0.393,NA
-1967,Scotian Shelf,0.192,NA
-1968,Scotian Shelf,0.352,NA
-1969,Scotian Shelf,0.377,NA
-1970,Scotian Shelf,-0.024,NA
-1971,Scotian Shelf,-0.176,NA
-1972,Scotian Shelf,0.335,NA
-1973,Scotian Shelf,-0.136,NA
-1974,Scotian Shelf,0.417,NA
-1975,Scotian Shelf,0.165,NA
-1976,Scotian Shelf,0.241,NA
-1977,Scotian Shelf,0.273,NA
-1978,Scotian Shelf,-0.128,NA
-1979,Scotian Shelf,0.207,NA
-1980,Scotian Shelf,0.259,NA
-1981,Scotian Shelf,0.071,NA
-1982,Scotian Shelf,0.275,NA
-1983,Scotian Shelf,-0.036,NA
-1984,Scotian Shelf,-0.167,NA
-1985,Scotian Shelf,0.171,NA
-1986,Scotian Shelf,0.142,NA
-1987,Scotian Shelf,0.282,NA
-1988,Scotian Shelf,0.088,NA
-1989,Scotian Shelf,0.294,NA
-1990,Scotian Shelf,0.405,NA
-1991,Scotian Shelf,-0.176,NA
-1992,Scotian Shelf,0.027,NA
-1993,Scotian Shelf,0.098,NA
-1994,Scotian Shelf,-0.322,NA
-1995,Scotian Shelf,-0.136,NA
-1996,Scotian Shelf,-0.033,NA
-1997,Scotian Shelf,-0.14,NA
-1998,Scotian Shelf,-0.415,NA
-1999,Scotian Shelf,0.023,NA
-2000,Scotian Shelf,0.141,NA
-2001,Scotian Shelf,0.113,NA
-2002,Scotian Shelf,0.114,NA
-2003,Scotian Shelf,0.347,NA
-2004,Scotian Shelf,0.187,NA
-2005,Scotian Shelf,0.091,NA
-2006,Scotian Shelf,-0.047,NA
-2007,Scotian Shelf,0.04,NA
-2008,Scotian Shelf,-0.02,NA
-2009,Scotian Shelf,0.126,NA
-2010,Scotian Shelf,0.009,NA
-2011,Scotian Shelf,-0.068,NA
-2012,Scotian Shelf,-0.087,NA
-2013,Scotian Shelf,-0.094,NA
-2014,Scotian Shelf,0.267,NA
-2015,Scotian Shelf,0.206,NA
-2016,Scotian Shelf,0.015,NA
-2017,Scotian Shelf,-0.141,NA
-2018,Scotian Shelf,0.048,NA
-2019,Scotian Shelf,-0.321,NA
-1948,Scotian Shelf,NA,-1.396
-1949,Scotian Shelf,NA,0.545
-1950,Scotian Shelf,NA,-0.373
-1951,Scotian Shelf,NA,1.364
-1952,Scotian Shelf,NA,0.5
-1953,Scotian Shelf,NA,0.248
-1954,Scotian Shelf,NA,-0.57
-1955,Scotian Shelf,NA,-0.331
-1956,Scotian Shelf,NA,-0.123
-1957,Scotian Shelf,NA,-0.164
-1958,Scotian Shelf,NA,-0.994
-1959,Scotian Shelf,NA,-0.562
-1960,Scotian Shelf,NA,-0.908
-1961,Scotian Shelf,NA,-1.184
-1962,Scotian Shelf,NA,-1.783
-1963,Scotian Shelf,NA,0.293
-1964,Scotian Shelf,NA,-1.782
-1965,Scotian Shelf,NA,-1.591
-1966,Scotian Shelf,NA,-0.395
-1967,Scotian Shelf,NA,-1.051
-1968,Scotian Shelf,NA,-0.552
-1969,Scotian Shelf,NA,-0.085
-1970,Scotian Shelf,NA,0.244
-1971,Scotian Shelf,NA,-1.003
-1972,Scotian Shelf,NA,-0.053
-1973,Scotian Shelf,NA,-0.669
-1974,Scotian Shelf,NA,-1.458
-1975,Scotian Shelf,NA,-0.685
-1976,Scotian Shelf,NA,-0.379
-1977,Scotian Shelf,NA,-0.862
-1978,Scotian Shelf,NA,0.059
-1979,Scotian Shelf,NA,-0.048
-1980,Scotian Shelf,NA,-0.727
-1981,Scotian Shelf,NA,-0.036
-1982,Scotian Shelf,NA,0.103
-1983,Scotian Shelf,NA,0.915
-1984,Scotian Shelf,NA,0.03
-1985,Scotian Shelf,NA,-1.855
-1986,Scotian Shelf,NA,-0.881
-1987,Scotian Shelf,NA,0.348
-1988,Scotian Shelf,NA,-0.093
-1989,Scotian Shelf,NA,-0.251
-1990,Scotian Shelf,NA,-0.571
-1991,Scotian Shelf,NA,-0.416
-1992,Scotian Shelf,NA,-0.956
-1993,Scotian Shelf,NA,-0.715
-1994,Scotian Shelf,NA,0.294
-1995,Scotian Shelf,NA,-0.436
-1996,Scotian Shelf,NA,-0.915
-1997,Scotian Shelf,NA,-0.575
-1998,Scotian Shelf,NA,0.112
-1999,Scotian Shelf,NA,0.873
-2000,Scotian Shelf,NA,0.855
-2001,Scotian Shelf,NA,-0.167
-2002,Scotian Shelf,NA,-0.366
-2003,Scotian Shelf,NA,-0.056
-2004,Scotian Shelf,NA,-0.714
-2005,Scotian Shelf,NA,0.081
-2006,Scotian Shelf,NA,0.587
-2007,Scotian Shelf,NA,-0.505
-2008,Scotian Shelf,NA,0.349
-2009,Scotian Shelf,NA,0.15
-2010,Scotian Shelf,NA,1.737
-2011,Scotian Shelf,NA,-0.462
-2012,Scotian Shelf,NA,2.236
-2013,Scotian Shelf,NA,0.882
-2014,Scotian Shelf,NA,1.178
-2015,Scotian Shelf,NA,0.367
-2016,Scotian Shelf,NA,1.337
-2017,Scotian Shelf,NA,0.991
-2018,Scotian Shelf,NA,0.577
-2019,Scotian Shelf,NA,-0.041
+year,area,sea_temperature,salinity
+1948,scotian_shelf_box,-1.3960000000000001,NA
+1949,scotian_shelf_box,0.5449999999999999,NA
+1950,scotian_shelf_box,-0.373,NA
+1951,scotian_shelf_box,1.3639999999999999,NA
+1952,scotian_shelf_box,0.5,NA
+1953,scotian_shelf_box,0.248,NA
+1954,scotian_shelf_box,-0.5700000000000001,NA
+1955,scotian_shelf_box,-0.331,NA
+1956,scotian_shelf_box,-0.123,NA
+1957,scotian_shelf_box,-0.16399999999999998,NA
+1958,scotian_shelf_box,-0.994,NA
+1959,scotian_shelf_box,-0.562,NA
+1960,scotian_shelf_box,-0.9079999999999999,NA
+1961,scotian_shelf_box,-1.1840000000000002,NA
+1962,scotian_shelf_box,-1.7830000000000001,NA
+1963,scotian_shelf_box,0.293,NA
+1964,scotian_shelf_box,-1.782,NA
+1965,scotian_shelf_box,-1.591,NA
+1966,scotian_shelf_box,-0.395,NA
+1967,scotian_shelf_box,-1.051,NA
+1968,scotian_shelf_box,-0.552,NA
+1969,scotian_shelf_box,-0.08499999999999999,NA
+1970,scotian_shelf_box,0.244,NA
+1971,scotian_shelf_box,-1.003,NA
+1972,scotian_shelf_box,-0.053,NA
+1973,scotian_shelf_box,-0.669,NA
+1974,scotian_shelf_box,-1.458,NA
+1975,scotian_shelf_box,-0.685,NA
+1976,scotian_shelf_box,-0.379,NA
+1977,scotian_shelf_box,-0.8620000000000001,NA
+1978,scotian_shelf_box,0.059,NA
+1979,scotian_shelf_box,-0.048,NA
+1980,scotian_shelf_box,-0.7270000000000001,NA
+1981,scotian_shelf_box,-0.036,NA
+1982,scotian_shelf_box,0.10300000000000001,NA
+1983,scotian_shelf_box,0.915,NA
+1984,scotian_shelf_box,0.03,NA
+1985,scotian_shelf_box,-1.855,NA
+1986,scotian_shelf_box,-0.881,NA
+1987,scotian_shelf_box,0.348,NA
+1988,scotian_shelf_box,-0.093,NA
+1989,scotian_shelf_box,-0.251,NA
+1990,scotian_shelf_box,-0.571,NA
+1991,scotian_shelf_box,-0.416,NA
+1992,scotian_shelf_box,-0.956,NA
+1993,scotian_shelf_box,-0.7150000000000001,NA
+1994,scotian_shelf_box,0.294,NA
+1995,scotian_shelf_box,-0.436,NA
+1996,scotian_shelf_box,-0.915,NA
+1997,scotian_shelf_box,-0.575,NA
+1998,scotian_shelf_box,0.11199999999999999,NA
+1999,scotian_shelf_box,0.873,NA
+2000,scotian_shelf_box,0.855,NA
+2001,scotian_shelf_box,-0.16699999999999998,NA
+2002,scotian_shelf_box,-0.366,NA
+2003,scotian_shelf_box,-0.055999999999999994,NA
+2004,scotian_shelf_box,-0.714,NA
+2005,scotian_shelf_box,0.08099999999999999,NA
+2006,scotian_shelf_box,0.587,NA
+2007,scotian_shelf_box,-0.505,NA
+2008,scotian_shelf_box,0.349,NA
+2009,scotian_shelf_box,0.15,NA
+2010,scotian_shelf_box,1.7369999999999999,NA
+2011,scotian_shelf_box,-0.462,NA
+2012,scotian_shelf_box,2.2359999999999998,NA
+2013,scotian_shelf_box,0.8819999999999999,NA
+2014,scotian_shelf_box,1.178,NA
+2015,scotian_shelf_box,0.367,NA
+2016,scotian_shelf_box,1.337,NA
+2017,scotian_shelf_box,0.9909999999999999,NA
+2018,scotian_shelf_box,0.577,NA
+2019,scotian_shelf_box,-0.040999999999999995,NA
+1948,scotian_shelf_box,NA,0.068
+1949,scotian_shelf_box,NA,0.252
+1950,scotian_shelf_box,NA,0.511
+1951,scotian_shelf_box,NA,0.08
+1952,scotian_shelf_box,NA,-0.043
+1953,scotian_shelf_box,NA,0.059
+1954,scotian_shelf_box,NA,0.266
+1955,scotian_shelf_box,NA,-0.168
+1956,scotian_shelf_box,NA,0.508
+1957,scotian_shelf_box,NA,-0.185
+1958,scotian_shelf_box,NA,0.137
+1959,scotian_shelf_box,NA,0.136
+1960,scotian_shelf_box,NA,0.486
+1961,scotian_shelf_box,NA,0.139
+1962,scotian_shelf_box,NA,0.158
+1963,scotian_shelf_box,NA,0.29200000000000004
+1964,scotian_shelf_box,NA,0.31100000000000005
+1965,scotian_shelf_box,NA,0.31799999999999995
+1966,scotian_shelf_box,NA,0.393
+1967,scotian_shelf_box,NA,0.192
+1968,scotian_shelf_box,NA,0.352
+1969,scotian_shelf_box,NA,0.377
+1970,scotian_shelf_box,NA,-0.024
+1971,scotian_shelf_box,NA,-0.176
+1972,scotian_shelf_box,NA,0.33499999999999996
+1973,scotian_shelf_box,NA,-0.136
+1974,scotian_shelf_box,NA,0.41700000000000004
+1975,scotian_shelf_box,NA,0.165
+1976,scotian_shelf_box,NA,0.241
+1977,scotian_shelf_box,NA,0.273
+1978,scotian_shelf_box,NA,-0.128
+1979,scotian_shelf_box,NA,0.207
+1980,scotian_shelf_box,NA,0.259
+1981,scotian_shelf_box,NA,0.07100000000000001
+1982,scotian_shelf_box,NA,0.275
+1983,scotian_shelf_box,NA,-0.036000000000000004
+1984,scotian_shelf_box,NA,-0.167
+1985,scotian_shelf_box,NA,0.17099999999999999
+1986,scotian_shelf_box,NA,0.14200000000000002
+1987,scotian_shelf_box,NA,0.28200000000000003
+1988,scotian_shelf_box,NA,0.088
+1989,scotian_shelf_box,NA,0.29400000000000004
+1990,scotian_shelf_box,NA,0.405
+1991,scotian_shelf_box,NA,-0.176
+1992,scotian_shelf_box,NA,0.027
+1993,scotian_shelf_box,NA,0.098
+1994,scotian_shelf_box,NA,-0.32199999999999995
+1995,scotian_shelf_box,NA,-0.136
+1996,scotian_shelf_box,NA,-0.033
+1997,scotian_shelf_box,NA,-0.14
+1998,scotian_shelf_box,NA,-0.41500000000000004
+1999,scotian_shelf_box,NA,0.023
+2000,scotian_shelf_box,NA,0.14100000000000001
+2001,scotian_shelf_box,NA,0.113
+2002,scotian_shelf_box,NA,0.114
+2003,scotian_shelf_box,NA,0.347
+2004,scotian_shelf_box,NA,0.187
+2005,scotian_shelf_box,NA,0.091
+2006,scotian_shelf_box,NA,-0.047
+2007,scotian_shelf_box,NA,0.04
+2008,scotian_shelf_box,NA,-0.020000000000000004
+2009,scotian_shelf_box,NA,0.126
+2010,scotian_shelf_box,NA,0.008999999999999998
+2011,scotian_shelf_box,NA,-0.068
+2012,scotian_shelf_box,NA,-0.08700000000000001
+2013,scotian_shelf_box,NA,-0.094
+2014,scotian_shelf_box,NA,0.267
+2015,scotian_shelf_box,NA,0.206
+2016,scotian_shelf_box,NA,0.015
+2017,scotian_shelf_box,NA,-0.14100000000000001
+2018,scotian_shelf_box,NA,0.048
+2019,scotian_shelf_box,NA,-0.32099999999999995

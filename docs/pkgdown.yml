@@ -1,0 +1,10 @@
+pandoc: 2.7.3
+pkgdown: 1.5.1
+pkgdown_sha: ~
+articles:
+  plotting_azmpdata: plotting_azmpdata.html
+  search_azmpdata: search_azmpdata.html
+  style_guide: style_guide.html
+  update_azmpdata: update_azmpdata.html
+last_built: 2021-01-05T19:05Z
+

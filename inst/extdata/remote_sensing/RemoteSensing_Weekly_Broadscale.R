@@ -39,6 +39,15 @@ RemoteSensing_Weekly_Broadscale <- df_data_filtered %>%
 RemoteSensing_Weekly_Broadscale <- RemoteSensing_Weekly_Broadscale %>%
   dplyr::rename(., area = region)
 
+# rename regions
+RemoteSensing_Weekly_Broadscale$area <- gsub(RemoteSensing_Weekly_Broadscale$area, pattern = '^CS$', replacement = 'CS_remote_sensing')
+RemoteSensing_Weekly_Broadscale$area <- gsub(RemoteSensing_Weekly_Broadscale$area, pattern = '^ESS$', replacement = 'ESS_remote_sensing')
+RemoteSensing_Weekly_Broadscale$area <- gsub(RemoteSensing_Weekly_Broadscale$area, pattern = '^CSS$', replacement = 'CSS_remote_sensing')
+RemoteSensing_Weekly_Broadscale$area <- gsub(RemoteSensing_Weekly_Broadscale$area, pattern = '^WSS$', replacement = 'WSS_remote_sensing')
+RemoteSensing_Weekly_Broadscale$area <- gsub(RemoteSensing_Weekly_Broadscale$area, pattern = '^GB$', replacement = 'GB_remote_sensing')
+RemoteSensing_Weekly_Broadscale$area <- gsub(RemoteSensing_Weekly_Broadscale$area, pattern = '^LS$', replacement = 'LS_remote_sensing')
+
+
 # save data to csv
 readr::write_csv(RemoteSensing_Weekly_Broadscale, "inst/extdata/csv/RemoteSensing_Weekly_Broadscale.csv")
 

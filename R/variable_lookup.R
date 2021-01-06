@@ -16,7 +16,7 @@
 #' @import dplyr
 #' @import tibble
 #' @import stringr
-#' @importFrom utils capture.output help ls.str
+#' @importFrom utils capture.output help ls.str data
 #'
 #'
 #' @export
