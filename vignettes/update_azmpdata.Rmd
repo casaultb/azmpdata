@@ -24,6 +24,7 @@ This package should be updated on an annual basis or whenever there are major ch
 
 
 ### Step 1
+
 __Add new raw data files__
 
 For physical data: Raw data files (in either .dat or .csv) can be added to `inst/extdata`. It is best if this folder is kept organized by variable, for example the `inst/extdata/airTemperature` folder contains all the raw airTemperature data. It is important that the raw data format be identical to the previously used formats for that specific variable. The format does vary between variables but should be kept the same between years within a variable. If you are unsure of the correct format, please open an existing data file and review the format before uploading new raw data!
