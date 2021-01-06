@@ -1,0 +1,72 @@
+---
+title: "Meeting Notes - January 5th 2021"
+author: "E. Chisholm"
+date: "1/5/2021"
+output: html_document
+---
+
+Discussion of Maritimes environmental data access, December , 2020
+
+B. Casault, E. Chisholm, C. Johnson, M. MacMahon, C. Layton
+
+
+## Agenda
+
+* review multivaR spatial data (new names)
+* review vignette workplan – are we missing anything? editing?
+* review task list: 
+  * 2019 data load schedule (on track for end of January?) 
+  * Update from Chantelle and Benoit
+* final touches required for package
+  * website implementation?
+  * sharing with larger community? reach out to key partners?
+* Moving forward
+  * 2020 data load 
+
+
+## Meeting Notes
+
+* __EC will update spatial names for remote sensing data in R processing files (not in original data)__
+* issue with data duplication when changing area names reveals flaw in workflow
+  * solution:
+  * update workflow so R processing scripts are organized by dataframe, pulling from both physical and biological data
+  * __EC will work on this update with help from CL__
+  * updating package will require sourcing all processing scripts (write single script source all unique files)
+  * __CL will add physical data to FTP in order to streamline this process__
+  * __BC will share FTP account login__
+  
+* vignettes have been edited and seem to cover all required info
+
+* data upload is complete
+  * minus specific issue Benoit is having with mixed layer depth and euphotic depth variables
+  * EC/ BC will meet to resolve this specific issue if necessary
+  * __EC will perofrm data audit to make sure all variables are properly included__
+  
+* website implementation
+  * __EC will create github.io website (same procedure as oce package)
+  * this should avoid anay issues with federal website requirements
+  * link package website to AZMP website?
+    * this may be a lost cause especially to attmept to edit national site
+    * __CJ will bring up at AZMP meeting in March__
+    * sharing github link will be easier and more directed to users
+  
+* presentation of package to R group upcoming
+  * __EC will hand off presentation materials in case any further presentations to special groups are needed__
+  * presentation January 22 will also be recorded for futre distribution
+  * __MM will forward invite to relevant PED staff and reach out to Pter Kraska for relevant CESD staff list__
+  
+  
+* CJ discussion of spatial data add ons
+  * more users will make package better and suggestions will improve package over time
+  * CJ will look into spatial data efforts (Gordana, Brain, Catalina, Tana) - FGSP
+  * eventually may create more packages to include ancillary and spatial data which would be useful to users
+  * MM suggests just handing data to Brian for upload to FGSP rather than worrying about ArcGIS skills
+    * given csv data and sample figures, Brian can upload something very useful
+  
+* 2020 data load
+  * delayed this year due to COVID etc
+  * typically data would be ready for March AZMP meeting
+  * general goal of data upload in April 2021
+  
+  
+  

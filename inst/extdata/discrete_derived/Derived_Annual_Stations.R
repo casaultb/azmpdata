@@ -17,6 +17,46 @@ con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/DIS_P5
 load(con, envir=P5_env)
 close(con)
 
+# load physical data
+# temperature_in_air
+
+path <- 'inst/extdata/airTemperature/'
+files <- list.files(path = path,
+                    pattern = 'airTemperatureAnnualAnomaly\\w+\\.dat',
+                    full.names = TRUE)
+d <- lapply(files, read.physical)
+
+vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
+stationName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data']])[1])))
+year <- unlist(lapply(d, function(k) k[['data']][['year']]))
+
+df <- data.frame(year = year,
+                 station = stationName,
+                 temperature_in_air = vardat)
+airTemperature <- df
+
+#sea_surface_temperature_from_moorings
+
+path <- 'inst/extdata/SSTinSitu//'
+files <- list.files(path = path,
+                    pattern = 'SSTinSitu\\w+\\.dat',
+                    full.names = TRUE)
+d <- lapply(files, read.physical)
+
+vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
+#vardat1 <- unlist(lapply(d, function(k) k[['data']][['anomaly']]))
+#vardat2 <- unlist(lapply(d, function(k) k[['data']][['normalizedAnomaly']]))
+
+stationName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data']])[1])))
+
+year <- unlist(lapply(d, function(k) k[['data']][['year']]))
+
+
+df <- data.frame(year = year,
+                 station = stationName,
+                 sea_surface_temperature_from_moorings = vardat)
+SSTinSitu <- df
+
 # assemble data
 Derived_Annual_Stations <- dplyr::bind_rows(HL2_env$df_means_annual_l %>%
                                               dplyr::mutate(., station="HL2"),
@@ -47,6 +87,10 @@ Derived_Annual_Stations <- Derived_Annual_Stations %>%
   tidyr::spread(., variable, value) %>%
   dplyr::arrange(., order, year) %>%
   dplyr::select(., station, year, unname(target_var))
+
+
+# add physical data
+Derived_Annual_Stations <- Derived_Annual_Stations %>% dplyr::bind_rows(SSTinSitu, airTemperature)
 
 # save data to csv
 readr::write_csv(Derived_Annual_Stations, "inst/extdata/csv/Derived_Annual_Stations.csv")

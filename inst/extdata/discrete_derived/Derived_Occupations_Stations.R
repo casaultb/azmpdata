@@ -17,6 +17,35 @@ con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/DIS_P5
 load(con, envir=P5_env)
 close(con)
 
+# load in physical data
+# sea_surface_height
+path <- 'inst/extdata/seaLevelHeight/'
+files <- list.files(path = path,
+                    pattern = 'seaLevelHeight\\w+\\.dat',
+                    full.names = TRUE)
+d <- lapply(files, read.physical)
+
+#vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
+vardat1 <- unlist(lapply(d, function(k) k[['data']][['time']]))
+vardat2 <- unlist(lapply(d, function(k) k[['data']][['elevation']]))
+vardat3 <- unlist(lapply(d, function(k) k[['data']][['elevationResidual']]))
+
+stationName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data']])[1])))
+
+year <- unlist(lapply(d, function(k) format(as.Date(k[['data']][['time']]), format = '%Y')))
+month <- unlist(lapply(d, function(k) format(as.Date(k[['data']][['time']]), format = '%m')))
+day <- unlist(lapply(d, function(k) format(as.Date(k[['data']][['time']]), format = '%d')))
+
+df <- data.frame(year = as.numeric(year),
+                 month = as.numeric(month),
+                 day = as.numeric(day),
+                 station = stationName,
+                 sea_surface_height  = vardat2 #,
+                 # sea_surface_height_residual= vardat3
+)
+seaLevelHeight <- df
+
+
 # assemble data
 Derived_Occupations_Stations <- dplyr::bind_rows(HL2_env$df_data_integrated_l %>%
                                                    dplyr::mutate(., station="HL2"),
@@ -47,6 +76,10 @@ Derived_Occupations_Stations <- Derived_Occupations_Stations %>%
   tidyr::spread(., variable, value) %>%
   dplyr::arrange(., order_station, year, month, day) %>%
   dplyr::select(., station, latitude, longitude, year, month, day, event_id, unname(target_var))
+
+# add physical data
+Derived_Occupations_Stations <- Derived_Occupations_Stations %>% dplyr::bind_rows(seaLevelHeight)
+
 
 # save data to csv
 readr::write_csv(Derived_Occupations_Stations, "inst/extdata/csv/Derived_Occupations_Stations.csv")
