@@ -17,6 +17,44 @@ con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/DIS_P5
 load(con, envir=P5_env)
 close(con)
 
+# load physical data
+
+dataPath <- 'inst/extdata/fixedStationsPhysicalOceanography'
+lookupPath <- 'inst/extdata/lookup'
+
+# 1. read in mission look up tables and combine
+lookupfiles <- list.files(lookupPath, pattern = '^mission.*', full.names = TRUE)
+lookup <- lapply(lookupfiles, read.csv)
+missions <- do.call('rbind', lookup)
+
+# 2. read in the data and combine
+datafile <- paste(dataPath, c('prince5.csv', 'station2.csv'), sep = '/')
+d <- lapply(datafile, read.csv)
+d <- do.call('rbind', d)
+
+# 3. match up cruiseNumber and mission_number
+# note : if anything goes sideways matching up idx, the structure of idx will change
+#        so it could become a list instead of a vector
+idx <- apply(d, 1, function(k) {ok <- which(missions[['mission_name']] == k[['cruiseNumber']]);
+if(length(ok) > 1) {
+  ok[1]
+} else if(length(ok) == 0){
+  NA
+} else {
+  ok
+}})
+
+d <- cbind(d, descriptor = missions[['mission_descriptor']][idx])
+
+fixedStationsPO <- d
+
+
+
+# rename variables
+fixedStationsPO <- fixedStationsPO %>%
+  dplyr::rename(., sea_temperature = temperature) %>%
+  dplyr::rename(., depth = pressure)
+
 # assemble data
 Discrete_Occupations_Stations <- dplyr::bind_rows(HL2_env$df_data_averaged_l %>%
                                                     dplyr::mutate(., station="HL2"),
@@ -67,6 +105,11 @@ Discrete_Occupations_Stations <- dplyr::left_join(Discrete_Occupations_Stations 
 # fix metadata names
 Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>%
   dplyr::rename(., nominal_depth = standard_depth)
+
+
+# add physical data
+Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>% dplyr::bind_rows(fixedStationsPO)
+
 
 # save data to csv
 readr::write_csv(Discrete_Occupations_Stations, "inst/extdata/csv/Discrete_Occupations_Stations.csv")

@@ -1,5 +1,13 @@
+## code to prepare `Derived_Annual_Broadscale` dataset
+
+library(dplyr)
+library(tidyr)
+library(readr)
 library(usethis)
-library(azmpdata)
+
+# load data
+
+# temperature_at_sea_floor
 path <- 'inst/extdata/areas/'
 files <- list.files(path = path,
                     pattern = 'areasTemperatureAnnualAnomaly\\w+\\.dat',
@@ -20,15 +28,7 @@ df <- data.frame(year = year,
                  temperature_at_sea_floor = vardat) # verify this is correct variable name
 areasTemperature <- df
 
-save(areasTemperature, file = 'data-raw/areasTemperature.rda')
-
-# usethis::use_data(areasTemperature, compress = "xz", overwrite = T)
-
-write.csv(file.path(path, 'areasTemperature.csv'), x = areasTemperature, row.names = FALSE)
-
-
-# add other data
-
+# density_gradient_0_50
 # find other files
 
 allfiles <- list.files(path = path, pattern = '.dat', full.names = TRUE)
@@ -77,11 +77,62 @@ areaNames <- gsub(x = areaNames, pattern = 'Scotian Shelf', replacement = 'scoti
 df <- data.frame(year = year[[1]],
                  area = unique(areaNames),
                  as.data.frame(vardat))
+
+# keep only density gradient var
+df <- df %>% select(year, area, density_gradient_0_50)
+
+
 areasOther <- df
 
-save(areasOther, file = 'data-raw/areasOther.rda')
+# cold_intermediate_layer_volume & minimum_temperature_in_cold_intermediate_layer
+path <- 'inst/extdata/coldIntermediateLayer//'
+files <- list.files(path = path,
+                    pattern = 'coldIntermediateLayer\\w+\\.dat',
+                    full.names = TRUE)
+d <- lapply(files, read.physical)
 
-# usethis::use_data(areasOther, compress = "xz", overwrite = T)
+#vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
+vardat1 <- unlist(lapply(d, function(k) k[['data']][['volume']]))
+vardat2 <- unlist(lapply(d, function(k) k[['data']][['minimumTemperature']]))
+areaName <- unlist(lapply(d, function(k) rep(k[['areaName']], dim(k[['data']])[1])))
+year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 
-write.csv(file.path(path, 'areaOther.csv'), x = areasOther, row.names = FALSE)
+# update spatial name to differentiate between definitions of scotian shelf
+areaName <- gsub(x = areaName, pattern = 'Scotian Shelf', replacement = 'scotian_shelf_grid')
 
+
+df <- data.frame(year = year,
+                 area = areaName,
+                 cold_intermediate_layer_volume = vardat1,
+                 minimum_temperature_in_cold_intermediate_layer = vardat2)
+coldIntermediateLayer <- df
+
+# temperature_at_sea_floor
+path <- 'inst/extdata/summerBottomTemperature'
+files <- list.files(path = path,
+                    pattern = 'bottomTemperatureAnomalyNafoZone\\w+\\.dat',
+                    full.names = TRUE)
+d <- lapply(files, read.physical)
+
+tasf <- unlist(lapply(d, function(k) as.numeric(k[['data']][['anomaly']]) + as.numeric(k[['climatologicalMean']])))
+areaName <- unlist(lapply(d, function(k) rep(k[['divisionName']], dim(k[['data']])[1])))
+year <- unlist(lapply(d, function(k) k[['data']][['year']]))
+
+df <- data.frame(year = year,
+                 area = areaName,
+                 temperature_at_sea_floor = tasf)
+summerBottomTemperature <- df
+
+# assemble data
+
+Derived_Annual_Broadscale <- dplyr::bind_rows(areasOther, areasTemperature, coldIntermediateLayer, summerBottomTemperature)
+
+
+# save data
+
+
+# save data to csv
+readr::write_csv(Derived_Annual_Broadscale, "inst/extdata/csv/Derived_Annual_Broadscale.csv")
+
+# save data to rda
+usethis::use_data(Derived_Annual_Broadscale, overwrite = TRUE)

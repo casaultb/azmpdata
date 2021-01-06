@@ -33,26 +33,10 @@ For biological data: Raw data files are uploaded to the FTP server at 'ftp://ftp
 For more details on the formatting of data, please see the `style_guide` vignette. 
 
 ### Step 2
-__Pre- process raw data into R format__
-
-Once raw physical data has been added to the appropriate folder the user should run the .R script associated with the raw data. For most variables these files are included within the data folder (eg. `inst/extdata/airTemperature/airTemperature.R`). This script performs two functions, 1) it reads in all the raw data and formats it into a consistent .rda file in `data-raw`, 2) for variables where the raw files are in .dat format it creates a .csv format file. This script can be run by opening it or by using code similar to the example below (replacing the file name as necessary).
-
-```{r, eval = FALSE}
-source('inst/extdata/airTemperature/airTemperature.R')
-```
-
-Biological data is loaded into the package using individual scripts for each dataframe. These scripts are contained in `inst/extdata` and organized by folder depending on the data type. These scripts output package data objects but __note that after running these scripts the package data will only contain biological data and must be completed with the physical data by completeing the next steps__. 
+__Processing Scripts__
+Data is loaded into the package using individual scripts for each dataframe. These scripts are contained in `inst/extdata` and organized by folder depending on the data type. These scripts output package data objects. 
 
 ### Step 3
-__Combine rda files into final package form__
-
-Once physical data has been formatted into .rda files (contained in `data-raw` in the main package directory), it is ready to be combined into the final package data tables (which have been created with the biological data in the previous step). This can be done be running the function `combine_all_data()`. This function requires no arguments and results in final .rda files being saved in `data`. This function should be used with caution. Please ensure that you have followed the above steps in order and that the `data-raw` folder has been updated before running `combine_all_data()`. The output from this function is visible in the main package directory in `data` as .rda files organized into data tables by temporal, spatial and categorical scales. This function should also update the date stamp in `inst/extdata/datadate.txt` to reflect the current date when the package data was updated. This datestamp should be in the format YYYY-MM-DD. 
-
-```{r, eval = FALSE}
-
-combine_all_data()
-
-```
-
-
+__Source all scripts__
+To recreate all dataframes use the R script 'source_all.R' this will regenerate all dataframes in the package and update the datadate.txt file which identifies the data on which data was last updated. This datadate.txt file is important for versioning the package and ensuring users have the latest data. If running dataframe scripts individually, please ensure datadate.txt is updated using the `data_update()` function. 
 

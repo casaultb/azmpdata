@@ -1,6 +1,6 @@
 Package: azmpdata
 Title: A data package to share derived metrics from AZMP research documents
-Version: 0.2019.0.9000
+Version: 0.2019.0.9100
 Authors@R: c(
     person(given = "Benoit",
            family = "Casault",
