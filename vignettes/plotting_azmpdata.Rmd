@@ -13,10 +13,12 @@ vignette: >
 library(azmpdata)
 ```
 ## Introduction
+
 The purpose of this vignette is to demonstrate how to plot data which is pulled from the `azmpdata` package. We show brief examples of various plotting methods including base plot, and ggplot2. We also review how to recreate default plots from the `gslea` package which has similar functionality to `azmpdata` but contains Gulf and Quebec region data products. 
 
 ## The Data
-We will use sample data from the azmpdata package for each example. Data can be called using
+
+We will use sample data from the `azmpdata` package for each example. Data can be called using
 
 ```{r}
 df <- get('Derived_Annual_Stations')
@@ -24,6 +26,7 @@ head(df)
 ```
 
 ## Base plot
+
 Using base R to create plots can often be the simplest way for a novice to explore a dataset. 
 
 If we wanted to create a simple plot of a variable over time, it might look like this
@@ -202,31 +205,37 @@ Note these plots may appear very small in the notebook format.
 ```{r}
 dat <- get('Derived_Annual_Stations')
 
-  actual.EARs= unique(dat$station) # get regions to plot 
-  dat.only <- dat[,3:11] # isolate data variables to plot (not metadata)
-  no.plots= length(dat.only)*length(actual.EARs) # calculate number of plots ot be displayed
+  actual_EARs <- unique(dat$station) # get regions to plot 
+  dat_only <- dat[,!names(dat) %in% c('station', 'year')] # isolate data variables to plot (not metadata)
+  no_plots <- length(dat_only)*length(actual_EARs) # calculate number of plots ot be displayed
   # set par info based on number of plots (max 25 per page)
-  if(no.plots>25) {par(mfcol=c(5, 5),mar=c(1.3,2,3.2,1),omi=c(.1,.1,.1,.1), ask=T)}
-  if(no.plots<=25){ par(mfcol=c(length(dat.only), length(actual.EARs)),mar=c(1.3,2,3.2,1),omi=c(.1,.1,.1,.1))}
+  if(no_plots > 25) {par(mfcol = c(5, 5), mar = c(1.3,2,3.2,1), omi = c(.1,.1,.1,.1), ask = T)}
+  if(no_plots <= 25){par(mfcol = c(length(dat_only), length(actual_EARs)), mar = c(1.3,2,3.2,1), omi = c(.1,.1,.1,.1))}
   
-  counter=1
-  for(i in actual.EARs){ # loop through regions
-    ear.dat= dat[dat$station == i,]
-    for(ii in 1:length(dat.only)){ # loop by variables
-      var.dat= data.frame('value' = ear.dat[[names(dat.only)[[ii]]]], 'station' = ear.dat$station, 'year' = ear.dat$year) # get only one variable for one region
-      if(!is.na(diff(range(var.dat$value)))){ # if all values are NA skip over plotting
+  counter <- 1
+  for(i in actual_EARs){ # loop through regions
+    ear_dat <- dat[dat$station == i,]
+    for(ii in 1:length(dat_only)){ # loop by variables
+      var_dat <- data.frame('value' = ear_dat[[names(dat_only)[[ii]]]], 'station' = ear_dat$station, 'year' = ear_dat$year) # get only one variable for one region
+      if(!is.na(diff(range(var_dat$value)))){ # if all values are NA skip over plotting
         # plot
-      if(nrow(var.dat)<1) plot(0, xlab="", ylab="", xaxt="n",yaxt="n",main=paste("Station",i,names(dat.only)[[ii]]))
-      if(nrow(var.dat)>0) plot(var.dat$year, var.dat$value, xlab="", ylab="", main=paste("Station",i,names(dat.only)[[ii]]))
+      if(nrow(var_dat) < 1) plot(0, 
+                                 xlab = "", ylab = "", 
+                                 xaxt = "n", yaxt = "n",
+                                 main = paste("Station",i,names(dat_only)[[ii]]))
+      if(nrow(var_dat) > 0) plot(var_dat$year, var_dat$value, 
+                                 xlab = "", ylab = "", 
+                                 main = paste("Station",i,names(dat_only)[[ii]]))
       }
     }
-    counter= counter+1
+    counter <- counter+1
   }
   # set par info
-  par(mfcol=c(1,1),omi=c(0,0,0,0),mar= c(5.1, 4.1, 4.1, 2.1), ask=F)
+  par(mfcol = c(1,1), omi = c(0,0,0,0), mar = c(5.1, 4.1, 4.1, 2.1), ask = F)
 ```
 
 ## Conclusion
+
 There are many varied plotting methods which can be used once `azmpdata` is loaded. We hope these examples help you to explore the possibilities. For more help on plotting please use the resources below:
 
 * https://ggplot2.tidyverse.org/
