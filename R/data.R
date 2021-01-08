@@ -611,7 +611,7 @@
 #'     \item{chlorophyll}{Discrete measurements of chlorophyll concentration in the water column at a range of depths }
 #'     \item{sea_temperature}{Discrete sea temperature measurements over a range of depths}
 #'     \item{salinity}{Discrete salinity measurements over a range of depths}
-#'     \item{density}{Discrete density measurements over a range of depths}
+#'     \item{sigmaTheta}{Discrete density measurements over a range of depths}
 #' }
 #'
 #' @note
@@ -782,6 +782,7 @@
 #'     \item{primary_production_from_satellite}{Average primary production as inferred from satellite (remote sensing) measurements}
 #'     \item{oxygen_at_sea_floor}{Oxygen concentrations at the bottom of the water column}
 #'     \item{surface_chlorphyll}{Average surface chlorophyll as inferred from satellite (remote sensing) measurements}
+#'     \item{sea_surface_temperature_from_satellite}{Averages of sea surface temperatures infered from remote sensing (satellite) measurements}
 #' }
 #'
 #' @note

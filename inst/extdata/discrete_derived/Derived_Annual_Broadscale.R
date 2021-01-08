@@ -7,6 +7,60 @@ library(usethis)
 library(RCurl)
 # load data
 
+# sea_surface_temperature_from_satellite
+url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/SSTsatellite/"
+result <- getURL(url_name,
+                 verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
+
+filenames <- unlist(strsplit(result, "\r\n"))
+
+
+# create dataframe list
+d <- list()
+for(i in 1:length(filenames)){
+  con <- url(paste0(url_name, filenames[[i]]))
+
+  d[[i]] <- read.physical(con)
+}
+
+
+vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
+areaName <- unlist(lapply(d, function(k) rep(k[['regionName']], dim(k[['data']])[1])))
+year <- unlist(lapply(d, function(k) k[['data']][['year']]))
+
+
+df <- data.frame(year = year,
+                 area = areaName,
+                 sea_surface_temperature_from_satellite = vardat) # verify this is correct variable name
+sstSatellite <- df
+
+# north_atlantic_oscillation
+url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/nao/"
+result <- getURL(url_name,
+                 verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
+
+filenames <- unlist(strsplit(result, "\r\n"))
+
+
+# create dataframe list
+d <- list()
+for(i in 1:length(filenames)){
+  con <- url(paste0(url_name, filenames[[i]]))
+
+  d[[i]] <- read.physical(con)
+}
+
+
+vardat <- unlist(lapply(d, function(k) k[['data']][['nao']] + as.numeric(k[['climatologicalMean']])))
+areaName <- NA
+year <- unlist(lapply(d, function(k) k[['data']][['year']]))
+
+
+df <- data.frame(year = year,
+                 area = areaName,
+                 north_atlantic_oscillation = vardat) # verify this is correct variable name
+nao <- df
+
 # temperature_at_sea_floor
 url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/areas/"
 result <- getURL(url_name,
@@ -184,7 +238,9 @@ summerBottomTemperature <- df
 
 # assemble data
 
-Derived_Annual_Broadscale <- dplyr::bind_rows(areasOther, areasTemperature, coldIntermediateLayer, summerBottomTemperature)
+Derived_Annual_Broadscale <- dplyr::bind_rows(areasOther, areasTemperature,
+                                              coldIntermediateLayer, summerBottomTemperature,
+                                              nao, sstSatellite)
 
 
 # save data
