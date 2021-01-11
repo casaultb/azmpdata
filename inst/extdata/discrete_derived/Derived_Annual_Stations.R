@@ -157,12 +157,12 @@ newdf2 <- newdf %>%
 temperature_0_df <- newdf2[newdf2$pressure == 0,] %>%
   dplyr::rename(temperature_0 = temperature) %>%
   dplyr::distinct(., year, .keep_all = TRUE) %>%
-  dplyr::select(., - temperature_new)
+  dplyr::select(., - temperature_new, -month, -day)
 
 temperature_90_df <- newdf2[newdf2$pressure == 90,] %>%
   dplyr::rename(temperature_90 = temperature) %>%
   dplyr::distinct(., year, .keep_all = TRUE)%>%
-  dplyr::select(., - temperature_new)
+  dplyr::select(., -temperature_new, -month, -day)
 
 # assemble data
 Derived_Annual_Stations <- dplyr::bind_rows(HL2_env$df_means_annual_l %>%
