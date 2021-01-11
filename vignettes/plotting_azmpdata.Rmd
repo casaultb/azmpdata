@@ -12,6 +12,7 @@ vignette: >
 ```{r}
 library(azmpdata)
 library(ggplot2)
+library(dplyr)
 
 ```
 ## Introduction
