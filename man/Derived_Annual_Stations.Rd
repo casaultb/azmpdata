@@ -20,7 +20,6 @@ A dataframe
     \item{temperature_0}{Averages for temperature at 0 metres at Prince 5 (P5) and Halifax 2 (HL2) stations}
     \item{temperature_90}{Averages for temperature at 90 metres at Prince 5 (P5) and Halifax 2 (HL2) stations}
     \item{sea_surface_temperature_from_moorings}{Averages of sea surface temperatures recorded by mooring at Halifax, NS and St. Andrews, NB}
-    \item{sea_surface_height}{Average of sea surface height at Yarmouth and Halifax NS}
     \item{integrated_nitrate_0_50}{Nitrate concentrations integrated between 0 and 50 metres}
     \item{integrated_nitrate_50_150}{Nitrate concentrations integrated between 50 and 150 metres}
     \item{integrated_phosphate_0_50}{Phosphate concentrations integrated between 0 and 50 metres}

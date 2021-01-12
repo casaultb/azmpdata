@@ -308,24 +308,35 @@
 "Discrete_Occupations_Stations"
 
 
-# Derived Occupation Monthly data
-#
-# Derived data from fixed stations by month.
-#
-#
-#
-# @format A dataframe
-#
-# * station_name
-# * latitude
-# * longitude
-# * year
-# * month
-#
-# _Data_
-# * sea_surface_height
-#
-# # "Derived_Monthly_Stations
+#' Derived Monthly Station data
+#'
+#' Derived data products from fixed stations collected monthly.
+#'
+#'
+#'
+#' @format A dataframe
+#' \describe{
+#'     \item{station}{The name of the station where data was collected}
+#'     \item{year}{The year in which data was collected}
+#'     \item{month}{The month in which data was collected (numeric)}
+#'
+#'
+#'     \item{sea_surface_height}{Average of sea surface height at Yarmouth and Halifax NS}
+#' }
+#'
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Monthly}
+#'    \item{regional_scale}{Station}
+#'    \item{category}{ physical}
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'   Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
+#'   Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
+#'   Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
+"Derived_Monthly_Stations"
 
 
 #' Derived Annual station data
@@ -349,7 +360,6 @@
 #'     \item{temperature_0}{Averages for temperature at 0 metres at Prince 5 (P5) and Halifax 2 (HL2) stations}
 #'     \item{temperature_90}{Averages for temperature at 90 metres at Prince 5 (P5) and Halifax 2 (HL2) stations}
 #'     \item{sea_surface_temperature_from_moorings}{Averages of sea surface temperatures recorded by mooring at Halifax, NS and St. Andrews, NB}
-#'     \item{sea_surface_height}{Average of sea surface height at Yarmouth and Halifax NS}
 #'     \item{integrated_nitrate_0_50}{Nitrate concentrations integrated between 0 and 50 metres}
 #'     \item{integrated_nitrate_50_150}{Nitrate concentrations integrated between 50 and 150 metres}
 #'     \item{integrated_phosphate_0_50}{Phosphate concentrations integrated between 0 and 50 metres}
@@ -732,19 +742,34 @@
  "Zooplankton_Annual_Sections"
 
 
-# Derived monthly broadscale data
-#
-# _Metadata_
-# * area
-# * year
-# * month
-#
-# _Data_
-# * sea_surface_temperature_from_satellite
-# * sea_ice_area
-#
-# Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-# "Derived_Monthly_Broadscale"
+#' Derived Monthly Broadscale data
+#'
+#' Derived data averaged over broad regions and months.
+#'
+#'
+#'
+#' @format A dataframe
+#' \describe{
+#'     \item{area}{Area name where data was collected}
+#'     \item{year}{The year in which data was collected}
+#'     \item{month}{The month in which data was collected (numeric)}
+#'
+#'     \item{river_flux}{A measure of the flux exiting from the St. Lawrence river into the Gulf of St. Lawrence. }
+#' }
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Monthly}
+#'    \item{regional_scale}{Broadscale}
+#'    \item{category}{physical}
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'
+#'   Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
+#'   Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
+#'   Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
+ "Derived_Monthly_Broadscale"
 
 
 #' Derived annual broadscale data
@@ -762,7 +787,6 @@
 #'     \item{sea_surface_temperature}{Temperature at sea surface averaged over NAFO regions 4V, 4X and 4W as well as regional areas (Bay of Fundy + Gulf of Maine)}
 #'     \item{north_atlantic_oscillation}{North Atlantic Oscillation Index (NAO), calculated using sea level pressure difference between subtropical high and subpolar low}
 #'     \item{atlantic_multidecadal_oscillation}{Atlantic Multidecadal Oscillation Index (AMO), based on anomalies of sea surface temperatures in North Atlantic basin. }
-#'     \item{river_flux}{A measure of the flux exiting from the St. Lawrence river into the Gulf of St. Lawrence. }
 #'     \item{cold_intermediate_layer_volume}{A measure of the volume of the cold intermediate layer throughout the Gulf of St. Lawrence}
 #'     \item{sea_ice_volume}{Average ice volume for January - March in the Gulf of St. Lawrence, can be reasonably used as a proxy to represent sea ice volume on the Scotian Shelf. }
 #'     \item{density_gradient_0_50}{An index of stratification, measured as the density difference between 0 and 50 metres}

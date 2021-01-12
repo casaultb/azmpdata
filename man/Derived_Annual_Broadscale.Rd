@@ -14,7 +14,6 @@ A dataframe
     \item{sea_surface_temperature}{Temperature at sea surface averaged over NAFO regions 4V, 4X and 4W as well as regional areas (Bay of Fundy + Gulf of Maine)}
     \item{north_atlantic_oscillation}{North Atlantic Oscillation Index (NAO), calculated using sea level pressure difference between subtropical high and subpolar low}
     \item{atlantic_multidecadal_oscillation}{Atlantic Multidecadal Oscillation Index (AMO), based on anomalies of sea surface temperatures in North Atlantic basin. }
-    \item{river_flux}{A measure of the flux exiting from the St. Lawrence river into the Gulf of St. Lawrence. }
     \item{cold_intermediate_layer_volume}{A measure of the volume of the cold intermediate layer throughout the Gulf of St. Lawrence}
     \item{sea_ice_volume}{Average ice volume for January - March in the Gulf of St. Lawrence, can be reasonably used as a proxy to represent sea ice volume on the Scotian Shelf. }
     \item{density_gradient_0_50}{An index of stratification, measured as the density difference between 0 and 50 metres}

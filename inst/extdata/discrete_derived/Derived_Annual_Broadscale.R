@@ -7,6 +7,8 @@ library(usethis)
 library(RCurl)
 # load data
 
+
+
 # sea_surface_temperature_from_satellite
 url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/SSTsatellite/"
 result <- getURL(url_name,
@@ -240,7 +242,7 @@ summerBottomTemperature <- df
 
 Derived_Annual_Broadscale <- dplyr::bind_rows(areasOther, areasTemperature,
                                               coldIntermediateLayer, summerBottomTemperature,
-                                              nao, sstSatellite)
+                                              nao, sstSatellite, river_flux)
 
 
 # save data
