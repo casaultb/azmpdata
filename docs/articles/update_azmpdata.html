@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">azmpdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2019.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2019.0.9100</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -71,7 +71,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/casaultb/azmpdata/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -85,7 +85,7 @@
 
       
 
-      </header><script src="update_azmpdata_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>update_azmpdata</h1>
@@ -99,11 +99,12 @@
 
     
     
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">azmpdata</span>)
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://casaultb.github.io/azmpdata">azmpdata</a></span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;  casaultb/azmpdata status:</span>
-<span class="co">#&gt;  (Package ver: 0.2019.0.9000) Up to date</span>
-<span class="co">#&gt;  (Data ver: 2021-01-05 ) Push to Github</span></pre></body></html></div>
+<span class="co">#&gt;  (Package ver: 0.2019.0.9100) Up to date</span>
+<span class="co">#&gt;  (Data ver:2021-01-08 ) is up to date</span></code></pre></div>
 <p>This package should be updated on an annual basis or whenever there are major changes made to the data set. The update process should only be undertaken by developers or data managers. The following document describes the procedure for updating the data package</p>
 <div id="step-1" class="section level3">
 <h3 class="hasAnchor">
@@ -116,18 +117,12 @@
 <div id="step-2" class="section level3">
 <h3 class="hasAnchor">
 <a href="#step-2" class="anchor"></a>Step 2</h3>
-<p><strong>Pre- process raw data into R format</strong></p>
-<p>Once raw physical data has been added to the appropriate folder the user should run the .R script associated with the raw data. For most variables these files are included within the data folder (eg. <code>inst/extdata/airTemperature/airTemperature.R</code>). This script performs two functions, 1) it reads in all the raw data and formats it into a consistent .rda file in <code>data-raw</code>, 2) for variables where the raw files are in .dat format it creates a .csv format file. This script can be run by opening it or by using code similar to the example below (replacing the file name as necessary).</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/source.html">source</a></span>(<span class="st">'inst/extdata/airTemperature/airTemperature.R'</span>)</pre></body></html></div>
-<p>Biological data is loaded into the package using individual scripts for each dataframe. These scripts are contained in <code>inst/extdata</code> and organized by folder depending on the data type. These scripts output package data objects but <strong>note that after running these scripts the package data will only contain biological data and must be completed with the physical data by completeing the next steps</strong>.</p>
+<p><strong>Processing Scripts</strong> Data is loaded into the package using individual scripts for each dataframe. These scripts are contained in <code>inst/extdata</code> and organized by folder depending on the data type. These scripts output package data objects.</p>
 </div>
 <div id="step-3" class="section level3">
 <h3 class="hasAnchor">
 <a href="#step-3" class="anchor"></a>Step 3</h3>
-<p><strong>Combine rda files into final package form</strong></p>
-<p>Once physical data has been formatted into .rda files (contained in <code>data-raw</code> in the main package directory), it is ready to be combined into the final package data tables (which have been created with the biological data in the previous step). This can be done be running the function <code><a href="../reference/combine_all_data.html">combine_all_data()</a></code>. This function requires no arguments and results in final .rda files being saved in <code>data</code>. This function should be used with caution. Please ensure that you have followed the above steps in order and that the <code>data-raw</code> folder has been updated before running <code><a href="../reference/combine_all_data.html">combine_all_data()</a></code>. The output from this function is visible in the main package directory in <code>data</code> as .rda files organized into data tables by temporal, spatial and categorical scales. This function should also update the date stamp in <code>inst/extdata/datadate.txt</code> to reflect the current date when the package data was updated. This datestamp should be in the format YYYY-MM-DD.</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r">
-<span class="fu"><a href="../reference/combine_all_data.html">combine_all_data</a></span>()</pre></body></html></div>
+<p><strong>Source all scripts</strong> To recreate all dataframes use the R script ‘source_all.R’ this will regenerate all dataframes in the package and update the datadate.txt file which identifies the data on which data was last updated. This datadate.txt file is important for versioning the package and ensuring users have the latest data. If running dataframe scripts individually, please ensure datadate.txt is updated using the <code>data_update()</code> function.</p>
 </div>
   </div>
 
@@ -140,11 +135,11 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by First Last.</p>
+  <p>Developed by Benoit Casault, Emily Chisholm, Chantelle Layton, Chantelle Layton.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

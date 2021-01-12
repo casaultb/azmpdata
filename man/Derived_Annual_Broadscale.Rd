@@ -4,7 +4,8 @@
 \name{Derived_Annual_Broadscale}
 \alias{Derived_Annual_Broadscale}
 \title{Derived annual broadscale data}
-\format{A dataframe
+\format{
+A dataframe
 \describe{
     \item{area}{Area name where data was collected}
     \item{year}{The year in which data was collected}
@@ -33,7 +34,9 @@
     \item{primary_production_from_satellite}{Average primary production as inferred from satellite (remote sensing) measurements}
     \item{oxygen_at_sea_floor}{Oxygen concentrations at the bottom of the water column}
     \item{surface_chlorphyll}{Average surface chlorophyll as inferred from satellite (remote sensing) measurements}
-}}
+    \item{sea_surface_temperature_from_satellite}{Averages of sea surface temperatures infered from remote sensing (satellite) measurements}
+}
+}
 \usage{
 Derived_Annual_Broadscale
 }

@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">azmpdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2019.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2019.0.9100</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -71,7 +71,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/casaultb/azmpdata/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -85,7 +85,7 @@
 
       
 
-      </header><script src="style_guide_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Style Guide</h1>
@@ -103,26 +103,26 @@
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
-<p>The purpose of this guide is to provide a reference for the formatting and style of data which is to be uploaded into the azmpdata package. This is meant as a reference for developers and data managers, data upload should not be attempted by individual package users.</p>
+<p>The purpose of this guide is to provide a reference for the formatting and style of data which is to be uploaded into the <code>azmpdata</code> package. This is meant as a reference for developers and data managers, data upload should not be attempted by individual package users.</p>
 </div>
 <div id="data-format" class="section level2">
 <h2 class="hasAnchor">
 <a href="#data-format" class="anchor"></a>Data format</h2>
-<p>Biological and chemical data is uploaded using a standard procedure. Raw data may vary significantly in format and style, it is then massaged into azmpdata style and format through R scripts before being finalized in exported data tables. This guide will focus on the final form and style of exported data products within the package.</p>
+<p>Biological and chemical data is uploaded using a standard procedure. Raw data may vary significantly in format and style, it is then massaged into <code>azmpdata</code> style and format through R scripts before being finalized in exported data tables. This guide will focus on the final form and style of exported data products within the package.</p>
 <p>The format of all package dataframes should be the same, they should be exported through the <code><a href="https://usethis.r-lib.org/reference/use_data.html">usethis::use_data()</a></code> function as dataframe objects. Each column should correspond to a single data or metadata variable (wide format data). Metadata should be included as unique columns even if that requires repetitive entries for all rows of data.</p>
 </div>
 <div id="data-style" class="section level2">
 <h2 class="hasAnchor">
 <a href="#data-style" class="anchor"></a>Data style</h2>
 <p>This section will mainly focus on naming conventions. For all data variable names, please ensure that there are matching entries in the look-up table ‘variable_look_up.csv’ (located in <code>inst/extdata/lookup</code>).</p>
-<p>Data variables have been named based on CF principles (<a href="https://cfconventions.org/standard-names.html" class="uri">https://cfconventions.org/standard-names.html</a>). These principles dictate that variable names are verbose and descriptive, with words seperated by underscores and no capitalization. This guidelines docucment (<a href="https://cfconventions.org/Data/cf-standard-names/docs/guidelines.html" class="uri">https://cfconventions.org/Data/cf-standard-names/docs/guidelines.html</a>) is quite helpful in determining phrasing, for example using ’…_at_sea_floor’ to append a variable which was collected at the bottom of the water column, instead of ‘bottom…’.</p>
+<p>Data variables have been named based on CF principles (<a href="https://cfconventions.org/standard-names.html" class="uri">https://cfconventions.org/standard-names.html</a>). These principles dictate that variable names are verbose and descriptive, with words separated by underscores and no capitalization. This guidelines docucment (<a href="https://cfconventions.org/Data/cf-standard-names/docs/guidelines.html" class="uri">https://cfconventions.org/Data/cf-standard-names/docs/guidelines.html</a>) is quite helpful in determining phrasing, for example using <code>..._at_sea_floor</code> to append a variable which was collected at the bottom of the water column, instead of <code>bottom...</code>.</p>
 <p>These conventions help to make variable names very clear for new and experienced users. The same tenants should be followed when naming new variables.</p>
-<p>Metadata names have been kept fairly simple compared to data names. The same style principles are used when relevant, such as underscore seperation and no capitalization. Metadata names are not appended by ’_name’, for example we would use ‘station’ rather than ‘station_name’, this keeps names brief.</p>
+<p>Metadata names have been kept fairly simple compared to data names. The same style principles are used when relevant, such as underscore separation and no capitalization. Metadata names are not appended by <code>_name</code>, for example we would use <code>station</code> rather than <code>station_name</code>, this keeps names brief.</p>
 </div>
 <div id="metadata-requirements" class="section level2">
 <h2 class="hasAnchor">
 <a href="#metadata-requirements" class="anchor"></a>Metadata requirements</h2>
-<p>All of the azmpdata datasets include quite extensive metadata in order to make the dataframes stand-alone products. This section gives some general requirements of the type of metadata which should be included if new data is added.</p>
+<p>All of the <code>azmpdata</code> datasets include quite extensive metadata in order to make the dataframes stand-alone products. This section gives some general requirements of the type of metadata which should be included if new data is added.</p>
 <div id="occupations" class="section level4">
 <h4 class="hasAnchor">
 <a href="#occupations" class="anchor"></a>Occupations</h4>
@@ -137,7 +137,7 @@
 <li>sample_id</li>
 <li>event_id</li>
 </ul>
-<p>In some cases additional metadat will be required depending on the variable sampled</p>
+<p>In some cases additional metadata will be required depending on the variable sampled</p>
 <ul>
 <li>depth</li>
 <li>nominal_depth</li>
@@ -202,14 +202,14 @@
 <div id="location" class="section level4">
 <h4 class="hasAnchor">
 <a href="#location" class="anchor"></a>Location</h4>
-<p><em>station</em>, <em>section</em>, or <em>area</em> is given as character value, typically representing the short name for a given location. Care should be taken to ensure that any names used in the datasets are also represented in the spatial data included with the multivaR package so that users are able to find definitions for the areas included. AZMP transects are represented by accronyms, for example Halifax Line is written as HL, Brown’s Bank Line is BBL. Stations along each of these lines are numbered and written without any dashes, underscores or leading zeros (eg. HL2, BBL7, P5).</p>
+<p><em>station</em>, <em>section</em>, or <em>area</em> is given as character value, typically representing the short name for a given location. Care should be taken to ensure that any names used in the datasets are also represented in the spatial data included with the <code>multivaR</code> package so that users are able to find definitions for the areas included. AZMP transects are represented by acronyms, for example Halifax line is written as HL, Brown’s Bank line is BBL. Stations along each of these lines are numbered and written without any dashes, underscores or leading zeros (e.g. HL2, BBL7, P5).</p>
 </div>
 <div id="identifiers" class="section level4">
 <h4 class="hasAnchor">
 <a href="#identifiers" class="anchor"></a>Identifiers</h4>
-<p><em>sample_id</em> is currently given as a combination of original data sample_id, appended (with an underscore) by the cruise_id. This ensures that there is no duplication of sample_id’s between cruises, which is a problem in other databases. The format is cruiseid_sampleid.</p>
+<p><em>sample_id</em> is currently given as a combination of original data sample_id, appended (with an underscore) by the <code>cruise_id</code>. This ensures that there is no duplication of <code>sample_id</code>’s between cruises, which is a problem in other databases. The format is <code>cruiseid_sampleid</code>.</p>
 <p><em>event_id</em> is given as numeric</p>
-<p><em>cruise_id</em> is given as the numeric cruise identifier from BioChem and is typically (although not always) in the format YYYY###### (Note the nineties are an exception where cruise_id’s are formatted YY######). Where the last six digits are a unique numeric sequence to identify the cruise.</p>
+<p><em>cruise_id</em> is given as the numeric cruise identifier from BioChem and is typically (although not always) in the format <code>YYYY######</code> (Note the nineties are an exception where <code>cruise_id</code>’s are formatted <code>YY######</code>). Where the last six digits are a unique numeric sequence to identify the cruise.</p>
 </div>
 </div>
   </div>
@@ -225,11 +225,11 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by First Last.</p>
+  <p>Developed by Benoit Casault, Emily Chisholm, Chantelle Layton, Chantelle Layton.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

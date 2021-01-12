@@ -4,7 +4,8 @@
 \name{Discrete_Occupations_Sections}
 \alias{Discrete_Occupations_Sections}
 \title{Discrete Occupation Section data}
-\format{A dataframe
+\format{
+A dataframe
 \describe{
     \item{section}{Section name where data was collected}
     \item{station}{The name of the station where data was collected}
@@ -26,8 +27,9 @@
     \item{chlorophyll}{Discrete measurements of chlorophyll concentration in the water column at a range of depths }
     \item{sea_temperature}{Discrete sea temperature measurements over a range of depths}
     \item{salinity}{Discrete salinity measurements over a range of depths}
-    \item{density}{Discrete density measurements over a range of depths}
-}}
+    \item{sigmaTheta}{Discrete density measurements over a range of depths}
+}
+}
 \usage{
 Discrete_Occupations_Sections
 }
