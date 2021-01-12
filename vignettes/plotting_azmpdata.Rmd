@@ -11,6 +11,9 @@ vignette: >
 
 ```{r}
 library(azmpdata)
+library(ggplot2)
+library(dplyr)
+
 ```
 ## Introduction
 
@@ -45,7 +48,6 @@ Using ggplot2 can give great simple exploratory plots, using a different 'gramma
 If a user wanted to compare different variables over time, ggplot2 has functions which make this very simple.
 
 ```{r}
-library(ggplot2)
 
 p <- ggplot(data = df) +
   geom_line(aes(x = year, y = temperature_in_air, colour = 'air_temperature'), show.legend = TRUE) +
@@ -206,7 +208,7 @@ Note these plots may appear very small in the notebook format.
 dat <- get('Derived_Annual_Stations')
 
   actual_EARs <- unique(dat$station) # get regions to plot 
-  dat_only <- dat[,!names(dat) %in% c('station', 'year')] # isolate data variables to plot (not metadata)
+  dat_only <- dat[,!names(dat) %in% c('station', 'year', 'cruiseNumber', 'longitude', 'latitude', 'pressure')] # isolate data variables to plot (not metadata)
   no_plots <- length(dat_only)*length(actual_EARs) # calculate number of plots ot be displayed
   # set par info based on number of plots (max 25 per page)
   if(no_plots > 25) {par(mfcol = c(5, 5), mar = c(1.3,2,3.2,1), omi = c(.1,.1,.1,.1), ask = T)}
