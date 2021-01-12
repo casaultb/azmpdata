@@ -4,8 +4,7 @@
 \name{Discrete_Occupations_Stations}
 \alias{Discrete_Occupations_Stations}
 \title{Discrete Occupation Station data}
-\format{
-A dataframe
+\format{A dataframe
 \describe{
     \item{station}{The name of the station where data was collected}
     \item{latitude}{The latitude at which data was collected}
@@ -26,8 +25,7 @@ A dataframe
     \item{salinity}{Discrete salinity measurements over a range of depths}
     \item{density}{Discrete density measurements over a range of depths}
 
-}
-}
+}}
 \usage{
 Discrete_Occupations_Stations
 }
