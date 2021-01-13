@@ -29,12 +29,12 @@ rm(list=c("HL2_env", "P5_env"))
 
 # target variables to include
 target_var <- c("Chlorophyll_A_0_100" = "chlorophyll_0_100",
-                "Nitrate_0_50" = "nitrate_0_50",
-                "Nitrate_50_150" = "nitrate_50_150",
-                "Phosphate_0_50" = "phosphate_0_50",
-                "Phosphate_50_150" = "phosphate_50_150",
-                "Silicate_0_50" = "silicate_0_50",
-                "Silicate_50_150" = "silicate_50_150")
+                "Nitrate_0_50" = "integrated_nitrate_0_50",
+                "Nitrate_50_150" = "integrated_nitrate_50_150",
+                "Phosphate_0_50" = "integrated_phosphate_0_50",
+                "Phosphate_50_150" = "integrated_phosphate_50_150",
+                "Silicate_0_50" = "integrated_silicate_0_50",
+                "Silicate_50_150" = "integrated_silicate_50_150")
 
 # print order
 print_order_station <- c("HL2" = 1,
