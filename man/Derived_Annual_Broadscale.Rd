@@ -25,15 +25,7 @@ A dataframe
     \item{sea_surface_temperature_warming}{Derived metric calculating the warming of sea surface temperature averages over the Scotian Shelf}
     \item{final_day_of_sea_ice}{The final day of sea ice observed in the Gulf of St. Lawrence. Note that this metric can be used as a reasonable proxy for the Scotian Shelf}
     \item{sea_ice_area}{Average  of sea ice area, seaward of Cabot Strait}
-    \item{start_of_phytoplankton_bloom}{The timing (start) of the phytoplankton bloom on the Scotian Shelf}
-    \item{duration_of_phytoplankton_bloom}{The duration of the Scotian Shelf phytoplankton bloom}
-    \item{amplitude_of_phytoplankton_bloom}{An average measure of the amplitude of the phytoplankton bloom on the Scotian Shelf}
-    \item{magnitude_of_phytoplankton_bloom}{An average measure of the magnitude of the phytoplankton bloom on the Scotian Shelf}
-    \item{nitrate_at_sea_floor}{Nitrate concentrations at the bottom of the water column}
-    \item{primary_production_from_satellite}{Average primary production as inferred from satellite (remote sensing) measurements}
-    \item{oxygen_at_sea_floor}{Oxygen concentrations at the bottom of the water column}
     \item{surface_chlorphyll}{Average surface chlorophyll as inferred from satellite (remote sensing) measurements}
-    \item{sea_surface_temperature_from_satellite}{Averages of sea surface temperatures infered from remote sensing (satellite) measurements}
 }
 }
 \usage{

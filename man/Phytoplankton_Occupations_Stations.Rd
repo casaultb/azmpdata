@@ -17,7 +17,11 @@ A dataframe
     \item{sample_id}{A unique identifier for the sample}
     \item{depth}{The depth at which data was actually collected}
 
-    \item{microplankton_abundance}{Abundance of microplankton at fixed stations (phytoplankton and protists)}
+    \item{diatoms}{Abundance of diatoms group, using Fucoxanthin as a measurement proxy}
+    \item{dinflagellates}{Abundance of dinoflagellates group, using Peridinin as a measurement proxy}
+    \item{flagellates}{Abundance of flagellates group}
+    \item{ciliates}{Abundance of ciliates group}
+    \item{microzooplankton}{Abundance of microzooplankton group}
 }
 }
 \usage{
