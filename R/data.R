@@ -362,7 +362,7 @@
 #'     \item{salinity}{Discrete salinity measurements over a range of depths}
 #'     \item{integrated_sea_temperature_0_50}{Averages of temperature measurements, integrated between 0 and 50 metres}
 #'     \item{integrated_salinity_0_50}{Averages of salinity measurements, integrated between 0 and 50 metres}
-#'     \item{integrated_density_0_50}{Averages of density measurements, integrated between 0 and 50 metres}
+#'     \item{integrated_sigmaTheta_0_50}{Averages of density measurements, integrated between 0 and 50 metres}
 #'     \item{temperature_0}{Averages for temperature at 0 metres at Prince 5 (P5) and Halifax 2 (HL2) stations}
 #'     \item{temperature_90}{Averages for temperature at 90 metres at Prince 5 (P5) and Halifax 2 (HL2) stations}
 #'     \item{sea_surface_temperature_from_moorings}{Averages of sea surface temperatures recorded by mooring at Halifax, NS and St. Andrews, NB}

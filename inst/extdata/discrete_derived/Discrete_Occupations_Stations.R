@@ -4,6 +4,7 @@ library(dplyr)
 library(tidyr)
 library(readr)
 library(usethis)
+library(RCurl)
 
 # load data
 # HL2
@@ -41,6 +42,9 @@ result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 
 filenames <- unlist(strsplit(result, "\r\n"))
+
+# only pick out relevant files
+filenames <- grep(filenames, pattern = '*IntegratedVariables*', value = TRUE, invert = TRUE)
 
 d <- list()
 for(i in 1:length(filenames)){
