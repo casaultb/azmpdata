@@ -50,9 +50,9 @@ year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 
 df <- data.frame(year = year,
                  station = stationName,
-                 integrated_sea_temperature_0_50 = vardat1,
-                 integrated_salinity_0_50 = vardat2,
-                 integrated_sigmaTheta_0_50 = vardat3)
+                 integrated_sea_temperature_0_50 = as.numeric(vardat1),
+                 integrated_salinity_0_50 = as.numeric(vardat2),
+                 integrated_sigmaTheta_0_50 = as.numeric(vardat3))
 integratedvars <- df
 
 

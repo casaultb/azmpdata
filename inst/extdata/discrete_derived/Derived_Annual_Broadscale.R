@@ -242,7 +242,7 @@ summerBottomTemperature <- df
 
 Derived_Annual_Broadscale <- dplyr::bind_rows(areasOther, areasTemperature,
                                               coldIntermediateLayer, summerBottomTemperature,
-                                              nao, sstSatellite, river_flux)
+                                              nao, sstSatellite)
 
 
 # save data
