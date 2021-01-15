@@ -136,6 +136,9 @@ Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>%
 Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>% dplyr::bind_rows(fixedStationsPO)
 
 
+# save as dataframe not tibble
+Discrete_Occupations_Stations <- as.data.frame(Discrete_Occupations_Stations)
+
 # save data to csv
 readr::write_csv(Discrete_Occupations_Stations, "inst/extdata/csv/Discrete_Occupations_Stations.csv")
 

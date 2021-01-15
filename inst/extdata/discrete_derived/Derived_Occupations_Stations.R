@@ -49,6 +49,8 @@ Derived_Occupations_Stations <- Derived_Occupations_Stations %>%
   dplyr::arrange(., order_station, year, month, day) %>%
   dplyr::select(., station, latitude, longitude, year, month, day, event_id, unname(target_var))
 
+# save as dataframe not tibble
+Derived_Occupations_Stations <- as.data.frame(Derived_Occupations_Stations)
 
 
 # save data to csv
