@@ -19,11 +19,30 @@ close(con)
 
 # load in physical data
 # sea_surface_height
-path <- 'inst/extdata/seaLevelHeight/'
-files <- list.files(path = path,
-                    pattern = 'seaLevelHeight\\w+\\.dat',
-                    full.names = TRUE)
-d <- lapply(files, read.physical)
+
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/seaLevelHeight/'
+
+result <- getURL(url_name,
+                 verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
+
+filenames <- unlist(strsplit(result, "\r\n"))
+
+# get relevant files
+fn <- grep(filenames, pattern = 'seaLevelHeight\\w+\\.dat', value = TRUE)
+
+# create dataframe list
+d <- list()
+for(i in 1:length(fn)){
+  con <- url(paste0(url_name, fn[[i]]))
+
+  d[[i]] <- read.physical(con)
+}
+
+# path <- 'inst/extdata/seaLevelHeight/'
+# files <- list.files(path = path,
+#                     pattern = 'seaLevelHeight\\w+\\.dat',
+#                     full.names = TRUE)
+# d <- lapply(files, read.physical)
 
 #vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
 vardat1 <- unlist(lapply(d, function(k) k[['data']][['time']]))

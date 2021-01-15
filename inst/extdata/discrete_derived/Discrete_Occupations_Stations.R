@@ -19,18 +19,39 @@ close(con)
 
 # load physical data
 
-dataPath <- 'inst/extdata/fixedStationsPhysicalOceanography'
-lookupPath <- 'inst/extdata/lookup'
+# dataPath <- 'inst/extdata/fixedStationsPhysicalOceanography'
+# lookupPath <- 'inst/extdata/lookup'
 
 # 1. read in mission look up tables and combine
-lookupfiles <- list.files(lookupPath, pattern = '^mission.*', full.names = TRUE)
-lookup <- lapply(lookupfiles, read.csv)
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/lookup/'
+result <- getURL(url_name,
+                 verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
+
+filenames <- unlist(strsplit(result, "\r\n"))
+lookup <- list()
+lookup[[1]] <- read.csv(paste0(url_name, filenames[1]))
+lookup[[2]] <- read.csv(paste0(url_name, filenames[2]))
+# lookupfiles <- list.files(lookupPath, pattern = '^mission.*', full.names = TRUE)
+# lookup <- lapply(lookupfiles, read.csv)
 missions <- do.call('rbind', lookup)
 
 # 2. read in the data and combine
-datafile <- paste(dataPath, c('prince5.csv', 'station2.csv'), sep = '/')
-d <- lapply(datafile, read.csv)
-d <- do.call('rbind', d)
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/fixedStations/'
+result <- getURL(url_name,
+                 verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
+
+filenames <- unlist(strsplit(result, "\r\n"))
+
+d <- list()
+for(i in 1:length(filenames)){
+  con <- url(paste0(url_name, filenames[[i]]))
+
+  d[[i]] <- read.csv(con)
+}
+
+# datafile <- paste(dataPath, c('prince5.csv', 'station2.csv'), sep = '/')
+# d <- lapply(datafile, read.csv)
+ d <- do.call('rbind', d)
 
 # 3. match up cruiseNumber and mission_number
 # note : if anything goes sideways matching up idx, the structure of idx will change

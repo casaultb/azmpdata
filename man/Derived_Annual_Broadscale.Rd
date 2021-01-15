@@ -34,6 +34,7 @@ A dataframe
     \item{primary_production_from_satellite}{Average primary production as inferred from satellite (remote sensing) measurements}
     \item{oxygen_at_sea_floor}{Oxygen concentrations at the bottom of the water column}
     \item{surface_chlorphyll}{Average surface chlorophyll as inferred from satellite (remote sensing) measurements}
+    \item{sea_surface_temperature_from_satellite}{Averages of sea surface temperatures infered from remote sensing (satellite) measurements}
 }
 }
 \usage{

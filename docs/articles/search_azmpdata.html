@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">azmpdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2019.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2019.0.9100</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -71,7 +71,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/casaultb/azmpdata/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -85,7 +85,7 @@
 
       
 
-      </header><script src="search_azmpdata_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>azmpdata - searching</h1>
@@ -99,11 +99,12 @@
 
     
     
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">azmpdata</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://casaultb.github.io/azmpdata">azmpdata</a></span><span class="op">)</span></code></pre></div>
 <pre><code>## 
 ##  casaultb/azmpdata status:
-##  (Package ver: 0.2019.0.9000) Up to date
-##  (Data ver: 2021-01-05 ) Push to Github</code></pre>
+##  (Package ver: 0.2019.0.9100) Up to date
+##  (Data ver:2021-01-08 ) is up to date</code></pre>
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
@@ -112,29 +113,33 @@
 <h3 class="hasAnchor">
 <a href="#listing-all-dataframes" class="anchor"></a>Listing all dataframes</h3>
 <p>Listing all the available dataframes in a package can be a quick way to see a high level overview of the datasets. The output from the following code will display all the dataframe names as well as brief, high-level descriptions. This data will appear in a new window.</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="kw">package</span> <span class="kw">=</span> <span class="st">'azmpdata'</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">'azmpdata'</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="calling-for-help" class="section level3">
 <h3 class="hasAnchor">
 <a href="#calling-for-help" class="anchor"></a>Calling for help</h3>
 <p>You can browse through the help documentation for all datasets, and functions in the package by calling the code below. This information will come up in the R studio help window.</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span>(<span class="kw">package</span> <span class="kw">=</span> <span class="st">'azmpdata'</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">'azmpdata'</span><span class="op">)</span></code></pre></div>
 <p>Clicking on a specific dataframe name or function in the help window will bring you to a detailed help page. For dataframes, this help page will include variable names and definitions, as well as information about the source of the data and the proper citation.</p>
 </div>
 <div id="searching-help-files" class="section level3">
 <h3 class="hasAnchor">
 <a href="#searching-help-files" class="anchor"></a>Searching help files</h3>
 <p>R studio provides some built in capability to be able to search through the help files for a given package. The function <code><a href="https://rdrr.io/r/utils/help.search.html">help.search()</a></code> can be used to search through titles and descriptions of help files in a package.</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/help.search.html">help.search</a></span>(<span class="kw">pattern</span> <span class="kw">=</span> <span class="st">'section'</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">'azmpdata'</span>)</pre></body></html></div>
-<p>This code will bring up all the help files (in the R studio help window), which match the <code>pattern</code> provided. Note, that this does not search through the <strong>entire text</strong> of the help file, for more details see <code><a href="../reference/lookup_variable.html">lookup_variable()</a></code> in the next section.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/help.search.html">help.search</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">'section'</span>, package <span class="op">=</span> <span class="st">'azmpdata'</span><span class="op">)</span></code></pre></div>
+<p>This code will bring up all the help files (in the R studio help window), which match the <code>pattern</code> provided. Note, that this does not search through the <strong>entire text</strong> of the help file, for more details see <code>lookup_variable()</code> in the next section.</p>
 </div>
 <div id="custom-azmpdata-search" class="section level3">
 <h3 class="hasAnchor">
 <a href="#custom-azmpdata-search" class="anchor"></a>Custom azmpdata search</h3>
-<p>We have created a custom search function in azmpdata which allows a user to search the package in two ways. One, search for keywords in the names of all variables, included in all datasets of the package. Two, Search for keywords in the entirity of the package help text (including the <code>details</code> sections, which often contains variable definitions and is not searched through when using <code><a href="https://rdrr.io/r/utils/help.search.html">help.search()</a></code>).</p>
-<p>The output of this function will be a table with three columns, <code>keyword</code> which will be the search keyword which you provided which has been matched (this is useful if providing multiple keywords), <code>variable</code>, the name of the variable which matched your keyword search, and <code>dataframe</code> which will be the name of the dataframe in which your matched variable is contained, or if searching through the help text, the name of the dataframe where your keyword was found in the help text.</p>
+<p>We have created a custom search function in <code>azmpdata</code> which allows a user to search the package in two ways. One, search for keywords in the names of all variables, included in all datasets of the package. Two, search for keywords in the entirety of the package help text (including the <code>details</code> sections, which often contains variable definitions and is not searched through when using <code><a href="https://rdrr.io/r/utils/help.search.html">help.search()</a></code>).</p>
+<p>The output of this function will be a table with three columns, <code>keyword</code>, or the search keyword that was provided, that has been matched (this is useful if providing multiple keywords), <code>variable</code>, the name of the variable which matched your keyword search, and <code>dataframe</code> which will be the name of the dataframe in which your matched variable is contained, or if searching through the help text, the name of the dataframe where your keyword was found in the help text.</p>
 <p>This function can be provided with a single keyword,</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="fu"><a href="../reference/variable_lookup.html">variable_lookup</a></span>(<span class="st">'nitrate'</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/variable_lookup.html">variable_lookup</a></span><span class="op">(</span><span class="st">'nitrate'</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 10 x 3
 ##    keyword variable                  dataframe                    
 ##    &lt;chr&gt;   &lt;chr&gt;                     &lt;chr&gt;                        
@@ -149,7 +154,8 @@
 ##  9 nitrate nitrate_0_50              Derived_Occupations_Stations 
 ## 10 nitrate nitrate_50_150            Derived_Occupations_Stations</code></pre>
 <p>or multiple keywords.</p>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="../reference/variable_lookup.html">variable_lookup</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'nitrate'</span>, <span class="st">'integrated'</span>))</pre></body></html></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/variable_lookup.html">variable_lookup</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'nitrate'</span>, <span class="st">'integrated'</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 25 x 3
 ##    keyword    variable                     dataframe                   
 ##    &lt;chr&gt;      &lt;chr&gt;                        &lt;chr&gt;                       
@@ -165,7 +171,8 @@
 ## 10 integrated integrated_phosphate_0_50    Derived_Annual_Sections     
 ## # ... with 15 more rows</code></pre>
 <p>In order to search through the help text, use the option <code>search_help</code></p>
-<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu"><a href="../reference/variable_lookup.html">variable_lookup</a></span>(<span class="st">'nitrate'</span>, <span class="kw">search_help</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/variable_lookup.html">variable_lookup</a></span><span class="op">(</span><span class="st">'nitrate'</span>, search_help <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <pre><code>## Joining, by = c("keyword", "variable", "dataframe")</code></pre>
 <pre><code>## # A tibble: 17 x 3
 ##    keyword variable                  dataframe                    
@@ -193,14 +200,15 @@
 <h3 class="hasAnchor">
 <a href="#calling-the-data" class="anchor"></a>Calling the data</h3>
 <p>Once you have your search results, you may want to call the dataframe which matched your search terms. This is very straight-forward if using our custom search function <code><a href="../reference/variable_lookup.html">variable_lookup()</a></code></p>
-<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="no">ans</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/variable_lookup.html">variable_lookup</a></span>(<span class="kw">keywords</span> <span class="kw">=</span> <span class="st">'wet weight'</span>, <span class="kw">search_help</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></body></html></div>
-<pre><code>## Joining, by = c("keyword", "variable", "dataframe")</code></pre>
-<div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="no">df</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/get.html">get</a></span>(<span class="no">ans</span>$<span class="no">dataframe</span><span class="kw">[[</span><span class="fl">1</span>]])</pre></body></html></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ans</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/variable_lookup.html">variable_lookup</a></span><span class="op">(</span>keywords <span class="op">=</span> <span class="st">'wet weight'</span>, search_help <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+
+<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/get.html">get</a></span><span class="op">(</span><span class="va">ans</span><span class="op">$</span><span class="va">dataframe</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="conclusion" class="section level3">
 <h3 class="hasAnchor">
 <a href="#conclusion" class="anchor"></a>Conclusion</h3>
-<p>azmpdata contains a wealth of datasets, we hope these search functions make it easier to find exactly what you need. For more information on base R search functions please feel free to do your own research, for questions about the custom azmpdata search please contact developers or bring an issue to the github board (listed in the package description under BugReports).</p>
+<p>The package <code>azmpdata</code> contains a wealth of datasets and we hope these search functions make it easier to find exactly what you need. For more information on base R search functions please feel free to do your own research. For questions about the custom <code>azmpdata</code> search please contact developers or bring an issue to the github board (listed in the package description under BugReports).</p>
 </div>
 </div>
   </div>
@@ -216,11 +224,11 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by First Last.</p>
+  <p>Developed by Benoit Casault, Emily Chisholm, Chantelle Layton, Chantelle Layton.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

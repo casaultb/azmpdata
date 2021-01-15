@@ -27,7 +27,7 @@ A dataframe
     \item{chlorophyll}{Discrete measurements of chlorophyll concentration in the water column at a range of depths }
     \item{sea_temperature}{Discrete sea temperature measurements over a range of depths}
     \item{salinity}{Discrete salinity measurements over a range of depths}
-    \item{density}{Discrete density measurements over a range of depths}
+    \item{sigmaTheta}{Discrete density measurements over a range of depths}
 }
 }
 \usage{

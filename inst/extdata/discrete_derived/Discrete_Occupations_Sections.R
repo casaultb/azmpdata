@@ -10,8 +10,31 @@ con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/DIS_MA
 load(con)
 close(con)
 
+# load physical data
+url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/sections/"
+result <- getURL(url_name,
+                 verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
+
+filenames <- unlist(strsplit(result, "\r\n"))
+
+
+# create dataframe list
+d <- list()
+for(i in 1:length(filenames)){
+  con <- url(paste0(url_name, filenames[[i]]))
+
+  d[[i]] <- read.csv(con)
+}
+
+# rename variables
+
+posections <- do.call('rbind', d)
+
+posections <- posections %>%
+  dplyr::rename(., depth = pressure)
+
 # clean up
-rm(list=setdiff(ls(), c("df_data_averaged_l", "df_sample_filtered")))
+# rm(list=setdiff(ls(), c("df_data_averaged_l", "df_sample_filtered")))
 
 # target variables to include
 target_var <- c("Chlorophyll_A" = "chlorophyll",
@@ -59,6 +82,12 @@ Discrete_Occupations_Sections <- dplyr::left_join(df_data_averaged_l %>%
   dplyr::ungroup(.) %>%
   dplyr::select(., section, station, latitude, longitude, year, month, day, event_id,
                 sample_id, depth, standard_depth, unname(target_var))
+
+
+# join physical data
+Discrete_Occupations_Sections <- Discrete_Occupations_Sections %>%
+  dplyr::bind_rows(posections)
+
 
 # save data to csv
 readr::write_csv(Discrete_Occupations_Sections, "inst/extdata/csv/Discrete_Occupations_Sections.csv")

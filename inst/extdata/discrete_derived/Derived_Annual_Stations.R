@@ -4,6 +4,7 @@ library(dplyr)
 library(tidyr)
 library(readr)
 library(usethis)
+library(RCurl)
 
 # load data
 # HL2
@@ -19,12 +20,29 @@ close(con)
 
 # load physical data
 # temperature_in_air
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/airTemperature/'
 
-path <- 'inst/extdata/airTemperature/'
-files <- list.files(path = path,
-                    pattern = 'airTemperatureAnnualAnomaly\\w+\\.dat',
-                    full.names = TRUE)
-d <- lapply(files, read.physical)
+result <- getURL(url_name,
+                 verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
+
+filenames <- unlist(strsplit(result, "\r\n"))
+
+# get relevant files
+fn <- grep(filenames, pattern = 'airTemperatureAnnualAnomaly\\w+\\.dat', value = TRUE)
+
+# create dataframe list
+d <- list()
+for(i in 1:length(fn)){
+  con <- url(paste0(url_name, fn[[i]]))
+
+  d[[i]] <- read.physical(con)
+}
+
+# path <- 'inst/extdata/airTemperature/'
+# files <- list.files(path = path,
+#                     pattern = 'airTemperatureAnnualAnomaly\\w+\\.dat',
+#                     full.names = TRUE)
+# d <- lapply(files, read.physical)
 
 vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
 stationName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data']])[1])))
@@ -36,12 +54,29 @@ df <- data.frame(year = year,
 airTemperature <- df
 
 #sea_surface_temperature_from_moorings
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/SSTinSitu/'
 
-path <- 'inst/extdata/SSTinSitu//'
-files <- list.files(path = path,
-                    pattern = 'SSTinSitu\\w+\\.dat',
-                    full.names = TRUE)
-d <- lapply(files, read.physical)
+result <- getURL(url_name,
+                 verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
+
+filenames <- unlist(strsplit(result, "\r\n"))
+
+# get relevant files
+fn <- grep(filenames, pattern = 'SSTinSitu\\w+\\.dat', value = TRUE)
+
+# create dataframe list
+d <- list()
+for(i in 1:length(fn)){
+  con <- url(paste0(url_name, fn[[i]]))
+
+  d[[i]] <- read.physical(con)
+}
+
+# path <- 'inst/extdata/SSTinSitu//'
+# files <- list.files(path = path,
+#                     pattern = 'SSTinSitu\\w+\\.dat',
+#                     full.names = TRUE)
+# d <- lapply(files, read.physical)
 
 vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
 #vardat1 <- unlist(lapply(d, function(k) k[['data']][['anomaly']]))
@@ -56,6 +91,78 @@ df <- data.frame(year = year,
                  station = stationName,
                  sea_surface_temperature_from_moorings = vardat)
 SSTinSitu <- df
+
+
+# get temperature_0 and temperature_90 for p5 and HL2
+# load in station discrete data
+
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/lookup/'
+result <- getURL(url_name,
+                 verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
+
+filenames <- unlist(strsplit(result, "\r\n"))
+lookup <- list()
+lookup[[1]] <- read.csv(paste0(url_name, filenames[1]))
+lookup[[2]] <- read.csv(paste0(url_name, filenames[2]))
+# lookupfiles <- list.files(lookupPath, pattern = '^mission.*', full.names = TRUE)
+# lookup <- lapply(lookupfiles, read.csv)
+missions <- do.call('rbind', lookup)
+
+# 2. read in the data and combine
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/fixedStations/'
+result <- getURL(url_name,
+                 verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
+
+filenames <- unlist(strsplit(result, "\r\n"))
+
+d <- list()
+for(i in 1:length(filenames)){
+  con <- url(paste0(url_name, filenames[[i]]))
+
+  d[[i]] <- read.csv(con)
+}
+
+d <- do.call('rbind', d)
+
+# 3. match up cruiseNumber and mission_number
+# note : if anything goes sideways matching up idx, the structure of idx will change
+#        so it could become a list instead of a vector
+idx <- apply(d, 1, function(k) {ok <- which(missions[['mission_name']] == k[['cruiseNumber']]);
+if(length(ok) > 1) {
+  ok[1]
+} else if(length(ok) == 0){
+  NA
+} else {
+  ok
+}})
+
+d <- cbind(d, descriptor = missions[['mission_descriptor']][idx])
+
+fixedStationsPO <- d
+
+temp_0 <- fixedStationsPO[fixedStationsPO$pressure == 0,] %>%
+  dplyr::select(., station, cruiseNumber, year, month, day,
+                longitude, latitude, pressure, temperature)
+
+temp_90 <- fixedStationsPO[fixedStationsPO$pressure == 90,] %>%
+  dplyr::select(., station, cruiseNumber, year, month, day,
+                longitude, latitude, pressure, temperature)
+
+newdf <- rbind(temp_0, temp_90)
+
+newdf2 <- newdf %>%
+  dplyr::group_by(., station, year, pressure) %>%
+  dplyr::mutate(., temperature_new = mean(temperature))
+
+temperature_0_df <- newdf2[newdf2$pressure == 0,] %>%
+  dplyr::rename(temperature_0 = temperature) %>%
+  dplyr::distinct(., year, .keep_all = TRUE) %>%
+  dplyr::select(., - temperature_new, -month, -day)
+
+temperature_90_df <- newdf2[newdf2$pressure == 90,] %>%
+  dplyr::rename(temperature_90 = temperature) %>%
+  dplyr::distinct(., year, .keep_all = TRUE)%>%
+  dplyr::select(., -temperature_new, -month, -day)
 
 # assemble data
 Derived_Annual_Stations <- dplyr::bind_rows(HL2_env$df_means_annual_l %>%
@@ -90,7 +197,8 @@ Derived_Annual_Stations <- Derived_Annual_Stations %>%
 
 
 # add physical data
-Derived_Annual_Stations <- Derived_Annual_Stations %>% dplyr::bind_rows(SSTinSitu, airTemperature)
+Derived_Annual_Stations <- Derived_Annual_Stations %>%
+  dplyr::bind_rows(SSTinSitu, airTemperature, temperature_0_df, temperature_90_df)
 
 # save data to csv
 readr::write_csv(Derived_Annual_Stations, "inst/extdata/csv/Derived_Annual_Stations.csv")

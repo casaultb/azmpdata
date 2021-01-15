@@ -12,3 +12,4 @@ azmpdata_demo
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^\.github$
