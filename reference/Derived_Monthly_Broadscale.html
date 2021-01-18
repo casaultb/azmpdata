@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Phytoplankton Occupation Station data — Phytoplankton_Occupations_Stations • azmpdata</title>
+<title>Derived Monthly Broadscale data — Derived_Monthly_Broadscale • azmpdata</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Phytoplankton Occupation Station data — Phytoplankton_Occupations_Stations" />
-<meta property="og:description" content="Phytoplankton data collected at fixed stations during individual occupations." />
+<meta property="og:title" content="Derived Monthly Broadscale data — Derived_Monthly_Broadscale" />
+<meta property="og:description" content="Derived data averaged over broad regions and months." />
 
 
 
@@ -129,53 +129,42 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Phytoplankton Occupation Station data</h1>
+    <h1>Derived Monthly Broadscale data</h1>
     <small class="dont-index">Source: <a href='https://github.com/casaultb/azmpdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>Phytoplankton_Occupations_Stations.Rd</code></div>
+    <div class="hidden name"><code>Derived_Monthly_Broadscale.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Phytoplankton data collected at fixed stations during individual occupations.</p>
+    <p>Derived data averaged over broad regions and months.</p>
     </div>
 
-    <pre class="usage"><span class='va'>Phytoplankton_Occupations_Stations</span></pre>
+    <pre class="usage"><span class='va'>Derived_Monthly_Broadscale</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>A dataframe</p><dl>
-    <dt>station</dt><dd><p>The name of the station where data was collected</p></dd>
-    <dt>latitude</dt><dd><p>The latitude at which data was collected</p></dd>
-    <dt>longitude</dt><dd><p>The longitude at which data was collected</p></dd>
+    <dt>area</dt><dd><p>Area name where data was collected</p></dd>
     <dt>year</dt><dd><p>The year in which data was collected</p></dd>
     <dt>month</dt><dd><p>The month in which data was collected (numeric)</p></dd>
-    <dt>day</dt><dd><p>The day on which data was collected</p></dd>
-    <dt>event_id</dt><dd><p>A unique identifier for the sampling event</p></dd>
-    <dt>sample_id</dt><dd><p>A unique identifier for the sample</p></dd>
-    <dt>depth</dt><dd><p>The depth at which data was actually collected</p></dd>
 
-    <dt>diatoms</dt><dd><p>Abundance of diatoms group, using Fucoxanthin as a measurement proxy</p></dd>
-    <dt>dinflagellates</dt><dd><p>Abundance of dinoflagellates group, using Peridinin as a measurement proxy</p></dd>
-    <dt>flagellates</dt><dd><p>Abundance of flagellates group</p></dd>
-    <dt>ciliates</dt><dd><p>Abundance of ciliates group</p></dd>
-    <dt>microzooplankton</dt><dd><p>Abundance of microzooplankton group</p></dd>
+    <dt>river_flux</dt><dd><p>A measure of the flux exiting from the St. Lawrence river into the Gulf of St. Lawrence.</p></dd>
 
 </dl>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The data can be cited as follows:
-  Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
-  Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
-  on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
-  Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.</p>
+    <p>The data can be cited as follows:</p>
+<p>Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
+  Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
+  Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     
 <dl>
-   <dt>time_scale</dt><dd><p>Occupation</p></dd>
-   <dt>regional_scale</dt><dd><p>Station</p></dd>
-   <dt>category</dt><dd><p>biological, phytoplankton</p></dd>
+   <dt>time_scale</dt><dd><p>Monthly</p></dd>
+   <dt>regional_scale</dt><dd><p>Broadscale</p></dd>
+   <dt>category</dt><dd><p>physical</p></dd>
    
 </dl>
 

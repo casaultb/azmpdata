@@ -104,7 +104,7 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt;  casaultb/azmpdata status:</span>
 <span class="co">#&gt;  (Package ver: 0.2019.0.9100) Up to date</span>
-<span class="co">#&gt;  (Data ver:2021-01-08 ) is up to date</span></code></pre></div>
+<span class="co">#&gt;  (Data ver:2021-01-14 ) is up to date</span></code></pre></div>
 <p>This package should be updated on an annual basis or whenever there are major changes made to the data set. The update process should only be undertaken by developers or data managers. The following document describes the procedure for updating the data package</p>
 <div id="step-1" class="section level3">
 <h3 class="hasAnchor">
@@ -123,6 +123,11 @@
 <h3 class="hasAnchor">
 <a href="#step-3" class="anchor"></a>Step 3</h3>
 <p><strong>Source all scripts</strong> To recreate all dataframes use the R script ‘source_all.R’ this will regenerate all dataframes in the package and update the datadate.txt file which identifies the data on which data was last updated. This datadate.txt file is important for versioning the package and ensuring users have the latest data. If running dataframe scripts individually, please ensure datadate.txt is updated using the <code>data_update()</code> function.</p>
+</div>
+<div id="step-4" class="section level3">
+<h3 class="hasAnchor">
+<a href="#step-4" class="anchor"></a>Step 4</h3>
+<p><strong>Ensuring all variables are included in documentation</strong> If you have added new data to the package, which includes new variables. They may not be properly documented and you should ensure that BOTH sources of documentation are updated. The first source of documentation is the package Roxygen documentation. This is contained in the script <code>R/data.R</code>, where each dataframe is documented in a standard format. New variables should be added to the appropriate dataframe in the same format which requires the variable name and definition. If the new variable’s citation information is different than what is currently included with the dataframe, please add the new relevant citation information as well. The second documentation source which should be updated (note this order is not absolutely required), is the variable look up table, <code>inst/extdata/lookup/variable_look_up.csv</code>. This csv file is easiest to update through excel. If a new variable is added, all columns should be filled out including variable name, definition, the category of the data and which dataframe in which it is included, as well as relevant citation information. It is very important for the integrity of the package that BOTH of these sources are updated to include any new varibale information so that users of the package can have a complete context of each data product.Once the documentation has been updated, the command <code>devtools::document()</code> should be run so that any updates to the <code>.Rd</code> documentation files take effect.</p>
 </div>
   </div>
 

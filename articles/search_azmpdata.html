@@ -104,7 +104,7 @@
 <pre><code>## 
 ##  casaultb/azmpdata status:
 ##  (Package ver: 0.2019.0.9100) Up to date
-##  (Data ver:2021-01-08 ) is up to date</code></pre>
+##  (Data ver:2021-01-14 ) is up to date</code></pre>
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
@@ -146,17 +146,17 @@
 ##  1 nitrate integrated_nitrate_0_50   Derived_Annual_Sections      
 ##  2 nitrate integrated_nitrate_0_50   Derived_Annual_Stations      
 ##  3 nitrate integrated_nitrate_0_50   Derived_Occupations_Sections 
-##  4 nitrate integrated_nitrate_50_150 Derived_Annual_Sections      
-##  5 nitrate integrated_nitrate_50_150 Derived_Annual_Stations      
-##  6 nitrate integrated_nitrate_50_150 Derived_Occupations_Sections 
-##  7 nitrate nitrate                   Discrete_Occupations_Sections
-##  8 nitrate nitrate                   Discrete_Occupations_Stations
-##  9 nitrate nitrate_0_50              Derived_Occupations_Stations 
-## 10 nitrate nitrate_50_150            Derived_Occupations_Stations</code></pre>
+##  4 nitrate integrated_nitrate_0_50   Derived_Occupations_Stations 
+##  5 nitrate integrated_nitrate_50_150 Derived_Annual_Sections      
+##  6 nitrate integrated_nitrate_50_150 Derived_Annual_Stations      
+##  7 nitrate integrated_nitrate_50_150 Derived_Occupations_Sections 
+##  8 nitrate integrated_nitrate_50_150 Derived_Occupations_Stations 
+##  9 nitrate nitrate                   Discrete_Occupations_Sections
+## 10 nitrate nitrate                   Discrete_Occupations_Stations</code></pre>
 <p>or multiple keywords.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/variable_lookup.html">variable_lookup</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'nitrate'</span>, <span class="st">'integrated'</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## # A tibble: 25 x 3
+<pre><code>## # A tibble: 32 x 3
 ##    keyword    variable                     dataframe                   
 ##    &lt;chr&gt;      &lt;chr&gt;                        &lt;chr&gt;                       
 ##  1 integrated integrated_chlorophyll_0_100 Derived_Annual_Sections     
@@ -165,35 +165,34 @@
 ##  4 integrated integrated_nitrate_0_50      Derived_Annual_Sections     
 ##  5 integrated integrated_nitrate_0_50      Derived_Annual_Stations     
 ##  6 integrated integrated_nitrate_0_50      Derived_Occupations_Sections
-##  7 integrated integrated_nitrate_50_150    Derived_Annual_Sections     
-##  8 integrated integrated_nitrate_50_150    Derived_Annual_Stations     
-##  9 integrated integrated_nitrate_50_150    Derived_Occupations_Sections
-## 10 integrated integrated_phosphate_0_50    Derived_Annual_Sections     
-## # … with 15 more rows</code></pre>
+##  7 integrated integrated_nitrate_0_50      Derived_Occupations_Stations
+##  8 integrated integrated_nitrate_50_150    Derived_Annual_Sections     
+##  9 integrated integrated_nitrate_50_150    Derived_Annual_Stations     
+## 10 integrated integrated_nitrate_50_150    Derived_Occupations_Sections
+## # … with 22 more rows</code></pre>
 <p>In order to search through the help text, use the option <code>search_help</code></p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/variable_lookup.html">variable_lookup</a></span><span class="op">(</span><span class="st">'nitrate'</span>, search_help <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <pre><code>## Joining, by = c("keyword", "variable", "dataframe")</code></pre>
-<pre><code>## # A tibble: 17 x 3
+<pre><code>## # A tibble: 16 x 3
 ##    keyword variable                  dataframe                    
 ##    &lt;chr&gt;   &lt;chr&gt;                     &lt;chr&gt;                        
 ##  1 nitrate integrated_nitrate_0_50   Derived_Annual_Sections      
 ##  2 nitrate integrated_nitrate_0_50   Derived_Annual_Stations      
 ##  3 nitrate integrated_nitrate_0_50   Derived_Occupations_Sections 
-##  4 nitrate integrated_nitrate_50_150 Derived_Annual_Sections      
-##  5 nitrate integrated_nitrate_50_150 Derived_Annual_Stations      
-##  6 nitrate integrated_nitrate_50_150 Derived_Occupations_Sections 
-##  7 nitrate nitrate                   Discrete_Occupations_Sections
-##  8 nitrate nitrate                   Discrete_Occupations_Stations
-##  9 nitrate nitrate_0_50              Derived_Occupations_Stations 
-## 10 nitrate nitrate_50_150            Derived_Occupations_Stations 
-## 11 nitrate &lt;NA&gt;                      Derived_Annual_Broadscale    
-## 12 nitrate &lt;NA&gt;                      Derived_Annual_Sections      
-## 13 nitrate &lt;NA&gt;                      Derived_Annual_Stations      
-## 14 nitrate &lt;NA&gt;                      Derived_Occupations_Sections 
-## 15 nitrate &lt;NA&gt;                      Derived_Occupations_Stations 
-## 16 nitrate &lt;NA&gt;                      Discrete_Occupations_Sections
-## 17 nitrate &lt;NA&gt;                      Discrete_Occupations_Stations</code></pre>
+##  4 nitrate integrated_nitrate_0_50   Derived_Occupations_Stations 
+##  5 nitrate integrated_nitrate_50_150 Derived_Annual_Sections      
+##  6 nitrate integrated_nitrate_50_150 Derived_Annual_Stations      
+##  7 nitrate integrated_nitrate_50_150 Derived_Occupations_Sections 
+##  8 nitrate integrated_nitrate_50_150 Derived_Occupations_Stations 
+##  9 nitrate nitrate                   Discrete_Occupations_Sections
+## 10 nitrate nitrate                   Discrete_Occupations_Stations
+## 11 nitrate &lt;NA&gt;                      Derived_Annual_Sections      
+## 12 nitrate &lt;NA&gt;                      Derived_Annual_Stations      
+## 13 nitrate &lt;NA&gt;                      Derived_Occupations_Sections 
+## 14 nitrate &lt;NA&gt;                      Derived_Occupations_Stations 
+## 15 nitrate &lt;NA&gt;                      Discrete_Occupations_Sections
+## 16 nitrate &lt;NA&gt;                      Discrete_Occupations_Stations</code></pre>
 <p>Note, that if the search returns a match to your keyword in the text of a help file, the output will not return a specific variable name in the <code>variable</code> column (instead it will return NA), and will give you only the dataframe name in the <code>dataframe</code> column.</p>
 </div>
 <div id="calling-the-data" class="section level3">

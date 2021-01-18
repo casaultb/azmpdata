@@ -105,7 +105,7 @@
 <pre><code>## 
 ##  casaultb/azmpdata status:
 ##  (Package ver: 0.2019.0.9100) Up to date
-##  (Data ver:2021-01-08 ) is up to date</code></pre>
+##  (Data ver:2021-01-14 ) is up to date</code></pre>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></code></pre></div>
@@ -164,13 +164,20 @@
 ## 4                 NA         &lt;NA&gt;        NA       NA       NA            NA
 ## 5                 NA         &lt;NA&gt;        NA       NA       NA            NA
 ## 6                 NA         &lt;NA&gt;        NA       NA       NA            NA
-##   temperature_90
-## 1             NA
-## 2             NA
-## 3             NA
-## 4             NA
-## 5             NA
-## 6             NA</code></pre>
+##   temperature_90 integrated_sea_temperature_0_50 integrated_salinity_0_50
+## 1             NA                              NA                       NA
+## 2             NA                              NA                       NA
+## 3             NA                              NA                       NA
+## 4             NA                              NA                       NA
+## 5             NA                              NA                       NA
+## 6             NA                              NA                       NA
+##   integrated_sigmaTheta_0_50
+## 1                         NA
+## 2                         NA
+## 3                         NA
+## 4                         NA
+## 5                         NA
+## 6                         NA</code></pre>
 </div>
 <div id="base-plot" class="section level2">
 <h2 class="hasAnchor">
@@ -198,8 +205,8 @@
   
 
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span></code></pre></div>
-<pre><code>## Warning: Removed 3 row(s) containing missing values (geom_path).</code></pre>
-<pre><code>## Warning: Removed 966 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 5 row(s) containing missing values (geom_path).</code></pre>
+<pre><code>## Warning: Removed 1124 rows containing missing values (geom_point).</code></pre>
 <p><img src="plotting_azmpdata_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 <p>The next two examples contain generic code that could be modified to plot any dataframe (of the same time scale).</p>
 <p>Another common plotting task would be to plot the annual means of a given dataframe. This method is fairly generic and could be used for any annual dataset.</p>
@@ -208,7 +215,7 @@
  <span class="va">variable</span> <span class="op">&lt;-</span> <span class="st">'temperature_at_sea_floor'</span> <span class="co"># select variable to plot</span>
 
   <span class="co"># check for metadata and seperate</span>
-  <span class="va">metanames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'year'</span>, <span class="st">'month'</span>, <span class="st">'day'</span>, <span class="st">'area'</span>, <span class="st">'section'</span>, <span class="st">'station'</span> <span class="op">)</span>
+  <span class="va">metanames</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'year'</span>,<span class="st">'area'</span>, <span class="st">'section'</span>, <span class="st">'station'</span> <span class="op">)</span>
   <span class="va">meta_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">df_data</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">df_data</span><span class="op">)</span> <span class="op">%in%</span> <span class="va">metanames</span><span class="op">]</span>
 
   <span class="va">group</span> <span class="op">&lt;-</span> <span class="va">meta_df</span><span class="op">[</span><span class="va">meta_df</span> <span class="op">!=</span> <span class="st">'year'</span><span class="op">]</span>
