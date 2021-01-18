@@ -19,6 +19,43 @@ load(con, envir=P5_env)
 close(con)
 
 # load physical data
+
+# integrated variables
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/fixedStations/'
+
+result <- getURL(url_name,
+                 verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
+
+filenames <- unlist(strsplit(result, "\r\n"))
+
+# get relevant files
+fn <- grep(filenames, pattern = 'IntegratedVariables\\w+\\.dat', value = TRUE)
+
+# create dataframe list
+d <- list()
+for(i in 1:length(fn)){
+  con <- url(paste0(url_name, fn[[i]]))
+
+  d[[i]] <- read.physical(con)
+}
+
+
+vardat1 <- unlist(lapply(d, function(k) k[['data']][['integrated_temperature_0_50']]))
+vardat2 <- unlist(lapply(d, function(k) k[['data']][['integrated_salinity_0_50']]))
+vardat3 <- unlist(lapply(d, function(k) k[['data']][['integrated_sigmaTheta_0_50']]))
+
+
+stationName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data']])[1])))
+year <- unlist(lapply(d, function(k) k[['data']][['year']]))
+
+df <- data.frame(year = year,
+                 station = stationName,
+                 integrated_sea_temperature_0_50 = as.numeric(vardat1),
+                 integrated_salinity_0_50 = as.numeric(vardat2),
+                 integrated_sigmaTheta_0_50 = as.numeric(vardat3))
+integratedvars <- df
+
+
 # temperature_in_air
 url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/airTemperature/'
 
@@ -114,6 +151,9 @@ result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 
 filenames <- unlist(strsplit(result, "\r\n"))
+# get not integrated data
+filenames <- grep(filenames, pattern = '*IntegratedVariables*', value = TRUE, invert = TRUE)
+
 
 d <- list()
 for(i in 1:length(filenames)){
@@ -198,7 +238,7 @@ Derived_Annual_Stations <- Derived_Annual_Stations %>%
 
 # add physical data
 Derived_Annual_Stations <- Derived_Annual_Stations %>%
-  dplyr::bind_rows(SSTinSitu, airTemperature, temperature_0_df, temperature_90_df)
+  dplyr::bind_rows(SSTinSitu, airTemperature, temperature_0_df, temperature_90_df, integratedvars)
 
 # save data to csv
 readr::write_csv(Derived_Annual_Stations, "inst/extdata/csv/Derived_Annual_Stations.csv")

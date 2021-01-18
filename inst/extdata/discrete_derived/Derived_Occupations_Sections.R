@@ -50,6 +50,9 @@ Derived_Occupations_Sections <- df_data_integrated_l %>%
   dplyr::select(., section, station, latitude, longitude, year, month, day, event_id,
                 unname(target_var))
 
+# save as dataframe not tibble
+Derived_Occupations_Sections <- as.data.frame(Derived_Occupations_Sections)
+
 # save data to csv
 readr::write_csv(Derived_Occupations_Sections, "inst/extdata/csv/Derived_Occupations_Sections.csv")
 

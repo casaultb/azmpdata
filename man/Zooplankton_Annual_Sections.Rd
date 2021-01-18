@@ -11,29 +11,13 @@ A dataframe
     \item{year}{The year in which data was collected}
 
     \item{calanus_finmarchicus_log10}{Abundance of calanus finmarchicus with a log 10 transform }
-    \item{calanus_hyperboreus_log10}{Abundance of calanus hyperboreus with a log 10 transform }
-    \item{calanus_glacialis_log10}{Abundance of calanus glacialis with a log 10 transform }
+    \item{copepods_log10}{Abundance of copepods group  with a log 10 transform }
+    \item{non_copepods_log10}{Abundance of non-copepods group  with a log 10 transform }
+    \item{Arctic_Calanus_species_log10}{Abundance of arctic calanus group   with a log 10 transform }
+    \item{warm_offshore_copepods_log10}{Abundance of warm offshore copepods group (Clausocalanus spp., Mecynocera clausi, and Pleuromamma borealis) with a log 10 transform }
+    \item{warm_shelf_copepods_log10}{Abundance of warm shelf copepods group  with a log 10 transform (the summer-fall copepods Paracalanus spp. and Centropages typicus)}
     \item{pseudocalanus_log10}{Abundance of pseudocalanus  with a log 10 transform }
-    \item{metridia_longa_log10}{Abundance of metridia longa  with a log 10 transform }
-    \item{metridia_lucens_log10}{Abundance of metridia lucens  with a log 10 transform }
-    \item{metridia_spp_log10}{Abundance of metridia spp  with a log 10 transform }
-    \item{temora_spp_log10}{Abundance of temora spp  with a log 10 transform }
-    \item{microcalanus_spp_log10}{Abundance of microcalanus  with a log 10 transform }
-    \item{oithona_spp_log10}{Abundance of oithona species  with a log 10 transform }
-    \item{oithona_similis_log10}{Abundance of oithona similis  with a log 10 transform }
-    \item{oithona_atlantica_log10}{Abundance of oithona atlantica  with a log 10 transform }
-    \item{paracalanus_spp_log10}{Abundance of paracalanus  with a log 10 transform }
-    \item{centropages_typicus_log10}{Abundance of centropages typicus  with a log 10 transform }
-    \item{centropages_spp_log10}{Abundance of centropages species  with a log 10 transform }
-    \item{scolecithricella_minor_log10}{Abundance of scolecithricella minor  with a log 10 transform }
-    \item{larvacae_log10}{Abundance of larvacae group  with a log 10 transform }
-    \item{gastropoda_log10}{Abundance of gastropoda group  with a log 10 transform }
-    \item{bivalvia_log10}{Abundance of bivalvia group  with a log 10 transform }
-    \item{euphasiacea_log10}{Abundance of euphasiacea group  with a log 10 transform }
-    \item{zooplankton_abundance_log10}{Abundance of zooplankton at fixed stations with a log 10 transform}
     \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
-    \item{zooplankton_meso_wet_weight}{Wet weight of meso zooplankton}
-    \item{zooplankton_macro_wet_weight}{Wet weight of macro zooplankton}
     \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton from sampling}
 }
 }

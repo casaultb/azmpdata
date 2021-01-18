@@ -17,6 +17,15 @@ A dataframe
     \item{sample_id}{A unique identifier for the sample}
     \item{depth}{The depth at which data was actually collected}
 
+    \item{Acartia_abundance}{Abundance of acartia}
+    \item{Eurytemora_abundance}{Abundance of eurytemora}
+    \item{Temora_longicornis_abundance}{Abundance of temora longicornis }
+    \item{other_copepods}{Abundance of other copepods group}
+    \item{copepods}{Abundance of copepods group  }
+    \item{non_copepods}{Abundance of non-copepods group  }
+    \item{Arctic_Calanus_species}{Abundance of arctic calanus group  }
+    \item{warm_offshore_copepods}{Abundance of warm offshore copepods group (Clausocalanus spp., Mecynocera clausi, and Pleuromamma borealis)  }
+    \item{warm_shelf_copepods}{Abundance of warm shelf copepods group  (the summer-fall copepods Paracalanus spp. and Centropages typicus)}
     \item{calanus_finmarchicus_abundance}{Abundance of calanus finmarchicus }
     \item{calanus_hyperboreus_abundance}{Abundance of Calanus Hyperboreus}
     \item{calanus_glacialis_abundance}{Abundance of Calanus Glacialis}
@@ -24,7 +33,6 @@ A dataframe
     \item{metridia_longa_abundance}{Abundance of Metridia longa}
     \item{metridia_lucens_abundance}{Abundance of Metridia lucens}
     \item{metridia_spp_abundance}{Abundance of Metridia spp}
-    \item{temora_spp_abundance}{Abundance of Temora spp}
     \item{microcalanus_spp_abundance}{Abundance of microcalanus}
     \item{oithona_spp_abundance}{Abundance of Oithona spp}
     \item{oithona_similis_abundance}{Abundance of Oithona similis}
@@ -32,12 +40,6 @@ A dataframe
     \item{paracalanus_spp_abundance}{Abundance of paracalanus}
     \item{centropages_typicus_abundance}{Abundance of Centropages typicus}
     \item{centropages_spp_abundance}{Abundance of Centropages spp}
-    \item{scolecithricella_minor_abundance}{Abundance of scolecithricella minor}
-    \item{larvacae_abundance}{Abundance of larvacae}
-    \item{gastropoda_abundance}{Abundance of gastropoda}
-    \item{bivalvia_abundance}{Abundance of bilvalvia}
-    \item{euphasiacea_abundance}{Abundance of euphasiacea}
-    \item{zooplankton_abundance}{Abundance of all zooplankton}
     \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
     \item{zooplankton_meso_wet_weight}{Wet weight of meso zooplankton}
     \item{zooplankton_macro_wet_weight}{Wet weight of macro zooplankton}

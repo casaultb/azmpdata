@@ -4,6 +4,7 @@ library(dplyr)
 library(tidyr)
 library(readr)
 library(usethis)
+library(RCurl)
 
 # load data
 con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/DIS_MAR_AZMP_ChlNut.RData")
@@ -88,6 +89,8 @@ Discrete_Occupations_Sections <- dplyr::left_join(df_data_averaged_l %>%
 Discrete_Occupations_Sections <- Discrete_Occupations_Sections %>%
   dplyr::bind_rows(posections)
 
+# save as dataframe not tibble
+Discrete_Occupations_Sections <- as.data.frame(Discrete_Occupations_Sections)
 
 # save data to csv
 readr::write_csv(Discrete_Occupations_Sections, "inst/extdata/csv/Discrete_Occupations_Sections.csv")

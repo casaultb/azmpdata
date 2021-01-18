@@ -171,6 +171,15 @@
 #'     \item{sample_id}{A unique identifier for the sample}
 #'     \item{depth}{The depth at which data was actually collected}
 #'
+#'     \item{Acartia_abundance}{Abundance of acartia}
+#'     \item{Eurytemora_abundance}{Abundance of eurytemora}
+#'     \item{Temora_longicornis_abundance}{Abundance of temora longicornis }
+#'     \item{other_copepods}{Abundance of other copepods group}
+#'     \item{copepods}{Abundance of copepods group  }
+#'     \item{non_copepods}{Abundance of non-copepods group  }
+#'     \item{Arctic_Calanus_species}{Abundance of arctic calanus group  }
+#'     \item{warm_offshore_copepods}{Abundance of warm offshore copepods group (Clausocalanus spp., Mecynocera clausi, and Pleuromamma borealis)  }
+#'     \item{warm_shelf_copepods}{Abundance of warm shelf copepods group  (the summer-fall copepods Paracalanus spp. and Centropages typicus)}
 #'     \item{calanus_finmarchicus_abundance}{Abundance of calanus finmarchicus }
 #'     \item{calanus_hyperboreus_abundance}{Abundance of Calanus Hyperboreus}
 #'     \item{calanus_glacialis_abundance}{Abundance of Calanus Glacialis}
@@ -178,7 +187,6 @@
 #'     \item{metridia_longa_abundance}{Abundance of Metridia longa}
 #'     \item{metridia_lucens_abundance}{Abundance of Metridia lucens}
 #'     \item{metridia_spp_abundance}{Abundance of Metridia spp}
-#'     \item{temora_spp_abundance}{Abundance of Temora spp}
 #'     \item{microcalanus_spp_abundance}{Abundance of microcalanus}
 #'     \item{oithona_spp_abundance}{Abundance of Oithona spp}
 #'     \item{oithona_similis_abundance}{Abundance of Oithona similis}
@@ -186,12 +194,6 @@
 #'     \item{paracalanus_spp_abundance}{Abundance of paracalanus}
 #'     \item{centropages_typicus_abundance}{Abundance of Centropages typicus}
 #'     \item{centropages_spp_abundance}{Abundance of Centropages spp}
-#'     \item{scolecithricella_minor_abundance}{Abundance of scolecithricella minor}
-#'     \item{larvacae_abundance}{Abundance of larvacae}
-#'     \item{gastropoda_abundance}{Abundance of gastropoda}
-#'     \item{bivalvia_abundance}{Abundance of bilvalvia}
-#'     \item{euphasiacea_abundance}{Abundance of euphasiacea}
-#'     \item{zooplankton_abundance}{Abundance of all zooplankton}
 #'     \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
 #'     \item{zooplankton_meso_wet_weight}{Wet weight of meso zooplankton}
 #'     \item{zooplankton_macro_wet_weight}{Wet weight of macro zooplankton}
@@ -239,7 +241,11 @@
 #'     \item{sample_id}{A unique identifier for the sample}
 #'     \item{depth}{The depth at which data was actually collected}
 #'
-#'     \item{microplankton_abundance}{Abundance of microplankton at fixed stations (phytoplankton and protists)}
+#'     \item{diatoms}{Abundance of diatoms group, using Fucoxanthin as a measurement proxy}
+#'     \item{dinflagellates}{Abundance of dinoflagellates group, using Peridinin as a measurement proxy}
+#'     \item{flagellates}{Abundance of flagellates group}
+#'     \item{ciliates}{Abundance of ciliates group}
+#'     \item{microzooplankton}{Abundance of microzooplankton group}
 #' }
 #'
 #' @note
@@ -308,24 +314,35 @@
 "Discrete_Occupations_Stations"
 
 
-# Derived Occupation Monthly data
-#
-# Derived data from fixed stations by month.
-#
-#
-#
-# @format A dataframe
-#
-# * station_name
-# * latitude
-# * longitude
-# * year
-# * month
-#
-# _Data_
-# * sea_surface_height
-#
-# # "Derived_Monthly_Stations
+#' Derived Monthly Station data
+#'
+#' Derived data products from fixed stations collected monthly.
+#'
+#'
+#'
+#' @format A dataframe
+#' \describe{
+#'     \item{station}{The name of the station where data was collected}
+#'     \item{year}{The year in which data was collected}
+#'     \item{month}{The month in which data was collected (numeric)}
+#'
+#'
+#'     \item{sea_surface_height}{Average of sea surface height at Yarmouth and Halifax NS}
+#' }
+#'
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Monthly}
+#'    \item{regional_scale}{Station}
+#'    \item{category}{ physical}
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'   Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
+#'   Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
+#'   Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
+"Derived_Monthly_Stations"
 
 
 #' Derived Annual station data
@@ -345,11 +362,10 @@
 #'     \item{salinity}{Discrete salinity measurements over a range of depths}
 #'     \item{integrated_sea_temperature_0_50}{Averages of temperature measurements, integrated between 0 and 50 metres}
 #'     \item{integrated_salinity_0_50}{Averages of salinity measurements, integrated between 0 and 50 metres}
-#'     \item{integrated_density_0_50}{Averages of density measurements, integrated between 0 and 50 metres}
+#'     \item{integrated_sigmaTheta_0_50}{Averages of density measurements, integrated between 0 and 50 metres}
 #'     \item{temperature_0}{Averages for temperature at 0 metres at Prince 5 (P5) and Halifax 2 (HL2) stations}
 #'     \item{temperature_90}{Averages for temperature at 90 metres at Prince 5 (P5) and Halifax 2 (HL2) stations}
 #'     \item{sea_surface_temperature_from_moorings}{Averages of sea surface temperatures recorded by mooring at Halifax, NS and St. Andrews, NB}
-#'     \item{sea_surface_height}{Average of sea surface height at Yarmouth and Halifax NS}
 #'     \item{integrated_nitrate_0_50}{Nitrate concentrations integrated between 0 and 50 metres}
 #'     \item{integrated_nitrate_50_150}{Nitrate concentrations integrated between 50 and 150 metres}
 #'     \item{integrated_phosphate_0_50}{Phosphate concentrations integrated between 0 and 50 metres}
@@ -387,15 +403,21 @@
 #'
 #'     \item{calanus_finmarchicus_log10}{Abundance of calanus finmarchicus with
 #'     a log 10 transform }
+#'     \item{Acartia_log10}{Abundance of acartia  with a log 10 transform }
+#'     \item{Eurytemora_log10}{Abundance of eurytemora  with a log 10 transform }
+#'     \item{Temora_longicorns_log10}{Abundance of temora longicornis  with a log 10 transform }
+#'     \item{other_copepods_log10}{Abundance of other copepods group  with a log 10 transform }
+#'     \item{copepods_log10}{Abundance of copepods group  with a log 10 transform }
+#'     \item{non_copepods_log10}{Abundance of non-copepods group  with a log 10 transform }
+#'     \item{Arctic_Calanus_species_log10}{Abundance of arctic calanus group   with a log 10 transform }
+#'     \item{warm_offshore_copepods_log10}{Abundance of warm offshore copepods group (Clausocalanus spp., Mecynocera clausi, and Pleuromamma borealis) with a log 10 transform }
+#'     \item{warm_shelf_copepods_log10}{Abundance of warm shelf copepods group  with a log 10 transform (the summer-fall copepods Paracalanus spp. and Centropages typicus)}
 #'     \item{calanus_hyperboreus_log10}{Abundance of calanus hyperboreus with a
 #'     log 10 transform }
-#'     \item{calanus_glacialis_log10}{Abundance of calanus glacialis with a log
-#'     10 transform }
 #'     \item{pseudocalanus_log10}{Abundance of pseudocalanus  with a log 10 transform }
 #'     \item{metridia_longa_log10}{Abundance of metridia longa  with a log 10 transform }
 #'     \item{metridia_lucens_log10}{Abundance of metridia lucens  with a log 10 transform }
 #'     \item{metridia_spp_log10}{Abundance of metridia spp  with a log 10 transform }
-#'     \item{temora_spp_log10}{Abundance of temora spp  with a log 10 transform }
 #'     \item{microcalanus_spp_log10}{Abundance of microcalanus  with a log 10 transform }
 #'     \item{oithona_spp_log10}{Abundance of oithona species  with a log 10 transform }
 #'     \item{oithona_similis_log10}{Abundance of oithona similis  with a log 10 transform }
@@ -406,17 +428,7 @@
 #'     log 10 transform }
 #'     \item{centropages_spp_log10}{Abundance of centropages species  with a log
 #'     10 transform }
-#'     \item{scolecithricella_minor_log10}{Abundance of scolecithricella minor
-#'     with a log 10 transform }
-#'     \item{larvacae_log10}{Abundance of larvacae group  with a log 10 transform }
-#'     \item{gastropoda_log10}{Abundance of gastropoda group  with a log 10 transform }
-#'     \item{bivalvia_log10}{Abundance of bivalvia group  with a log 10 transform }
-#'     \item{euphasiacea_log10}{Abundance of euphasiacea group  with a log 10 transform }
-#'     \item{zooplankton_abundance_log10}{Abundance of zooplankton at fixed
-#'     stations with a log 10 transform}
 #'     \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
-#'     \item{zooplankton_meso_wet_weight}{Wet weight of meso zooplankton}
-#'     \item{zooplankton_macro_wet_weight}{Wet weight of macro zooplankton}
 #'     \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton from sampling}
 #' }
 #'
@@ -447,8 +459,14 @@
 #'     \item{station}{The name of the station where data was collected}
 #'     \item{year}{The year in which data was collected}
 #'
-#'     \item{microplankton_abundance_log10}{Abundance of microplankton
-#'     (phytoplankton and protists) at fixed stations with a log 10 transform}
+#'     \item{diatoms_log10}{Abundance of diatoms with
+#'     a log 10 transform }
+#'     \item{dinoflagellates_log10}{Abundance of dinoflagellates with
+#'     a log 10 transform }
+#'     \item{flagellates_log10}{Abundance of flagellates with
+#'     a log 10 transform }
+#'     \item{ciliates_log10}{Abundance of ciliates with
+#'     a log 10 transform }
 #' }
 #'
 #' @note
@@ -533,36 +551,16 @@
 #'     \item{depth}{The depth at which data was actually collected}
 #'
 #'     \item{calanus_finmarchicus_abundance}{Abundance of calanus finmarchicus }
-#'     \item{calanus_hyperboreus_abundance}{Abundance of calanus hyperboreus }
-#'     \item{calanus_glacialis_abundance}{Abundance of calanus glacialis }
 #'     \item{pseudocalanus_abundance}{Abundance of pseudocalanus  }
-#'     \item{metridia_longa_abundance}{Abundance of metridia longa  }
-#'     \item{metridia_lucens_abundance}{Abundance of metridia lucens  }
-#'     \item{metridia_spp_abundance}{Abundance of metridia species  }
-#'     \item{temora_spp_abundance}{Abundance of temora species}
-#'     \item{microcalanus_spp_abundance}{Abundance of microcalanus}
-#'     \item{oithona_spp_abundance}{Abundance of oithona species  }
-#'     \item{oithona_similis_abundance}{Abundance of oithona similis}
-#'     \item{oithona_atlantica_abundance}{Abundance of oithona atlantica}
-#'     \item{paracalanus_spp_abundance}{Abundance of paracalanus  }
-#'     \item{centropages_typicus_abundance}{Abundance of centropages typicus  }
-#'     \item{centropages_spp_abundance}{Abundance of centropages species  }
-#'     \item{scolecithricella_minor_abundance}{Abundance of scolecithricella minor  }
-#'     \item{larvacae_abundance}{Abundance of larvacae group}
-#'     \item{gastropoda_abundance}{Abundance of gastropoda group}
-#'     \item{bivalvia_abundance}{Abundance of bivalvia group}
-#'     \item{euphasiacea_abundance}{Abundance of euphasiacea group}
-#'     \item{zooplankton_abundance}{Abundance of zooplankton at fixed stations}
+#'     \item{copepods}{Abundance of copepods group  with a log 10 transform }
+#'     \item{non_copepods}{Abundance of non-copepods group  }
+#'     \item{Arctic_Calanus_species}{Abundance of arctic calanus group  }
+#'     \item{warm_offshore_copepods}{Abundance of warm offshore copepods group (Clausocalanus spp., Mecynocera clausi, and Pleuromamma borealis)}
+#'     \item{warm_shelf_copepods}{Abundance of warm shelf copepods group  (the summer-fall copepods Paracalanus spp. and Centropages typicus)}
 #'     \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
 #'     \item{zooplankton_meso_wet_weight}{Wet weight of meso zooplankton}
 #'     \item{zooplankton_macro_wet_weight}{Wet weight of macro zooplankton}
 #'     \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton from sampling}
-#'     \item{calanus_abundance_stage_c1}{Stage seperated calanus abundance (stage c1)}
-#'     \item{calanus_abundance_stage_c2}{Stage seperated calanus abundance (stage c2)}
-#'     \item{calanus_abundance_stage_c3}{Stage seperated calanus abundance (stage c3)}
-#'     \item{calanus_abundance_stage_c4}{Stage seperated calanus abundance (stage c4)}
-#'     \item{calanus_abundance_stage_c5}{Stage seperated calanus abundance (stage c5)}
-#'     \item{calanus_abundance_stage_c6}{Stage seperated calanus abundance (stage c6)}
 #' }
 #'
 #'
@@ -690,29 +688,13 @@
 #'     \item{year}{The year in which data was collected}
 #'
 #'     \item{calanus_finmarchicus_log10}{Abundance of calanus finmarchicus with a log 10 transform }
-#'     \item{calanus_hyperboreus_log10}{Abundance of calanus hyperboreus with a log 10 transform }
-#'     \item{calanus_glacialis_log10}{Abundance of calanus glacialis with a log 10 transform }
+#'     \item{copepods_log10}{Abundance of copepods group  with a log 10 transform }
+#'     \item{non_copepods_log10}{Abundance of non-copepods group  with a log 10 transform }
+#'     \item{Arctic_Calanus_species_log10}{Abundance of arctic calanus group   with a log 10 transform }
+#'     \item{warm_offshore_copepods_log10}{Abundance of warm offshore copepods group (Clausocalanus spp., Mecynocera clausi, and Pleuromamma borealis) with a log 10 transform }
+#'     \item{warm_shelf_copepods_log10}{Abundance of warm shelf copepods group  with a log 10 transform (the summer-fall copepods Paracalanus spp. and Centropages typicus)}
 #'     \item{pseudocalanus_log10}{Abundance of pseudocalanus  with a log 10 transform }
-#'     \item{metridia_longa_log10}{Abundance of metridia longa  with a log 10 transform }
-#'     \item{metridia_lucens_log10}{Abundance of metridia lucens  with a log 10 transform }
-#'     \item{metridia_spp_log10}{Abundance of metridia spp  with a log 10 transform }
-#'     \item{temora_spp_log10}{Abundance of temora spp  with a log 10 transform }
-#'     \item{microcalanus_spp_log10}{Abundance of microcalanus  with a log 10 transform }
-#'     \item{oithona_spp_log10}{Abundance of oithona species  with a log 10 transform }
-#'     \item{oithona_similis_log10}{Abundance of oithona similis  with a log 10 transform }
-#'     \item{oithona_atlantica_log10}{Abundance of oithona atlantica  with a log 10 transform }
-#'     \item{paracalanus_spp_log10}{Abundance of paracalanus  with a log 10 transform }
-#'     \item{centropages_typicus_log10}{Abundance of centropages typicus  with a log 10 transform }
-#'     \item{centropages_spp_log10}{Abundance of centropages species  with a log 10 transform }
-#'     \item{scolecithricella_minor_log10}{Abundance of scolecithricella minor  with a log 10 transform }
-#'     \item{larvacae_log10}{Abundance of larvacae group  with a log 10 transform }
-#'     \item{gastropoda_log10}{Abundance of gastropoda group  with a log 10 transform }
-#'     \item{bivalvia_log10}{Abundance of bivalvia group  with a log 10 transform }
-#'     \item{euphasiacea_log10}{Abundance of euphasiacea group  with a log 10 transform }
-#'     \item{zooplankton_abundance_log10}{Abundance of zooplankton at fixed stations with a log 10 transform}
 #'     \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
-#'     \item{zooplankton_meso_wet_weight}{Wet weight of meso zooplankton}
-#'     \item{zooplankton_macro_wet_weight}{Wet weight of macro zooplankton}
 #'     \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton from sampling}
 #' }
 #'
@@ -732,19 +714,34 @@
  "Zooplankton_Annual_Sections"
 
 
-# Derived monthly broadscale data
-#
-# _Metadata_
-# * area
-# * year
-# * month
-#
-# _Data_
-# * sea_surface_temperature_from_satellite
-# * sea_ice_area
-#
-# Data variables are described in more detail in variable look-up table (see \code{\link{lookup_variable}})
-# "Derived_Monthly_Broadscale"
+#' Derived Monthly Broadscale data
+#'
+#' Derived data averaged over broad regions and months.
+#'
+#'
+#'
+#' @format A dataframe
+#' \describe{
+#'     \item{area}{Area name where data was collected}
+#'     \item{year}{The year in which data was collected}
+#'     \item{month}{The month in which data was collected (numeric)}
+#'
+#'     \item{river_flux}{A measure of the flux exiting from the St. Lawrence river into the Gulf of St. Lawrence. }
+#' }
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Monthly}
+#'    \item{regional_scale}{Broadscale}
+#'    \item{category}{physical}
+#'    }
+#'
+#' @details The data can be cited as follows:
+#'
+#'   Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
+#'   Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
+#'   Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
+ "Derived_Monthly_Broadscale"
 
 
 #' Derived annual broadscale data
@@ -762,7 +759,6 @@
 #'     \item{sea_surface_temperature}{Temperature at sea surface averaged over NAFO regions 4V, 4X and 4W as well as regional areas (Bay of Fundy + Gulf of Maine)}
 #'     \item{north_atlantic_oscillation}{North Atlantic Oscillation Index (NAO), calculated using sea level pressure difference between subtropical high and subpolar low}
 #'     \item{atlantic_multidecadal_oscillation}{Atlantic Multidecadal Oscillation Index (AMO), based on anomalies of sea surface temperatures in North Atlantic basin. }
-#'     \item{river_flux}{A measure of the flux exiting from the St. Lawrence river into the Gulf of St. Lawrence. }
 #'     \item{cold_intermediate_layer_volume}{A measure of the volume of the cold intermediate layer throughout the Gulf of St. Lawrence}
 #'     \item{sea_ice_volume}{Average ice volume for January - March in the Gulf of St. Lawrence, can be reasonably used as a proxy to represent sea ice volume on the Scotian Shelf. }
 #'     \item{density_gradient_0_50}{An index of stratification, measured as the density difference between 0 and 50 metres}
@@ -774,15 +770,7 @@
 #'     \item{sea_surface_temperature_warming}{Derived metric calculating the warming of sea surface temperature averages over the Scotian Shelf}
 #'     \item{final_day_of_sea_ice}{The final day of sea ice observed in the Gulf of St. Lawrence. Note that this metric can be used as a reasonable proxy for the Scotian Shelf}
 #'     \item{sea_ice_area}{Average  of sea ice area, seaward of Cabot Strait}
-#'     \item{start_of_phytoplankton_bloom}{The timing (start) of the phytoplankton bloom on the Scotian Shelf}
-#'     \item{duration_of_phytoplankton_bloom}{The duration of the Scotian Shelf phytoplankton bloom}
-#'     \item{amplitude_of_phytoplankton_bloom}{An average measure of the amplitude of the phytoplankton bloom on the Scotian Shelf}
-#'     \item{magnitude_of_phytoplankton_bloom}{An average measure of the magnitude of the phytoplankton bloom on the Scotian Shelf}
-#'     \item{nitrate_at_sea_floor}{Nitrate concentrations at the bottom of the water column}
-#'     \item{primary_production_from_satellite}{Average primary production as inferred from satellite (remote sensing) measurements}
-#'     \item{oxygen_at_sea_floor}{Oxygen concentrations at the bottom of the water column}
 #'     \item{surface_chlorphyll}{Average surface chlorophyll as inferred from satellite (remote sensing) measurements}
-#'     \item{sea_surface_temperature_from_satellite}{Averages of sea surface temperatures infered from remote sensing (satellite) measurements}
 #' }
 #'
 #' @note
