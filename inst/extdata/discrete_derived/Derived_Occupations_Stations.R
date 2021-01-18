@@ -17,53 +17,6 @@ con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/DIS_P5
 load(con, envir=P5_env)
 close(con)
 
-# load in physical data
-# sea_surface_height
-
-url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/seaLevelHeight/'
-
-result <- getURL(url_name,
-                 verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
-
-filenames <- unlist(strsplit(result, "\r\n"))
-
-# get relevant files
-fn <- grep(filenames, pattern = 'seaLevelHeight\\w+\\.dat', value = TRUE)
-
-# create dataframe list
-d <- list()
-for(i in 1:length(fn)){
-  con <- url(paste0(url_name, fn[[i]]))
-
-  d[[i]] <- read.physical(con)
-}
-
-# path <- 'inst/extdata/seaLevelHeight/'
-# files <- list.files(path = path,
-#                     pattern = 'seaLevelHeight\\w+\\.dat',
-#                     full.names = TRUE)
-# d <- lapply(files, read.physical)
-
-#vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
-vardat1 <- unlist(lapply(d, function(k) k[['data']][['time']]))
-vardat2 <- unlist(lapply(d, function(k) k[['data']][['elevation']]))
-vardat3 <- unlist(lapply(d, function(k) k[['data']][['elevationResidual']]))
-
-stationName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data']])[1])))
-
-year <- unlist(lapply(d, function(k) format(as.Date(k[['data']][['time']]), format = '%Y')))
-month <- unlist(lapply(d, function(k) format(as.Date(k[['data']][['time']]), format = '%m')))
-day <- unlist(lapply(d, function(k) format(as.Date(k[['data']][['time']]), format = '%d')))
-
-df <- data.frame(year = as.numeric(year),
-                 month = as.numeric(month),
-                 day = as.numeric(day),
-                 station = stationName,
-                 sea_surface_height  = vardat2 #,
-                 # sea_surface_height_residual= vardat3
-)
-seaLevelHeight <- df
-
 
 # assemble data
 Derived_Occupations_Stations <- dplyr::bind_rows(HL2_env$df_data_integrated_l %>%
@@ -76,12 +29,12 @@ rm(list=c("HL2_env", "P5_env"))
 
 # target variables to include
 target_var <- c("Chlorophyll_A_0_100" = "chlorophyll_0_100",
-                "Nitrate_0_50" = "nitrate_0_50",
-                "Nitrate_50_150" = "nitrate_50_150",
-                "Phosphate_0_50" = "phosphate_0_50",
-                "Phosphate_50_150" = "phosphate_50_150",
-                "Silicate_0_50" = "silicate_0_50",
-                "Silicate_50_150" = "silicate_50_150")
+                "Nitrate_0_50" = "integrated_nitrate_0_50",
+                "Nitrate_50_150" = "integrated_nitrate_50_150",
+                "Phosphate_0_50" = "integrated_phosphate_0_50",
+                "Phosphate_50_150" = "integrated_phosphate_50_150",
+                "Silicate_0_50" = "integrated_silicate_0_50",
+                "Silicate_50_150" = "integrated_silicate_50_150")
 
 # print order
 print_order_station <- c("HL2" = 1,
@@ -96,8 +49,8 @@ Derived_Occupations_Stations <- Derived_Occupations_Stations %>%
   dplyr::arrange(., order_station, year, month, day) %>%
   dplyr::select(., station, latitude, longitude, year, month, day, event_id, unname(target_var))
 
-# add physical data
-Derived_Occupations_Stations <- Derived_Occupations_Stations %>% dplyr::bind_rows(seaLevelHeight)
+# save as dataframe not tibble
+Derived_Occupations_Stations <- as.data.frame(Derived_Occupations_Stations)
 
 
 # save data to csv

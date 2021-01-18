@@ -10,8 +10,14 @@ A dataframe
     \item{station}{The name of the station where data was collected}
     \item{year}{The year in which data was collected}
 
-    \item{microplankton_abundance_log10}{Abundance of microplankton
-    (phytoplankton and protists) at fixed stations with a log 10 transform}
+    \item{diatoms_log10}{Abundance of diatoms with
+    a log 10 transform }
+    \item{dinoflagellates_log10}{Abundance of dinoflagellates with
+    a log 10 transform }
+    \item{flagellates_log10}{Abundance of flagellates with
+    a log 10 transform }
+    \item{ciliates_log10}{Abundance of ciliates with
+    a log 10 transform }
 }
 }
 \usage{

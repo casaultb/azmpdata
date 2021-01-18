@@ -21,36 +21,16 @@ A dataframe
     \item{depth}{The depth at which data was actually collected}
 
     \item{calanus_finmarchicus_abundance}{Abundance of calanus finmarchicus }
-    \item{calanus_hyperboreus_abundance}{Abundance of calanus hyperboreus }
-    \item{calanus_glacialis_abundance}{Abundance of calanus glacialis }
     \item{pseudocalanus_abundance}{Abundance of pseudocalanus  }
-    \item{metridia_longa_abundance}{Abundance of metridia longa  }
-    \item{metridia_lucens_abundance}{Abundance of metridia lucens  }
-    \item{metridia_spp_abundance}{Abundance of metridia species  }
-    \item{temora_spp_abundance}{Abundance of temora species}
-    \item{microcalanus_spp_abundance}{Abundance of microcalanus}
-    \item{oithona_spp_abundance}{Abundance of oithona species  }
-    \item{oithona_similis_abundance}{Abundance of oithona similis}
-    \item{oithona_atlantica_abundance}{Abundance of oithona atlantica}
-    \item{paracalanus_spp_abundance}{Abundance of paracalanus  }
-    \item{centropages_typicus_abundance}{Abundance of centropages typicus  }
-    \item{centropages_spp_abundance}{Abundance of centropages species  }
-    \item{scolecithricella_minor_abundance}{Abundance of scolecithricella minor  }
-    \item{larvacae_abundance}{Abundance of larvacae group}
-    \item{gastropoda_abundance}{Abundance of gastropoda group}
-    \item{bivalvia_abundance}{Abundance of bivalvia group}
-    \item{euphasiacea_abundance}{Abundance of euphasiacea group}
-    \item{zooplankton_abundance}{Abundance of zooplankton at fixed stations}
+    \item{copepods}{Abundance of copepods group  with a log 10 transform }
+    \item{non_copepods}{Abundance of non-copepods group  }
+    \item{Arctic_Calanus_species}{Abundance of arctic calanus group  }
+    \item{warm_offshore_copepods}{Abundance of warm offshore copepods group (Clausocalanus spp., Mecynocera clausi, and Pleuromamma borealis)}
+    \item{warm_shelf_copepods}{Abundance of warm shelf copepods group  (the summer-fall copepods Paracalanus spp. and Centropages typicus)}
     \item{zooplankton_meso_dry_weight}{Dry weight of meso zooplankton}
     \item{zooplankton_meso_wet_weight}{Wet weight of meso zooplankton}
     \item{zooplankton_macro_wet_weight}{Wet weight of macro zooplankton}
     \item{zooplankton_total_wet_weight}{Wet weight of all zooplankton from sampling}
-    \item{calanus_abundance_stage_c1}{Stage seperated calanus abundance (stage c1)}
-    \item{calanus_abundance_stage_c2}{Stage seperated calanus abundance (stage c2)}
-    \item{calanus_abundance_stage_c3}{Stage seperated calanus abundance (stage c3)}
-    \item{calanus_abundance_stage_c4}{Stage seperated calanus abundance (stage c4)}
-    \item{calanus_abundance_stage_c5}{Stage seperated calanus abundance (stage c5)}
-    \item{calanus_abundance_stage_c6}{Stage seperated calanus abundance (stage c6)}
 }
 }
 \usage{
