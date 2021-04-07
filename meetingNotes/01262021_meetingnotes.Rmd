@@ -1,0 +1,78 @@
+---
+title: "Meeting Notes - January 26th 2021"
+author: "E. Chisholm"
+date: "1/26/2021"
+output: html_document
+---
+
+Discussion of Maritimes environmental data access, January 2021
+
+ E. Chisholm, C. Johnson, M. MacMahon, C. Layton
+
+
+## Agenda
+*	Discussion of questions arising from demo
+    * Csasdown integration
+    * Searching by region
+* Chantelle’s user test results
+* Data audit results
+*	EC work products – where to find stuff when I am gone
+
+
+
+## Meeting Notes
+* csasdown integration
+  * CJ understands issue as automation of figure creation
+  * something for BC/CL to decide
+  * MM: honus should be on user to embed azmpdata into csasdown documents, this would be straight forward enough
+  * CL doesn't use csasdown because of markdown pitfalls in pdf
+  * CL would ventually like to implement LaTex phys resdoc but not there yet
+  * BC has attempted LaTex bio resdoc and it was more complicated than necessary with editing by multiple people (easier in Word - track changes)
+  * Would be a big effort to migrate resdocs over
+  * not something for azmpdata todo list
+  
+* searching by location
+  * are we trying to search by region name (eg. HL2), or geographic coordinates? both?
+  * Jeff J wrote a quick function to search by region name, on giuthub discussion board
+  * this should be on the 'to do' list but is maybe not high priority
+  * depends on CL/ BC time availability
+  * good to have issues like this centalized on github so they are easy to come back to next year if funding continues
+  
+* CL user test
+  * attempt to combine bio and phys data
+  * blend between data types is messy (NA variables because of differences in metadata)
+  * issue is mainly with cruise ID/ descriptors, not matched currently because bio cruise descriptor is nested in event_id
+  * some issues with matching descriptors and ids from biochem - caution!
+  * also noticed that there is a difference in rounding of lat and lon values
+  * if we match them, carefully record must be kept to ensure that we could 'un-match' them if necessary or based on new data availability
+  * keeping data in same row would simplify for user
+  * matching will not be perfect, might require some improvements to metadata
+  * fuzzy matching would be required
+  * might be easiest to match on day/month/year/decriptor (pulled form event_id)
+  * matching will be different for different tables (eg, sections vs stations)
+  * would likely have to go through tables individually to ensure proper matching
+  *__This is a priority issue__
+  * __CL will add this to the github issue list__
+  * work on this in samll pieces over the next year (CL/BC)
+  
+* Data Audit
+  * sea ice vars are only large outstanding issue
+    * __responsibility of BC__
+    * CL handed data off to Peter because of calculation differences
+    * important for silver hake analysis but not actually included in reporting
+    * should this be included if it is not in either resdoc? could it go somehwere else?
+      * simplest to keep all data in azmpdata
+    
+* EC work summary
+  * posted in group chat
+
+* Admin
+  * CJ plans to check in periodically wihtout EC over next year
+  * __CJ will follow up via email__
+  * CJ has applied for funding for next year, will keep everyone posted
+  * potentially backfill for EC position could contribute
+  
+  
+  
+  
+  
