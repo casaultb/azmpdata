@@ -5,11 +5,11 @@ library(tibble)
 library(sf)
 
 # load geometry data
-df_geom <- readr::read_delim("~/Projects/azmpdata/tmp/data/polygons/polygons_geometry_2.csv",
+df_geom <- readr::read_delim("~/Projects/azmpdata/tmp/BC/data/polygons/polygons_geometry_2.csv",
                              col_names=T, delim=",")
 
 # load attributes data
-df_attrib <- readr::read_delim("~/Projects/azmpdata/tmp/data/polygons/polygons_attributes_2.csv",
+df_attrib <- readr::read_delim("~/Projects/azmpdata/tmp/BC/data/polygons/polygons_attributes_2.csv",
                                col_names=T, delim=",")
 
 # find records for points, lines, polygons
