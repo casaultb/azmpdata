@@ -117,19 +117,70 @@ bp <- merge(b, p,
             by.y = c('station', 'year', 'month', 'day', 'depth', 'missionDescriptor'),
             all = TRUE)
 
-# check, manual visual check, nothing serious or rigorus
-stn <- 'LL8'
-year <- 2019
-month <- 4
-day <- 22
+bp2 <- merge(b, p,
+            by.x = c('station', 'year', 'month', 'standard_depth', 'missionDescriptor'),
+            by.y = c('station', 'year', 'month', 'depth', 'missionDescriptor'),
+            all = TRUE)
 
-bok <- b[['station']] == stn & b[['year']] == year & b[['month']] == month & b[['day']] == day
-pok <- p[['station']] == stn & p[['year']] == year & p[['month']] == month & p[['day']] == day
-bpok <- bp[['station']] == stn & bp[['year']] == year & bp[['month']] == month & bp[['day']] == day
+# check differences between the two longitudes/latitudes from merged data to see if we should just keep one, or both
+latd <- bp[['latitude.x']] - bp[['latitude.y']]
+lond <- bp[['longitude.x']] - bp[['longitude.y']]
+par(mfrow=c(2,1))
+plot(latd)
+plot(lond)
+# the above suggests that there are A LOT of NA's, let's investigate
+par(mfrow=c(3,1))
+nocoord <- which(is.na(latd)) # this will catch all of them
+length(nocoord)
+hist(bp[nocoord, names(bp) %in% 'year'])
+nolatx <- which(is.na(bp[['latitude.x']])) # only from bo data - this seems to be culprit
+length(nolatx)
+hist(bp[nolatx, names(bp) %in% 'year'])
+nolaty <- which(is.na(bp[['latitude.y']])) # only from po data
+length(nolaty)
+hist(bp[nolaty, names(bp) %in% 'year'])
+
+# differences in merged data that excludes matching by day.
+latd2 <- bp2[['latitude.x']] - bp2[['latitude.y']]
+lond2 <- bp2[['longitude.x']] - bp2[['longitude.y']]
+par(mfrow=c(2,1))
+plot(latd2)
+plot(lond2)
+par(mfrow=c(3,1))
+nocoord2 <- which(is.na(latd2))
+length(nocoord2)
+hist(bp2[nocoord2, names(bp2) %in% 'year'])
+nolatx2 <- which(is.na(bp2[['latitude.x']])) # only from bo data - this seems to be culprit
+length(nolatx2)
+hist(bp2[nolatx2, names(bp2) %in% 'year'])
+nolaty2 <- which(is.na(bp2[['latitude.y']])) # only from po data
+length(nolaty2)
+hist(bp2[nolaty2, names(bp2) %in% 'year'])
+
+
+# check, manual visual check, nothing serious or rigorus
+# BBL1, 2003, 10 is one of concern
+stn <- 'BBL1'
+year <- 2003
+month <- 10
+#day <- 22
+
+bok <- b[['station']] == stn & b[['year']] == year & b[['month']] == month #& b[['day']] == day
+pok <- p[['station']] == stn & p[['year']] == year & p[['month']] == month #& p[['day']] == day
+bpok <- bp[['station']] == stn & bp[['year']] == year & bp[['month']] == month #& bp[['day']] == day
+bp2ok <- bp2[['station']] == stn & bp2[['year']] == year & bp2[['month']] == month #& bp2[['day']] == day
 
 bcheck <- b[bok, ]
 pcheck <- p[pok, ]
 bpcheck <- bp[bpok, ]
+bp2check <- bp2[bp2ok, ]
+
+# just a check to see if merge works as expected
+# mainly for when there are duplicates
+mergecheck <- merge(bcheck, pcheck,
+             by.x = c('station', 'year', 'month', 'standard_depth', 'missionDescriptor'),
+             by.y = c('station', 'year', 'month', 'depth', 'missionDescriptor'),
+             all = TRUE)
 
 # # join physical data - 20210419 old way
 # Discrete_Occupations_Sections <- Discrete_Occupations_Sections %>%
