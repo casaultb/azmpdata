@@ -130,33 +130,33 @@
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/get.html">get</a></span><span class="op">(</span><span class="st">'Derived_Annual_Stations'</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></code></pre></div>
 <pre><code>##   station year integrated_chlorophyll_0_100 integrated_nitrate_0_50
-## 1     HL2 1999                     68.03585                84.99264
-## 2     HL2 2000                     52.18247               153.67378
-## 3     HL2 2001                     68.30404               149.70984
-## 4     HL2 2002                     47.39108               103.19296
-## 5     HL2 2003                     96.47844               150.75062
-## 6     HL2 2004                     66.82304               126.26645
+## 1     HL2 1999                     67.87150                 85.3821
+## 2     HL2 2000                     52.27038                153.5603
+## 3     HL2 2001                     68.29393                149.7280
+## 4     HL2 2002                     47.71381                103.0353
+## 5     HL2 2003                     96.58182                150.9685
+## 6     HL2 2004                     66.68268                126.5663
 ##   integrated_nitrate_50_150 integrated_phosphate_0_50
-## 1                  914.0106                  25.45192
-## 2                 1052.2351                  30.76459
-## 3                  852.2082                  37.95599
-## 4                  987.0082                  31.49406
-## 5                 1043.7585                  29.26172
-## 6                  857.7356                  27.56220
+## 1                  914.6475                  25.47386
+## 2                 1052.4824                  30.74438
+## 3                  852.9537                  37.94380
+## 4                  986.5876                  31.48064
+## 5                 1043.8373                  29.25722
+## 6                  859.2595                  27.55872
 ##   integrated_phosphate_50_150 integrated_silicate_0_50
-## 1                    95.31417                 133.3231
-## 2                   106.72310                 188.3993
-## 3                   115.86794                 165.8927
-## 4                   112.73353                 112.2547
-## 5                   105.77807                 178.0901
-## 6                    99.64667                 159.1486
+## 1                    95.37123                 133.7420
+## 2                   106.72167                 188.2529
+## 3                   115.91301                 165.8859
+## 4                   112.68214                 112.0497
+## 5                   105.77327                 178.2837
+## 6                    99.75733                 159.4061
 ##   integrated_silicate_50_150 sea_surface_temperature_from_moorings
-## 1                  1027.9353                                    NA
-## 2                  1027.6653                                    NA
-## 3                   847.4100                                    NA
-## 4                   906.0111                                    NA
-## 5                   972.4782                                    NA
-## 6                   831.4975                                    NA
+## 1                  1028.1987                                    NA
+## 2                  1027.9558                                    NA
+## 3                   848.0259                                    NA
+## 4                   905.5085                                    NA
+## 5                   972.7365                                    NA
+## 6                   832.2479                                    NA
 ##   temperature_in_air cruiseNumber longitude latitude pressure temperature_0
 ## 1                 NA         &lt;NA&gt;        NA       NA       NA            NA
 ## 2                 NA         &lt;NA&gt;        NA       NA       NA            NA
@@ -205,8 +205,8 @@
   
 
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span></code></pre></div>
-<pre><code>## Warning: Removed 5 row(s) containing missing values (geom_path).</code></pre>
-<pre><code>## Warning: Removed 1124 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 9 row(s) containing missing values (geom_path).</code></pre>
+<pre><code>## Warning: Removed 1131 rows containing missing values (geom_point).</code></pre>
 <p><img src="plotting_azmpdata_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 <p>The next two examples contain generic code that could be modified to plot any dataframe (of the same time scale).</p>
 <p>Another common plotting task would be to plot the annual means of a given dataframe. This method is fairly generic and could be used for any annual dataset.</p>
@@ -262,8 +262,8 @@
       plot.margin<span class="op">=</span><span class="fu">grid</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span><span class="op">)</span>, <span class="st">"cm"</span><span class="op">)</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span></code></pre></div>
-<pre><code>## Warning: Removed 276 row(s) containing missing values (geom_path).</code></pre>
-<pre><code>## Warning: Removed 396 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 347 row(s) containing missing values (geom_path).</code></pre>
+<pre><code>## Warning: Removed 467 rows containing missing values (geom_point).</code></pre>
 <p><img src="plotting_azmpdata_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
 <p>A user may also want to plot a timeseries. This method is also fairly generic and could be modified to plot any Occupations dataset.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
@@ -336,9 +336,8 @@
       plot.margin<span class="op">=</span><span class="fu">grid</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/grid/unit.html">unit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span>,<span class="fl">0.1</span><span class="op">)</span>, <span class="st">"cm"</span><span class="op">)</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span></code></pre></div>
-<pre><code>## Warning: Removed 1 rows containing missing values (geom_rect).</code></pre>
-<pre><code>## Warning: Removed 186 row(s) containing missing values (geom_path).</code></pre>
-<pre><code>## Warning: Removed 6042 rows containing missing values (geom_point).</code></pre>
+<pre><code>## Warning: Removed 40 row(s) containing missing values (geom_path).</code></pre>
+<pre><code>## Warning: Removed 6068 rows containing missing values (geom_point).</code></pre>
 <p><img src="plotting_azmpdata_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
 </div>
 <div id="gslea" class="section level2">
@@ -346,7 +345,7 @@
 <a href="#gslea" class="anchor"></a>gslea</h2>
 <p><code>gslea</code> was a package developed to support ecosystem approach research in the Gulf Region. It contains a plotting function <code>EA.plot.f()</code> which can be replicated using <code>azmpdata</code>.</p>
 <p>Note these plots may appear very small in the notebook format.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/get.html">get</a></span><span class="op">(</span><span class="st">'Derived_Annual_Stations'</span><span class="op">)</span>
 
   <span class="va">actual_EARs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">dat</span><span class="op">$</span><span class="va">station</span><span class="op">)</span> <span class="co"># get regions to plot </span>
