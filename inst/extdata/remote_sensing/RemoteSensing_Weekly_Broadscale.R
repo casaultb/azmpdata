@@ -6,7 +6,7 @@ library(readr)
 library(usethis)
 
 # load data
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/Surface_Chl_Weekly_MODIS.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Surface_Chl_8day_MODIS.RData")
 load(con)
 close(con)
 
@@ -26,27 +26,27 @@ print_order <- c("CS" = 1,
 
 # reformat data
 RemoteSensing_Weekly_Broadscale <- df_data_filtered %>%
-  dplyr::select(., region, year, month, week, value) %>%
-  dplyr::mutate(., variable="chl") %>%
-  dplyr::mutate(., order = unname(print_order[region])) %>%
-  dplyr::filter(., variable %in% names(target_var)) %>%
-  dplyr::mutate(., variable = unname(target_var[variable])) %>%
-  tidyr::spread(., variable, value) %>%
-  dplyr::arrange(., order, year) %>%
-  dplyr::select(., region, year, month, week, unname(target_var))
+  dplyr::select(region, year, doy, value) %>%
+  dplyr::filter(year<=2020) %>%
+  dplyr::mutate(variable="chl") %>%
+  dplyr::mutate(order = unname(print_order[region])) %>%
+  dplyr::filter(variable %in% names(target_var)) %>%
+  dplyr::mutate(variable = unname(target_var[variable])) %>%
+  tidyr::spread(variable, value) %>%
+  dplyr::arrange(order, year) %>%
+  dplyr::select(region, year, doy, unname(target_var))
+
+# rename regions
+RemoteSensing_Weekly_Broadscale$region <- gsub(RemoteSensing_Weekly_Broadscale$region, pattern = '^CS$', replacement = 'CS_remote_sensing')
+RemoteSensing_Weekly_Broadscale$region <- gsub(RemoteSensing_Weekly_Broadscale$region, pattern = '^ESS$', replacement = 'ESS_remote_sensing')
+RemoteSensing_Weekly_Broadscale$region <- gsub(RemoteSensing_Weekly_Broadscale$region, pattern = '^CSS$', replacement = 'CSS_remote_sensing')
+RemoteSensing_Weekly_Broadscale$region <- gsub(RemoteSensing_Weekly_Broadscale$region, pattern = '^WSS$', replacement = 'WSS_remote_sensing')
+RemoteSensing_Weekly_Broadscale$region <- gsub(RemoteSensing_Weekly_Broadscale$region, pattern = '^GB$', replacement = 'GB_remote_sensing')
+RemoteSensing_Weekly_Broadscale$region <- gsub(RemoteSensing_Weekly_Broadscale$region, pattern = '^LS$', replacement = 'LS_remote_sensing')
 
 # fix metadata
 RemoteSensing_Weekly_Broadscale <- RemoteSensing_Weekly_Broadscale %>%
-  dplyr::rename(., area = region)
-
-# rename regions
-RemoteSensing_Weekly_Broadscale$area <- gsub(RemoteSensing_Weekly_Broadscale$area, pattern = '^CS$', replacement = 'CS_remote_sensing')
-RemoteSensing_Weekly_Broadscale$area <- gsub(RemoteSensing_Weekly_Broadscale$area, pattern = '^ESS$', replacement = 'ESS_remote_sensing')
-RemoteSensing_Weekly_Broadscale$area <- gsub(RemoteSensing_Weekly_Broadscale$area, pattern = '^CSS$', replacement = 'CSS_remote_sensing')
-RemoteSensing_Weekly_Broadscale$area <- gsub(RemoteSensing_Weekly_Broadscale$area, pattern = '^WSS$', replacement = 'WSS_remote_sensing')
-RemoteSensing_Weekly_Broadscale$area <- gsub(RemoteSensing_Weekly_Broadscale$area, pattern = '^GB$', replacement = 'GB_remote_sensing')
-RemoteSensing_Weekly_Broadscale$area <- gsub(RemoteSensing_Weekly_Broadscale$area, pattern = '^LS$', replacement = 'LS_remote_sensing')
-
+  dplyr::rename(area = region)
 
 # save data to csv
 readr::write_csv(RemoteSensing_Weekly_Broadscale, "inst/extdata/csv/RemoteSensing_Weekly_Broadscale.csv")

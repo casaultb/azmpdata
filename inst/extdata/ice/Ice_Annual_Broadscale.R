@@ -9,20 +9,22 @@ library(usethis)
 
 ##--------------------------------------------------------------------------------------------
 # ice volume data
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/ice/volume/AZMP_CIL_ICE_NAO.dat")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/ice/volume/AZMP_CIL_ICE_NAO.dat")
 df_volume <- read.table(file=con, sep="",
-                        col.names=c("year", rep(NA,9), "ice_volume", NA),
-                        colClasses=c("integer", rep("NULL",9), "numeric", "NULL"),
-                        comment.char="#", stringsAsFactors=F) %>%
-  dplyr::filter(year>=1999)
+                            col.names=c("year", rep(NA,8), "gsl", "ss", rep(NA,5)),
+                            colClasses=c("integer", rep("NULL",8), "numeric", "numeric", rep("NULL",5)),
+                            comment.char="#", stringsAsFactors=F) %>%
+  dplyr::filter(year>=1999) %>%
+  dplyr::mutate(ice_volume = gsl+ss) %>%
+  dplyr::select(-gsl, -ss)
 
 ##--------------------------------------------------------------------------------------------
 # ice area data
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/ice/area/IceAreaRegions.GEC.dat")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/ice/area/IceAreaRegions.GEC.dat")
 df_area <- read.table(file=con, sep="", flush=T,
-                      col.names=c(NA, "date", "gsl", "ss", rep(NA, 2)),
-                      colClasses=c("NULL", "character", rep("numeric", 2), rep("NULL", 2)),
-                      comment.char="#", stringsAsFactors=F) %>%
+                          col.names=c(NA, "date", "gsl", "ss", rep(NA, 2)),
+                          colClasses=c("NULL", "character", rep("numeric", 2), rep("NULL", 2)),
+                          comment.char="#", stringsAsFactors=F) %>%
   dplyr::filter(!(gsl==-99 & ss==-99)) %>%
   tidyr::separate(col="date", into=c("year", "month", "day"), sep="-", convert=T, remove=T) %>%
   dplyr::mutate(ice_area = gsl+ss) %>%
@@ -42,8 +44,8 @@ df_polygon <- read.table(file="./inst/extdata/ice/GSL_SS_Polygon.csv",
 
 # load data
 df_occurrence_all <- data.frame()
-for(i_year in seq(1999, 2019)){
-  con <- url(paste("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/ice/occurrence/", i_year, "/IceGridOccurrence.dat", sep=""))
+for(i_year in seq(1999, 2020)){
+  con <- url(paste("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/ice/occurrence/", i_year, "/IceGridOccurrence.dat", sep=""))
   df_occurrence_all <- dplyr::bind_rows(df_occurrence_all,
                                         read.table(file=con, sep="",
                                                    col.names=c("lon","lat", "ice_first_day", NA, "ice_last_day", NA, "ice_duration"),

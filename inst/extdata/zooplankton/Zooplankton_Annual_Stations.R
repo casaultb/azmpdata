@@ -9,35 +9,35 @@ library(usethis)
 # HL2
 # abundance data
 HL2_abundance_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_HL2_Abundance.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Zoo_Abundance_HL2.RData")
 load(con, envir=HL2_abundance_env)
 close(con)
 # biomass data
 HL2_biomass_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_HL2_Biomass.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Zoo_Biomass_HL2.RData")
 load(con, envir=HL2_biomass_env)
 close(con)
 # P5
 # abundance data
 P5_abundance_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_P5_Abundance.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Zoo_Abundance_P5.RData")
 load(con, envir=P5_abundance_env)
 close(con)
 # biomass data
 P5_biomass_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_P5_Biomass.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Zoo_Biomass_P5.RData")
 load(con, envir=P5_biomass_env)
 close(con)
 
 # assemble data
 Zooplankton_Annual_Stations <- dplyr::bind_rows(HL2_abundance_env$df_log_abundance_means_annual_l %>%
-                                                  dplyr::mutate(., station="HL2"),
+                                                  dplyr::mutate(station="HL2"),
                                                 HL2_biomass_env$df_biomass_means_annual_l %>%
-                                                  dplyr::mutate(., station="HL2"),
+                                                  dplyr::mutate(station="HL2"),
                                                 P5_abundance_env$df_log_abundance_means_annual_l %>%
-                                                  dplyr::mutate(., station="P5"),
+                                                  dplyr::mutate(station="P5"),
                                                 P5_biomass_env$df_biomass_means_annual_l %>%
-                                                  dplyr::mutate(., station="P5"))
+                                                  dplyr::mutate(station="P5"))
 # clean up
 rm(list=c("HL2_abundance_env", "HL2_biomass_env", "P5_abundance_env", "P5_biomass_env"))
 
@@ -74,12 +74,12 @@ print_order <- c("HL2" = 1,
 
 # reformat data
 Zooplankton_Annual_Stations <- Zooplankton_Annual_Stations %>%
-  dplyr::mutate(., order = unname(print_order[station])) %>%
-  dplyr::filter(., variable %in% names(target_var)) %>%
-  dplyr::mutate(., variable = unname(target_var[variable])) %>%
-  tidyr::spread(., variable, value) %>%
-  dplyr::arrange(., order, year) %>%
-  dplyr::select(., station, year, unname(target_var))
+  dplyr::mutate(order = unname(print_order[station])) %>%
+  dplyr::filter(variable %in% names(target_var)) %>%
+  dplyr::mutate(variable = unname(target_var[variable])) %>%
+  tidyr::spread(variable, value) %>%
+  dplyr::arrange(order, year) %>%
+  dplyr::select(station, year, unname(target_var))
 
 # save data to csv
 readr::write_csv(Zooplankton_Annual_Stations, "inst/extdata/csv/Zooplankton_Annual_Stations.csv")

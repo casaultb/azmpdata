@@ -8,20 +8,20 @@ library(usethis)
 # load data
 # abundance data
 abundance_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_MAR_AZMP_Abundance.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Zoo_Abundance_MAR_AZMP.RData")
 load(con, envir=abundance_env)
 close(con)
 # biomass data
 biomass_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_MAR_AZMP_Biomass.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Zoo_Biomass_MAR_AZMP.RData")
 load(con, envir=biomass_env)
 close(con)
 
 # assemble data
 Zooplankton_Annual_Sections <- dplyr::bind_rows(abundance_env$df_log_abundance_means_annual_l %>%
-                                                  dplyr::select(., transect, year, variable, value),
+                                                  dplyr::select(transect, year, variable, value),
                                                 biomass_env$df_biomass_means_annual_l %>%
-                                                  dplyr::select(., transect, year, variable, value))
+                                                  dplyr::select(transect, year, variable, value))
 
 # clean up
 rm(list=c("abundance_env", "biomass_env"))
@@ -45,13 +45,13 @@ print_order <- c("CSL" = 1,
 
 # reformat data
 Zooplankton_Annual_Sections <- Zooplankton_Annual_Sections %>%
-  dplyr::rename(., section = transect) %>%
-  dplyr::mutate(., order = unname(print_order[section])) %>%
-  dplyr::filter(., variable %in% names(target_var)) %>%
-  dplyr::mutate(., variable = unname(target_var[variable])) %>%
-  tidyr::spread(., variable, value) %>%
-  dplyr::arrange(., order, year) %>%
-  dplyr::select(., section, year, unname(target_var))
+  dplyr::rename(section = transect) %>%
+  dplyr::mutate(order = unname(print_order[section])) %>%
+  dplyr::filter(variable %in% names(target_var)) %>%
+  dplyr::mutate(variable = unname(target_var[variable])) %>%
+  tidyr::spread(variable, value) %>%
+  dplyr::arrange(order, year) %>%
+  dplyr::select(section, year, unname(target_var))
 
 # save data to csv
 readr::write_csv(Zooplankton_Annual_Sections, "inst/extdata/csv/Zooplankton_Annual_Sections.csv")

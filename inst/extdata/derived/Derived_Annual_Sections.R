@@ -6,7 +6,7 @@ library(readr)
 library(usethis)
 
 # load data
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/DIS_MAR_AZMP_ChlNut.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/ChlNut_MAR_AZMP.RData")
 load(con)
 close(con)
 
@@ -30,13 +30,13 @@ print_order <- c("CSL" = 1,
 
 # reformat data
 Derived_Annual_Sections <- df_means_annual_l %>%
-  dplyr::rename(., section = transect) %>%
-  dplyr::mutate(., order = unname(print_order[section])) %>%
-  dplyr::filter(., variable %in% names(target_var)) %>%
-  dplyr::mutate(., variable = unname(target_var[variable])) %>%
-  tidyr::spread(., variable, value) %>%
-  dplyr::arrange(., order, year) %>%
-  dplyr::select(., section, year, unname(target_var))
+  dplyr::rename(section = transect) %>%
+  dplyr::mutate(order = unname(print_order[section])) %>%
+  dplyr::filter(variable %in% names(target_var)) %>%
+  dplyr::mutate(variable = unname(target_var[variable])) %>%
+  tidyr::spread(variable, value) %>%
+  dplyr::arrange(order, year) %>%
+  dplyr::select(section, year, unname(target_var))
 
 # save data to csv
 readr::write_csv(Derived_Annual_Sections, "inst/extdata/csv/Derived_Annual_Sections.csv")

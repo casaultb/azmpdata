@@ -6,7 +6,7 @@ library(readr)
 library(usethis)
 
 # load data
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/DIS_MAR_AZMP_ChlNut.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/ChlNut_MAR_AZMP.RData")
 load(con)
 close(con)
 
@@ -39,15 +39,15 @@ print_order_season <- c("Spring" = 1,
 
 # reformat data
 Derived_Occupations_Sections <- df_data_integrated_l %>%
-  dplyr::rename(., section = transect) %>%
-  dplyr::mutate(., order_section = unname(print_order_section[section])) %>%
-  dplyr::mutate(., order_station = unname(print_order_station[station])) %>%
-  dplyr::mutate(., order_season = unname(print_order_season[season])) %>%
-  dplyr::filter(., variable %in% names(target_var)) %>%
-  dplyr::mutate(., variable = unname(target_var[variable])) %>%
-  tidyr::spread(., variable, value) %>%
-  dplyr::arrange(., order_section, year, order_season, order_station) %>%
-  dplyr::select(., section, station, latitude, longitude, year, month, day, event_id,
+  dplyr::rename(section = transect) %>%
+  dplyr::mutate(order_section = unname(print_order_section[section])) %>%
+  dplyr::mutate(order_station = unname(print_order_station[station])) %>%
+  dplyr::mutate(order_season = unname(print_order_season[season])) %>%
+  dplyr::filter(variable %in% names(target_var)) %>%
+  dplyr::mutate(variable = unname(target_var[variable])) %>%
+  tidyr::spread(variable, value) %>%
+  dplyr::arrange(order_section, year, order_season, order_station) %>%
+  dplyr::select(section, station, latitude, longitude, year, month, day, event_id,
                 unname(target_var))
 
 # save as dataframe not tibble

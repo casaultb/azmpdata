@@ -8,22 +8,22 @@ library(usethis)
 # load data
 # abundance data
 abundance_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_MAR_AZMP_Abundance.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Zoo_Abundance_MAR_AZMP.RData")
 load(con, envir=abundance_env)
 close(con)
 # biomass data
 biomass_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_MAR_AZMP_Biomass.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Zoo_Biomass_MAR_AZMP.RData")
 load(con, envir=biomass_env)
 close(con)
 
 # assemble data
 Zooplankton_Seasonal_Sections <- dplyr::bind_rows(abundance_env$df_log_abundance_means_seasonal_l %>%
-                                                    dplyr::select(., transect, year, season, variable, value) %>%
-                                                    dplyr::rename(., section=transect),
+                                                    dplyr::select(transect, year, season, variable, value) %>%
+                                                    dplyr::rename(section=transect),
                                                   biomass_env$df_biomass_means_seasonal_l %>%
-                                                    dplyr::select(., transect, year, season, variable, value) %>%
-                                                    dplyr::rename(., section=transect))
+                                                    dplyr::select(transect, year, season, variable, value) %>%
+                                                    dplyr::rename(section=transect))
 
 # clean up
 rm(list=c("abundance_env", "biomass_env"))
@@ -46,13 +46,13 @@ print_order_season <- c("Spring" = 1,
 
 # reformat data
 Zooplankton_Seasonal_Sections <- Zooplankton_Seasonal_Sections %>%
-  dplyr::mutate(., order_section = unname(print_order_section[section])) %>%
-  dplyr::mutate(., order_season = unname(print_order_season[season])) %>%
-  dplyr::filter(., variable %in% names(target_var)) %>%
-  dplyr::mutate(., variable = unname(target_var[variable])) %>%
-  tidyr::spread(., variable, value) %>%
-  dplyr::arrange(., order_section, year, order_season) %>%
-  dplyr::select(., section, year, season, unname(target_var))
+  dplyr::mutate(order_section = unname(print_order_section[section])) %>%
+  dplyr::mutate(order_season = unname(print_order_season[season])) %>%
+  dplyr::filter(variable %in% names(target_var)) %>%
+  dplyr::mutate(variable = unname(target_var[variable])) %>%
+  tidyr::spread(variable, value) %>%
+  dplyr::arrange(order_section, year, order_season) %>%
+  dplyr::select(section, year, season, unname(target_var))
 
 # save data to csv
 readr::write_csv(Zooplankton_Seasonal_Sections, "inst/extdata/csv/Zooplankton_Seasonal_Sections.csv")

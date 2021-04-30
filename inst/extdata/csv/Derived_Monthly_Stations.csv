@@ -1183,6 +1183,18 @@ year,month,station,sea_surface_height
 2019,9,Halifax,1.1
 2019,10,Halifax,1.2
 2019,11,Halifax,1.2
+2020,1,Halifax,1.2
+2020,2,Halifax,1.2
+2020,3,Halifax,1.1
+2020,4,Halifax,1.2
+2020,5,Halifax,1.1
+2020,6,Halifax,1.1
+2020,7,Halifax,1.1
+2020,8,Halifax,1.1
+2020,9,Halifax,1.1
+2020,10,Halifax,1.1
+2020,11,Halifax,1.1
+2020,12,Halifax,1.2
 1970,1,North Sydney,0.9
 1970,2,North Sydney,0.7
 1970,3,North Sydney,0.7
@@ -1773,6 +1785,18 @@ year,month,station,sea_surface_height
 2019,9,North Sydney,0.9
 2019,10,North Sydney,0.9
 2019,11,North Sydney,1
+2020,1,North Sydney,1
+2020,2,North Sydney,0.9
+2020,3,North Sydney,0.9
+2020,4,North Sydney,0.9
+2020,5,North Sydney,0.9
+2020,6,North Sydney,0.8
+2020,7,North Sydney,0.9
+2020,8,North Sydney,0.9
+2020,9,North Sydney,0.8
+2020,10,North Sydney,0.9
+2020,11,North Sydney,0.9
+2020,12,North Sydney,0.9
 1966,9,Yarmouth,2
 1966,10,Yarmouth,2
 1966,11,Yarmouth,2
@@ -2384,3 +2408,15 @@ year,month,station,sea_surface_height
 2019,9,Yarmouth,3
 2019,10,Yarmouth,3
 2019,11,Yarmouth,3
+2020,1,Yarmouth,3
+2020,2,Yarmouth,3
+2020,3,Yarmouth,3
+2020,4,Yarmouth,3
+2020,5,Yarmouth,3
+2020,6,Yarmouth,3
+2020,7,Yarmouth,3
+2020,8,Yarmouth,3
+2020,9,Yarmouth,3
+2020,10,Yarmouth,3
+2020,11,Yarmouth,3
+2020,12,Yarmouth,3

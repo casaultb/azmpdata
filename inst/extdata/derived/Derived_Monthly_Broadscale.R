@@ -25,7 +25,7 @@ for (i in 1:length(tbls_ls)){
   names(tbls_ls)[[i]] <- unique(names(tbls_ls[[i]]))
   names(tbls_ls[[i]]) <- c('month', 'river_flux')
   tbls_ls[[i]] <- tbls_ls[[i]][-1,]
-  tbls_ls[[i]] <- tbls_ls[[i]] %>% dplyr::mutate(., year = names(tbls_ls)[[i]])
+  tbls_ls[[i]] <- tbls_ls[[i]] %>% dplyr::mutate(year = names(tbls_ls)[[i]])
   if(names(tbls_ls)[[i]] > curr_year){
     idx <- c(idx, i)
   }
@@ -39,7 +39,7 @@ df$year <- as.numeric(df$year)
 
 
 river_flux <- df %>%
-  dplyr::mutate(., area = 'Gulf of St. Lawrence')
+  dplyr::mutate(area = 'Gulf of St. Lawrence')
 
 
 # assemble data
