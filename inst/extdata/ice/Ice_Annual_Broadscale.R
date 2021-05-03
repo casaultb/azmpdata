@@ -16,6 +16,7 @@ df_volume <- read.table(file=con, sep="",
                             comment.char="#", stringsAsFactors=F) %>%
   dplyr::filter(year>=1999) %>%
   dplyr::mutate(ice_volume = gsl+ss) %>%
+  dplyr::mutate(area = "GSL+SS") %>%
   dplyr::select(-gsl, -ss)
 
 ##--------------------------------------------------------------------------------------------
@@ -28,10 +29,11 @@ df_area <- read.table(file=con, sep="", flush=T,
   dplyr::filter(!(gsl==-99 & ss==-99)) %>%
   tidyr::separate(col="date", into=c("year", "month", "day"), sep="-", convert=T, remove=T) %>%
   dplyr::mutate(ice_area = gsl+ss) %>%
+  dplyr::mutate(area = "GSL+SS") %>%
   dplyr::select(-day, -gsl, -ss) %>%
   dplyr::filter(month>=1 & month<=3) %>%
   dplyr::select(-month) %>%
-  dplyr::group_by(year) %>%
+  dplyr::group_by(area, year) %>%
   dplyr::summarise(ice_area=mean(ice_area, na.rm=TRUE)) %>%
   dplyr::ungroup(.) %>%
   dplyr::filter(year>=1999)
@@ -69,7 +71,8 @@ df_occurrence <- dplyr::left_join(df_occurrence_all,
                                   df_in_polygon,
                                   by=c("lat", "lon")) %>%
   dplyr::filter(!is.na(in_poly)) %>%
-  dplyr::select(-in_poly)
+  dplyr::select(-in_poly) %>%
+  dplyr::mutate(area = "GSL+SS")
 rm(df_in_polygon)
 
 # find individual grid points for which duration>0 in at least one year
@@ -95,15 +98,16 @@ rm(target_loc)
 df_occurrence <- df_occurrence %>%
   tidyr::pivot_longer(cols=c("ice_first_day", "ice_last_day", "ice_duration"),
                       names_to="variable", values_to="value") %>%
-  dplyr::group_by(year, variable) %>%
-  dplyr::summarise(value = mean(value, na.rm=T)) %>%
+  dplyr::group_by(area, year, variable) %>%
+  dplyr::summarise(value = round(mean(value, na.rm=T), 0)) %>%
   dplyr::ungroup() %>%
   tidyr::pivot_wider(names_from="variable", values_from="value")
 
 ##--------------------------------------------------------------------------------------------
 # assemble data
-Ice_Annual_Broadscale <- dplyr::full_join(df_volume, df_area, by="year") %>%
-  dplyr::left_join(., df_occurrence, by="year")
+Ice_Annual_Broadscale <- dplyr::full_join(df_volume, df_area, by=c("area", "year")) %>%
+  dplyr::left_join(., df_occurrence, by=c("area", "year")) %>%
+  dplyr::select(area, year,	ice_area, ice_volume, ice_duration, ice_first_day, ice_last_day)
 
 # save data to csv
 readr::write_csv(Ice_Annual_Broadscale, "inst/extdata/csv/Ice_Annual_Broadscale.csv")

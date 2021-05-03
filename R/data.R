@@ -893,33 +893,33 @@
 "RemoteSensing_Annual_Broadscale"
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#' Ice Annual Broadscale data
+#'
+#' Annual sea-ice metrics calculated for the combined Gulf of St. Lawrence and
+#' Scotian Shelf area.
+#'
+#'
+#'
+#' @format A dataframe
+#' \describe{
+#'     \item{area}{Area name where data was collected}
+#'     \item{year}{The year in which data was collected}
+#'
+#'     \item{ice_area}{Surface area covered by sea-ice in km^2}
+#'     \item{ice_volume}{Volume of sea-ice in km^3}
+#'     \item{ice_duration}{Average length of sea-ice occurrence in days}
+#'     \item{ice_first_day}{Average start day of sea-ice occurrence (day of year)}
+#'     \item{ice_last_day}{Average end day of sea-ice occurrence (day of year)}
+#' }
+#'
+#' @note
+#' \describe{
+#'    \item{time_scale}{Annual}
+#'    \item{regional_scale}{Broadscale}
+#'    \item{category}{physical, sea-ice}
+#'    }
+#'
+#' @details The data can be cited as follows:
+#' Galbraith, P.S. 2020. Personal communication.
+#'
+"Ice_Annual_Broadscale"
