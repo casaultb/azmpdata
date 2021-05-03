@@ -6,8 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>azmpdata: A package providing data products derived from data collected as part of
-The Atlantic Zone Monitoring Program (AZMP). — azmpdata • azmpdata</title>
+<title>Ice Annual Broadscale data — Ice_Annual_Broadscale • azmpdata</title>
 
 
 <!-- jquery -->
@@ -40,11 +39,9 @@ The Atlantic Zone Monitoring Program (AZMP). — azmpdata • azmpdata</title>
 
 
 
-<meta property="og:title" content="azmpdata: A package providing data products derived from data collected as part of
-The Atlantic Zone Monitoring Program (AZMP). — azmpdata" />
-<meta property="og:description" content="The azmp package provides three categories of data products:
-physical, biological and chemical variables.  For a complete list of
-variables, use library(help = &quot;azmpdata&quot;)." />
+<meta property="og:title" content="Ice Annual Broadscale data — Ice_Annual_Broadscale" />
+<meta property="og:description" content="Annual sea-ice metrics calculated for the combined Gulf of St. Lawrence and
+Scotian Shelf area." />
 
 
 
@@ -133,46 +130,47 @@ variables, use library(help = &quot;azmpdata&quot;)." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>azmpdata: A package providing data products derived from data collected as part of
-The Atlantic Zone Monitoring Program (AZMP).</h1>
-    <small class="dont-index">Source: <a href='https://github.com/casaultb/azmpdata/blob/master/R/azmpdata.R'><code>R/azmpdata.R</code></a></small>
-    <div class="hidden name"><code>azmpdata.Rd</code></div>
+    <h1>Ice Annual Broadscale data</h1>
+    <small class="dont-index">Source: <a href='https://github.com/casaultb/azmpdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>Ice_Annual_Broadscale.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The azmp package provides three categories of data products:
-physical, biological and chemical variables.  For a complete list of
-variables, use library(help = "azmpdata").</p>
+    <p>Annual sea-ice metrics calculated for the combined Gulf of St. Lawrence and
+Scotian Shelf area.</p>
     </div>
 
+    <pre class="usage"><span class='va'>Ice_Annual_Broadscale</span></pre>
 
 
-    <h2 class="hasAnchor" id="physical-variables"><a class="anchor" href="#physical-variables"></a>Physical variables</h2>
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>A dataframe</p><dl>
+    <dt>area</dt><dd><p>Area name where data was collected</p></dd>
+    <dt>year</dt><dd><p>The year in which data was collected</p></dd>
+
+    <dt>ice_area</dt><dd><p>Surface area covered by sea-ice in km^2</p></dd>
+    <dt>ice_volume</dt><dd><p>Volume of sea-ice in km^3</p></dd>
+    <dt>ice_duration</dt><dd><p>Average length of sea-ice occurrence in days</p></dd>
+    <dt>ice_first_day</dt><dd><p>Average start day of sea-ice occurrence (day of year)</p></dd>
+    <dt>ice_last_day</dt><dd><p>Average end day of sea-ice occurrence (day of year)</p></dd>
+
+</dl>
+
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The data can be cited as follows:
+Galbraith, P.S. 2020. Personal communication.</p>
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     
+<dl>
+   <dt>time_scale</dt><dd><p>Annual</p></dd>
+   <dt>regional_scale</dt><dd><p>Broadscale</p></dd>
+   <dt>category</dt><dd><p>physical, sea-ice</p></dd>
+   
+</dl>
 
-<p>The physical variables include basic oceanographic variables (temperature, salinity,
-density) and additional derived variables such as parameters of the cold intermediate
-layer (CIL), sea-ice parameters (area, volume, duration and timing), sea surface height
-and seas surface temperature as measured by remote sensing.</p>
-    <h2 class="hasAnchor" id="biological-variables"><a class="anchor" href="#biological-variables"></a>Biological variables</h2>
-
-    
-
-<p>The biological variables include chlorophyll, phyto- and zooplankton
-abundance, and zooplankton biomass. Parameters of the spring phytoplankton bloom
-as estimated from remote sensing surface chlorophyll are also included.</p>
-    <h2 class="hasAnchor" id="chemical-variables"><a class="anchor" href="#chemical-variables"></a>Chemical variables</h2>
-
-    
-
-<p>The chemical variables include main nutrients (nitrate, silicate and phosphate).</p>
-    <h2 class="hasAnchor" id="other-variables"><a class="anchor" href="#other-variables"></a>Other variables</h2>
-
-    
-
-<p>Other variables of relevance for multivariate data analysis are also included. They
-include air temperature, North Atlantic Oscillation (NAO) and river fresh water flux.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
