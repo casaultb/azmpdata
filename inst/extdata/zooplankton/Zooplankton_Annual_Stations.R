@@ -9,23 +9,23 @@ library(usethis)
 # HL2
 # abundance data
 HL2_abundance_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Zoo_Abundance_HL2.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Zoo_Abundance_HL2.RData")
 load(con, envir=HL2_abundance_env)
 close(con)
 # biomass data
 HL2_biomass_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Zoo_Biomass_HL2.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Zoo_Biomass_HL2.RData")
 load(con, envir=HL2_biomass_env)
 close(con)
 # P5
 # abundance data
 P5_abundance_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Zoo_Abundance_P5.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Zoo_Abundance_P5.RData")
 load(con, envir=P5_abundance_env)
 close(con)
 # biomass data
 P5_biomass_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Zoo_Biomass_P5.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Zoo_Biomass_P5.RData")
 load(con, envir=P5_biomass_env)
 close(con)
 

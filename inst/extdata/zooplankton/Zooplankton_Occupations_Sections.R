@@ -8,12 +8,12 @@ library(usethis)
 # load data
 # abundance data
 abundance_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Zoo_Abundance_MAR_AZMP.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Zoo_Abundance_MAR_AZMP.RData")
 load(con, envir=abundance_env)
 close(con)
 # biomass data
 biomass_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Zoo_Biomass_MAR_AZMP.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Zoo_Biomass_MAR_AZMP.RData")
 load(con, envir=biomass_env)
 close(con)
 

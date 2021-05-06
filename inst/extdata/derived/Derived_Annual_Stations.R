@@ -9,12 +9,12 @@ library(RCurl)
 # load data
 # HL2
 HL2_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/ChlNut_HL2.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/ChlNut_HL2.RData")
 load(con, envir=HL2_env)
 close(con)
 # P5
 P5_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/ChlNut_P5.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/ChlNut_P5.RData")
 load(con, envir=P5_env)
 close(con)
 

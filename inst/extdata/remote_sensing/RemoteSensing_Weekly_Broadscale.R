@@ -6,7 +6,7 @@ library(readr)
 library(usethis)
 
 # load data
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Surface_Chl_8day_MODIS.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Surface_Chl_8day_MODIS.RData")
 load(con)
 close(con)
 

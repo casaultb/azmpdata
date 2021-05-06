@@ -8,12 +8,12 @@ library(usethis)
 # load data
 # chl data
 chl_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Surface_Chl_8day_MODIS.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Surface_Chl_8day_MODIS.RData")
 load(con, envir=chl_env)
 close(con)
 # bloom data
 bloom_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/raw_data/biochemical/Bloom_parameters_8day_MODIS.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Bloom_parameters_8day_MODIS.RData")
 load(con, envir=bloom_env)
 close(con)
 
