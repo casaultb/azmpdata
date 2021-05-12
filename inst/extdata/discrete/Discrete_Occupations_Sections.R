@@ -7,7 +7,7 @@ library(usethis)
 library(RCurl)
 
 # load data
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/DIS_MAR_AZMP_ChlNut.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/ChlNut_MAR_AZMP.RData")
 load(con)
 close(con)
 
@@ -32,7 +32,7 @@ for(i in 1:length(filenames)){
 posections <- do.call('rbind', d)
 
 posections <- posections %>%
-  dplyr::rename(., depth = pressure)
+  dplyr::rename(depth = pressure)
 
 # clean up
 # rm(list=setdiff(ls(), c("df_data_averaged_l", "df_sample_filtered")))
@@ -60,34 +60,34 @@ print_order_season <- c("Spring" = 1,
 
 # reformat data
 Discrete_Occupations_Sections <- dplyr::left_join(df_data_averaged_l %>%
-                                                    dplyr::select(., sample_id, parameter_name, data_value) %>%
-                                                    dplyr::rename(., variable=parameter_name, value=data_value),
+                                                    dplyr::select(sample_id, parameter_name, data_value) %>%
+                                                    dplyr::rename(variable=parameter_name, value=data_value),
                                                   df_sample_filtered %>%
-                                                    dplyr::select(., sample_id, event_id, year, month, day,
+                                                    dplyr::select(sample_id, event_id, year, month, day,
                                                                   time, latitude, longitude, start_depth, standard_depth, station,
                                                                   transect, season) %>%
                                                     dplyr::rename(depth=start_depth, section=transect),
                                                   by=c("sample_id")) %>%
-  dplyr::mutate(., order_section = unname(print_order_section[section])) %>%
-  dplyr::mutate(., order_station = unname(print_order_station[station])) %>%
-  dplyr::mutate(., order_season = unname(print_order_season[season])) %>%
-  dplyr::filter(., variable %in% names(target_var)) %>%
-  dplyr::mutate(., variable = unname(target_var[variable])) %>%
-  dplyr::group_by(., sample_id, variable) %>%
-  dplyr::slice(., 1) %>%
+  dplyr::mutate(order_section = unname(print_order_section[section])) %>%
+  dplyr::mutate(order_station = unname(print_order_station[station])) %>%
+  dplyr::mutate(order_season = unname(print_order_season[season])) %>%
+  dplyr::filter(variable %in% names(target_var)) %>%
+  dplyr::mutate(variable = unname(target_var[variable])) %>%
+  dplyr::group_by(sample_id, variable) %>%
+  dplyr::slice(1) %>%
+  dplyr::ungroup() %>%
+  tidyr::spread(variable, value) %>%
+  dplyr::group_by(event_id) %>%
+  dplyr::arrange(depth, .by_group=T) %>%
+  dplyr::arrange(order_section, year, order_season, order_station) %>%
   dplyr::ungroup(.) %>%
-  tidyr::spread(., variable, value) %>%
-  dplyr::group_by(., event_id) %>%
-  dplyr::arrange(., depth, .by_group=T) %>%
-  dplyr::arrange(., order_section, year, order_season, order_station) %>%
-  dplyr::ungroup(.) %>%
-  dplyr::select(., section, station, latitude, longitude, year, month, day, event_id,
+  dplyr::select(section, station, latitude, longitude, year, month, day, event_id,
                 sample_id, depth, standard_depth, unname(target_var))
 
 
 # join physical data
 Discrete_Occupations_Sections <- Discrete_Occupations_Sections %>%
-  dplyr::bind_rows(posections)
+  dplyr::bind_rows(., posections)
 
 # save as dataframe not tibble
 Discrete_Occupations_Sections <- as.data.frame(Discrete_Occupations_Sections)

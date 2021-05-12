@@ -1,7 +1,7 @@
 month,river_flux,year,area
-01,,2021,Gulf of St. Lawrence
-02,,2021,Gulf of St. Lawrence
-03,,2021,Gulf of St. Lawrence
+01,12487,2021,Gulf of St. Lawrence
+02,11101,2021,Gulf of St. Lawrence
+03,11567,2021,Gulf of St. Lawrence
 04,,2021,Gulf of St. Lawrence
 05,,2021,Gulf of St. Lawrence
 06,,2021,Gulf of St. Lawrence
@@ -22,7 +22,7 @@ month,river_flux,year,area
 09,10419,2020,Gulf of St. Lawrence
 10,11759,2020,Gulf of St. Lawrence
 11,11497,2020,Gulf of St. Lawrence
-12,,2020,Gulf of St. Lawrence
+12,12541,2020,Gulf of St. Lawrence
 01,12520,2019,Gulf of St. Lawrence
 02,11390,2019,Gulf of St. Lawrence
 03,11778,2019,Gulf of St. Lawrence
@@ -107,7 +107,7 @@ month,river_flux,year,area
 10,10044,2013,Gulf of St. Lawrence
 11,10857,2013,Gulf of St. Lawrence
 12,11253,2013,Gulf of St. Lawrence
-01,98858,2012,Gulf of St. Lawrence
+01,9886,2012,Gulf of St. Lawrence
 02,10932,2012,Gulf of St. Lawrence
 03,14407,2012,Gulf of St. Lawrence
 04,14712,2012,Gulf of St. Lawrence

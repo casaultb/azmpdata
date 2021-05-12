@@ -8,12 +8,12 @@ library(usethis)
 # load data
 # abundance data
 abundance_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_MAR_TS_Abundance.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Zoo_Abundance_MAR_TS_NAFO.RData")
 load(con, envir=abundance_env)
 close(con)
 # biomass data
 biomass_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/PL_MAR_TS_Biomass.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Zoo_Biomass_MAR_TS_NAFO.RData")
 load(con, envir=biomass_env)
 close(con)
 
@@ -26,8 +26,8 @@ Zooplankton_Occupations_Broadscale <- dplyr::bind_rows(abundance_env$df_abundanc
 # assemble metadata
 metadata <- dplyr::bind_rows(abundance_env$df_sample_filtered,
                              biomass_env$df_sample_filtered) %>%
-  dplyr::select(., sample_id, latitude, longitude, station, year, month, day, season) %>%
-   dplyr::group_by(., sample_id) %>%
+  dplyr::select(sample_id, latitude, longitude, region, year, month, day, season) %>%
+   dplyr::group_by(sample_id) %>%
   dplyr::slice(1) %>%
   dplyr::ungroup(.)
 
@@ -46,15 +46,15 @@ print_order_season <- c("Winter" = 1,
 
 # reformat data
 Zooplankton_Occupations_Broadscale <- dplyr::left_join(Zooplankton_Occupations_Broadscale %>%
-                                                       dplyr::select(., sample_id, variable, value),
+                                                       dplyr::select(sample_id, variable, value),
                                                      metadata,
                                                      by="sample_id") %>%
-  dplyr::mutate(., order_season = unname(print_order_season[season])) %>%
-  dplyr::filter(., variable %in% names(target_var)) %>%
-  dplyr::mutate(., variable = unname(target_var[variable])) %>%
-  tidyr::spread(., variable, value) %>%
-  dplyr::arrange(., year, order_season, month, day) %>%
-  dplyr::select(., latitude, longitude, year, month, day, season, sample_id,
+  dplyr::mutate(order_season = unname(print_order_season[season])) %>%
+  dplyr::filter(variable %in% names(target_var)) %>%
+  dplyr::mutate(variable = unname(target_var[variable])) %>%
+  tidyr::spread(variable, value) %>%
+  dplyr::arrange(year, order_season, month, day) %>%
+  dplyr::select(latitude, longitude, year, month, day, season, sample_id,
                 unname(target_var))
 
 # save data to csv

@@ -9,12 +9,12 @@ library(RCurl)
 # load data
 # HL2
 HL2_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/DIS_HL2_ChlNut.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/ChlNut_HL2.RData")
 load(con, envir=HL2_env)
 close(con)
 # P5
 P5_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/DIS_P5_ChlNut.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/ChlNut_P5.RData")
 load(con, envir=P5_env)
 close(con)
 
@@ -181,34 +181,34 @@ d <- cbind(d, descriptor = missions[['mission_descriptor']][idx])
 fixedStationsPO <- d
 
 temp_0 <- fixedStationsPO[fixedStationsPO$pressure == 0,] %>%
-  dplyr::select(., station, cruiseNumber, year, month, day,
+  dplyr::select(station, cruiseNumber, year, month, day,
                 longitude, latitude, pressure, temperature)
 
 temp_90 <- fixedStationsPO[fixedStationsPO$pressure == 90,] %>%
-  dplyr::select(., station, cruiseNumber, year, month, day,
+  dplyr::select(station, cruiseNumber, year, month, day,
                 longitude, latitude, pressure, temperature)
 
 newdf <- rbind(temp_0, temp_90)
 
 newdf2 <- newdf %>%
-  dplyr::group_by(., station, year, pressure) %>%
-  dplyr::mutate(., temperature_new = mean(temperature))
+  dplyr::group_by(station, year, pressure) %>%
+  dplyr::mutate(temperature_new = mean(temperature))
 
 temperature_0_df <- newdf2[newdf2$pressure == 0,] %>%
   dplyr::rename(temperature_0 = temperature) %>%
-  dplyr::distinct(., year, .keep_all = TRUE) %>%
-  dplyr::select(., - temperature_new, -month, -day)
+  dplyr::distinct(year, .keep_all = TRUE) %>%
+  dplyr::select(-temperature_new, -month, -day)
 
 temperature_90_df <- newdf2[newdf2$pressure == 90,] %>%
   dplyr::rename(temperature_90 = temperature) %>%
-  dplyr::distinct(., year, .keep_all = TRUE)%>%
-  dplyr::select(., -temperature_new, -month, -day)
+  dplyr::distinct(year, .keep_all = TRUE)%>%
+  dplyr::select(-temperature_new, -month, -day)
 
 # assemble data
 Derived_Annual_Stations <- dplyr::bind_rows(HL2_env$df_means_annual_l %>%
-                                              dplyr::mutate(., station="HL2"),
+                                              dplyr::mutate(station="HL2"),
                                             P5_env$df_means_annual_l %>%
-                                              dplyr::mutate(., station="P5"))
+                                              dplyr::mutate(station="P5"))
 
 # clean up
 rm(list=c("HL2_env", "P5_env"))
@@ -228,17 +228,17 @@ print_order <- c("HL2" = 1,
 
 # reformat data
 Derived_Annual_Stations <- Derived_Annual_Stations %>%
-  dplyr::mutate(., order = unname(print_order[station])) %>%
-  dplyr::filter(., variable %in% names(target_var)) %>%
-  dplyr::mutate(., variable = unname(target_var[variable])) %>%
-  tidyr::spread(., variable, value) %>%
-  dplyr::arrange(., order, year) %>%
-  dplyr::select(., station, year, unname(target_var))
+  dplyr::mutate(order = unname(print_order[station])) %>%
+  dplyr::filter(variable %in% names(target_var)) %>%
+  dplyr::mutate(variable = unname(target_var[variable])) %>%
+  tidyr::spread(variable, value) %>%
+  dplyr::arrange(order, year) %>%
+  dplyr::select(station, year, unname(target_var))
 
 
 # add physical data
 Derived_Annual_Stations <- Derived_Annual_Stations %>%
-  dplyr::bind_rows(SSTinSitu, airTemperature, temperature_0_df, temperature_90_df, integratedvars)
+  dplyr::bind_rows(., SSTinSitu, airTemperature, temperature_0_df, temperature_90_df, integratedvars)
 
 # save data to csv
 readr::write_csv(Derived_Annual_Stations, "inst/extdata/csv/Derived_Annual_Stations.csv")

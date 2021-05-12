@@ -6,14 +6,22 @@
 #' variables, use library(help = "azmpdata").
 #'
 #' @section Physical variables:
-#' The physical variables include temperature, salinity, ...
+#' The physical variables include basic oceanographic variables (temperature, salinity,
+#' density) and additional derived variables such as parameters of the cold intermediate
+#' layer (CIL), sea-ice parameters (area, volume, duration and timing), sea surface height
+#' and seas surface temperature as measured by remote sensing.
 #'
 #' @section Biological variables:
 #' The biological variables include chlorophyll, phyto- and zooplankton
-#' abundance, and zooplankton biomass.
+#' abundance, and zooplankton biomass. Parameters of the spring phytoplankton bloom
+#' as estimated from remote sensing surface chlorophyll are also included.
 #'
 #' @section Chemical variables:
-#' The chemical variables in main nutrients (nitrate, silicate and phosphate).
+#' The chemical variables include main nutrients (nitrate, silicate and phosphate).
+#'
+#' @section Other variables:
+#' Other variables of relevance for multivariate data analysis are also included. They
+#' include air temperature, North Atlantic Oscillation (NAO) and river fresh water flux.
 #'
 #' @docType package
 #' @name azmpdata

@@ -6,7 +6,7 @@ library(readr)
 library(usethis)
 
 # load data
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/Microplankton.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Microplankton.RData")
 load(con)
 
 # clean up
@@ -24,15 +24,15 @@ print_order <- c("HL2" = 1,
 
 # reformat data
 Phytoplankton_Annual_Stations <- df_log_abundance_means_annual_glm_l %>%
-  dplyr::mutate(., station = ifelse(station=="HL_02", "HL2",
+  dplyr::mutate(station = ifelse(station=="HL_02", "HL2",
                                     ifelse(station=="P_05", "P5", NA))) %>%
-  dplyr::mutate(., order = unname(print_order[station])) %>%
-  dplyr::filter(., variable %in% names(target_var)) %>%
-  dplyr::mutate(., variable = unname(target_var[variable])) %>%
-  tidyr::spread(., variable, value) %>%
-  dplyr::filter(., !is.na(station)) %>%
-  dplyr::arrange(., order, year) %>%
-  dplyr::select(., station, year, unname(target_var))
+  dplyr::mutate(order = unname(print_order[station])) %>%
+  dplyr::filter(variable %in% names(target_var)) %>%
+  dplyr::mutate(variable = unname(target_var[variable])) %>%
+  tidyr::spread(variable, value) %>%
+  dplyr::filter(!is.na(station)) %>%
+  dplyr::arrange(order, year) %>%
+  dplyr::select(station, year, unname(target_var))
 
 # save data to csv
 readr::write_csv(Phytoplankton_Annual_Stations, "inst/extdata/csv/Phytoplankton_Annual_Stations.csv")

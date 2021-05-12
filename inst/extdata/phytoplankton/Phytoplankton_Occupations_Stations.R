@@ -6,7 +6,7 @@ library(readr)
 library(usethis)
 
 # load data
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/outputs/Microplankton.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Microplankton.RData")
 load(con)
 
 # clean up
@@ -25,25 +25,25 @@ print_order <- c("HL2" = 1,
 
 # reformat data
 Phytoplankton_Occupations_Stations <- df_abundance_grouped_l %>%
-  dplyr::mutate(., station = ifelse(station=="HL_02", "HL2",
+  dplyr::mutate(station = ifelse(station=="HL_02", "HL2",
                                     ifelse(station=="P_05", "P5", NA))) %>%
-  dplyr::mutate(., order = unname(print_order[station])) %>%
-  dplyr::filter(., variable %in% names(target_var)) %>%
-  dplyr::mutate(., variable = unname(target_var[variable])) %>%
+  dplyr::mutate(order = unname(print_order[station])) %>%
+  dplyr::filter(variable %in% names(target_var)) %>%
+  dplyr::mutate(variable = unname(target_var[variable])) %>%
   #----------------
 # this will have to be updated once data get extracted from Biochem
 #----------------
-dplyr::mutate(., latitude = ifelse(station=="HL2", 44.2670,
+dplyr::mutate(latitude = ifelse(station=="HL2", 44.2670,
                                    ifelse(station=="P5", 44.9300, NA))) %>%
-  dplyr::mutate(., longitude = ifelse(station=="HL2",  -63.31700,
+  dplyr::mutate(longitude = ifelse(station=="HL2",  -63.31700,
                                       ifelse(station=="P5", -66.8500, NA))) %>%
-  dplyr::mutate(., time=NA) %>%
-  tidyr::separate(., sample_id, c("mission_id", "event_id", "sample_id"), sep="_") %>%
+  dplyr::mutate(time=NA) %>%
+  tidyr::separate(sample_id, c("mission_id", "event_id", "sample_id"), sep="_") %>%
   #----------------
-tidyr::spread(., variable, value) %>%
-  dplyr::filter(., !is.na(station)) %>%
-  dplyr::arrange(., order, year, month, day, time) %>%
-  dplyr::select(., station, latitude, longitude, year, month, day, event_id, sample_id,
+tidyr::spread(variable, value) %>%
+  dplyr::filter(!is.na(station)) %>%
+  dplyr::arrange(order, year, month, day, time) %>%
+  dplyr::select(station, latitude, longitude, year, month, day, event_id, sample_id,
                 unname(target_var))
 
 # save data to csv

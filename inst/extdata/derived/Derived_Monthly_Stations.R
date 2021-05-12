@@ -51,7 +51,7 @@ df <- data.frame(year = as.numeric(year),
                  # sea_surface_height_residual= vardat3
 )
 seaLevelHeight <- df %>%
-  dplyr::select(., -day)
+  dplyr::select(-day)
 
 
 

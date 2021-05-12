@@ -18,7 +18,7 @@ corresponds to checking the loaded namespace, then all libraries
 currently known in .libPaths().}
 }
 \description{
-Search through azmpdata datasets by keywords. Defualt searches through all
+Search through azmpdata datasets by keywords. Default searches through all
 dataset variable names, but options (`help_search`) can be used to search
 through all `azmpdata` help documentation text including variable definitions
 and metadata.
