@@ -133,7 +133,7 @@ par(mfrow=c(3,1))
 nocoord <- which(is.na(latd)) # this will catch all of them
 length(nocoord)
 hist(bp[nocoord, names(bp) %in% 'year'])
-nolatx <- which(is.na(bp[['latitude.x']])) # only from bo data - this seems to be culprit
+nolatx <- which(is.na(bp[['latitude.x']])) # only from bo data
 length(nolatx)
 hist(bp[nolatx, names(bp) %in% 'year'])
 nolaty <- which(is.na(bp[['latitude.y']])) # only from po data
@@ -150,7 +150,7 @@ par(mfrow=c(3,1))
 nocoord2 <- which(is.na(latd2))
 length(nocoord2)
 hist(bp2[nocoord2, names(bp2) %in% 'year'])
-nolatx2 <- which(is.na(bp2[['latitude.x']])) # only from bo data - this seems to be culprit
+nolatx2 <- which(is.na(bp2[['latitude.x']])) # only from bo data
 length(nolatx2)
 hist(bp2[nolatx2, names(bp2) %in% 'year'])
 nolaty2 <- which(is.na(bp2[['latitude.y']])) # only from po data
@@ -160,9 +160,9 @@ hist(bp2[nolaty2, names(bp2) %in% 'year'])
 
 # check, manual visual check, nothing serious or rigorus
 # BBL1, 2003, 10 is one of concern
-stn <- 'BBL1'
-year <- 2003
-month <- 10
+stn <- 'CSL1'
+year <- 2018
+month <- 4
 #day <- 22
 
 bok <- b[['station']] == stn & b[['year']] == year & b[['month']] == month #& b[['day']] == day
