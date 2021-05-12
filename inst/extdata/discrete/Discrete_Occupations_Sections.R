@@ -12,7 +12,7 @@ load(con)
 close(con)
 
 # load physical data
-url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/sections/"
+url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/sections/"
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 

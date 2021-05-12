@@ -21,7 +21,7 @@ close(con)
 # load physical data
 
 # integrated variables
-url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/fixedStations/'
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/fixedStations/'
 
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
@@ -57,7 +57,7 @@ integratedvars <- df
 
 
 # temperature_in_air
-url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/airTemperature/'
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/airTemperature/'
 
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
@@ -91,7 +91,7 @@ df <- data.frame(year = year,
 airTemperature <- df
 
 #sea_surface_temperature_from_moorings
-url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/SSTinSitu/'
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/SSTinSitu/'
 
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
@@ -133,7 +133,7 @@ SSTinSitu <- df
 # get temperature_0 and temperature_90 for p5 and HL2
 # load in station discrete data
 
-url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/lookup/'
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/lookup/' # have to move lookup
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 
@@ -146,7 +146,7 @@ lookup[[2]] <- read.csv(paste0(url_name, filenames[2]))
 missions <- do.call('rbind', lookup)
 
 # 2. read in the data and combine
-url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/fixedStations/'
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/fixedStations/'
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 

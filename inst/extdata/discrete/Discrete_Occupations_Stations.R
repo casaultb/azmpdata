@@ -24,7 +24,7 @@ close(con)
 # lookupPath <- 'inst/extdata/lookup'
 
 # 1. read in mission look up tables and combine
-url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/lookup/'
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/lookup/' # have to move this to new directory
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 
@@ -37,7 +37,7 @@ lookup[[2]] <- read.csv(paste0(url_name, filenames[2]))
 missions <- do.call('rbind', lookup)
 
 # 2. read in the data and combine
-url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/fixedStations/'
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/fixedStations/'
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 

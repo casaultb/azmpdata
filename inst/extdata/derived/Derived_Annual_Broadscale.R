@@ -10,7 +10,7 @@ library(RCurl)
 
 
 # sea_surface_temperature_from_satellite
-url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/SSTsatellite/"
+url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/SSTsatellite/"
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 
@@ -37,7 +37,7 @@ df <- data.frame(year = year,
 sstSatellite <- df
 
 # north_atlantic_oscillation
-url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/nao/"
+url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/nao/"
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 
@@ -64,7 +64,7 @@ df <- data.frame(year = year,
 nao <- df
 
 # temperature_at_sea_floor
-url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/areas/"
+url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/areas/"
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 
@@ -167,7 +167,7 @@ areasOther <- df
 
 # cold_intermediate_layer_volume & minimum_temperature_in_cold_intermediate_layer
 
-url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/coldIntermediateLayer/"
+url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/coldIntermediateLayer/"
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 
@@ -207,7 +207,7 @@ coldIntermediateLayer <- df
 
 # temperature_at_sea_floor
 
-url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/summerBottomTemperature/"
+url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/summerBottomTemperature/"
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 
