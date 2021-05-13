@@ -1,4 +1,5 @@
 ## code to prepare `Discrete_Annual_Broadscale` dataset
+cat('Sourcing Discrete_Annual_Broadscale.R', sep = '\n')
 
 library(dplyr)
 library(tidyr)
@@ -7,6 +8,7 @@ library(usethis)
 
 # load data
 # sea_temperature
+cat('    reading in areas surface temperature data', sep = '\n')
 
 url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/areas/"
 result <- getURL(url_name,
@@ -21,16 +23,8 @@ fn <- grep(filenames, pattern = 'temperature0m\\w+\\.dat', value = TRUE)
 d <- list()
 for(i in 1:length(fn)){
   con <- url(paste0(url_name, fn[[i]]))
-
   d[[i]] <- read.physical(con)
 }
-#
-# path <- 'inst/extdata/areas/'
-# files <- list.files(path = path,
-#                     pattern = 'temperature0m\\w+\\.dat',
-#                     full.names = TRUE)
-#
-# d <- lapply(files, read.physical)
 
 vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
 #vardat1 <- unlist(lapply(d, function(k) k[['data']][['anomaly']]))
@@ -49,6 +43,7 @@ df <- data.frame(year = year,
 sea_temperature <- df
 
 # salinity
+cat('    reading in areas surface salinity data', sep = '\n')
 
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
@@ -62,15 +57,8 @@ fn <- grep(filenames, pattern = 'salinity0m\\w+\\.dat', value = TRUE)
 d <- list()
 for(i in 1:length(fn)){
   con <- url(paste0(url_name, fn[[i]]))
-
   d[[i]] <- read.physical(con)
 }
-#
-# path <- 'inst/extdata/areas/'
-# files <- list.files(path = path,
-#                     pattern = 'salinity0m\\w+\\.dat',
-#                     full.names = TRUE)
-# d <- lapply(files, read.physical)
 
 vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
 #vardat1 <- unlist(lapply(d, function(k) k[['data']][['anomaly']]))
@@ -92,8 +80,6 @@ salinity <- df
 # assemble data
 
 Discrete_Annual_Broadscale <- dplyr::bind_rows(sea_temperature, salinity)
-
-
 
 # save data
 # save data to csv

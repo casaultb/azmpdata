@@ -1,4 +1,6 @@
 # derived_monthly station data
+cat('Sourcing Derived_Monthly_Stations.R', sep = '\n')
+
 library(dplyr)
 library(tidyr)
 library(readr)
@@ -6,6 +8,7 @@ library(usethis)
 library(RCurl)
 
 # sea_surface_height
+cat('    reading in sea level data', sep = '\n')
 
 url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/seaLevelHeight/'
 
@@ -22,15 +25,8 @@ fn <- grep(filenames, pattern = 'seaLevelHeight\\w+\\.dat', value = TRUE)
 d <- list()
 for(i in 1:length(fn)){
   con <- url(paste0(url_name, fn[[i]]))
-
   d[[i]] <- read.physical(con)
 }
-
-# path <- 'inst/extdata/seaLevelHeight/'
-# files <- list.files(path = path,
-#                     pattern = 'seaLevelHeight\\w+\\.dat',
-#                     full.names = TRUE)
-# d <- lapply(files, read.physical)
 
 #vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
 vardat1 <- unlist(lapply(d, function(k) k[['data']][['time']]))
@@ -49,20 +45,15 @@ df <- data.frame(year = as.numeric(year),
                  station = stationName,
                  sea_surface_height  = vardat2 #,
                  # sea_surface_height_residual= vardat3
-)
+                )
 seaLevelHeight <- df %>%
   dplyr::select(-day)
-
-
 
 # assemble data
 
 Derived_Monthly_Stations <- dplyr::bind_rows(seaLevelHeight)
 
-
 # save data
-
-
 # save data to csv
 readr::write_csv(Derived_Monthly_Stations, "inst/extdata/csv/Derived_Monthly_Stations.csv")
 

@@ -1,4 +1,5 @@
 ## code to prepare `Discrete_Occupations_Stations` dataset
+cat('Sourcing Discrete_Occupations_Stations.R', sep = '\n')
 
 library(dplyr)
 library(tidyr)
@@ -8,11 +9,13 @@ library(RCurl)
 
 # load data
 # HL2
+cat('    reading in station2 biochemical data', sep = '\n')
 HL2_env <- new.env()
 con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/ChlNut_HL2.RData")
 load(con, envir=HL2_env)
 close(con)
 # P5
+cat('    reading in prince5 biochemical data', sep = '\n')
 P5_env <- new.env()
 con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/ChlNut_P5.RData")
 load(con, envir=P5_env)
@@ -20,10 +23,9 @@ close(con)
 
 # load physical data
 
-# dataPath <- 'inst/extdata/fixedStationsPhysicalOceanography'
-# lookupPath <- 'inst/extdata/lookup'
-
 # 1. read in mission look up tables and combine
+cat('    reading in lookup table data', sep = '\n')
+
 url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/lookup/' # have to move this to new directory
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
@@ -37,6 +39,7 @@ lookup[[2]] <- read.csv(paste0(url_name, filenames[2]))
 missions <- do.call('rbind', lookup)
 
 # 2. read in the data and combine
+cat('    reading in station2 and prince5 physical data', sep = '\n')
 url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/fixedStations/'
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
@@ -49,7 +52,6 @@ filenames <- grep(filenames, pattern = '*IntegratedVariables*', value = TRUE, in
 d <- list()
 for(i in 1:length(filenames)){
   con <- url(paste0(url_name, filenames[[i]]))
-
   d[[i]] <- read.csv(con)
 }
 
@@ -61,19 +63,17 @@ for(i in 1:length(filenames)){
 # note : if anything goes sideways matching up idx, the structure of idx will change
 #        so it could become a list instead of a vector
 idx <- apply(d, 1, function(k) {ok <- which(missions[['mission_name']] == k[['cruiseNumber']]);
-if(length(ok) > 1) {
-  ok[1]
-} else if(length(ok) == 0){
-  NA
-} else {
-  ok
-}})
+                                if(length(ok) > 1) {
+                                  ok[1]
+                                } else if(length(ok) == 0){
+                                  NA
+                                } else {
+                                  ok
+                                }})
 
 d <- cbind(d, descriptor = missions[['mission_descriptor']][idx])
 
 fixedStationsPO <- d
-
-
 
 # rename variables
 fixedStationsPO <- fixedStationsPO %>%

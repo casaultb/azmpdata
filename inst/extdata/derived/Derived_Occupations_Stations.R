@@ -1,4 +1,5 @@
 ## code to prepare `Derived_Occupations_Stations` dataset
+cat('Sourcing Derived_Occupations_Stations.R', sep = '\n')
 
 library(dplyr)
 library(tidyr)
@@ -7,11 +8,13 @@ library(usethis)
 
 # load data
 # HL2
+cat('    reading in station2 biochemical data', sep = '\n')
 HL2_env <- new.env()
 con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/ChlNut_HL2.RData")
 load(con, envir=HL2_env)
 close(con)
 # P5
+cat('    reading in prince5 biochemical data', sep = '\n')
 P5_env <- new.env()
 con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/ChlNut_P5.RData")
 load(con, envir=P5_env)
