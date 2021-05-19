@@ -13,4 +13,8 @@ cat(paste(files, collapse = '\n')) # how come after the above line is ran, the v
 
 
 # update datadate.txt to reflect latest data update
-data_update()
+fnpath <- system.file('extdata/', package = 'azmpdata')
+# create file
+sink(file = file.path(fnpath, 'datadate.txt'))
+cat(format(Sys.time(), format = '%Y-%m-%d'), '\n')
+sink()
