@@ -1,11 +1,12 @@
 # derived_monthly station data
 cat('Sourcing Derived_Monthly_Stations.R', sep = '\n')
-
 library(dplyr)
 library(tidyr)
 library(readr)
 library(usethis)
 library(RCurl)
+source('inst/extdata/read_physical.R')
+
 
 # sea_surface_height
 cat('    reading in sea level data', sep = '\n')

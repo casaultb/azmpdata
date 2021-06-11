@@ -5,6 +5,8 @@ library(tidyr)
 library(readr)
 library(usethis)
 library(RCurl)
+source('inst/extdata/read_physical.R')
+
 
 # load biochemical data
 # HL2
