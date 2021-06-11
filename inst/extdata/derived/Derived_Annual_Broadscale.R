@@ -5,6 +5,7 @@ library(tidyr)
 library(readr)
 library(usethis)
 library(RCurl)
+source('inst/extdata/read_physical.R')
 
 # load data
 
@@ -149,7 +150,7 @@ df <- data.frame(year = year[[1]],
                  as.data.frame(vardat))
 
 # keep only density gradient var
-df <- df %>% select(year, area, density_gradient_0_50)
+df <- df %>% select(year, area, density_gradient_0_50, sea_temperature_0, salinity_0)
 areasOther <- df
 
 # cold_intermediate_layer_volume & minimum_temperature_in_cold_intermediate_layer

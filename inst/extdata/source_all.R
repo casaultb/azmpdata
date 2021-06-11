@@ -4,7 +4,6 @@ library(azmpdata) # need it for read.physical
 # get all .R processing files
 files <- list.files('inst/extdata', pattern = '*.R$', ignore.case = TRUE, recursive = TRUE, full.names = TRUE)
 files <- setdiff(files, "inst/extdata/source_all.R")
-files <- setdiff(files, "inst/extdata/ice/Ice_Annual_Broadscale.R")
 cat(paste(files, collapse = '\n'))
 
 # source all files to create data products

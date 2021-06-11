@@ -827,38 +827,6 @@
  "RemoteSensing_Weekly_Broadscale"
 
 
-
-
-#' Discrete annual broadscale data
-#'
-#' Discrete data averaged over broad regions and years.
-#'
-#'
-#'
-#' @format A dataframe
-#' \describe{
-#'     \item{year}{The year in which data was collected}
-#'     \item{area}{Area name where data was collected}
-#'
-#'     \item{salinity}{Discrete salinity measurements over a range of depths}
-#'     \item{sea_temperature}{Discrete sea temperature measurements over a range of depths}
-#' }
-#'
-#' @note
-#' \describe{
-#'    \item{time_scale}{Annual}
-#'    \item{regional_scale}{Broadscale}
-#'    \item{category}{ physical }
-#'    }
-#'
-#' @details The data can be cited as follows:
-#' Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
-#'   Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
-#'   Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
-#'
-"Discrete_Annual_Broadscale"
-
-
 #' Remote sensing Annual broadscale data
 #'
 #' Remote Sensing data averaged over broad regions and years.
