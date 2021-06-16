@@ -7,7 +7,7 @@ output: html_document
 
 Discussion of Maritimes environmental data access, December , 2020
 
-B. Casault, E. Chisholm, C. Johnson, M. MacMahon, C. Layton
+B. Casault, E. Chisholm, C. Johnson, M. McMahon, C. Layton
 
 
 ## Agenda
