@@ -1,5 +1,5 @@
 # automatically runs update check when package is loaded
-# From Mike MacMahon
+# From Mike McMahon
 
 # avoid warnings in check() from dplyr syntax
 utils::globalVariables(c('year', 'value', 'month', 'day', 'year_dec', 'xmin', 'xmax', 'ymin', 'ymax', '.', 'ls_data', 'variable', 'tmp_variable', 'keyword', 'dataframe'))
