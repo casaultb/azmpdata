@@ -1,4 +1,5 @@
 ## code to prepare `Discrete_Occupations_Sections` dataset
+cat('Sourcing Discrete_Occupations_Sections.R', sep = '\n')
 
 library(dplyr)
 library(tidyr)
@@ -7,12 +8,14 @@ library(usethis)
 library(RCurl)
 
 # load data
+cat('    reading in biochemical section data', sep = '\n')
 con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/ChlNut_MAR_AZMP.RData")
 load(con)
 close(con)
 
 # load physical data
-url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/sections/"
+cat('    reading in physical section data', sep = '\n')
+url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/sections/"
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 
@@ -23,19 +26,15 @@ filenames <- unlist(strsplit(result, "\r\n"))
 d <- list()
 for(i in 1:length(filenames)){
   con <- url(paste0(url_name, filenames[[i]]))
-
   d[[i]] <- read.csv(con)
 }
+posections <- do.call('rbind', d)
 
 # rename variables
-
-posections <- do.call('rbind', d)
 
 posections <- posections %>%
   dplyr::rename(depth = pressure)
 
-# clean up
-# rm(list=setdiff(ls(), c("df_data_averaged_l", "df_sample_filtered")))
 
 # target variables to include
 target_var <- c("Chlorophyll_A" = "chlorophyll",

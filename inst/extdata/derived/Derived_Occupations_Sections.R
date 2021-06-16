@@ -1,4 +1,5 @@
 ## code to prepare `Derived_Occupations_Sections` dataset
+cat('Sourcing Derived_Occupations_Sections.R', sep = '\n')
 
 library(dplyr)
 library(tidyr)
@@ -6,6 +7,7 @@ library(readr)
 library(usethis)
 
 # load data
+cat('    reading in biochemical data', sep = '\n')
 con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/ChlNut_MAR_AZMP.RData")
 load(con)
 close(con)

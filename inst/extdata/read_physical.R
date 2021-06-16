@@ -9,8 +9,6 @@
 #'
 #' @author Chantelle Layton
 #'
-#' @export
-#' @importFrom utils read.table
 
 read.physical <- function(file){
   # 1. read in data with read lines

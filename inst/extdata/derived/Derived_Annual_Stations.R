@@ -1,27 +1,32 @@
 ## code to prepare `Derived_Annual_Stations` dataset
-
+cat('Sourcing Derived_Annual_Stations.R', sep = '\n')
 library(dplyr)
 library(tidyr)
 library(readr)
 library(usethis)
 library(RCurl)
+source('inst/extdata/read_physical.R')
 
-# load data
+
+# load biochemical data
 # HL2
+cat('    reading in station2 biochemical data', sep = '\n')
 HL2_env <- new.env()
 con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/ChlNut_HL2.RData")
 load(con, envir=HL2_env)
 close(con)
 # P5
+cat('    reading in prince5 biochemical data', sep = '\n')
 P5_env <- new.env()
 con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/ChlNut_P5.RData")
 load(con, envir=P5_env)
 close(con)
 
 # load physical data
+cat('    reading in station2 physical integrated data', sep = '\n')
 
 # integrated variables
-url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/fixedStations/'
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/fixedStations/'
 
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
@@ -29,21 +34,18 @@ result <- getURL(url_name,
 filenames <- unlist(strsplit(result, "\r\n"))
 
 # get relevant files
-fn <- grep(filenames, pattern = 'IntegratedVariables\\w+\\.dat', value = TRUE)
+fn <- grep(filenames, pattern = '\\w+IntegratedVariables\\w+\\.dat', value = TRUE)
 
 # create dataframe list
 d <- list()
 for(i in 1:length(fn)){
   con <- url(paste0(url_name, fn[[i]]))
-
   d[[i]] <- read.physical(con)
 }
-
 
 vardat1 <- unlist(lapply(d, function(k) k[['data']][['integrated_temperature_0_50']]))
 vardat2 <- unlist(lapply(d, function(k) k[['data']][['integrated_salinity_0_50']]))
 vardat3 <- unlist(lapply(d, function(k) k[['data']][['integrated_sigmaTheta_0_50']]))
-
 
 stationName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data']])[1])))
 year <- unlist(lapply(d, function(k) k[['data']][['year']]))
@@ -55,9 +57,9 @@ df <- data.frame(year = year,
                  integrated_sigmaTheta_0_50 = as.numeric(vardat3))
 integratedvars <- df
 
-
 # temperature_in_air
-url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/airTemperature/'
+cat('    reading in air temperature data', sep = '\n')
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/airTemperature/'
 
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
@@ -75,12 +77,6 @@ for(i in 1:length(fn)){
   d[[i]] <- read.physical(con)
 }
 
-# path <- 'inst/extdata/airTemperature/'
-# files <- list.files(path = path,
-#                     pattern = 'airTemperatureAnnualAnomaly\\w+\\.dat',
-#                     full.names = TRUE)
-# d <- lapply(files, read.physical)
-
 vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
 stationName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data']])[1])))
 year <- unlist(lapply(d, function(k) k[['data']][['year']]))
@@ -91,7 +87,9 @@ df <- data.frame(year = year,
 airTemperature <- df
 
 #sea_surface_temperature_from_moorings
-url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/SSTinSitu/'
+cat('    reading in sst in-situ data', sep = '\n')
+
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/SSTinSitu/'
 
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
@@ -109,20 +107,9 @@ for(i in 1:length(fn)){
   d[[i]] <- read.physical(con)
 }
 
-# path <- 'inst/extdata/SSTinSitu//'
-# files <- list.files(path = path,
-#                     pattern = 'SSTinSitu\\w+\\.dat',
-#                     full.names = TRUE)
-# d <- lapply(files, read.physical)
-
 vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
-#vardat1 <- unlist(lapply(d, function(k) k[['data']][['anomaly']]))
-#vardat2 <- unlist(lapply(d, function(k) k[['data']][['normalizedAnomaly']]))
-
 stationName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data']])[1])))
-
 year <- unlist(lapply(d, function(k) k[['data']][['year']]))
-
 
 df <- data.frame(year = year,
                  station = stationName,
@@ -131,22 +118,20 @@ SSTinSitu <- df
 
 
 # get temperature_0 and temperature_90 for p5 and HL2
-# load in station discrete data
+cat('    reading in station2 and prince5 0m and 90m temperature data', sep = '\n')
 
-url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/lookup/'
+# 1. load in lookup tables for mission IDs
+
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/lookup/' # have to move lookup
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 
 filenames <- unlist(strsplit(result, "\r\n"))
-lookup <- list()
-lookup[[1]] <- read.csv(paste0(url_name, filenames[1]))
-lookup[[2]] <- read.csv(paste0(url_name, filenames[2]))
-# lookupfiles <- list.files(lookupPath, pattern = '^mission.*', full.names = TRUE)
-# lookup <- lapply(lookupfiles, read.csv)
+lookup <- lapply(paste0(url_name, filenames), read.csv)
 missions <- do.call('rbind', lookup)
 
 # 2. read in the data and combine
-url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/physical/fixedStations/'
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/fixedStations/'
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 
@@ -154,11 +139,9 @@ filenames <- unlist(strsplit(result, "\r\n"))
 # get not integrated data
 filenames <- grep(filenames, pattern = '*IntegratedVariables*', value = TRUE, invert = TRUE)
 
-
 d <- list()
 for(i in 1:length(filenames)){
   con <- url(paste0(url_name, filenames[[i]]))
-
   d[[i]] <- read.csv(con)
 }
 
@@ -168,13 +151,13 @@ d <- do.call('rbind', d)
 # note : if anything goes sideways matching up idx, the structure of idx will change
 #        so it could become a list instead of a vector
 idx <- apply(d, 1, function(k) {ok <- which(missions[['mission_name']] == k[['cruiseNumber']]);
-if(length(ok) > 1) {
-  ok[1]
-} else if(length(ok) == 0){
-  NA
-} else {
-  ok
-}})
+                               if(length(ok) > 1) {
+                                ok[1]
+                               } else if(length(ok) == 0){
+                                NA
+                               } else {
+                                ok
+                               }})
 
 d <- cbind(d, descriptor = missions[['mission_descriptor']][idx])
 
