@@ -14,6 +14,11 @@ on github.}
 This function compares the package with the available version on
 github, and prompts the user to update.
 }
+\seealso{
+Other general_use: 
+\code{\link{area_indexer}()},
+\code{\link{df2sf}()}
+}
 \author{
 Mike McMahon, \email{Mike.McMahon@dfo-mpo.gc.ca}, Emily Chisholm
 }
