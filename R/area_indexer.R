@@ -17,5 +17,6 @@ area_indexer <- function(){
     remove(i_file)
   }
   area_year_df= tidyr::gather(area_year_df, areaType, areaname, area, section, station)
+  area_year_df <- area_year_df[!is.na(area_year_df$areaname),]
   return(area_year_df)
 }
