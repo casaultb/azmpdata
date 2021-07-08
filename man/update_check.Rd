@@ -16,6 +16,7 @@ github, and prompts the user to update.
 }
 \seealso{
 Other general_use: 
+\code{\link{area_indexer}()},
 \code{\link{df2sf}()}
 }
 \author{

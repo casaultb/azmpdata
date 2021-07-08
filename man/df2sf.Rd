@@ -61,6 +61,7 @@ It is copied, rather than added as a dependency to reduce the number of packages
 }
 \seealso{
 Other general_use: 
+\code{\link{area_indexer}()},
 \code{\link{update_check}()}
 }
 \author{
