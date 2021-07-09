@@ -17,7 +17,7 @@ area_indexer(
 years, a vector of desired years can be provided (e.g. \code{area_indexer(years=c(2017,2018))})}
 
 \item{areanames}{default is \code{NULL}.  If you want to restrict the available data by one or
-more specific named areas, a vector of them can be provided (e.g. \code{area_indexer(areanames=c("HL",HL2"))})}
+more specific named areas, a vector of them can be provided (e.g. \code{area_indexer(areanames=c("HL","HL2"))})}
 
 \item{areaTypes}{default is \code{NULL}.  If you want to restrict the available data by one or more
 area "types", a vector of desired types can be provided.  Valid values for areaTypes are:
@@ -27,24 +27,21 @@ area "types", a vector of desired types can be provided.  Valid values for areaT
 contained by one or more particular azmpdata data files, a vector of the files to check can be
 provided.  .  (e.g. \code{area_indexer(datafiles=c("Ice_Annual_Broadscale"))})  A complete list
 of the available files can be seen by checking \code{data(package="azmpdata")}}
+
+\item{quiet}{default is \code{F}.  If invalid parameters are sent, this function will alert the user
+of  the available valid values.  If set to T, the message will be hidden.}
 }
 \value{
 a data.frame
 }
 \description{
 This function assemble a dataframe consisting of the years and areas where the azmpdata
-packages's data has been collected, as well as the associated file where the data can be found.
+packages\'s data has been collected, as well as the associated file where the data can be found.
 }
 \note{
 This is a duplicate of what exists in https://github.com/Maritimes/Mar.utils/blob/master/R/df2sf.R.
 It is copied, rather than added as a dependency to reduce the number of packages necessary.
 }
-\seealso{
-Other general_use: 
-\code{\link{df2sf}()},
-\code{\link{update_check}()}
-}
 \author{
 Mike McMahon, \email{Mike.McMahon@dfo-mpo.gc.ca}
 }
-\concept{general_use}

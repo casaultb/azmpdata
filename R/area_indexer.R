@@ -15,7 +15,6 @@
 #' @param quiet default is \code{F}.  If invalid parameters are sent, this function will alert the user
 #' of  the available valid values.  If set to T, the message will be hidden.
 #' @return a data.frame
-#' @family general_use
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
 #' @note This is a duplicate of what exists in https://github.com/Maritimes/Mar.utils/blob/master/R/df2sf.R.
 #' It is copied, rather than added as a dependency to reduce the number of packages necessary.
