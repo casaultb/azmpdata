@@ -14,7 +14,8 @@ df2sf(
   type.field = NULL,
   point.IDs = NULL,
   line.IDs = NULL,
-  poly.IDs = NULL
+  poly.IDs = NULL,
+  quiet = F
 )
 }
 \arguments{
@@ -26,7 +27,7 @@ values (in decimal degrees)}
 \item{lon.field}{the default is \code{"longitude"}.  This is the name of the field holding
 longitude values (in decimal degrees)}
 
-\item{PID}{the default is \code{"PID"}.  This is a field that uniquely identifies discrete 
+\item{PID}{the default is \code{"PID"}.  This is a field that uniquely identifies discrete
 points, lines, or polygons.}
 
 \item{ORD}{the default is \code{NULL}.  This is not used if \code{out} is "points".  This is the
@@ -37,17 +38,21 @@ correct order.}
 \item{epsg}{the default is \code{4326}.  This is the coordinate system associated with the input
 positions, and it assumes WGS84 (i.e. collected via a GPS).}
 
-\item{type.field}{the default is \code{NULL}. This is a field within the data that contains 
+\item{type.field}{the default is \code{NULL}. This is a field within the data that contains
 information about whether each record is a point, line, or polygon.}
 
-\item{point.IDs}{the default is \code{NULL}. This is a vector of values from within 
+\item{point.IDs}{the default is \code{NULL}. This is a vector of values from within
 \code{type.field} that can be used to recognize the point objects (e.g. "station").}
 
-\item{line.IDs}{the default is \code{NULL}. This is a vector of values from within 
+\item{line.IDs}{the default is \code{NULL}. This is a vector of values from within
 \code{type.field} that can be used to recognize the line objects.}
 
-\item{poly.IDs}{the default is \code{NULL}. This is a vector of values from within 
+\item{poly.IDs}{the default is \code{NULL}. This is a vector of values from within
 \code{type.field} that can be used to recognize the polygon objects.}
+
+\item{quiet}{default is \code{F}.  If 1 PID is found to have multiple positions, by default, a
+message is displayed, and information about the points is shown.  If this is set to T, no message
+or information is shown.}
 }
 \value{
 an sf object
@@ -59,12 +64,6 @@ This function will convert a df into an sf objects.
 This is a duplicate of what exists in https://github.com/Maritimes/Mar.utils/blob/master/R/df2sf.R.
 It is copied, rather than added as a dependency to reduce the number of packages necessary.
 }
-\seealso{
-Other general_use: 
-\code{\link{area_indexer}()},
-\code{\link{update_check}()}
-}
 \author{
 Mike McMahon, \email{Mike.McMahon@dfo-mpo.gc.ca}
 }
-\concept{general_use}

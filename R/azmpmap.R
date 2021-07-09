@@ -25,13 +25,13 @@ azmpmap <- function(){
   if (any(class(regtab_att) == "numeric"| class(regtab_geo) == "numeric")) stop("Could not download the necessary files.  Stopping.")
   AZMP <- merge(regtab_att, regtab_geo, all.x = T, by="record")
   #convert it to sf objects
-  AZMP_sf = df2sf(input = AZMP, PID = "record", type.field = "type", ORD = "vertice", point.IDs = c("station"), poly.IDs = c("nafo","area", "section"))
+  AZMP_sf = df2sf(input = AZMP, PID = "record", type.field = "type", ORD = "vertice", point.IDs = c("station"), poly.IDs = c("nafo","area", "section"), quiet=T)
 
   # get an inventory of all data that has been collected, and assocaite it with the various locations
   areaInventory <- area_indexer()
   areaInventory$year <- NULL
   areaInventory <- unique(areaInventory)
-  assocData <- aggregate(list(datafiles = areaInventory$dataframe), list(mergeName = areaInventory$areaname), paste, collapse="<br><dd>")
+  assocData <- stats::aggregate(list(datafiles = areaInventory$dataframe), list(mergeName = areaInventory$areaname), paste, collapse="<br><dd>")
   assocData$datafiles <- paste0("<dd>", assocData$datafiles)
   assocData$mergeName <- toupper(assocData$mergeName)
   AZMP_sf$mergeName <- toupper(AZMP_sf$sname)

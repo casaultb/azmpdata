@@ -5,7 +5,7 @@
 #' values (in decimal degrees)
 #' @param lon.field the default is \code{"longitude"}.  This is the name of the field holding
 #' longitude values (in decimal degrees)
-#' @param PID the default is \code{"PID"}.  This is a field that uniquely identifies discrete 
+#' @param PID the default is \code{"PID"}.  This is a field that uniquely identifies discrete
 #' points, lines, or polygons.
 #' @param ORD the default is \code{NULL}.  This is not used if \code{out} is "points".  This is the
 #' name of a field holding the order in which the provided coordinates should be joined (in lines or
@@ -13,16 +13,18 @@
 #' correct order.
 #' @param epsg the default is \code{4326}.  This is the coordinate system associated with the input
 #' positions, and it assumes WGS84 (i.e. collected via a GPS).
-#' @param type.field the default is \code{NULL}. This is a field within the data that contains 
-#' information about whether each record is a point, line, or polygon. 
-#' @param point.IDs the default is \code{NULL}. This is a vector of values from within 
+#' @param type.field the default is \code{NULL}. This is a field within the data that contains
+#' information about whether each record is a point, line, or polygon.
+#' @param point.IDs the default is \code{NULL}. This is a vector of values from within
 #' \code{type.field} that can be used to recognize the point objects (e.g. "station").
-#' @param line.IDs the default is \code{NULL}. This is a vector of values from within 
+#' @param line.IDs the default is \code{NULL}. This is a vector of values from within
 #' \code{type.field} that can be used to recognize the line objects.
-#' @param poly.IDs the default is \code{NULL}. This is a vector of values from within 
+#' @param poly.IDs the default is \code{NULL}. This is a vector of values from within
 #' \code{type.field} that can be used to recognize the polygon objects.
+#' @param quiet default is \code{F}.  If 1 PID is found to have multiple positions, by default, a
+#' message is displayed, and information about the points is shown.  If this is set to T, no message
+#' or information is shown.
 #' @return an sf object
-#' @family general_use
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
 #' @note This is a duplicate of what exists in https://github.com/Maritimes/Mar.utils/blob/master/R/df2sf.R.
 #' It is copied, rather than added as a dependency to reduce the number of packages necessary.
@@ -32,7 +34,9 @@ df2sf <- function(input = NULL, lat.field="latitude", lon.field="longitude",
                   type.field = NULL,
                   point.IDs = NULL,
                   line.IDs = NULL,
-                  poly.IDs =NULL
+                  poly.IDs =NULL,
+                  quiet = F
+
 ){
   # count how many positions exist for each PID, and merge that info onto the data
   ptCount <- stats::aggregate(
@@ -46,9 +50,11 @@ df2sf <- function(input = NULL, lat.field="latitude", lon.field="longitude",
   thePoints <- input[input[,type.field] %in% point.IDs,]
   badPoints <- thePoints[thePoints$npoints > 1,]
   if (nrow(badPoints)>0){
-    message("\nThe following 'points' each had more than one position for the provided value of ", PID,":\n")
-    print(thePoints[thePoints[,PID] %in% badPoints[,PID],!names(thePoints) %in% "npoints"])
-    message("\nOnly the first from each duplicate groups was retained, and converted")
+    if (!quiet) {
+      message("\nThe following 'points' each had more than one position for the provided value of ", PID,":\n")
+      print(thePoints[thePoints[,PID] %in% badPoints[,PID],!names(thePoints) %in% "npoints"])
+      message("\nOnly the first from each duplicate groups was retained, and converted")
+    }
     thePoints <- thePoints[!thePoints[,PID] %in% badPoints[,PID],]
     fixedPoints <- badPoints[ !duplicated(badPoints[, c(PID)], fromLast=F),]
     thePoints <- rbind(thePoints, fixedPoints)
