@@ -9,7 +9,9 @@ area_indexer(
   areanames = NULL,
   areaTypes = NULL,
   datafiles = NULL,
-  quiet = F
+  quiet = F,
+  doParameters = F,
+  parameters = NULL
 )
 }
 \arguments{
@@ -30,6 +32,15 @@ of the available files can be seen by checking \code{data(package="azmpdata")}}
 
 \item{quiet}{default is \code{F}.  If invalid parameters are sent, this function will alert the user
 of  the available valid values.  If set to T, the message will be hidden.}
+
+\item{doParameters}{default is \code{F}.  Identifying all of the parameters that were collected
+at each combination of area/site/year is a bit more intensive than leaving them out.  To force
+this function to do this, set this parameter to \code{doParameters=T}.  If one or more parameters
+are provided, the function will override this default value and set \code{doParameters=F}}
+
+\item{parameters}{default is \code{NULL}.  Many parameters exist - any named parameter found in
+any data file should work.  (e.g. \code{area_indexer(parameters=c("Arctic_Calanus_species",
+"integrated_phosphate_50"))})}
 }
 \value{
 a data.frame
