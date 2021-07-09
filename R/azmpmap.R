@@ -31,7 +31,7 @@ azmpmap <- function(){
   areaInventory <- area_indexer()
   areaInventory$year <- NULL
   areaInventory <- unique(areaInventory)
-  assocData <- aggregate(list(datafiles = areaInventory$dataframe), list(mergeName = areaInventory$areaname), paste, collapse="<br><dd>")
+  assocData <- stats::aggregate(list(datafiles = areaInventory$dataframe), list(mergeName = areaInventory$areaname), paste, collapse="<br><dd>")
   assocData$datafiles <- paste0("<dd>", assocData$datafiles)
   assocData$mergeName <- toupper(assocData$mergeName)
   AZMP_sf$mergeName <- toupper(AZMP_sf$sname)
