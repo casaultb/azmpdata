@@ -1,4 +1,4 @@
-#' @,itle area_indexer
+#' @title area_indexer
 #' @description This function assemble a dataframe consisting of the years and areas where the azmpdata
 #' packages\'s data has been collected, as well as the associated file where the data can be found.
 #' @param years default is \code{NULL}.  If you want to restrict the available data by one or more
