@@ -33,8 +33,8 @@
 #'
 #' sections_2017 <- area_indexer(areaTypes=c("section"), year = 2017)
 #'
-#' specificParameters_2000s <- area_indexer(parameters=c("Arctic_Calanus_species", "integrated_phosphate_50"), year=c(2000:2009))
-#'
+#' specificParameters_2000s <- area_indexer(parameters=c("Arctic_Calanus_species",
+#'                                          "integrated_phosphate_50"), year=c(2000:2009))
 #' }
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
 #' @note This is a duplicate of what exists in https://github.com/Maritimes/Mar.utils/blob/master/R/df2sf.R.
@@ -67,7 +67,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
   if (!doParameters){
     area_year_df <- data.frame(year = integer(), dataframe = character(), area=character(), section=character(), station=character() )
     area_year_fields <- c("year", "area","section", "station")
-
+    coord_fields <- c("latitude","longitude")
     for(i_file in file_names){
       df <- get(i_file)
       var_names <- names(df)
@@ -77,9 +77,19 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
         this_df[setdiff(names(area_year_df), names(this_df))]<-NA
         this_df <- this_df[,c("year", "dataframe","area","section", "station")]
         area_year_df <- rbind.data.frame(area_year_df,this_df)
-        rm(list = c("var_names","this_df"))
+        rm(list = c("this_df"))
       }
-      remove(i_file)
+      if (all(coord_fields %in% var_names)){
+
+        this_df1 <- df[!is.na(df$latitude) & !is.na(df$longitude),]
+        if ("station" %in% names(this_df1)) this_df1<-this_df1[is.na(this_df1$station),]
+
+        if (nrow(this_df1)>0) {
+          if (!quiet) message(paste0("\n",i_file ,": contains coordinates that are not associated with any named stations"))
+        }
+        rm(list = c("this_df1"))
+      }
+      rm(list = c("var_names","i_file"))
     }
 
     area_year_df= tidyr::gather(area_year_df, areaType, areaname, area, section, station)
@@ -92,7 +102,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
 
     for(i_file in file_names){
       df <- get(i_file)
-      df[setdiff(names(area_year_df), names(df))]<--999
+      df[setdiff(names(area_year_df), names(df))]<--NA
       theseAreaFields <- names(df)[names(df) %in% area_year_fields]
       theseParamsFields <- names(df)[!tolower(names(df)) %in% non_param_fields]
       df <- df[,c(theseAreaFields, theseParamsFields)]
