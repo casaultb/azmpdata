@@ -2,14 +2,16 @@
 % Please edit documentation in R/area_indexer.R
 \name{area_indexer}
 \alias{area_indexer}
-\title{area_indexer}
+\title{,itle area_indexer}
 \usage{
 area_indexer(
   years = NULL,
   areanames = NULL,
   areaTypes = NULL,
   datafiles = NULL,
-  quiet = F
+  quiet = F,
+  doParameters = F,
+  parameters = NULL
 )
 }
 \arguments{
@@ -30,6 +32,15 @@ of the available files can be seen by checking \code{data(package="azmpdata")}}
 
 \item{quiet}{default is \code{F}.  If invalid parameters are sent, this function will alert the user
 of  the available valid values.  If set to T, the message will be hidden.}
+
+\item{doParameters}{default is \code{F}.  Identifying all of the parameters that were collected
+at each combination of area/site/year is a bit more intensive than leaving them out.  To force
+this function to do this, set this parameter to \code{doParameters=T}.  If one or more parameters
+are provided, the function will override this default value and set \code{doParameters=F}}
+
+\item{parameters}{default is \code{NULL}.  Many parameters exist - any named parameter found in
+any data file should work.  (e.g. \code{area_indexer(parameters=c("Arctic_Calanus_species",
+"integrated_phosphate_50"))})}
 }
 \value{
 a data.frame
@@ -41,6 +52,17 @@ packages\'s data has been collected, as well as the associated file where the da
 \note{
 This is a duplicate of what exists in https://github.com/Maritimes/Mar.utils/blob/master/R/df2sf.R.
 It is copied, rather than added as a dependency to reduce the number of packages necessary.
+}
+\examples{
+\dontrun{
+allAreas <- area_indexer()
+allAreas_w_Parameters <- area_indexer(doParameters =T)
+areaAreas_2018_2020 <- area_indexer(years=c(2018,2019,2020))
+some_HLData <- area_indexer(areanames=c("HL","HL2"))
+sections_2017 <- area_indexer(areaTypes=c("section"), year = 2017)
+specificParameters_2000s <- area_indexer(parameters=c("Arctic_Calanus_species",
+"integrated_phosphate_50"), year=c(2000:2009))
+}
 }
 \author{
 Mike McMahon, \email{Mike.McMahon@dfo-mpo.gc.ca}
