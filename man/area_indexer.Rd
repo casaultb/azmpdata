@@ -2,7 +2,7 @@
 % Please edit documentation in R/area_indexer.R
 \name{area_indexer}
 \alias{area_indexer}
-\title{,itle area_indexer}
+\title{area_indexer}
 \usage{
 area_indexer(
   years = NULL,
@@ -56,12 +56,17 @@ It is copied, rather than added as a dependency to reduce the number of packages
 \examples{
 \dontrun{
 allAreas <- area_indexer()
+
 allAreas_w_Parameters <- area_indexer(doParameters =T)
+
 areaAreas_2018_2020 <- area_indexer(years=c(2018,2019,2020))
+
 some_HLData <- area_indexer(areanames=c("HL","HL2"))
+
 sections_2017 <- area_indexer(areaTypes=c("section"), year = 2017)
-specificParameters_2000s <- area_indexer(parameters=c("Arctic_Calanus_species",
-"integrated_phosphate_50"), year=c(2000:2009))
+
+specificParameters_2000s <- area_indexer(parameters=c("Arctic_Calanus_species", "integrated_phosphate_50"), year=c(2000:2009))
+
 }
 }
 \author{
