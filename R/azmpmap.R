@@ -1,6 +1,8 @@
 #' @title azmpmap
 #' @description This generates a leaflet plot of the geospatial files stored at
 #' ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/lookup/polygons/.
+#' @param quiet default is \code{T} This indicates whether or not you want to see messages related
+#' to the transformation of data from the ftp site to spatial objects.
 #' @examples \dontrun{
 #' map <- azmpmap()
 #' }
