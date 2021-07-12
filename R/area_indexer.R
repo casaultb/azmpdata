@@ -74,13 +74,13 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
   }else{
     area_year_df <- data.frame(year = integer(), dataframe = character(), area=character(), section=character(), station=character(), parameter=character())
     area_year_fields <- c("year", "area","section", "station", "parameter")
-    non_param_fields <- c(area_year_fields, "latitude","longitude", "cruisenumber","month", "day", "event_id", "depth", "standard_depth","sample_id","nominal_depth","doy", "season" )
+    non_param_fields <- c(area_year_fields, "dataframe","latitude","longitude", "cruisenumber","month", "day", "event_id", "depth", "standard_depth","sample_id","nominal_depth","doy", "season" )
 
     for(i_file in file_names){
       df <- get(i_file)
       df[setdiff(names(area_year_df), names(df))]<--999
       theseAreaFields <- names(df)[names(df) %in% area_year_fields]
-      theseParamsFields <- names(df)[!names(df) %in% non_param_fields]
+      theseParamsFields <- names(df)[!tolower(names(df)) %in% non_param_fields]
       df <- df[,c(theseAreaFields, theseParamsFields)]
       for (p in 1:length(theseParamsFields)){
         df_p <- unique(df[!is.na(df[theseParamsFields[p]]),area_year_fields])
@@ -95,9 +95,10 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     }
     area_year_df= tidyr::gather(area_year_df, areaType, areaname, area, section, station, -dataframe, -parameter)
     area_year_df <- unique(area_year_df)
+
   }
 
-    area_year_df_o <- area_year_df
+  area_year_df_o <- area_year_df
 
   if(length(years)>0){
     if (!any(years %in% area_year_df$year)) area_index_chk("year", fail = T)
