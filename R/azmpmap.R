@@ -20,7 +20,6 @@ azmpmap <- function(quiet=T){
       }
     )
   }
-
   #create the data from the most recent values available
   regtab_att = urlCsvExtract('ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/lookup/polygons/polygons_attributes.csv')
   regtab_geo = urlCsvExtract('ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/lookup/polygons/polygons_geometry.csv')
@@ -36,12 +35,22 @@ azmpmap <- function(quiet=T){
 
   # get an inventory of all data that has been collected, and associate it with the various locations
   areaInventory <- area_indexer(doParameters = T)
-  # areaInventory$year <- NULL
-  # areaInventory <- unique(areaInventory)]
 
   assocData_year<- unique(areaInventory[,c("areaType", "areaname","year")])
   assocData_data<- unique(areaInventory[,c("areaType", "areaname","dataframe")])
   assocData_params<- unique(areaInventory[,c("areaType", "areaname","parameter")])
+
+  all_datafiles_Names <- toupper(c(unique(assocData_year$areaname),unique(assocData_data$areaname),unique(assocData_params$areaname)))
+  all_AZMP_sf_Names<- toupper(unique(AZMP_sf$sname))
+  if(!quiet){
+    diff1 <- setdiff(all_datafiles_Names, all_AZMP_sf_Names)
+    diff1 <- diff1[!is.na(diff1)]
+    diff2 <- setdiff(all_AZMP_sf_Names, all_datafiles_Names)
+    diff2 <- diff2[!is.na(diff2)]
+
+    if (length(diff1)>0)message("\nThese named areas from azmp package data files can't be associated with data in the ftp spatial objects.\n\t", paste(diff1, collapse=", "))
+    if (length(diff2)>0)message("\nThese named areas from the ftp spatial objects can't be associated with data in the azmp package data files.\n\t", paste(diff2, collapse=", "))
+  }
 
   # this is just for a map, so I don't think we need to list ALL variants of every parameter - drop
   #these bits so we get a nicer list:
@@ -60,7 +69,7 @@ azmpmap <- function(quiet=T){
 
 
   assocData_year <- assocData_year[with(assocData_year, order(year)), ]
-  assocData_year <- stats::aggregate(list(years = assocData_year$year), list(mergeName = assocData_year$areaname), paste, collapse=" ,")
+  assocData_year <- stats::aggregate(list(years = assocData_year$year), list(mergeName = assocData_year$areaname), paste, collapse=", ")
 
   assocData_data <- stats::aggregate(list(datafiles = assocData_data$dataframe), list(mergeName = assocData_data$areaname), paste, collapse="</dd><dd>")
   assocData_params <- stats::aggregate(list(parameters = assocData_params$parameter), list(mergeName = assocData_params$areaname), paste, collapse="</dd><dd>")
@@ -68,9 +77,12 @@ azmpmap <- function(quiet=T){
   assocData_params$parameters <- paste0("<dd>", assocData_params$parameters,"</dd>")
 
   assocData_year$years <- paste0("<dd>", assocData_year$years,"</dd>")
+
+  assocData_year$mergeName <- toupper(assocData_year$mergeName)
   assocData_data$mergeName <- toupper(assocData_data$mergeName)
   assocData_params$mergeName <- toupper(assocData_params$mergeName)
   AZMP_sf$mergeName <- toupper(AZMP_sf$sname)
+
   AZMP_sf<- merge(AZMP_sf, assocData_data, all.x =T, by = "mergeName")
   AZMP_sf<- merge(AZMP_sf, assocData_params, all.x =T, by = "mergeName")
   AZMP_sf<- merge(AZMP_sf, assocData_year, all.x =T, by = "mergeName")
@@ -89,6 +101,25 @@ azmpmap <- function(quiet=T){
   SSG <-c("scotian_shelf_grid")
   RS <- c("CS_remote_sensing","LS_remote_sensing")
   otherAreas <-AZMP_areas[!AZMP_areas$sname %in% c(GE,SS,SSB,SSG,RS),]
+
+  #grab the Zooplankton_Occupations_Broadscale data, which will otherwise not be visible (corrds, but no stations)
+  Zoo_Occ_Broad <- Zooplankton_Occupations_Broadscale <- latitude<- longitude <- sample_id <-NA
+  delayedAssign("Zoo_Occ_Broad", Zooplankton_Occupations_Broadscale)
+  Zoo_Occ_Broad$month <- Zoo_Occ_Broad$day <- Zoo_Occ_Broad$season <- NULL
+  Zoo_Occ_Broad <- tidyr::gather(Zoo_Occ_Broad, "param", "value", -latitude, -longitude, -year, -sample_id)
+  Zoo_Occ_Broad <- Zoo_Occ_Broad[!is.na(Zoo_Occ_Broad$value),]
+  Zoo_Occ_Broad$value <- NULL
+
+  Zoo_Occ_Broad_master <- unique(Zoo_Occ_Broad[, c("latitude", "longitude", "sample_id")])
+  Zoo_Occ_Broad_params <- unique(Zoo_Occ_Broad[, c("latitude", "longitude", "sample_id", "param")])
+  Zoo_Occ_Broad_years <- unique(Zoo_Occ_Broad[, c("latitude", "longitude", "sample_id", "year")])
+  Zoo_Occ_Broad_params <- stats::aggregate(list(parameters = Zoo_Occ_Broad_params$param), list(sample_id = Zoo_Occ_Broad_params$sample_id, latitude = Zoo_Occ_Broad_params$latitude, longitude = Zoo_Occ_Broad_params$longitude), paste, collapse="</dd><dd>")
+  Zoo_Occ_Broad_years <- stats::aggregate(list(years = Zoo_Occ_Broad_years$year), list(sample_id = Zoo_Occ_Broad_years$sample_id, latitude = Zoo_Occ_Broad_years$latitude, longitude = Zoo_Occ_Broad_years$longitude), paste, collapse="</dd><dd>")
+
+  Zoo_Occ_Broad <- merge(Zoo_Occ_Broad_master, Zoo_Occ_Broad_years, all.x=T)
+  Zoo_Occ_Broad <- merge(Zoo_Occ_Broad, Zoo_Occ_Broad_params, all.x=T)
+  Zoo_Occ_Broad$years <- paste0("<dd>", Zoo_Occ_Broad$years,"</dd>")
+  Zoo_Occ_Broad$parameters <- paste0("<dd>", Zoo_Occ_Broad$parameters,"</dd>")
 
   #add a title
   titleHTML <- paste0("<div style='
@@ -115,94 +146,104 @@ azmpmap <- function(quiet=T){
                             color = 'grey',weight = 1.5,
                             fillColor = sf::sf.colors(12, categorical = TRUE),
                             labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
-                            popup = ~paste0("NAFO (gen):", lname,"<br>",
-                                            "<br>Relevant AZMP datafiles:<br>", datafiles,
-                                            "<br>Years Data Collected here:<br>", years,
-                                            "<br>Parameters collected here:<br>",parameters))
+                            popup = ~paste0("NAFO (gen):", lname," (",sname,")<br>",
+                                            "<br>Relevant AZMP datafile(s):<br>", datafiles,
+                                            "<br>Year(s) Data Collected here:<br>", years,
+                                            "<br>Parameter(s) collected here:<br>",parameters))
 
   m <- leaflet::addPolygons(map = m, data = AZMP_NAFO[AZMP_NAFO$sname %in% NAFO_det,],
                             group= "NAFO (det)", label =~lname,
                             color = 'grey',weight = 1.5,
                             fillColor = sf::sf.colors(12, categorical = TRUE),
                             labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
-                            popup = ~paste0("NAFO (det):", lname,"<br>",
-                                            "<br>Relevant AZMP datafiles:<br>", datafiles,
-                                            "<br>Years Data Collected here:<br>", years,
-                                            "<br>Parameters collected here:<br>",parameters))
+                            popup = ~paste0("NAFO (det):", lname," (",sname,")<br>",
+                                            "<br>Relevant AZMP datafile(s):<br>", datafiles,
+                                            "<br>Year(s) Data Collected here:<br>", years,
+                                            "<br>Parameter(s) collected here:<br>",parameters))
   m <- leaflet::addPolygons(map = m, data = AZMP_areas[AZMP_areas$sname %in% GE,],
                             group= "General Areas", label =~lname,
                             labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
-                            popup = ~paste0("General Areas:", lname,"<br>",
-                                            "<br>Relevant AZMP datafiles:<br>", datafiles,
-                                            "<br>Years Data Collected here:<br>", years,
-                                            "<br>Parameters collected here:<br>",parameters))
+                            popup = ~paste0("General Areas:", lname," (",sname,")<br>",
+                                            "<br>Relevant AZMP datafile(s):<br>", datafiles,
+                                            "<br>Year(s) Data Collected here:<br>", years,
+                                            "<br>Parameter(s) collected here:<br>",parameters))
   m <- leaflet::addPolygons(map = m, data = AZMP_areas[AZMP_areas$sname %in% SS,],
                             group= "SS Areas", label =~lname,
                             labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
-                            popup = ~paste0("SS Areas:", lname,"<br>",
-                                            "<br>Relevant AZMP datafiles:<br>", datafiles,
-                                            "<br>Years Data Collected here:<br>", years,
-                                            "<br>Parameters collected here:<br>",parameters))
+                            popup = ~paste0("SS Areas:", lname," (",sname,")<br>",
+                                            "<br>Relevant AZMP datafile(s):<br>", datafiles,
+                                            "<br>Year(s) Data Collected here:<br>", years,
+                                            "<br>Parameter(s) collected here:<br>",parameters))
   m <- leaflet::addPolygons(map = m, data = AZMP_areas[AZMP_areas$sname %in% SSB,],
                             group= "SS Box", label =~lname,
                             labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
-                            popup = ~paste0("SS Box:", lname,"<br>",
-                                            "<br>Relevant AZMP datafiles:<br>", datafiles,
-                                            "<br>Years Data Collected here:<br>", years,
-                                            "<br>Parameters collected here:<br>",parameters))
+                            popup = ~paste0("SS Box:", lname," (",sname,")<br>",
+                                            "<br>Relevant AZMP datafile(s):<br>", datafiles,
+                                            "<br>Year(s) Data Collected here:<br>", years,
+                                            "<br>Parameter(s) collected here:<br>",parameters))
   m <- leaflet::addPolygons(map = m, data = AZMP_areas[AZMP_areas$sname %in% SSG,],
                             group= "SS Grid", label =~lname,
                             labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
-                            popup = ~paste0("SS Grid:", lname,"<br>",
-                                            "<br>Relevant AZMP datafiles:<br>", datafiles,
-                                            "<br>Years Data Collected here:<br>", years,
-                                            "<br>Parameters collected here:<br>",parameters))
+                            popup = ~paste0("SS Grid:", lname," (",sname,")<br>",
+                                            "<br>Relevant AZMP datafile(s):<br>", datafiles,
+                                            "<br>Year(s) Data Collected here:<br>", years,
+                                            "<br>Parameter(s) collected here:<br>",parameters))
   m <- leaflet::addPolygons(map = m, data = AZMP_areas[AZMP_areas$sname %in% RS,],
                             group= "Remote Sensing", label =~lname,
                             labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
-                            popup = ~paste0("Remote Sensing:", lname,"<br>",
-                                            "<br>Relevant AZMP datafiles:<br>", datafiles,
-                                            "<br>Years Data Collected here:<br>", years,
-                                            "<br>Parameters collected here:<br>",parameters))
+                            popup = ~paste0("Remote Sensing:", lname," (",sname,")<br>",
+                                            "<br>Relevant AZMP datafile(s):<br>", datafiles,
+                                            "<br>Year(s) Data Collected here:<br>", years,
+                                            "<br>Parameter(s) collected here:<br>",parameters))
   if (nrow(otherAreas)>0){
     m <- leaflet::addPolygons(map = m, data = otherAreas,
                               group= "OtherAreas", label =~lname,
                               color="red", weight = 1.5,
-                              popup = ~paste0("Section:", lname,"<br>",
-                                              "<br>Relevant AZMP datafiles:<br>", datafiles,
-                                              "<br>Years Data Collected here:<br>", years,
-                                              "<br>Parameters collected here:<br>",parameters))
+                              popup = ~paste0("Section:", lname," (",sname,")<br>",
+                                              "<br>Relevant AZMP datafile(s):<br>", datafiles,
+                                              "<br>Year(s) Data Collected here:<br>", years,
+                                              "<br>Parameter(s) collected here:<br>",parameters))
     overlayGroups <- c(overlayGroups,"OtherAreas")
   }
   if (nrow(otherNAFO)>0){
     m <- leaflet::addPolygons(map = m, data = otherNAFO,
                               group= "OtherNAFO", label =~lname,
                               color="red", weight = 1.5,
-                              popup = ~paste0("Section:", lname,"<br>",
-                                              "<br>Relevant AZMP datafiles:<br>", datafiles,
-                                              "<br>Years Data Collected here:<br>", years,
-                                              "<br>Parameters collected here:<br>",parameters))
+                              popup = ~paste0("Section:", lname," (",sname,")<br>",
+                                              "<br>Relevant AZMP datafile(s):<br>", datafiles,
+                                              "<br>Year(s) Data Collected here:<br>", years,
+                                              "<br>Parameter(s) collected here:<br>",parameters))
     overlayGroups <- c(overlayGroups,"OtherNAFO")
   }
   m <- leaflet::addPolygons(map = m, data = AZMP_sf[AZMP_sf$type=="section",],
                             group= "Sections", label = ~sname,
                             color="red", weight = 1.5,
-                            popup = ~paste0("Section:", lname,"<br>",
-                                            "<br>Relevant AZMP datafiles:<br>", datafiles,
-                                            "<br>Years Data Collected here:<br>", years,
-                                            "<br>Parameters collected here:<br>",parameters))
+                            popup = ~paste0("Section:", lname," (",sname,")<br>",
+                                            "<br>Relevant AZMP datafile(s):<br>", datafiles,
+                                            "<br>Year(s) Data Collected here:<br>", years,
+                                            "<br>Parameter(s) collected here:<br>",parameters))
   m <- leaflet::addCircleMarkers(map = m, data = AZMP_sf[AZMP_sf$type=="station",],
                                  group= "Stations", label =~sname,
                                  color = "red",weight = 2, radius = 4,
                                  labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
                                  options = leaflet::markerOptions(zIndexOffset = 99),
-                                 popup = ~paste0("Station:", lname,"<br><br>Depth:", depth,"<br>",
-                                                 "<br>Relevant AZMP datafiles:<br>", datafiles,
-                                                 "<br>Years Data Collected here:<br>", years,
-                                                 "<br>Parameters collected here:<br>",parameters))
+                                 popup = ~paste0("Station:", lname," (",sname,")<br><br>Depth:", ifelse(is.numeric(depth),paste0(depth," m"), NA),"<br>",
+                                                 "<br>Relevant AZMP datafile(s):<br>", datafiles,
+                                                 "<br>Year(s) Data Collected here:<br>", years,
+                                                 "<br>Parameter(s) collected here:<br>",parameters))
+
+  m <- leaflet::addCircleMarkers(map = m, data = Zoo_Occ_Broad,lng = ~longitude, lat = ~latitude,
+                                 group= "Zooplank (Broad. Occ.)",
+                                 color = "blue",weight = 1, radius = 2,
+                                 options = leaflet::markerOptions(zIndexOffset = 95),
+                                 popup = ~paste0(latitude,"N, ", longitude, "W",
+                                                 "<br> (Sample ID:", sample_id,")<br>",
+                                                 "<br>Relevant AZMP datafile(s):<br><dd>Zooplankton_Occupations_Broadscale</dd>",
+                                                 "<br>Year(s) Data Collected here:<br>", years,
+                                                 "<br>Parameter(s) collected here:<br>",parameters))
 
   baseGroups <- c("Bathymetry","None")
-  overlayGroups <- c("Stations",  "Sections", "NAFO (gen)","NAFO (det)","SS Box", "SS Grid", "SS Areas","General Areas","Remote Sensing")
+  overlayGroups <- c("Stations",  "Sections", "NAFO (gen)","NAFO (det)","SS Box", "SS Grid", "SS Areas","General Areas","Remote Sensing", "Zooplank (Broad. Occ.)")
 
 
 

@@ -65,8 +65,8 @@ some_HLData <- area_indexer(areanames=c("HL","HL2"))
 
 sections_2017 <- area_indexer(areaTypes=c("section"), year = 2017)
 
-specificParameters_2000s <- area_indexer(parameters=c("Arctic_Calanus_species", "integrated_phosphate_50"), year=c(2000:2009))
-
+specificParameters_2000s <- area_indexer(parameters=c("Arctic_Calanus_species",
+                                         "integrated_phosphate_50"), year=c(2000:2009))
 }
 }
 \author{
