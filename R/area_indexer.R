@@ -15,10 +15,14 @@
 #' contained by one or more particular azmpdata data files, a vector of the files to check can be
 #' provided.  .  (e.g. \code{area_indexer(datafiles=c("Ice_Annual_Broadscale"))})  A complete list
 #' of the available files can be seen by checking \code{data(package="azmpdata")}
+#' @param months default is \code{NULL}.  If you want to restrict the available data by one or more
+#' months, a vector of desired months can be provided (e.g. \code{area_indexer(months=c(1,2,3,4))})
 #' @param doParameters default is \code{F}.  Identifying all of the parameters that were collected
 #' at each combination of area/site/year is a bit more intensive than leaving them out.  To force
 #' this function to do this, set this parameter to \code{doParameters=T}.  If one or more parameters
 #' are provided, the function will override this default value and set \code{doParameters=F}
+#' @param doMonths default is \code{F}. If this is set to \code{TRUE}, the results will include
+#' information about what month the data was collected (when available).
 #' @param quiet default is \code{F}.  If invalid parameters are sent, this function will alert the user
 #' of  the available valid values.  If set to T, the message will be hidden.
 #' @return a data.frame
@@ -35,22 +39,29 @@
 #'
 #' specificParameters_2000s <- area_indexer(parameters=c("Arctic_Calanus_species",
 #'                                          "integrated_phosphate_50"), year=c(2000:2009))
+#' februaryParameters <-area_indexer(doMonths = T, months = 2, doParameters = T)
 #' }
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
-#' @note This is a duplicate of what exists in https://github.com/Maritimes/Mar.utils/blob/master/R/df2sf.R.
-#' It is copied, rather than added as a dependency to reduce the number of packages necessary.
 #' @export
-area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, datafiles = NULL, quiet = F, doParameters =F, parameters = NULL){
-  area <- areaType <- areaname <- section <- station <- parameter <- NA
+area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, datafiles = NULL, months = NULL, doMonths = F, quiet = F, doParameters =F, parameters = NULL){
+  area <- areaType <- areaname <- section <- station <- parameter <- month <- NA
+
   areanames <- toupper(areanames)
   areaTypes <- toupper(areaTypes)
   datafiles <- toupper(datafiles)
   parameters <- toupper(parameters)
+  if (length(months)>0 & !doMonths){
+    doMonths <- T
+    message("Because months were provided as a filter, the function has set doMonths = T.\n
+            To avoid seeing this message, please include 'doMonths=T'")
+  }
+
   if (length(parameters)>0 & !doParameters){
     doParameters <- T
     message("Because parameters were provided as a filter, the function has set doParameters = T.\n
             To avoid seeing this message, please include 'doParameters=T'")
   }
+
   res <- data(package = 'azmpdata')
   file_names <- res$results[,3]
 
@@ -68,6 +79,11 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     area_year_df <- data.frame(year = integer(), dataframe = character(), area=character(), section=character(), station=character() )
     area_year_fields <- c("year", "area","section", "station")
     coord_fields <- c("latitude","longitude")
+
+    if (doMonths){
+      area_year_df$month <- character()
+      area_year_fields <- c(area_year_fields, "month")
+    }
     for(i_file in file_names){
       df <- get(i_file)
       var_names <- names(df)
@@ -75,7 +91,11 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
         this_df <- df[,names(df) %in% area_year_fields]
         this_df$dataframe <- i_file
         this_df[setdiff(names(area_year_df), names(this_df))]<-NA
-        this_df <- this_df[,c("year", "dataframe","area","section", "station")]
+        if (!doMonths){
+          this_df <- this_df[,c("year", "dataframe","area","section", "station")]
+        }else{
+          this_df <- this_df[,c("year", "dataframe","area","section", "station", "month")]
+        }
         area_year_df <- rbind.data.frame(area_year_df,this_df)
         rm(list = c("this_df"))
       }
@@ -92,17 +112,33 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
       rm(list = c("var_names","i_file"))
     }
 
-    area_year_df= tidyr::gather(area_year_df, areaType, areaname, area, section, station)
-    area_year_df <- unique(area_year_df[!is.na(area_year_df$areaname),])
+    area_year_df_yr <- tidyr::gather(area_year_df, areaType, areaname, area, section, station)
+    area_year_df_yr <- unique(area_year_df_yr[!is.na(area_year_df_yr$areaname),])
 
+    if (doMonths){
+      area_year_df_yr$month <- NULL
+      area_year_df_mo <- area_year_df
+      area_year_df_mo$year <- NULL
+      area_year_df_mo$month <- as.integer(area_year_df_mo$month)
+      area_year_df_mo <-  tidyr::gather(area_year_df_mo, areaType, areaname, area, section, station)
+      area_year_df_mo <- unique(area_year_df_mo[!is.na(area_year_df_mo$areaname) & !is.na(area_year_df_mo$month),])
+      area_year_df = merge(area_year_df_yr, area_year_df_mo, all.x = T)
+    }else{
+      area_year_df <- area_year_df_yr
+    }
   }else{
     area_year_df <- data.frame(year = integer(), dataframe = character(), area=character(), section=character(), station=character(), parameter=character())
     area_year_fields <- c("year", "area","section", "station", "parameter")
     non_param_fields <- c(area_year_fields, "dataframe","latitude","longitude", "cruisenumber","month", "day", "event_id", "depth", "standard_depth","sample_id","nominal_depth","doy", "season" )
 
+    if (doMonths){
+      area_year_df$month <- character()
+      area_year_fields <- c(area_year_fields, "month")
+    }
+
     for(i_file in file_names){
       df <- get(i_file)
-      df[setdiff(names(area_year_df), names(df))]<--NA
+      df[setdiff(names(area_year_df), names(df))]<- NA
       theseAreaFields <- names(df)[names(df) %in% area_year_fields]
       theseParamsFields <- names(df)[!tolower(names(df)) %in% non_param_fields]
       df <- df[,c(theseAreaFields, theseParamsFields)]
@@ -117,11 +153,20 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
       }
       rm(list = c( "theseAreaFields", "theseParamsFields","df"))
     }
-    area_year_df= tidyr::gather(area_year_df, areaType, areaname, area, section, station, -dataframe, -parameter)
-    area_year_df <- unique(area_year_df)
-
+    area_year_df_yr= tidyr::gather(area_year_df, areaType, areaname, area, section, station, -dataframe, -parameter)
+    area_year_df_yr <- unique(area_year_df_yr)
+    if (doMonths){
+      area_year_df_yr$month <- NULL
+      area_year_df_mo <- area_year_df
+      area_year_df_mo$year <- NULL
+      area_year_df_mo$month <- as.integer(area_year_df_mo$month)
+      area_year_df_mo <-  tidyr::gather(area_year_df_mo, areaType, areaname, area, section, station)
+      area_year_df_mo <- unique(area_year_df_mo[!is.na(area_year_df_mo$areaname) & !is.na(area_year_df_mo$month),])
+      area_year_df = merge(area_year_df_yr, area_year_df_mo, all.x = T)
+    }else{
+      area_year_df <- area_year_df_yr
+    }
   }
-
   area_year_df_o <- area_year_df
 
   if(length(years)>0){
@@ -152,6 +197,12 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     if (!any(datafiles %in% toupper(area_year_df$dataframe))) area_index_chk("dataframe", fail = T)
     if (!all(datafiles %in% toupper(area_year_df$dataframe))) area_index_chk("dataframe", fail = F)
     area_year_df <- area_year_df[toupper(area_year_df$dataframe) %in% datafiles,]
+  }
+
+  if(doMonths & length(months)>0){
+    if (!any(months %in% toupper(area_year_df$month))) area_index_chk("month", fail = T)
+    if (!all(months %in% toupper(area_year_df$month))) area_index_chk("month", fail = F)
+    area_year_df <- area_year_df[toupper(area_year_df$month) %in% months,]
   }
 
   area_year_df = area_year_df[with(area_year_df, order(year, dataframe, areaname)), ]

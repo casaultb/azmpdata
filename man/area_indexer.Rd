@@ -9,6 +9,8 @@ area_indexer(
   areanames = NULL,
   areaTypes = NULL,
   datafiles = NULL,
+  months = NULL,
+  doMonths = F,
   quiet = F,
   doParameters = F,
   parameters = NULL
@@ -30,6 +32,12 @@ contained by one or more particular azmpdata data files, a vector of the files t
 provided.  .  (e.g. \code{area_indexer(datafiles=c("Ice_Annual_Broadscale"))})  A complete list
 of the available files can be seen by checking \code{data(package="azmpdata")}}
 
+\item{months}{default is \code{NULL}.  If you want to restrict the available data by one or more
+months, a vector of desired months can be provided (e.g. \code{area_indexer(months=c(1,2,3,4))})}
+
+\item{doMonths}{default is \code{F}. If this is set to \code{TRUE}, the results will include
+information about what month the data was collected (when available).}
+
 \item{quiet}{default is \code{F}.  If invalid parameters are sent, this function will alert the user
 of  the available valid values.  If set to T, the message will be hidden.}
 
@@ -49,10 +57,6 @@ a data.frame
 This function assemble a dataframe consisting of the years and areas where the azmpdata
 packages\'s data has been collected, as well as the associated file where the data can be found.
 }
-\note{
-This is a duplicate of what exists in https://github.com/Maritimes/Mar.utils/blob/master/R/df2sf.R.
-It is copied, rather than added as a dependency to reduce the number of packages necessary.
-}
 \examples{
 \dontrun{
 allAreas <- area_indexer()
@@ -67,6 +71,7 @@ sections_2017 <- area_indexer(areaTypes=c("section"), year = 2017)
 
 specificParameters_2000s <- area_indexer(parameters=c("Arctic_Calanus_species",
                                          "integrated_phosphate_50"), year=c(2000:2009))
+februaryParameters <-area_indexer(doMonths = T, months = 2, doParameters = T)
 }
 }
 \author{
