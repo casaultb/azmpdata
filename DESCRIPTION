@@ -37,21 +37,22 @@ Suggests:
 URL: https://casaultb.github.io/azmpdata, https://github.com/casaultb/azmpdata
 BugReports: https://github.com/casaultb/azmpdata/issues
 Imports: 
-    stringr,
+    dplyr,
     ggplot2,
     grid,
-    dplyr,
-    tidyr,
-    tibble,
     leaflet,
-    magrittr,
     lubridate,
+    magrittr,
+    oce,
     RCurl,
     sf,
     sfheaders,
+    stringr,
+    tidyr,
+    tibble,
+    tools,
     utils,
-    usethis,
-    tools
+    usethis
 Depends: 
     R (>= 2.10)
 VignetteBuilder: knitr
