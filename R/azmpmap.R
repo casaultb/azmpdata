@@ -102,24 +102,26 @@ azmpmap <- function(quiet=T){
   RS <- c("CS_remote_sensing","LS_remote_sensing")
   otherAreas <-AZMP_areas[!AZMP_areas$sname %in% c(GE,SS,SSB,SSG,RS),]
 
-  #grab the Zooplankton_Occupations_Broadscale data, which will otherwise not be visible (corrds, but no stations)
-  Zoo_Occ_Broad <- Zooplankton_Occupations_Broadscale <- latitude<- longitude <- sample_id <-NA
-  delayedAssign("Zoo_Occ_Broad", Zooplankton_Occupations_Broadscale)
-  Zoo_Occ_Broad$month <- Zoo_Occ_Broad$day <- Zoo_Occ_Broad$season <- NULL
-  Zoo_Occ_Broad <- tidyr::gather(Zoo_Occ_Broad, "param", "value", -latitude, -longitude, -year, -sample_id)
-  Zoo_Occ_Broad <- Zoo_Occ_Broad[!is.na(Zoo_Occ_Broad$value),]
-  Zoo_Occ_Broad$value <- NULL
-
-  Zoo_Occ_Broad_master <- unique(Zoo_Occ_Broad[, c("latitude", "longitude", "sample_id")])
-  Zoo_Occ_Broad_params <- unique(Zoo_Occ_Broad[, c("latitude", "longitude", "sample_id", "param")])
-  Zoo_Occ_Broad_years <- unique(Zoo_Occ_Broad[, c("latitude", "longitude", "sample_id", "year")])
-  Zoo_Occ_Broad_params <- stats::aggregate(list(parameters = Zoo_Occ_Broad_params$param), list(sample_id = Zoo_Occ_Broad_params$sample_id, latitude = Zoo_Occ_Broad_params$latitude, longitude = Zoo_Occ_Broad_params$longitude), paste, collapse="</dd><dd>")
-  Zoo_Occ_Broad_years <- stats::aggregate(list(years = Zoo_Occ_Broad_years$year), list(sample_id = Zoo_Occ_Broad_years$sample_id, latitude = Zoo_Occ_Broad_years$latitude, longitude = Zoo_Occ_Broad_years$longitude), paste, collapse="</dd><dd>")
-
-  Zoo_Occ_Broad <- merge(Zoo_Occ_Broad_master, Zoo_Occ_Broad_years, all.x=T)
-  Zoo_Occ_Broad <- merge(Zoo_Occ_Broad, Zoo_Occ_Broad_params, all.x=T)
-  Zoo_Occ_Broad$years <- paste0("<dd>", Zoo_Occ_Broad$years,"</dd>")
-  Zoo_Occ_Broad$parameters <- paste0("<dd>", Zoo_Occ_Broad$parameters,"</dd>")
+  # #####
+  # #grab the Zooplankton_Occupations_Broadscale data, which will otherwise not be visible (corrds, but no stations)
+  # Zoo_Occ_Broad <- Zooplankton_Occupations_Broadscale <- latitude<- longitude <- sample_id <-NA
+  # delayedAssign("Zoo_Occ_Broad", Zooplankton_Occupations_Broadscale)
+  # Zoo_Occ_Broad$month <- Zoo_Occ_Broad$day <- Zoo_Occ_Broad$season <- NULL
+  # Zoo_Occ_Broad <- tidyr::gather(Zoo_Occ_Broad, "param", "value", -latitude, -longitude, -year, -sample_id)
+  # Zoo_Occ_Broad <- Zoo_Occ_Broad[!is.na(Zoo_Occ_Broad$value),]
+  # Zoo_Occ_Broad$value <- NULL
+  #
+  # Zoo_Occ_Broad_master <- unique(Zoo_Occ_Broad[, c("latitude", "longitude", "sample_id")])
+  # Zoo_Occ_Broad_params <- unique(Zoo_Occ_Broad[, c("latitude", "longitude", "sample_id", "param")])
+  # Zoo_Occ_Broad_years <- unique(Zoo_Occ_Broad[, c("latitude", "longitude", "sample_id", "year")])
+  # Zoo_Occ_Broad_params <- stats::aggregate(list(parameters = Zoo_Occ_Broad_params$param), list(sample_id = Zoo_Occ_Broad_params$sample_id, latitude = Zoo_Occ_Broad_params$latitude, longitude = Zoo_Occ_Broad_params$longitude), paste, collapse="</dd><dd>")
+  # Zoo_Occ_Broad_years <- stats::aggregate(list(years = Zoo_Occ_Broad_years$year), list(sample_id = Zoo_Occ_Broad_years$sample_id, latitude = Zoo_Occ_Broad_years$latitude, longitude = Zoo_Occ_Broad_years$longitude), paste, collapse="</dd><dd>")
+  #
+  # Zoo_Occ_Broad <- merge(Zoo_Occ_Broad_master, Zoo_Occ_Broad_years, all.x=T)
+  # Zoo_Occ_Broad <- merge(Zoo_Occ_Broad, Zoo_Occ_Broad_params, all.x=T)
+  # Zoo_Occ_Broad$years <- paste0("<dd>", Zoo_Occ_Broad$years,"</dd>")
+  # Zoo_Occ_Broad$parameters <- paste0("<dd>", Zoo_Occ_Broad$parameters,"</dd>")
+  # #####
 
   #add a title
   titleHTML <- paste0("<div style='
@@ -232,18 +234,18 @@ azmpmap <- function(quiet=T){
                                                  "<br>Year(s) Data Collected here:<br>", years,
                                                  "<br>Parameter(s) collected here:<br>",parameters))
 
-  m <- leaflet::addCircleMarkers(map = m, data = Zoo_Occ_Broad,lng = ~longitude, lat = ~latitude,
-                                 group= "Zooplank (Broad. Occ.)",
-                                 color = "blue",weight = 1, radius = 2,
-                                 options = leaflet::markerOptions(zIndexOffset = 95),
-                                 popup = ~paste0(latitude,"N, ", longitude, "W",
-                                                 "<br> (Sample ID:", sample_id,")<br>",
-                                                 "<br>Relevant AZMP datafile(s):<br><dd>Zooplankton_Occupations_Broadscale</dd>",
-                                                 "<br>Year(s) Data Collected here:<br>", years,
-                                                 "<br>Parameter(s) collected here:<br>",parameters))
+  # m <- leaflet::addCircleMarkers(map = m, data = Zoo_Occ_Broad,lng = ~longitude, lat = ~latitude,
+  #                                group= "Zooplank (Broad. Occ.)",
+  #                                color = "blue",weight = 1, radius = 2,
+  #                                options = leaflet::markerOptions(zIndexOffset = 95),
+  #                                popup = ~paste0(latitude,"N, ", longitude, "W",
+  #                                                "<br> (Sample ID:", sample_id,")<br>",
+  #                                                "<br>Relevant AZMP datafile(s):<br><dd>Zooplankton_Occupations_Broadscale</dd>",
+  #                                                "<br>Year(s) Data Collected here:<br>", years,
+  #                                                "<br>Parameter(s) collected here:<br>",parameters))
 
   baseGroups <- c("Bathymetry","None")
-  overlayGroups <- c("Stations",  "Sections", "NAFO (gen)","NAFO (det)","SS Box", "SS Grid", "SS Areas","General Areas","Remote Sensing", "Zooplank (Broad. Occ.)")
+  overlayGroups <- c("Stations",  "Sections", "NAFO (gen)","NAFO (det)","SS Box", "SS Grid", "SS Areas","General Areas","Remote Sensing") #, "Zooplank (Broad. Occ.)"
 
 
 
