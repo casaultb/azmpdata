@@ -28,11 +28,12 @@ plot_availability <- function(areaType=NULL,
                        stop("in plot_availability() :\n can only provide one station at a time. This may change in the future", call.=FALSE)
                       } else if (areaName %in% stations) {
                       d <- k[which(k$areaname == areaName),]
+                      dd <- d[which(d$parameter == parameters),]
                       p <- unique(d[which(d$areaname == areaName),]$parameter)
                       if (length(parameters) == 0) {
                        stop("in plot_availability() :\n must give a parameters argument of either ", paste(p, collapse=" "), " for station ", areaName, call.=FALSE)
                       } else if (parameters %in% p) {
-                          df <- data.frame(year = d[['year']], month = d[['month']])
+                        df <- data.frame(year = dd[['year']], month = dd[['month']])
                           freqTable <- with(df, table(year, month))
 
                           cm <- oce::colormap(z = freqTable)
