@@ -64,7 +64,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
 
   res <- data(package = 'azmpdata')
   file_names <- res$results[,3]
-
+  if (length(datafiles)>0) file_names <- file_names[tolower(file_names) %in% tolower(datafiles)]
   area_index_chk <- function(param = NULL, fail=F){
     allValidVals <- paste(sort(unique(area_year_df_o[,param])), collapse=",")
     res<- paste0("Valid values for ",param, " include:\n",allValidVals)
@@ -77,7 +77,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
 
   if (!doParameters){
     area_year_df <- data.frame(year = integer(), dataframe = character(), area=character(), section=character(), station=character() )
-    area_year_fields <- c("year", "area","section", "station")
+    area_year_fields <- c("year", "dataframe", "area","section", "station")
     coord_fields <- c("latitude","longitude")
 
     if (doMonths){
@@ -89,12 +89,12 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
       var_names <- names(df)
       if (area_year_fields[1] %in% var_names & any(area_year_fields[2:length(area_year_fields)] %in% var_names)){
         this_df <- df[,names(df) %in% area_year_fields]
-        this_df$dataframe <- i_file
         this_df[setdiff(names(area_year_df), names(this_df))]<-NA
+        this_df$dataframe <- i_file
         if (!doMonths){
-          this_df <- this_df[,c("year", "dataframe","area","section", "station")]
+          this_df <- this_df[,c("year","dataframe","area","section", "station")]
         }else{
-          this_df <- this_df[,c("year", "dataframe","area","section", "station", "month")]
+          this_df <- this_df[,c("year","dataframe","area","section", "station", "month")]
         }
         area_year_df <- rbind.data.frame(area_year_df,this_df)
         rm(list = c("this_df"))
@@ -111,18 +111,17 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
       }
       rm(list = c("var_names","i_file"))
     }
-
-    area_year_df_yr <- tidyr::gather(area_year_df, areaType, areaname, area, section, station)
+    area_year_df_yr <- tidyr::gather(area_year_df, areaType, areaname, area, section, station, dataframe)
     area_year_df_yr <- unique(area_year_df_yr[!is.na(area_year_df_yr$areaname),])
 
     if (doMonths){
-      area_year_df_yr$month <- NULL
+      # area_year_df_yr$month <- NULL
       area_year_df_mo <- area_year_df
       area_year_df_mo$year <- NULL
       area_year_df_mo$month <- as.integer(area_year_df_mo$month)
       area_year_df_mo <-  tidyr::gather(area_year_df_mo, areaType, areaname, area, section, station)
       area_year_df_mo <- unique(area_year_df_mo[!is.na(area_year_df_mo$areaname) & !is.na(area_year_df_mo$month),])
-      area_year_df = merge(area_year_df_yr, area_year_df_mo, all.x = T)
+      area_year_df <- unique(merge(area_year_df_yr, area_year_df_mo, all.x = T))
     }else{
       area_year_df <- area_year_df_yr
     }
@@ -136,22 +135,44 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
       area_year_fields <- c(area_year_fields, "month")
     }
 
+
     for(i_file in file_names){
+      message(i_file)
       df <- get(i_file)
       df[setdiff(names(area_year_df), names(df))]<- NA
       theseAreaFields <- names(df)[names(df) %in% area_year_fields]
       theseParamsFields <- names(df)[!tolower(names(df)) %in% non_param_fields]
+      if (length(parameters)>0) theseParamsFields <- tolower(parameters)
+
+      if (!any(theseParamsFields %in% colnames(df))){
+        next
+      }
+      if (doMonths & "month" %in% colnames(df)){
+        df<- unique(df[which(!is.na(df$month)),])
+
+      }else{
+        next
+      }
       df <- df[,c(theseAreaFields, theseParamsFields)]
       for (p in 1:length(theseParamsFields)){
         df_p <- unique(df[!is.na(df[theseParamsFields[p]]),area_year_fields])
+        if (length(areaTypes)>0) df_p <- unique(df[df$areaType== areaTypes,area_year_fields])
         if (nrow(df_p)>0){
           df_p$parameter <- theseParamsFields[p]
           df_p$dataframe <- i_file
+          message(theseParamsFields[p])
           area_year_df <- rbind.data.frame(area_year_df,df_p)
         }
         rm(list = c( "df_p"))
       }
       rm(list = c( "theseAreaFields", "theseParamsFields","df"))
+    }
+
+    if (nrow(area_year_df)<1){
+      message("No data matches your filters")
+      return(NULL)
+    }else{
+      message(colnames(area_year_df))
     }
     area_year_df_yr= tidyr::gather(area_year_df, areaType, areaname, area, section, station, -dataframe, -parameter)
     area_year_df_yr <- unique(area_year_df_yr)
@@ -163,8 +184,10 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
       area_year_df_mo <-  tidyr::gather(area_year_df_mo, areaType, areaname, area, section, station)
       area_year_df_mo <- unique(area_year_df_mo[!is.na(area_year_df_mo$areaname) & !is.na(area_year_df_mo$month),])
       area_year_df = merge(area_year_df_yr, area_year_df_mo, all.x = T)
+      area_year_df = unique(area_year_df[which(!is.na(area_year_df$month)),])
     }else{
       area_year_df <- area_year_df_yr
+      area_year_df = unique(area_year_df[which(!is.na(area_year_df$month)),])
     }
   }
   area_year_df_o <- area_year_df
