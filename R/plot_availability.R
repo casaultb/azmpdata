@@ -14,7 +14,7 @@ plot_availability <- function(areaType=NULL,
                               parameters=NULL
 )
 {
-    k <- area_indexer(areaTypes=areaType, areanames = areaName, doMonths=T, doParameters=T)
+    k <- area_indexer(areaTypes=areaType, areanames = areaName, doMonths=T,parameters=parameters, doParameters=T)
     freqTable <- with(k, table(year, month))
 
     cm <- oce::colormap(z = freqTable)
