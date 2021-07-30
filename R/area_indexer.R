@@ -23,8 +23,7 @@
 #' are provided, the function will override this default value and set \code{doParameters=F}
 #' @param doMonths default is \code{F}. If this is set to \code{TRUE}, the results will include
 #' information about what month the data was collected (when available).
-#' @param quiet default is \code{F}.  If invalid parameters are sent, this function will alert the user
-#' of  the available valid values.  If set to T, the message will be hidden.
+#' @param qcMode default is \code{F}. Information about unexpected values will be shown.
 #' @return a data.frame
 #' @examples \dontrun{
 #' allAreas <- area_indexer()
@@ -43,191 +42,150 @@
 #' }
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
 #' @export
-area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, datafiles = NULL, months = NULL, doMonths = F, quiet = F, doParameters =F, parameters = NULL){
+#'
+area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, datafiles = NULL, months = NULL, doMonths = F, doParameters =F, parameters = NULL, qcMode = F){
   area <- areaType <- areaname <- section <- station <- parameter <- month <- NA
 
-  areanames <- toupper(areanames)
-  areaTypes <- toupper(areaTypes)
-  datafiles <- toupper(datafiles)
-  parameters <- toupper(parameters)
-  if (length(months)>0 & !doMonths){
-    doMonths <- T
-    message("Because months were provided as a filter, the function has set doMonths = T.\n
-            To avoid seeing this message, please include 'doMonths=T'")
+  areanames <- tolower(areanames)
+  areaTypes <- tolower(areaTypes)
+  datafiles <- tolower(datafiles)
+  parameters <- tolower(parameters)
+  if (length(months)>0){
+    months <- as.integer(months)
+    if (!doMonths) doMonths <- T
   }
-
   if (length(parameters)>0 & !doParameters){
     doParameters <- T
-    message("Because parameters were provided as a filter, the function has set doParameters = T.\n
-            To avoid seeing this message, please include 'doParameters=T'")
+  }
+
+  result_df <- data.frame(year = integer(), area=character(), section=character(), station=character(), datafile = character() )
+  core_fields <- c("year", "area","section", "station")
+  # area_year_fields <- core_fields
+  coord_fields <- c("latitude","longitude")
+  non_param_fields <- c(core_fields, "datafile","latitude","longitude", "cruisenumber","month",
+                        "day", "event_id", "depth", "standard_depth","sample_id","nominal_depth",
+                        "doy", "season" )
+
+  if (doParameters) {
+    result_df$parameter <- character()
+    core_fields <- c(core_fields, "parameter")
+  }
+  if (doMonths) {
+    result_df$month <- integer()
+    core_fields <- c(core_fields, "month")
   }
 
   res <- data(package = 'azmpdata')
   file_names <- res$results[,3]
+
   if (length(datafiles)>0) file_names <- file_names[tolower(file_names) %in% tolower(datafiles)]
-  area_index_chk <- function(param = NULL, fail=F){
-    allValidVals <- paste(sort(unique(area_year_df_o[,param])), collapse=",")
-    res<- paste0("Valid values for ",param, " include:\n",allValidVals)
-    if (fail) {
-      stop("None of your value(s) for ",param, " was not found in the data, ",paste(res))
-    }else{
-      if (!quiet) message("One or more of value(s) for ",param, " was not found in the data, ",paste(res))
-    }
-  }
 
-  if (!doParameters){
-    area_year_df <- data.frame(year = integer(), dataframe = character(), area=character(), section=character(), station=character() )
-    area_year_fields <- c("year", "dataframe", "area","section", "station")
-    coord_fields <- c("latitude","longitude")
-
-    if (doMonths){
-      area_year_df$month <- character()
-      area_year_fields <- c(area_year_fields, "month")
+  for(i_file in file_names){
+    proceed <- TRUE
+    df <- get(i_file)
+    var_names <- names(df)
+    if (qcMode & all(coord_fields %in% var_names)){
+      #this bit just checks for specific cases of coordinates with no associated stations.
+      this_df1 <- df[!is.na(df$latitude) & !is.na(df$longitude),]
+      if ("station" %in% names(this_df1)) this_df1<-this_df1[is.na(this_df1$station),]
+      if (nrow(this_df1)>0) message(paste0("\n",i_file ,": contains coordinates that are not associated with any named stations"))
+      rm(list = c("this_df1"))
     }
-    for(i_file in file_names){
-      df <- get(i_file)
-      var_names <- names(df)
-      if (area_year_fields[1] %in% var_names & any(area_year_fields[2:length(area_year_fields)] %in% var_names)){
-        this_df <- df[,names(df) %in% area_year_fields]
-        this_df[setdiff(names(area_year_df), names(this_df))]<-NA
-        this_df$dataframe <- i_file
-        if (!doMonths){
-          this_df <- this_df[,c("year","dataframe","area","section", "station")]
-        }else{
-          this_df <- this_df[,c("year","dataframe","area","section", "station", "month")]
-        }
-        area_year_df <- rbind.data.frame(area_year_df,this_df)
-        rm(list = c("this_df"))
+
+    # if(i_file == "Zooplankton_Occupations_Broadscale")browser()
+    #Have ensured file has sufficient info to proceed (i.e. a year, and at least one of area, section or station)
+    df_core <- df[,names(df) %in% core_fields, drop=FALSE]
+    these_core_fields <- var_names[var_names != "year" & var_names %in% colnames(df_core)]
+    if (length(these_core_fields)<1)next
+    df_core<-unique(df_core[complete.cases(df_core[, these_core_fields]), ])
+    if (nrow(df_core)<1)next
+    df_core[setdiff(core_fields, names(df_core))]<-NA
+
+    #df_det contains all of the info from this file we can use
+    df_det <- merge(df, df_core)
+    rm(list=c("df", "df_core", "var_names"))
+
+    #below are checks for all of the filters that might be applied.  Failing any skips the file
+    #note that cumulatively when combined, the file can still fail
+    #this step should speed up processing considerably
+    if(length(years)>0 & nrow(df_det[df_det$year %in% years,])<1) proceed <- FALSE
+    if(length(areanames)>0 & nrow(df_det[tolower(df_det$area) %in% areanames |
+                                         tolower(df_det$station) %in% areanames |
+                                         tolower(df_det$section) %in% areanames ,])<1) proceed <- FALSE
+    if(length(areaTypes)>0 & !any(colnames(df_det) %in% areaTypes)) proceed <- FALSE
+    if((doParameters & length(parameters)>0) & !any(parameters %in% colnames(df_det))) proceed <- FALSE
+    if(doMonths & length(months)>0 & nrow(df_det[tolower(df_det$month) %in% months,])<1) proceed <- FALSE
+    if(!proceed) {
+      rm(list=c("df_det"))
+      next
+    }
+
+    #established this file is potentially useful, do the simple filters
+    if(length(years)>0)  {
+      df_det <- df_det[df_det$year %in% years,]
+      if (nrow(df_det)<1) {
+        next
       }
-      if (all(coord_fields %in% var_names)){
+    }
 
-        this_df1 <- df[!is.na(df$latitude) & !is.na(df$longitude),]
-        if ("station" %in% names(this_df1)) this_df1<-this_df1[is.na(this_df1$station),]
-
-        if (nrow(this_df1)>0) {
-          if (!quiet) message(paste0("\n",i_file ,": contains coordinates that are not associated with any named stations"))
-        }
-        rm(list = c("this_df1"))
+    if(length(areanames)>0) {
+      df_det<- df_det[tolower(df_det$area) %in% areanames |
+                        tolower(df_det$station) %in% areanames |
+                        tolower(df_det$section) %in% areanames,]
+      if (nrow(df_det)<1) {
+        next
       }
-      rm(list = c("var_names","i_file"))
     }
-    area_year_df_yr <- tidyr::gather(area_year_df, areaType, areaname, area, section, station, dataframe)
-    area_year_df_yr <- unique(area_year_df_yr[!is.na(area_year_df_yr$areaname),])
+    if(length(areaTypes)>0) {
+      df_det[tolower(df_det$areaType) %in% areaTypes,]
+      if (nrow(df_det)<1) {
+        next
+      }
+    }
+
+    ####
+    # all initial checks passed for this file - parsing....
+    ####
 
     if (doMonths){
-      # area_year_df_yr$month <- NULL
-      area_year_df_mo <- area_year_df
-      area_year_df_mo$year <- NULL
-      area_year_df_mo$month <- as.integer(area_year_df_mo$month)
-      area_year_df_mo <-  tidyr::gather(area_year_df_mo, areaType, areaname, area, section, station)
-      area_year_df_mo <- unique(area_year_df_mo[!is.na(area_year_df_mo$areaname) & !is.na(area_year_df_mo$month),])
-      area_year_df <- unique(merge(area_year_df_yr, area_year_df_mo, all.x = T))
-    }else{
-      area_year_df <- area_year_df_yr
-    }
-  }else{
-    area_year_df <- data.frame(year = integer(), dataframe = character(), area=character(), section=character(), station=character(), parameter=character())
-    area_year_fields <- c("year", "area","section", "station", "parameter")
-    non_param_fields <- c(area_year_fields, "dataframe","latitude","longitude", "cruisenumber","month", "day", "event_id", "depth", "standard_depth","sample_id","nominal_depth","doy", "season" )
-
-    if (doMonths){
-      area_year_df$month <- character()
-      area_year_fields <- c(area_year_fields, "month")
+      df_mon <- df_det[which(!is.na(df_det$month)),core_fields]
+      if (nrow(df_mon)<1)next
+      if (qcMode & is.character(df_mon$month)) message(paste0("Within ",i_file,", the 'month' field is a text field (not an integer)"))
+      if (is.character(df_mon$month)) df_mon$month <- as.integer(df_mon$month)
+      if (length(months)>0) df_mon <-df_mon[which(df_mon$month %in% months),]
+      if (nrow(df_mon)<1)next
+      df_det <- merge(df_det,df_mon)
+      rm(list=c("df_mon"))
     }
 
-
-    for(i_file in file_names){
-      message(i_file)
-      df <- get(i_file)
-      df[setdiff(names(area_year_df), names(df))]<- NA
-      theseAreaFields <- names(df)[names(df) %in% area_year_fields]
-      theseParamsFields <- names(df)[!tolower(names(df)) %in% non_param_fields]
+    if (doParameters){
+      theseParamsFields <- names(df_det)[!tolower(names(df_det)) %in% non_param_fields]
+      fileParams <- df_det[F,]
       if (length(parameters)>0) theseParamsFields <- tolower(parameters)
-
-      if (!any(theseParamsFields %in% colnames(df))){
-        next
-      }
-      if (doMonths & "month" %in% colnames(df)){
-        df<- unique(df[which(!is.na(df$month)),])
-
-      }else{
-        next
-      }
-      df <- df[,c(theseAreaFields, theseParamsFields)]
       for (p in 1:length(theseParamsFields)){
-        df_p <- unique(df[!is.na(df[theseParamsFields[p]]),area_year_fields])
-        if (length(areaTypes)>0) df_p <- unique(df[df$areaType== areaTypes,area_year_fields])
-        if (nrow(df_p)>0){
-          df_p$parameter <- theseParamsFields[p]
-          df_p$dataframe <- i_file
-          message(theseParamsFields[p])
-          area_year_df <- rbind.data.frame(area_year_df,df_p)
+        # there's potential for badly-entered data - 0 length strings, and written out "NA"
+        if (qcMode){
+          #let the user know
+          if (nrow(df_det[nchar(df_det[,theseParamsFields[p]])<1,])>0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', empty (i.e. not-NA) cells were found."))
+          if (nrow(df_det[df_det[,theseParamsFields[p]] == "NA",])>0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', cells were found with 'NA' physically typed into it."))
         }
-        rm(list = c( "df_p"))
+        #remove them
+        this_params <- unique(df_det[nchar(df_det[,theseParamsFields[p]])>0 &
+                                       df_det[,theseParamsFields[p]] != "NA" &
+                                       !is.na(df_det[theseParamsFields[p]]) ,core_fields])
+        if (nrow(this_params)<1)next
+        this_params$parameter <- theseParamsFields[p]
+        fileParams <-rbind.data.frame(fileParams,this_params)
       }
-      rm(list = c( "theseAreaFields", "theseParamsFields","df"))
+      df_det <- fileParams
+      rm(list=c("fileParams"))
     }
 
-    if (nrow(area_year_df)<1){
-      message("No data matches your filters")
-      return(NULL)
-    }else{
-      message(colnames(area_year_df))
-    }
-    area_year_df_yr= tidyr::gather(area_year_df, areaType, areaname, area, section, station, -dataframe, -parameter)
-    area_year_df_yr <- unique(area_year_df_yr)
-    if (doMonths){
-      area_year_df_yr$month <- NULL
-      area_year_df_mo <- area_year_df
-      area_year_df_mo$year <- NULL
-      area_year_df_mo$month <- as.integer(area_year_df_mo$month)
-      area_year_df_mo <-  tidyr::gather(area_year_df_mo, areaType, areaname, area, section, station)
-      area_year_df_mo <- unique(area_year_df_mo[!is.na(area_year_df_mo$areaname) & !is.na(area_year_df_mo$month),])
-      area_year_df = merge(area_year_df_yr, area_year_df_mo, all.x = T)
-      area_year_df = unique(area_year_df[which(!is.na(area_year_df$month)),])
-    }else{
-      area_year_df <- area_year_df_yr
-      area_year_df = unique(area_year_df[which(!is.na(area_year_df$month)),])
-    }
-  }
-  area_year_df_o <- area_year_df
+    if (!doParameters) df_det <- unique(df_det[,core_fields])
 
-  if(length(years)>0){
-    if (!any(years %in% area_year_df$year)) area_index_chk("year", fail = T)
-    if (!all(years %in% area_year_df$year)) area_index_chk("year", fail = F)
-    area_year_df <- area_year_df[area_year_df$year %in% years,]
+    df_det$datafile <- i_file
+    result_df <- rbind.data.frame(result_df, df_det)
+    rm(list=c("df_det"))
   }
-
-  if(length(areanames)>0){
-    if (!any(areanames %in% toupper(area_year_df$areaname))) area_index_chk("areaname", fail = T)
-    if (!all(areanames %in% toupper(area_year_df$areaname))) area_index_chk("areaname", fail = F)
-    area_year_df <- area_year_df[toupper(area_year_df$areaname) %in% areanames,]
-  }
-
-  if(length(areaTypes)>0){
-    if (!any(areaTypes %in% toupper(area_year_df$areaType))) area_index_chk("areaType", fail = T)
-    if (!all(areaTypes %in% toupper(area_year_df$areaType))) area_index_chk("areaType", fail = F)
-    area_year_df <- area_year_df[toupper(area_year_df$areaType) %in% areaTypes,]
-  }
-
-  if(doParameters & length(parameters)>0){
-    if (!any(parameters %in% toupper(area_year_df$parameter))) area_index_chk("parameter", fail = T)
-    if (!all(parameters %in% toupper(area_year_df$parameter))) area_index_chk("parameter", fail = F)
-    area_year_df <- area_year_df[toupper(area_year_df$parameter) %in% parameters,]
-  }
-
-  if(length(datafiles)>0){
-    if (!any(datafiles %in% toupper(area_year_df$dataframe))) area_index_chk("dataframe", fail = T)
-    if (!all(datafiles %in% toupper(area_year_df$dataframe))) area_index_chk("dataframe", fail = F)
-    area_year_df <- area_year_df[toupper(area_year_df$dataframe) %in% datafiles,]
-  }
-
-  if(doMonths & length(months)>0){
-    if (!any(months %in% toupper(area_year_df$month))) area_index_chk("month", fail = T)
-    if (!all(months %in% toupper(area_year_df$month))) area_index_chk("month", fail = F)
-    area_year_df <- area_year_df[toupper(area_year_df$month) %in% months,]
-  }
-
-  area_year_df = area_year_df[with(area_year_df, order(year, dataframe, areaname)), ]
-  return(area_year_df)
+  return(result_df)
 }
