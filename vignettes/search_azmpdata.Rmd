@@ -111,8 +111,8 @@ At this point the user knows generally what is contained within the package from
 
 For example, if a user was interested in the nitrate in station P5 from years 2010 to 2020, the following code would be used:
 
-```{r, warning=FALSE, message=FALSE, error=FALSE}
-k <- area_indexer(parameters="nitrate", doParameters=T, areanames="P5", years=c(2010, 2020))
+```{r, warning=FALSE, message=FALSE, error=FALSE, eval=TRUE}
+k <- area_indexer(parameters="nitrate", doParameters=T, areanames="P5", years=c(2010:2020))
 head(k)
 ```
 
@@ -125,7 +125,7 @@ The user now knows what is contained within the package, where data are sampled,
 
 For example, if a user wanted to know the frequency (ie. samples/month) for the nitrate at station P5, they would type in the following:
 
-```{r, message=FALSE, error=FALSE, warning=FALSE, fig.cap="Figure 3: Sampling freqency per month for nitrate at station P5"}
+```{r, message=FALSE, error=FALSE, warning=FALSE, eval=TRUE, fig.cap="Figure 3: Sampling freqency per month for nitrate at station P5"}
 plot_availability(areaType = "station", areaName="P5", parameters="nitrate")
 ```
 
