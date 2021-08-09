@@ -43,7 +43,7 @@
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
 #' @export
 #'
-area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, datafiles = NULL, months = NULL, doMonths = F, doParameters =F, parameters = NULL, qcMode = F){
+area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, datafiles = NULL, months = NULL, doMonths = F, doParameters =F, parameters = NULL, fuzzyParameters = FALSE, qcMode = F){
   area <- areaType <- areaname <- section <- station <- parameter <- month <- NA
 
   areanames <- tolower(areanames)
@@ -64,7 +64,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
   coord_fields <- c("latitude","longitude")
   non_param_fields <- c(core_fields, "datafile","latitude","longitude", "cruisenumber","month",
                         "day", "event_id", "depth", "standard_depth","sample_id","nominal_depth",
-                        "doy", "season" )
+                        "doy", "season","descriptor" )
 
   if (doParameters) {
     result_df$parameter <- character()
@@ -163,11 +163,10 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
       fileParams <- df_det[F,]
       if (length(parameters)>0) theseParamsFields <- tolower(parameters)
       for (p in 1:length(theseParamsFields)){
-        # there's potential for badly-entered data - 0 length strings, and written out "NA"
         if (qcMode){
-          #let the user know
-          if (nrow(df_det[nchar(df_det[,theseParamsFields[p]])<1,])>0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', empty (i.e. not-NA) cells were found."))
-          if (nrow(df_det[df_det[,theseParamsFields[p]] == "NA",])>0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', cells were found with 'NA' physically typed into it."))
+        # there's potential for badly-entered data - 0 length strings, and written out "NA"
+          if (nrow(df_det[which(nchar(df_det[,theseParamsFields[p]])<1),])>0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', empty (i.e. not-NA) cells were found."))
+          if (nrow(df_det[which(df_det[,theseParamsFields[p]] == "NA"),])>0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', cells were found with 'NA' physically typed into it."))
         }
         #remove them
         this_params <- unique(df_det[nchar(df_det[,theseParamsFields[p]])>0 &
@@ -187,5 +186,6 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     result_df <- rbind.data.frame(result_df, df_det)
     rm(list=c("df_det"))
   }
+
   return(result_df)
 }
