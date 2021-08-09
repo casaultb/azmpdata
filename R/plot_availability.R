@@ -14,19 +14,22 @@ plot_availability <- function(areaType=NULL,
                               parameters=NULL
 )
 {
-    k <- area_indexer(areaTypes=areaType, areanames = areaName, doMonths=T,parameters=parameters, doParameters=T)
-    freqTable <- with(k, table(year, month))
-
-    cm <- oce::colormap(z = freqTable)
-    x <- as.numeric(rownames(freqTable)) # year
-    y <- as.numeric(colnames(freqTable)) # month
-    oce::imagep(x = x, y = y, z = freqTable,
-                colormap = cm,
-                drawPalette = TRUE)
-    graphics::box()
-    graphics::abline(h = y + 0.5)
-    graphics::abline(v = x + 0.5)
-    graphics::mtext(side = 1, text = 'Year', line = 2, cex = 4/5)
-    graphics::mtext(side = 2, text = 'Month', line = 2, cex = 4/5)
-    graphics::mtext(side=3, text= paste("Frequency table for ", parameters, " at the ", areaName, " ", areaType), cex=4/5)
+    for (p in seq_along(parameters)) {
+        k <- area_indexer(areaTypes=areaType, areanames = areaName, doMonths=T,parameters=parameters[p], doParameters=T)
+        dd <- k[which(k$parameter == parameters[p]),]
+        df <- data.frame(year=dd[["year"]], month=dd[["month"]])
+        freqTable <- with(df, table(year, month))
+        cm <- oce::colormap(z = freqTable)
+        x <- as.numeric(rownames(freqTable)) # year
+        y <- as.numeric(colnames(freqTable)) # month
+        oce::imagep(x = x, y = y, z = freqTable,
+                    colormap = cm,
+                    drawPalette = TRUE)
+        graphics::box()
+        graphics::abline(h = y + 0.5)
+        graphics::abline(v = x + 0.5)
+        graphics::mtext(side = 1, text = 'Year', line = 2, cex = 4/5)
+        graphics::mtext(side = 2, text = 'Month', line = 2, cex = 4/5)
+        graphics::mtext(side=3, text= paste("Frequency table for ", parameters[p], " at the ", areaName, " ", areaType), cex=4/5)
+    }
 }
