@@ -32,61 +32,68 @@ azmpmap <- function(quiet=T){
 
   #convert it to sf objects
   AZMP_sf = df2sf(input = AZMP, PID = "record", type.field = "type", ORD = "vertice", point.IDs = c("station"), poly.IDs = c("nafo","area", "section"), quiet=quiet)
+  AZMP_sf$area <- AZMP_sf$vertice <- NULL
+  rm(list=c("AZMP", "regtab_att", "regtab_geo"))
 
   # get an inventory of all data that has been collected, and associate it with the various locations
-  areaInventory <- area_indexer(doParameters = T)
+  areaInventory <- area_indexer(doParameters = F)
+  fldNames <- c("area", "section", "station")
+  areaInventory[fldNames][is.na(areaInventory[fldNames])] <- -99
+  areaInventory[fldNames] <- lapply(areaInventory[fldNames], toupper)
+  all_datafiles_Names <- toupper(c(unique(areaInventory$area),unique(areaInventory$section),unique(areaInventory$station)))
+  areaInventory_core <- unique(areaInventory[,c("area","section", "station")])
+  areaInventory_data <- unique(areaInventory[,c("area","section", "station", "datafile")])
+  areaInventory_data <- stats::aggregate(list(datafiles = areaInventory_data$datafile),
+                                         list(area = areaInventory_data$area,
+                                              section = areaInventory_data$section,
+                                              station = areaInventory_data$station), paste, collapse="</dd><dd>")
+  areaInventory_data$datafiles <- paste0("<dd>",areaInventory_data$datafiles,"</dd>")
 
-  assocData_year<- unique(areaInventory[,c("areaType", "areaname","year")])
-  assocData_data<- unique(areaInventory[,c("areaType", "areaname","dataframe")])
-  assocData_params<- unique(areaInventory[,c("areaType", "areaname","parameter")])
 
-  all_datafiles_Names <- toupper(c(unique(assocData_year$areaname),unique(assocData_data$areaname),unique(assocData_params$areaname)))
+  areaInventory_year <- unique(areaInventory[,c("area","section", "station", "year")])
+  rm(areaInventory)
+  areaInventory_year <- as.data.frame(as.list(stats::aggregate(
+    x = list(year = areaInventory_year$year),
+    by = list(
+      area = areaInventory_year$area,
+      section = areaInventory_year$section,
+      station = areaInventory_year$station
+    ),
+    FUN = function(x) c(MIN = min(x),
+                        MAX = max(x))
+  )))
+
+  areaInventory_year$years <- paste0("<dd>",areaInventory_year$year.MIN," to ",areaInventory_year$year.MAX,"</dd>")
+  areaInventory_year$year.MIN <- areaInventory_year$year.MAX <- NULL
+
+  #compare areas between ftp and data files
   all_AZMP_sf_Names<- toupper(unique(AZMP_sf$sname))
   if(!quiet){
     diff1 <- setdiff(all_datafiles_Names, all_AZMP_sf_Names)
     diff1 <- diff1[!is.na(diff1)]
     diff2 <- setdiff(all_AZMP_sf_Names, all_datafiles_Names)
     diff2 <- diff2[!is.na(diff2)]
-
     if (length(diff1)>0)message("\nThese named areas from azmp package data files can't be associated with data in the ftp spatial objects.\n\t", paste(diff1, collapse=", "))
     if (length(diff2)>0)message("\nThese named areas from the ftp spatial objects can't be associated with data in the azmp package data files.\n\t", paste(diff2, collapse=", "))
   }
 
-  # this is just for a map, so I don't think we need to list ALL variants of every parameter - drop
-  #these bits so we get a nicer list:
-  assocData_params$parameter <- gsub("_0_100", "", assocData_params$parameter, ignore.case = T)
-  assocData_params$parameter <- gsub("_0_50", "", assocData_params$parameter, ignore.case = T)
-  assocData_params$parameter <- gsub("_50_150", "", assocData_params$parameter, ignore.case = T)
-  assocData_params$parameter <- gsub("_log10", "", assocData_params$parameter, ignore.case = T)
-  assocData_params$parameter <- gsub("_abundance", "", assocData_params$parameter, ignore.case = T)
-  assocData_params$parameter <- gsub("_dry_weight", "", assocData_params$parameter, ignore.case = T)
-  assocData_params$parameter <- gsub("_wet_weight", "", assocData_params$parameter, ignore.case = T)
-  assocData_params$parameter <- gsub("integrated_", "", assocData_params$parameter, ignore.case = T)
-  assocData_params$parameter <- gsub("_90", "", assocData_params$parameter, ignore.case = T)
-  assocData_params$parameter <- gsub("_0", "", assocData_params$parameter, ignore.case = T)
-  assocData_params <- unique(assocData_params)
-  assocData_params <- assocData_params[with(assocData_params, order(parameter)), ]
-
-
-  assocData_year <- assocData_year[with(assocData_year, order(year)), ]
-  assocData_year <- stats::aggregate(list(years = assocData_year$year), list(mergeName = assocData_year$areaname), paste, collapse=", ")
-
-  assocData_data <- stats::aggregate(list(datafiles = assocData_data$dataframe), list(mergeName = assocData_data$areaname), paste, collapse="</dd><dd>")
-  assocData_params <- stats::aggregate(list(parameters = assocData_params$parameter), list(mergeName = assocData_params$areaname), paste, collapse="</dd><dd>")
-  assocData_data$datafiles <- paste0("<dd>", assocData_data$datafiles,"</dd>")
-  assocData_params$parameters <- paste0("<dd>", assocData_params$parameters,"</dd>")
-
-  assocData_year$years <- paste0("<dd>", assocData_year$years,"</dd>")
-
-  assocData_year$mergeName <- toupper(assocData_year$mergeName)
-  assocData_data$mergeName <- toupper(assocData_data$mergeName)
-  assocData_params$mergeName <- toupper(assocData_params$mergeName)
   AZMP_sf$mergeName <- toupper(AZMP_sf$sname)
 
-  AZMP_sf<- merge(AZMP_sf, assocData_data, all.x =T, by = "mergeName")
-  AZMP_sf<- merge(AZMP_sf, assocData_params, all.x =T, by = "mergeName")
-  AZMP_sf<- merge(AZMP_sf, assocData_year, all.x =T, by = "mergeName")
+  AZMP_sf_stations <- AZMP_sf[AZMP_sf$type == "station",]
+  AZMP_sf_sections <- AZMP_sf[AZMP_sf$type == "section",]
+  AZMP_sf_areas <- AZMP_sf[AZMP_sf$type %in% c("area","nafo"),]
 
+  AZMP_sf_stations<- merge(AZMP_sf_stations, areaInventory_core[areaInventory_core$station!=-99,c("station", "section","area")], all.x =T, by.x = "mergeName", by.y="station")
+  colnames(AZMP_sf_stations)[colnames(AZMP_sf_stations)=="mergeName"] <- "station"
+  AZMP_sf_sections<- merge(AZMP_sf_sections, areaInventory_core[areaInventory_core$section!=-99 & areaInventory_core$station ==-99,c("station", "section","area")], all.x =T, by.x = "mergeName", by.y="section")
+  colnames(AZMP_sf_sections)[colnames(AZMP_sf_sections)=="mergeName"] <- "section"
+  AZMP_sf_areas<- merge(AZMP_sf_areas, areaInventory_core[areaInventory_core$area!=-99,c("station", "section","area")], all.x =T, by.x = "mergeName", by.y="area")
+  colnames(AZMP_sf_areas)[colnames(AZMP_sf_areas)=="mergeName"] <- "area"
+
+  AZMP_sf<- rbind.data.frame(AZMP_sf_stations, AZMP_sf_sections, AZMP_sf_areas)
+
+  AZMP_sf <- merge(AZMP_sf, areaInventory_data)
+  AZMP_sf <- merge(AZMP_sf, areaInventory_year)
   #isolate the various NAFO-related data
   AZMP_NAFO <- AZMP_sf[AZMP_sf$type=="nafo",]
   NAFO_gen <- c("4V", "4W", "4X")
@@ -150,8 +157,9 @@ azmpmap <- function(quiet=T){
                             labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
                             popup = ~paste0("NAFO (gen):", lname," (",sname,")<br>",
                                             "<br>Relevant AZMP datafile(s):<br>", datafiles,
-                                            "<br>Year(s) Data Collected here:<br>", years,
-                                            "<br>Parameter(s) collected here:<br>",parameters))
+                                            "<br>Year(s) Data Collected here:<br>", years
+                                            # "<br>Parameter(s) collected here:<br>",parameters
+                            ))
 
   m <- leaflet::addPolygons(map = m, data = AZMP_NAFO[AZMP_NAFO$sname %in% NAFO_det,],
                             group= "NAFO (det)", label =~lname,
@@ -160,51 +168,58 @@ azmpmap <- function(quiet=T){
                             labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
                             popup = ~paste0("NAFO (det):", lname," (",sname,")<br>",
                                             "<br>Relevant AZMP datafile(s):<br>", datafiles,
-                                            "<br>Year(s) Data Collected here:<br>", years,
-                                            "<br>Parameter(s) collected here:<br>",parameters))
+                                            "<br>Year(s) Data Collected here:<br>", years
+                                            # , "<br>Parameter(s) collected here:<br>",parameters
+                                            ))
   m <- leaflet::addPolygons(map = m, data = AZMP_areas[AZMP_areas$sname %in% GE,],
                             group= "General Areas", label =~lname,
                             labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
                             popup = ~paste0("General Areas:", lname," (",sname,")<br>",
                                             "<br>Relevant AZMP datafile(s):<br>", datafiles,
-                                            "<br>Year(s) Data Collected here:<br>", years,
-                                            "<br>Parameter(s) collected here:<br>",parameters))
+                                            "<br>Year(s) Data Collected here:<br>", years
+                                            # , "<br>Parameter(s) collected here:<br>",parameters
+                                            ))
   m <- leaflet::addPolygons(map = m, data = AZMP_areas[AZMP_areas$sname %in% SS,],
                             group= "SS Areas", label =~lname,
                             labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
                             popup = ~paste0("SS Areas:", lname," (",sname,")<br>",
                                             "<br>Relevant AZMP datafile(s):<br>", datafiles,
-                                            "<br>Year(s) Data Collected here:<br>", years,
-                                            "<br>Parameter(s) collected here:<br>",parameters))
+                                            "<br>Year(s) Data Collected here:<br>", years
+                                            # ,"<br>Parameter(s) collected here:<br>",parameters
+                                            ))
   m <- leaflet::addPolygons(map = m, data = AZMP_areas[AZMP_areas$sname %in% SSB,],
                             group= "SS Box", label =~lname,
                             labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
                             popup = ~paste0("SS Box:", lname," (",sname,")<br>",
                                             "<br>Relevant AZMP datafile(s):<br>", datafiles,
-                                            "<br>Year(s) Data Collected here:<br>", years,
-                                            "<br>Parameter(s) collected here:<br>",parameters))
+                                            "<br>Year(s) Data Collected here:<br>", years
+                                            # ,"<br>Parameter(s) collected here:<br>",parameters
+                                            ))
   m <- leaflet::addPolygons(map = m, data = AZMP_areas[AZMP_areas$sname %in% SSG,],
                             group= "SS Grid", label =~lname,
                             labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
                             popup = ~paste0("SS Grid:", lname," (",sname,")<br>",
                                             "<br>Relevant AZMP datafile(s):<br>", datafiles,
-                                            "<br>Year(s) Data Collected here:<br>", years,
-                                            "<br>Parameter(s) collected here:<br>",parameters))
+                                            "<br>Year(s) Data Collected here:<br>", years
+                                            # , "<br>Parameter(s) collected here:<br>",parameters
+                                            ))
   m <- leaflet::addPolygons(map = m, data = AZMP_areas[AZMP_areas$sname %in% RS,],
                             group= "Remote Sensing", label =~lname,
                             labelOptions = leaflet::labelOptions(noHide = T, textOnly = TRUE),
                             popup = ~paste0("Remote Sensing:", lname," (",sname,")<br>",
                                             "<br>Relevant AZMP datafile(s):<br>", datafiles,
-                                            "<br>Year(s) Data Collected here:<br>", years,
-                                            "<br>Parameter(s) collected here:<br>",parameters))
+                                            "<br>Year(s) Data Collected here:<br>", years
+                                            # , "<br>Parameter(s) collected here:<br>",parameters
+                                            ))
   if (nrow(otherAreas)>0){
     m <- leaflet::addPolygons(map = m, data = otherAreas,
                               group= "OtherAreas", label =~lname,
                               color="red", weight = 1.5,
                               popup = ~paste0("Section:", lname," (",sname,")<br>",
                                               "<br>Relevant AZMP datafile(s):<br>", datafiles,
-                                              "<br>Year(s) Data Collected here:<br>", years,
-                                              "<br>Parameter(s) collected here:<br>",parameters))
+                                              "<br>Year(s) Data Collected here:<br>", years
+                                              # ,"<br>Parameter(s) collected here:<br>",parameters
+                                              ))
     overlayGroups <- c(overlayGroups,"OtherAreas")
   }
   if (nrow(otherNAFO)>0){
@@ -213,8 +228,9 @@ azmpmap <- function(quiet=T){
                               color="red", weight = 1.5,
                               popup = ~paste0("Section:", lname," (",sname,")<br>",
                                               "<br>Relevant AZMP datafile(s):<br>", datafiles,
-                                              "<br>Year(s) Data Collected here:<br>", years,
-                                              "<br>Parameter(s) collected here:<br>",parameters))
+                                              "<br>Year(s) Data Collected here:<br>", years
+                                              # , "<br>Parameter(s) collected here:<br>",parameters
+                                              ))
     overlayGroups <- c(overlayGroups,"OtherNAFO")
   }
   m <- leaflet::addPolygons(map = m, data = AZMP_sf[AZMP_sf$type=="section",],
@@ -222,8 +238,9 @@ azmpmap <- function(quiet=T){
                             color="red", weight = 1.5,
                             popup = ~paste0("Section:", lname," (",sname,")<br>",
                                             "<br>Relevant AZMP datafile(s):<br>", datafiles,
-                                            "<br>Year(s) Data Collected here:<br>", years,
-                                            "<br>Parameter(s) collected here:<br>",parameters))
+                                            "<br>Year(s) Data Collected here:<br>", years
+                                            # , "<br>Parameter(s) collected here:<br>",parameters
+                                            ))
   m <- leaflet::addCircleMarkers(map = m, data = AZMP_sf[AZMP_sf$type=="station",],
                                  group= "Stations", label =~sname,
                                  color = "red",weight = 2, radius = 4,
@@ -231,8 +248,9 @@ azmpmap <- function(quiet=T){
                                  options = leaflet::markerOptions(zIndexOffset = 99),
                                  popup = ~paste0("Station:", lname," (",sname,")<br><br>Depth:", ifelse(is.numeric(depth),paste0(depth," m"), NA),"<br>",
                                                  "<br>Relevant AZMP datafile(s):<br>", datafiles,
-                                                 "<br>Year(s) Data Collected here:<br>", years,
-                                                 "<br>Parameter(s) collected here:<br>",parameters))
+                                                 "<br>Year(s) Data Collected here:<br>", years
+                                                 # ,"<br>Parameter(s) collected here:<br>",parameters
+                                                 ))
 
   # m <- leaflet::addCircleMarkers(map = m, data = Zoo_Occ_Broad,lng = ~longitude, lat = ~latitude,
   #                                group= "Zooplank (Broad. Occ.)",

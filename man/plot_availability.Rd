@@ -4,14 +4,24 @@
 \alias{plot_availability}
 \title{plot_availability}
 \usage{
-plot_availability(areaType = NULL, areaName = NULL, parameters = NULL)
+plot_availability(
+  areaType = NULL,
+  areaName = NULL,
+  parameters = NULL,
+  fuzzyParameters = TRUE
+)
 }
 \arguments{
 \item{areaType}{default is \code{NULL}. Indicates which type of area is of interest. The options are section, station, or area.}
 
-\item{areaName}{default is \code{NULL}. Indicates which area is of interest. The options are dependant on the areaType, however, a error message will let the user know which options are available.}
+\item{areaName}{default is \code{NULL}. Indicates which area is of interest. The options are dependent on the areaType, however, a error message will let the user know which options are available.}
 
-\item{parameters}{default is \code{NULL}. Indicates which parameter is of interest. This is dependant on areaType and areaName, however, an error message will let the user know which options are available.}
+\item{parameters}{default is \code{NULL}. Indicates which parameter is of interest. This is dependent on areaType and areaName, however, an error message will let the user know which options are available.}
+
+\item{fuzzyParameters}{default is \code{TRUE}.  By default, any discovered parameters that match
+values within \code{parameters} will be returned.  For example, \code{parameter="nitrate"} will
+return fields such as "integrated_nitrate_0_50", "integrated_nitrate_50_150", and "nitrate".  If
+you want exact matches only, set \code{fuzzyParameters = F}.}
 }
 \description{
 This generates a score card of samples per month based on areaType, areaName, and parameter.
