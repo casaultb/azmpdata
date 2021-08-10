@@ -8,9 +8,6 @@
 #' @param areaTypes default is \code{NULL}.  If you want to restrict the available data by one or more
 #' area "types", a vector of desired types can be provided.  Valid values for areaTypes are:
 #' "area", "section", and "station".  (e.g. \code{area_indexer(areaTypes=c("section"))})
-#' @param parameters default is \code{NULL}.  Many parameters exist - any named parameter found in
-#' any data file should work.  (e.g. \code{area_indexer(parameters=c("Arctic_Calanus_species",
-#' "integrated_phosphate_50"))})
 #' @param datafiles default is \code{NULL}.  If you want to restrict the available data to just that
 #' contained by one or more particular azmpdata data files, a vector of the files to check can be
 #' provided.  .  (e.g. \code{area_indexer(datafiles=c("Ice_Annual_Broadscale"))})  A complete list
@@ -21,6 +18,13 @@
 #' at each combination of area/site/year is a bit more intensive than leaving them out.  To force
 #' this function to do this, set this parameter to \code{doParameters=T}.  If one or more parameters
 #' are provided, the function will override this default value and set \code{doParameters=F}
+#' @param parameters default is \code{NULL}.  Many parameters exist - any named parameter found in
+#' any data file should work.  (e.g. \code{area_indexer(parameters=c("Arctic_Calanus_species",
+#' "integrated_phosphate_50"))})
+#' @param fuzzyParameters  default is \code{T}.  By default, any discovered parameters that match
+#'  values within \code{parameters} will be returned.  For example, \code{parameter="nitrate"} will
+#'  return fields such as "integrated_nitrate_0_50", "integrated_nitrate_50_150", and "nitrate".  If
+#'  you want exact matches only, set \code{fuzzyParameters = F}.
 #' @param doMonths default is \code{F}. If this is set to \code{TRUE}, the results will include
 #' information about what month the data was collected (when available).
 #' @param qcMode default is \code{F}. Information about unexpected values will be shown.
@@ -37,13 +41,16 @@
 #' sections_2017 <- area_indexer(areaTypes=c("section"), year = 2017)
 #'
 #' specificParameters_2000s <- area_indexer(parameters=c("Arctic_Calanus_species",
-#'                                          "integrated_phosphate_50"), year=c(2000:2009))
+#'                                          "integrated_phosphate_0_50"), year=c(2000:2009))
 #' februaryParameters <-area_indexer(doMonths = T, months = 2, doParameters = T)
 #' }
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
+#' @note Note that each additional filter that gets sent will reduce the number of results returned.
+#' For example, if \code{doMonths = TRUE} and \code{years = 2010}, only those results from 2010 that
+#' also have monthly data will be returned.
 #' @export
 #'
-area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, datafiles = NULL, months = NULL, doMonths = F, doParameters =F, parameters = NULL, qcMode = F){
+area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, datafiles = NULL, months = NULL, doMonths = F, doParameters =F, parameters = NULL, fuzzyParameters = TRUE, qcMode = F){
   area <- areaType <- areaname <- section <- station <- parameter <- month <- NA
 
   areanames <- tolower(areanames)
@@ -64,7 +71,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
   coord_fields <- c("latitude","longitude")
   non_param_fields <- c(core_fields, "datafile","latitude","longitude", "cruisenumber","month",
                         "day", "event_id", "depth", "standard_depth","sample_id","nominal_depth",
-                        "doy", "season" )
+                        "doy", "season","descriptor" )
 
   if (doParameters) {
     result_df$parameter <- character()
@@ -97,12 +104,13 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     df_core <- df[,names(df) %in% core_fields, drop=FALSE]
     these_core_fields <- var_names[var_names != "year" & var_names %in% colnames(df_core)]
     if (length(these_core_fields)<1)next
-    df_core<-unique(df_core[complete.cases(df_core[, these_core_fields]), ])
+    df_core<-unique(df_core[stats::complete.cases(df_core[, these_core_fields]), ])
     if (nrow(df_core)<1)next
     df_core[setdiff(core_fields, names(df_core))]<-NA
 
     #df_det contains all of the info from this file we can use
     df_det <- merge(df, df_core)
+    colnames(df_det) <- tolower(colnames(df_det))
     rm(list=c("df", "df_core", "var_names"))
 
     #below are checks for all of the filters that might be applied.  Failing any skips the file
@@ -113,7 +121,19 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
                                          tolower(df_det$station) %in% areanames |
                                          tolower(df_det$section) %in% areanames ,])<1) proceed <- FALSE
     if(length(areaTypes)>0 & !any(colnames(df_det) %in% areaTypes)) proceed <- FALSE
-    if((doParameters & length(parameters)>0) & !any(parameters %in% colnames(df_det))) proceed <- FALSE
+
+    if (!fuzzyParameters){
+      if((doParameters & length(parameters)>0) & !any(parameters %in% colnames(df_det))) proceed <- FALSE
+    } else{
+      if ((doParameters & length(parameters)>0)){
+        matches <- FALSE
+        for (r in 1:length(parameters)){
+          if (length(tolower(colnames(df_det)[grep(pattern = parameters[r], x=colnames(df_det))]))>0) matches <- TRUE
+        }
+        if (!matches) proceed <- FALSE
+      }
+    }
+
     if(doMonths & length(months)>0 & nrow(df_det[tolower(df_det$month) %in% months,])<1) proceed <- FALSE
     if(!proceed) {
       rm(list=c("df_det"))
@@ -161,13 +181,21 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     if (doParameters){
       theseParamsFields <- names(df_det)[!tolower(names(df_det)) %in% non_param_fields]
       fileParams <- df_det[F,]
-      if (length(parameters)>0) theseParamsFields <- tolower(parameters)
+      if (!fuzzyParameters & length(parameters)>0) {
+        theseParamsFields <- tolower(parameters)
+      }else if (fuzzyParameters & length(parameters)>0){
+        theseParamsFields <- NA
+        for (q in 1:length(parameters)){
+          thisParamsFields <- tolower(colnames(df_det)[grep(pattern = parameters[q], x=colnames(df_det))])
+          theseParamsFields <- c(theseParamsFields, thisParamsFields)
+          theseParamsFields <- theseParamsFields[!is.na(theseParamsFields)]
+        }
+      }
       for (p in 1:length(theseParamsFields)){
-        # there's potential for badly-entered data - 0 length strings, and written out "NA"
         if (qcMode){
-          #let the user know
-          if (nrow(df_det[nchar(df_det[,theseParamsFields[p]])<1,])>0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', empty (i.e. not-NA) cells were found."))
-          if (nrow(df_det[df_det[,theseParamsFields[p]] == "NA",])>0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', cells were found with 'NA' physically typed into it."))
+          # there's potential for badly-entered data - 0 length strings, and written out "NA"
+          if (nrow(df_det[which(nchar(df_det[,theseParamsFields[p]])<1),])>0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', empty (i.e. not-NA) cells were found."))
+          if (nrow(df_det[which(df_det[,theseParamsFields[p]] == "NA"),])>0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', cells were found with 'NA' physically typed into it."))
         }
         #remove them
         this_params <- unique(df_det[nchar(df_det[,theseParamsFields[p]])>0 &
@@ -182,10 +210,11 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     }
 
     if (!doParameters) df_det <- unique(df_det[,core_fields])
-
+    if (nrow(df_det)<1) next
     df_det$datafile <- i_file
     result_df <- rbind.data.frame(result_df, df_det)
     rm(list=c("df_det"))
   }
+
   return(result_df)
 }

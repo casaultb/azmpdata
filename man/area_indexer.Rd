@@ -11,9 +11,10 @@ area_indexer(
   datafiles = NULL,
   months = NULL,
   doMonths = F,
-  quiet = F,
   doParameters = F,
-  parameters = NULL
+  parameters = NULL,
+  fuzzyParameters = TRUE,
+  qcMode = F
 )
 }
 \arguments{
@@ -38,9 +39,6 @@ months, a vector of desired months can be provided (e.g. \code{area_indexer(mont
 \item{doMonths}{default is \code{F}. If this is set to \code{TRUE}, the results will include
 information about what month the data was collected (when available).}
 
-\item{quiet}{default is \code{F}.  If invalid parameters are sent, this function will alert the user
-of  the available valid values.  If set to T, the message will be hidden.}
-
 \item{doParameters}{default is \code{F}.  Identifying all of the parameters that were collected
 at each combination of area/site/year is a bit more intensive than leaving them out.  To force
 this function to do this, set this parameter to \code{doParameters=T}.  If one or more parameters
@@ -49,6 +47,13 @@ are provided, the function will override this default value and set \code{doPara
 \item{parameters}{default is \code{NULL}.  Many parameters exist - any named parameter found in
 any data file should work.  (e.g. \code{area_indexer(parameters=c("Arctic_Calanus_species",
 "integrated_phosphate_50"))})}
+
+\item{fuzzyParameters}{default is \code{T}.  By default, any discovered parameters that match
+values within \code{parameters} will be returned.  For example, \code{parameter="nitrate"} will
+return fields such as "integrated_nitrate_0_50", "integrated_nitrate_50_150", and "nitrate".  If
+you want exact matches only, set \code{fuzzyParameters = F}.}
+
+\item{qcMode}{default is \code{F}. Information about unexpected values will be shown.}
 }
 \value{
 a data.frame
@@ -56,6 +61,11 @@ a data.frame
 \description{
 This function assemble a dataframe consisting of the years and areas where the azmpdata
 packages\'s data has been collected, as well as the associated file where the data can be found.
+}
+\note{
+Note that each additional filter that gets sent will reduce the number of results returned.
+For example, if \code{doMonths = TRUE} and \code{years = 2010}, only those results from 2010 that
+also have monthly data will be returned.
 }
 \examples{
 \dontrun{
@@ -70,7 +80,7 @@ some_HLData <- area_indexer(areanames=c("HL","HL2"))
 sections_2017 <- area_indexer(areaTypes=c("section"), year = 2017)
 
 specificParameters_2000s <- area_indexer(parameters=c("Arctic_Calanus_species",
-                                         "integrated_phosphate_50"), year=c(2000:2009))
+                                         "integrated_phosphate_0_50"), year=c(2000:2009))
 februaryParameters <-area_indexer(doMonths = T, months = 2, doParameters = T)
 }
 }
