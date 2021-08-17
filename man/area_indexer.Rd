@@ -2,7 +2,7 @@
 % Please edit documentation in R/area_indexer.R
 \name{area_indexer}
 \alias{area_indexer}
-\title{area_indexer}
+\title{Filter azmpdata}
 \usage{
 area_indexer(
   years = NULL,

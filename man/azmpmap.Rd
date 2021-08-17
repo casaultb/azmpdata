@@ -2,7 +2,7 @@
 % Please edit documentation in R/azmpmap.R
 \name{azmpmap}
 \alias{azmpmap}
-\title{azmpmap}
+\title{Visualize azmpdata}
 \usage{
 azmpmap(quiet = T)
 }

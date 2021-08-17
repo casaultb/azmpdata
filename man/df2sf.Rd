@@ -2,7 +2,7 @@
 % Please edit documentation in R/df2sf.R
 \name{df2sf}
 \alias{df2sf}
-\title{df2sf}
+\title{Convert df to sf obect}
 \usage{
 df2sf(
   input = NULL,

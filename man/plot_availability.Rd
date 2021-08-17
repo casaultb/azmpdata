@@ -2,13 +2,13 @@
 % Please edit documentation in R/plot_availability.R
 \name{plot_availability}
 \alias{plot_availability}
-\title{plot_availability}
+\title{Frequency plot of parameter(s) from specified locations}
 \usage{
 plot_availability(
   areaType = NULL,
   areaName = NULL,
   parameters = NULL,
-  fuzzyParameters = TRUE
+  fuzzyParameters = FALSE
 )
 }
 \arguments{
@@ -28,7 +28,7 @@ This generates a score card of samples per month based on areaType, areaName, an
 }
 \examples{
 \dontrun{
-plot_availability(areaType="section", areaName="p5", parameter="nitrate")
+plot_availability(areaType="station", areaName="P5", parameter="nitrate")
 }
 }
 \author{
