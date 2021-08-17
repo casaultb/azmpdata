@@ -1,4 +1,4 @@
-#' @title Check if update available for package
+#' @title Check if update needed for package
 #' @description This function compares the package with the available version on
 #' github, and prompts the user to update.
 #' @param gitPkg default is \code{NULL}. This is the URL to the DESCRIPTION file

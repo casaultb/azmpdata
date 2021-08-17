@@ -1,4 +1,4 @@
-#' @title Visualize azmpdata
+#' @title azmpmap
 #' @description This generates a leaflet plot of the geospatial files stored at
 #' ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/lookup/polygons/.
 #' @param quiet default is \code{T} This indicates whether or not you want to see messages related

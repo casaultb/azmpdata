@@ -12,7 +12,7 @@
 #'   library trees to search through, or NULL. The default value of NULL
 #'   corresponds to checking the loaded namespace, then all libraries
 #'   currently known in .libPaths().
-#' @examples
+#' @example
 #' \dontrun{
 #' res <- variable_lookup('nitrate') 
 #' res2 <- variable_lookup("nitrate", search_help = T)

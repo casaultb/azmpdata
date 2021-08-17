@@ -1,4 +1,4 @@
-#' @title Convert df to sf obect
+#' @title df2sf
 #' @description This function will convert a df into an sf objects.
 #' @param input a df contain coordinates for conversion to sf.
 #' @param lat.field the default is \code{"latitude"}. This is the name of the field holding latitude
