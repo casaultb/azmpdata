@@ -43,6 +43,13 @@ plot_availability <- function(areaType=NULL,
         s <- unique(unique$section)
     }
 
+    # Note this is because when you do the following,
+    # Gulf of St. Lawrence is the only one that has 'month'
+    # k <- area_indexer(areaTypes = "area", doParameters = T)
+    # unique(k$area)
+    # d <- area_indexer(areaTypes = "area", doParameters = T, doMonths=T)
+    # unique(d$area)
+
     if (areaType == "area") {
         s <- "Gulf of St. Lawrence"
     }
@@ -127,7 +134,7 @@ plot_availability <- function(areaType=NULL,
 
                 freqTable <- with(k, table(year, month))
 
-                cm <- oce::colormap(z = freqTable)
+                cm <- oce::colormap(zlim=c(0, max(freqTable)))
                 x <- as.numeric(rownames(freqTable)) # year
                 y <- as.numeric(colnames(freqTable)) # month
                 oce::imagep(x = x, y = y, z = freqTable,
