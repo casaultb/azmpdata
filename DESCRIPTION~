@@ -33,6 +33,7 @@ RoxygenNote: 7.1.1
 Suggests: 
     testthat (>= 2.1.0),
     knitr,
+    tidyr,
     rmarkdown,
 URL: https://casaultb.github.io/azmpdata, https://github.com/casaultb/azmpdata
 BugReports: https://github.com/casaultb/azmpdata/issues

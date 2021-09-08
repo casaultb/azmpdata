@@ -144,7 +144,7 @@ plot_availability <- function(areaType=NULL,
                     RemoteSensing_Weekly_Broadscale$month <- vec
                     RemoteSensing_Weekly_Broadscale$month <- as.Date(RemoteSensing_Weekly_Broadscale$doy, origin = paste0(RemoteSensing_Weekly_Broadscale$year,"-01-01"))
                     k <- RemoteSensing_Weekly_Broadscale %>%
-                        tidyr::separate(month, sep="-", into = c("year", "month", "day"))
+                        separate(month, sep="-", into = c("year", "month", "day"))
                 }
 
                 freqTable <- with(k, table(year, month))
