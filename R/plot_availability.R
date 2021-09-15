@@ -18,6 +18,9 @@ plot_availability <- function(areaType=NULL,
                               fuzzyParameters = FALSE
 )
 {
+    # Note: This is for area
+    if (!requireNamespace("tidyr", quietly=TRUE))
+        stop("must install.packages('tidyr') for plot_availability() to work")
 
     if (is.null(areaType)) {
         stop("in plot_availability() :\n provide an areaType of either station, section, or area", call.=FALSE)
@@ -35,7 +38,7 @@ plot_availability <- function(areaType=NULL,
         stop("in plot_availability() :\n can only give one areaType at a time", call.=FALSE)
     }
 
-    unique <- area_indexer(areaTypes=areaType)
+    unique <- area_indexer(areaTypes=areaType, doMonths=T)
     if (areaType == "station") {
         s <- unique(unique$station)
     }
@@ -43,12 +46,20 @@ plot_availability <- function(areaType=NULL,
         s <- unique(unique$section)
     }
 
-    if (areaType == "area") {
-        s <- "Gulf of St. Lawrence"
-    }
+    # Note this is because when you do the following,
+    # Gulf of St. Lawrence is the only one that has 'month'
+    # k <- area_indexer(areaTypes = "area", doParameters = T)
+    # unique(k$area)
+    # d <- area_indexer(areaTypes = "area", doParameters = T, doMonths=T)
+    # unique(d$area)
 
-    if (fuzzyParameters == T) {
-    message("Each plot potentially combines multiple parameters matching the value(s) of 'params'.  To avoid this, please specify parameters exactly, and set 'fuzzyParameters' to FALSE")
+    # Note that in RemoteSensing_Weekly_Broadscale information is stored in doy.
+    # I changed that to month, and look at the unique(RemoteSensing_Weekly_Broadscale$area)
+    # To get the other names.
+
+    if (areaType == "area") {
+        s <- c("Gulf of St. Lawrence", "CS_remote_sensing",  "ESS_remote_sensing", "CSS_remote_sensing",
+            "WSS_remote_sensing", "GB_remote_sensing",  "LS_remote_sensing")
     }
 
     if (is.null(areaName)) {
@@ -61,7 +72,7 @@ plot_availability <- function(areaType=NULL,
         }
 
         if (areaType == "area") {
-            stop("in plot_availability() :\n provide areaName of ", s, call.=FALSE)
+            stop("in plot_availability() :\n provide areaName of ", paste(s, collapse=", "), call.=FALSE)
         }
     }
 
@@ -70,75 +81,85 @@ plot_availability <- function(areaType=NULL,
     }
 
     if (!areaName %in% s) {
-        stop("in plot_availability() :\n", areaName, " is not an areaName within areaType = ", areaType, " try the following ", paste(s, collapse=" "), call.=FALSE)
+        stop("in plot_availability() :\n", areaName, " is not an areaName within areaType = ", areaType, " try the following ", paste(s, collapse=", "), call.=FALSE)
     }
 
 
     # The following is for error messages
-    uniquep <- area_indexer(areaTypes=areaType, areanames=areaName, doParameters=T)
+    uniquep <- area_indexer(areaTypes=areaType, areanames=areaName, doParameters=T, doMonths=T)
     param <- unique(uniquep$parameter)
+    if (areaType == "area" && areaName %in% c("CS_remote_sensing", "ESS_remote_sensing", "CSS_remote_sensing",
+            "WSS_remote_sensing", "GB_remote_sensing", "LS_remote_sensing")) {
+        param <- "surface_chlorophyll"
+    }
+
     if (is.null(parameters)) {
-        stop("in plot_availability() :\n when areaname is equal to ", areaName, " must use the following parameters ", paste(param, collapse=","), call.=FALSE)
+        stop("in plot_availability() :\n when areaName is equal to ", areaName, " must use the following parameters ", paste(param, collapse=","), call.=FALSE)
     }
 
 
     for (p in seq_along(parameters)) {
-        if (!parameters[p] %in% param | is.null(parameters)) {
-            stop("in plot_availability() : ",parameters[p], " not a parameter in ",areaName, " try one of ", paste(param, collapse=" ")) } else {
-                k <- area_indexer(areaTypes=areaType, areanames = areaName, doMonths=T, parameters=parameters[p],
-                                  doParameters=T, fuzzyParameters = fuzzyParameters)
+        if (!parameters[p] %in% param | is.null(parameters))
+            stop("in plot_availability() : ",parameters[p], " not a parameter in ",areaName, " try one of ", paste(param, collapse=" "))
+        k <- area_indexer(areaTypes=areaType, areanames = areaName, doMonths=T, parameters=parameters[p],
+            doParameters=T, fuzzyParameters = fuzzyParameters)
+        params <- sort(unique(k$parameter))
 
-                params <- sort(unique(k$parameter))
-                if (length(params)>3) params = "multiple parameters"
-                areas <- unique(k[!is.na(k$area), "area"])
-                sections <- unique(k[!is.na(k$section), "section"])
-                stations <- unique(k[!is.na(k$station), "station"])
-                if(is.null(areaType)){
-                    allAreas <- c(areas, sections, stations)
-                    areaDesc <- ""
-                }else if(areaType == "section"){
-                    allAreas <- c(sections)
-                    areaDesc <- "section(s):"
-                }else if(areaType == "station"){
-                    allAreas <- c(stations)
-                    areaDesc <- "station(s):"
-                }else if(areaType == "area"){
-                    allAreas <- c(areas)
-                    areaDesc <- "area(s):"
-                }
-
-                if (length(allAreas)<=3){
-                    areaDesc <- paste(areaDesc,paste0(allAreas, collapse = ", "))
-                }else if (length(allAreas)>3 & length(areas)<1 & length(stations)<1) {
-                    areaDesc <- "multiple sections"
-                }else if (length(allAreas)>3 & length(areas)<1 & length(sections)<1) {
-                    areaDesc <- "multiple stations"
-                }else if (length(allAreas)>3 & length(stations)<1 & length(sections)<1 ){
-                    areaDesc <- "multiple areas"
-                }else if (length(allAreas)>3 & length(areas)<1) {
-                    areaDesc <- "multiple stations and sections"
-                }else if (length(allAreas)>3 & length(stations)<1) {
-                    areaDesc <- "multiple areas and sections"
-                }else if (length(allAreas)>3 & length(sections)<1) {
-                    areaDesc <- "multiple areas and stations"
-                }else if (length(allAreas)>3){
-                    areaDesc <- "multiple places"
-                }
-
+        if (length(params) != 1 && areaType != "area") {
+            for (P in params) {
+                # Note that I had to make fuzzyParameters FALSE here
+                k <- area_indexer(areaTypes=areaType, areanames = areaName, doMonths=T, parameters=P,
+                    doParameters=T, fuzzyParameters = F)
+                message(P)
                 freqTable <- with(k, table(year, month))
-
-                cm <- oce::colormap(z = freqTable)
+                cm <- oce::colormap(zlim=c(0, max(freqTable)))
                 x <- as.numeric(rownames(freqTable)) # year
                 y <- as.numeric(colnames(freqTable)) # month
                 oce::imagep(x = x, y = y, z = freqTable,
-                            colormap = cm,
-                            drawPalette = TRUE)
+                    colormap = cm,
+                    drawPalette = TRUE)
                 graphics::box()
                 graphics::abline(h = y + 0.5)
                 graphics::abline(v = x + 0.5)
                 graphics::mtext(side = 1, text = 'Year', line = 2, cex = 4/5)
                 graphics::mtext(side = 2, text = 'Month', line = 2, cex = 4/5)
-                graphics::mtext(side=3, text= paste("Frequency table for ", paste0(params, collapse = ","), " at ",areaDesc), cex=4/5)
+                graphics::mtext(side=3, text= paste("Frequency table for ", paste0(P, collapse = ","), " at ",areaName), cex=4/5)
+            }
+        } else {
+
+        if (areaType == "area" && areaName %in%  c("CS_remote_sensing",  "ESS_remote_sensing", "CSS_remote_sensing",
+            "WSS_remote_sensing", "GB_remote_sensing",  "LS_remote_sensing")) {
+            vec <- rep("NA", length(RemoteSensing_Weekly_Broadscale$doy))
+            RemoteSensing_Weekly_Broadscale$month <- vec
+            RemoteSensing_Weekly_Broadscale$month <- as.Date(RemoteSensing_Weekly_Broadscale$doy, origin = paste0(RemoteSensing_Weekly_Broadscale$year,"-01-01"))
+            d <- RemoteSensing_Weekly_Broadscale %>%
+                tidyr::separate(month, sep="-", into = c("year", "month", "day"))
+            areas <- unique(d$area)
+
+            for (a in areas) {
+                k <- d[which(d$area == a),]
+            }
+        }
+
+            freqTable <- with(k, table(year, month))
+
+            cm <- oce::colormap(zlim=c(0, max(freqTable)))
+            x <- as.numeric(rownames(freqTable)) # year
+            y <- as.numeric(colnames(freqTable)) # month
+            oce::imagep(x = x, y = y, z = freqTable,
+                colormap = cm,
+                drawPalette = TRUE)
+            graphics::box()
+            graphics::abline(h = y + 0.5)
+            graphics::abline(v = x + 0.5)
+            graphics::mtext(side = 1, text = 'Year', line = 2, cex = 4/5)
+            graphics::mtext(side = 2, text = 'Month', line = 2, cex = 4/5)
+            if (areaType == "area" &&  areaName %in%  c("CS_remote_sensing",  "ESS_remote_sensing", "CSS_remote_sensing",
+            "WSS_remote_sensing", "GB_remote_sensing",  "LS_remote_sensing")) {
+                graphics::mtext(side=3, text= paste("Frequency table for surface_chlorophyll at ", areaName), cex=4/5)
+            } else {
+                graphics::mtext(side=3, text= paste("Frequency table for ", paste0(params, collapse = ","), " at ",areaName), cex=4/5)
+            }
         }
 
 }}
