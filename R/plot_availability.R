@@ -18,9 +18,6 @@ plot_availability <- function(areaType=NULL,
                               fuzzyParameters = FALSE
 )
 {
-    # Note: This is for area
-    if (!requireNamespace("tidyr", quietly=TRUE))
-        stop("must install.packages('tidyr') for plot_availability() to work")
 
     if (is.null(areaType)) {
         stop("in plot_availability() :\n provide an areaType of either station, section, or area", call.=FALSE)
