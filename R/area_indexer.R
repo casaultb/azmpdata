@@ -1,6 +1,6 @@
-#' @title Filter azmpdata
-#' @description This function assemble a dataframe consisting of the years and areas where the azmpdata
-#' packages\'s data has been collected, as well as the associated file where the data can be found.
+#' @title area_indexer
+#' @description This function assembles a dataframe consisting of the years and areas where the azmpdata
+#' packages\'s data has been collected, as well as the associated file(s) where the data can be found.
 #' @param years default is \code{NULL}.  If you want to restrict the available data by one or more
 #' years, a vector of desired years can be provided (e.g. \code{area_indexer(years=c(2017,2018))})
 #' @param areanames default is \code{NULL}.  If you want to restrict the available data by one or
@@ -66,7 +66,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
   }
 
   result_df <- data.frame(year = integer(), area=character(), section=character(), station=character(), datafile = character() )
-  core_fields <- c("year", "area","section", "station")
+  core_fields <- c("year", "area","section", "station","datafile")
   # area_year_fields <- core_fields
   coord_fields <- c("latitude","longitude")
   non_param_fields <- c(core_fields, "datafile","latitude","longitude", "cruisenumber","month",
@@ -91,6 +91,15 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     proceed <- TRUE
     df <- get(i_file)
     var_names <- names(df)
+    df$datafile <- i_file
+
+    if (i_file %in% c("Derived_Occupations_Sections", "Discrete_Occupations_Sections")){
+      #there are cases where the station information also exists in the section file
+      #retaining the station info in these files results in duplicated data (for plot_availability)
+      #first found with:  if (length(var_names[var_names %in% c("station", "section")])==2){
+      df <- df[length(df$station)<1,]
+    }
+
     if (qcMode & all(coord_fields %in% var_names)){
       #this bit just checks for specific cases of coordinates with no associated stations.
       this_df1 <- df[!is.na(df$latitude) & !is.na(df$longitude),]
@@ -174,7 +183,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
       if (is.character(df_mon$month)) df_mon$month <- as.integer(df_mon$month)
       if (length(months)>0) df_mon <-df_mon[which(df_mon$month %in% months),]
       if (nrow(df_mon)<1)next
-      df_det <- merge(df_det,df_mon)
+      df_det <- unique(merge(df_det,df_mon))
       rm(list=c("df_mon"))
     }
 
@@ -198,9 +207,43 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
           if (nrow(df_det[which(df_det[,theseParamsFields[p]] == "NA"),])>0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', cells were found with 'NA' physically typed into it."))
         }
         #remove them
+
+        this_params <- df_det[which(nchar(df_det[,theseParamsFields[p]])>0 &
+                                      df_det[,theseParamsFields[p]] != "NA" &
+                                      !is.na(df_det[,theseParamsFields[p]])),c(core_fields,theseParamsFields[p])]
+
+
+        if (nrow(this_params)<1)next
+
+        this_params[is.na(this_params)] <- -999
+        this_paramsOrig<-this_params
+        if (doMonths ){
+
+          this_params <- aggregate(
+            x = list(cnt = this_params$month),
+            by = list(year = this_params$year ,
+                      area = this_params$area,
+                      section = this_params$section,
+                      station = this_params$station,
+                      parameter = this_params$parameter,
+                      month = this_params$month
+            ),
+            length
+          )
+        }else{
         this_params <- unique(df_det[nchar(df_det[,theseParamsFields[p]])>0 &
                                        df_det[,theseParamsFields[p]] != "NA" &
                                        !is.na(df_det[theseParamsFields[p]]) ,core_fields])
+        }
+
+        this_params[this_params == -999] <- NA
+
+
+        # colnames(this_params)[colnames(this_params)=="cnt"] <- paste0("cnt",theseParamsFields[p])
+
+        # this_params <- unique(df_det[nchar(df_det[,theseParamsFields[p]])>0 &
+        #                                df_det[,theseParamsFields[p]] != "NA" &
+        #                                !is.na(df_det[theseParamsFields[p]]) ,core_fields])
         if (nrow(this_params)<1)next
         this_params$parameter <- theseParamsFields[p]
         fileParams <-rbind.data.frame(fileParams,this_params)
