@@ -93,6 +93,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     var_names <- names(df)
     df$datafile <- i_file
 
+
     if (i_file %in% c("Derived_Occupations_Sections", "Discrete_Occupations_Sections")){
       #there are cases where the station information also exists in the section file
       #retaining the station info in these files results in duplicated data (for plot_availability)
@@ -109,7 +110,6 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
       rm(list = c("this_df1"))
     }
 
-    # if(i_file == "Zooplankton_Occupations_Broadscale")browser()
     #Have ensured file has sufficient info to proceed (i.e. a year, and at least one of area, section or station)
     df_core <- df[,names(df) %in% core_fields, drop=FALSE]
     these_core_fields <- var_names[var_names != "year" & var_names %in% colnames(df_core)]
