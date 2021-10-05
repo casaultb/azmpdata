@@ -93,6 +93,10 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     var_names <- names(df)
     df$datafile <- i_file
 
+    if ("doy" %in% names(df) & "year" %in% names(df))
+    {
+      df$month <- lubridate::month(as.Date(df$doy, origin = paste0(df$year,"-01-01")))
+    }
 
     if (i_file %in% c("Derived_Occupations_Sections", "Discrete_Occupations_Sections")){
       #there are cases where the station information also exists in the section file
@@ -232,9 +236,9 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
             length
           )
         }else{
-        this_params <- unique(df_det[nchar(df_det[,theseParamsFields[p]])>0 &
-                                       df_det[,theseParamsFields[p]] != "NA" &
-                                       !is.na(df_det[theseParamsFields[p]]) ,core_fields])
+          this_params <- unique(df_det[nchar(df_det[,theseParamsFields[p]])>0 &
+                                         df_det[,theseParamsFields[p]] != "NA" &
+                                         !is.na(df_det[theseParamsFields[p]]) ,core_fields])
         }
 
         this_params[this_params == -999] <- NA
