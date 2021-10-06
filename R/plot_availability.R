@@ -19,9 +19,6 @@ plot_availability <- function(areaType=NULL,
 )
 {
     # Note: This is for area
-    if (!requireNamespace("tidyr", quietly=TRUE))
-        stop("must install.packages('tidyr') for plot_availability() to work")
-
     if (is.null(areaType)) {
         stop("in plot_availability() :\n provide an areaType of either station, section, or area", call.=FALSE)
     }
@@ -59,7 +56,7 @@ plot_availability <- function(areaType=NULL,
 
     if (areaType == "area") {
         s <- c("Gulf of St. Lawrence", "CS_remote_sensing",  "ESS_remote_sensing", "CSS_remote_sensing",
-               "WSS_remote_sensing", "GB_remote_sensing",  "LS_remote_sensing")
+            "WSS_remote_sensing", "GB_remote_sensing",  "LS_remote_sensing")
     }
 
     if (is.null(areaName)) {
@@ -89,7 +86,7 @@ plot_availability <- function(areaType=NULL,
     uniquep <- area_indexer(areaTypes=areaType, areanames=areaName, doParameters=T, doMonths=T)
     param <- unique(uniquep$parameter)
     if (areaType == "area" && areaName %in% c("CS_remote_sensing", "ESS_remote_sensing", "CSS_remote_sensing",
-                                              "WSS_remote_sensing", "GB_remote_sensing", "LS_remote_sensing")) {
+            "WSS_remote_sensing", "GB_remote_sensing", "LS_remote_sensing")) {
         param <- "surface_chlorophyll"
     }
 
@@ -102,14 +99,14 @@ plot_availability <- function(areaType=NULL,
         if (!parameters[p] %in% param | is.null(parameters))
             stop("in plot_availability() : ",parameters[p], " not a parameter in ",areaName, " try one of ", paste(param, collapse=" "))
         k <- area_indexer(areaTypes=areaType, areanames = areaName, doMonths=T, parameters=parameters[p],
-                          doParameters=T, fuzzyParameters = fuzzyParameters)
+            doParameters=T, fuzzyParameters = fuzzyParameters)
         params <- sort(unique(k$parameter))
 
-        if (length(params) != 1 && areaType != "area") {
+        if (length(params) != 1) {
             for (P in params) {
                 # Note that I had to make fuzzyParameters FALSE here
                 k <- area_indexer(areaTypes=areaType, areanames = areaName, doMonths=T, parameters=P,
-                                  doParameters=T, fuzzyParameters = F)
+                    doParameters=T, fuzzyParameters = F)
                 #freqTable <- with(k, table(year, month))
                 #cm <- oce::colormap(zlim=c(0, max(freqTable)))
 
@@ -122,10 +119,10 @@ plot_availability <- function(areaType=NULL,
                 k1 <- aggregate(
                     x = list(cnt = k$cnt),
                     by = list(year = k$year ,
-                              xx = k[,fieldKp],
-                              parameter = k$parameter,
-                              month = k$month
-                    ),
+                        xx = k[,fieldKp],
+                        parameter = k$parameter,
+                        month = k$month
+                        ),
                     sum
                 )
                 freqTable <- reshape(k1, idvar=c('year','xx','parameter'), timevar='month',direction='wide')
@@ -141,12 +138,14 @@ plot_availability <- function(areaType=NULL,
                 freqTable <- as.table(as.matrix(freqTable))
                 names(dimnames(freqTable)[1])<- "year"
                 names(dimnames(freqTable)[2])<- "month"
-                cm <- oce::colormap(z = freqTable)
+                # the below line fixes the problem of expected increasing values with imagep
+                cm <- oce::colormap(zlim=c(0, max(freqTable)))
+                #cm <- oce::colormap(z = freqTable)
                 x <- as.numeric(rownames(freqTable)) # year
                 y <- as.numeric(colnames(freqTable)) # month
                 oce::imagep(x = x, y = y, z = freqTable,
-                            colormap = cm,
-                            drawPalette = TRUE)
+                    colormap = cm,
+                    drawPalette = TRUE)
                 graphics::box()
                 graphics::abline(h = y + 0.5)
                 graphics::abline(v = x + 0.5)
@@ -154,31 +153,6 @@ plot_availability <- function(areaType=NULL,
                 graphics::mtext(side = 2, text = 'Month', line = 2, cex = 4/5)
                 graphics::mtext(side=3, text= paste("Frequency table for ", paste0(P, collapse = ","), " at ",areaName), cex=4/5)
             }
-        } else if (areaType == "area" && areaName %in%  c("CS_remote_sensing",  "ESS_remote_sensing", "CSS_remote_sensing",
-                                                          "WSS_remote_sensing", "GB_remote_sensing",  "LS_remote_sensing")) {
-            vec <- rep("NA", length(RemoteSensing_Weekly_Broadscale$doy))
-            RemoteSensing_Weekly_Broadscale$month <- vec
-            RemoteSensing_Weekly_Broadscale$month <- as.Date(RemoteSensing_Weekly_Broadscale$doy, origin = paste0(RemoteSensing_Weekly_Broadscale$year,"-01-01"))
-            d <- RemoteSensing_Weekly_Broadscale %>%
-                tidyr::separate(month, sep="-", into = c("year", "month", "day"))
-            areas <- unique(d$area)
-
-            for (a in areas) {
-                k <- d[which(d$area == a),]
-            }
-            freqTable <- with(k, table(year, month))
-            cm <- oce::colormap(z = freqTable)
-            x <- as.numeric(rownames(freqTable)) # year
-            y <- as.numeric(colnames(freqTable)) # month
-            oce::imagep(x = x, y = y, z = freqTable,
-                        colormap = cm,
-                        drawPalette = TRUE)
-            graphics::box()
-            graphics::abline(h = y + 0.5)
-            graphics::abline(v = x + 0.5)
-            graphics::mtext(side = 1, text = 'Year', line = 2, cex = 4/5)
-            graphics::mtext(side = 2, text = 'Month', line = 2, cex = 4/5)
-            graphics::mtext(side=3, text= paste("Frequency table for surface_chlorophyll at ", areaName), cex=4/5)
         } else {
 
             if(areaType=="station") fieldKp <- "station"
@@ -188,10 +162,10 @@ plot_availability <- function(areaType=NULL,
             k1 <- aggregate(
                 x = list(cnt = k$cnt),
                 by = list(year = k$year ,
-                          xx = k[,fieldKp],
-                          parameter = k$parameter,
-                          month = k$month
-                ),
+                    xx = k[,fieldKp],
+                    parameter = k$parameter,
+                    month = k$month
+                    ),
                 sum
             )
             freqTable <- reshape(k1, idvar=c('year','xx','parameter'), timevar='month',direction='wide')
@@ -207,16 +181,16 @@ plot_availability <- function(areaType=NULL,
             freqTable <- as.table(as.matrix(freqTable))
             names(dimnames(freqTable)[1])<- "year"
             names(dimnames(freqTable)[2])<- "month"
-            cm <- oce::colormap(z = freqTable)
+            #cm <- oce::colormap(z = freqTable)
 
             # freqTable <- with(k, table(year, month))
 
-            # cm <- oce::colormap(zlim=c(0, max(freqTable)))
+            cm <- oce::colormap(zlim=c(0, max(freqTable)))
             x <- as.numeric(rownames(freqTable)) # year
             y <- as.numeric(colnames(freqTable)) # month
             oce::imagep(x = x, y = y, z = freqTable,
-                        colormap = cm,
-                        drawPalette = TRUE)
+                colormap = cm,
+                drawPalette = TRUE)
             graphics::box()
             graphics::abline(h = y + 0.5)
             graphics::abline(v = x + 0.5)
@@ -225,4 +199,4 @@ plot_availability <- function(areaType=NULL,
             graphics::mtext(side=3, text= paste("Frequency table for ", paste0(params, collapse = ","), " at ",areaName), cex=4/5)
         }
 
-    }}
+}}
