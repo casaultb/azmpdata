@@ -25,7 +25,7 @@ and metadata.
 }
 \examples{
 \dontrun{
-res <- variable_lookup('nitrate') 
+res <- variable_lookup('nitrate')
 res2 <- variable_lookup("nitrate", search_help = T)
 }
 

@@ -48,11 +48,12 @@
 #' @note Note that each additional filter that gets sent will reduce the number of results returned.
 #' For example, if \code{doMonths = TRUE} and \code{years = 2010}, only those results from 2010 that
 #' also have monthly data will be returned.
+#' @importFrom stats aggregate complete.cases
+#' @importFrom lubridate month
 #' @export
 #'
 area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, datafiles = NULL, months = NULL, doMonths = F, doParameters =F, parameters = NULL, fuzzyParameters = TRUE, qcMode = F){
-  area <- areaType <- areaname <- section <- station <- parameter <- month <- Discrete_Occupations_Sections <- Derived_Occupations_Sections <- NA
-
+  area <- areaType <- areaname <- section <- station <- parameter <- month <- NA
   areanames <- tolower(areanames)
   areaTypes <- tolower(areaTypes)
   datafiles <- tolower(datafiles)
@@ -98,12 +99,16 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
       df$month <- lubridate::month(as.Date(df$doy, origin = paste0(df$year,"-01-01")))
     }
 
-    if (i_file %in% c("Derived_Occupations_Sections", "Discrete_Occupations_Sections")){
-      #there are cases where the station information also exists in the section file
-      #retaining the station info in these files results in duplicated data (for plot_availability)
-      #first found with:  if (length(var_names[var_names %in% c("station", "section")])==2){
-      if (i_file == "Discrete_Occupations_Sections") df <- Discrete_Occupations_Sections[!Discrete_Occupations_Sections$sample_id %in% Discrete_Occupations_Stations$sample_id,]
-      if (i_file == "Derived_Occupations_Sections") df <- Derived_Occupations_Sections[!Derived_Occupations_Sections$event_id %in% Derived_Occupations_Stations$event_id,]
+    #there are cases where the station information also exists in the section file
+    #retaining the station info in these files results in duplicated data (for plot_availability)
+    #first found with:  if (length(var_names[var_names %in% c("station", "section")])==2){
+    if (i_file == "Discrete_Occupations_Sections") {
+      stnFile = get("Discrete_Occupations_Stations")
+      df <- df[!df$sample_id %in% stnFile$sample_id,]
+    }
+    if (i_file == "Derived_Occupations_Sections"){
+      stnFile = get("Derived_Occupations_Stations")
+      df <- df[!df$event_id %in% stnFile$event_id,]
     }
 
     if (qcMode & all(coord_fields %in% var_names)){
@@ -224,7 +229,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
         this_paramsOrig<-this_params
         if (doMonths ){
 
-          this_params <- aggregate(
+          this_params <- stats::aggregate(
             x = list(cnt = this_params$month),
             by = list(year = this_params$year ,
                       area = this_params$area,

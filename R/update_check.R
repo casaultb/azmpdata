@@ -9,6 +9,7 @@
 #'
 #' @family general_use
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}, Emily Chisholm
+#' @importFrom utils packageDescription tail read.delim
 #' @export
 update_check<-function(gitPkg = NULL){
 

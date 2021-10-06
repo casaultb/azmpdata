@@ -11,6 +11,9 @@
 #' plot_availability(areaType="station", areaName="P5", parameter="nitrate")
 #' }
 #' @author  Jaimie Harbin \email{jaimie.harbin@@dfo-mpo.gc.ca}
+#' @importFrom stats aggregate reshape
+#' @importFrom oce colormap imagep
+#' @import graphics
 #' @export
 plot_availability <- function(areaType=NULL,
                               areaName=NULL,
@@ -125,7 +128,7 @@ plot_availability <- function(areaType=NULL,
                         ),
                     sum
                 )
-                freqTable <- reshape(k1, idvar=c('year','xx','parameter'), timevar='month',direction='wide')
+                freqTable <- stats::reshape(k1, idvar=c('year','xx','parameter'), timevar='month',direction='wide')
                 attr(freqTable, "reshapeWide") <- NULL
 
                 freqTable = freqTable[with(freqTable, order(year)), ]
@@ -159,7 +162,7 @@ plot_availability <- function(areaType=NULL,
             if(areaType=="section") fieldKp <- "section"
             if(areaType=="area") fieldKp <- "area"
             k <- k[,c("year",fieldKp, "parameter", "month","cnt","datafile")]
-            k1 <- aggregate(
+            k1 <- stats::aggregate(
                 x = list(cnt = k$cnt),
                 by = list(year = k$year ,
                     xx = k[,fieldKp],

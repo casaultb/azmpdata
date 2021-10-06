@@ -7,6 +7,9 @@
 #' map <- azmpmap()
 #' }
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
+#' @importFrom utils read.csv
+#' @importFrom stats aggregate
+#' @import leaflet
 #' @export
 
 azmpmap <- function(quiet=T){
