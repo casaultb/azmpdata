@@ -51,7 +51,7 @@
 #' @export
 #'
 area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, datafiles = NULL, months = NULL, doMonths = F, doParameters =F, parameters = NULL, fuzzyParameters = TRUE, qcMode = F){
-  area <- areaType <- areaname <- section <- station <- parameter <- month <- NA
+  area <- areaType <- areaname <- section <- station <- parameter <- month <- Discrete_Occupations_Sections <- Derived_Occupations_Sections <- NA
 
   areanames <- tolower(areanames)
   areaTypes <- tolower(areaTypes)
@@ -242,13 +242,6 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
         }
 
         this_params[this_params == -999] <- NA
-
-
-        # colnames(this_params)[colnames(this_params)=="cnt"] <- paste0("cnt",theseParamsFields[p])
-
-        # this_params <- unique(df_det[nchar(df_det[,theseParamsFields[p]])>0 &
-        #                                df_det[,theseParamsFields[p]] != "NA" &
-        #                                !is.na(df_det[theseParamsFields[p]]) ,core_fields])
         if (nrow(this_params)<1)next
         this_params$parameter <- theseParamsFields[p]
         fileParams <-rbind.data.frame(fileParams,this_params)
