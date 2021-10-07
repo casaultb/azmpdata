@@ -28,6 +28,8 @@
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}
 #' @note This is a duplicate of what exists in https://github.com/Maritimes/Mar.utils/blob/master/R/df2sf.R.
 #' It is copied, rather than added as a dependency to reduce the number of packages necessary.
+#' @importFrom stats aggregate
+#' @importFrom sfheaders sf_point sf_linestring sf_polygon
 #' @export
 df2sf <- function(input = NULL, lat.field="latitude", lon.field="longitude",
                   PID=NULL, ORD=NULL, epsg=4326,

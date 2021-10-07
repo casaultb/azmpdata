@@ -11,6 +11,9 @@
 #' plot_availability(areaType="station", areaName="P5", parameter="nitrate")
 #' }
 #' @author  Jaimie Harbin \email{jaimie.harbin@@dfo-mpo.gc.ca}
+#' @importFrom stats aggregate reshape
+#' @importFrom oce colormap imagep
+#' @import graphics
 #' @export
 plot_availability <- function(areaType=NULL,
                               areaName=NULL,
@@ -19,9 +22,6 @@ plot_availability <- function(areaType=NULL,
 )
 {
     # Note: This is for area
-    if (!requireNamespace("tidyr", quietly=TRUE))
-        stop("must install.packages('tidyr') for plot_availability() to work")
-
     if (is.null(areaType)) {
         stop("in plot_availability() :\n provide an areaType of either station, section, or area", call.=FALSE)
     }
@@ -105,14 +105,45 @@ plot_availability <- function(areaType=NULL,
             doParameters=T, fuzzyParameters = fuzzyParameters)
         params <- sort(unique(k$parameter))
 
-        if (length(params) != 1 && areaType != "area") {
+        if (length(params) != 1) {
             for (P in params) {
                 # Note that I had to make fuzzyParameters FALSE here
                 k <- area_indexer(areaTypes=areaType, areanames = areaName, doMonths=T, parameters=P,
                     doParameters=T, fuzzyParameters = F)
-                message(P)
-                freqTable <- with(k, table(year, month))
+                #freqTable <- with(k, table(year, month))
+                #cm <- oce::colormap(zlim=c(0, max(freqTable)))
+
+                if(areaType=="station") fieldKp <- "station"
+                if(areaType=="section") fieldKp <- "section"
+                if(areaType=="area") fieldKp <- "area"
+                k <- k[,c("year",fieldKp, "parameter", "month","cnt","datafile")] # this changes "area", for example, to station
+                #message("the length of year is ", length(k$year), " and the lenght of station is ", length(k$station))
+                # The following is splitting data into subsets
+                k1 <- aggregate(
+                    x = list(cnt = k$cnt),
+                    by = list(year = k$year ,
+                        xx = k[,fieldKp],
+                        parameter = k$parameter,
+                        month = k$month
+                        ),
+                    sum
+                )
+                freqTable <- stats::reshape(k1, idvar=c('year','xx','parameter'), timevar='month',direction='wide')
+                attr(freqTable, "reshapeWide") <- NULL
+
+                freqTable = freqTable[with(freqTable, order(year)), ]
+                freqTable$xx <- freqTable$parameter <- NULL
+                colnames(freqTable) <- sub("cnt\\.", "", colnames(freqTable))
+                freqTable[is.na(freqTable)] <- 0
+                rownames(freqTable)<- freqTable[,1]
+                freqTable$year <- NULL
+
+                freqTable <- as.table(as.matrix(freqTable))
+                names(dimnames(freqTable)[1])<- "year"
+                names(dimnames(freqTable)[2])<- "month"
+                # the below line fixes the problem of expected increasing values with imagep
                 cm <- oce::colormap(zlim=c(0, max(freqTable)))
+                #cm <- oce::colormap(z = freqTable)
                 x <- as.numeric(rownames(freqTable)) # year
                 y <- as.numeric(colnames(freqTable)) # month
                 oce::imagep(x = x, y = y, z = freqTable,
@@ -127,21 +158,35 @@ plot_availability <- function(areaType=NULL,
             }
         } else {
 
-        if (areaType == "area" && areaName %in%  c("CS_remote_sensing",  "ESS_remote_sensing", "CSS_remote_sensing",
-            "WSS_remote_sensing", "GB_remote_sensing",  "LS_remote_sensing")) {
-            vec <- rep("NA", length(RemoteSensing_Weekly_Broadscale$doy))
-            RemoteSensing_Weekly_Broadscale$month <- vec
-            RemoteSensing_Weekly_Broadscale$month <- as.Date(RemoteSensing_Weekly_Broadscale$doy, origin = paste0(RemoteSensing_Weekly_Broadscale$year,"-01-01"))
-            d <- RemoteSensing_Weekly_Broadscale %>%
-                tidyr::separate(month, sep="-", into = c("year", "month", "day"))
-            areas <- unique(d$area)
+            if(areaType=="station") fieldKp <- "station"
+            if(areaType=="section") fieldKp <- "section"
+            if(areaType=="area") fieldKp <- "area"
+            k <- k[,c("year",fieldKp, "parameter", "month","cnt","datafile")]
+            k1 <- stats::aggregate(
+                x = list(cnt = k$cnt),
+                by = list(year = k$year ,
+                    xx = k[,fieldKp],
+                    parameter = k$parameter,
+                    month = k$month
+                    ),
+                sum
+            )
+            freqTable <- reshape(k1, idvar=c('year','xx','parameter'), timevar='month',direction='wide')
+            attr(freqTable, "reshapeWide") <- NULL
 
-            for (a in areas) {
-                k <- d[which(d$area == a),]
-            }
-        }
+            freqTable = freqTable[with(freqTable, order(year)), ]
+            freqTable$xx <- freqTable$parameter <- NULL
+            colnames(freqTable) <- sub("cnt\\.", "", colnames(freqTable))
+            freqTable[is.na(freqTable)] <- 0
+            rownames(freqTable)<- freqTable[,1]
+            freqTable$year <- NULL
 
-            freqTable <- with(k, table(year, month))
+            freqTable <- as.table(as.matrix(freqTable))
+            names(dimnames(freqTable)[1])<- "year"
+            names(dimnames(freqTable)[2])<- "month"
+            #cm <- oce::colormap(z = freqTable)
+
+            # freqTable <- with(k, table(year, month))
 
             cm <- oce::colormap(zlim=c(0, max(freqTable)))
             x <- as.numeric(rownames(freqTable)) # year
@@ -154,12 +199,7 @@ plot_availability <- function(areaType=NULL,
             graphics::abline(v = x + 0.5)
             graphics::mtext(side = 1, text = 'Year', line = 2, cex = 4/5)
             graphics::mtext(side = 2, text = 'Month', line = 2, cex = 4/5)
-            if (areaType == "area" &&  areaName %in%  c("CS_remote_sensing",  "ESS_remote_sensing", "CSS_remote_sensing",
-            "WSS_remote_sensing", "GB_remote_sensing",  "LS_remote_sensing")) {
-                graphics::mtext(side=3, text= paste("Frequency table for surface_chlorophyll at ", areaName), cex=4/5)
-            } else {
-                graphics::mtext(side=3, text= paste("Frequency table for ", paste0(params, collapse = ","), " at ",areaName), cex=4/5)
-            }
+            graphics::mtext(side=3, text= paste("Frequency table for ", paste0(params, collapse = ","), " at ",areaName), cex=4/5)
         }
 
 }}

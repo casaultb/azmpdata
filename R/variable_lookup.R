@@ -14,13 +14,14 @@
 #'   currently known in .libPaths().
 #' @examples
 #' \dontrun{
-#' res <- variable_lookup('nitrate') 
+#' res <- variable_lookup('nitrate')
+
 #' res2 <- variable_lookup("nitrate", search_help = T)
 #' }
 #'
 #' @import dplyr
-#' @import tibble
-#' @import stringr
+#' @importFrom tibble tibble
+#' @importFrom stringr str_extract
 #' @importFrom utils capture.output help ls.str data
 #'
 #'

@@ -1,6 +1,6 @@
-#' @title Filter azmpdata
-#' @description This function assemble a dataframe consisting of the years and areas where the azmpdata
-#' packages\'s data has been collected, as well as the associated file where the data can be found.
+#' @title area_indexer
+#' @description This function assembles a dataframe consisting of the years and areas where the azmpdata
+#' packages\'s data has been collected, as well as the associated file(s) where the data can be found.
 #' @param years default is \code{NULL}.  If you want to restrict the available data by one or more
 #' years, a vector of desired years can be provided (e.g. \code{area_indexer(years=c(2017,2018))})
 #' @param areanames default is \code{NULL}.  If you want to restrict the available data by one or
@@ -48,11 +48,12 @@
 #' @note Note that each additional filter that gets sent will reduce the number of results returned.
 #' For example, if \code{doMonths = TRUE} and \code{years = 2010}, only those results from 2010 that
 #' also have monthly data will be returned.
+#' @importFrom stats aggregate complete.cases
+#' @importFrom lubridate month
 #' @export
 #'
 area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, datafiles = NULL, months = NULL, doMonths = F, doParameters =F, parameters = NULL, fuzzyParameters = TRUE, qcMode = F){
   area <- areaType <- areaname <- section <- station <- parameter <- month <- NA
-
   areanames <- tolower(areanames)
   areaTypes <- tolower(areaTypes)
   datafiles <- tolower(datafiles)
@@ -66,7 +67,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
   }
 
   result_df <- data.frame(year = integer(), area=character(), section=character(), station=character(), datafile = character() )
-  core_fields <- c("year", "area","section", "station")
+  core_fields <- c("year", "area","section", "station","datafile")
   # area_year_fields <- core_fields
   coord_fields <- c("latitude","longitude")
   non_param_fields <- c(core_fields, "datafile","latitude","longitude", "cruisenumber","month",
@@ -91,6 +92,25 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     proceed <- TRUE
     df <- get(i_file)
     var_names <- names(df)
+    df$datafile <- i_file
+
+    if ("doy" %in% names(df) & "year" %in% names(df))
+    {
+      df$month <- lubridate::month(as.Date(df$doy, origin = paste0(df$year,"-01-01")))
+    }
+
+    #there are cases where the station information also exists in the section file
+    #retaining the station info in these files results in duplicated data (for plot_availability)
+    #first found with:  if (length(var_names[var_names %in% c("station", "section")])==2){
+    if (i_file == "Discrete_Occupations_Sections") {
+      stnFile = get("Discrete_Occupations_Stations")
+      df <- df[!df$sample_id %in% stnFile$sample_id,]
+    }
+    if (i_file == "Derived_Occupations_Sections"){
+      stnFile = get("Derived_Occupations_Stations")
+      df <- df[!df$event_id %in% stnFile$event_id,]
+    }
+
     if (qcMode & all(coord_fields %in% var_names)){
       #this bit just checks for specific cases of coordinates with no associated stations.
       this_df1 <- df[!is.na(df$latitude) & !is.na(df$longitude),]
@@ -99,7 +119,6 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
       rm(list = c("this_df1"))
     }
 
-    # if(i_file == "Zooplankton_Occupations_Broadscale")browser()
     #Have ensured file has sufficient info to proceed (i.e. a year, and at least one of area, section or station)
     df_core <- df[,names(df) %in% core_fields, drop=FALSE]
     these_core_fields <- var_names[var_names != "year" & var_names %in% colnames(df_core)]
@@ -174,7 +193,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
       if (is.character(df_mon$month)) df_mon$month <- as.integer(df_mon$month)
       if (length(months)>0) df_mon <-df_mon[which(df_mon$month %in% months),]
       if (nrow(df_mon)<1)next
-      df_det <- merge(df_det,df_mon)
+      df_det <- unique(merge(df_det,df_mon))
       rm(list=c("df_mon"))
     }
 
@@ -198,9 +217,36 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
           if (nrow(df_det[which(df_det[,theseParamsFields[p]] == "NA"),])>0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', cells were found with 'NA' physically typed into it."))
         }
         #remove them
-        this_params <- unique(df_det[nchar(df_det[,theseParamsFields[p]])>0 &
-                                       df_det[,theseParamsFields[p]] != "NA" &
-                                       !is.na(df_det[theseParamsFields[p]]) ,core_fields])
+
+        this_params <- df_det[which(nchar(df_det[,theseParamsFields[p]])>0 &
+                                      df_det[,theseParamsFields[p]] != "NA" &
+                                      !is.na(df_det[,theseParamsFields[p]])),c(core_fields,theseParamsFields[p])]
+
+
+        if (nrow(this_params)<1)next
+
+        this_params[is.na(this_params)] <- -999
+        this_paramsOrig<-this_params
+        if (doMonths ){
+
+          this_params <- stats::aggregate(
+            x = list(cnt = this_params$month),
+            by = list(year = this_params$year ,
+                      area = this_params$area,
+                      section = this_params$section,
+                      station = this_params$station,
+                      parameter = this_params$parameter,
+                      month = this_params$month
+            ),
+            length
+          )
+        }else{
+          this_params <- unique(df_det[nchar(df_det[,theseParamsFields[p]])>0 &
+                                         df_det[,theseParamsFields[p]] != "NA" &
+                                         !is.na(df_det[theseParamsFields[p]]) ,core_fields])
+        }
+
+        this_params[this_params == -999] <- NA
         if (nrow(this_params)<1)next
         this_params$parameter <- theseParamsFields[p]
         fileParams <-rbind.data.frame(fileParams,this_params)

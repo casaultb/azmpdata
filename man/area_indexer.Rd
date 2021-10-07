@@ -2,7 +2,7 @@
 % Please edit documentation in R/area_indexer.R
 \name{area_indexer}
 \alias{area_indexer}
-\title{Filter azmpdata}
+\title{area_indexer}
 \usage{
 area_indexer(
   years = NULL,
@@ -59,8 +59,8 @@ you want exact matches only, set \code{fuzzyParameters = F}.}
 a data.frame
 }
 \description{
-This function assemble a dataframe consisting of the years and areas where the azmpdata
-packages\'s data has been collected, as well as the associated file where the data can be found.
+This function assembles a dataframe consisting of the years and areas where the azmpdata
+packages\'s data has been collected, as well as the associated file(s) where the data can be found.
 }
 \note{
 Note that each additional filter that gets sent will reduce the number of results returned.
