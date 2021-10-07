@@ -33,4 +33,6 @@ plot_availability(areaType="station", areaName="P5", parameter="nitrate")
 }
 \author{
 Jaimie Harbin \email{jaimie.harbin@dfo-mpo.gc.ca}
+
+Mike McMahon, \email{Mike.McMahon@dfo-mpo.gc.ca}
 }
