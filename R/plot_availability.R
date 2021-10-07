@@ -1,4 +1,4 @@
-#' @title Frequency plot of parameter(s) from specified locations
+#' @title plot_availability
 #' @description This generates a score card of samples per month based on areaType, areaName, and parameter.
 #' @param areaType default is \code{NULL}. Indicates which type of area is of interest. The options are section, station, or area.
 #' @param areaName default is \code{NULL}. Indicates which area is of interest. The options are dependent on the areaType, however, a error message will let the user know which options are available.
@@ -17,12 +17,11 @@
 #' @import graphics
 #' @export
 plot_availability <- function(areaType=NULL,
-                              areaName=NULL,
-                              parameters=NULL,
-                              fuzzyParameters = FALSE
+                               areaName=NULL,
+                               parameters=NULL,
+                               fuzzyParameters = FALSE
 )
 {
-
     if (length(areaName) > 1) stop("in plot_availability() :\n  can only provide one areaName at a time", call.=FALSE)
     if (is.null(areaType)) stop("in plot_availability() :\n provide an areaType of either station, section, or area", call.=FALSE)
     if (length(areaType) > 1) stop("in plot_availability() :\n  can only provide one areaType at a time of either station, section, or area", call.=FALSE)
@@ -33,19 +32,17 @@ plot_availability <- function(areaType=NULL,
         these <- sort(unique(df[,field]))
         return(these)
     }
-
     #following takes ~10 s, message so know it hasn't crashed
     message("Indexing all available azmpdata...")
     allAreas <- area_indexer(doMonths=T, doParameters = T)
 
     if (fuzzyParameters){
         allP <- getUnique(allAreas,"parameter")
-        parameters <- allP[grep(pattern = parameters, allP)]
+        parameters <- allP[grep(paste(parameters, collapse = '|'), allP)]
     }
 
     FailName <- FALSE
     FailParam <- FALSE
-
 
     if (areaType == "station") {
         fieldKp <- "station"
@@ -68,6 +65,8 @@ plot_availability <- function(areaType=NULL,
     if (areaType == "section") {
         fieldKp <- "section"
         remainingData <- allAreas[!is.na(allAreas$section),]
+        availAreas <- getUnique(remainingData,"section")
+        availParams <- getUnique(remainingData,"parameter")
         if (is.null(areaName)| !any(areaName %in% remainingData$section)) FailName <- TRUE
         if (!FailName) {
             remainingData <- remainingData[remainingData$section %in% areaName,]
@@ -84,6 +83,8 @@ plot_availability <- function(areaType=NULL,
     if (areaType == "area") {
         fieldKp <- "area"
         remainingData <- allAreas[!is.na(allAreas$area)&is.na(allAreas$station)&is.na(allAreas$section),]
+        availAreas <- getUnique(remainingData,"area")
+        availParams <- getUnique(remainingData,"parameter")
         if (is.null(areaName)| !any(areaName %in% remainingData$area)) FailName <- TRUE
         if (!FailName) {
             remainingData <- remainingData[remainingData$area %in% areaName,]
@@ -97,19 +98,30 @@ plot_availability <- function(areaType=NULL,
             availParams<- getUnique(remainingData,"parameter")
         }
     }
+    if (length(parameters)>0){
+        paramList = paste0("for your selected parameters (i.e. ",paste(parameters, collapse=", "),") ")
+    }else{
+        paramList = ""
+    }
+
+    if (length(areaName)>0){
+        areaList = paste0(" (specifically, ",paste(areaName, collapse=", "),") ")
+    }else{
+        areaList = ""
+    }
 
     if (FailName & FailParam) {
-        message("For ", areaType,"s, valid places for your selected parameters (i.e. ",paste(parameters, collapse=", "),") include:")
+        message("For ", areaType,"s, valid places ",paramList,"include:")
         message(paste(availAreas, collapse=", "))
-        message("For ", areaType,"s, (specifically, ",areaName,"), valid parameters include:")
+        message("\nFor ", areaType,"s",areaList,", valid parameters include:")
         message(paste(availParams, collapse=", "))
         stop("Error: Bad areaName AND bad parameter")
     }else if (FailName){
-        message("For ", areaType,"s, valid places for your selected parameters (i.e. ",paste(parameters, collapse=", "),") include:")
+        message("For ", areaType,"s, valid places ",paramList,"include:")
         message(paste(availAreas, collapse=", "))
         stop("Error: Bad areaName")
     }else if (FailParam){
-        message("For ", areaType,"s, (specifically, ",areaName,"), valid parameters include:")
+        message("For ", areaType,"s",areaList,", valid parameters include:")
         message(paste(availParams, collapse=", "))
         stop("Error: Bad parameter")
     }
@@ -128,8 +140,12 @@ plot_availability <- function(areaType=NULL,
     )
     for (p in 1:length(availParams)){
         thisParamDataAgg <- remainingDataAgg[remainingDataAgg$parameter == availParams[p],]
-
         freqTable <- stats::reshape(thisParamDataAgg, idvar=c('year','xx','parameter'), timevar='month',direction='wide')
+        if(nrow(freqTable)<2){
+            message(paste0("Insufficient data to generate a plot of ",availParams[p], " at ",areaName))
+            print(freqTable)
+            next
+        }
         attr(freqTable, "reshapeWide") <- NULL
         freqTable <- freqTable[with(freqTable, order(year)), ]
         freqTable$xx <- freqTable$parameter <- NULL
