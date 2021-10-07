@@ -22,11 +22,11 @@ plot_availability <- function(areaType=NULL,
                                fuzzyParameters = FALSE
 )
 {
-    if (length(areaName) > 1) stop("in plot_availability() :\n  can only provide one areaName at a time", call.=FALSE)
-    if (is.null(areaType)) stop("in plot_availability() :\n provide an areaType of either station, section, or area", call.=FALSE)
-    if (length(areaType) > 1) stop("in plot_availability() :\n  can only provide one areaType at a time of either station, section, or area", call.=FALSE)
+    if (length(areaName) > 1)   stop("in plot_availability() :\n  can only provide one areaName at a time", call.=FALSE)
+    if (is.null(areaType))      stop("in plot_availability() :\n provide an areaType of either station, section, or area", call.=FALSE)
+    if (length(areaType) > 1)   stop("in plot_availability() :\n  can only provide one areaType at a time of either station, section, or area", call.=FALSE)
     if (!areaType %in% c("station", "section", "area")) stop("in plot_availability() :\n provide an areaType of either station, section, or area", call.=FALSE)
-    if (length(areaType) > 1) stop("in plot_availability() :\n can only give one areaType at a time", call.=FALSE)
+    if (length(areaType) > 1)   stop("in plot_availability() :\n can only give one areaType at a time", call.=FALSE)
 
     getUnique <- function(df = NULL, field = NULL){
         these <- sort(unique(df[,field]))
@@ -34,7 +34,7 @@ plot_availability <- function(areaType=NULL,
     }
     #following takes ~10 s, message so know it hasn't crashed
     message("Indexing all available azmpdata...")
-    allAreas <- area_indexer(doMonths=T, doParameters = T)
+    # allAreas <- area_indexer(doMonths=T, doParameters = T)
 
     if (fuzzyParameters){
         allP <- getUnique(allAreas,"parameter")
