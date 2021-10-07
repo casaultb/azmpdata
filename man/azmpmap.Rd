@@ -2,9 +2,13 @@
 % Please edit documentation in R/azmpmap.R
 \name{azmpmap}
 \alias{azmpmap}
-\title{azmpmap}
+\title{Visualize azmpdata}
 \usage{
-azmpmap()
+azmpmap(quiet = T)
+}
+\arguments{
+\item{quiet}{default is \code{T} This indicates whether or not you want to see messages related
+to the transformation of data from the ftp site to spatial objects.}
 }
 \description{
 This generates a leaflet plot of the geospatial files stored at

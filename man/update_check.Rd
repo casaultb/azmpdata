@@ -2,21 +2,17 @@
 % Please edit documentation in R/update_check.R
 \name{update_check}
 \alias{update_check}
-\title{updateCheck}
+\title{Check if update available for package}
 \usage{
 update_check(gitPkg = NULL)
 }
 \arguments{
 \item{gitPkg}{default is \code{NULL}. This is the URL to the DESCRIPTION file
-on github.}
+on GitHub.}
 }
 \description{
 This function compares the package with the available version on
 github, and prompts the user to update.
-}
-\seealso{
-Other general_use: 
-\code{\link{df2sf}()}
 }
 \author{
 Mike McMahon, \email{Mike.McMahon@dfo-mpo.gc.ca}, Emily Chisholm

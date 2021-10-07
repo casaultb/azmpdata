@@ -9,7 +9,7 @@ variable_lookup(keywords, search_help = FALSE, lib.loc = NULL)
 \arguments{
 \item{keywords}{Search keywords (if using multiple, create a vector of character strings using `c()`)}
 
-\item{search_help}{a logcial value determining whether or not help documentation text should also be searched}
+\item{search_help}{a logical value determining whether or not help documentation text should also be searched}
 
 \item{lib.loc}{(optional) passed to find.package to find help documentation
 through which to search - a character vector describing the location of R
@@ -22,4 +22,11 @@ Search through azmpdata datasets by keywords. Default searches through all
 dataset variable names, but options (`help_search`) can be used to search
 through all `azmpdata` help documentation text including variable definitions
 and metadata.
+}
+\examples{
+\dontrun{
+res <- variable_lookup('nitrate')
+res2 <- variable_lookup("nitrate", search_help = T)
+}
+
 }
