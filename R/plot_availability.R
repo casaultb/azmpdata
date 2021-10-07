@@ -34,7 +34,7 @@ plot_availability <- function(areaType=NULL,
     }
     #following takes ~10 s, message so know it hasn't crashed
     message("Indexing all available azmpdata...")
-    # allAreas <- area_indexer(doMonths=T, doParameters = T)
+    allAreas <- area_indexer(doMonths=T, doParameters = T)
 
     if (fuzzyParameters){
         allP <- getUnique(allAreas,"parameter")
