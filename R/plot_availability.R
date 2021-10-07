@@ -22,8 +22,6 @@ plot_availability <- function(areaType=NULL,
                               fuzzyParameters = FALSE
 )
 {
-    FailName <- FALSE
-    FailParam <- FALSE
 
     if (length(areaName) > 1) stop("in plot_availability() :\n  can only provide one areaName at a time", call.=FALSE)
     if (is.null(areaType)) stop("in plot_availability() :\n provide an areaType of either station, section, or area", call.=FALSE)
@@ -31,63 +29,72 @@ plot_availability <- function(areaType=NULL,
     if (!areaType %in% c("station", "section", "area")) stop("in plot_availability() :\n provide an areaType of either station, section, or area", call.=FALSE)
     if (length(areaType) > 1) stop("in plot_availability() :\n can only give one areaType at a time", call.=FALSE)
 
+    getUnique <- function(df = NULL, field = NULL){
+        these <- sort(unique(df[,field]))
+        return(these)
+    }
+
     #following takes ~10 s, message so know it hasn't crashed
     message("Indexing all available azmpdata...")
     allAreas <- area_indexer(doMonths=T, doParameters = T)
 
     if (fuzzyParameters){
-        allP <- sort(unique(allAreas$parameter))
+        allP <- getUnique(allAreas,"parameter")
         parameters <- allP[grep(pattern = parameters, allP)]
     }
+
+    FailName <- FALSE
+    FailParam <- FALSE
+
 
     if (areaType == "station") {
         fieldKp <- "station"
         remainingData <- allAreas[!is.na(allAreas$station),]
-        availAreas <- sort(unique(remainingData$station))
-        availParams <- sort(unique(remainingData$parameter))
+        availAreas <- getUnique(remainingData,"station")
+        availParams <- getUnique(remainingData,"parameter")
         if (is.null(areaName)| !any(areaName %in% remainingData$station)) FailName <- TRUE
-        if (is.null(parameters)| !any(parameters %in% remainingData$parameter)) FailParam <- TRUE
         if (!FailName) {
             remainingData <- remainingData[remainingData$station %in% areaName,]
-            availAreas <- sort(unique(remainingData$station))
-            availParams <- sort(unique(remainingData$parameter))
+            availAreas <- getUnique(remainingData,"station")
+            availParams <- getUnique(remainingData,"parameter")
         }
+        if (is.null(parameters)| !any(parameters %in% remainingData$parameter)) FailParam <- TRUE
         if (!FailParam){
             remainingData <- remainingData[remainingData$parameter %in% parameters,]
-            availAreas <- sort(unique(remainingData$station))
-            availParams<- sort(unique(remainingData$parameter))
+            availAreas <- getUnique(remainingData,"station")
+            availParams<- getUnique(remainingData,"parameter")
         }
     }
     if (areaType == "section") {
         fieldKp <- "section"
         remainingData <- allAreas[!is.na(allAreas$section),]
         if (is.null(areaName)| !any(areaName %in% remainingData$section)) FailName <- TRUE
-        if (is.null(parameters)| !any(parameters %in% remainingData$parameter)) FailParam <- TRUE
         if (!FailName) {
             remainingData <- remainingData[remainingData$section %in% areaName,]
-            availAreas <- sort(unique(remainingData$section))
-            availParams <- sort(unique(remainingData$parameter))
+            availAreas <- getUnique(remainingData,"section")
+            availParams <- getUnique(remainingData,"parameter")
         }
+        if (is.null(parameters)| !any(parameters %in% remainingData$parameter)) FailParam <- TRUE
         if (!FailParam){
             remainingData <- remainingData[remainingData$parameter %in% parameters,]
-            availAreas <- sort(unique(remainingData$station))
-            availParams<- sort(unique(remainingData$parameter))
+            availAreas <- getUnique(remainingData,"station")
+            availParams<- getUnique(remainingData,"parameter")
         }
     }
     if (areaType == "area") {
         fieldKp <- "area"
         remainingData <- allAreas[!is.na(allAreas$area)&is.na(allAreas$station)&is.na(allAreas$section),]
-        if (is.null(areaName)| !any(areaName %in% remainingData$areas)) FailName <- TRUE
-        if (is.null(parameters)| !any(parameters %in% remainingData$parameter)) FailParam <- TRUE
+        if (is.null(areaName)| !any(areaName %in% remainingData$area)) FailName <- TRUE
         if (!FailName) {
             remainingData <- remainingData[remainingData$area %in% areaName,]
-            availAreas <- sort(unique(remainingData$area))
-            availParams <- sort(unique(remainingData$parameter))
+            availAreas <- getUnique(remainingData,"area")
+            availParams <- getUnique(remainingData,"parameter")
         }
+        if (is.null(parameters)| !any(parameters %in% remainingData$parameter)) FailParam <- TRUE
         if (!FailParam){
             remainingData <- remainingData[remainingData$parameter %in% parameters,]
-            availAreas <- sort(unique(remainingData$station))
-            availParams<- sort(unique(remainingData$parameter))
+            availAreas <- getUnique(remainingData,"station")
+            availParams<- getUnique(remainingData,"parameter")
         }
     }
 
@@ -106,19 +113,21 @@ plot_availability <- function(areaType=NULL,
         message(paste(availParams, collapse=", "))
         stop("Error: Bad parameter")
     }
+    #given the filtering above, the condition below should never happen
+    if (nrow(remainingData)<1)stop("No records match your specifications")
 
-remainingData <- remainingData[,c("year",fieldKp, "parameter", "month","cnt","datafile")]
-remainingDataAgg <- aggregate(
-    x = list(cnt = remainingData$cnt),
-    by = list(year = remainingData$year ,
-              xx = remainingData[,fieldKp],
-              parameter = remainingData$parameter,
-              month = remainingData$month
-    ),
-    sum
-)
-    for (p in 1:length(parameters)){
-        thisParamDataAgg <- remainingDataAgg[remainingDataAgg$parameter == parameters[p],]
+    remainingData <- remainingData[,c("year",fieldKp, "parameter", "month","cnt","datafile")]
+    remainingDataAgg <- aggregate(
+        x = list(cnt = remainingData$cnt),
+        by = list(year = remainingData$year ,
+                  xx = remainingData[,fieldKp],
+                  parameter = remainingData$parameter,
+                  month = remainingData$month
+        ),
+        sum
+    )
+    for (p in 1:length(availParams)){
+        thisParamDataAgg <- remainingDataAgg[remainingDataAgg$parameter == availParams[p],]
 
         freqTable <- stats::reshape(thisParamDataAgg, idvar=c('year','xx','parameter'), timevar='month',direction='wide')
         attr(freqTable, "reshapeWide") <- NULL
@@ -143,8 +152,8 @@ remainingDataAgg <- aggregate(
         graphics::abline(v = x + 0.5)
         graphics::mtext(side = 1, text = 'Year', line = 2, cex = 4/5)
         graphics::mtext(side = 2, text = 'Month', line = 2, cex = 4/5)
-        graphics::mtext(side=3, text= paste("Frequency table for ", parameters[p], " at ",areaName), cex=4/5)
-        message(paste0("Plot generated for ",parameters[p], " at ",areaName))
+        graphics::mtext(side=3, text= paste("Frequency table for ", availParams[p], " at ",areaName), cex=4/5)
+        message(paste0("Plot generated for ",availParams[p], " at ",areaName))
     }
 
 }
