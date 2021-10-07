@@ -228,7 +228,6 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
         this_params[is.na(this_params)] <- -999
         this_paramsOrig<-this_params
         if (doMonths ){
-
           this_params <- stats::aggregate(
             x = list(cnt = this_params$month),
             by = list(year = this_params$year ,
