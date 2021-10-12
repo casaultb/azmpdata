@@ -6,9 +6,8 @@ utils::globalVariables(c('year', 'value', 'month', 'day', 'year_dec', 'xmin', 'x
 
 
 .onAttach <- function(libname, pkgname) {
-
   update_check(gitPkg = 'casaultb/azmpdata')
-  # localVer = utils::packageDescription('azmpdata')$Version
-  # packageStartupMessage(paste0("Version: ", localVer))
-
+  message("azmpdata:: Indexing all available monthly azmpdata...")
+  assign("azmpMonthlyParams", area_indexer(doMonths=T, doParameters = T), envir = .GlobalEnv)
 }
+

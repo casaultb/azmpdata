@@ -32,12 +32,14 @@ plot_availability <- function(areaType=NULL,
         these <- sort(unique(df[,field]))
         return(these)
     }
-    #following takes ~10 s, message so know it hasn't crashed
-    message("Indexing all available azmpdata...")
-    allAreas <- area_indexer(doMonths=T, doParameters = T)
 
+    if (!exists("azmpMonthlyParams")){
+        #following takes ~10 s, message so know it hasn't crashed
+        message("Indexing all available azmpdata...")
+        azmpMonthlyParams <- area_indexer(doMonths=T, doParameters = T)
+    }
     if (fuzzyParameters){
-        allP <- getUnique(allAreas,"parameter")
+        allP <- getUnique(azmpMonthlyParams,"parameter")
         parameters <- allP[grep(paste(parameters, collapse = '|'), allP)]
     }
 
@@ -46,7 +48,7 @@ plot_availability <- function(areaType=NULL,
 
     if (areaType == "station") {
         fieldKp <- "station"
-        remainingData <- allAreas[!is.na(allAreas$station),]
+        remainingData <- azmpMonthlyParams[!is.na(azmpMonthlyParams$station),]
         availAreas <- getUnique(remainingData,"station")
         availParams <- getUnique(remainingData,"parameter")
         if (is.null(areaName)| !any(areaName %in% remainingData$station)) FailName <- TRUE
@@ -64,7 +66,7 @@ plot_availability <- function(areaType=NULL,
     }
     if (areaType == "section") {
         fieldKp <- "section"
-        remainingData <- allAreas[!is.na(allAreas$section),]
+        remainingData <- azmpMonthlyParams[!is.na(azmpMonthlyParams$section),]
         availAreas <- getUnique(remainingData,"section")
         availParams <- getUnique(remainingData,"parameter")
         if (is.null(areaName)| !any(areaName %in% remainingData$section)) FailName <- TRUE
@@ -82,7 +84,7 @@ plot_availability <- function(areaType=NULL,
     }
     if (areaType == "area") {
         fieldKp <- "area"
-        remainingData <- allAreas[!is.na(allAreas$area)&is.na(allAreas$station)&is.na(allAreas$section),]
+        remainingData <- azmpMonthlyParams[!is.na(azmpMonthlyParams$area)&is.na(azmpMonthlyParams$station)&is.na(azmpMonthlyParams$section),]
         availAreas <- getUnique(remainingData,"area")
         availParams <- getUnique(remainingData,"parameter")
         if (is.null(areaName)| !any(areaName %in% remainingData$area)) FailName <- TRUE
