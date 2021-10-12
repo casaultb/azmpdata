@@ -143,15 +143,14 @@ plot_availability <- function(areaType=NULL,
     for (p in 1:length(availParams)){
         thisParamDataAgg <- remainingDataAgg[remainingDataAgg$parameter == availParams[p],]
         freqTable <- stats::reshape(thisParamDataAgg, idvar=c('year','xx','parameter'), timevar='month',direction='wide')
-        if(nrow(freqTable)<2){
-            message(paste0("Insufficient data to generate a plot of ",availParams[p], " at ",areaName))
-            print(freqTable)
-            next
-        }
         attr(freqTable, "reshapeWide") <- NULL
         freqTable <- freqTable[with(freqTable, order(year)), ]
         freqTable$xx <- freqTable$parameter <- NULL
         colnames(freqTable) <- sub("cnt\\.", "", colnames(freqTable))
+        #reorder cols to match what is expected by oce::impagep
+        desiredColOrder <- c("year","1","2","3","4","5","6","7","8","9","10","11","12")
+        colsPresent <- desiredColOrder[desiredColOrder %in% names(freqTable)]
+        freqTable <- freqTable[,colsPresent]
         freqTable[is.na(freqTable)] <- 0
         rownames(freqTable)<- freqTable[,1]
         freqTable$year <- NULL
@@ -162,6 +161,8 @@ plot_availability <- function(areaType=NULL,
         cm <- oce::colormap(zlim=c(0, max(freqTable)))
         x <- as.numeric(rownames(freqTable)) # year
         y <- as.numeric(colnames(freqTable)) # month
+
+
         oce::imagep(x = x, y = y, z = freqTable,
                     colormap = cm,
                     drawPalette = TRUE)
