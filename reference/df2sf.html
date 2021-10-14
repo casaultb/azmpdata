@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Zooplankton seasonal section data — Zooplankton_Seasonal_Sections • azmpdata</title>
+<title>Convert df to sf obect — df2sf • azmpdata</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Zooplankton seasonal section data — Zooplankton_Seasonal_Sections" />
-<meta property="og:description" content="A dataframe containing seasonal section zooplankton data." />
+<meta property="og:title" content="Convert df to sf obect — df2sf" />
+<meta property="og:description" content="This function will convert a df into an sf objects." />
 
 
 
@@ -129,49 +129,101 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Zooplankton seasonal section data</h1>
-    <small class="dont-index">Source: <a href='https://github.com/casaultb/azmpdata/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>Zooplankton_Seasonal_Sections.Rd</code></div>
+    <h1>Convert df to sf obect</h1>
+    <small class="dont-index">Source: <a href='https://github.com/casaultb/azmpdata/blob/master/R/df2sf.R'><code>R/df2sf.R</code></a></small>
+    <div class="hidden name"><code>df2sf.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A dataframe containing seasonal section zooplankton data.</p>
+    <p>This function will convert a df into an sf objects.</p>
     </div>
 
-    <pre class="usage"><span class='va'>Zooplankton_Seasonal_Sections</span></pre>
+    <pre class="usage"><span class='fu'>df2sf</span><span class='op'>(</span>
+  input <span class='op'>=</span> <span class='cn'>NULL</span>,
+  lat.field <span class='op'>=</span> <span class='st'>"latitude"</span>,
+  lon.field <span class='op'>=</span> <span class='st'>"longitude"</span>,
+  PID <span class='op'>=</span> <span class='cn'>NULL</span>,
+  ORD <span class='op'>=</span> <span class='cn'>NULL</span>,
+  epsg <span class='op'>=</span> <span class='fl'>4326</span>,
+  type.field <span class='op'>=</span> <span class='cn'>NULL</span>,
+  point.IDs <span class='op'>=</span> <span class='cn'>NULL</span>,
+  line.IDs <span class='op'>=</span> <span class='cn'>NULL</span>,
+  poly.IDs <span class='op'>=</span> <span class='cn'>NULL</span>,
+  quiet <span class='op'>=</span> <span class='cn'>F</span>
+<span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>input</th>
+      <td><p>a df contain coordinates for conversion to sf.</p></td>
+    </tr>
+    <tr>
+      <th>lat.field</th>
+      <td><p>the default is <code>"latitude"</code>. This is the name of the field holding latitude
+values (in decimal degrees)</p></td>
+    </tr>
+    <tr>
+      <th>lon.field</th>
+      <td><p>the default is <code>"longitude"</code>.  This is the name of the field holding
+longitude values (in decimal degrees)</p></td>
+    </tr>
+    <tr>
+      <th>PID</th>
+      <td><p>the default is <code>"PID"</code>.  This is a field that uniquely identifies discrete
+points, lines, or polygons.</p></td>
+    </tr>
+    <tr>
+      <th>ORD</th>
+      <td><p>the default is <code>NULL</code>.  This is not used if <code>out</code> is "points".  This is the
+name of a field holding the order in which the provided coordinates should be joined (in lines or
+polygons).  If nothing is provided, it will be assumed that the data has been provided in the
+correct order.</p></td>
+    </tr>
+    <tr>
+      <th>epsg</th>
+      <td><p>the default is <code>4326</code>.  This is the coordinate system associated with the input
+positions, and it assumes WGS84 (i.e. collected via a GPS).</p></td>
+    </tr>
+    <tr>
+      <th>type.field</th>
+      <td><p>the default is <code>NULL</code>. This is a field within the data that contains
+information about whether each record is a point, line, or polygon.</p></td>
+    </tr>
+    <tr>
+      <th>point.IDs</th>
+      <td><p>the default is <code>NULL</code>. This is a vector of values from within
+<code>type.field</code> that can be used to recognize the point objects (e.g. "station").</p></td>
+    </tr>
+    <tr>
+      <th>line.IDs</th>
+      <td><p>the default is <code>NULL</code>. This is a vector of values from within
+<code>type.field</code> that can be used to recognize the line objects.</p></td>
+    </tr>
+    <tr>
+      <th>poly.IDs</th>
+      <td><p>the default is <code>NULL</code>. This is a vector of values from within
+<code>type.field</code> that can be used to recognize the polygon objects.</p></td>
+    </tr>
+    <tr>
+      <th>quiet</th>
+      <td><p>default is <code>F</code>.  If 1 PID is found to have multiple positions, by default, a
+message is displayed, and information about the points is shown.  If this is set to T, no message
+or information is shown.</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A dataframe with 152 observations of 6 variables:</p>
-<dl>
-   <dt>section</dt><dd><p>Section name where data was collected</p></dd>
-   <dt>year</dt><dd><p>The year in which data was collected</p></dd>
-   <dt>season</dt><dd><p>The season in which data was collected (Northern Hemisphere)</p></dd>
-
-   <dt>Calanus_finmarchicus_log10</dt><dd><p>Abundance of Calanus finmarchicus with a log10 transform</p></dd>
-   <dt>zooplankton_meso_dry_weight</dt><dd><p>Dry weight of meso zooplankton</p></dd>
-   <dt>zooplankton_total_wet_weight</dt><dd><p>Wet weight of all zooplankton sampled</p></dd>
-
-</dl>
-
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>The data can be cited as follows:
-  Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and
-  Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions
-  on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
-  Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.</p>
+    <p>an sf object</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    
-<dl>
-   <dt>time_scale</dt><dd><p>Seasonal</p></dd>
-   <dt>regional_scale</dt><dd><p>Section</p></dd>
-   <dt>category</dt><dd><p>Zooplankton, biological, biochemical</p></dd>
-   
-</dl>
+    <p>This is a duplicate of what exists in https://github.com/Maritimes/Mar.utils/blob/master/R/df2sf.R.
+It is copied, rather than added as a dependency to reduce the number of packages necessary.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
+    <p>Mike McMahon, <a href='mailto:Mike.McMahon@dfo-mpo.gc.ca'>Mike.McMahon@dfo-mpo.gc.ca</a></p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

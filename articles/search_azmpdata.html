@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>azmpdata - searching • azmpdata</title>
+<title>azmpdata - Spatially and Temporally searching data within the azmpdata package • azmpdata</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="azmpdata - searching">
+<script src="../pkgdown.js"></script><meta property="og:title" content="azmpdata - Spatially and Temporally searching data within the azmpdata package">
 <meta property="og:description" content="azmpdata">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -57,7 +57,7 @@
       <a href="../articles/plotting_azmpdata.html">Plotting in azmpdata</a>
     </li>
     <li>
-      <a href="../articles/search_azmpdata.html">azmpdata - searching</a>
+      <a href="../articles/search_azmpdata.html">azmpdata - Spatially and Temporally searching data within the azmpdata package</a>
     </li>
     <li>
       <a href="../articles/style_guide.html">Style Guide</a>
@@ -88,8 +88,8 @@
       </header><script src="search_azmpdata_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>azmpdata - searching</h1>
-                        <h4 class="author">Emily Chisholm</h4>
+      <h1 data-toc-skip>azmpdata - Spatially and Temporally searching data within the azmpdata package</h1>
+                        <h4 class="author">Emily Chisholm and Jaimie Harbin</h4>
             
       
       <small class="dont-index">Source: <a href="https://github.com/casaultb/azmpdata/blob/master/vignettes/search_azmpdata.Rmd"><code>vignettes/search_azmpdata.Rmd</code></a></small>
@@ -101,46 +101,41 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://casaultb.github.io/azmpdata">azmpdata</a></span><span class="op">)</span></code></pre></div>
-<pre><code>## 
-##  casaultb/azmpdata status:
-##  (Package ver: 0.2019.0.9100) Up to date
-##  (Data ver:2021-01-14 ) is up to date</code></pre>
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
-<p>This vignette will describe how to search the data contained in the <code>azmpdata</code> package. We will demonstrate using the built in search function, as well as other convenient ways to find data within the package, using R studio’s built in functionality.</p>
-<div id="listing-all-dataframes" class="section level3">
-<h3 class="hasAnchor">
-<a href="#listing-all-dataframes" class="anchor"></a>Listing all dataframes</h3>
-<p>Listing all the available dataframes in a package can be a quick way to see a high level overview of the datasets. The output from the following code will display all the dataframe names as well as brief, high-level descriptions. This data will appear in a new window.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">'azmpdata'</span><span class="op">)</span></code></pre></div>
+<p>This vignette will describe how to effectively analyze, both spatially and temporally, the data contained within the <code>azmpdata</code> package. To do so, basic R functions combined with built-in functions, <code><a href="../reference/variable_lookup.html">variable_lookup()</a></code>, <code><a href="../reference/azmpmap.html">azmpmap()</a></code>, <code><a href="../reference/area_indexer.html">area_indexer()</a></code>, and <code><a href="../reference/plot_availability.html">plot_availability()</a></code> will be explained. A suggested work flow is shown below to help the user navigate the package.</p>
+<div class="figure">
+<img src="flowchart.png" alt=""><p class="caption">Figure 1: Suggested workflow for azmpdata package</p>
 </div>
-<div id="calling-for-help" class="section level3">
+</div>
+<div id="searching-the-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#searching-the-data" class="anchor"></a>Searching the data</h2>
+<div id="basic-r-functions" class="section level3">
 <h3 class="hasAnchor">
-<a href="#calling-for-help" class="anchor"></a>Calling for help</h3>
+<a href="#basic-r-functions" class="anchor"></a>Basic R functions</h3>
+<p>Listing all the available dataframes in a package can be a quick way to see a high level overview of the datasets. The output from the following code will display all the dataframe names as well as brief, high-level descriptions. This data will appear in a new window.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">'azmpdata'</span><span class="op">)</span></code></pre></div>
 <p>You can browse through the help documentation for all datasets, and functions in the package by calling the code below. This information will come up in the R studio help window.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span>package <span class="op">=</span> <span class="st">'azmpdata'</span><span class="op">)</span></code></pre></div>
 <p>Clicking on a specific dataframe name or function in the help window will bring you to a detailed help page. For dataframes, this help page will include variable names and definitions, as well as information about the source of the data and the proper citation.</p>
-</div>
-<div id="searching-help-files" class="section level3">
-<h3 class="hasAnchor">
-<a href="#searching-help-files" class="anchor"></a>Searching help files</h3>
 <p>R studio provides some built in capability to be able to search through the help files for a given package. The function <code><a href="https://rdrr.io/r/utils/help.search.html">help.search()</a></code> can be used to search through titles and descriptions of help files in a package.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/help.search.html">help.search</a></span><span class="op">(</span>pattern <span class="op">=</span> <span class="st">'section'</span>, package <span class="op">=</span> <span class="st">'azmpdata'</span><span class="op">)</span></code></pre></div>
 <p>This code will bring up all the help files (in the R studio help window), which match the <code>pattern</code> provided. Note, that this does not search through the <strong>entire text</strong> of the help file, for more details see <code>lookup_variable()</code> in the next section.</p>
 </div>
-<div id="custom-azmpdata-search" class="section level3">
+<div id="variable_lookup" class="section level3">
 <h3 class="hasAnchor">
-<a href="#custom-azmpdata-search" class="anchor"></a>Custom azmpdata search</h3>
-<p>We have created a custom search function in <code>azmpdata</code> which allows a user to search the package in two ways. One, search for keywords in the names of all variables, included in all datasets of the package. Two, search for keywords in the entirety of the package help text (including the <code>details</code> sections, which often contains variable definitions and is not searched through when using <code><a href="https://rdrr.io/r/utils/help.search.html">help.search()</a></code>).</p>
+<a href="#variable_lookup" class="anchor"></a>variable_lookup()</h3>
+<p>This is the first step in the suggested work flow for the <code>azmpdata</code> package. We have created a custom search function in <code>azmpdata</code> which allows a user to search the package in two ways. One, search for keywords in the names of all variables, included in all datasets of the package. Two, search for keywords in the entirety of the package help text (including the <code>details</code> sections, which often contains variable definitions and is not searched through when using <code><a href="https://rdrr.io/r/utils/help.search.html">help.search()</a></code>).</p>
 <p>The output of this function will be a table with three columns, <code>keyword</code>, or the search keyword that was provided, that has been matched (this is useful if providing multiple keywords), <code>variable</code>, the name of the variable which matched your keyword search, and <code>dataframe</code> which will be the name of the dataframe in which your matched variable is contained, or if searching through the help text, the name of the dataframe where your keyword was found in the help text.</p>
 <p>This function can be provided with a single keyword,</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/variable_lookup.html">variable_lookup</a></span><span class="op">(</span><span class="st">'nitrate'</span><span class="op">)</span></code></pre></div>
-<pre><code>## # A tibble: 10 x 3
+<pre><code>## # A tibble: 10 × 3
 ##    keyword variable                  dataframe                    
 ##    &lt;chr&gt;   &lt;chr&gt;                     &lt;chr&gt;                        
 ##  1 nitrate integrated_nitrate_0_50   Derived_Annual_Sections      
@@ -154,9 +149,9 @@
 ##  9 nitrate nitrate                   Discrete_Occupations_Sections
 ## 10 nitrate nitrate                   Discrete_Occupations_Stations</code></pre>
 <p>or multiple keywords.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/variable_lookup.html">variable_lookup</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'nitrate'</span>, <span class="st">'integrated'</span><span class="op">)</span><span class="op">)</span></code></pre></div>
-<pre><code>## # A tibble: 32 x 3
+<pre><code>## # A tibble: 32 × 3
 ##    keyword    variable                     dataframe                   
 ##    &lt;chr&gt;      &lt;chr&gt;                        &lt;chr&gt;                       
 ##  1 integrated integrated_chlorophyll_0_100 Derived_Annual_Sections     
@@ -171,10 +166,10 @@
 ## 10 integrated integrated_nitrate_50_150    Derived_Occupations_Sections
 ## # … with 22 more rows</code></pre>
 <p>In order to search through the help text, use the option <code>search_help</code></p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/variable_lookup.html">variable_lookup</a></span><span class="op">(</span><span class="st">'nitrate'</span>, search_help <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <pre><code>## Joining, by = c("keyword", "variable", "dataframe")</code></pre>
-<pre><code>## # A tibble: 16 x 3
+<pre><code>## # A tibble: 19 × 3
 ##    keyword variable                  dataframe                    
 ##    &lt;chr&gt;   &lt;chr&gt;                     &lt;chr&gt;                        
 ##  1 nitrate integrated_nitrate_0_50   Derived_Annual_Sections      
@@ -187,28 +182,71 @@
 ##  8 nitrate integrated_nitrate_50_150 Derived_Occupations_Stations 
 ##  9 nitrate nitrate                   Discrete_Occupations_Sections
 ## 10 nitrate nitrate                   Discrete_Occupations_Stations
-## 11 nitrate &lt;NA&gt;                      Derived_Annual_Sections      
-## 12 nitrate &lt;NA&gt;                      Derived_Annual_Stations      
-## 13 nitrate &lt;NA&gt;                      Derived_Occupations_Sections 
-## 14 nitrate &lt;NA&gt;                      Derived_Occupations_Stations 
-## 15 nitrate &lt;NA&gt;                      Discrete_Occupations_Sections
-## 16 nitrate &lt;NA&gt;                      Discrete_Occupations_Stations</code></pre>
+## 11 nitrate &lt;NA&gt;                      area_indexer                 
+## 12 nitrate &lt;NA&gt;                      Derived_Annual_Sections      
+## 13 nitrate &lt;NA&gt;                      Derived_Annual_Stations      
+## 14 nitrate &lt;NA&gt;                      Derived_Occupations_Sections 
+## 15 nitrate &lt;NA&gt;                      Derived_Occupations_Stations 
+## 16 nitrate &lt;NA&gt;                      Discrete_Occupations_Sections
+## 17 nitrate &lt;NA&gt;                      Discrete_Occupations_Stations
+## 18 nitrate &lt;NA&gt;                      plot_availability            
+## 19 nitrate &lt;NA&gt;                      variable_lookup</code></pre>
 <p>Note, that if the search returns a match to your keyword in the text of a help file, the output will not return a specific variable name in the <code>variable</code> column (instead it will return NA), and will give you only the dataframe name in the <code>dataframe</code> column.</p>
 </div>
-<div id="calling-the-data" class="section level3">
+<div id="r-functions-and-variable_lookup-combined" class="section level3">
 <h3 class="hasAnchor">
-<a href="#calling-the-data" class="anchor"></a>Calling the data</h3>
+<a href="#r-functions-and-variable_lookup-combined" class="anchor"></a>R functions and variable_lookup combined</h3>
 <p>Once you have your search results, you may want to call the dataframe which matched your search terms. This is very straight-forward if using our custom search function <code><a href="../reference/variable_lookup.html">variable_lookup()</a></code></p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ans</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/variable_lookup.html">variable_lookup</a></span><span class="op">(</span>keywords <span class="op">=</span> <span class="st">'wet weight'</span>, search_help <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
 <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/get.html">get</a></span><span class="op">(</span><span class="va">ans</span><span class="op">$</span><span class="va">dataframe</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="conclusion" class="section level3">
-<h3 class="hasAnchor">
-<a href="#conclusion" class="anchor"></a>Conclusion</h3>
-<p>The package <code>azmpdata</code> contains a wealth of datasets and we hope these search functions make it easier to find exactly what you need. For more information on base R search functions please feel free to do your own research. For questions about the custom <code>azmpdata</code> search please contact developers or bring an issue to the github board (listed in the package description under BugReports).</p>
 </div>
+<div id="spatially-displaying-data-azmpmap" class="section level2">
+<h2 class="hasAnchor">
+<a href="#spatially-displaying-data-azmpmap" class="anchor"></a>Spatially displaying data: azmpmap()</h2>
+<p>Once the user has a general idea of what is contained within the package using <code><a href="../reference/variable_lookup.html">variable_lookup()</a></code>, the next logical step, step 2 of the workflow, is to locate where the samples are taken. To do so, we have created the <code><a href="../reference/azmpmap.html">azmpmap()</a></code> function. This function generates a leaflet plot of the geospatial files. The user then has the option to focus in on different stations, sections, and areas with the ability to double-click to see the name, depth, and associated dataframes. To try out <code><a href="../reference/azmpmap.html">azmpmap()</a></code> use the following code:</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/azmpmap.html">azmpmap</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="azmpmap.png" alt=""><p class="caption">Figure 2: azmpmap() showing station locations</p>
+</div>
+<div id="area_indexer" class="section level3">
+<h3 class="hasAnchor">
+<a href="#area_indexer" class="anchor"></a>area_indexer()</h3>
+<p>At this point the user knows generally what is contained within the package from <code><a href="../reference/variable_lookup.html">variable_lookup()</a></code> as well as where data are sampled using <code><a href="../reference/azmpmap.html">azmpmap()</a></code>. It is then recommended that the user utilize the information provided in the popups to dive deeper into their search, using <code><a href="../reference/area_indexer.html">area_indexer()</a></code> or step three of the workflow.<code><a href="../reference/area_indexer.html">area_indexer()</a></code> assembles a dataframe consisting of the years and areas where the azmpdata packages data has been collected, as well as the associated file where the data can be found. The user also has the ability to look at associated parameters and months with the specification.</p>
+<p>For example, if a user was interested in the nitrate in station P5 from years 2010 to 2020, the following code would be used:</p>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">k</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/area_indexer.html">area_indexer</a></span><span class="op">(</span>parameters<span class="op">=</span><span class="st">"nitrate"</span>, areanames<span class="op">=</span><span class="st">"P5"</span>, years<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2010</span><span class="op">:</span><span class="fl">2020</span><span class="op">)</span>, fuzzyParameters <span class="op">=</span> <span class="cn">F</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">k</span><span class="op">)</span></code></pre></div>
+<pre><code>##       year area section station                      datafile parameter
+## 10510 2010   NA      NA      P5 Discrete_Occupations_Stations   nitrate
+## 10648 2011   NA      NA      P5 Discrete_Occupations_Stations   nitrate
+## 10765 2012   NA      NA      P5 Discrete_Occupations_Stations   nitrate
+## 10951 2013   NA      NA      P5 Discrete_Occupations_Stations   nitrate
+## 11033 2014   NA      NA      P5 Discrete_Occupations_Stations   nitrate
+## 11169 2015   NA      NA      P5 Discrete_Occupations_Stations   nitrate</code></pre>
+<p>Basically, <code><a href="../reference/area_indexer.html">area_indexer()</a></code> is a good way to filter through the multiple dataframes to get exactly what the user is interested in.</p>
+</div>
+</div>
+<div id="temporally-displaying-data-plot_availability" class="section level2">
+<h2 class="hasAnchor">
+<a href="#temporally-displaying-data-plot_availability" class="anchor"></a>Temporally displaying data: plot_availability()</h2>
+<p>The user now knows what is contained within the package, where data are sampled, and how to properly filter through the data. It is then recommended that the user completed step 4, <code><a href="../reference/plot_availability.html">plot_availability()</a></code> to understand when the data are sampled. This function generates a score card of samples per month based on <code>areaType</code>, <code>areaName</code>, and <code>parameters</code>.</p>
+<p>For example, if a user wanted to know the frequency (ie. samples/month) for the nitrate at station P5, they would type in the following:</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/plot_availability.html">plot_availability</a></span><span class="op">(</span>areaType <span class="op">=</span> <span class="st">"station"</span>, areaName<span class="op">=</span><span class="st">"P5"</span>, parameters<span class="op">=</span><span class="st">"nitrate"</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="search_azmpdata_files/figure-html/unnamed-chunk-12-1.png" alt="Figure 3: Sampling freqency per month for nitrate at station P5" width="700"><p class="caption">
+Figure 3: Sampling freqency per month for nitrate at station P5
+</p>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2 class="hasAnchor">
+<a href="#conclusion" class="anchor"></a>Conclusion</h2>
+<p>The package <code>azmpdata</code> contains a wealth of datasets to help analyze AZMP data. It is recommended that the users utilize the built in functions in the following order 1) <code><a href="../reference/variable_lookup.html">variable_lookup()</a></code>, 2) <code><a href="../reference/azmpmap.html">azmpmap()</a></code> 3) <code><a href="../reference/area_indexer.html">area_indexer()</a></code>, and 4) <code><a href="../reference/plot_availability.html">plot_availability()</a></code> to easily search through the data and efficiently analyze both spatially and temporally. For more information on base R search functions please feel free to do your own research. For questions about the custom <code>azmpdata</code> search please contact developers or bring an issue to the github board (listed in the package description under BugReports).</p>
 </div>
   </div>
 
@@ -223,7 +261,7 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Benoit Casault, Emily Chisholm, Chantelle Layton.</p>
+  <p>Developed by Benoit Casault, Emily Chisholm, Chantelle Layton, Mike McMahon.</p>
 </div>
 
 <div class="pkgdown">
