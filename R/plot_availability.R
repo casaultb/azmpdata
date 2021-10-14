@@ -32,12 +32,14 @@ plot_availability <- function(areaType=NULL,
         these <- sort(unique(df[,field]))
         return(these)
     }
-    #following takes ~10 s, message so know it hasn't crashed
-    message("Indexing all available azmpdata...")
-    allAreas <- area_indexer(doMonths=T, doParameters = T)
 
+    if (!exists("azmpMonthlyParams")){
+        #following takes ~10 s, message so know it hasn't crashed
+        message("Indexing all available azmpdata...")
+        azmpMonthlyParams <- area_indexer(doMonths=T, doParameters = T)
+    }
     if (fuzzyParameters){
-        allP <- getUnique(allAreas,"parameter")
+        allP <- getUnique(azmpMonthlyParams,"parameter")
         parameters <- allP[grep(paste(parameters, collapse = '|'), allP)]
     }
 
@@ -46,7 +48,7 @@ plot_availability <- function(areaType=NULL,
 
     if (areaType == "station") {
         fieldKp <- "station"
-        remainingData <- allAreas[!is.na(allAreas$station),]
+        remainingData <- azmpMonthlyParams[!is.na(azmpMonthlyParams$station),]
         availAreas <- getUnique(remainingData,"station")
         availParams <- getUnique(remainingData,"parameter")
         if (is.null(areaName)| !any(areaName %in% remainingData$station)) FailName <- TRUE
@@ -64,7 +66,7 @@ plot_availability <- function(areaType=NULL,
     }
     if (areaType == "section") {
         fieldKp <- "section"
-        remainingData <- allAreas[!is.na(allAreas$section),]
+        remainingData <- azmpMonthlyParams[!is.na(azmpMonthlyParams$section),]
         availAreas <- getUnique(remainingData,"section")
         availParams <- getUnique(remainingData,"parameter")
         if (is.null(areaName)| !any(areaName %in% remainingData$section)) FailName <- TRUE
@@ -82,7 +84,7 @@ plot_availability <- function(areaType=NULL,
     }
     if (areaType == "area") {
         fieldKp <- "area"
-        remainingData <- allAreas[!is.na(allAreas$area)&is.na(allAreas$station)&is.na(allAreas$section),]
+        remainingData <- azmpMonthlyParams[!is.na(azmpMonthlyParams$area)&is.na(azmpMonthlyParams$station)&is.na(azmpMonthlyParams$section),]
         availAreas <- getUnique(remainingData,"area")
         availParams <- getUnique(remainingData,"parameter")
         if (is.null(areaName)| !any(areaName %in% remainingData$area)) FailName <- TRUE
@@ -141,15 +143,14 @@ plot_availability <- function(areaType=NULL,
     for (p in 1:length(availParams)){
         thisParamDataAgg <- remainingDataAgg[remainingDataAgg$parameter == availParams[p],]
         freqTable <- stats::reshape(thisParamDataAgg, idvar=c('year','xx','parameter'), timevar='month',direction='wide')
-        if(nrow(freqTable)<2){
-            message(paste0("Insufficient data to generate a plot of ",availParams[p], " at ",areaName))
-            print(freqTable)
-            next
-        }
         attr(freqTable, "reshapeWide") <- NULL
         freqTable <- freqTable[with(freqTable, order(year)), ]
         freqTable$xx <- freqTable$parameter <- NULL
         colnames(freqTable) <- sub("cnt\\.", "", colnames(freqTable))
+        #reorder cols to match what is expected by oce::impagep
+        desiredColOrder <- c("year","1","2","3","4","5","6","7","8","9","10","11","12")
+        colsPresent <- desiredColOrder[desiredColOrder %in% names(freqTable)]
+        freqTable <- freqTable[,colsPresent]
         freqTable[is.na(freqTable)] <- 0
         rownames(freqTable)<- freqTable[,1]
         freqTable$year <- NULL
@@ -160,6 +161,8 @@ plot_availability <- function(areaType=NULL,
         cm <- oce::colormap(zlim=c(0, max(freqTable)))
         x <- as.numeric(rownames(freqTable)) # year
         y <- as.numeric(colnames(freqTable)) # month
+
+
         oce::imagep(x = x, y = y, z = freqTable,
                     colormap = cm,
                     drawPalette = TRUE)
