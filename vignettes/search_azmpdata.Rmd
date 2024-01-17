@@ -17,6 +17,8 @@ library(azmpdata)
 
 ## Introduction
 
+The Atlantic Zone Monitoring Program (AZMP) was implemented in 1998 to help provide more information about the marine ecosystems (Therriault et al. 1998). As described by Casault et al. 2020, the AZMP data are collected at "a network of sampling locations (fixed-point, high-frequency sampling stations, cross-shelf sections, ecosystem trawl surveys) in four DFO regions (Québec, Gulf, Maritimes, and Newfoundland) sampled at a frequency of twice-monthly to once-annually" (see Figure 1 of Casault et al. 2020 for a visual). In addition to the AZMP data, 2019 air-temperature trends, ice cover, sea surface temperature (SST) and physical oceanographic were sampled on the Scotian Shelf, Bay of Fundy, and the Gulf of Maine (see Figure 1 of Hebert et al. 2021 for a visual). These two data sets were combined as a basis for a zonal Science Advisory Report (DFO 2019). The mentioned data, with the exception of area-temperature, can be found in this azmpdata package.
+
 This vignette will describe how to effectively analyze, both spatially and temporally, the data contained within the `azmpdata` package. To do so, basic R functions combined with built-in functions, `variable_lookup()`, `azmpmap()`, `area_indexer()`, and `plot_availability()` will be explained. A suggested work flow is shown below to help the user navigate the package.
 
 ![Figure 1: Suggested workflow for azmpdata package](flowchart.png)
@@ -133,5 +135,14 @@ plot_availability(areaType = "station", areaName="P5", parameters="nitrate")
 
 The package `azmpdata` contains a wealth of datasets to help analyze AZMP data. It is recommended that the users utilize the built in functions in the following order 1) `variable_lookup()`, 2) `azmpmap()` 3) `area_indexer()`, and 4) `plot_availability()` to easily search through the data and efficiently analyze both spatially and temporally. For more information on base R search functions please feel free to do your own research. For questions about the custom `azmpdata` search please contact developers or bring an issue to the github board (listed in the package description under BugReports). 
 
+## References
+
+Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and Spry, J. 2020. Optical, Chemical, and Biological Oceanographic Conditions on the Scotian Shelf and in the eastern Gulf of Maine during 2019. DFO Can. Sci. Advis. Sec. Res. Doc. 2020/071. v + 64 p.
+
+DFO. 2019. Oceanographic Conditions in the Atlantic Zone in 2018. DFO Can. Sci. Advis. Sec. Sci. Advis. Rep. 2019/034.
+
+Hebert, D., Layton, C., Brickman, D. and Galbraith, P.S. 2021. Physical Oceanographic Conditions on the Scotian Shelf and in the Gulf of Maine during 2019. DFO Can. Sci. Advis. Sec. Res. Doc. 2021/040. iv + 58 p.
+
+Therriault, J.-C., Petrie, B., Pepin, P., Gagnon, J., Gregory, D., Helbig, J., Herman, A., Lefaivre, D., Mitchell, M., Pelchat, B., Runge, J., and Sameoto, D. 1998. Proposal for a Northwest Atlantic Zonal Monitoring Program. Can. Tech. Rep. Hydrogr. Ocean Sci. 194.
 
 
