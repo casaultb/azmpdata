@@ -1,14 +1,15 @@
-#' @title updateCheck
+#' @title Check if update available for package
 #' @description This function compares the package with the available version on
 #' github, and prompts the user to update.
 #' @param gitPkg default is \code{NULL}. This is the URL to the DESCRIPTION file
-#' on github.
+#' on GitHub.
 #'
 #'
 #' @importFrom utils packageDescription read.delim tail
 #'
 #' @family general_use
 #' @author  Mike McMahon, \email{Mike.McMahon@@dfo-mpo.gc.ca}, Emily Chisholm
+#' @importFrom utils packageDescription tail read.delim
 #' @export
 update_check<-function(gitPkg = NULL){
 
@@ -53,24 +54,24 @@ update_check<-function(gitPkg = NULL){
 
 # User Messages: ----------------------------------------------------------
 
-  cat(paste("\n", gitPkg, "status:"))
+  message(paste(gitPkg, "status:"))
 
   if (localPkgVer == remotePkgVer){
-    cat(paste0("\n\t(Package ver:",remotePkgVerRaw,") Up to date"))
+    message(paste0("\t(Package ver:",remotePkgVerRaw,") Up to date"))
   }else if (localPkgVer > remotePkgVer){
-    cat("\n\t(Package ver:",remotePkgVerRaw,") Push to Github")
+    message("\t(Package ver:",remotePkgVerRaw,") Push to Github")
   }else if (localPkgVer < remotePkgVer){
-    cat("\n\t(Package ver:",remotePkgVerRaw,") Old version detected. Please update using: ")
-    cat(paste("\n\t\tdevtools::install_github('",gitPkg,"')", sep=""),"\n")
+    message("\t(Package ver:",remotePkgVerRaw,") Old version detected. Please update using: ")
+    message(paste("\t\tdevtools::install_github('",gitPkg,"')", sep=""))
   }
 
   if (localDataVer == remoteDataVer){
-    cat(paste0("\n\t(Data ver:",localDataVerRaw,") is up to date","\n"))
+    message(paste0("\t(Data ver:",localDataVerRaw,") Up to date"))
   }else if (localDataVer > remoteDataVer){
-    cat("\n\t(Data ver:",localDataVerRaw,") Push to Github")
+    cat("\t(Data ver:",localDataVerRaw,") Push to Github")
   }else if (localDataVer < remoteDataVer){
-    cat("\n\t(Data ver:",localDataVerRaw,") Old version detected. Please update using: ")
-    cat(paste("\n\t\tdevtools::install_github('",gitPkg,"')", sep=""))
+    message("\t(Data ver:",localDataVerRaw,") Old version detected. Please update using: ")
+    message(paste("\t\tdevtools::install_github('",gitPkg,"')", sep=""))
   }
 
 }

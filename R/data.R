@@ -744,7 +744,7 @@
  "Derived_Monthly_Broadscale"
 
 
-#' Derived annual broadscale data
+#' Derived Annual broadscale data
 #'
 #' Derived data averaged over broad regions and years.
 #'

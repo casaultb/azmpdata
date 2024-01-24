@@ -6,16 +6,22 @@
 #' and metadata.
 #'
 #' @param keywords Search keywords (if using multiple, create a vector of character strings using `c()`)
-#' @param search_help a logcial value determining whether or not help documentation text should also be searched
+#' @param search_help a logical value determining whether or not help documentation text should also be searched
 #' @param lib.loc (optional) passed to find.package to find help documentation
 #'   through which to search - a character vector describing the location of R
 #'   library trees to search through, or NULL. The default value of NULL
 #'   corresponds to checking the loaded namespace, then all libraries
 #'   currently known in .libPaths().
+#' @examples
+#' \dontrun{
+#' res <- variable_lookup('nitrate')
+
+#' res2 <- variable_lookup("nitrate", search_help = T)
+#' }
 #'
 #' @import dplyr
-#' @import tibble
-#' @import stringr
+#' @importFrom tibble tibble
+#' @importFrom stringr str_extract
 #' @importFrom utils capture.output help ls.str data
 #'
 #'
