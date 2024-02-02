@@ -6,11 +6,23 @@ library(readr)
 library(usethis)
 
 # load data
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Microplankton.RData")
-load(con)
+# HL2
+HL2_env <- new.env()
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Halifax-2/Means&Anomalies_Annual.RData")
+load(con, envir=HL2_env)
+close(con)
+# P5
+P5_env <- new.env()
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Prince-5/Means&Anomalies_Annual.RData")
+load(con, envir=P5_env)
+close(con)
+
+# assemble data
+Phytoplankton_Annual_Stations <- dplyr::bind_rows(HL2_env$df_means,
+                                                  P5_env$df_means)
 
 # clean up
-rm(list=setdiff(ls(), "df_log_abundance_means_annual_glm_l"))
+rm(list=c("HL2_env", "P5_env"))
 
 # target variables to include
 target_var <- c("Diatoms" = "diatoms_log10",
@@ -19,19 +31,16 @@ target_var <- c("Diatoms" = "diatoms_log10",
                 "Ciliates" = "ciliates_log10")
 
 # print order
-print_order <- c("HL2" = 1,
-                 "P5" = 2)
+station_order <- c("HL2" = 1,
+                   "P5" = 2)
 
 # reformat data
-Phytoplankton_Annual_Stations <- df_log_abundance_means_annual_glm_l %>%
-  dplyr::mutate(station = ifelse(station=="HL_02", "HL2",
-                                    ifelse(station=="P_05", "P5", NA))) %>%
-  dplyr::mutate(order = unname(print_order[station])) %>%
+Phytoplankton_Annual_Stations <- Phytoplankton_Annual_Stations %>%
   dplyr::filter(variable %in% names(target_var)) %>%
   dplyr::mutate(variable = unname(target_var[variable])) %>%
-  tidyr::spread(variable, value) %>%
-  dplyr::filter(!is.na(station)) %>%
-  dplyr::arrange(order, year) %>%
+  tidyr::pivot_wider(names_from=variable, values_from=value) %>%
+  dplyr::mutate(order_station = unname(station_order[station])) %>%
+  dplyr::arrange(order_station, year) %>%
   dplyr::select(station, year, unname(target_var))
 
 # save data to csv

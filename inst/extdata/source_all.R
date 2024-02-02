@@ -3,7 +3,11 @@
 library(azmpdata) # need it for read.physical
 # get all .R processing files
 files <- list.files('inst/extdata', pattern = '*.R$', ignore.case = TRUE, recursive = TRUE, full.names = TRUE)
-files <- setdiff(files, "inst/extdata/source_all.R")
+files <- setdiff(files, c("inst/extdata/source_all.R",
+                          "inst/extdata/derived/Derived_Monthly_Broadscale.R",   # error html connection
+                          "inst/extdata/remote_sensing/RemoteSensing_Annual_Broadscale.R",  # data removed from package
+                          "inst/extdata/remote_sensing/RemoteSensing_Weekly_Broadscale.R",  # data removed from package
+                          "inst/extdata/ice/Ice_Annual_Broadscale.R"))    # input data need to be updated
 cat(paste(files, collapse = '\n'))
 
 # source all files to create data products

@@ -6,11 +6,26 @@ library(readr)
 library(usethis)
 
 # load data
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Microplankton.RData")
-load(con)
+# HL2
+HL2_env <- new.env()
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Halifax-2/Microplankton_Data_Grouped.RData")
+load(con, envir=HL2_env)
+close(con)
+# P5
+P5_env <- new.env()
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Prince-5/Microplankton_Data_Grouped.RData")
+load(con, envir=P5_env)
+close(con)
 
+# assemble metadata
+df_metadata <- dplyr::bind_rows(HL2_env$df_metadata,
+                                P5_env$df_metadata)
+
+# assemble data
+Phytoplankton_Occupations_Stations <- dplyr::bind_rows(HL2_env$df_abundance_grouped_l,
+                                                       P5_env$df_abundance_grouped_l)
 # clean up
-rm(list=setdiff(ls(), "df_abundance_grouped_l"))
+rm(list=c("HL2_env", "P5_env"))
 
 # target variables to include
 target_var <- c("Diatoms" = "diatoms",
@@ -20,31 +35,19 @@ target_var <- c("Diatoms" = "diatoms",
                 "Microzooplankton" = "microzooplankton")
 
 # print order
-print_order <- c("HL2" = 1,
-                 "P5" = 2)
+station_order <- c("HL2" = 1,
+                   "P5" = 2)
 
 # reformat data
-Phytoplankton_Occupations_Stations <- df_abundance_grouped_l %>%
-  dplyr::mutate(station = ifelse(station=="HL_02", "HL2",
-                                    ifelse(station=="P_05", "P5", NA))) %>%
-  dplyr::mutate(order = unname(print_order[station])) %>%
+Phytoplankton_Occupations_Stations <- Phytoplankton_Occupations_Stations %>%
   dplyr::filter(variable %in% names(target_var)) %>%
   dplyr::mutate(variable = unname(target_var[variable])) %>%
-  #----------------
-# this will have to be updated once data get extracted from Biochem
-#----------------
-dplyr::mutate(latitude = ifelse(station=="HL2", 44.2670,
-                                   ifelse(station=="P5", 44.9300, NA))) %>%
-  dplyr::mutate(longitude = ifelse(station=="HL2",  -63.31700,
-                                      ifelse(station=="P5", -66.8500, NA))) %>%
-  dplyr::mutate(time=NA) %>%
-  tidyr::separate(sample_id, c("mission_id", "event_id", "sample_id"), sep="_") %>%
-  #----------------
-tidyr::spread(variable, value) %>%
-  dplyr::filter(!is.na(station)) %>%
-  dplyr::arrange(order, year, month, day, time) %>%
-  dplyr::select(station, latitude, longitude, year, month, day, event_id, sample_id,
-                unname(target_var))
+  tidyr::pivot_wider(names_from=variable, values_from=value) %>%
+  dplyr::left_join(df_metadata, by="custom_sample_id") %>%
+  dplyr::mutate(order_station = unname(station_order[station])) %>%
+  dplyr::arrange(order_station, date) %>%
+  # dplyr::select(station, latitude, longitude, date, unname(target_var))
+  dplyr::select(station, date, unname(target_var))
 
 # save data to csv
 readr::write_csv(Phytoplankton_Occupations_Stations, "inst/extdata/csv/Phytoplankton_Occupations_Stations.csv")

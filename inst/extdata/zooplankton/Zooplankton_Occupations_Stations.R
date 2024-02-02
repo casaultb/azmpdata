@@ -7,52 +7,40 @@ library(usethis)
 
 # load data
 # HL2
-# abundance data
-HL2_abundance_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Zoo_Abundance_HL2.RData")
-load(con, envir=HL2_abundance_env)
-close(con)
-# biomass data
-HL2_biomass_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Zoo_Biomass_HL2.RData")
-load(con, envir=HL2_biomass_env)
+HL2_env <- new.env()
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Halifax-2/RingNet_Data_Grouped.RData")
+load(con, envir=HL2_env)
 close(con)
 # P5
-# abundance data
-P5_abundance_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Zoo_Abundance_P5.RData")
-load(con, envir=P5_abundance_env)
+P5_env <- new.env()
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Prince-5/RingNet_Data_Grouped.RData")
+load(con, envir=P5_env)
 close(con)
-# biomass data
-P5_biomass_env <- new.env()
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Zoo_Biomass_P5.RData")
-load(con, envir=P5_biomass_env)
-close(con)
+
+# assemble metadata
+df_metadata <- dplyr::bind_rows(HL2_env$df_metadata,
+                                P5_env$df_metadata)
 
 # assemble data
-Zooplankton_Occupations_Stations <- dplyr::bind_rows(HL2_abundance_env$df_abundance_grouped_l %>%
-                                                       dplyr::mutate(station="HL2"),
-                                                     HL2_biomass_env$df_biomass_grouped_l %>%
-                                                       dplyr::mutate(station="HL2"),
-                                                     P5_abundance_env$df_abundance_grouped_l %>%
-                                                       dplyr::mutate(station="P5"),
-                                                     P5_biomass_env$df_biomass_grouped_l %>%
-                                                       dplyr::mutate(station="P5"))
+Zooplankton_Occupations_Stations <- dplyr::bind_rows(HL2_env$df_abundance_grouped_l,
+                                                     HL2_env$df_biomass_grouped_l,
+                                                     P5_env$df_abundance_grouped_l,
+                                                     P5_env$df_biomass_grouped_l)
 # clean up
-rm(list=c("HL2_abundance_env", "HL2_biomass_env", "P5_abundance_env", "P5_biomass_env"))
+rm(list=c("HL2_env", "P5_env"))
 
 # target variables to include
-target_var <- c("Acartia" = "Acartia_abundance",
+target_var <- c("Acartia spp" = "Acartia_abundance",
                 "Calanus finmarchicus" = "Calanus_finmarchicus_abundance",
                 "Calanus glacialis" = "Calanus_glacialis_abundance",
                 "Calanus hyperboreus" = "Calanus_hyperboreus_abundance",
-                "Centropages" = "Centropages_spp_abundance",
+                "Centropages spp" = "Centropages_spp_abundance",
                 "Centropages typicus" = "Centropages_typicus_abundance",
-                "Eurytemora" = "Eurytemora_abundance",
+                "Eurytemora spp" = "Eurytemora_abundance",
                 "Metridia" = "Metridia_spp_abundance",
                 "Metridia longa" = "Metridia_longa_abundance",
                 "Metridia lucens" = "Metridia_lucens_abundance",
-                "Microcalanus" = "Microcalanus_spp_abundance",
+                "Microcalanus sp" = "Microcalanus_spp_abundance",
                 "Oithona" = "Oithona_spp_abundance",
                 "Oithona atlantica" = "Oithona_atlantica_abundance",
                 "Oithona similis" = "Oithona_similis_abundance",
@@ -66,12 +54,7 @@ target_var <- c("Acartia" = "Acartia_abundance",
                 "Arctic Calanus" = "Arctic_Calanus_species",
                 "Warm Offshore" = "warm_offshore_copepods",
                 "Warm Shelf" = "warm_shelf_copepods",
-                "dw2_S" = "zooplankton_meso_dry_weight",
-                "dw2_L" = "zooplankton_macro_dry_weight",
-                "dw2_T" = "zooplankton_total_dry_weight",
-                "ww2_S" = "zooplankton_meso_wet_weight",
-                "ww2_L" = "zooplankton_macro_wet_weight",
-                "ww2_T" = "zooplankton_total_wet_weight")
+                "dw2_S" = "zooplankton_meso_dry_weight")
 
 # include those ??
 # "Bivalvia total"
@@ -96,18 +79,18 @@ target_var <- c("Acartia" = "Acartia_abundance",
 # "Total zooplankton"
 
 # print order
-print_order <- c("HL2" = 1,
+station_order <- c("HL2" = 1,
                  "P5" = 2)
 
 # reformat data
 Zooplankton_Occupations_Stations <- Zooplankton_Occupations_Stations %>%
-  dplyr::mutate(order = unname(print_order[station])) %>%
   dplyr::filter(variable %in% names(target_var)) %>%
   dplyr::mutate(variable = unname(target_var[variable])) %>%
-  tidyr::spread(variable, value) %>%
-  dplyr::arrange(order, year, month, day) %>%
-  dplyr::select(station, latitude, longitude, year, month, day, sample_id,
-                unname(target_var))
+  tidyr::pivot_wider(names_from=variable, values_from=value) %>%
+  dplyr::left_join(df_metadata, by="custom_sample_id") %>%
+  dplyr::mutate(order_station = unname(station_order[station])) %>%
+  dplyr::arrange(order_station, date) %>%
+  dplyr::select(station, latitude, longitude, date, unname(target_var))
 
 # save data to csv
 readr::write_csv(Zooplankton_Occupations_Stations, "inst/extdata/csv/Zooplankton_Occupations_Stations.csv")

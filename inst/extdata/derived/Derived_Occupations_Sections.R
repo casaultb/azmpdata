@@ -2,55 +2,57 @@
 cat('Sourcing Derived_Occupations_Sections.R', sep = '\n')
 
 library(dplyr)
+library(lubridate)
 library(tidyr)
 library(readr)
 library(usethis)
 
 # load data
 cat('    reading in biochemical data', sep = '\n')
-con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/ChlNut_MAR_AZMP.RData")
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Seasonal_Surveys_MAR/ChlNut_Data_Integrated.RData")
 load(con)
 close(con)
 
 # clean up
-rm(list=setdiff(ls(), "df_data_integrated_l"))
+rm(list=setdiff(ls(), c("df_metadata", "df_data_integrated_l")))
 
 # target variables to include
-target_var <- c("Chlorophyll_A_0_100" = "integrated_chlorophyll_0_100",
-                "Nitrate_0_50" = "integrated_nitrate_0_50",
-                "Nitrate_50_150" = "integrated_nitrate_50_150",
-                "Phosphate_0_50" = "integrated_phosphate_0_50",
-                "Phosphate_50_150" = "integrated_phosphate_50_150",
-                "Silicate_0_50" = "integrated_silicate_0_50",
-                "Silicate_50_150" = "integrated_silicate_50_150")
+target_var <- c("Chlorophyll 0-100" = "integrated_chlorophyll_0_100",
+                "Nitrate 0-50" = "integrated_nitrate_0_50",
+                "Nitrate 50-150" = "integrated_nitrate_50_150",
+                "Phosphate 0-50" = "integrated_phosphate_0_50",
+                "Phosphate 50-150" = "integrated_phosphate_50_150",
+                "Silicate 0-50" = "integrated_silicate_0_50",
+                "Silicate 50-150" = "integrated_silicate_50_150")
 
 # print order
 # section
-print_order_section <- c("CSL" = 1,
-                         "LL" = 2,
-                         "HL" = 3,
-                         "BBL" = 4)
+section_order <- c("CSL" = 1,
+                   "LL" = 2,
+                   "HL" = 3,
+                   "BBL" = 4)
 # section
-print_order_station <- c("CSL1" = 1, "CSL2" = 2, "CSL3" = 3, "CSL4" = 4, "CSL5" = 5, "CSL6" = 6,
-                         "LL1" = 1, "LL2" = 2, "LL3" = 3, "LL4" = 4, "LL5" = 5, "LL6" = 6, "LL7" = 7, "LL8" = 8, "LL9" = 9,
-                         "HL1" = 1, "HL2" = 2, "HL3" = 3, "HL4" = 4, "HL5" = 5, "HL6" = 6, "HL7" = 7,
-                         "BBL1" = 1, "BBL2" = 2, "BBL3" = 3, "BBL4" = 4, "BBL5" = 5, "BBL6" = 6, "BBL7" = 7)
+station_order <- c("CSL1" = 1, "CSL2" = 2, "CSL3" = 3, "CSL4" = 4, "CSL5" = 5, "CSL6" = 6,
+                   "LL1" = 1, "LL2" = 2, "LL3" = 3, "LL4" = 4, "LL5" = 5, "LL6" = 6, "LL7" = 7, "LL8" = 8, "LL9" = 9,
+                   "HL1" = 1, "HL2" = 2, "HL3" = 3, "HL4" = 4, "HL5" = 5, "HL6" = 6, "HL7" = 7,
+                   "BBL1" = 1, "BBL2" = 2, "BBL3" = 3, "BBL4" = 4, "BBL5" = 5, "BBL6" = 6, "BBL7" = 7)
 # season
-print_order_season <- c("Spring" = 1,
-                        "Fall" = 2)
+season_order <- c("Spring" = 1,
+                  "Fall" = 2)
 
 # reformat data
 Derived_Occupations_Sections <- df_data_integrated_l %>%
-  dplyr::rename(section = transect) %>%
-  dplyr::mutate(order_section = unname(print_order_section[section])) %>%
-  dplyr::mutate(order_station = unname(print_order_station[station])) %>%
-  dplyr::mutate(order_season = unname(print_order_season[season])) %>%
   dplyr::filter(variable %in% names(target_var)) %>%
   dplyr::mutate(variable = unname(target_var[variable])) %>%
-  tidyr::spread(variable, value) %>%
+  tidyr::pivot_wider(names_from=variable, values_from=value) %>%
+  dplyr::left_join(df_metadata %>%
+                     dplyr::mutate(year = lubridate::year(date)),
+                   by="custom_event_id") %>%
+  dplyr::mutate(order_section = unname(section_order[section])) %>%
+  dplyr::mutate(order_station = unname(station_order[station])) %>%
+  dplyr::mutate(order_season = unname(season_order[season])) %>%
   dplyr::arrange(order_section, year, order_season, order_station) %>%
-  dplyr::select(section, station, latitude, longitude, year, month, day, event_id,
-                unname(target_var))
+  dplyr::select(section, station, latitude, longitude, date, unname(target_var))
 
 # save as dataframe not tibble
 Derived_Occupations_Sections <- as.data.frame(Derived_Occupations_Sections)
