@@ -11,6 +11,9 @@ library(RCurl)
 # source custom functions
 source("~/Projects/Utils/R/azmp/Standard_Depth_Lookup.R")
 
+# vectorize function Standard_Depth_Lookup()
+Standard_Depth_Lookup_vec <- Vectorize(Standard_Depth_Lookup)
+
 # load data
 # HL2
 cat('    reading in station2 biochemical data', sep = '\n')
@@ -65,7 +68,7 @@ for(i in 1:length(filenames)){
 # # datafile <- paste(dataPath, c('prince5.csv', 'station2.csv'), sep = '/')
 # # d <- lapply(datafile, read.csv)
 #  d <- do.call('rbind', d)
-# 
+#
 # # 3. match up cruiseNumber and mission_number
 # # note : if anything goes sideways matching up idx, the structure of idx will change
 # #        so it could become a list instead of a vector
@@ -92,10 +95,10 @@ fixedStationsPO <- fixedStationsPO %>%
   dplyr::mutate(date = lubridate::ymd(date))
 
 # assemble metadata
-df_metadata <- dplyr::bind_rows(HL2_env$df_metadata %>%
-                                  dplyr::mutate(nominal_depth=Standard_Depth_Lookup(depth, "HL2")),
-                                P5_env$df_metadata %>%
-                                  dplyr::mutate(nominal_depth=Standard_Depth_Lookup(depth, "P5")))
+df_metadata <- dplyr::bind_rows(HL2_env$df_metadata,
+                                P5_env$df_metadata) %>%
+  dplyr::mutate(nominal_depth = Standard_Depth_Lookup_vec(station, depth))
+
 
 # assemble data
 Discrete_Occupations_Stations <- dplyr::bind_rows(HL2_env$df_data_averaged_l,
@@ -120,7 +123,6 @@ Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>%
   dplyr::mutate(parameter_name = unname(target_var[parameter_name])) %>%
   tidyr::pivot_wider(names_from=parameter_name, values_from=data_value) %>%
   dplyr::left_join(df_metadata %>%
-                     # dplyr::select(custom_sample_id, custom_event_id, date, latitude, longitude, start_depth, standard_depth, station) %>%
                      dplyr::select(custom_sample_id, custom_event_id, date, latitude, longitude, depth, nominal_depth, station),
                    by=c("custom_sample_id")) %>%
   dplyr::mutate(order_station = unname(print_order_station[station])) %>%
@@ -129,10 +131,6 @@ Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>%
   dplyr::arrange(order_station, date) %>%
   dplyr::ungroup() %>%
   dplyr::select(station, latitude, longitude, date, depth, nominal_depth, unname(target_var))
-
-# # fix metadata names
-# Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>%
-# dplyr::rename(nominal_depth = standard_depth)
 
 # add physical data
 Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>%

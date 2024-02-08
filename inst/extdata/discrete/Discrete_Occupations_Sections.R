@@ -9,7 +9,10 @@ library(usethis)
 library(RCurl)
 
 # source custom functions
-source("~/Projects/Utils/R/azmp/Standard_Depth_Lookup.R") # not needed here
+source("~/Projects/Utils/R/azmp/Standard_Depth_Lookup.R")
+
+# vectorize function Standard_Depth_Lookup()
+Standard_Depth_Lookup_vec <- Vectorize(Standard_Depth_Lookup)
 
 # load data
 cat('    reading in biochemical section data', sep = '\n')
@@ -72,15 +75,14 @@ Discrete_Occupations_Sections <- df_data_averaged_l %>%
   dplyr::mutate(parameter_name = unname(target_var[parameter_name])) %>%
   tidyr::pivot_wider(names_from=parameter_name, values_from=data_value) %>%
   dplyr::left_join(df_metadata  %>%
-                     # add nominal depth (the vectorized function)
-                     mutate(year=lubridate::year(date)),
+                     dplyr::mutate(nominal_depth = Standard_Depth_Lookup_vec(station, depth)) %>%
+                     dplyr::mutate(year=lubridate::year(date)),
                    by=c("custom_sample_id")) %>%
   dplyr::mutate(order_section = unname(section_order[section])) %>%
   dplyr::mutate(order_station = unname(station_order[station])) %>%
   dplyr::mutate(order_season = unname(season_order[season])) %>%
   dplyr::arrange(order_section, year, order_season, order_station, depth) %>%
-  # dplyr::select(station, latitude, longitude, date, depth, nominal_depth, unname(target_var))
-  dplyr::select(section, station, latitude, longitude, date, depth, unname(target_var))
+  dplyr::select(station, latitude, longitude, date, depth, nominal_depth, unname(target_var))
 
 # join physical data
 Discrete_Occupations_Sections <- Discrete_Occupations_Sections %>%
