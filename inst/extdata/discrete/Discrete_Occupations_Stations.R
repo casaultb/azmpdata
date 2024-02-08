@@ -9,7 +9,7 @@ library(usethis)
 library(RCurl)
 
 # source custom functions
-source("~/Projects/Utils/R/azmp/Standard_Depth_Lookup.R")
+source("tmp/BC/R/Standard_Depth_Lookup.R")
 
 # vectorize function Standard_Depth_Lookup()
 Standard_Depth_Lookup_vec <- Vectorize(Standard_Depth_Lookup)
