@@ -42,9 +42,12 @@ for(i in 1:length(fn)){
   d[[i]] <- read.physical(con)
 }
 
-vardat1 <- unlist(lapply(d, function(k) k[['data']][['integrated_temperature_0_50']]))
-vardat2 <- unlist(lapply(d, function(k) k[['data']][['integrated_salinity_0_50']]))
-vardat3 <- unlist(lapply(d, function(k) k[['data']][['integrated_sigmaTheta_0_50']]))
+# vardat1 <- unlist(lapply(d, function(k) k[['data']][['integrated_temperature_0_50']]))
+# vardat2 <- unlist(lapply(d, function(k) k[['data']][['integrated_salinity_0_50']]))
+# vardat3 <- unlist(lapply(d, function(k) k[['data']][['integrated_sigmaTheta_0_50']]))
+vardat1 <- unlist(lapply(d, function(k) as.numeric(k[['data']][['integrated_temperature_0_50']])))
+vardat2 <- unlist(lapply(d, function(k) as.numeric(k[['data']][['integrated_salinity_0_50']])))
+vardat3 <- unlist(lapply(d, function(k) as.numeric(k[['data']][['integrated_sigmaTheta_0_50']])))
 
 stationName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data']])[1])))
 year <- unlist(lapply(d, function(k) k[['data']][['year']]))
@@ -73,11 +76,12 @@ fn <- grep(filenames, pattern = 'airTemperatureAnnualAnomaly\\w+\\.dat', value =
 d <- list()
 for(i in 1:length(fn)){
   con <- url(paste0(url_name, fn[[i]]))
-  
+
   d[[i]] <- read.physical(con)
 }
 
-vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
+# vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
+vardat <- unlist(lapply(d, function(k) as.numeric(k[['data']][['anomaly']]) + as.numeric(k[['climatologicalMean']])))
 stationName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data']])[1])))
 year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 
@@ -100,11 +104,15 @@ filenames <- unlist(strsplit(result, "\r\n"))
 # get relevant files
 fn <- grep(filenames, pattern = 'SSTinSitu\\w+\\.dat', value = TRUE)
 
+# BC
+fn <- c("SSTinSitu_Halifax_en.dat", "SSTinSitu_StAndrews_en.dat")
+#BC
+
 # create dataframe list
 d <- list()
 for(i in 1:length(fn)){
   con <- url(paste0(url_name, fn[[i]]))
-  
+
   d[[i]] <- read.physical(con)
 }
 

@@ -7,41 +7,46 @@ library(usethis)
 library(RCurl)
 library(rvest)
 
-# get river flux data
-cat('    reading in river flux data', sep = '\n')
+# # get river flux data
+# cat('    reading in river flux data', sep = '\n')
+#
+# webpage <- read_html("https://ogsl.ca/app-debits/en/tables.html")
+#
+# tbls <- html_nodes(webpage, "table")
+# tbls_ls <- webpage %>%
+#   html_nodes("table") %>%
+#   html_table(fill = TRUE)
+#
+# # remove model predictions
+# curr_year <- format(Sys.Date(), '%Y')
+#
+# idx <- vector()
+# for (i in 1:length(tbls_ls)){
+#   names(tbls_ls)[[i]] <- unique(names(tbls_ls[[i]]))
+#   names(tbls_ls[[i]]) <- c('month', 'river_flux')
+#   tbls_ls[[i]] <- tbls_ls[[i]][-1,]
+#   tbls_ls[[i]] <- tbls_ls[[i]] %>% dplyr::mutate(year = names(tbls_ls)[[i]])
+#   if(names(tbls_ls)[[i]] > curr_year){
+#     idx <- c(idx, i)
+#   }
+# }
+#
+# data_tbls <- tbls_ls[-idx]
+#
+# df <- do.call('rbind', data_tbls)
+# rownames(df) <- NULL
+# df$year <- as.numeric(df$year)
+#
+# river_flux <- df %>%
+#   dplyr::mutate(area = 'Gulf of St. Lawrence')
+#
+# # assemble data
+# Derived_Monthly_Broadscale <- dplyr::bind_rows(river_flux)
 
-webpage <- read_html("https://ogsl.ca/app-debits/en/tables.html")
-
-tbls <- html_nodes(webpage, "table")
-tbls_ls <- webpage %>%
-  html_nodes("table") %>%
-  html_table(fill = TRUE)
-
-# remove model predictions
-curr_year <- format(Sys.Date(), '%Y')
-
-idx <- vector()
-for (i in 1:length(tbls_ls)){
-  names(tbls_ls)[[i]] <- unique(names(tbls_ls[[i]]))
-  names(tbls_ls[[i]]) <- c('month', 'river_flux')
-  tbls_ls[[i]] <- tbls_ls[[i]][-1,]
-  tbls_ls[[i]] <- tbls_ls[[i]] %>% dplyr::mutate(year = names(tbls_ls)[[i]])
-  if(names(tbls_ls)[[i]] > curr_year){
-    idx <- c(idx, i)
-  }
-}
-
-data_tbls <- tbls_ls[-idx]
-
-df <- do.call('rbind', data_tbls)
-rownames(df) <- NULL
-df$year <- as.numeric(df$year)
-
-river_flux <- df %>%
-  dplyr::mutate(area = 'Gulf of St. Lawrence')
-
-# assemble data
-Derived_Monthly_Broadscale <- dplyr::bind_rows(river_flux)
+# temporary code
+con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/River_Flux/River_Flux_Data.csv")
+Derived_Monthly_Broadscale <- read_csv(con)
+# end - temporary code
 
 # save data
 # save data to csv

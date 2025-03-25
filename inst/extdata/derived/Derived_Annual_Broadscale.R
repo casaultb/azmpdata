@@ -24,7 +24,8 @@ for(i in 1:length(filenames)){
   d[[i]] <- read.physical(con)
 }
 
-vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
+# vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
+vardat <- unlist(lapply(d, function(k) as.numeric(k[['data']][['anomaly']]) + as.numeric(k[['climatologicalMean']])))
 areaName <- unlist(lapply(d, function(k) rep(k[['regionName']], dim(k[['data']])[1])))
 year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 
@@ -40,6 +41,9 @@ url_name <- "ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/nao/"
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 filenames <- unlist(strsplit(result, "\r\n"))
+# BC
+filenames <- filenames[grepl("nao_*", filenames)]
+# BC
 
 # create dataframe list
 d <- list()
@@ -48,7 +52,8 @@ for(i in 1:length(filenames)){
   d[[i]] <- read.physical(con)
 }
 
-vardat <- unlist(lapply(d, function(k) k[['data']][['nao']] + as.numeric(k[['climatologicalMean']])))
+# vardat <- unlist(lapply(d, function(k) k[['data']][['nao']] + as.numeric(k[['climatologicalMean']])))
+vardat <- unlist(lapply(d, function(k) as.numeric(k[['data']][['nao']]) + as.numeric(k[['climatologicalMean']])))
 areaName <- NA
 year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 
@@ -74,7 +79,8 @@ for(i in 1:length(fn)){
   d[[i]] <- read.physical(con)
 }
 
-vardat <- unlist(lapply(d, function(k) k[['data']][['temperatureAnomaly']] + as.numeric(k[['climatologicalMean']])))
+# vardat <- unlist(lapply(d, function(k) k[['data']][['temperatureAnomaly']] + as.numeric(k[['climatologicalMean']])))
+vardat <- unlist(lapply(d, function(k) as.numeric(k[['data']][['temperatureAnomaly']]) + as.numeric(k[['climatologicalMean']])))
 areaName <- unlist(lapply(d, function(k) rep(k[['areaName']], dim(k[['data']])[1])))
 year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 
@@ -103,7 +109,8 @@ for(i in 1:length(otherFiles)){
 
 # read in individual variables
 
-vardat <- lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']]))
+# vardat <- lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']]))
+vardat <- lapply(d, function(k) as.numeric(k[['data']][['anomaly']]) + as.numeric(k[['climatologicalMean']]))
 variableName <- unlist(lapply(d, function(k) k[['variable']]))
 variableName <- gsub('\\s', '', variableName) # remove any space in variable name
 variableDepth <- unlist(lapply(d, function(k) ifelse('depth' %in% names(k), k[['depth']], " ")))
@@ -169,8 +176,10 @@ for(i in 1:length(filenames)){
 }
 
 #vardat <- unlist(lapply(d, function(k) k[['data']][['anomaly']] + as.numeric(k[['climatologicalMean']])))
-vardat1 <- unlist(lapply(d, function(k) k[['data']][['volume']]))
-vardat2 <- unlist(lapply(d, function(k) k[['data']][['minimumTemperature']]))
+# vardat1 <- unlist(lapply(d, function(k) k[['data']][['volume']]))
+# vardat2 <- unlist(lapply(d, function(k) k[['data']][['minimumTemperature']]))
+vardat1 <- unlist(lapply(d, function(k) as.numeric(k[['data']][['volume']])))
+vardat2 <- unlist(lapply(d, function(k) as.numeric(k[['data']][['minimumTemperature']])))
 areaName <- unlist(lapply(d, function(k) rep(k[['areaName']], dim(k[['data']])[1])))
 year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 
