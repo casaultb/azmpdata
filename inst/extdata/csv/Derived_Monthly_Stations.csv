@@ -1,2422 +1,2564 @@
 year,month,station,sea_surface_height
-1920,1,Halifax,0.8
-1920,2,Halifax,0.8
-1920,3,Halifax,0.7
-1920,4,Halifax,0.9
-1920,5,Halifax,0.7
-1920,6,Halifax,0.8
-1920,7,Halifax,0.7
-1920,8,Halifax,0.7
-1920,9,Halifax,0.8
-1920,10,Halifax,0.9
-1920,11,Halifax,0.8
-1920,12,Halifax,0.9
-1921,1,Halifax,0.8
-1921,2,Halifax,0.8
-1921,3,Halifax,0.7
-1921,4,Halifax,0.7
-1921,5,Halifax,0.8
-1921,6,Halifax,0.8
-1921,7,Halifax,0.7
-1921,8,Halifax,0.7
-1921,9,Halifax,0.8
-1921,10,Halifax,0.8
-1921,11,Halifax,0.9
-1921,12,Halifax,0.9
-1922,1,Halifax,0.8
-1922,2,Halifax,0.8
-1922,3,Halifax,0.8
-1922,4,Halifax,0.8
-1922,5,Halifax,0.7
-1922,6,Halifax,0.7
-1922,7,Halifax,0.7
-1922,8,Halifax,0.7
-1922,9,Halifax,0.7
-1922,10,Halifax,0.8
-1922,11,Halifax,0.9
-1922,12,Halifax,0.9
-1923,1,Halifax,0.9
-1923,2,Halifax,0.8
-1923,3,Halifax,0.8
-1923,4,Halifax,0.8
-1923,5,Halifax,0.7
-1923,6,Halifax,0.8
-1923,7,Halifax,0.7
-1923,8,Halifax,0.8
-1923,9,Halifax,0.8
-1923,10,Halifax,0.8
-1923,11,Halifax,0.8
-1923,12,Halifax,0.8
-1924,1,Halifax,0.8
-1924,2,Halifax,0.9
-1924,3,Halifax,0.9
-1924,4,Halifax,0.8
-1924,5,Halifax,0.8
-1924,6,Halifax,0.8
-1924,7,Halifax,0.8
-1924,8,Halifax,0.8
-1924,9,Halifax,0.8
-1924,10,Halifax,0.9
-1924,11,Halifax,0.8
-1924,12,Halifax,0.8
-1925,1,Halifax,0.8
-1925,2,Halifax,0.7
-1925,3,Halifax,0.7
-1925,4,Halifax,0.8
-1925,5,Halifax,0.8
-1925,6,Halifax,0.8
-1925,7,Halifax,0.7
-1925,8,Halifax,0.8
-1925,9,Halifax,0.8
-1925,10,Halifax,0.9
-1925,11,Halifax,0.8
-1925,12,Halifax,0.8
-1926,1,Halifax,0.8
-1926,2,Halifax,0.9
-1926,3,Halifax,0.7
-1926,4,Halifax,0.8
-1926,5,Halifax,0.8
-1926,6,Halifax,0.7
-1926,7,Halifax,0.7
-1926,8,Halifax,0.8
-1926,9,Halifax,0.8
-1926,10,Halifax,0.8
-1926,11,Halifax,0.8
-1926,12,Halifax,0.9
-1927,1,Halifax,0.8
-1927,2,Halifax,0.8
-1927,3,Halifax,0.8
-1927,4,Halifax,0.8
-1927,5,Halifax,0.8
-1927,6,Halifax,0.8
-1927,7,Halifax,0.7
-1927,8,Halifax,0.8
-1927,9,Halifax,0.8
-1927,10,Halifax,0.8
-1927,11,Halifax,0.8
-1927,12,Halifax,1
-1928,1,Halifax,0.8
-1928,2,Halifax,0.8
-1928,3,Halifax,0.8
-1928,4,Halifax,0.8
-1928,5,Halifax,0.8
-1928,6,Halifax,0.8
-1928,7,Halifax,0.8
-1928,8,Halifax,0.8
-1928,9,Halifax,0.8
-1928,10,Halifax,0.8
-1928,11,Halifax,0.8
-1928,12,Halifax,0.8
-1929,1,Halifax,0.8
-1929,2,Halifax,0.8
-1929,3,Halifax,0.8
-1929,4,Halifax,0.8
-1929,5,Halifax,0.7
-1929,6,Halifax,0.8
-1929,7,Halifax,0.7
-1929,8,Halifax,0.8
-1929,9,Halifax,0.7
-1929,10,Halifax,0.7
-1929,11,Halifax,0.8
-1929,12,Halifax,0.8
-1930,1,Halifax,0.7
-1930,2,Halifax,0.8
-1930,3,Halifax,0.8
-1930,4,Halifax,0.7
-1930,5,Halifax,0.8
-1930,6,Halifax,0.7
-1930,7,Halifax,0.8
-1930,8,Halifax,0.8
-1930,9,Halifax,0.8
-1930,10,Halifax,0.9
-1930,11,Halifax,0.8
-1930,12,Halifax,0.8
-1931,1,Halifax,0.9
-1931,2,Halifax,0.8
-1931,3,Halifax,0.9
-1931,4,Halifax,0.8
-1931,5,Halifax,0.7
-1931,6,Halifax,0.8
-1931,7,Halifax,0.8
-1931,8,Halifax,0.8
-1931,9,Halifax,0.8
-1931,10,Halifax,0.9
-1931,11,Halifax,0.8
-1931,12,Halifax,0.9
-1932,1,Halifax,0.9
-1932,2,Halifax,0.9
-1932,3,Halifax,0.9
-1932,4,Halifax,0.8
-1932,5,Halifax,0.8
-1932,6,Halifax,0.8
-1932,7,Halifax,0.8
-1932,8,Halifax,0.8
-1932,9,Halifax,0.9
-1932,10,Halifax,0.8
-1932,11,Halifax,0.8
-1932,12,Halifax,0.9
-1933,1,Halifax,0.9
-1933,2,Halifax,0.9
-1933,3,Halifax,0.9
-1933,4,Halifax,0.8
-1933,5,Halifax,0.8
-1933,6,Halifax,0.8
-1933,7,Halifax,0.8
-1933,8,Halifax,0.8
-1933,9,Halifax,0.8
-1933,10,Halifax,0.8
-1933,11,Halifax,0.9
-1933,12,Halifax,0.9
-1934,1,Halifax,0.8
-1934,2,Halifax,0.8
-1934,3,Halifax,0.7
-1934,4,Halifax,0.8
-1934,5,Halifax,0.7
-1934,6,Halifax,0.8
-1934,7,Halifax,0.8
-1934,8,Halifax,0.8
-1934,9,Halifax,0.8
-1934,10,Halifax,0.9
-1934,11,Halifax,0.8
-1934,12,Halifax,0.9
-1935,1,Halifax,0.9
-1935,2,Halifax,0.8
-1935,3,Halifax,0.8
-1935,4,Halifax,0.8
-1935,5,Halifax,0.8
-1935,6,Halifax,0.8
-1935,7,Halifax,0.8
-1935,8,Halifax,0.8
-1935,9,Halifax,0.8
-1935,10,Halifax,0.8
-1935,11,Halifax,0.9
-1935,12,Halifax,1
-1936,1,Halifax,0.9
-1936,2,Halifax,0.9
-1936,3,Halifax,0.8
-1936,4,Halifax,0.8
-1936,5,Halifax,0.8
-1936,6,Halifax,0.8
-1936,7,Halifax,0.8
-1936,8,Halifax,0.8
-1936,9,Halifax,0.8
-1936,10,Halifax,0.8
-1936,11,Halifax,0.9
-1936,12,Halifax,0.8
-1937,1,Halifax,0.8
-1937,2,Halifax,0.9
-1937,3,Halifax,0.8
-1937,4,Halifax,0.8
-1937,5,Halifax,0.8
-1937,6,Halifax,0.8
-1937,7,Halifax,0.8
-1937,8,Halifax,0.8
-1937,9,Halifax,0.8
-1937,10,Halifax,0.8
-1937,11,Halifax,0.9
-1937,12,Halifax,0.9
-1938,1,Halifax,0.9
-1938,2,Halifax,0.9
-1938,3,Halifax,0.9
-1938,4,Halifax,0.8
-1938,5,Halifax,0.8
-1938,6,Halifax,0.8
-1938,7,Halifax,0.8
-1938,8,Halifax,0.8
-1938,9,Halifax,0.8
-1938,10,Halifax,0.9
-1938,11,Halifax,0.9
-1938,12,Halifax,0.9
-1939,1,Halifax,0.9
-1939,2,Halifax,0.8
-1939,3,Halifax,0.8
-1939,4,Halifax,0.8
-1939,5,Halifax,0.8
-1939,6,Halifax,0.8
-1939,7,Halifax,0.8
-1939,8,Halifax,0.8
-1939,9,Halifax,0.9
-1939,10,Halifax,0.9
-1939,11,Halifax,0.9
-1939,12,Halifax,1
-1940,1,Halifax,0.9
-1940,2,Halifax,1
-1940,3,Halifax,0.9
-1940,4,Halifax,0.8
-1940,5,Halifax,0.8
-1940,6,Halifax,0.9
-1940,7,Halifax,0.8
-1940,8,Halifax,0.8
-1940,9,Halifax,0.8
-1940,10,Halifax,0.9
-1940,11,Halifax,0.9
-1940,12,Halifax,0.9
-1941,1,Halifax,0.9
-1941,2,Halifax,0.9
-1941,3,Halifax,0.9
-1941,4,Halifax,0.8
-1941,5,Halifax,0.9
-1941,6,Halifax,0.9
-1941,7,Halifax,0.8
-1941,8,Halifax,0.9
-1941,9,Halifax,0.9
-1941,10,Halifax,0.9
-1941,11,Halifax,0.9
-1941,12,Halifax,0.9
-1942,1,Halifax,0.9
-1942,2,Halifax,1
-1942,3,Halifax,0.9
-1942,4,Halifax,0.9
-1942,5,Halifax,0.8
-1942,6,Halifax,0.9
-1942,7,Halifax,0.8
-1942,8,Halifax,0.8
-1942,9,Halifax,0.9
-1942,10,Halifax,0.9
-1942,11,Halifax,0.9
-1942,12,Halifax,1
-1943,1,Halifax,0.9
-1943,2,Halifax,0.9
-1943,3,Halifax,0.8
-1943,4,Halifax,0.8
-1943,5,Halifax,0.8
-1943,6,Halifax,0.9
-1943,7,Halifax,0.8
-1943,8,Halifax,0.9
-1943,9,Halifax,0.9
-1943,10,Halifax,0.9
-1943,11,Halifax,0.9
-1943,12,Halifax,0.9
-1944,1,Halifax,0.9
-1944,2,Halifax,0.9
-1944,3,Halifax,0.9
-1944,4,Halifax,0.9
-1944,5,Halifax,0.8
-1944,6,Halifax,0.9
-1944,7,Halifax,0.9
-1944,8,Halifax,0.9
-1944,9,Halifax,0.8
-1944,10,Halifax,0.9
-1944,11,Halifax,1
-1944,12,Halifax,0.9
-1945,1,Halifax,0.9
-1945,2,Halifax,0.9
-1945,3,Halifax,0.9
-1945,4,Halifax,0.9
-1945,5,Halifax,0.9
-1945,6,Halifax,0.9
-1945,7,Halifax,0.8
-1945,8,Halifax,0.8
-1945,9,Halifax,0.8
-1945,10,Halifax,0.9
-1945,11,Halifax,1
-1945,12,Halifax,1
-1946,1,Halifax,0.9
-1946,2,Halifax,0.9
-1946,3,Halifax,0.9
-1946,4,Halifax,0.9
-1946,5,Halifax,0.8
-1946,6,Halifax,0.8
-1946,7,Halifax,0.8
-1946,8,Halifax,0.9
-1946,9,Halifax,0.8
-1946,10,Halifax,0.9
-1946,11,Halifax,1
-1946,12,Halifax,0.9
-1947,1,Halifax,0.9
-1947,2,Halifax,1
-1947,3,Halifax,1
-1947,4,Halifax,0.9
-1947,5,Halifax,0.9
-1947,6,Halifax,0.9
-1947,7,Halifax,0.9
-1947,8,Halifax,0.8
-1947,9,Halifax,0.9
-1947,10,Halifax,0.9
-1947,11,Halifax,1.1
-1947,12,Halifax,1
-1948,1,Halifax,1
-1948,2,Halifax,0.9
-1948,3,Halifax,0.9
-1948,4,Halifax,0.9
-1948,5,Halifax,0.9
-1948,6,Halifax,0.9
-1948,7,Halifax,0.9
-1948,8,Halifax,0.9
-1948,9,Halifax,0.9
-1948,10,Halifax,0.9
-1948,11,Halifax,0.9
-1948,12,Halifax,1
-1949,1,Halifax,0.9
-1949,2,Halifax,0.9
-1949,3,Halifax,0.8
-1949,4,Halifax,0.9
-1949,5,Halifax,0.9
-1949,6,Halifax,0.8
-1949,7,Halifax,0.9
-1949,8,Halifax,0.9
-1949,9,Halifax,0.9
-1949,10,Halifax,0.9
-1949,11,Halifax,0.9
-1949,12,Halifax,0.8
-1950,1,Halifax,0.9
-1950,2,Halifax,0.9
-1950,3,Halifax,0.9
-1950,4,Halifax,0.9
-1950,5,Halifax,0.8
-1950,6,Halifax,0.8
-1950,7,Halifax,0.8
-1950,8,Halifax,0.8
-1950,9,Halifax,0.9
-1950,10,Halifax,0.9
-1950,11,Halifax,0.9
-1950,12,Halifax,0.9
-1951,1,Halifax,0.9
-1951,2,Halifax,0.9
-1951,3,Halifax,0.9
-1951,4,Halifax,0.9
-1951,5,Halifax,0.9
-1951,6,Halifax,0.9
-1951,7,Halifax,0.9
-1951,8,Halifax,0.9
-1951,9,Halifax,0.9
-1951,10,Halifax,0.9
-1951,11,Halifax,1
-1951,12,Halifax,1
-1952,1,Halifax,1
-1952,2,Halifax,1
-1952,3,Halifax,0.9
-1952,4,Halifax,0.9
-1952,5,Halifax,1
-1952,6,Halifax,0.9
-1952,7,Halifax,0.8
-1952,8,Halifax,0.9
-1952,9,Halifax,0.9
-1952,10,Halifax,0.9
-1952,11,Halifax,1
-1952,12,Halifax,1
-1953,1,Halifax,1
-1953,2,Halifax,0.9
-1953,3,Halifax,0.9
-1953,4,Halifax,0.9
-1953,5,Halifax,0.9
-1953,6,Halifax,0.9
-1953,7,Halifax,0.9
-1953,8,Halifax,0.9
-1953,9,Halifax,0.9
-1953,10,Halifax,0.9
-1953,11,Halifax,0.9
-1953,12,Halifax,1
-1954,1,Halifax,1
-1954,2,Halifax,1
-1954,3,Halifax,0.9
-1954,4,Halifax,0.8
-1954,5,Halifax,0.9
-1954,6,Halifax,0.9
-1954,7,Halifax,0.9
-1954,8,Halifax,0.9
-1954,9,Halifax,0.9
-1954,10,Halifax,0.9
-1954,11,Halifax,0.9
-1954,12,Halifax,0.9
-1955,1,Halifax,1.1
-1955,2,Halifax,0.9
-1955,3,Halifax,0.9
-1955,4,Halifax,0.9
-1955,5,Halifax,0.9
-1955,6,Halifax,0.9
-1955,7,Halifax,0.9
-1955,8,Halifax,0.9
-1955,9,Halifax,0.9
-1955,10,Halifax,0.9
-1955,11,Halifax,1
-1955,12,Halifax,1
-1956,1,Halifax,1
-1956,2,Halifax,0.9
-1956,3,Halifax,0.9
-1956,4,Halifax,0.9
-1956,5,Halifax,0.9
-1956,6,Halifax,0.9
-1956,7,Halifax,0.9
-1956,8,Halifax,0.9
-1956,9,Halifax,0.9
-1956,10,Halifax,0.9
-1956,11,Halifax,0.9
-1956,12,Halifax,0.9
-1957,1,Halifax,0.9
-1957,2,Halifax,0.9
-1957,3,Halifax,1
-1957,4,Halifax,0.9
-1957,5,Halifax,0.9
-1957,6,Halifax,0.9
-1957,7,Halifax,0.9
-1957,8,Halifax,0.9
-1957,9,Halifax,0.9
-1957,10,Halifax,0.9
-1957,11,Halifax,0.9
-1957,12,Halifax,0.9
-1958,1,Halifax,1
-1958,2,Halifax,1.1
-1958,3,Halifax,1.1
-1958,4,Halifax,1
-1958,5,Halifax,0.8
-1958,6,Halifax,0.9
-1958,7,Halifax,0.9
-1958,8,Halifax,0.9
-1958,9,Halifax,0.9
-1958,10,Halifax,0.9
-1958,11,Halifax,1
-1958,12,Halifax,1
-1959,1,Halifax,1
-1959,2,Halifax,0.9
-1959,3,Halifax,0.9
-1959,4,Halifax,0.9
-1959,5,Halifax,0.8
-1959,6,Halifax,0.9
-1959,7,Halifax,0.8
-1959,8,Halifax,0.9
-1959,9,Halifax,0.9
-1959,10,Halifax,0.9
-1959,11,Halifax,0.9
-1959,12,Halifax,1
-1960,1,Halifax,1
-1960,2,Halifax,1
-1960,3,Halifax,1
-1960,4,Halifax,0.9
-1960,5,Halifax,0.9
-1960,6,Halifax,0.9
-1960,7,Halifax,0.9
-1960,8,Halifax,0.9
-1960,9,Halifax,0.9
-1960,10,Halifax,1
-1960,11,Halifax,0.9
-1960,12,Halifax,0.9
-1961,1,Halifax,1
-1961,2,Halifax,0.9
-1961,3,Halifax,1
-1961,4,Halifax,1
-1961,5,Halifax,0.9
-1961,6,Halifax,0.8
-1961,7,Halifax,0.9
-1961,8,Halifax,0.8
-1961,9,Halifax,0.9
-1961,10,Halifax,0.9
-1961,11,Halifax,1
-1961,12,Halifax,1
-1962,1,Halifax,0.9
-1962,2,Halifax,0.9
-1962,3,Halifax,1
-1962,4,Halifax,0.9
-1962,5,Halifax,0.9
-1962,6,Halifax,0.9
-1962,7,Halifax,0.9
-1962,8,Halifax,0.9
-1962,9,Halifax,0.9
-1962,10,Halifax,1
-1962,11,Halifax,1
-1962,12,Halifax,1
-1963,1,Halifax,1
-1963,2,Halifax,0.9
-1963,3,Halifax,0.9
-1963,4,Halifax,1
-1963,5,Halifax,0.8
-1963,6,Halifax,0.9
-1963,7,Halifax,0.9
-1963,8,Halifax,0.9
-1963,9,Halifax,0.9
-1963,10,Halifax,0.9
-1963,11,Halifax,1
-1963,12,Halifax,1
-1964,1,Halifax,1
-1964,2,Halifax,1
-1964,3,Halifax,1
-1964,4,Halifax,0.8
-1964,5,Halifax,0.9
-1964,6,Halifax,0.9
-1964,7,Halifax,0.9
-1964,8,Halifax,0.9
-1964,9,Halifax,0.9
-1964,10,Halifax,1
-1964,11,Halifax,1
-1964,12,Halifax,1
-1965,1,Halifax,1
-1965,2,Halifax,1
-1965,3,Halifax,0.9
-1965,4,Halifax,0.9
-1965,5,Halifax,0.9
-1965,6,Halifax,0.9
-1965,7,Halifax,0.9
-1965,8,Halifax,0.8
-1965,9,Halifax,0.9
-1965,10,Halifax,1
-1965,11,Halifax,1
-1965,12,Halifax,1
-1966,1,Halifax,1.1
-1966,2,Halifax,1
-1966,3,Halifax,0.9
-1966,4,Halifax,0.9
-1966,5,Halifax,0.9
-1966,6,Halifax,0.9
-1966,7,Halifax,0.9
-1966,8,Halifax,0.9
-1966,9,Halifax,1
-1966,10,Halifax,0.9
-1966,11,Halifax,0.9
-1966,12,Halifax,1
-1967,1,Halifax,1
-1967,2,Halifax,1
-1967,3,Halifax,0.9
-1967,4,Halifax,1
-1967,5,Halifax,0.9
-1967,6,Halifax,0.9
-1967,7,Halifax,0.9
-1967,8,Halifax,0.9
-1967,9,Halifax,0.9
-1967,10,Halifax,0.9
-1967,11,Halifax,1
-1967,12,Halifax,1
-1968,1,Halifax,1
-1968,2,Halifax,1
-1968,3,Halifax,0.9
-1968,4,Halifax,0.9
-1968,5,Halifax,0.9
-1968,6,Halifax,0.9
-1968,7,Halifax,0.9
-1968,8,Halifax,1
-1968,9,Halifax,0.9
-1968,10,Halifax,1
-1968,11,Halifax,1.1
-1968,12,Halifax,1.1
-1969,1,Halifax,1
-1969,2,Halifax,1
-1969,3,Halifax,1
-1969,4,Halifax,0.9
-1969,5,Halifax,0.9
-1969,6,Halifax,1
-1969,7,Halifax,1
-1969,8,Halifax,1
-1969,9,Halifax,1
-1969,10,Halifax,1
-1969,11,Halifax,1
-1969,12,Halifax,1.1
-1970,1,Halifax,1.1
-1970,2,Halifax,1
-1970,3,Halifax,1
-1970,4,Halifax,1
-1970,5,Halifax,0.9
-1970,6,Halifax,0.9
-1970,7,Halifax,0.9
-1970,8,Halifax,1
-1970,9,Halifax,1
-1970,10,Halifax,1
-1970,11,Halifax,1.1
-1970,12,Halifax,1.2
-1971,1,Halifax,1.1
-1971,2,Halifax,1
-1971,3,Halifax,1
-1971,4,Halifax,1
-1971,5,Halifax,1
-1971,6,Halifax,1
-1971,7,Halifax,0.9
-1971,8,Halifax,0.9
-1971,9,Halifax,0.9
-1971,10,Halifax,1
-1971,11,Halifax,1.1
-1971,12,Halifax,1
-1972,1,Halifax,1
-1972,2,Halifax,1
-1972,3,Halifax,1
-1972,4,Halifax,1
-1972,5,Halifax,1
-1972,6,Halifax,1
-1972,7,Halifax,1
-1972,8,Halifax,0.9
-1972,9,Halifax,1
-1972,10,Halifax,1
-1972,11,Halifax,1.1
-1972,12,Halifax,1.1
-1973,1,Halifax,1.1
-1973,2,Halifax,1
-1973,3,Halifax,1
-1973,4,Halifax,1
-1973,5,Halifax,0.9
-1973,6,Halifax,0.9
-1973,7,Halifax,1
-1973,8,Halifax,1
-1973,9,Halifax,1
-1973,10,Halifax,1
-1973,11,Halifax,1
-1973,12,Halifax,1
-1974,1,Halifax,1.1
-1974,2,Halifax,1
-1974,3,Halifax,1
-1974,4,Halifax,1
-1974,5,Halifax,1
-1974,6,Halifax,0.9
-1974,7,Halifax,1
-1974,8,Halifax,0.9
-1974,9,Halifax,1
-1974,10,Halifax,0.9
-1974,11,Halifax,1
-1974,12,Halifax,1
-1975,1,Halifax,1
-1975,2,Halifax,1
-1975,3,Halifax,1
-1975,4,Halifax,1
-1975,5,Halifax,1
-1975,6,Halifax,1
-1975,7,Halifax,0.9
-1975,8,Halifax,1
-1975,9,Halifax,0.9
-1975,10,Halifax,1
-1975,11,Halifax,1
-1975,12,Halifax,1
-1976,1,Halifax,1
-1976,2,Halifax,0.9
-1976,3,Halifax,1
-1976,4,Halifax,0.9
-1976,5,Halifax,0.9
-1976,6,Halifax,0.9
-1976,7,Halifax,1
-1976,8,Halifax,0.9
-1976,9,Halifax,1
-1976,10,Halifax,1
-1976,11,Halifax,1.1
-1976,12,Halifax,1
-1977,1,Halifax,1
-1977,2,Halifax,1
-1977,3,Halifax,1
-1977,4,Halifax,0.9
-1977,5,Halifax,1
-1977,6,Halifax,1
-1977,7,Halifax,0.9
-1977,8,Halifax,0.9
-1977,9,Halifax,1
-1977,10,Halifax,1
-1977,11,Halifax,1
-1977,12,Halifax,1.1
-1978,1,Halifax,1
-1978,2,Halifax,1.1
-1978,3,Halifax,1
-1978,4,Halifax,1.1
-1978,5,Halifax,0.9
-1978,6,Halifax,0.9
-1978,7,Halifax,0.9
-1978,8,Halifax,1
-1978,9,Halifax,1
-1978,10,Halifax,1
-1978,11,Halifax,1
-1978,12,Halifax,1.1
-1979,1,Halifax,1.1
-1979,2,Halifax,1.1
-1979,3,Halifax,0.9
-1979,4,Halifax,0.9
-1979,5,Halifax,0.9
-1979,6,Halifax,0.9
-1979,7,Halifax,0.9
-1979,8,Halifax,1
-1979,9,Halifax,0.9
-1979,10,Halifax,1
-1979,11,Halifax,1
-1979,12,Halifax,1
-1980,1,Halifax,1
-1980,2,Halifax,1
-1980,3,Halifax,0.9
-1980,4,Halifax,1
-1980,5,Halifax,1
-1980,6,Halifax,1
-1980,7,Halifax,0.9
-1980,9,Halifax,1
-1980,10,Halifax,1
-1980,11,Halifax,1.1
-1980,12,Halifax,1
-1981,1,Halifax,1
-1981,2,Halifax,0.9
-1981,3,Halifax,1.1
-1981,4,Halifax,1
-1981,5,Halifax,1
-1981,6,Halifax,1
-1981,7,Halifax,1
-1981,8,Halifax,1
-1981,9,Halifax,1
-1981,10,Halifax,1
-1981,11,Halifax,1.1
-1981,12,Halifax,1.1
-1982,1,Halifax,1
-1982,2,Halifax,1
-1982,3,Halifax,1
-1982,4,Halifax,0.9
-1982,5,Halifax,0.9
-1982,6,Halifax,1
-1982,7,Halifax,0.9
-1982,8,Halifax,0.9
-1982,9,Halifax,0.9
-1982,10,Halifax,1
-1982,11,Halifax,1
-1982,12,Halifax,1
-1983,1,Halifax,1
-1983,2,Halifax,1.1
-1983,3,Halifax,1
-1983,4,Halifax,1
-1983,5,Halifax,0.9
-1983,6,Halifax,0.9
-1983,7,Halifax,1
-1983,8,Halifax,1
-1983,9,Halifax,1
-1983,10,Halifax,1.1
-1983,11,Halifax,1.2
-1983,12,Halifax,1
-1984,1,Halifax,1
-1984,2,Halifax,1
-1984,3,Halifax,1
-1984,4,Halifax,1.1
-1984,5,Halifax,1
-1984,6,Halifax,1
-1984,7,Halifax,1
-1984,8,Halifax,1
-1984,9,Halifax,1
-1984,10,Halifax,1
-1984,11,Halifax,1.1
-1984,12,Halifax,1
-1985,1,Halifax,1.1
-1985,2,Halifax,1
-1985,3,Halifax,1
-1985,4,Halifax,1
-1985,5,Halifax,1
-1985,6,Halifax,1
-1985,7,Halifax,0.9
-1985,8,Halifax,1
-1985,9,Halifax,1
-1985,10,Halifax,1
-1985,11,Halifax,1.1
-1985,12,Halifax,1.1
-1986,1,Halifax,1
-1986,2,Halifax,1
-1986,3,Halifax,0.9
-1986,4,Halifax,1
-1986,5,Halifax,1
-1986,6,Halifax,1
-1986,7,Halifax,1
-1986,8,Halifax,1
-1986,9,Halifax,1
-1986,10,Halifax,1
-1986,11,Halifax,1
-1986,12,Halifax,1
-1987,1,Halifax,1.1
-1987,2,Halifax,1.1
-1987,3,Halifax,1
-1987,4,Halifax,1
-1987,5,Halifax,0.9
-1987,6,Halifax,1
-1987,7,Halifax,1
-1987,8,Halifax,1
-1987,9,Halifax,1
-1987,10,Halifax,1
-1987,11,Halifax,1
-1987,12,Halifax,1.1
-1988,1,Halifax,1
-1988,2,Halifax,1
-1988,3,Halifax,1
-1988,4,Halifax,1.1
-1988,5,Halifax,0.9
-1988,6,Halifax,1
-1988,7,Halifax,0.9
-1988,8,Halifax,1
-1988,9,Halifax,1
-1988,10,Halifax,1
-1988,11,Halifax,1.1
-1988,12,Halifax,1.1
-1989,1,Halifax,1.1
-1989,2,Halifax,1
-1989,3,Halifax,1
-1989,4,Halifax,1
-1989,5,Halifax,0.9
-1989,6,Halifax,1
-1989,7,Halifax,0.9
-1989,8,Halifax,1
-1989,9,Halifax,1
-1989,10,Halifax,1
-1989,11,Halifax,1.1
-1989,12,Halifax,1.1
-1990,1,Halifax,1
-1990,2,Halifax,1
-1990,3,Halifax,0.9
-1990,4,Halifax,0.9
-1990,5,Halifax,1
-1990,7,Halifax,0.9
-1990,8,Halifax,1
-1990,9,Halifax,1
-1990,10,Halifax,1
-1990,11,Halifax,1.1
-1990,12,Halifax,1
-1991,1,Halifax,1
-1991,2,Halifax,1
-1991,3,Halifax,1.1
-1991,4,Halifax,1
-1991,5,Halifax,1
-1991,6,Halifax,1
-1991,7,Halifax,1
-1991,8,Halifax,1
-1991,10,Halifax,1
-1991,11,Halifax,1.1
-1991,12,Halifax,1.1
-1992,1,Halifax,1.1
-1992,2,Halifax,1.1
-1992,3,Halifax,1
-1992,4,Halifax,0.9
-1992,5,Halifax,0.9
-1992,6,Halifax,1
-1992,7,Halifax,1
-1992,8,Halifax,0.9
-1992,9,Halifax,0.9
-1992,10,Halifax,1
-1992,11,Halifax,1
-1992,12,Halifax,1
-1993,1,Halifax,1
-1993,2,Halifax,1
-1993,3,Halifax,1
-1993,4,Halifax,1
-1993,5,Halifax,1
-1993,8,Halifax,1
-1993,9,Halifax,1
-1993,10,Halifax,1
-1993,11,Halifax,1
-1993,12,Halifax,1.1
-1994,1,Halifax,1
-1994,2,Halifax,1
-1994,3,Halifax,1
-1994,4,Halifax,0.9
-1994,5,Halifax,1
-1994,6,Halifax,0.9
-1994,7,Halifax,1
-1994,8,Halifax,1
-1994,9,Halifax,1
-1994,10,Halifax,1
-1994,11,Halifax,1
-1994,12,Halifax,1
-1995,1,Halifax,1
-1995,2,Halifax,1
-1995,3,Halifax,1
-1995,4,Halifax,1
-1995,5,Halifax,1
-1995,6,Halifax,0.9
-1995,7,Halifax,1
-1995,8,Halifax,1
-1995,9,Halifax,1
-1995,10,Halifax,1
-1995,11,Halifax,1.1
-1995,12,Halifax,1.2
-1996,1,Halifax,1.1
-1996,2,Halifax,1
-1996,3,Halifax,1
-1996,4,Halifax,1.1
-1996,5,Halifax,1
-1996,6,Halifax,1
-1996,7,Halifax,1
-1996,8,Halifax,1
-1996,9,Halifax,1.2
-1996,10,Halifax,1.1
-1996,11,Halifax,1.1
-1996,12,Halifax,1.1
-1997,1,Halifax,1.1
-1997,2,Halifax,1
-1997,3,Halifax,1.1
-1997,4,Halifax,1.1
-1997,5,Halifax,1
-1997,6,Halifax,1
-1997,7,Halifax,1
-1997,8,Halifax,1
-1997,9,Halifax,1
-1997,10,Halifax,1.1
-1997,11,Halifax,1.1
-1997,12,Halifax,1.2
-1998,1,Halifax,1.1
-1998,2,Halifax,1.1
-1998,3,Halifax,1
-1998,4,Halifax,1.1
-1998,5,Halifax,1
-1998,6,Halifax,1
-1998,7,Halifax,1
-1998,8,Halifax,1
-1998,9,Halifax,1.1
-1998,10,Halifax,1.1
-1998,11,Halifax,1.1
-1998,12,Halifax,1
-1999,1,Halifax,1
-1999,2,Halifax,1.1
-1999,3,Halifax,1
-1999,4,Halifax,1.1
-1999,5,Halifax,1
-1999,6,Halifax,0.9
-1999,7,Halifax,1
-1999,8,Halifax,1
-1999,9,Halifax,1
-1999,10,Halifax,1
-1999,11,Halifax,1
-1999,12,Halifax,1.1
-2000,1,Halifax,1.1
-2000,2,Halifax,1
-2000,3,Halifax,1
-2000,4,Halifax,1
-2000,5,Halifax,1
-2000,6,Halifax,1
-2000,7,Halifax,1
-2000,8,Halifax,1
-2000,9,Halifax,1
-2000,10,Halifax,1.1
-2000,11,Halifax,1.2
-2000,12,Halifax,1.1
-2001,2,Halifax,0.9
-2001,3,Halifax,1
-2001,4,Halifax,1
-2001,5,Halifax,1
-2001,6,Halifax,1
-2001,7,Halifax,1
-2001,8,Halifax,1
-2001,9,Halifax,1
-2001,10,Halifax,1
-2001,11,Halifax,1.1
-2001,12,Halifax,1.1
-2002,1,Halifax,1.1
-2002,2,Halifax,1.1
-2002,3,Halifax,0.9
-2002,4,Halifax,1
-2002,5,Halifax,1
-2002,6,Halifax,1
-2002,7,Halifax,1
-2002,8,Halifax,0.9
-2002,9,Halifax,1
-2002,10,Halifax,1
-2002,11,Halifax,1
-2002,12,Halifax,1.1
-2003,1,Halifax,1.1
-2003,2,Halifax,1
-2003,3,Halifax,1
-2003,4,Halifax,1
-2003,5,Halifax,1
-2003,6,Halifax,1
-2003,7,Halifax,1
-2003,8,Halifax,1
-2003,9,Halifax,1
-2004,2,Halifax,1.1
-2004,3,Halifax,1
-2004,4,Halifax,1
-2004,5,Halifax,1
-2004,6,Halifax,1.1
-2004,7,Halifax,1
-2004,8,Halifax,1
-2004,10,Halifax,1.1
-2004,11,Halifax,1.1
-2004,12,Halifax,1.1
-2005,1,Halifax,1.1
-2005,2,Halifax,1
-2005,3,Halifax,1.1
-2005,4,Halifax,1.1
-2005,5,Halifax,1.1
-2005,6,Halifax,1
-2005,7,Halifax,1
-2005,8,Halifax,1
-2005,9,Halifax,1
-2005,10,Halifax,1.1
-2005,11,Halifax,1.1
-2005,12,Halifax,1.1
-2006,1,Halifax,1.1
-2006,2,Halifax,1.1
-2006,3,Halifax,1.1
-2006,4,Halifax,1.1
-2006,7,Halifax,1
-2006,8,Halifax,1
-2006,9,Halifax,1.1
-2006,10,Halifax,1.1
-2006,11,Halifax,1
-2006,12,Halifax,1.1
-2007,1,Halifax,1.1
-2007,2,Halifax,1.1
-2007,3,Halifax,1
-2007,4,Halifax,1
-2007,5,Halifax,1
-2007,6,Halifax,1.1
-2007,7,Halifax,1
-2007,8,Halifax,1
-2007,9,Halifax,1
-2007,10,Halifax,1.1
-2007,11,Halifax,1
-2007,12,Halifax,1
-2008,1,Halifax,1
-2008,2,Halifax,1
-2008,3,Halifax,1
-2008,4,Halifax,1
-2008,5,Halifax,1.1
-2008,6,Halifax,1.1
-2008,7,Halifax,1
-2008,8,Halifax,1.1
-2008,9,Halifax,1
-2008,10,Halifax,1.1
-2008,11,Halifax,1.1
-2008,12,Halifax,1
-2009,1,Halifax,1.1
-2009,2,Halifax,1.2
-2009,3,Halifax,1
-2009,4,Halifax,1
-2009,5,Halifax,1
-2009,6,Halifax,1.1
-2009,7,Halifax,1.1
-2009,8,Halifax,1
-2009,9,Halifax,1.1
-2009,10,Halifax,1.2
-2009,11,Halifax,1.1
-2009,12,Halifax,1.2
-2010,1,Halifax,1.2
-2010,2,Halifax,1.3
-2010,3,Halifax,1.2
-2010,4,Halifax,1.1
-2010,5,Halifax,1.1
-2010,6,Halifax,1.1
-2010,7,Halifax,1.1
-2010,8,Halifax,1.1
-2010,9,Halifax,1.1
-2010,10,Halifax,1.2
-2010,11,Halifax,1.2
-2010,12,Halifax,1.3
-2011,1,Halifax,1.2
-2011,2,Halifax,1.2
-2011,3,Halifax,1.1
-2011,4,Halifax,1.1
-2011,5,Halifax,1.1
-2011,6,Halifax,1.1
-2011,7,Halifax,1.1
-2011,8,Halifax,1.1
-2011,9,Halifax,1.1
-2011,10,Halifax,1.2
-2011,11,Halifax,1.1
-2011,12,Halifax,1.1
-2012,1,Halifax,1.1
-2012,2,Halifax,1.1
-2012,3,Halifax,1.1
-2012,4,Halifax,1.1
-2012,5,Halifax,1
-2012,6,Halifax,1.1
-2012,7,Halifax,1.1
-2012,8,Halifax,1.1
-2012,9,Halifax,1
-2012,10,Halifax,1.1
-2012,11,Halifax,1.1
-2012,12,Halifax,1.1
-2013,1,Halifax,1.1
-2013,2,Halifax,1.1
-2013,3,Halifax,1.2
-2013,4,Halifax,1
-2013,5,Halifax,1
-2013,6,Halifax,1.1
-2013,9,Halifax,1.1
-2013,10,Halifax,1.2
-2013,11,Halifax,1.1
-2013,12,Halifax,1.1
-2014,1,Halifax,1.1
-2014,2,Halifax,1.1
-2014,3,Halifax,1.1
-2014,4,Halifax,1.1
-2014,5,Halifax,1.1
-2014,6,Halifax,1.1
-2014,7,Halifax,1
-2014,8,Halifax,1.1
-2014,9,Halifax,1.1
-2014,10,Halifax,1.2
-2014,11,Halifax,1.2
-2014,12,Halifax,1.1
-2015,1,Halifax,1.1
-2015,2,Halifax,1.1
-2015,3,Halifax,1.1
-2015,4,Halifax,1.1
-2015,5,Halifax,1
-2015,6,Halifax,1.1
-2015,7,Halifax,1.1
-2015,8,Halifax,1.1
-2015,9,Halifax,1.1
-2015,10,Halifax,1.1
-2015,11,Halifax,1.1
-2015,12,Halifax,1.1
-2016,1,Halifax,1.2
-2016,2,Halifax,1.1
-2016,3,Halifax,1.1
-2016,4,Halifax,1.1
-2016,5,Halifax,1.1
-2016,6,Halifax,1.1
-2016,7,Halifax,1.1
-2016,8,Halifax,1.1
-2016,9,Halifax,1.1
-2016,10,Halifax,1.2
-2016,11,Halifax,1.2
-2016,12,Halifax,1.2
-2017,1,Halifax,1.1
-2017,2,Halifax,1.2
-2017,3,Halifax,1.1
-2017,4,Halifax,1.1
-2017,5,Halifax,1.2
-2017,6,Halifax,1.1
-2017,7,Halifax,1.1
-2017,8,Halifax,1.1
-2017,9,Halifax,1.1
-2017,10,Halifax,1.1
-2017,11,Halifax,1.2
-2017,12,Halifax,1.1
-2018,1,Halifax,1.1
-2018,2,Halifax,1.1
-2018,3,Halifax,1.3
-2018,4,Halifax,1.1
-2018,5,Halifax,1.1
-2018,6,Halifax,1.2
-2018,7,Halifax,1.1
-2018,8,Halifax,1.1
-2018,9,Halifax,1.1
-2018,10,Halifax,1.2
-2018,11,Halifax,1.2
-2018,12,Halifax,1.2
-2019,1,Halifax,1.2
-2019,2,Halifax,1.1
-2019,3,Halifax,1.1
-2019,4,Halifax,1.1
-2019,5,Halifax,1.1
-2019,6,Halifax,1.1
-2019,7,Halifax,1.2
-2019,8,Halifax,1.1
-2019,9,Halifax,1.1
-2019,10,Halifax,1.2
-2019,11,Halifax,1.2
-2020,1,Halifax,1.2
-2020,2,Halifax,1.2
-2020,3,Halifax,1.1
-2020,4,Halifax,1.2
-2020,5,Halifax,1.1
-2020,6,Halifax,1.1
-2020,7,Halifax,1.1
-2020,8,Halifax,1.1
-2020,9,Halifax,1.1
-2020,10,Halifax,1.1
-2020,11,Halifax,1.1
-2020,12,Halifax,1.2
-1970,1,North Sydney,0.9
-1970,2,North Sydney,0.7
-1970,3,North Sydney,0.7
-1970,4,North Sydney,0.7
-1970,5,North Sydney,0.6
-1970,6,North Sydney,0.7
-1970,7,North Sydney,0.7
-1970,8,North Sydney,0.8
-1970,9,North Sydney,0.8
-1970,10,North Sydney,0.7
-1970,11,North Sydney,0.8
-1970,12,North Sydney,0.9
-1971,1,North Sydney,0.9
-1971,2,North Sydney,0.7
-1971,3,North Sydney,0.8
-1971,4,North Sydney,0.7
-1971,5,North Sydney,0.7
-1971,6,North Sydney,0.7
-1971,7,North Sydney,0.7
-1971,8,North Sydney,0.7
-1971,9,North Sydney,0.7
-1971,10,North Sydney,0.8
-1971,11,North Sydney,0.8
-1971,12,North Sydney,0.8
-1972,1,North Sydney,0.8
-1972,2,North Sydney,0.7
-1972,3,North Sydney,0.7
-1972,4,North Sydney,0.7
-1972,5,North Sydney,0.7
-1972,6,North Sydney,0.7
-1972,7,North Sydney,0.7
-1972,8,North Sydney,0.7
-1972,9,North Sydney,0.8
-1972,10,North Sydney,0.7
-1972,11,North Sydney,0.8
-1972,12,North Sydney,0.9
-1973,1,North Sydney,0.9
-1973,2,North Sydney,0.7
-1973,3,North Sydney,0.7
-1973,4,North Sydney,0.7
-1973,5,North Sydney,0.6
-1973,6,North Sydney,0.7
-1973,7,North Sydney,0.7
-1973,8,North Sydney,0.7
-1973,9,North Sydney,0.8
-1973,10,North Sydney,0.8
-1973,11,North Sydney,0.8
-1973,12,North Sydney,0.7
-1974,1,North Sydney,0.8
-1974,2,North Sydney,0.8
-1974,3,North Sydney,0.7
-1974,4,North Sydney,0.7
-1974,5,North Sydney,0.7
-1974,6,North Sydney,0.6
-1974,7,North Sydney,0.7
-1974,8,North Sydney,0.7
-1974,9,North Sydney,0.7
-1974,10,North Sydney,0.7
-1974,11,North Sydney,0.7
-1974,12,North Sydney,0.8
-1975,1,North Sydney,0.7
-1975,2,North Sydney,0.7
-1975,3,North Sydney,0.7
-1975,4,North Sydney,0.7
-1975,5,North Sydney,0.7
-1975,6,North Sydney,0.7
-1975,7,North Sydney,0.7
-1975,8,North Sydney,0.7
-1975,9,North Sydney,0.7
-1975,10,North Sydney,0.8
-1975,11,North Sydney,0.8
-1975,12,North Sydney,0.7
-1976,1,North Sydney,0.8
-1976,2,North Sydney,0.7
-1976,3,North Sydney,0.7
-1976,4,North Sydney,0.7
-1976,5,North Sydney,0.6
-1976,6,North Sydney,0.7
-1976,7,North Sydney,0.7
-1976,8,North Sydney,0.7
-1976,10,North Sydney,0.8
-1976,11,North Sydney,0.9
-1976,12,North Sydney,0.8
-1977,1,North Sydney,0.8
-1977,2,North Sydney,0.7
-1977,3,North Sydney,0.7
-1977,4,North Sydney,0.7
-1977,5,North Sydney,0.7
-1977,6,North Sydney,0.7
-1977,7,North Sydney,0.7
-1977,8,North Sydney,0.7
-1977,10,North Sydney,0.8
-1977,11,North Sydney,0.7
-1977,12,North Sydney,0.8
-1978,1,North Sydney,0.8
-1978,2,North Sydney,0.8
-1978,3,North Sydney,0.7
-1978,4,North Sydney,0.8
-1978,6,North Sydney,0.6
-1978,7,North Sydney,0.7
-1978,8,North Sydney,0.7
-1978,9,North Sydney,0.8
-1978,10,North Sydney,0.7
-1978,11,North Sydney,0.8
-1978,12,North Sydney,0.9
-1979,2,North Sydney,0.8
-1979,4,North Sydney,0.7
-1979,5,North Sydney,0.6
-1979,6,North Sydney,0.6
-1979,7,North Sydney,0.7
-1979,8,North Sydney,0.7
-1979,10,North Sydney,0.8
-1979,11,North Sydney,0.7
-1979,12,North Sydney,0.8
-1980,1,North Sydney,0.8
-1980,2,North Sydney,0.8
-1980,3,North Sydney,0.5
-1980,4,North Sydney,0.6
-1980,5,North Sydney,0.6
-1980,6,North Sydney,0.6
-1980,7,North Sydney,0.7
-1980,8,North Sydney,0.7
-1980,9,North Sydney,0.7
-1980,10,North Sydney,0.8
-1980,11,North Sydney,0.9
-1980,12,North Sydney,0.8
-1981,1,North Sydney,0.8
-1981,2,North Sydney,0.7
-1981,3,North Sydney,0.8
-1981,4,North Sydney,0.7
-1981,5,North Sydney,0.7
-1981,7,North Sydney,0.7
-1981,8,North Sydney,0.8
-1981,9,North Sydney,0.7
-1981,10,North Sydney,0.8
-1981,11,North Sydney,0.8
-1981,12,North Sydney,0.8
-1982,1,North Sydney,0.8
-1982,2,North Sydney,0.7
-1982,3,North Sydney,0.6
-1982,4,North Sydney,0.6
-1982,5,North Sydney,0.6
-1982,6,North Sydney,0.6
-1982,7,North Sydney,0.7
-1982,8,North Sydney,0.7
-1982,9,North Sydney,0.7
-1982,10,North Sydney,0.8
-1982,11,North Sydney,0.7
-1982,12,North Sydney,0.8
-1983,1,North Sydney,0.7
-1983,2,North Sydney,0.8
-1983,3,North Sydney,0.8
-1983,4,North Sydney,0.6
-1983,5,North Sydney,0.6
-1983,6,North Sydney,0.7
-1983,7,North Sydney,0.8
-1983,8,North Sydney,0.8
-1983,9,North Sydney,0.8
-1983,10,North Sydney,0.8
-1983,11,North Sydney,0.9
-1983,12,North Sydney,0.9
-1984,1,North Sydney,0.7
-1984,2,North Sydney,0.7
-1984,3,North Sydney,0.7
-1984,4,North Sydney,0.8
-1984,5,North Sydney,0.7
-1984,6,North Sydney,0.7
-1984,7,North Sydney,0.7
-1984,8,North Sydney,0.8
-1984,9,North Sydney,0.8
-1984,10,North Sydney,0.8
-1984,11,North Sydney,0.9
-1984,12,North Sydney,0.8
-1985,1,North Sydney,1
-1985,2,North Sydney,0.8
-1985,3,North Sydney,0.8
-1985,4,North Sydney,0.7
-1985,5,North Sydney,0.7
-1985,6,North Sydney,0.7
-1985,7,North Sydney,0.7
-1985,8,North Sydney,0.7
-1985,9,North Sydney,0.7
-1985,10,North Sydney,0.8
-1985,11,North Sydney,0.8
-1985,12,North Sydney,0.9
-1986,1,North Sydney,0.8
-1986,2,North Sydney,0.8
-1986,3,North Sydney,0.7
-1986,4,North Sydney,0.7
-1986,5,North Sydney,0.7
-1986,6,North Sydney,0.7
-1986,7,North Sydney,0.8
-1986,8,North Sydney,0.7
-1986,9,North Sydney,0.8
-1986,10,North Sydney,0.8
-1986,11,North Sydney,0.8
-1986,12,North Sydney,0.8
-1987,1,North Sydney,0.9
-1987,2,North Sydney,0.9
-1987,3,North Sydney,0.7
-1987,4,North Sydney,0.6
-1987,5,North Sydney,0.7
-1987,6,North Sydney,0.7
-1987,7,North Sydney,0.7
-1987,8,North Sydney,0.8
-1987,9,North Sydney,0.8
-1987,10,North Sydney,0.7
-1987,11,North Sydney,0.8
-1987,12,North Sydney,0.9
-1988,1,North Sydney,0.8
-1988,2,North Sydney,0.7
-1988,3,North Sydney,0.8
-1988,4,North Sydney,0.8
-1988,5,North Sydney,0.7
-1988,6,North Sydney,0.8
-1988,7,North Sydney,0.7
-1988,8,North Sydney,0.7
-1988,9,North Sydney,0.8
-1988,10,North Sydney,0.8
-1988,11,North Sydney,0.9
-1988,12,North Sydney,0.8
-1989,1,North Sydney,0.8
-1989,2,North Sydney,0.7
-1989,3,North Sydney,0.6
-1989,4,North Sydney,0.6
-1989,5,North Sydney,0.6
-1989,6,North Sydney,0.7
-1989,7,North Sydney,0.7
-1989,8,North Sydney,0.8
-1989,9,North Sydney,0.8
-1989,10,North Sydney,0.8
-1989,11,North Sydney,0.9
-1989,12,North Sydney,0.9
-1990,1,North Sydney,0.8
-1990,2,North Sydney,0.7
-1990,3,North Sydney,0.6
-1990,4,North Sydney,0.6
-1990,5,North Sydney,0.7
-1990,6,North Sydney,0.7
-1990,7,North Sydney,0.7
-1990,8,North Sydney,0.7
-1990,9,North Sydney,0.7
-1990,10,North Sydney,0.8
-1990,11,North Sydney,0.9
-1990,12,North Sydney,0.8
-1991,1,North Sydney,0.8
-1991,2,North Sydney,0.7
-1991,3,North Sydney,0.8
-1991,4,North Sydney,0.7
-1991,5,North Sydney,0.8
-1991,6,North Sydney,0.8
-1991,7,North Sydney,0.8
-1991,8,North Sydney,0.8
-1991,9,North Sydney,0.8
-1991,10,North Sydney,0.8
-1991,11,North Sydney,0.8
-1991,12,North Sydney,0.9
-1992,1,North Sydney,0.9
-1992,2,North Sydney,0.8
-1992,3,North Sydney,0.8
-1992,4,North Sydney,0.7
-1992,5,North Sydney,0.6
-1992,6,North Sydney,0.7
-1992,7,North Sydney,0.8
-1992,8,North Sydney,0.7
-1992,9,North Sydney,0.7
-1992,10,North Sydney,0.8
-1992,11,North Sydney,0.8
-1992,12,North Sydney,0.9
-1993,1,North Sydney,0.8
-1993,2,North Sydney,0.7
-1993,3,North Sydney,0.7
-1993,4,North Sydney,0.7
-1993,5,North Sydney,0.8
-1993,6,North Sydney,0.8
-1993,7,North Sydney,0.8
-1993,8,North Sydney,0.7
-1993,9,North Sydney,0.8
-1993,10,North Sydney,0.8
-1993,11,North Sydney,0.8
-1993,12,North Sydney,0.8
-1994,1,North Sydney,0.8
-1994,2,North Sydney,0.7
-1994,3,North Sydney,0.7
-1994,4,North Sydney,0.7
-1994,5,North Sydney,0.7
-1994,6,North Sydney,0.7
-1994,7,North Sydney,0.7
-1994,8,North Sydney,0.8
-1994,9,North Sydney,0.8
-1994,10,North Sydney,0.9
-1994,11,North Sydney,0.9
-1994,12,North Sydney,0.8
-1995,1,North Sydney,0.8
-1995,2,North Sydney,0.8
-1995,3,North Sydney,0.7
-1995,4,North Sydney,0.8
-1995,5,North Sydney,0.7
-1995,6,North Sydney,0.7
-1995,7,North Sydney,0.7
-1995,8,North Sydney,0.8
-1995,9,North Sydney,0.8
-1995,10,North Sydney,0.8
-1995,11,North Sydney,0.8
-1995,12,North Sydney,0.9
-1996,1,North Sydney,0.8
-1996,2,North Sydney,0.8
-1996,3,North Sydney,0.8
-1996,4,North Sydney,0.8
-1996,5,North Sydney,0.8
-1996,6,North Sydney,0.7
-1996,7,North Sydney,0.8
-1996,8,North Sydney,0.8
-1996,9,North Sydney,0.9
-1996,10,North Sydney,0.9
-1996,11,North Sydney,0.9
-1996,12,North Sydney,0.8
-1997,1,North Sydney,1
-1997,2,North Sydney,0.8
-1997,3,North Sydney,0.8
-1997,4,North Sydney,0.9
-1997,5,North Sydney,0.8
-1997,6,North Sydney,0.8
-1997,7,North Sydney,0.8
-1997,8,North Sydney,0.8
-1997,9,North Sydney,0.8
-1997,10,North Sydney,0.9
-1997,11,North Sydney,0.9
-1997,12,North Sydney,1
-1998,1,North Sydney,0.8
-1998,2,North Sydney,0.8
-1998,3,North Sydney,0.8
-1998,4,North Sydney,0.8
-1998,5,North Sydney,0.7
-1998,6,North Sydney,0.8
-1998,7,North Sydney,0.8
-1998,8,North Sydney,0.8
-1998,9,North Sydney,0.9
-1998,10,North Sydney,0.9
-1998,11,North Sydney,0.8
-1998,12,North Sydney,0.8
-1999,1,North Sydney,0.7
-1999,2,North Sydney,0.8
-1999,3,North Sydney,0.7
-1999,4,North Sydney,0.9
-1999,6,North Sydney,0.7
-1999,7,North Sydney,0.8
-1999,8,North Sydney,0.8
-1999,9,North Sydney,0.8
-1999,10,North Sydney,0.9
-1999,11,North Sydney,0.8
-1999,12,North Sydney,0.8
-2000,1,North Sydney,0.8
-2000,2,North Sydney,0.8
-2000,3,North Sydney,0.7
-2000,4,North Sydney,0.7
-2000,5,North Sydney,0.7
-2000,6,North Sydney,0.7
-2000,7,North Sydney,0.7
-2000,8,North Sydney,0.8
-2000,9,North Sydney,0.8
-2000,10,North Sydney,0.8
-2000,11,North Sydney,0.9
-2000,12,North Sydney,0.9
-2001,1,North Sydney,0.9
-2001,2,North Sydney,0.8
-2001,3,North Sydney,0.8
-2001,4,North Sydney,0.8
-2001,5,North Sydney,0.7
-2001,6,North Sydney,0.8
-2001,7,North Sydney,0.8
-2001,8,North Sydney,0.8
-2001,9,North Sydney,0.8
-2001,10,North Sydney,0.8
-2001,11,North Sydney,0.8
-2001,12,North Sydney,0.9
-2002,1,North Sydney,0.9
-2002,2,North Sydney,0.8
-2002,3,North Sydney,0.7
-2002,4,North Sydney,0.7
-2002,5,North Sydney,0.7
-2002,6,North Sydney,0.7
-2002,7,North Sydney,0.8
-2002,8,North Sydney,0.8
-2002,9,North Sydney,0.8
-2002,10,North Sydney,0.9
-2002,11,North Sydney,0.9
-2002,12,North Sydney,1
-2003,1,North Sydney,0.9
-2003,2,North Sydney,0.8
-2003,3,North Sydney,0.8
-2003,4,North Sydney,0.7
-2003,5,North Sydney,0.7
-2003,6,North Sydney,0.8
-2003,7,North Sydney,0.8
-2003,8,North Sydney,0.8
-2003,9,North Sydney,0.8
-2003,10,North Sydney,0.8
-2003,11,North Sydney,0.9
-2003,12,North Sydney,0.9
-2004,1,North Sydney,1
-2004,2,North Sydney,0.9
-2004,3,North Sydney,0.7
-2004,4,North Sydney,0.7
-2004,5,North Sydney,0.7
-2004,6,North Sydney,0.8
-2004,7,North Sydney,0.7
-2004,8,North Sydney,0.8
-2004,9,North Sydney,0.8
-2004,10,North Sydney,0.8
-2004,11,North Sydney,0.9
-2004,12,North Sydney,0.8
-2005,1,North Sydney,0.9
-2005,2,North Sydney,0.8
-2005,3,North Sydney,0.9
-2005,4,North Sydney,0.9
-2005,5,North Sydney,0.9
-2005,6,North Sydney,0.8
-2005,7,North Sydney,0.8
-2005,8,North Sydney,0.8
-2005,9,North Sydney,0.8
-2005,10,North Sydney,0.8
-2005,11,North Sydney,0.8
-2005,12,North Sydney,0.9
-2006,1,North Sydney,0.8
-2006,2,North Sydney,0.8
-2006,3,North Sydney,0.8
-2006,4,North Sydney,0.6
-2006,5,North Sydney,0.7
-2006,6,North Sydney,0.8
-2006,7,North Sydney,0.8
-2006,8,North Sydney,0.9
-2006,9,North Sydney,0.9
-2006,10,North Sydney,0.9
-2006,11,North Sydney,0.8
-2006,12,North Sydney,0.9
-2007,1,North Sydney,0.9
-2007,2,North Sydney,1
-2007,3,North Sydney,0.8
-2007,4,North Sydney,0.8
-2007,5,North Sydney,0.8
-2007,6,North Sydney,0.8
-2007,7,North Sydney,0.8
-2007,8,North Sydney,0.9
-2007,9,North Sydney,0.9
-2007,10,North Sydney,0.9
-2007,11,North Sydney,0.9
-2007,12,North Sydney,0.9
-2008,1,North Sydney,0.8
-2008,2,North Sydney,0.8
-2008,3,North Sydney,0.8
-2008,4,North Sydney,0.7
-2008,5,North Sydney,0.8
-2008,6,North Sydney,0.8
-2008,7,North Sydney,0.8
-2008,8,North Sydney,0.8
-2008,9,North Sydney,0.8
-2008,10,North Sydney,0.9
-2008,11,North Sydney,0.9
-2008,12,North Sydney,0.9
-2009,1,North Sydney,0.9
-2009,2,North Sydney,0.9
-2009,3,North Sydney,0.8
-2009,4,North Sydney,0.8
-2009,5,North Sydney,0.8
-2009,6,North Sydney,0.8
-2009,7,North Sydney,0.8
-2009,8,North Sydney,0.9
-2009,9,North Sydney,0.9
-2009,10,North Sydney,0.9
-2009,11,North Sydney,0.9
-2009,12,North Sydney,1
-2010,1,North Sydney,1
-2010,2,North Sydney,1
-2010,3,North Sydney,0.9
-2010,4,North Sydney,0.9
-2010,5,North Sydney,0.9
-2010,6,North Sydney,0.9
-2010,7,North Sydney,0.9
-2010,8,North Sydney,0.9
-2010,9,North Sydney,0.9
-2010,10,North Sydney,1
-2010,11,North Sydney,0.9
-2010,12,North Sydney,1
-2011,1,North Sydney,1
-2011,2,North Sydney,1
-2011,3,North Sydney,0.8
-2011,4,North Sydney,0.8
-2011,5,North Sydney,0.8
-2011,6,North Sydney,0.9
-2011,7,North Sydney,0.9
-2011,8,North Sydney,0.8
-2011,9,North Sydney,1
-2011,10,North Sydney,1.1
-2011,11,North Sydney,0.9
-2011,12,North Sydney,0.9
-2012,1,North Sydney,0.9
-2012,2,North Sydney,0.9
-2012,3,North Sydney,0.8
-2012,4,North Sydney,0.8
-2012,5,North Sydney,0.7
-2012,6,North Sydney,0.8
-2012,7,North Sydney,0.9
-2012,8,North Sydney,0.8
-2012,9,North Sydney,0.8
-2012,10,North Sydney,0.9
-2012,11,North Sydney,0.9
-2012,12,North Sydney,1
-2013,1,North Sydney,1
-2013,2,North Sydney,0.9
-2013,3,North Sydney,0.9
-2013,4,North Sydney,0.8
-2013,5,North Sydney,0.7
-2013,6,North Sydney,0.8
-2013,7,North Sydney,0.9
-2013,8,North Sydney,1
-2013,9,North Sydney,1
-2013,10,North Sydney,1
-2013,11,North Sydney,0.9
-2013,12,North Sydney,0.9
-2014,1,North Sydney,0.9
-2014,2,North Sydney,0.8
-2014,3,North Sydney,0.8
-2014,4,North Sydney,0.8
-2014,5,North Sydney,0.8
-2014,6,North Sydney,0.8
-2014,7,North Sydney,0.8
-2014,8,North Sydney,0.8
-2014,9,North Sydney,0.9
-2014,10,North Sydney,0.9
-2014,11,North Sydney,1
-2014,12,North Sydney,0.9
-2015,1,North Sydney,0.9
-2015,2,North Sydney,0.9
-2015,3,North Sydney,0.8
-2015,4,North Sydney,0.8
-2015,5,North Sydney,0.7
-2015,6,North Sydney,0.8
-2015,7,North Sydney,0.8
-2015,8,North Sydney,0.8
-2015,9,North Sydney,0.9
-2015,10,North Sydney,0.9
-2015,11,North Sydney,0.9
-2015,12,North Sydney,0.9
-2016,1,North Sydney,1
-2016,2,North Sydney,0.9
-2016,3,North Sydney,0.9
-2016,4,North Sydney,0.8
-2016,5,North Sydney,0.8
-2016,6,North Sydney,0.9
-2016,7,North Sydney,0.9
-2016,8,North Sydney,0.9
-2016,9,North Sydney,0.9
-2016,10,North Sydney,0.9
-2016,11,North Sydney,1
-2016,12,North Sydney,1
-2017,1,North Sydney,0.9
-2017,2,North Sydney,1
-2017,3,North Sydney,0.9
-2017,4,North Sydney,0.8
-2017,5,North Sydney,0.9
-2017,6,North Sydney,0.9
-2017,7,North Sydney,0.9
-2017,8,North Sydney,0.9
-2017,9,North Sydney,0.9
-2017,10,North Sydney,0.9
-2017,11,North Sydney,1
-2017,12,North Sydney,1
-2018,1,North Sydney,0.9
-2018,2,North Sydney,0.8
-2018,3,North Sydney,0.9
-2018,4,North Sydney,0.9
-2018,5,North Sydney,0.9
-2018,6,North Sydney,0.9
-2018,7,North Sydney,0.9
-2018,8,North Sydney,1
-2018,9,North Sydney,0.9
-2018,10,North Sydney,1
-2018,11,North Sydney,1
-2018,12,North Sydney,1
-2019,1,North Sydney,1
-2019,2,North Sydney,0.9
-2019,3,North Sydney,0.8
-2019,4,North Sydney,0.9
-2019,5,North Sydney,0.9
-2019,7,North Sydney,0.9
-2019,8,North Sydney,0.9
-2019,9,North Sydney,0.9
-2019,10,North Sydney,0.9
-2019,11,North Sydney,1
-2020,1,North Sydney,1
-2020,2,North Sydney,0.9
-2020,3,North Sydney,0.9
-2020,4,North Sydney,0.9
-2020,5,North Sydney,0.9
-2020,6,North Sydney,0.8
-2020,7,North Sydney,0.9
-2020,8,North Sydney,0.9
-2020,9,North Sydney,0.8
-2020,10,North Sydney,0.9
-2020,11,North Sydney,0.9
-2020,12,North Sydney,0.9
-1966,9,Yarmouth,2
-1966,10,Yarmouth,2
-1966,11,Yarmouth,2
-1966,12,Yarmouth,3
-1967,1,Yarmouth,3
-1967,2,Yarmouth,2
-1967,3,Yarmouth,3
-1967,4,Yarmouth,3
-1967,5,Yarmouth,3
-1967,6,Yarmouth,3
-1967,7,Yarmouth,2
-1967,8,Yarmouth,2
-1967,9,Yarmouth,2
-1967,10,Yarmouth,2
-1967,11,Yarmouth,2
-1967,12,Yarmouth,3
-1968,1,Yarmouth,2
-1968,2,Yarmouth,3
-1968,3,Yarmouth,2
-1968,4,Yarmouth,2
-1968,5,Yarmouth,2
-1968,7,Yarmouth,2
-1968,9,Yarmouth,2
-1968,10,Yarmouth,2
-1968,11,Yarmouth,3
-1968,12,Yarmouth,3
-1969,1,Yarmouth,2
-1969,2,Yarmouth,3
-1969,3,Yarmouth,3
-1969,4,Yarmouth,2
-1969,5,Yarmouth,2
-1969,6,Yarmouth,2
-1969,7,Yarmouth,2
-1969,8,Yarmouth,3
-1969,9,Yarmouth,2
-1969,10,Yarmouth,3
-1969,11,Yarmouth,3
-1969,12,Yarmouth,3
-1970,1,Yarmouth,3
-1970,2,Yarmouth,2
-1970,3,Yarmouth,2
-1970,4,Yarmouth,3
-1970,5,Yarmouth,2
-1970,6,Yarmouth,2
-1970,7,Yarmouth,2
-1970,8,Yarmouth,2
-1970,9,Yarmouth,3
-1970,10,Yarmouth,3
-1970,11,Yarmouth,3
-1970,12,Yarmouth,3
-1971,1,Yarmouth,3
-1971,2,Yarmouth,3
-1971,3,Yarmouth,3
-1971,4,Yarmouth,3
-1971,5,Yarmouth,3
-1971,6,Yarmouth,3
-1971,7,Yarmouth,2
-1971,8,Yarmouth,2
-1971,9,Yarmouth,2
-1971,10,Yarmouth,3
-1971,11,Yarmouth,3
-1971,12,Yarmouth,3
-1972,1,Yarmouth,3
-1972,2,Yarmouth,3
-1972,3,Yarmouth,3
-1972,4,Yarmouth,3
-1972,5,Yarmouth,2
-1972,6,Yarmouth,2
-1972,7,Yarmouth,2
-1972,8,Yarmouth,2
-1972,9,Yarmouth,2
-1972,10,Yarmouth,3
-1972,11,Yarmouth,3
-1972,12,Yarmouth,3
-1973,1,Yarmouth,3
-1973,2,Yarmouth,3
-1973,3,Yarmouth,3
-1973,4,Yarmouth,3
-1973,5,Yarmouth,2
-1973,6,Yarmouth,2
-1973,7,Yarmouth,2
-1973,8,Yarmouth,2
-1973,9,Yarmouth,2
-1973,10,Yarmouth,2
-1973,11,Yarmouth,2
-1973,12,Yarmouth,2
-1974,1,Yarmouth,2
-1974,2,Yarmouth,3
-1974,3,Yarmouth,2
-1974,4,Yarmouth,2
-1974,5,Yarmouth,2
-1974,6,Yarmouth,2
-1974,7,Yarmouth,2
-1974,8,Yarmouth,2
-1974,9,Yarmouth,2
-1974,10,Yarmouth,2
-1974,11,Yarmouth,3
-1974,12,Yarmouth,3
-1975,1,Yarmouth,3
-1975,2,Yarmouth,3
-1975,3,Yarmouth,2
-1975,4,Yarmouth,3
-1975,5,Yarmouth,2
-1975,6,Yarmouth,2
-1975,7,Yarmouth,2
-1975,8,Yarmouth,2
-1975,9,Yarmouth,2
-1975,10,Yarmouth,3
-1975,11,Yarmouth,3
-1975,12,Yarmouth,3
-1976,1,Yarmouth,3
-1976,2,Yarmouth,3
-1976,3,Yarmouth,2
-1976,4,Yarmouth,2
-1976,5,Yarmouth,2
-1976,6,Yarmouth,2
-1976,9,Yarmouth,3
-1976,10,Yarmouth,2
-1976,11,Yarmouth,3
-1977,1,Yarmouth,2
-1977,2,Yarmouth,2
-1977,3,Yarmouth,3
-1977,4,Yarmouth,2
-1977,5,Yarmouth,2
-1977,6,Yarmouth,3
-1977,7,Yarmouth,2
-1977,8,Yarmouth,2
-1977,9,Yarmouth,3
-1977,10,Yarmouth,3
-1977,11,Yarmouth,3
-1977,12,Yarmouth,3
-1978,1,Yarmouth,3
-1978,2,Yarmouth,3
-1978,3,Yarmouth,2
-1978,4,Yarmouth,3
-1978,5,Yarmouth,2
-1978,6,Yarmouth,2
-1978,7,Yarmouth,2
-1978,8,Yarmouth,2
-1978,9,Yarmouth,2
-1978,10,Yarmouth,2
-1978,11,Yarmouth,2
-1978,12,Yarmouth,3
-1979,1,Yarmouth,3
-1979,2,Yarmouth,3
-1979,3,Yarmouth,2
-1979,4,Yarmouth,2
-1979,5,Yarmouth,2
-1979,8,Yarmouth,2
-1979,9,Yarmouth,2
-1979,11,Yarmouth,2
-1979,12,Yarmouth,2
-1980,1,Yarmouth,2
-1980,2,Yarmouth,3
-1980,3,Yarmouth,2
-1980,4,Yarmouth,2
-1980,5,Yarmouth,2
-1980,6,Yarmouth,2
-1980,7,Yarmouth,2
-1980,8,Yarmouth,2
-1980,9,Yarmouth,2
-1980,12,Yarmouth,2
-1981,1,Yarmouth,2
-1981,2,Yarmouth,2
-1981,5,Yarmouth,3
-1981,6,Yarmouth,3
-1981,7,Yarmouth,3
-1981,8,Yarmouth,2
-1981,9,Yarmouth,3
-1981,10,Yarmouth,2
-1981,11,Yarmouth,3
-1982,1,Yarmouth,2
-1982,2,Yarmouth,2
-1982,3,Yarmouth,2
-1982,4,Yarmouth,3
-1982,5,Yarmouth,3
-1982,6,Yarmouth,3
-1982,7,Yarmouth,2
-1982,8,Yarmouth,2
-1982,9,Yarmouth,2
-1982,11,Yarmouth,2
-1982,12,Yarmouth,3
-1983,1,Yarmouth,3
-1983,2,Yarmouth,3
-1983,3,Yarmouth,3
-1983,4,Yarmouth,3
-1983,5,Yarmouth,3
-1983,6,Yarmouth,3
-1983,8,Yarmouth,3
-1983,9,Yarmouth,3
-1983,10,Yarmouth,3
-1983,11,Yarmouth,3
-1983,12,Yarmouth,3
-1984,1,Yarmouth,2
-1984,2,Yarmouth,3
-1984,4,Yarmouth,3
-1984,5,Yarmouth,2
-1984,6,Yarmouth,3
-1984,7,Yarmouth,2
-1984,8,Yarmouth,2
-1984,9,Yarmouth,2
-1984,10,Yarmouth,3
-1984,11,Yarmouth,3
-1984,12,Yarmouth,3
-1985,1,Yarmouth,3
-1985,2,Yarmouth,3
-1985,3,Yarmouth,2
-1985,4,Yarmouth,2
-1985,5,Yarmouth,3
-1985,6,Yarmouth,3
-1985,7,Yarmouth,2
-1985,8,Yarmouth,2
-1985,9,Yarmouth,3
-1985,10,Yarmouth,3
-1985,11,Yarmouth,3
-1985,12,Yarmouth,3
-1986,1,Yarmouth,3
-1986,2,Yarmouth,3
-1986,3,Yarmouth,2
-1986,4,Yarmouth,3
-1986,5,Yarmouth,3
-1986,6,Yarmouth,3
-1986,7,Yarmouth,3
-1986,8,Yarmouth,3
-1986,9,Yarmouth,3
-1986,10,Yarmouth,3
-1986,11,Yarmouth,3
-1986,12,Yarmouth,3
-1987,1,Yarmouth,3
-1987,2,Yarmouth,3
-1987,3,Yarmouth,3
-1987,4,Yarmouth,3
-1987,5,Yarmouth,3
-1987,6,Yarmouth,3
-1987,7,Yarmouth,3
-1987,8,Yarmouth,3
-1987,9,Yarmouth,3
-1987,10,Yarmouth,3
-1987,11,Yarmouth,3
-1987,12,Yarmouth,3
-1988,1,Yarmouth,3
-1988,2,Yarmouth,2
-1988,3,Yarmouth,2
-1988,4,Yarmouth,2
-1988,5,Yarmouth,3
-1988,6,Yarmouth,3
-1988,7,Yarmouth,3
-1988,8,Yarmouth,2
-1988,9,Yarmouth,3
-1988,10,Yarmouth,3
-1988,11,Yarmouth,2
-1988,12,Yarmouth,3
-1989,1,Yarmouth,3
-1989,2,Yarmouth,2
-1989,3,Yarmouth,2
-1989,4,Yarmouth,2
-1989,5,Yarmouth,2
-1989,6,Yarmouth,2
-1989,7,Yarmouth,2
-1989,8,Yarmouth,3
-1989,9,Yarmouth,3
-1989,10,Yarmouth,3
-1989,11,Yarmouth,3
-1989,12,Yarmouth,3
-1990,1,Yarmouth,2
-1990,2,Yarmouth,2
-1990,3,Yarmouth,2
-1990,4,Yarmouth,2
-1990,5,Yarmouth,3
-1990,6,Yarmouth,3
-1990,7,Yarmouth,2
-1990,8,Yarmouth,3
-1990,9,Yarmouth,3
-1990,10,Yarmouth,3
-1990,11,Yarmouth,3
-1990,12,Yarmouth,3
-1991,1,Yarmouth,3
-1991,2,Yarmouth,3
-1991,3,Yarmouth,3
-1991,4,Yarmouth,3
-1991,5,Yarmouth,3
-1991,6,Yarmouth,3
-1991,7,Yarmouth,3
-1991,8,Yarmouth,3
-1991,9,Yarmouth,2
-1991,10,Yarmouth,3
-1991,11,Yarmouth,3
-1991,12,Yarmouth,3
-1992,1,Yarmouth,3
-1992,2,Yarmouth,3
-1992,3,Yarmouth,3
-1992,4,Yarmouth,3
-1992,5,Yarmouth,2
-1992,6,Yarmouth,3
-1992,7,Yarmouth,3
-1992,8,Yarmouth,2
-1992,9,Yarmouth,2
-1992,10,Yarmouth,3
-1992,11,Yarmouth,3
-1992,12,Yarmouth,3
-1993,1,Yarmouth,3
-1993,3,Yarmouth,3
-1993,4,Yarmouth,3
-1993,5,Yarmouth,3
-1993,6,Yarmouth,3
-1993,7,Yarmouth,3
-1993,8,Yarmouth,3
-1993,9,Yarmouth,3
-1993,10,Yarmouth,2
-1993,11,Yarmouth,3
-1993,12,Yarmouth,3
-1994,1,Yarmouth,2
-1994,2,Yarmouth,2
-1994,3,Yarmouth,3
-1994,4,Yarmouth,2
-1994,5,Yarmouth,3
-1994,6,Yarmouth,2
-1994,7,Yarmouth,3
-1994,11,Yarmouth,3
-1994,12,Yarmouth,3
-1995,1,Yarmouth,3
-1995,2,Yarmouth,3
-1995,3,Yarmouth,3
-1995,4,Yarmouth,3
-1995,5,Yarmouth,3
-1995,6,Yarmouth,2
-1995,7,Yarmouth,3
-1995,8,Yarmouth,3
-1995,9,Yarmouth,3
-1995,10,Yarmouth,3
-1995,11,Yarmouth,3
-1995,12,Yarmouth,3
-1996,1,Yarmouth,3
-1996,2,Yarmouth,3
-1996,3,Yarmouth,3
-1996,4,Yarmouth,3
-1996,5,Yarmouth,3
-1996,6,Yarmouth,3
-1996,7,Yarmouth,3
-1996,8,Yarmouth,3
-1996,9,Yarmouth,3
-1996,10,Yarmouth,3
-1996,11,Yarmouth,3
-1996,12,Yarmouth,3
-1997,1,Yarmouth,3
-1997,2,Yarmouth,3
-1997,3,Yarmouth,3
-1997,4,Yarmouth,3
-1997,5,Yarmouth,3
-1997,6,Yarmouth,3
-1997,7,Yarmouth,3
-1997,8,Yarmouth,3
-1997,9,Yarmouth,3
-1997,10,Yarmouth,3
-1997,11,Yarmouth,3
-1997,12,Yarmouth,3
-1998,1,Yarmouth,3
-1998,2,Yarmouth,3
-1998,3,Yarmouth,3
-1998,4,Yarmouth,3
-1998,5,Yarmouth,3
-1998,6,Yarmouth,3
-1998,7,Yarmouth,3
-1998,8,Yarmouth,3
-1998,9,Yarmouth,3
-1998,10,Yarmouth,3
-1998,11,Yarmouth,3
-1998,12,Yarmouth,3
-1999,1,Yarmouth,3
-1999,2,Yarmouth,3
-1999,3,Yarmouth,3
-1999,4,Yarmouth,3
-1999,5,Yarmouth,3
-1999,6,Yarmouth,3
-1999,7,Yarmouth,3
-1999,8,Yarmouth,3
-1999,9,Yarmouth,3
-1999,10,Yarmouth,3
-1999,11,Yarmouth,3
-1999,12,Yarmouth,3
-2000,1,Yarmouth,3
-2000,2,Yarmouth,3
-2000,3,Yarmouth,3
-2000,4,Yarmouth,3
-2000,5,Yarmouth,3
-2000,6,Yarmouth,3
-2000,7,Yarmouth,3
-2000,8,Yarmouth,3
-2000,9,Yarmouth,3
-2000,10,Yarmouth,3
-2000,11,Yarmouth,3
-2000,12,Yarmouth,3
-2001,1,Yarmouth,3
-2001,2,Yarmouth,3
-2001,3,Yarmouth,3
-2001,4,Yarmouth,3
-2001,5,Yarmouth,3
-2001,6,Yarmouth,3
-2001,7,Yarmouth,3
-2001,8,Yarmouth,3
-2001,9,Yarmouth,3
-2001,10,Yarmouth,3
-2001,11,Yarmouth,3
-2001,12,Yarmouth,3
-2002,1,Yarmouth,3
-2002,2,Yarmouth,3
-2002,3,Yarmouth,3
-2002,4,Yarmouth,3
-2002,5,Yarmouth,3
-2002,6,Yarmouth,3
-2002,7,Yarmouth,3
-2002,8,Yarmouth,3
-2002,9,Yarmouth,3
-2002,10,Yarmouth,3
-2002,11,Yarmouth,3
-2002,12,Yarmouth,3
-2003,1,Yarmouth,3
-2003,2,Yarmouth,3
-2003,3,Yarmouth,3
-2003,4,Yarmouth,3
-2003,5,Yarmouth,3
-2003,7,Yarmouth,3
-2003,8,Yarmouth,3
-2003,9,Yarmouth,3
-2003,10,Yarmouth,3
-2003,11,Yarmouth,3
-2003,12,Yarmouth,3
-2004,1,Yarmouth,3
-2004,2,Yarmouth,3
-2004,3,Yarmouth,3
-2004,4,Yarmouth,3
-2004,5,Yarmouth,3
-2004,6,Yarmouth,3
-2004,7,Yarmouth,3
-2004,8,Yarmouth,3
-2004,9,Yarmouth,3
-2004,10,Yarmouth,3
-2004,11,Yarmouth,3
-2004,12,Yarmouth,3
-2005,1,Yarmouth,3
-2005,2,Yarmouth,3
-2005,3,Yarmouth,3
-2005,4,Yarmouth,3
-2005,5,Yarmouth,3
-2005,8,Yarmouth,3
-2005,9,Yarmouth,3
-2005,10,Yarmouth,3
-2005,11,Yarmouth,3
-2005,12,Yarmouth,2
-2006,1,Yarmouth,3
-2006,2,Yarmouth,3
-2006,3,Yarmouth,3
-2006,4,Yarmouth,2
-2006,5,Yarmouth,3
-2006,9,Yarmouth,3
-2006,12,Yarmouth,3
-2007,1,Yarmouth,3
-2007,2,Yarmouth,3
-2007,3,Yarmouth,3
-2007,4,Yarmouth,3
-2007,5,Yarmouth,3
-2007,6,Yarmouth,3
-2007,7,Yarmouth,3
-2007,8,Yarmouth,3
-2007,9,Yarmouth,3
-2007,10,Yarmouth,3
-2007,11,Yarmouth,3
-2007,12,Yarmouth,3
-2008,1,Yarmouth,3
-2008,2,Yarmouth,3
-2008,3,Yarmouth,3
-2008,4,Yarmouth,3
-2008,5,Yarmouth,3
-2008,6,Yarmouth,3
-2008,7,Yarmouth,3
-2008,8,Yarmouth,3
-2008,9,Yarmouth,3
-2008,10,Yarmouth,3
-2008,11,Yarmouth,3
-2008,12,Yarmouth,3
-2009,1,Yarmouth,3
-2009,2,Yarmouth,3
-2009,3,Yarmouth,3
-2009,4,Yarmouth,3
-2009,5,Yarmouth,3
-2009,6,Yarmouth,3
-2009,7,Yarmouth,3
-2009,8,Yarmouth,3
-2009,9,Yarmouth,3
-2009,10,Yarmouth,3
-2009,11,Yarmouth,3
-2009,12,Yarmouth,3
-2010,1,Yarmouth,3
-2010,2,Yarmouth,3
-2010,3,Yarmouth,3
-2010,4,Yarmouth,3
-2010,5,Yarmouth,3
-2010,6,Yarmouth,3
-2010,7,Yarmouth,3
-2010,8,Yarmouth,3
-2010,9,Yarmouth,3
-2010,10,Yarmouth,3
-2010,11,Yarmouth,3
-2010,12,Yarmouth,3
-2011,1,Yarmouth,3
-2011,2,Yarmouth,3
-2011,3,Yarmouth,3
-2011,4,Yarmouth,3
-2011,5,Yarmouth,3
-2011,6,Yarmouth,3
-2011,7,Yarmouth,3
-2011,8,Yarmouth,3
-2011,9,Yarmouth,3
-2011,10,Yarmouth,3
-2011,11,Yarmouth,3
-2011,12,Yarmouth,3
-2012,1,Yarmouth,3
-2012,2,Yarmouth,3
-2012,3,Yarmouth,3
-2012,4,Yarmouth,3
-2012,5,Yarmouth,3
-2012,6,Yarmouth,3
-2012,7,Yarmouth,3
-2012,8,Yarmouth,3
-2012,9,Yarmouth,3
-2012,10,Yarmouth,3
-2012,11,Yarmouth,3
-2012,12,Yarmouth,3
-2013,1,Yarmouth,3
-2013,2,Yarmouth,3
-2013,3,Yarmouth,3
-2013,4,Yarmouth,3
-2013,5,Yarmouth,3
-2013,6,Yarmouth,3
-2013,7,Yarmouth,3
-2013,8,Yarmouth,3
-2013,9,Yarmouth,3
-2013,10,Yarmouth,3
-2013,11,Yarmouth,3
-2013,12,Yarmouth,3
-2014,1,Yarmouth,3
-2014,2,Yarmouth,3
-2014,3,Yarmouth,3
-2014,4,Yarmouth,3
-2014,5,Yarmouth,3
-2014,6,Yarmouth,3
-2014,7,Yarmouth,3
-2014,8,Yarmouth,3
-2014,9,Yarmouth,3
-2014,10,Yarmouth,3
-2014,11,Yarmouth,3
-2014,12,Yarmouth,3
-2015,1,Yarmouth,3
-2015,2,Yarmouth,3
-2015,3,Yarmouth,3
-2015,4,Yarmouth,3
-2015,5,Yarmouth,3
-2015,6,Yarmouth,3
-2015,7,Yarmouth,3
-2015,8,Yarmouth,3
-2015,9,Yarmouth,3
-2015,10,Yarmouth,3
-2015,11,Yarmouth,3
-2015,12,Yarmouth,3
-2016,1,Yarmouth,3
-2016,2,Yarmouth,3
-2016,3,Yarmouth,3
-2016,4,Yarmouth,3
-2016,5,Yarmouth,3
-2016,6,Yarmouth,3
-2016,7,Yarmouth,3
-2016,8,Yarmouth,3
-2016,9,Yarmouth,3
-2016,10,Yarmouth,3
-2016,11,Yarmouth,3
-2016,12,Yarmouth,3
-2017,1,Yarmouth,3
-2017,2,Yarmouth,3
-2017,3,Yarmouth,3
-2017,4,Yarmouth,3
-2017,5,Yarmouth,3
-2017,6,Yarmouth,3
-2017,7,Yarmouth,3
-2017,8,Yarmouth,3
-2017,9,Yarmouth,3
-2017,10,Yarmouth,3
-2017,11,Yarmouth,3
-2017,12,Yarmouth,3
-2018,1,Yarmouth,3
-2018,2,Yarmouth,3
-2018,3,Yarmouth,3
-2018,4,Yarmouth,3
-2018,5,Yarmouth,3
-2018,6,Yarmouth,3
-2018,7,Yarmouth,3
-2018,8,Yarmouth,3
-2018,9,Yarmouth,3
-2018,10,Yarmouth,3
-2018,11,Yarmouth,3
-2018,12,Yarmouth,3
-2019,1,Yarmouth,3
-2019,2,Yarmouth,3
-2019,3,Yarmouth,3
-2019,4,Yarmouth,3
-2019,5,Yarmouth,3
-2019,6,Yarmouth,3
-2019,7,Yarmouth,3
-2019,8,Yarmouth,3
-2019,9,Yarmouth,3
-2019,10,Yarmouth,3
-2019,11,Yarmouth,3
-2020,1,Yarmouth,3
-2020,2,Yarmouth,3
-2020,3,Yarmouth,3
-2020,4,Yarmouth,3
-2020,5,Yarmouth,3
-2020,6,Yarmouth,3
-2020,7,Yarmouth,3
-2020,8,Yarmouth,3
-2020,9,Yarmouth,3
-2020,10,Yarmouth,3
-2020,11,Yarmouth,3
-2020,12,Yarmouth,3
+1920,1,Halifax,0.8213
+1920,2,Halifax,0.7899
+1920,3,Halifax,0.7275
+1920,4,Halifax,0.8865
+1920,5,Halifax,0.7451
+1920,6,Halifax,0.7798
+1920,7,Halifax,0.7093
+1920,8,Halifax,0.7156
+1920,9,Halifax,0.8088
+1920,10,Halifax,0.8516
+1920,11,Halifax,0.8304
+1920,12,Halifax,0.8946
+1921,1,Halifax,0.8219
+1921,2,Halifax,0.8008
+1921,3,Halifax,0.6831
+1921,4,Halifax,0.7256
+1921,5,Halifax,0.7734
+1921,6,Halifax,0.7631
+1921,7,Halifax,0.7309
+1921,8,Halifax,0.7185
+1921,9,Halifax,0.7503
+1921,10,Halifax,0.8059
+1921,11,Halifax,0.8502
+1921,12,Halifax,0.8682
+1922,1,Halifax,0.7735
+1922,2,Halifax,0.7627
+1922,3,Halifax,0.7675
+1922,4,Halifax,0.772
+1922,5,Halifax,0.718
+1922,6,Halifax,0.7139
+1922,7,Halifax,0.7024
+1922,8,Halifax,0.7163
+1922,9,Halifax,0.726
+1922,10,Halifax,0.8321
+1922,11,Halifax,0.9099
+1922,12,Halifax,0.8572
+1923,1,Halifax,0.86
+1923,2,Halifax,0.79990000000000006
+1923,3,Halifax,0.7796
+1923,4,Halifax,0.7813
+1923,5,Halifax,0.7454
+1923,6,Halifax,0.8176
+1923,7,Halifax,0.7479
+1923,8,Halifax,0.7635
+1923,9,Halifax,0.7919
+1923,10,Halifax,0.8106
+1923,11,Halifax,0.84
+1923,12,Halifax,0.8199
+1924,1,Halifax,0.784
+1924,2,Halifax,0.8504
+1924,3,Halifax,0.9348
+1924,4,Halifax,0.8025
+1924,5,Halifax,0.774
+1924,6,Halifax,0.7931
+1924,7,Halifax,0.7628
+1924,8,Halifax,0.8178
+1924,9,Halifax,0.7879
+1924,10,Halifax,0.8804
+1924,11,Halifax,0.8435
+1924,12,Halifax,0.8213
+1925,1,Halifax,0.819
+1925,2,Halifax,0.7158
+1925,3,Halifax,0.6648
+1925,4,Halifax,0.7631
+1925,5,Halifax,0.7588
+1925,6,Halifax,0.7664
+1925,7,Halifax,0.7441
+1925,8,Halifax,0.7718
+1925,9,Halifax,0.8055
+1925,10,Halifax,0.8623
+1925,11,Halifax,0.8299
+1925,12,Halifax,0.8404
+1926,1,Halifax,0.7912
+1926,2,Halifax,0.8822
+1926,3,Halifax,0.748
+1926,4,Halifax,0.7835
+1926,5,Halifax,0.7786
+1926,6,Halifax,0.7418
+1926,7,Halifax,0.7462
+1926,8,Halifax,0.7834
+1926,9,Halifax,0.7675
+1926,10,Halifax,0.8349
+1926,11,Halifax,0.7533
+1926,12,Halifax,0.8907
+1927,1,Halifax,0.7801
+1927,2,Halifax,0.8398
+1927,3,Halifax,0.7942
+1927,4,Halifax,0.7888
+1927,5,Halifax,0.7869
+1927,6,Halifax,0.7992
+1927,7,Halifax,0.7332
+1927,8,Halifax,0.7646
+1927,9,Halifax,0.8162
+1927,10,Halifax,0.85
+1927,11,Halifax,0.8374
+1927,12,Halifax,0.9635
+1928,1,Halifax,0.8198
+1928,2,Halifax,0.7663
+1928,3,Halifax,0.8146
+1928,4,Halifax,0.7508
+1928,5,Halifax,0.7727
+1928,6,Halifax,0.7935
+1928,7,Halifax,0.773
+1928,8,Halifax,0.795
+1928,9,Halifax,0.8059
+1928,10,Halifax,0.8076
+1928,11,Halifax,0.7889
+1928,12,Halifax,0.7522
+1929,1,Halifax,0.8232
+1929,2,Halifax,0.818
+1929,3,Halifax,0.8413
+1929,4,Halifax,0.8367
+1929,5,Halifax,0.7294
+1929,6,Halifax,0.8042
+1929,7,Halifax,0.7382
+1929,8,Halifax,0.7587
+1929,9,Halifax,0.7461
+1929,10,Halifax,0.7405
+1929,11,Halifax,0.8285
+1929,12,Halifax,0.8243
+1930,1,Halifax,0.7487
+1930,2,Halifax,0.7842
+1930,3,Halifax,0.7943
+1930,4,Halifax,0.7431
+1930,5,Halifax,0.7715
+1930,6,Halifax,0.7156
+1930,7,Halifax,0.7639
+1930,8,Halifax,0.7619
+1930,9,Halifax,0.8052
+1930,10,Halifax,0.9097
+1930,11,Halifax,0.7507
+1930,12,Halifax,0.8334
+1931,1,Halifax,0.8862
+1931,2,Halifax,0.8364
+1931,3,Halifax,0.9009
+1931,4,Halifax,0.7603
+1931,5,Halifax,0.7373
+1931,6,Halifax,0.8367
+1931,7,Halifax,0.794
+1931,8,Halifax,0.8386
+1931,9,Halifax,0.85
+1931,10,Halifax,0.8792
+1931,11,Halifax,0.7739
+1931,12,Halifax,0.8835
+1932,1,Halifax,0.8557
+1932,2,Halifax,0.9107
+1932,3,Halifax,0.9151
+1932,4,Halifax,0.8128
+1932,5,Halifax,0.7509
+1932,6,Halifax,0.8147
+1932,7,Halifax,0.8272
+1932,8,Halifax,0.7839
+1932,9,Halifax,0.8764
+1932,10,Halifax,0.7708
+1932,11,Halifax,0.8467
+1932,12,Halifax,0.8574
+1933,1,Halifax,0.9034
+1933,2,Halifax,0.8517
+1933,3,Halifax,0.8811
+1933,4,Halifax,0.7964
+1933,5,Halifax,0.819
+1933,6,Halifax,0.8389
+1933,7,Halifax,0.7848
+1933,8,Halifax,0.7954
+1933,9,Halifax,0.8105
+1933,10,Halifax,0.8139
+1933,11,Halifax,0.8861
+1933,12,Halifax,0.8718
+1934,1,Halifax,0.8311
+1934,2,Halifax,0.7622
+1934,3,Halifax,0.6901
+1934,4,Halifax,0.7627
+1934,5,Halifax,0.7401
+1934,6,Halifax,0.8308
+1934,7,Halifax,0.822
+1934,8,Halifax,0.7743
+1934,9,Halifax,0.7842
+1934,10,Halifax,0.8732
+1934,11,Halifax,0.7915
+1934,12,Halifax,0.9374
+1935,1,Halifax,0.8916
+1935,2,Halifax,0.786
+1935,3,Halifax,0.8411
+1935,4,Halifax,0.8367
+1935,5,Halifax,0.8262
+1935,6,Halifax,0.8175
+1935,7,Halifax,0.7552
+1935,8,Halifax,0.798
+1935,9,Halifax,0.8089
+1935,10,Halifax,0.8293
+1935,11,Halifax,0.8958
+1935,12,Halifax,0.9636
+1936,1,Halifax,0.9257
+1936,2,Halifax,0.8755
+1936,3,Halifax,0.797
+1936,4,Halifax,0.8116
+1936,5,Halifax,0.7863
+1936,6,Halifax,0.8026
+1936,7,Halifax,0.8484
+1936,8,Halifax,0.7942
+1936,9,Halifax,0.8211
+1936,10,Halifax,0.8364
+1936,11,Halifax,0.8579
+1936,12,Halifax,0.784
+1937,1,Halifax,0.8021
+1937,2,Halifax,0.9246
+1937,3,Halifax,0.8391
+1937,4,Halifax,0.8165
+1937,5,Halifax,0.8003
+1937,6,Halifax,0.8031
+1937,7,Halifax,0.8188
+1937,8,Halifax,0.7557
+1937,9,Halifax,0.801
+1937,10,Halifax,0.836
+1937,11,Halifax,0.8829
+1937,12,Halifax,0.8611
+1938,1,Halifax,0.8999
+1938,2,Halifax,0.8575
+1938,3,Halifax,0.8593
+1938,4,Halifax,0.7859
+1938,5,Halifax,0.8276
+1938,6,Halifax,0.7942
+1938,7,Halifax,0.7597
+1938,8,Halifax,0.8191
+1938,9,Halifax,0.7945
+1938,10,Halifax,0.8582
+1938,11,Halifax,0.8574
+1938,12,Halifax,0.8669
+1939,1,Halifax,0.8811
+1939,2,Halifax,0.8287
+1939,3,Halifax,0.8155
+1939,4,Halifax,0.8301
+1939,5,Halifax,0.8058
+1939,6,Halifax,0.8289
+1939,7,Halifax,0.8205
+1939,8,Halifax,0.822
+1939,9,Halifax,0.8611
+1939,10,Halifax,0.8666
+1939,11,Halifax,0.8761
+1939,12,Halifax,0.9522
+1940,1,Halifax,0.9198
+1940,2,Halifax,0.9661
+1940,3,Halifax,0.8709
+1940,4,Halifax,0.8281
+1940,5,Halifax,0.8418
+1940,6,Halifax,0.856
+1940,7,Halifax,0.7932
+1940,8,Halifax,0.7908
+1940,9,Halifax,0.8253
+1940,10,Halifax,0.8701
+1940,11,Halifax,0.8603
+1940,12,Halifax,0.8945
+1941,1,Halifax,0.9366
+1941,2,Halifax,0.9116
+1941,3,Halifax,0.8725
+1941,4,Halifax,0.8451
+1941,5,Halifax,0.8684
+1941,6,Halifax,0.8872
+1941,7,Halifax,0.8352
+1941,8,Halifax,0.8769
+1941,9,Halifax,0.8886
+1941,10,Halifax,0.9029
+1941,11,Halifax,0.8715
+1941,12,Halifax,0.9243
+1942,1,Halifax,0.8721
+1942,2,Halifax,0.9774
+1942,3,Halifax,0.9119
+1942,4,Halifax,0.8918
+1942,5,Halifax,0.8141
+1942,6,Halifax,0.8776
+1942,7,Halifax,0.8326
+1942,8,Halifax,0.8323
+1942,9,Halifax,0.8751
+1942,10,Halifax,0.8713
+1942,11,Halifax,0.902
+1942,12,Halifax,0.9546
+1943,1,Halifax,0.8766
+1943,2,Halifax,0.8693
+1943,3,Halifax,0.7751
+1943,4,Halifax,0.8369
+1943,5,Halifax,0.7865
+1943,6,Halifax,0.8698
+1943,7,Halifax,0.8294
+1943,8,Halifax,0.8607
+1943,9,Halifax,0.8563
+1943,10,Halifax,0.9442
+1943,11,Halifax,0.9243
+1943,12,Halifax,0.9026
+1944,1,Halifax,0.8862
+1944,2,Halifax,0.8984
+1944,3,Halifax,0.8559
+1944,4,Halifax,0.874
+1944,5,Halifax,0.7679
+1944,6,Halifax,0.8562
+1944,7,Halifax,0.8665
+1944,8,Halifax,0.8675
+1944,9,Halifax,0.8331
+1944,10,Halifax,0.9068
+1944,11,Halifax,1.0437
+1944,12,Halifax,0.9015
+1945,1,Halifax,0.9338
+1945,2,Halifax,0.9041
+1945,3,Halifax,0.9116
+1945,4,Halifax,0.8775
+1945,5,Halifax,0.888
+1945,6,Halifax,0.8741
+1945,7,Halifax,0.8325
+1945,8,Halifax,0.8448
+1945,9,Halifax,0.7949
+1945,10,Halifax,0.9009
+1945,11,Halifax,0.9752
+1945,12,Halifax,0.9985
+1946,1,Halifax,0.8972
+1946,2,Halifax,0.9364
+1946,3,Halifax,0.868
+1946,4,Halifax,0.9211
+1946,5,Halifax,0.8337
+1946,6,Halifax,0.8376
+1946,7,Halifax,0.8185
+1946,8,Halifax,0.8541
+1946,9,Halifax,0.8396
+1946,10,Halifax,0.9142
+1946,11,Halifax,0.9587
+1946,12,Halifax,0.9352
+1947,1,Halifax,0.933
+1947,2,Halifax,1.0368
+1947,3,Halifax,1.004
+1947,4,Halifax,0.8716
+1947,5,Halifax,0.873
+1947,6,Halifax,0.8954
+1947,7,Halifax,0.8554
+1947,8,Halifax,0.8486
+1947,9,Halifax,0.8685
+1947,10,Halifax,0.9153
+1947,11,Halifax,1.0918
+1947,12,Halifax,1.0041
+1948,1,Halifax,0.9534
+1948,2,Halifax,0.9184
+1948,3,Halifax,0.9026
+1948,4,Halifax,0.8632
+1948,5,Halifax,0.8721
+1948,6,Halifax,0.9147
+1948,7,Halifax,0.9096
+1948,8,Halifax,0.868
+1948,9,Halifax,0.9091
+1948,10,Halifax,0.9456
+1948,11,Halifax,0.9069
+1948,12,Halifax,0.9855
+1949,1,Halifax,0.8858
+1949,2,Halifax,0.9075
+1949,3,Halifax,0.8475
+1949,4,Halifax,0.8765
+1949,5,Halifax,0.8501
+1949,6,Halifax,0.8046
+1949,7,Halifax,0.8544
+1949,8,Halifax,0.8749
+1949,9,Halifax,0.8739
+1949,10,Halifax,0.8764
+1949,11,Halifax,0.9499
+1949,12,Halifax,0.8186
+1950,1,Halifax,0.8768
+1950,2,Halifax,0.9056
+1950,3,Halifax,0.8544
+1950,4,Halifax,0.8608
+1950,5,Halifax,0.807
+1950,6,Halifax,0.8138
+1950,7,Halifax,0.8193
+1950,8,Halifax,0.84
+1950,9,Halifax,0.8897
+1950,10,Halifax,0.8794
+1950,11,Halifax,0.9429
+1950,12,Halifax,0.9169
+1951,1,Halifax,0.9261
+1951,2,Halifax,0.8682
+1951,3,Halifax,0.9422
+1951,4,Halifax,0.9083
+1951,5,Halifax,0.9232
+1951,6,Halifax,0.9192
+1951,7,Halifax,0.8765
+1951,8,Halifax,0.9117
+1951,9,Halifax,0.8938
+1951,10,Halifax,0.9434
+1951,11,Halifax,0.969
+1951,12,Halifax,0.9563
+1952,1,Halifax,0.9609
+1952,2,Halifax,1.0255
+1952,3,Halifax,0.9432
+1952,4,Halifax,0.8737
+1952,5,Halifax,0.9722
+1952,6,Halifax,0.9101
+1952,7,Halifax,0.8462
+1952,8,Halifax,0.8524
+1952,9,Halifax,0.8897
+1952,10,Halifax,0.8998
+1952,11,Halifax,0.9636
+1952,12,Halifax,0.9915
+1953,1,Halifax,0.9632
+1953,2,Halifax,0.9273
+1953,3,Halifax,0.9382
+1953,4,Halifax,0.9306
+1953,5,Halifax,0.9253
+1953,6,Halifax,0.8961
+1953,7,Halifax,0.8661
+1953,8,Halifax,0.8938
+1953,9,Halifax,0.8806
+1953,10,Halifax,0.9331
+1953,11,Halifax,0.9397
+1953,12,Halifax,0.9717
+1954,1,Halifax,0.9923
+1954,2,Halifax,0.9519
+1954,3,Halifax,0.9351
+1954,4,Halifax,0.8322
+1954,5,Halifax,0.9166
+1954,6,Halifax,0.925
+1954,7,Halifax,0.8914
+1954,8,Halifax,0.9028
+1954,9,Halifax,0.9119
+1954,10,Halifax,0.9392
+1954,11,Halifax,0.9224
+1954,12,Halifax,0.9318
+1955,1,Halifax,1.0883
+1955,2,Halifax,0.9279
+1955,3,Halifax,0.9432
+1955,4,Halifax,0.942
+1955,5,Halifax,0.8959
+1955,6,Halifax,0.9232
+1955,7,Halifax,0.8791
+1955,8,Halifax,0.9008
+1955,9,Halifax,0.8533
+1955,10,Halifax,0.932
+1955,11,Halifax,1.0166
+1955,12,Halifax,0.951
+1956,1,Halifax,1.0241
+1956,2,Halifax,0.9118
+1956,3,Halifax,0.9278
+1956,4,Halifax,0.9081
+1956,5,Halifax,0.8505
+1956,6,Halifax,0.8694
+1956,7,Halifax,0.8859
+1956,8,Halifax,0.9316
+1956,9,Halifax,0.8879
+1956,10,Halifax,0.8877
+1956,11,Halifax,0.9312
+1956,12,Halifax,0.9151
+1957,1,Halifax,0.8738
+1957,2,Halifax,0.9012
+1957,3,Halifax,0.9614
+1957,4,Halifax,0.8807
+1957,5,Halifax,0.9156
+1957,6,Halifax,0.8676
+1957,7,Halifax,0.8899
+1957,8,Halifax,0.8578
+1957,9,Halifax,0.8746
+1957,10,Halifax,0.9361
+1957,11,Halifax,0.9193
+1957,12,Halifax,0.8942
+1958,1,Halifax,1.0264
+1958,2,Halifax,1.0577
+1958,3,Halifax,1.0846
+1958,4,Halifax,0.9529
+1958,5,Halifax,0.8388
+1958,6,Halifax,0.8997
+1958,7,Halifax,0.901
+1958,8,Halifax,0.8713
+1958,9,Halifax,0.9284
+1958,10,Halifax,0.9492
+1958,11,Halifax,0.954
+1958,12,Halifax,0.9523
+1959,1,Halifax,1.0005
+1959,2,Halifax,0.9044
+1959,3,Halifax,0.9464
+1959,4,Halifax,0.8843
+1959,5,Halifax,0.834
+1959,6,Halifax,0.882
+1959,7,Halifax,0.8308
+1959,8,Halifax,0.9031
+1959,9,Halifax,0.8856
+1959,10,Halifax,0.949
+1959,11,Halifax,0.9087
+1959,12,Halifax,0.9533
+1960,1,Halifax,1.0189
+1960,2,Halifax,1.031
+1960,3,Halifax,1.0072
+1960,4,Halifax,0.9298
+1960,5,Halifax,0.9308
+1960,6,Halifax,0.9099
+1960,7,Halifax,0.8781
+1960,8,Halifax,0.8886
+1960,9,Halifax,0.9035
+1960,10,Halifax,0.9585
+1960,11,Halifax,0.9169
+1960,12,Halifax,0.9144
+1961,1,Halifax,0.9761
+1961,2,Halifax,0.933
+1961,3,Halifax,0.976
+1961,4,Halifax,0.9925
+1961,5,Halifax,0.8802
+1961,6,Halifax,0.8262
+1961,7,Halifax,0.8571
+1961,8,Halifax,0.8435
+1961,9,Halifax,0.8727
+1961,10,Halifax,0.9452
+1961,11,Halifax,1.0254
+1961,12,Halifax,1.0204
+1962,1,Halifax,0.8974
+1962,2,Halifax,0.9307
+1962,3,Halifax,1.0318
+1962,4,Halifax,0.8701
+1962,5,Halifax,0.8823
+1962,6,Halifax,0.9134
+1962,7,Halifax,0.9284
+1962,8,Halifax,0.8788
+1962,9,Halifax,0.9418
+1962,10,Halifax,0.9834
+1962,11,Halifax,1.0065
+1962,12,Halifax,1.0024
+1963,1,Halifax,0.956
+1963,2,Halifax,0.899
+1963,3,Halifax,0.9336
+1963,4,Halifax,0.998
+1963,5,Halifax,0.8481
+1963,6,Halifax,0.9033
+1963,7,Halifax,0.8868
+1963,8,Halifax,0.8969
+1963,9,Halifax,0.9017
+1963,10,Halifax,0.9449
+1963,11,Halifax,1.0156
+1963,12,Halifax,0.9907
+1964,1,Halifax,1.0138
+1964,2,Halifax,1.0156
+1964,3,Halifax,0.9624
+1964,4,Halifax,0.8091
+1964,5,Halifax,0.9002
+1964,6,Halifax,0.9044
+1964,7,Halifax,0.8643
+1964,8,Halifax,0.8951
+1964,9,Halifax,0.9479
+1964,10,Halifax,0.9789
+1964,11,Halifax,1.0093
+1964,12,Halifax,0.9639
+1965,1,Halifax,0.9979
+1965,2,Halifax,0.9692
+1965,3,Halifax,0.9454
+1965,4,Halifax,0.9457
+1965,5,Halifax,0.901
+1965,6,Halifax,0.9166
+1965,7,Halifax,0.8772
+1965,8,Halifax,0.8442
+1965,9,Halifax,0.8972
+1965,10,Halifax,0.976
+1965,11,Halifax,1.004
+1965,12,Halifax,0.971
+1966,1,Halifax,1.0942
+1966,2,Halifax,0.9919
+1966,3,Halifax,0.9496
+1966,4,Halifax,0.9218
+1966,5,Halifax,0.9107
+1966,6,Halifax,0.8865
+1966,7,Halifax,0.9408
+1966,8,Halifax,0.921
+1966,9,Halifax,0.9701
+1966,10,Halifax,0.9083
+1966,11,Halifax,0.9076
+1966,12,Halifax,0.9755
+1967,1,Halifax,1.009
+1967,2,Halifax,0.9725
+1967,3,Halifax,0.9304
+1967,4,Halifax,0.9609
+1967,5,Halifax,0.9421
+1967,6,Halifax,0.9157
+1967,7,Halifax,0.8946
+1967,8,Halifax,0.8716
+1967,9,Halifax,0.8981
+1967,10,Halifax,0.9439
+1967,11,Halifax,0.9775
+1967,12,Halifax,1.0406
+1968,1,Halifax,0.9729
+1968,2,Halifax,0.977
+1968,3,Halifax,0.9331
+1968,4,Halifax,0.8881
+1968,5,Halifax,0.9356
+1968,6,Halifax,0.9453
+1968,7,Halifax,0.9115
+1968,8,Halifax,0.9699
+1968,9,Halifax,0.9477
+1968,10,Halifax,0.9719
+1968,11,Halifax,1.0787
+1968,12,Halifax,1.0531
+1969,1,Halifax,1.0113
+1969,2,Halifax,1.0485
+1969,3,Halifax,1.0207
+1969,4,Halifax,0.9446
+1969,5,Halifax,0.942
+1969,6,Halifax,0.9595
+1969,7,Halifax,0.9544
+1969,8,Halifax,0.9655
+1969,9,Halifax,0.9622
+1969,10,Halifax,1.0385
+1969,11,Halifax,1.0209
+1969,12,Halifax,1.0712
+1970,1,Halifax,1.0984
+1970,2,Halifax,0.9602
+1970,3,Halifax,0.9611
+1970,4,Halifax,0.9713
+1970,5,Halifax,0.8691
+1970,6,Halifax,0.9416
+1970,7,Halifax,0.9184
+1970,8,Halifax,0.9824
+1970,9,Halifax,0.9579
+1970,10,Halifax,0.9705
+1970,11,Halifax,1.062
+1970,12,Halifax,1.17
+1971,1,Halifax,1.0891
+1971,2,Halifax,0.9573
+1971,3,Halifax,1.0348
+1971,4,Halifax,1.0246
+1971,5,Halifax,0.9785
+1971,6,Halifax,0.9805
+1971,7,Halifax,0.929
+1971,8,Halifax,0.9055
+1971,9,Halifax,0.9433
+1971,10,Halifax,1.0243
+1971,11,Halifax,1.0884
+1971,12,Halifax,1.0334
+1972,1,Halifax,1.0042
+1972,2,Halifax,1.0076
+1972,3,Halifax,1.0023
+1972,4,Halifax,1.0023
+1972,5,Halifax,0.9724
+1972,6,Halifax,0.977
+1972,7,Halifax,0.9501
+1972,8,Halifax,0.9343
+1972,9,Halifax,0.9759
+1972,10,Halifax,0.9639
+1972,11,Halifax,1.0868
+1972,12,Halifax,1.0788
+1973,1,Halifax,1.1015
+1973,2,Halifax,1.0136
+1973,3,Halifax,1.0115
+1973,4,Halifax,1.0236
+1973,5,Halifax,0.9477
+1973,6,Halifax,0.9323
+1973,7,Halifax,0.9522
+1973,8,Halifax,0.9552
+1973,9,Halifax,0.9951
+1973,10,Halifax,1.0265
+1973,11,Halifax,1.0313
+1973,12,Halifax,0.9754
+1974,1,Halifax,1.0522
+1974,2,Halifax,1.0425
+1974,3,Halifax,0.9888
+1974,4,Halifax,0.9871
+1974,5,Halifax,0.9653
+1974,6,Halifax,0.9398
+1974,7,Halifax,0.9505
+1974,8,Halifax,0.9053
+1974,9,Halifax,0.962
+1974,10,Halifax,0.9167
+1974,11,Halifax,1.0251
+1974,12,Halifax,1.0275
+1975,1,Halifax,1.0151
+1975,2,Halifax,1.0155
+1975,3,Halifax,0.9902
+1975,4,Halifax,1.0379
+1975,5,Halifax,0.9767
+1975,6,Halifax,0.9798
+1975,7,Halifax,0.9143
+1975,8,Halifax,0.9535
+1975,9,Halifax,0.9422
+1975,10,Halifax,1.0199
+1975,11,Halifax,1.0432
+1975,12,Halifax,0.9863
+1976,1,Halifax,1.0063
+1976,2,Halifax,0.9481
+1976,3,Halifax,0.9553
+1976,4,Halifax,0.9385
+1976,5,Halifax,0.8924
+1976,6,Halifax,0.9253
+1976,7,Halifax,0.9839
+1976,8,Halifax,0.9429
+1976,9,Halifax,0.9757
+1976,10,Halifax,0.9821
+1976,11,Halifax,1.0527
+1976,12,Halifax,1.0095
+1977,1,Halifax,1.0437
+1977,2,Halifax,1.0307
+1977,3,Halifax,1.0415
+1977,4,Halifax,0.9293
+1977,5,Halifax,0.9917
+1977,6,Halifax,1.0005
+1977,7,Halifax,0.9418
+1977,8,Halifax,0.9246
+1977,9,Halifax,1.0375
+1977,10,Halifax,1.023
+1977,11,Halifax,0.9988
+1977,12,Halifax,1.0893
+1978,1,Halifax,1.0195
+1978,2,Halifax,1.1095
+1978,3,Halifax,0.9931
+1978,4,Halifax,1.0554
+1978,5,Halifax,0.9412
+1978,6,Halifax,0.9124
+1978,7,Halifax,0.9206
+1978,8,Halifax,0.9524
+1978,9,Halifax,0.9994
+1978,10,Halifax,0.9711
+1978,11,Halifax,0.9877
+1978,12,Halifax,1.092
+1979,1,Halifax,1.0806
+1979,2,Halifax,1.0911
+1979,3,Halifax,0.9111
+1979,4,Halifax,0.9384
+1979,5,Halifax,0.9021
+1979,6,Halifax,0.9231
+1979,7,Halifax,0.9277
+1979,8,Halifax,0.9557
+1979,9,Halifax,0.9268
+1979,10,Halifax,0.9898
+1979,11,Halifax,0.9597
+1979,12,Halifax,0.977
+1980,1,Halifax,0.9988
+1980,2,Halifax,1.0458
+1980,3,Halifax,0.9423
+1980,4,Halifax,0.9524
+1980,5,Halifax,0.9998
+1980,6,Halifax,0.9519
+1980,7,Halifax,0.9434
+1980,9,Halifax,0.9509
+1980,10,Halifax,0.9573
+1980,11,Halifax,1.1233
+1980,12,Halifax,1.0225
+1981,1,Halifax,1.0309
+1981,2,Halifax,0.9002
+1981,3,Halifax,1.1135
+1981,4,Halifax,0.956
+1981,5,Halifax,0.9817
+1981,6,Halifax,1.0097
+1981,7,Halifax,0.9595
+1981,8,Halifax,0.9891
+1981,9,Halifax,1.0293
+1981,10,Halifax,1.0071
+1981,11,Halifax,1.0959
+1981,12,Halifax,1.1241
+1982,1,Halifax,1.0164
+1982,2,Halifax,0.9669
+1982,3,Halifax,0.9589
+1982,4,Halifax,0.9396
+1982,5,Halifax,0.9237
+1982,6,Halifax,0.996
+1982,7,Halifax,0.922
+1982,8,Halifax,0.9149
+1982,9,Halifax,0.9162
+1982,10,Halifax,1.0378
+1982,11,Halifax,0.9555
+1982,12,Halifax,1.0035
+1983,1,Halifax,1.0255
+1983,2,Halifax,1.0533
+1983,3,Halifax,1.0408
+1983,4,Halifax,0.9727
+1983,5,Halifax,0.944
+1983,6,Halifax,0.9484
+1983,7,Halifax,0.9951
+1983,8,Halifax,0.9916
+1983,9,Halifax,1.003
+1983,10,Halifax,1.0518
+1983,11,Halifax,1.1682
+1983,12,Halifax,1.0475
+1984,1,Halifax,0.9584
+1984,2,Halifax,0.9839
+1984,3,Halifax,1.0155
+1984,4,Halifax,1.08
+1984,5,Halifax,0.9763
+1984,6,Halifax,0.9871
+1984,7,Halifax,0.9621
+1984,8,Halifax,0.9607
+1984,9,Halifax,0.9707
+1984,10,Halifax,1.0176
+1984,11,Halifax,1.0741
+1984,12,Halifax,0.9867
+1985,1,Halifax,1.1367
+1985,2,Halifax,1.0082
+1985,3,Halifax,0.9948
+1985,4,Halifax,0.9728
+1985,5,Halifax,0.9883
+1985,6,Halifax,0.9714
+1985,7,Halifax,0.9366
+1985,8,Halifax,0.9653
+1985,9,Halifax,0.9908
+1985,10,Halifax,0.9832
+1985,11,Halifax,1.05
+1985,12,Halifax,1.0797
+1986,1,Halifax,0.9726
+1986,2,Halifax,1.0379
+1986,3,Halifax,0.9212
+1986,4,Halifax,0.9867
+1986,5,Halifax,0.9739
+1986,6,Halifax,0.9623
+1986,7,Halifax,1.0083
+1986,8,Halifax,0.9669
+1986,9,Halifax,0.976
+1986,10,Halifax,1.0393
+1986,11,Halifax,0.9864
+1986,12,Halifax,0.988
+1987,1,Halifax,1.1158
+1987,2,Halifax,1.0822
+1987,3,Halifax,1.0345
+1987,4,Halifax,0.9505
+1987,5,Halifax,0.9051
+1987,6,Halifax,0.9814
+1987,7,Halifax,0.966
+1987,8,Halifax,0.9823
+1987,9,Halifax,0.9936
+1987,10,Halifax,0.9739
+1987,11,Halifax,1.0129
+1987,12,Halifax,1.1422
+1988,1,Halifax,0.9793
+1988,2,Halifax,0.9774
+1988,3,Halifax,0.9663
+1988,4,Halifax,1.0735
+1988,5,Halifax,0.9465
+1988,6,Halifax,1.0022
+1988,7,Halifax,0.949
+1988,8,Halifax,0.9986
+1988,9,Halifax,0.9788
+1988,10,Halifax,1.0293
+1988,11,Halifax,1.0838
+1988,12,Halifax,1.1082
+1989,1,Halifax,1.0508
+1989,2,Halifax,0.9817
+1989,3,Halifax,0.9534
+1989,4,Halifax,0.9943
+1989,5,Halifax,0.9305
+1989,6,Halifax,0.9653
+1989,7,Halifax,0.938
+1989,8,Halifax,0.9817
+1989,9,Halifax,0.9878
+1989,10,Halifax,1.0252
+1989,11,Halifax,1.098
+1989,12,Halifax,1.1492
+1990,1,Halifax,1.0262
+1990,2,Halifax,0.957
+1990,3,Halifax,0.8835
+1990,4,Halifax,0.8915
+1990,5,Halifax,1.0195
+1990,7,Halifax,0.9483
+1990,8,Halifax,0.979
+1990,9,Halifax,1.0199
+1990,10,Halifax,1.0057
+1990,11,Halifax,1.1141
+1990,12,Halifax,1.0184
+1991,1,Halifax,1.035
+1991,2,Halifax,0.994
+1991,3,Halifax,1.0759
+1991,4,Halifax,0.9683
+1991,5,Halifax,0.9895
+1991,6,Halifax,1.0323
+1991,7,Halifax,1.0055
+1991,8,Halifax,0.9799
+1991,10,Halifax,1.014
+1991,11,Halifax,1.0507
+1991,12,Halifax,1.0736
+1992,1,Halifax,1.085
+1992,2,Halifax,1.0913
+1992,3,Halifax,1.032
+1992,4,Halifax,0.9495
+1992,5,Halifax,0.8859
+1992,6,Halifax,1.017
+1992,7,Halifax,1.0166
+1992,8,Halifax,0.9432
+1992,9,Halifax,0.9313
+1992,10,Halifax,1.0277
+1992,11,Halifax,1.0083
+1992,12,Halifax,1.0358
+1993,1,Halifax,1.0063
+1993,2,Halifax,1.0406
+1993,3,Halifax,0.9681
+1993,4,Halifax,1.0233
+1993,5,Halifax,0.9989
+1993,8,Halifax,1.0116
+1993,9,Halifax,1.0013
+1993,10,Halifax,0.9972
+1993,11,Halifax,1.0001
+1993,12,Halifax,1.0528
+1994,1,Halifax,0.9572
+1994,2,Halifax,0.9792
+1994,3,Halifax,0.9978
+1994,4,Halifax,0.8982
+1994,5,Halifax,1.0189
+1994,6,Halifax,0.9487
+1994,7,Halifax,0.9535
+1994,8,Halifax,0.959
+1994,9,Halifax,1.0005
+1994,10,Halifax,1.0337
+1994,11,Halifax,1.0297
+1994,12,Halifax,1.0305
+1995,1,Halifax,1.0485
+1995,2,Halifax,1.0357
+1995,3,Halifax,0.9856
+1995,4,Halifax,0.9987
+1995,5,Halifax,1.0183
+1995,6,Halifax,0.9485
+1995,7,Halifax,0.9676
+1995,8,Halifax,1.0274
+1995,9,Halifax,1.0163
+1995,10,Halifax,1.0362
+1995,11,Halifax,1.0594
+1995,12,Halifax,1.1828
+1996,1,Halifax,1.1005
+1996,2,Halifax,1.0462
+1996,3,Halifax,1.0287
+1996,4,Halifax,1.0517
+1996,5,Halifax,1.0084
+1996,6,Halifax,0.9949
+1996,7,Halifax,1.0062
+1996,8,Halifax,0.9897
+1996,9,Halifax,1.1722
+1996,10,Halifax,1.1011
+1996,11,Halifax,1.1061
+1996,12,Halifax,1.0554
+1997,1,Halifax,1.1247
+1997,2,Halifax,1.0356
+1997,3,Halifax,1.0583
+1997,4,Halifax,1.1238
+1997,5,Halifax,1.0308
+1997,6,Halifax,1.043
+1997,7,Halifax,0.9956
+1997,8,Halifax,1.0181
+1997,9,Halifax,1.0304
+1997,10,Halifax,1.1133
+1997,11,Halifax,1.14
+1997,12,Halifax,1.1672
+1998,1,Halifax,1.1191
+1998,2,Halifax,1.138
+1998,3,Halifax,1.0108
+1998,4,Halifax,1.0639
+1998,5,Halifax,1.0203
+1998,6,Halifax,1.0269
+1998,7,Halifax,1.0315
+1998,8,Halifax,0.9702
+1998,9,Halifax,1.0724
+1998,10,Halifax,1.0519
+1998,11,Halifax,1.0598
+1998,12,Halifax,1.0493
+1999,1,Halifax,0.9651
+1999,2,Halifax,1.0674
+1999,3,Halifax,1.0398
+1999,4,Halifax,1.0975
+1999,5,Halifax,0.9612
+1999,6,Halifax,0.9453
+1999,7,Halifax,1.0099
+1999,8,Halifax,1.0336
+1999,9,Halifax,1.0118
+1999,10,Halifax,1.0451
+1999,11,Halifax,1.0407
+1999,12,Halifax,1.0868
+2000,1,Halifax,1.0886
+2000,2,Halifax,0.9951
+2000,3,Halifax,1.0492
+2000,4,Halifax,1.0152
+2000,5,Halifax,1.0203
+2000,6,Halifax,0.9946
+2000,7,Halifax,1.02
+2000,8,Halifax,1.0073
+2000,9,Halifax,1.0174
+2000,10,Halifax,1.0626
+2000,11,Halifax,1.1759
+2000,12,Halifax,1.0505
+2001,2,Halifax,0.9188
+2001,3,Halifax,0.9932
+2001,4,Halifax,0.9909
+2001,5,Halifax,1.026
+2001,6,Halifax,0.9898
+2001,7,Halifax,1.0075
+2001,8,Halifax,1.0133
+2001,9,Halifax,1.0479
+2001,10,Halifax,1.0328
+2001,11,Halifax,1.0552
+2001,12,Halifax,1.1138
+2002,1,Halifax,1.1044
+2002,2,Halifax,1.106
+2002,3,Halifax,0.9441
+2002,4,Halifax,0.9813
+2002,5,Halifax,1.0401
+2002,6,Halifax,1.0271
+2002,7,Halifax,1.0047
+2002,8,Halifax,0.9379
+2002,9,Halifax,0.981
+2002,10,Halifax,1.0037
+2002,11,Halifax,1.0483
+2002,12,Halifax,1.1079
+2003,1,Halifax,1.087
+2003,2,Halifax,0.969
+2003,3,Halifax,0.9973
+2003,4,Halifax,0.9605
+2003,5,Halifax,0.9678
+2003,6,Halifax,0.9973
+2003,7,Halifax,0.9568
+2003,8,Halifax,0.9619
+2003,9,Halifax,0.9847
+2004,2,Halifax,1.094
+2004,3,Halifax,1.0274
+2004,4,Halifax,1.02
+2004,5,Halifax,1.0072
+2004,6,Halifax,1.0616
+2004,7,Halifax,1.0209
+2004,8,Halifax,1.0173
+2004,10,Halifax,1.1433
+2004,11,Halifax,1.1128
+2004,12,Halifax,1.0624
+2005,1,Halifax,1.0866
+2005,2,Halifax,1.029
+2005,3,Halifax,1.1338
+2005,4,Halifax,1.0662
+2005,5,Halifax,1.0858
+2005,6,Halifax,1.0353
+2005,7,Halifax,1.0234
+2005,8,Halifax,1.0242
+2005,9,Halifax,1.0332
+2005,10,Halifax,1.0839
+2005,11,Halifax,1.066
+2005,12,Halifax,1.0911
+2006,1,Halifax,1.0964
+2006,2,Halifax,1.1079
+2006,3,Halifax,1.1043
+2006,4,Halifax,1.0549
+2006,7,Halifax,1.0001
+2006,8,Halifax,1.0457
+2006,9,Halifax,1.0667
+2006,10,Halifax,1.112
+2006,11,Halifax,1.0417
+2006,12,Halifax,1.0717
+2007,1,Halifax,1.0753
+2007,2,Halifax,1.0954
+2007,3,Halifax,0.971
+2007,4,Halifax,1.0445
+2007,5,Halifax,0.9738
+2007,6,Halifax,1.0578
+2007,7,Halifax,0.9789
+2007,8,Halifax,1.0018
+2007,9,Halifax,1.0192
+2007,10,Halifax,1.0905
+2007,11,Halifax,1.0384
+2007,12,Halifax,1.0471
+2008,1,Halifax,1.0432
+2008,2,Halifax,1.0158
+2008,3,Halifax,1.0268
+2008,4,Halifax,0.9965
+2008,5,Halifax,1.0961
+2008,6,Halifax,1.0588
+2008,7,Halifax,1.0149
+2008,8,Halifax,1.0704
+2008,9,Halifax,1.0451
+2008,10,Halifax,1.1018
+2008,11,Halifax,1.0713
+2008,12,Halifax,1.0351
+2009,1,Halifax,1.1185
+2009,2,Halifax,1.1524
+2009,3,Halifax,1.0474
+2009,4,Halifax,1.0373000000000001
+2009,5,Halifax,0.9965
+2009,6,Halifax,1.0797
+2009,7,Halifax,1.0509
+2009,8,Halifax,1.0222
+2009,9,Halifax,1.0513
+2009,10,Halifax,1.1902
+2009,11,Halifax,1.1323
+2009,12,Halifax,1.1897
+2010,1,Halifax,1.2246
+2010,2,Halifax,1.2667
+2010,3,Halifax,1.1584
+2010,4,Halifax,1.1212
+2010,5,Halifax,1.097
+2010,6,Halifax,1.1211
+2010,7,Halifax,1.0759
+2010,8,Halifax,1.0815
+2010,9,Halifax,1.1293
+2010,10,Halifax,1.1677
+2010,11,Halifax,1.1912
+2010,12,Halifax,1.2891
+2011,1,Halifax,1.2189
+2011,2,Halifax,1.1943
+2011,3,Halifax,1.0871
+2011,4,Halifax,1.0795
+2011,5,Halifax,1.0877
+2011,6,Halifax,1.1456
+2011,7,Halifax,1.134
+2011,8,Halifax,1.0741
+2011,9,Halifax,1.0801
+2011,10,Halifax,1.1781
+2011,11,Halifax,1.1028
+2011,12,Halifax,1.0738
+2012,1,Halifax,1.0907
+2012,2,Halifax,1.1226
+2012,3,Halifax,1.0969
+2012,4,Halifax,1.132
+2012,5,Halifax,1.0283
+2012,6,Halifax,1.099
+2012,7,Halifax,1.0856
+2012,8,Halifax,1.0632
+2012,9,Halifax,1.0453
+2012,10,Halifax,1.1418
+2012,11,Halifax,1.1497
+2012,12,Halifax,1.1366
+2013,1,Halifax,1.0937
+2013,2,Halifax,1.1443
+2013,3,Halifax,1.1872
+2013,4,Halifax,1.0434
+2013,5,Halifax,0.9662
+2013,6,Halifax,1.0987
+2013,9,Halifax,1.1017
+2013,10,Halifax,1.1547
+2013,11,Halifax,1.1138
+2013,12,Halifax,1.1425
+2014,1,Halifax,1.106
+2014,2,Halifax,1.0841
+2014,3,Halifax,1.078
+2014,4,Halifax,1.0815
+2014,5,Halifax,1.0779
+2014,6,Halifax,1.0862
+2014,7,Halifax,1.0271
+2014,8,Halifax,1.0672
+2014,9,Halifax,1.0649
+2014,10,Halifax,1.1691
+2014,11,Halifax,1.1649
+2014,12,Halifax,1.1362
+2015,1,Halifax,1.1186
+2015,2,Halifax,1.1145
+2015,3,Halifax,1.0835
+2015,4,Halifax,1.0925
+2015,5,Halifax,0.9932
+2015,6,Halifax,1.0559
+2015,7,Halifax,1.0994
+2015,8,Halifax,1.0752
+2015,9,Halifax,1.07
+2015,10,Halifax,1.1339
+2015,11,Halifax,1.1045
+2015,12,Halifax,1.1385
+2016,1,Halifax,1.2056
+2016,2,Halifax,1.1239
+2016,3,Halifax,1.106
+2016,4,Halifax,1.1041
+2016,5,Halifax,1.0738
+2016,6,Halifax,1.0981
+2016,7,Halifax,1.0957
+2016,8,Halifax,1.0695
+2016,9,Halifax,1.0835
+2016,10,Halifax,1.1703
+2016,11,Halifax,1.1866
+2016,12,Halifax,1.2022
+2017,1,Halifax,1.1395
+2017,2,Halifax,1.1909
+2017,3,Halifax,1.1041
+2017,4,Halifax,1.1044
+2017,5,Halifax,1.1625
+2017,6,Halifax,1.1129
+2017,7,Halifax,1.0971
+2017,8,Halifax,1.0838
+2017,9,Halifax,1.1362
+2017,10,Halifax,1.132
+2017,11,Halifax,1.1575
+2017,12,Halifax,1.1233
+2018,1,Halifax,1.1139
+2018,2,Halifax,1.0755
+2018,3,Halifax,1.2621
+2018,4,Halifax,1.1058
+2018,5,Halifax,1.0885
+2018,6,Halifax,1.1562
+2018,7,Halifax,1.067
+2018,8,Halifax,1.1072
+2018,9,Halifax,1.122
+2018,10,Halifax,1.1748
+2018,11,Halifax,1.2047
+2018,12,Halifax,1.2141
+2019,1,Halifax,1.2052
+2019,2,Halifax,1.1152
+2019,3,Halifax,1.1078
+2019,4,Halifax,1.109
+2019,5,Halifax,1.1462
+2019,6,Halifax,1.1435
+2019,7,Halifax,1.1646
+2019,8,Halifax,1.1238
+2019,9,Halifax,1.1336
+2019,10,Halifax,1.2015
+2019,11,Halifax,1.2224
+2020,1,Halifax,1.2281
+2020,2,Halifax,1.1561
+2020,3,Halifax,1.1343
+2020,4,Halifax,1.2087
+2020,5,Halifax,1.0814
+2020,6,Halifax,1.1064
+2020,7,Halifax,1.1199
+2020,8,Halifax,1.126
+2020,9,Halifax,1.1103
+2020,10,Halifax,1.096
+2020,11,Halifax,1.1079
+2020,12,Halifax,1.1592
+2021,1,Halifax,1.253
+2021,2,Halifax,1.2034
+2021,3,Halifax,1.1144
+2021,4,Halifax,1.2114
+2021,5,Halifax,1.0905
+2021,6,Halifax,1.0956
+2021,7,Halifax,1.1399
+2021,8,Halifax,1.1187
+2021,9,Halifax,1.1603
+2021,10,Halifax,1.2672
+2021,11,Halifax,1.2064
+2021,12,Halifax,1.2025
+2022,1,Halifax,1.2072
+2022,2,Halifax,1.0713
+2022,3,Halifax,1.1683
+2022,4,Halifax,1.1637
+2022,5,Halifax,1.122
+2022,6,Halifax,1.1589
+2022,7,Halifax,1.1275
+2022,8,Halifax,1.1343
+2022,9,Halifax,1.2062
+2022,10,Halifax,1.163
+2022,11,Halifax,1.1979
+2022,12,Halifax,1.2582
+2023,1,Halifax,1.2651
+2023,2,Halifax,1.203
+2023,3,Halifax,1.3077
+2023,4,Halifax,1.1915
+2023,5,Halifax,1.1676
+2023,6,Halifax,1.2232
+2023,7,Halifax,1.1887
+2023,8,Halifax,1.1891
+2023,9,Halifax,1.1994
+2023,10,Halifax,1.3054
+2023,11,Halifax,1.301
+2023,12,Halifax,1.2478
+2024,1,Halifax,1.2777
+2024,2,Halifax,1.2753
+2024,3,Halifax,1.2035
+2024,4,Halifax,1.2165
+2024,5,Halifax,1.1997
+2024,6,Halifax,1.164
+2024,7,Halifax,1.1226
+2024,8,Halifax,1.1475
+2024,9,Halifax,1.2263
+2024,10,Halifax,1.1914
+2024,11,Halifax,1.3205
+2024,12,Halifax,1.1649
+1970,1,North Sydney,0.9088
+1970,2,North Sydney,0.6878
+1970,3,North Sydney,0.7379
+1970,4,North Sydney,0.7303
+1970,5,North Sydney,0.6093
+1970,6,North Sydney,0.6768
+1970,7,North Sydney,0.6765
+1970,8,North Sydney,0.7532
+1970,9,North Sydney,0.7588
+1970,10,North Sydney,0.7147
+1970,11,North Sydney,0.7818
+1970,12,North Sydney,0.9471
+1971,1,North Sydney,0.8934
+1971,2,North Sydney,0.6837
+1971,3,North Sydney,0.8089
+1971,4,North Sydney,0.722
+1971,5,North Sydney,0.683
+1971,6,North Sydney,0.7288
+1971,7,North Sydney,0.6847
+1971,8,North Sydney,0.7026
+1971,9,North Sydney,0.7355
+1971,10,North Sydney,0.7701
+1971,11,North Sydney,0.8438
+1971,12,North Sydney,0.8169
+1972,1,North Sydney,0.7588
+1972,2,North Sydney,0.7149
+1972,3,North Sydney,0.6527
+1972,4,North Sydney,0.714
+1972,5,North Sydney,0.6704
+1972,6,North Sydney,0.6726
+1972,7,North Sydney,0.6991
+1972,8,North Sydney,0.7298
+1972,9,North Sydney,0.7551
+1972,10,North Sydney,0.7414
+1972,11,North Sydney,0.7959
+1972,12,North Sydney,0.86
+1973,1,North Sydney,0.8697
+1973,2,North Sydney,0.7268
+1973,3,North Sydney,0.6681
+1973,4,North Sydney,0.6942
+1973,5,North Sydney,0.6162
+1973,6,North Sydney,0.662
+1973,7,North Sydney,0.7007
+1973,8,North Sydney,0.7113
+1973,9,North Sydney,0.7946
+1973,10,North Sydney,0.7954
+1973,11,North Sydney,0.8484
+1973,12,North Sydney,0.6854
+1974,1,North Sydney,0.7906
+1974,2,North Sydney,0.7718
+1974,3,North Sydney,0.7238
+1974,4,North Sydney,0.6807
+1974,5,North Sydney,0.6593
+1974,6,North Sydney,0.6115
+1974,7,North Sydney,0.6547
+1974,8,North Sydney,0.6641
+1974,9,North Sydney,0.6824
+1974,10,North Sydney,0.7162
+1974,11,North Sydney,0.7451
+1974,12,North Sydney,0.7812
+1975,1,North Sydney,0.7414
+1975,2,North Sydney,0.732
+1975,3,North Sydney,0.7432
+1975,4,North Sydney,0.7177
+1975,5,North Sydney,0.6767
+1975,6,North Sydney,0.6557
+1975,7,North Sydney,0.6675
+1975,8,North Sydney,0.7115
+1975,9,North Sydney,0.6955
+1975,10,North Sydney,0.8036
+1975,11,North Sydney,0.7787
+1975,12,North Sydney,0.688
+1976,1,North Sydney,0.7558
+1976,2,North Sydney,0.6993
+1976,3,North Sydney,0.6875
+1976,4,North Sydney,0.6738
+1976,5,North Sydney,0.5957
+1976,6,North Sydney,0.6721
+1976,7,North Sydney,0.6871
+1976,8,North Sydney,0.6928
+1976,10,North Sydney,0.8018
+1976,11,North Sydney,0.8852
+1976,12,North Sydney,0.802
+1977,1,North Sydney,0.7901
+1977,2,North Sydney,0.7327
+1977,3,North Sydney,0.741
+1977,4,North Sydney,0.6655
+1977,5,North Sydney,0.7274
+1977,6,North Sydney,0.663
+1977,7,North Sydney,0.7054
+1977,8,North Sydney,0.7214
+1977,10,North Sydney,0.807
+1977,11,North Sydney,0.721
+1977,12,North Sydney,0.8302
+1978,1,North Sydney,0.7546
+1978,2,North Sydney,0.8038
+1978,3,North Sydney,0.7427
+1978,4,North Sydney,0.7793
+1978,6,North Sydney,0.629
+1978,7,North Sydney,0.6808
+1978,8,North Sydney,0.7071
+1978,9,North Sydney,0.7795
+1978,10,North Sydney,0.7139
+1978,11,North Sydney,0.7663
+1978,12,North Sydney,0.8857
+1979,2,North Sydney,0.8492
+1979,4,North Sydney,0.6666
+1979,5,North Sydney,0.5823
+1979,6,North Sydney,0.6346
+1979,7,North Sydney,0.6583
+1979,8,North Sydney,0.7489
+1979,10,North Sydney,0.7749
+1979,11,North Sydney,0.7075
+1979,12,North Sydney,0.7794
+1980,1,North Sydney,0.777
+1980,2,North Sydney,0.7697
+1980,3,North Sydney,0.4729
+1980,4,North Sydney,0.5761
+1980,5,North Sydney,0.6366
+1980,6,North Sydney,0.5862
+1980,7,North Sydney,0.704
+1980,8,North Sydney,0.7294
+1980,9,North Sydney,0.7275
+1980,10,North Sydney,0.769
+1980,11,North Sydney,0.8902
+1980,12,North Sydney,0.7974
+1981,1,North Sydney,0.8272
+1981,2,North Sydney,0.6608
+1981,3,North Sydney,0.8169
+1981,4,North Sydney,0.7196
+1981,5,North Sydney,0.6763
+1981,7,North Sydney,0.7455
+1981,8,North Sydney,0.7906
+1981,9,North Sydney,0.7439
+1981,10,North Sydney,0.7789
+1981,11,North Sydney,0.8177
+1981,12,North Sydney,0.8491
+1982,1,North Sydney,0.8482
+1982,2,North Sydney,0.707
+1982,3,North Sydney,0.6383
+1982,4,North Sydney,0.6105
+1982,5,North Sydney,0.6153
+1982,6,North Sydney,0.6303
+1982,7,North Sydney,0.688
+1982,8,North Sydney,0.6999
+1982,9,North Sydney,0.6966
+1982,10,North Sydney,0.7923
+1982,11,North Sydney,0.7377
+1982,12,North Sydney,0.7646
+1983,1,North Sydney,0.7383
+1983,2,North Sydney,0.7608
+1983,3,North Sydney,0.7534
+1983,4,North Sydney,0.6141
+1983,5,North Sydney,0.6478
+1983,6,North Sydney,0.7029
+1983,7,North Sydney,0.7675
+1983,8,North Sydney,0.7724
+1983,9,North Sydney,0.7633
+1983,10,North Sydney,0.7958
+1983,11,North Sydney,0.913
+1983,12,North Sydney,0.8555
+1984,1,North Sydney,0.6863
+1984,2,North Sydney,0.7048
+1984,3,North Sydney,0.7207
+1984,4,North Sydney,0.7596
+1984,5,North Sydney,0.7104
+1984,6,North Sydney,0.7243
+1984,7,North Sydney,0.7251
+1984,8,North Sydney,0.7683
+1984,9,North Sydney,0.7945
+1984,10,North Sydney,0.7683
+1984,11,North Sydney,0.8626
+1984,12,North Sydney,0.7893
+1985,1,North Sydney,0.9958
+1985,2,North Sydney,0.7528
+1985,3,North Sydney,0.7604
+1985,4,North Sydney,0.735
+1985,5,North Sydney,0.7029
+1985,6,North Sydney,0.6622
+1985,7,North Sydney,0.701
+1985,8,North Sydney,0.7218
+1985,9,North Sydney,0.7425
+1985,10,North Sydney,0.8139
+1985,11,North Sydney,0.8043
+1985,12,North Sydney,0.8736
+1986,1,North Sydney,0.7614
+1986,2,North Sydney,0.8084
+1986,3,North Sydney,0.6646
+1986,4,North Sydney,0.6523
+1986,5,North Sydney,0.6671
+1986,6,North Sydney,0.7338
+1986,7,North Sydney,0.7572
+1986,8,North Sydney,0.7067
+1986,9,North Sydney,0.771
+1986,10,North Sydney,0.8296
+1986,11,North Sydney,0.7852
+1986,12,North Sydney,0.7737
+1987,1,North Sydney,0.8621
+1987,2,North Sydney,0.9004
+1987,3,North Sydney,0.7101
+1987,4,North Sydney,0.6336
+1987,5,North Sydney,0.6752
+1987,6,North Sydney,0.7205
+1987,7,North Sydney,0.7441
+1987,8,North Sydney,0.7705
+1987,9,North Sydney,0.7608
+1987,10,North Sydney,0.7378
+1987,11,North Sydney,0.8109
+1987,12,North Sydney,0.9368
+1988,1,North Sydney,0.7789
+1988,2,North Sydney,0.7406
+1988,3,North Sydney,0.7544
+1988,4,North Sydney,0.7626
+1988,5,North Sydney,0.6744
+1988,6,North Sydney,0.8037
+1988,7,North Sydney,0.6867
+1988,8,North Sydney,0.7399
+1988,9,North Sydney,0.7895
+1988,10,North Sydney,0.7592
+1988,11,North Sydney,0.8896
+1988,12,North Sydney,0.8307
+1989,1,North Sydney,0.8073
+1989,2,North Sydney,0.7001
+1989,3,North Sydney,0.6312
+1989,4,North Sydney,0.6396
+1989,5,North Sydney,0.6029
+1989,6,North Sydney,0.6694
+1989,7,North Sydney,0.7044
+1989,8,North Sydney,0.7888
+1989,9,North Sydney,0.7562
+1989,10,North Sydney,0.7752
+1989,11,North Sydney,0.9193
+1989,12,North Sydney,0.9038
+1990,1,North Sydney,0.7584
+1990,2,North Sydney,0.7247
+1990,3,North Sydney,0.6219
+1990,4,North Sydney,0.5927
+1990,5,North Sydney,0.6523
+1990,6,North Sydney,0.6774
+1990,7,North Sydney,0.7233
+1990,8,North Sydney,0.7208
+1990,9,North Sydney,0.7151
+1990,10,North Sydney,0.7868
+1990,11,North Sydney,0.9429
+1990,12,North Sydney,0.7831
+1991,1,North Sydney,0.7997
+1991,2,North Sydney,0.7334
+1991,3,North Sydney,0.797
+1991,4,North Sydney,0.6899
+1991,5,North Sydney,0.7548
+1991,6,North Sydney,0.8121
+1991,7,North Sydney,0.8098
+1991,8,North Sydney,0.7607
+1991,9,North Sydney,0.7996
+1991,10,North Sydney,0.7649
+1991,11,North Sydney,0.7761
+1991,12,North Sydney,0.8576
+1992,1,North Sydney,0.8687
+1992,2,North Sydney,0.8356
+1992,3,North Sydney,0.7657
+1992,4,North Sydney,0.7181
+1992,5,North Sydney,0.6442
+1992,6,North Sydney,0.7435
+1992,7,North Sydney,0.7701
+1992,8,North Sydney,0.7495
+1992,9,North Sydney,0.733
+1992,10,North Sydney,0.8113
+1992,11,North Sydney,0.7945
+1992,12,North Sydney,0.8575
+1993,1,North Sydney,0.7908
+1993,2,North Sydney,0.7383
+1993,3,North Sydney,0.6853
+1993,4,North Sydney,0.7114
+1993,5,North Sydney,0.7518
+1993,6,North Sydney,0.7778
+1993,7,North Sydney,0.7974
+1993,8,North Sydney,0.7389
+1993,9,North Sydney,0.7956
+1993,10,North Sydney,0.7867
+1993,11,North Sydney,0.8039
+1993,12,North Sydney,0.791
+1994,1,North Sydney,0.762
+1994,2,North Sydney,0.7312
+1994,3,North Sydney,0.6964
+1994,4,North Sydney,0.6532
+1994,5,North Sydney,0.7342
+1994,6,North Sydney,0.6945
+1994,7,North Sydney,0.7166
+1994,8,North Sydney,0.7776
+1994,9,North Sydney,0.8077
+1994,10,North Sydney,0.8538
+1994,11,North Sydney,0.8857
+1994,12,North Sydney,0.8133
+1995,1,North Sydney,0.792
+1995,2,North Sydney,0.8092
+1995,3,North Sydney,0.7126
+1995,4,North Sydney,0.7599
+1995,5,North Sydney,0.7292
+1995,6,North Sydney,0.7282
+1995,7,North Sydney,0.7492
+1995,8,North Sydney,0.8269
+1995,9,North Sydney,0.7771
+1995,10,North Sydney,0.7821
+1995,11,North Sydney,0.7893
+1995,12,North Sydney,0.9456
+1996,1,North Sydney,0.8411
+1996,2,North Sydney,0.7728
+1996,3,North Sydney,0.7972
+1996,4,North Sydney,0.7657
+1996,5,North Sydney,0.7599
+1996,6,North Sydney,0.7352
+1996,7,North Sydney,0.7817
+1996,8,North Sydney,0.7769
+1996,9,North Sydney,0.8874
+1996,10,North Sydney,0.8891
+1996,11,North Sydney,0.8693
+1996,12,North Sydney,0.8271
+1997,1,North Sydney,0.9876
+1997,2,North Sydney,0.786
+1997,3,North Sydney,0.8232
+1997,4,North Sydney,0.8659
+1997,5,North Sydney,0.7559
+1997,6,North Sydney,0.7678
+1997,7,North Sydney,0.7662
+1997,8,North Sydney,0.7631
+1997,9,North Sydney,0.8223
+1997,10,North Sydney,0.8972
+1997,11,North Sydney,0.9216
+1997,12,North Sydney,0.9531
+1998,1,North Sydney,0.8066
+1998,2,North Sydney,0.8421
+1998,3,North Sydney,0.7571
+1998,4,North Sydney,0.8171
+1998,5,North Sydney,0.7255
+1998,6,North Sydney,0.7516
+1998,7,North Sydney,0.7785
+1998,8,North Sydney,0.7658
+1998,9,North Sydney,0.8701
+1998,10,North Sydney,0.8565
+1998,11,North Sydney,0.8478
+1998,12,North Sydney,0.8447
+1999,1,North Sydney,0.7247
+1999,2,North Sydney,0.7963
+1999,3,North Sydney,0.7088
+1999,4,North Sydney,0.8556
+1999,6,North Sydney,0.7191
+1999,7,North Sydney,0.8239
+1999,8,North Sydney,0.844
+1999,9,North Sydney,0.8151
+1999,10,North Sydney,0.8601
+1999,11,North Sydney,0.8153
+1999,12,North Sydney,0.84
+2000,1,North Sydney,0.8447
+2000,2,North Sydney,0.7582
+2000,3,North Sydney,0.7355
+2000,4,North Sydney,0.6956
+2000,5,North Sydney,0.7283
+2000,6,North Sydney,0.7131
+2000,7,North Sydney,0.7441
+2000,8,North Sydney,0.7691
+2000,9,North Sydney,0.7987
+2000,10,North Sydney,0.8107
+2000,11,North Sydney,0.8723
+2000,12,North Sydney,0.8597
+2001,1,North Sydney,0.878
+2001,2,North Sydney,0.8209
+2001,3,North Sydney,0.7963
+2001,4,North Sydney,0.7632
+2001,5,North Sydney,0.7368
+2001,6,North Sydney,0.7557
+2001,7,North Sydney,0.8176
+2001,8,North Sydney,0.8375
+2001,9,North Sydney,0.8142
+2001,10,North Sydney,0.8355
+2001,11,North Sydney,0.8365
+2001,12,North Sydney,0.892
+2002,1,North Sydney,0.8818
+2002,2,North Sydney,0.843
+2002,3,North Sydney,0.6977
+2002,4,North Sydney,0.7049
+2002,5,North Sydney,0.7186
+2002,6,North Sydney,0.7243
+2002,7,North Sydney,0.7628
+2002,8,North Sydney,0.8004
+2002,9,North Sydney,0.8496
+2002,10,North Sydney,0.8796
+2002,11,North Sydney,0.9341
+2002,12,North Sydney,1.0052
+2003,1,North Sydney,0.9487
+2003,2,North Sydney,0.8054
+2003,3,North Sydney,0.7812
+2003,4,North Sydney,0.7492
+2003,5,North Sydney,0.7495
+2003,6,North Sydney,0.7747
+2003,7,North Sydney,0.7727
+2003,8,North Sydney,0.8175
+2003,9,North Sydney,0.787
+2003,10,North Sydney,0.8052
+2003,11,North Sydney,0.8636
+2003,12,North Sydney,0.8774
+2004,1,North Sydney,0.9962
+2004,2,North Sydney,0.8768
+2004,3,North Sydney,0.7122
+2004,4,North Sydney,0.7239
+2004,5,North Sydney,0.7032
+2004,6,North Sydney,0.7744
+2004,7,North Sydney,0.7181
+2004,8,North Sydney,0.7828
+2004,9,North Sydney,0.8274
+2004,10,North Sydney,0.8087
+2004,11,North Sydney,0.8919
+2004,12,North Sydney,0.8344
+2005,1,North Sydney,0.8729
+2005,2,North Sydney,0.7618
+2005,3,North Sydney,0.935
+2005,4,North Sydney,0.8837
+2005,5,North Sydney,0.8668
+2005,6,North Sydney,0.8039
+2005,7,North Sydney,0.7702
+2005,8,North Sydney,0.794
+2005,9,North Sydney,0.8285
+2005,10,North Sydney,0.8355
+2005,11,North Sydney,0.8343
+2005,12,North Sydney,0.8946
+2006,1,North Sydney,0.8386
+2006,2,North Sydney,0.8064
+2006,3,North Sydney,0.7839
+2006,4,North Sydney,0.645
+2006,5,North Sydney,0.6878
+2006,6,North Sydney,0.7536
+2006,7,North Sydney,0.8211
+2006,8,North Sydney,0.8859
+2006,9,North Sydney,0.8626
+2006,10,North Sydney,0.9308
+2006,11,North Sydney,0.8073
+2006,12,North Sydney,0.9277
+2007,1,North Sydney,0.9413
+2007,2,North Sydney,0.9579
+2007,3,North Sydney,0.7883
+2007,4,North Sydney,0.8052
+2007,5,North Sydney,0.7744
+2007,6,North Sydney,0.7807
+2007,7,North Sydney,0.7806
+2007,8,North Sydney,0.8546
+2007,9,North Sydney,0.8619
+2007,10,North Sydney,0.9046
+2007,11,North Sydney,0.8662
+2007,12,North Sydney,0.9214
+2008,1,North Sydney,0.8253
+2008,2,North Sydney,0.8063
+2008,3,North Sydney,0.8026
+2008,4,North Sydney,0.7348
+2008,5,North Sydney,0.8338
+2008,6,North Sydney,0.7994
+2008,7,North Sydney,0.7939
+2008,8,North Sydney,0.8171
+2008,9,North Sydney,0.8231
+2008,10,North Sydney,0.8703
+2008,11,North Sydney,0.8805
+2008,12,North Sydney,0.8688
+2009,1,North Sydney,0.934
+2009,2,North Sydney,0.9156
+2009,3,North Sydney,0.7815
+2009,4,North Sydney,0.7829
+2009,5,North Sydney,0.7615
+2009,6,North Sydney,0.798
+2009,7,North Sydney,0.8131
+2009,8,North Sydney,0.8543
+2009,9,North Sydney,0.8654
+2009,10,North Sydney,0.9448
+2009,11,North Sydney,0.8853
+2009,12,North Sydney,1.0164
+2010,1,North Sydney,1.0117
+2010,2,North Sydney,1.0166
+2010,3,North Sydney,0.8605
+2010,4,North Sydney,0.8681
+2010,5,North Sydney,0.8859
+2010,6,North Sydney,0.8788
+2010,7,North Sydney,0.858
+2010,8,North Sydney,0.8506
+2010,9,North Sydney,0.9338
+2010,10,North Sydney,1.0052
+2010,11,North Sydney,0.9067
+2010,12,North Sydney,0.9886
+2011,1,North Sydney,1.0215
+2011,2,North Sydney,0.9972
+2011,3,North Sydney,0.848
+2011,4,North Sydney,0.8304
+2011,5,North Sydney,0.7591
+2011,6,North Sydney,0.8615
+2011,7,North Sydney,0.9046
+2011,8,North Sydney,0.8376
+2011,9,North Sydney,0.9761
+2011,10,North Sydney,1.0531
+2011,11,North Sydney,0.8854
+2011,12,North Sydney,0.854
+2012,1,North Sydney,0.8751
+2012,2,North Sydney,0.9108
+2012,3,North Sydney,0.8298
+2012,4,North Sydney,0.8463
+2012,5,North Sydney,0.7441
+2012,6,North Sydney,0.7982
+2012,7,North Sydney,0.8696
+2012,8,North Sydney,0.8484
+2012,9,North Sydney,0.8267
+2012,10,North Sydney,0.9115
+2012,11,North Sydney,0.891
+2012,12,North Sydney,0.956
+2013,1,North Sydney,0.9554
+2013,2,North Sydney,0.9169
+2013,3,North Sydney,0.9049
+2013,4,North Sydney,0.7958
+2013,5,North Sydney,0.7284
+2013,6,North Sydney,0.8369
+2013,7,North Sydney,0.8707
+2013,8,North Sydney,0.9658
+2013,9,North Sydney,0.961
+2013,10,North Sydney,0.9962
+2013,11,North Sydney,0.937
+2013,12,North Sydney,0.9294
+2014,1,North Sydney,0.8834
+2014,2,North Sydney,0.8182
+2014,3,North Sydney,0.8167
+2014,4,North Sydney,0.7694
+2014,5,North Sydney,0.7948
+2014,6,North Sydney,0.8079
+2014,7,North Sydney,0.8229
+2014,8,North Sydney,0.8479
+2014,9,North Sydney,0.8885
+2014,10,North Sydney,0.9001
+2014,11,North Sydney,0.9718
+2014,12,North Sydney,0.8504
+2015,1,North Sydney,0.8793
+2015,2,North Sydney,0.8718
+2015,3,North Sydney,0.8463
+2015,4,North Sydney,0.7805
+2015,5,North Sydney,0.7479
+2015,6,North Sydney,0.7678
+2015,7,North Sydney,0.8189
+2015,8,North Sydney,0.8159
+2015,9,North Sydney,0.8712
+2015,10,North Sydney,0.9169
+2015,11,North Sydney,0.8625
+2015,12,North Sydney,0.8814
+2016,1,North Sydney,0.9817
+2016,2,North Sydney,0.8528
+2016,3,North Sydney,0.8534
+2016,4,North Sydney,0.8449
+2016,5,North Sydney,0.8065
+2016,6,North Sydney,0.8524
+2016,7,North Sydney,0.8632
+2016,8,North Sydney,0.8737
+2016,9,North Sydney,0.8917
+2016,10,North Sydney,0.9071
+2016,11,North Sydney,0.9547
+2016,12,North Sydney,1.0051
+2017,1,North Sydney,0.8807
+2017,2,North Sydney,0.9518
+2017,3,North Sydney,0.8983
+2017,4,North Sydney,0.7983
+2017,5,North Sydney,0.8539
+2017,6,North Sydney,0.8842
+2017,7,North Sydney,0.9026
+2017,8,North Sydney,0.8967
+2017,9,North Sydney,0.9335
+2017,10,North Sydney,0.9293
+2017,11,North Sydney,0.954
+2017,12,North Sydney,0.9522
+2018,1,North Sydney,0.9276
+2018,2,North Sydney,0.8096
+2018,3,North Sydney,0.9019
+2018,4,North Sydney,0.8713
+2018,5,North Sydney,0.8567
+2018,6,North Sydney,0.907
+2018,7,North Sydney,0.8657
+2018,8,North Sydney,0.9618
+2018,9,North Sydney,0.9057
+2018,10,North Sydney,0.9596
+2018,11,North Sydney,1.0478
+2018,12,North Sydney,0.9985
+2019,1,North Sydney,0.9546
+2019,2,North Sydney,0.9348
+2019,3,North Sydney,0.8362
+2019,4,North Sydney,0.8568
+2019,5,North Sydney,0.8716
+2019,7,North Sydney,0.9253
+2019,8,North Sydney,0.9257
+2019,9,North Sydney,0.9116
+2019,10,North Sydney,0.9332
+2019,11,North Sydney,1.0276
+2020,1,North Sydney,0.997
+2020,2,North Sydney,0.9261
+2020,3,North Sydney,0.8825
+2020,4,North Sydney,0.9019
+2020,5,North Sydney,0.858
+2020,6,North Sydney,0.8485
+2020,7,North Sydney,0.8538
+2020,8,North Sydney,0.9457
+2020,9,North Sydney,0.8457
+2020,10,North Sydney,0.8564
+2020,11,North Sydney,0.8808
+2020,12,North Sydney,0.9048
+2021,1,North Sydney,0.9954
+2021,2,North Sydney,0.9502
+2021,3,North Sydney,0.8937
+2021,4,North Sydney,0.9143
+2021,5,North Sydney,0.8306
+2021,6,North Sydney,0.8264
+2021,7,North Sydney,0.8881
+2021,8,North Sydney,0.9136
+2021,9,North Sydney,0.9424
+2021,10,North Sydney,0.9968
+2021,11,North Sydney,0.9977
+2021,12,North Sydney,1.0216
+2022,1,North Sydney,0.9701
+2022,2,North Sydney,0.8387
+2022,3,North Sydney,0.9332
+2022,4,North Sydney,0.8902
+2022,5,North Sydney,0.8359
+2022,6,North Sydney,0.8863
+2022,7,North Sydney,0.9308
+2022,8,North Sydney,0.893
+2022,9,North Sydney,1.0112
+2022,10,North Sydney,0.8802
+2022,11,North Sydney,1.0602
+2022,12,North Sydney,0.9558
+2023,1,North Sydney,1.0136
+2023,2,North Sydney,0.9722
+2023,3,North Sydney,1.0395
+2023,4,North Sydney,0.9363
+2023,5,North Sydney,0.9029
+2023,6,North Sydney,0.9369
+2023,7,North Sydney,0.9237
+2023,8,North Sydney,0.9553
+2023,9,North Sydney,0.9584
+2023,10,North Sydney,1.0715
+2023,11,North Sydney,1.0821
+2023,12,North Sydney,1.0266
+2024,1,North Sydney,1.0541
+2024,2,North Sydney,1.0573
+2024,3,North Sydney,0.9437
+2024,4,North Sydney,0.9558
+2024,5,North Sydney,0.8938
+2024,6,North Sydney,0.9377
+2024,7,North Sydney,0.9404
+2024,8,North Sydney,0.9797
+2024,9,North Sydney,0.9458
+2024,10,North Sydney,0.9915
+2024,11,North Sydney,1.1305
+2024,12,North Sydney,0.938
+1966,9,Yarmouth,2.492
+1966,10,Yarmouth,2.422
+1966,11,Yarmouth,2.448
+1966,12,Yarmouth,2.506
+1967,1,Yarmouth,2.528
+1967,2,Yarmouth,2.493
+1967,3,Yarmouth,2.511
+1967,4,Yarmouth,2.559
+1967,5,Yarmouth,2.574
+1967,6,Yarmouth,2.601
+1967,7,Yarmouth,2.413
+1967,8,Yarmouth,2.4
+1967,9,Yarmouth,2.441
+1967,10,Yarmouth,2.426
+1967,11,Yarmouth,2.491
+1967,12,Yarmouth,2.518
+1968,1,Yarmouth,2.438
+1968,2,Yarmouth,2.514
+1968,3,Yarmouth,2.475
+1968,4,Yarmouth,2.429
+1968,5,Yarmouth,2.462
+1968,7,Yarmouth,2.438
+1968,9,Yarmouth,2.47
+1968,10,Yarmouth,2.456
+1968,11,Yarmouth,2.531
+1968,12,Yarmouth,2.505
+1969,1,Yarmouth,2.48
+1969,2,Yarmouth,2.539
+1969,3,Yarmouth,2.533
+1969,4,Yarmouth,2.44
+1969,5,Yarmouth,2.45
+1969,6,Yarmouth,2.454
+1969,7,Yarmouth,2.462
+1969,8,Yarmouth,2.523
+1969,9,Yarmouth,2.464
+1969,10,Yarmouth,2.555
+1969,11,Yarmouth,2.576
+1969,12,Yarmouth,2.587
+1970,1,Yarmouth,2.582
+1970,2,Yarmouth,2.495
+1970,3,Yarmouth,2.492
+1970,4,Yarmouth,2.505
+1970,5,Yarmouth,2.412
+1970,6,Yarmouth,2.486
+1970,7,Yarmouth,2.446
+1970,8,Yarmouth,2.49
+1970,9,Yarmouth,2.541
+1970,10,Yarmouth,2.523
+1970,11,Yarmouth,2.581
+1970,12,Yarmouth,2.603
+1971,1,Yarmouth,2.61
+1971,2,Yarmouth,2.511
+1971,3,Yarmouth,2.572
+1971,4,Yarmouth,2.593
+1971,5,Yarmouth,2.525
+1971,6,Yarmouth,2.505
+1971,7,Yarmouth,2.446
+1971,8,Yarmouth,2.436
+1971,9,Yarmouth,2.422
+1971,10,Yarmouth,2.503
+1971,11,Yarmouth,2.564
+1971,12,Yarmouth,2.502
+1972,1,Yarmouth,2.522
+1972,2,Yarmouth,2.512
+1972,3,Yarmouth,2.528
+1972,4,Yarmouth,2.523
+1972,5,Yarmouth,2.496
+1972,6,Yarmouth,2.489
+1972,7,Yarmouth,2.474
+1972,8,Yarmouth,2.464
+1972,9,Yarmouth,2.474
+1972,10,Yarmouth,2.504
+1972,11,Yarmouth,2.585
+1972,12,Yarmouth,2.59
+1973,1,Yarmouth,2.595
+1973,2,Yarmouth,2.539
+1973,3,Yarmouth,2.539
+1973,4,Yarmouth,2.553
+1973,5,Yarmouth,2.48
+1973,6,Yarmouth,2.439
+1973,7,Yarmouth,2.456
+1973,8,Yarmouth,2.414
+1973,9,Yarmouth,2.479
+1973,10,Yarmouth,2.496
+1973,11,Yarmouth,2.467
+1973,12,Yarmouth,2.406
+1974,1,Yarmouth,2.457
+1974,2,Yarmouth,2.506
+1974,3,Yarmouth,2.471
+1974,4,Yarmouth,2.466
+1974,5,Yarmouth,2.466
+1974,6,Yarmouth,2.452
+1974,7,Yarmouth,2.483
+1974,8,Yarmouth,2.412
+1974,9,Yarmouth,2.437
+1974,10,Yarmouth,2.392
+1974,11,Yarmouth,2.517
+1974,12,Yarmouth,2.526
+1975,1,Yarmouth,2.516
+1975,2,Yarmouth,2.513
+1975,3,Yarmouth,2.498
+1975,4,Yarmouth,2.5
+1975,5,Yarmouth,2.45
+1975,6,Yarmouth,2.495
+1975,7,Yarmouth,2.448
+1975,8,Yarmouth,2.442
+1975,9,Yarmouth,2.323
+1975,10,Yarmouth,2.5
+1975,11,Yarmouth,2.598
+1975,12,Yarmouth,2.541
+1976,1,Yarmouth,2.539
+1976,2,Yarmouth,2.501
+1976,3,Yarmouth,2.447
+1976,4,Yarmouth,2.459
+1976,5,Yarmouth,2.441
+1976,6,Yarmouth,2.437
+1976,9,Yarmouth,2.515
+1976,10,Yarmouth,2.489
+1976,11,Yarmouth,2.523
+1977,1,Yarmouth,2.459
+1977,2,Yarmouth,2.427
+1977,3,Yarmouth,2.526
+1977,4,Yarmouth,2.445
+1977,5,Yarmouth,2.484
+1977,6,Yarmouth,2.526
+1977,7,Yarmouth,2.462
+1977,8,Yarmouth,2.449
+1977,9,Yarmouth,2.516
+1977,10,Yarmouth,2.53
+1977,11,Yarmouth,2.507
+1977,12,Yarmouth,2.574
+1978,1,Yarmouth,2.537
+1978,2,Yarmouth,2.605
+1978,3,Yarmouth,2.482
+1978,4,Yarmouth,2.532
+1978,5,Yarmouth,2.462
+1978,6,Yarmouth,2.457
+1978,7,Yarmouth,2.442
+1978,8,Yarmouth,2.449
+1978,9,Yarmouth,2.499
+1978,10,Yarmouth,2.477
+1978,11,Yarmouth,2.483
+1978,12,Yarmouth,2.545
+1979,1,Yarmouth,2.571
+1979,2,Yarmouth,2.539
+1979,3,Yarmouth,2.46
+1979,4,Yarmouth,2.472
+1979,5,Yarmouth,2.429
+1979,8,Yarmouth,2.452
+1979,9,Yarmouth,2.437
+1979,11,Yarmouth,2.451
+1979,12,Yarmouth,2.453
+1980,1,Yarmouth,2.487
+1980,2,Yarmouth,2.505
+1980,3,Yarmouth,2.413
+1980,4,Yarmouth,2.466
+1980,5,Yarmouth,2.483
+1980,6,Yarmouth,2.491
+1980,7,Yarmouth,2.483
+1980,8,Yarmouth,2.456
+1980,9,Yarmouth,2.46
+1980,12,Yarmouth,2.463
+1981,1,Yarmouth,2.437
+1981,2,Yarmouth,2.423
+1981,5,Yarmouth,2.507
+1981,6,Yarmouth,2.532
+1981,7,Yarmouth,2.508
+1981,8,Yarmouth,2.483
+1981,9,Yarmouth,2.578
+1981,10,Yarmouth,2.456
+1981,11,Yarmouth,2.524
+1982,1,Yarmouth,2.499
+1982,2,Yarmouth,2.497
+1982,3,Yarmouth,2.493
+1982,4,Yarmouth,2.582
+1982,5,Yarmouth,2.605
+1982,6,Yarmouth,2.581
+1982,7,Yarmouth,2.498
+1982,8,Yarmouth,2.452
+1982,9,Yarmouth,2.419
+1982,11,Yarmouth,2.436
+1982,12,Yarmouth,2.52
+1983,1,Yarmouth,2.504
+1983,2,Yarmouth,2.606
+1983,3,Yarmouth,2.627
+1983,4,Yarmouth,2.563
+1983,5,Yarmouth,2.517
+1983,6,Yarmouth,2.592
+1983,8,Yarmouth,2.551
+1983,9,Yarmouth,2.524
+1983,10,Yarmouth,2.562
+1983,11,Yarmouth,2.609
+1983,12,Yarmouth,2.541
+1984,1,Yarmouth,2.423
+1984,2,Yarmouth,2.539
+1984,4,Yarmouth,2.63
+1984,5,Yarmouth,2.484
+1984,6,Yarmouth,2.52
+1984,7,Yarmouth,2.491
+1984,8,Yarmouth,2.46
+1984,9,Yarmouth,2.473
+1984,10,Yarmouth,2.563
+1984,11,Yarmouth,2.621
+1984,12,Yarmouth,2.501
+1985,1,Yarmouth,2.596
+1985,2,Yarmouth,2.514
+1985,3,Yarmouth,2.499
+1985,4,Yarmouth,2.479
+1985,5,Yarmouth,2.529
+1985,6,Yarmouth,2.528
+1985,7,Yarmouth,2.47
+1985,8,Yarmouth,2.484
+1985,9,Yarmouth,2.536
+1985,10,Yarmouth,2.542
+1985,11,Yarmouth,2.556
+1985,12,Yarmouth,2.653
+1986,1,Yarmouth,2.532
+1986,2,Yarmouth,2.538
+1986,3,Yarmouth,2.469
+1986,4,Yarmouth,2.552
+1986,5,Yarmouth,2.547
+1986,6,Yarmouth,2.517
+1986,7,Yarmouth,2.55
+1986,8,Yarmouth,2.528
+1986,9,Yarmouth,2.527
+1986,10,Yarmouth,2.627
+1986,11,Yarmouth,2.545
+1986,12,Yarmouth,2.517
+1987,1,Yarmouth,2.644
+1987,2,Yarmouth,2.543
+1987,3,Yarmouth,2.58
+1987,4,Yarmouth,2.54
+1987,5,Yarmouth,2.629
+1987,6,Yarmouth,2.586
+1987,7,Yarmouth,2.561
+1987,8,Yarmouth,2.55
+1987,9,Yarmouth,2.666
+1987,10,Yarmouth,2.59
+1987,11,Yarmouth,2.516
+1987,12,Yarmouth,2.682
+1988,1,Yarmouth,2.51
+1988,2,Yarmouth,2.422
+1988,3,Yarmouth,2.423
+1988,4,Yarmouth,2.479
+1988,5,Yarmouth,2.522
+1988,6,Yarmouth,2.577
+1988,7,Yarmouth,2.545
+1988,8,Yarmouth,2.484
+1988,9,Yarmouth,2.556
+1988,10,Yarmouth,2.575
+1988,11,Yarmouth,2.494
+1988,12,Yarmouth,2.603
+1989,1,Yarmouth,2.534
+1989,2,Yarmouth,2.473
+1989,3,Yarmouth,2.434
+1989,4,Yarmouth,2.46
+1989,5,Yarmouth,2.455
+1989,6,Yarmouth,2.485
+1989,7,Yarmouth,2.478
+1989,8,Yarmouth,2.571
+1989,9,Yarmouth,2.517
+1989,10,Yarmouth,2.589
+1989,11,Yarmouth,2.62
+1989,12,Yarmouth,2.553
+1990,1,Yarmouth,2.472
+1990,2,Yarmouth,2.482
+1990,3,Yarmouth,2.42
+1990,4,Yarmouth,2.425
+1990,5,Yarmouth,2.501
+1990,6,Yarmouth,2.504
+1990,7,Yarmouth,2.494
+1990,8,Yarmouth,2.531
+1990,9,Yarmouth,2.579
+1990,10,Yarmouth,2.584
+1990,11,Yarmouth,2.615
+1990,12,Yarmouth,2.501
+1991,1,Yarmouth,2.55
+1991,2,Yarmouth,2.52
+1991,3,Yarmouth,2.617
+1991,4,Yarmouth,2.52
+1991,5,Yarmouth,2.534
+1991,6,Yarmouth,2.557
+1991,7,Yarmouth,2.537
+1991,8,Yarmouth,2.515
+1991,9,Yarmouth,2.495
+1991,10,Yarmouth,2.538
+1991,11,Yarmouth,2.578
+1991,12,Yarmouth,2.564
+1992,1,Yarmouth,2.612
+1992,2,Yarmouth,2.602
+1992,3,Yarmouth,2.571
+1992,4,Yarmouth,2.532
+1992,5,Yarmouth,2.474
+1992,6,Yarmouth,2.559
+1992,7,Yarmouth,2.539
+1992,8,Yarmouth,2.496
+1992,9,Yarmouth,2.449
+1992,10,Yarmouth,2.544
+1992,11,Yarmouth,2.539
+1992,12,Yarmouth,2.573
+1993,1,Yarmouth,2.531
+1993,3,Yarmouth,2.507
+1993,4,Yarmouth,2.593
+1993,5,Yarmouth,2.531
+1993,6,Yarmouth,2.526
+1993,7,Yarmouth,2.551
+1993,8,Yarmouth,2.538
+1993,9,Yarmouth,2.527
+1993,10,Yarmouth,2.493
+1993,11,Yarmouth,2.504
+1993,12,Yarmouth,2.601
+1994,1,Yarmouth,2.482
+1994,2,Yarmouth,2.5
+1994,3,Yarmouth,2.539
+1994,4,Yarmouth,2.458
+1994,5,Yarmouth,2.557
+1994,6,Yarmouth,2.479
+1994,7,Yarmouth,2.511
+1994,11,Yarmouth,2.552
+1994,12,Yarmouth,2.549
+1995,1,Yarmouth,2.579
+1995,2,Yarmouth,2.588
+1995,3,Yarmouth,2.52
+1995,4,Yarmouth,2.514
+1995,5,Yarmouth,2.561
+1995,6,Yarmouth,2.494
+1995,7,Yarmouth,2.514
+1995,8,Yarmouth,2.544
+1995,9,Yarmouth,2.537
+1995,10,Yarmouth,2.594
+1995,11,Yarmouth,2.59
+1995,12,Yarmouth,2.669
+1996,1,Yarmouth,2.625
+1996,2,Yarmouth,2.537
+1996,3,Yarmouth,2.546
+1996,4,Yarmouth,2.618
+1996,5,Yarmouth,2.57
+1996,6,Yarmouth,2.539
+1996,7,Yarmouth,2.565
+1996,8,Yarmouth,2.548
+1996,9,Yarmouth,2.683
+1996,10,Yarmouth,2.633
+1996,11,Yarmouth,2.642
+1996,12,Yarmouth,2.638
+1997,1,Yarmouth,2.615
+1997,2,Yarmouth,2.56
+1997,3,Yarmouth,2.588
+1997,4,Yarmouth,2.652
+1997,5,Yarmouth,2.586
+1997,6,Yarmouth,2.588
+1997,7,Yarmouth,2.539
+1997,8,Yarmouth,2.544
+1997,9,Yarmouth,2.573
+1997,10,Yarmouth,2.608
+1997,11,Yarmouth,2.659
+1997,12,Yarmouth,2.682
+1998,1,Yarmouth,2.648
+1998,2,Yarmouth,2.694
+1998,3,Yarmouth,2.588
+1998,4,Yarmouth,2.586
+1998,5,Yarmouth,2.595
+1998,6,Yarmouth,2.582
+1998,7,Yarmouth,2.581
+1998,8,Yarmouth,2.521
+1998,9,Yarmouth,2.586
+1998,10,Yarmouth,2.562
+1998,11,Yarmouth,2.57
+1998,12,Yarmouth,2.559
+1999,1,Yarmouth,2.51
+1999,2,Yarmouth,2.608
+1999,3,Yarmouth,2.581
+1999,4,Yarmouth,2.611
+1999,5,Yarmouth,2.532
+1999,6,Yarmouth,2.509
+1999,7,Yarmouth,2.562
+1999,8,Yarmouth,2.562
+1999,9,Yarmouth,2.545
+1999,10,Yarmouth,2.548
+1999,11,Yarmouth,2.556
+1999,12,Yarmouth,2.596
+2000,1,Yarmouth,2.554
+2000,2,Yarmouth,2.505
+2000,3,Yarmouth,2.596
+2000,4,Yarmouth,2.549
+2000,5,Yarmouth,2.586
+2000,6,Yarmouth,2.543
+2000,7,Yarmouth,2.562
+2000,8,Yarmouth,2.542
+2000,9,Yarmouth,2.541
+2000,10,Yarmouth,2.557
+2000,11,Yarmouth,2.699
+2000,12,Yarmouth,2.588
+2001,1,Yarmouth,2.631
+2001,2,Yarmouth,2.538
+2001,3,Yarmouth,2.569
+2001,4,Yarmouth,2.546
+2001,5,Yarmouth,2.564
+2001,6,Yarmouth,2.543
+2001,7,Yarmouth,2.553
+2001,8,Yarmouth,2.54
+2001,9,Yarmouth,2.572
+2001,10,Yarmouth,2.592
+2001,11,Yarmouth,2.554
+2001,12,Yarmouth,2.638
+2002,1,Yarmouth,2.624
+2002,2,Yarmouth,2.658
+2002,3,Yarmouth,2.502
+2002,4,Yarmouth,2.534
+2002,5,Yarmouth,2.541
+2002,6,Yarmouth,2.548
+2002,7,Yarmouth,2.555
+2002,8,Yarmouth,2.534
+2002,9,Yarmouth,2.562
+2002,10,Yarmouth,2.562
+2002,11,Yarmouth,2.604
+2002,12,Yarmouth,2.648
+2003,1,Yarmouth,2.727
+2003,2,Yarmouth,2.523
+2003,3,Yarmouth,2.607
+2003,4,Yarmouth,2.57
+2003,5,Yarmouth,2.566
+2003,7,Yarmouth,2.542
+2003,8,Yarmouth,2.566
+2003,9,Yarmouth,2.555
+2003,10,Yarmouth,2.584
+2003,11,Yarmouth,2.588
+2003,12,Yarmouth,2.629
+2004,1,Yarmouth,2.619
+2004,2,Yarmouth,2.567
+2004,3,Yarmouth,2.563
+2004,4,Yarmouth,2.558
+2004,5,Yarmouth,2.543
+2004,6,Yarmouth,2.581
+2004,7,Yarmouth,2.553
+2004,8,Yarmouth,2.542
+2004,9,Yarmouth,2.535
+2004,10,Yarmouth,2.722
+2004,11,Yarmouth,2.719
+2004,12,Yarmouth,2.683
+2005,1,Yarmouth,2.642
+2005,2,Yarmouth,2.66
+2005,3,Yarmouth,2.67
+2005,4,Yarmouth,2.629
+2005,5,Yarmouth,2.708
+2005,8,Yarmouth,2.526
+2005,9,Yarmouth,2.552
+2005,10,Yarmouth,2.531
+2005,11,Yarmouth,2.537
+2005,12,Yarmouth,2.374
+2006,1,Yarmouth,2.52
+2006,2,Yarmouth,2.507
+2006,3,Yarmouth,2.51
+2006,4,Yarmouth,2.494
+2006,5,Yarmouth,2.67
+2006,9,Yarmouth,2.66
+2006,12,Yarmouth,2.592
+2007,1,Yarmouth,2.625
+2007,2,Yarmouth,2.614
+2007,3,Yarmouth,2.551
+2007,4,Yarmouth,2.638
+2007,5,Yarmouth,2.55
+2007,6,Yarmouth,2.641
+2007,7,Yarmouth,2.606
+2007,8,Yarmouth,2.577
+2007,9,Yarmouth,2.559
+2007,10,Yarmouth,2.645
+2007,11,Yarmouth,2.601
+2007,12,Yarmouth,2.564
+2008,1,Yarmouth,2.624
+2008,2,Yarmouth,2.583
+2008,3,Yarmouth,2.585
+2008,4,Yarmouth,2.564
+2008,5,Yarmouth,2.682
+2008,6,Yarmouth,2.611
+2008,7,Yarmouth,2.588
+2008,8,Yarmouth,2.621
+2008,9,Yarmouth,2.583
+2008,10,Yarmouth,2.658
+2008,11,Yarmouth,2.637
+2008,12,Yarmouth,2.572
+2009,1,Yarmouth,2.624
+2009,2,Yarmouth,2.686
+2009,3,Yarmouth,2.626
+2009,4,Yarmouth,2.623
+2009,5,Yarmouth,2.562
+2009,6,Yarmouth,2.654
+2009,7,Yarmouth,2.65
+2009,8,Yarmouth,2.574
+2009,9,Yarmouth,2.627
+2009,10,Yarmouth,2.693
+2009,11,Yarmouth,2.735
+2009,12,Yarmouth,2.704
+2010,1,Yarmouth,2.772
+2010,2,Yarmouth,2.796
+2010,3,Yarmouth,2.745
+2010,4,Yarmouth,2.684
+2010,5,Yarmouth,2.619
+2010,6,Yarmouth,2.648
+2010,7,Yarmouth,2.61
+2010,8,Yarmouth,2.608
+2010,9,Yarmouth,2.649
+2010,10,Yarmouth,2.69
+2010,11,Yarmouth,2.714
+2010,12,Yarmouth,2.803
+2011,1,Yarmouth,2.732
+2011,2,Yarmouth,2.709
+2011,3,Yarmouth,2.626
+2011,4,Yarmouth,2.623
+2011,5,Yarmouth,2.654
+2011,6,Yarmouth,2.689
+2011,7,Yarmouth,2.671
+2011,8,Yarmouth,2.669
+2011,9,Yarmouth,2.601
+2011,10,Yarmouth,2.698
+2011,11,Yarmouth,2.639
+2011,12,Yarmouth,2.617
+2012,1,Yarmouth,2.602
+2012,2,Yarmouth,2.632
+2012,3,Yarmouth,2.631
+2012,4,Yarmouth,2.693
+2012,5,Yarmouth,2.591
+2012,6,Yarmouth,2.689
+2012,7,Yarmouth,2.636
+2012,8,Yarmouth,2.612
+2012,9,Yarmouth,2.586
+2012,10,Yarmouth,2.665
+2012,11,Yarmouth,2.685
+2012,12,Yarmouth,2.728
+2013,1,Yarmouth,2.651
+2013,2,Yarmouth,2.661
+2013,3,Yarmouth,2.768
+2013,4,Yarmouth,2.61
+2013,5,Yarmouth,2.576
+2013,6,Yarmouth,2.629
+2013,7,Yarmouth,2.623
+2013,8,Yarmouth,2.62
+2013,9,Yarmouth,2.629
+2013,10,Yarmouth,2.68
+2013,11,Yarmouth,2.618
+2013,12,Yarmouth,2.637
+2014,1,Yarmouth,2.675
+2014,2,Yarmouth,2.609
+2014,3,Yarmouth,2.607
+2014,4,Yarmouth,2.631
+2014,5,Yarmouth,2.641
+2014,6,Yarmouth,2.649
+2014,7,Yarmouth,2.618
+2014,8,Yarmouth,2.615
+2014,9,Yarmouth,2.607
+2014,10,Yarmouth,2.722
+2014,11,Yarmouth,2.681
+2014,12,Yarmouth,2.666
+2015,1,Yarmouth,2.639
+2015,2,Yarmouth,2.633
+2015,3,Yarmouth,2.587
+2015,4,Yarmouth,2.629
+2015,5,Yarmouth,2.554
+2015,6,Yarmouth,2.607
+2015,7,Yarmouth,2.65
+2015,8,Yarmouth,2.626
+2015,9,Yarmouth,2.615
+2015,10,Yarmouth,2.664
+2015,11,Yarmouth,2.624
+2015,12,Yarmouth,2.658
+2016,1,Yarmouth,2.75
+2016,2,Yarmouth,2.676
+2016,3,Yarmouth,2.652
+2016,4,Yarmouth,2.651
+2016,5,Yarmouth,2.635
+2016,6,Yarmouth,2.657
+2016,7,Yarmouth,2.643
+2016,8,Yarmouth,2.605
+2016,9,Yarmouth,2.612
+2016,10,Yarmouth,2.711
+2016,11,Yarmouth,2.724
+2016,12,Yarmouth,2.73
+2017,1,Yarmouth,2.686
+2017,2,Yarmouth,2.716
+2017,3,Yarmouth,2.616
+2017,4,Yarmouth,2.668
+2017,5,Yarmouth,2.71
+2017,6,Yarmouth,2.682
+2017,7,Yarmouth,2.643
+2017,8,Yarmouth,2.621
+2017,9,Yarmouth,2.657
+2017,10,Yarmouth,2.653
+2017,11,Yarmouth,2.661
+2017,12,Yarmouth,2.602
+2018,1,Yarmouth,2.588
+2018,2,Yarmouth,2.582
+2018,3,Yarmouth,2.812
+2018,4,Yarmouth,2.65
+2018,5,Yarmouth,2.617
+2018,6,Yarmouth,2.694
+2018,7,Yarmouth,2.607
+2018,8,Yarmouth,2.647
+2018,9,Yarmouth,2.653
+2018,10,Yarmouth,2.692
+2018,11,Yarmouth,2.677
+2018,12,Yarmouth,2.714
+2019,1,Yarmouth,2.737
+2019,2,Yarmouth,2.617
+2019,3,Yarmouth,2.641
+2019,4,Yarmouth,2.636
+2019,5,Yarmouth,2.684
+2019,6,Yarmouth,2.695
+2019,7,Yarmouth,2.686
+2019,8,Yarmouth,2.659
+2019,9,Yarmouth,2.66
+2019,10,Yarmouth,2.728
+2019,11,Yarmouth,2.735
+2020,1,Yarmouth,2.742
+2020,2,Yarmouth,2.698
+2020,3,Yarmouth,2.68
+2020,4,Yarmouth,2.765
+2020,5,Yarmouth,2.629
+2020,6,Yarmouth,2.654
+2020,7,Yarmouth,2.666
+2020,8,Yarmouth,2.644
+2020,9,Yarmouth,2.628
+2020,10,Yarmouth,2.633
+2020,11,Yarmouth,2.626
+2020,12,Yarmouth,2.682
+2021,1,Yarmouth,2.755
+2021,2,Yarmouth,2.724
+2021,3,Yarmouth,2.622
+2021,4,Yarmouth,2.736
+2021,5,Yarmouth,2.635
+2021,6,Yarmouth,2.635
+2021,7,Yarmouth,2.665
+2021,8,Yarmouth,2.641
+2021,9,Yarmouth,2.665
+2021,10,Yarmouth,2.781
+2021,11,Yarmouth,2.755
+2022,2,Yarmouth,2.55
+2022,3,Yarmouth,2.626
+2022,4,Yarmouth,2.643
+2022,5,Yarmouth,2.646
+2022,6,Yarmouth,2.672
+2022,7,Yarmouth,2.645
+2022,8,Yarmouth,2.619
+2022,9,Yarmouth,2.613
+2022,10,Yarmouth,2.601
+2022,11,Yarmouth,2.592
+2022,12,Yarmouth,2.642
+2023,1,Yarmouth,2.753
+2023,2,Yarmouth,2.693
+2023,3,Yarmouth,2.801
+2023,4,Yarmouth,2.7
+2023,5,Yarmouth,2.679
+2023,6,Yarmouth,2.726
+2023,7,Yarmouth,2.713
+2023,8,Yarmouth,2.685
+2023,9,Yarmouth,2.698
+2023,10,Yarmouth,2.808
+2023,11,Yarmouth,2.813
+2023,12,Yarmouth,2.788
+2024,1,Yarmouth,2.852
+2024,2,Yarmouth,2.836
+2024,3,Yarmouth,2.766
+2024,4,Yarmouth,2.787
+2024,5,Yarmouth,2.774
+2024,6,Yarmouth,2.734
+2024,7,Yarmouth,2.695
+2024,8,Yarmouth,2.699
+2024,9,Yarmouth,2.759
+2024,10,Yarmouth,2.751
+2024,11,Yarmouth,2.814
+2024,12,Yarmouth,2.708
