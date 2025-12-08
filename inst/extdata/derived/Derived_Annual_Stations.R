@@ -1,4 +1,4 @@
-## code to prepare `Derived_Annual_Stations` dataset
+# code to prepare `Derived_Annual_Stations` dataset
 cat('Sourcing Derived_Annual_Stations.R', sep = '\n')
 library(dplyr)
 library(tidyr)
@@ -122,6 +122,9 @@ Derived_Annual_Stations <- dplyr::bind_rows(HL2_env$df_means,
                                             P5_env$df_means)
 ### remove biochemical envs ----
 rm(list=c("HL2_env", "P5_env"))
+### add po data
+Derived_Annual_Stations <- Derived_Annual_Stations %>%
+  dplyr::bind_rows(., podf)
 ### define target variables to include ----
 target_var <- c("Chlorophyll 0-100" = "integrated_chlorophyll_0_100",
                 "Nitrate 0-50" = "integrated_nitrate_0_50",
@@ -130,6 +133,11 @@ target_var <- c("Chlorophyll 0-100" = "integrated_chlorophyll_0_100",
                 "Phosphate 50-150" = "integrated_phosphate_50_150",
                 "Silicate 0-50" = "integrated_silicate_0_50",
                 "Silicate 50-150" = "integrated_silicate_50_150")
+potarget_var <- unique(podf[['variable']])
+names(potarget_var) <- potarget_var
+target_var <- c(target_var,
+                potarget_var)
+
 ### define station print order ---
 station_order <- c("HL2" = 1,
                    "P5" = 2)
@@ -142,9 +150,9 @@ Derived_Annual_Stations <- Derived_Annual_Stations %>%
   dplyr::arrange(order_station, year) %>%
   dplyr::select(station, year, unname(target_var))
 
-## add physical data ----
+## add remaining physical data ----
 Derived_Annual_Stations <- Derived_Annual_Stations %>%
-  dplyr::bind_rows(., podf, SSTinSitu, airTemperature)
+  dplyr::bind_rows(., SSTinSitu, airTemperature)
 
 # save data to csv ----
 readr::write_csv(Derived_Annual_Stations, "inst/extdata/csv/Derived_Annual_Stations.csv")
