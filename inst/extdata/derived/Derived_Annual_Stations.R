@@ -22,9 +22,9 @@ load(con, envir=P5_env)
 close(con)
 
 # load physical data
-cat('    reading in station2 physical integrated data', sep = '\n')
+cat('    reading in station2 and prince5 data', sep = '\n')
 
-# integrated variables
+# all data
 url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/fixedStations/'
 
 result <- getURL(url_name,
@@ -33,7 +33,7 @@ result <- getURL(url_name,
 filenames <- unlist(strsplit(result, "\r\n"))
 
 # get relevant files
-fn <- grep(filenames, pattern = '\\w+IntegratedVariables\\w+\\.dat', value = TRUE)
+fn <- grep(filenames, pattern = '(?:station2|prince5).*(?:0to50|150m|90m)_en\\.dat', value = TRUE)
 
 # create dataframe list
 d <- list()
@@ -41,24 +41,36 @@ for(i in 1:length(fn)){
   con <- url(paste0(url_name, fn[[i]]))
   d[[i]] <- read.physical(con)
 }
+# get nice variable name
+## infer variable name from filename
+dvarname <- unlist(lapply(d, function(k) gsub(pattern = '(?:station2|prince5)(.*)_en\\.dat', '\\1', k[['filename']])))
+## remove 'm' from depth
+dvarname <- gsub(pattern = '^(\\w+\\d+)(m)$', '\\1', dvarname)
+## substitute 'to' with underscore for integrated vars
+dvarname <- gsub(pattern = '(^\\w+\\d+)(to)(\\d+)$', '\\1_\\3', dvarname)
+## make everything lower-case
+dvarname <- tolower(dvarname)
+## add underscore between variable name and depth value
+dvarname <- gsub('^([a-z]+)((?:\\d+|\\d+\\_\\d+))', '\\1_\\2', dvarname)
+## add underscore after 'integrated'
+dvarname <- gsub('^(integrated)(.*)', '\\1_\\2', dvarname)
+## reinstate 'sigmatheta' camel case
+dvarname <- gsub('sigmatheta', 'sigmaTheta', dvarname)
+# create data.frame of data with variable name
+polist <- vector(mode = 'list', length = length(d))
+for(id in 1:length(d)){
+  dd <- d[[id]]
+  ddf <- data.frame(station = dd[['stationName']],
+                    variable = dvarname[id],
+                    year = dd[['data']][['year']],
+                    value = as.numeric(dd[['data']][['anomaly']]) + as.numeric(dd[['climatologicalMean']]))
+  polist[[id]] <- ddf
+}
 
-# vardat1 <- unlist(lapply(d, function(k) k[['data']][['integrated_temperature_0_50']]))
-# vardat2 <- unlist(lapply(d, function(k) k[['data']][['integrated_salinity_0_50']]))
-# vardat3 <- unlist(lapply(d, function(k) k[['data']][['integrated_sigmaTheta_0_50']]))
-vardat1 <- unlist(lapply(d, function(k) as.numeric(k[['data']][['integrated_temperature_0_50']])))
-vardat2 <- unlist(lapply(d, function(k) as.numeric(k[['data']][['integrated_salinity_0_50']])))
-vardat3 <- unlist(lapply(d, function(k) as.numeric(k[['data']][['integrated_sigmaTheta_0_50']])))
-
-stationName <- unlist(lapply(d, function(k) rep(k[['stationName']], dim(k[['data']])[1])))
-year <- unlist(lapply(d, function(k) k[['data']][['year']]))
-
-df <- data.frame(year = year,
-                 station = stationName,
-                 integrated_sea_temperature_0_50 = as.numeric(vardat1),
-                 integrated_salinity_0_50 = as.numeric(vardat2),
-                 integrated_sigmaTheta_0_50 = as.numeric(vardat3))
-integratedvars <- df %>%
-  dplyr::filter(year>=1999)
+# combine all PO data
+podf <- do.call('rbind', polist)
+# only retain data for years >= 1999
+podf <- podf[podf[['year']] >= 1999, ]
 
 # temperature_in_air
 cat('    reading in air temperature data', sep = '\n')
