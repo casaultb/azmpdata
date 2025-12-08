@@ -165,7 +165,7 @@ Derived_Annual_Stations <- Derived_Annual_Stations %>%
 
 # add physical data
 Derived_Annual_Stations <- Derived_Annual_Stations %>%
-  dplyr::bind_rows(., SSTinSitu, airTemperature, temperature_0_df, temperature_90_df, integratedvars)
+  dplyr::bind_rows(., podf, SSTinSitu, airTemperature)
 
 # save data to csv
 readr::write_csv(Derived_Annual_Stations, "inst/extdata/csv/Derived_Annual_Stations.csv")
