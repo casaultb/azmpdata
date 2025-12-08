@@ -24,7 +24,7 @@ close(con)
 # load physical data
 cat('    reading in station2 and prince5 data', sep = '\n')
 
-# all data
+# all files
 url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/fixedStations/'
 
 result <- getURL(url_name,
@@ -114,11 +114,7 @@ result <- getURL(url_name,
 filenames <- unlist(strsplit(result, "\r\n"))
 
 # get relevant files
-fn <- grep(filenames, pattern = 'SSTinSitu\\w+\\.dat', value = TRUE)
-
-# BC
-fn <- c("SSTinSitu_Halifax_en.dat", "SSTinSitu_StAndrews_en.dat")
-#BC
+fn <- grep(filenames, pattern = 'SSTinSitu\\_\\w+\\.dat', value = TRUE)
 
 # create dataframe list
 d <- list()
