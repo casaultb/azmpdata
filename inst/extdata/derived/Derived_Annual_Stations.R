@@ -20,7 +20,8 @@ P5_env <- new.env()
 con <- url("ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/biochemical/Prince-5/Means&Anomalies_Annual.RData")
 load(con, envir=P5_env)
 close(con)
-
+# initialize station metadata ----
+stnMetadata <- NULL
 # load physical data ----
 cat('    reading in station2 and prince5 data', sep = '\n')
 ## all files ----
@@ -53,18 +54,31 @@ dvarname <- gsub('^(integrated)(.*)', '\\1_\\2', dvarname)
 dvarname <- gsub('sigmatheta', 'sigmaTheta', dvarname)
 ## create data.frame in output format ----
 polist <- vector(mode = 'list', length = length(d))
+stnMetadataProd <- NULL
 for(id in 1:length(d)){
   dd <- d[[id]]
   ddf <- data.frame(station = dd[['stationName']],
                     variable = dvarname[id],
                     year = dd[['data']][['year']],
                     value = as.numeric(dd[['data']][['anomaly']]) + as.numeric(dd[['climatologicalMean']]))
+  stnMetaAdd <- data.frame(station = dd[['stationName']],
+                           longitude = dd[['longitude']],
+                           latitude = dd[['latitude']])
   polist[[id]] <- ddf
+  stnMetadataProd <- rbind(stnMetadataProd,
+                       stnMetaAdd)
 }
 ## combine all PO data ----
 podf <- do.call('rbind', polist)
+## re-name Prince 5 to P5 ----
+podf[['station']][podf[['station']] == 'Prince 5'] <- 'P5'
+stnMetadataProd[['station']][stnMetadataProd[['station']] == 'Prince 5'] <- 'P5'
 ### only retain data for years >= 1999 ----
 podf <- podf[podf[['year']] >= 1999, ]
+### get unique station metadata and add to larger list ----
+stnMetdataU <- unique(stnMetadataProd)
+stnMetadata <- rbind(stnMetadata,
+                     stnMetdataU)
 
 # temperature_in_air ----
 cat('    reading in air temperature data', sep = '\n')
@@ -87,9 +101,15 @@ year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 df <- data.frame(year = year,
                  station = stationName,
                  temperature_in_air = vardat)
+stnMetaAdd <- data.frame(station = unlist(lapply(d, '[[', 'stationName')),
+                         longitude = unlist(lapply(d, function(k) as.numeric(strsplit(k[['longitude']], ',')[[1]][1]))),
+                         latitude = unlist(lapply(d, function(k) as.numeric(strsplit(k[['latitude']], ',')[[1]][1]))))
 ### only retain data for years >= 1999 ----
 airTemperature <- df %>%
   dplyr::filter(year>=1999)
+### add station metadata to primary list ----
+stnMetadata <- rbind(stnMetadata,
+                     stnMetaAdd)
 
 # sea_surface_temperature_from_moorings ----
 cat('    reading in sst in-situ data', sep = '\n')
@@ -112,9 +132,18 @@ year <- unlist(lapply(d, function(k) k[['data']][['year']]))
 df <- data.frame(year = year,
                  station = stationName,
                  sea_surface_temperature_from_moorings = vardat)
+stnMetaAdd <- data.frame(station = unlist(lapply(d, '[[', 'stationName')),
+                         longitude = unlist(lapply(d, '[[', 'longitude')),
+                         latitude = unlist(lapply(d, '[[', 'latitude')))
+## re-name Halifax to Halifax_maritimeMuseum ----
+df[['station']][df[['station']] == 'Halifax'] <- 'Halifax_maritimeMuseum'
+stnMetaAdd[['station']][stnMetaAdd[['station']] == 'Halifax'] <- 'Halifax_maritimeMuseum'
 ### only retain data for years >= 1999 ----
 SSTinSitu <- df %>%
   dplyr::filter(year>=1999)
+### add station metadata to primary list ----
+stnMetadata <- rbind(stnMetadata,
+                     stnMetaAdd)
 
 # assemble data ----
 ## combine biochemical data ----
@@ -137,7 +166,6 @@ potarget_var <- unique(podf[['variable']])
 names(potarget_var) <- potarget_var
 target_var <- c(target_var,
                 potarget_var)
-
 ### define station print order ---
 station_order <- c("HL2" = 1,
                    "P5" = 2)
@@ -153,6 +181,11 @@ Derived_Annual_Stations <- Derived_Annual_Stations %>%
 ## add remaining physical data ----
 Derived_Annual_Stations <- Derived_Annual_Stations %>%
   dplyr::bind_rows(., SSTinSitu, airTemperature)
+## format metadata ----
+stnMetadata <- dplyr::as_tibble(stnMetadata)
+## add metadata ----
+Derived_Annual_Stations <- Derived_Annual_Stations %>%
+  dplyr::left_join(stnMetadata, by = 'station')
 
 # save data to csv ----
 readr::write_csv(Derived_Annual_Stations, "inst/extdata/csv/Derived_Annual_Stations.csv")
