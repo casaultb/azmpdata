@@ -123,6 +123,11 @@ A user may also want to plot a timeseries. This method is also fairly generic an
 
 ```{r}
 df_data <- get('Discrete_Occupations_Stations') # get data
+# add 'year', 'month', and 'day' to df_data
+df_data <- data.frame(df_data,
+                      year = as.POSIXlt(df_data[['date']], tz = 'UTC')$year + 1900,
+                      month = as.POSIXlt(df_data[['date']], tz = 'UTC')$mon + 1,
+                      day = as.POSIXlt(df_data[['date']], tz = 'UTC')$mday)
 variable <- 'chlorophyll' # choose variable to plot
 
 
