@@ -84,7 +84,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
   }
 
   res <- data(package = 'azmpdata')
-  file_names <- res$results[,3]
+  file_names <- res$results[,colnames(res$results) %in% "Item"]
 
   if (length(datafiles)>0) file_names <- file_names[tolower(file_names) %in% tolower(datafiles)]
 
