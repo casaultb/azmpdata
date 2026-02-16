@@ -31,68 +31,59 @@ close(con)
 # load physical data
 
 # 1. read in mission look up tables and combine
+#######
+## NOTE : These lookup tables need to be updated for missions after year 2020
+#######
 cat('    reading in lookup table data', sep = '\n')
-
 url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/lookup/' # have to move this to new directory
+result <- getURL(url_name,
+                 verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
+filenames <- unlist(strsplit(result, "\r\n"))
+oklookup <- grepl(pattern = '^mission.*', x = filenames)
+lookup <- lapply(filenames[oklookup], function(k) read.csv(paste0(url_name, k)))
+missions <- do.call('rbind', lookup)
+
+# 2. read in the data and combine
+cat('    reading in station2 and prince5 physical data', sep = '\n')
+url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/fixedStations/'
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
 
 filenames <- unlist(strsplit(result, "\r\n"))
-lookup <- list()
-lookup[[1]] <- read.csv(paste0(url_name, filenames[1]))
-lookup[[2]] <- read.csv(paste0(url_name, filenames[2]))
-# lookupfiles <- list.files(lookupPath, pattern = '^mission.*', full.names = TRUE)
-# lookup <- lapply(lookupfiles, read.csv)
-missions <- do.call('rbind', lookup)
 
-# 2. read in the data and combine
-# cat('    reading in station2 and prince5 physical data', sep = '\n')
-# url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/fixedStations/'
-# result <- getURL(url_name,
-#                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
+# get relevant files
+okfiles <- filenames %in% c('prince5.csv', 'station2.csv')
+filenames <- filenames[okfiles]
+d <- list()
+for(i in 1:length(filenames)){
+  con <- url(paste0(url_name, filenames[[i]]))
+  d[[i]] <- read.csv(con)
+}
+
+d <- do.call('rbind', d)
 #
-# filenames <- unlist(strsplit(result, "\r\n"))
-#
-# # only pick out relevant files
-# filenames <- grep(filenames, pattern = '*IntegratedVariables*', value = TRUE, invert = TRUE)
-#
-# d <- list()
-# for(i in 1:length(filenames)){
-#   con <- url(paste0(url_name, filenames[[i]]))
-#   d[[i]] <- read.csv(con)
-# }
-#
-# ############################
-# # this requires to be fixed
-# ############################
-# datafile <- paste(dataPath, c('prince5.csv', 'station2.csv'), sep = '/')
-# d <- lapply(datafile, read.csv)
-#  d <- do.call('rbind', d)
-#
-# # 3. match up cruiseNumber and mission_number
-# # note : if anything goes sideways matching up idx, the structure of idx will change
-# #        so it could become a list instead of a vector
-# idx <- apply(d, 1, function(k) {ok <- which(missions[['mission_name']] == k[['cruiseNumber']]);
-#                                 if(length(ok) > 1) {
-#                                   ok[1]
-#                                 } else if(length(ok) == 0){
-#                                   NA
-#                                 } else {
-#                                   ok
-#                                 }})
-#
-# d <- cbind(d, descriptor = missions[['mission_descriptor']][idx])
-#
-# fixedStationsPO <- d
-# fixedStationsPO <- rbind(d[[3]], d[[2]])
+# 3. match up cruiseNumber and mission_number
+# note : if anything goes sideways matching up idx, the structure of idx will change
+#        so it could become a list instead of a vector
+idx <- apply(d, 1, function(k) {ok <- which(missions[['mission_name']] == k[['cruiseNumber']]);
+                                if(length(ok) > 1) {
+                                  ok[1]
+                                } else if(length(ok) == 0){
+                                  NA
+                                } else {
+                                  ok
+                                }})
+
+d <- cbind(d, descriptor = missions[['mission_descriptor']][idx])
+fixedStationsPO <- d
 #
 # # rename variables
-# fixedStationsPO <- fixedStationsPO %>%
-#   dplyr::rename(sea_temperature = temperature) %>%
-#   dplyr::rename(depth = pressure) %>%
-#   dplyr::filter(year>=1999) %>%
-#   tidyr::unite(date, year, month, day, sep="-", remove=T) %>%
-#   dplyr::mutate(date = lubridate::ymd(date))
+fixedStationsPO <- fixedStationsPO %>%
+  dplyr::rename(sea_temperature = temperature) %>%
+  dplyr::rename(depth = pressure) %>%
+  dplyr::filter(year>=1999) %>%
+  tidyr::unite(date, year, month, day, sep="-", remove=T) %>%
+  dplyr::mutate(date = lubridate::ymd(date))
 
 # assemble metadata
 df_metadata <- dplyr::bind_rows(HL2_env$df_metadata,
@@ -133,8 +124,8 @@ Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>%
   dplyr::select(station, latitude, longitude, date, depth, nominal_depth, unname(target_var))
 
 # add physical data
-# Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>%
-#   dplyr::bind_rows(., fixedStationsPO)
+Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>%
+  dplyr::bind_rows(., fixedStationsPO)
 
 # save as dataframe not tibble
 Discrete_Occupations_Stations <- as.data.frame(Discrete_Occupations_Stations)
