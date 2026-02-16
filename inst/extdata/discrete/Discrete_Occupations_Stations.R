@@ -46,27 +46,27 @@ lookup[[2]] <- read.csv(paste0(url_name, filenames[2]))
 missions <- do.call('rbind', lookup)
 
 # 2. read in the data and combine
-cat('    reading in station2 and prince5 physical data', sep = '\n')
-url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/fixedStations/'
-result <- getURL(url_name,
-                 verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
-
-filenames <- unlist(strsplit(result, "\r\n"))
-
-# only pick out relevant files
-filenames <- grep(filenames, pattern = '*IntegratedVariables*', value = TRUE, invert = TRUE)
-
-d <- list()
-for(i in 1:length(filenames)){
-  con <- url(paste0(url_name, filenames[[i]]))
-  d[[i]] <- read.csv(con)
-}
-
-############################
-# this requires to be fixed
-############################
-# # datafile <- paste(dataPath, c('prince5.csv', 'station2.csv'), sep = '/')
-# # d <- lapply(datafile, read.csv)
+# cat('    reading in station2 and prince5 physical data', sep = '\n')
+# url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/azmpdata/data/physical/fixedStations/'
+# result <- getURL(url_name,
+#                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
+#
+# filenames <- unlist(strsplit(result, "\r\n"))
+#
+# # only pick out relevant files
+# filenames <- grep(filenames, pattern = '*IntegratedVariables*', value = TRUE, invert = TRUE)
+#
+# d <- list()
+# for(i in 1:length(filenames)){
+#   con <- url(paste0(url_name, filenames[[i]]))
+#   d[[i]] <- read.csv(con)
+# }
+#
+# ############################
+# # this requires to be fixed
+# ############################
+# datafile <- paste(dataPath, c('prince5.csv', 'station2.csv'), sep = '/')
+# d <- lapply(datafile, read.csv)
 #  d <- do.call('rbind', d)
 #
 # # 3. match up cruiseNumber and mission_number
@@ -84,15 +84,15 @@ for(i in 1:length(filenames)){
 # d <- cbind(d, descriptor = missions[['mission_descriptor']][idx])
 #
 # fixedStationsPO <- d
-fixedStationsPO <- rbind(d[[3]], d[[2]])
-
-# rename variables
-fixedStationsPO <- fixedStationsPO %>%
-  dplyr::rename(sea_temperature = temperature) %>%
-  dplyr::rename(depth = pressure) %>%
-  dplyr::filter(year>=1999) %>%
-  tidyr::unite(date, year, month, day, sep="-", remove=T) %>%
-  dplyr::mutate(date = lubridate::ymd(date))
+# fixedStationsPO <- rbind(d[[3]], d[[2]])
+#
+# # rename variables
+# fixedStationsPO <- fixedStationsPO %>%
+#   dplyr::rename(sea_temperature = temperature) %>%
+#   dplyr::rename(depth = pressure) %>%
+#   dplyr::filter(year>=1999) %>%
+#   tidyr::unite(date, year, month, day, sep="-", remove=T) %>%
+#   dplyr::mutate(date = lubridate::ymd(date))
 
 # assemble metadata
 df_metadata <- dplyr::bind_rows(HL2_env$df_metadata,
@@ -133,11 +133,16 @@ Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>%
   dplyr::select(station, latitude, longitude, date, depth, nominal_depth, unname(target_var))
 
 # add physical data
-Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>%
-  dplyr::bind_rows(., fixedStationsPO)
+# Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>%
+#   dplyr::bind_rows(., fixedStationsPO)
 
 # save as dataframe not tibble
 Discrete_Occupations_Stations <- as.data.frame(Discrete_Occupations_Stations)
+# add year, month, day to data.frame
+Discrete_Occupations_Stations <- data.frame(Discrete_Occupations_Stations,
+                                            year = as.POSIXlt(Discrete_Occupations_Stations[['date']], tz = 'UTC')$year + 1900,
+                                            month = as.POSIXlt(Discrete_Occupations_Stations[['date']], tz = 'UTC')$mon + 1,
+                                            day = as.POSIXlt(Discrete_Occupations_Stations[['date']], tz = 'UTC')$mday)
 
 # save data to csv
 readr::write_csv(Discrete_Occupations_Stations, "inst/extdata/csv/Discrete_Occupations_Stations.csv")
