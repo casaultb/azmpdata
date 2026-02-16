@@ -1,4 +1,36 @@
 # data set documentation
+#' Derived Annual Carbonate Chemistry data
+#'
+#' Annual composites of derived carbonate chemistry data collected at fixed stations by year.
+#'
+#' @format A dataframe
+#'
+#' \describe{
+#'    \item{year}{The year in which data was collected}
+#'    \item{station_name}{The name of the station where data was collected}
+#'    \item{depth_m}{The depth at which data was collected (metres)}
+#'    \item{mean_TA_umolkg}{annual mean per section_name and depth_m of total alkalinity in umol/kg}
+#'    \item{mean_DIC_umolkg}{annual mean per section_name and depth_m of dissolved inorganic carbon in umol/kg}
+#'    \item{mean_pH_total}{annual mean per section_name and depth_m of pH on a total scale}
+#'    \item{mean_pCO2_uatm}{annual mean per section_name and depth_m of pCO2 in uatm}
+#'    \item{mean_substrate_inhibitor_ratio}{annual mean per section_name and depth_m of substrate-inhibitor ratio (mol/umol)}
+#'    \item{mean_omega_aragonite}{annual mean per section_name and depth_m of the saturation state of omegaAragonite (unitless)}
+#'    \item{mean_omega_calcite}{annual mean per section_name and depth_m of the saturation state of omega calcity (untiless)}
+#'    \item{mean_carbonate_system_vulnerability_index}{annual mean per section_name and depth_m of Carbonate System Vulnerability Index (TA − DIC) (µmol/kg).}
+#' }
+#'
+#' @details
+#' Data collection and analysis was led by Kumiko Azetsu-Scott and data
+#' calculations were done by Martine Lizotte. Annual means are LS-means by year from linear models.
+#' If all values of a variable are positive in a section, a log10 model is used and back transformed.
+#' If any value is non-positive a linear model is used on the original scale.
+#' season and station_name are included in the model when they have >1 levels in that section.
+#' All missing values are replaced by -999.
+#'
+#' More details on calculation methodology can be found in
+#' Lizotte, M., Blais, M., Chassé, J., Galbraith, P. S., Hébert, A.-J., Starr, M. 2026. Acidification and CO2-Driven Conditions in the Estuary and Gulf of St. Lawrence During 2024. Can. Tech. Rep. Hydrogr. Ocean. Sci. 0000 : v + x p.
+#' (in publication)
+"Derived_Annual_Carbonate"
 
 
 #' Zooplankton seasonal section data
@@ -220,7 +252,7 @@
 #'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
 #'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
 #'
- "Zooplankton_Occupations_Stations"
+"Zooplankton_Occupations_Stations"
 
 
 #' Phytoplankton Occupation Station data
@@ -451,7 +483,7 @@
 #'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
 #'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
 #'
- "Zooplankton_Annual_Stations"
+"Zooplankton_Annual_Stations"
 
 #' Phytoplankton Annual Station data
 #'
@@ -583,7 +615,7 @@
 #'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
 #'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
 #'
- "Zooplankton_Occupations_Sections"
+"Zooplankton_Occupations_Sections"
 
 
 #' Discrete Occupation Section data
@@ -716,7 +748,7 @@
 #'   on the Scotian Shelf and in the Eastern Gulf of Maine during 2018. DFO Can.
 #'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
 #'
- "Zooplankton_Annual_Sections"
+"Zooplankton_Annual_Sections"
 
 
 #' Derived Monthly Broadscale data
@@ -746,7 +778,7 @@
 #'   Hebert, D., Pettipas, R., and Brickman, D. 2020. Physical Oceanographic
 #'   Conditions on the Scotian Shelf and in the Gulf of Maine during 2018. DFO
 #'   Can. Sci. Advis. Sec. Res. Doc. 2020/036 iv + 52 p.
- "Derived_Monthly_Broadscale"
+"Derived_Monthly_Broadscale"
 
 
 #' Derived Annual broadscale data
@@ -829,7 +861,7 @@
 #'   Sci. Advis. Sec. Res. Doc. 2020/037. v + 66 p.
 #'
 #'
- "RemoteSensing_Weekly_Broadscale"
+"RemoteSensing_Weekly_Broadscale"
 
 
 #' Remote sensing Annual broadscale data
