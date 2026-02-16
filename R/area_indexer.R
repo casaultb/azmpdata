@@ -84,7 +84,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
   }
 
   res <- data(package = 'azmpdata')
-  file_names <- res$results[,colnames(res$results) %in% "Item"]
+  file_names <- res$results[,3]
 
   if (length(datafiles)>0) file_names <- file_names[tolower(file_names) %in% tolower(datafiles)]
 
@@ -103,11 +103,11 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     #retaining the station info in these files results in duplicated data (for plot_availability)
     #first found with:  if (length(var_names[var_names %in% c("station", "section")])==2){
     if (i_file == "Discrete_Occupations_Sections") {
-      stnFile <- get("Discrete_Occupations_Stations")
+      stnFile = get("Discrete_Occupations_Stations")
       df <- df[!df$sample_id %in% stnFile$sample_id,]
     }
     if (i_file == "Derived_Occupations_Sections"){
-      stnFile <- get("Derived_Occupations_Stations")
+      stnFile = get("Derived_Occupations_Stations")
       df <- df[!df$event_id %in% stnFile$event_id,]
     }
 
@@ -122,10 +122,10 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     #Have ensured file has sufficient info to proceed (i.e. a year, and at least one of area, section or station)
     df_core <- df[,names(df) %in% core_fields, drop=FALSE]
     these_core_fields <- var_names[var_names != "year" & var_names %in% colnames(df_core)]
-    if (length(these_core_fields) < 1) next
-    df_core <- unique(df_core[stats::complete.cases(df_core[, these_core_fields]), ])
-    if (nrow(df_core) < 1) next
-    df_core[setdiff(core_fields, names(df_core))] <- NA
+    if (length(these_core_fields)<1)next
+    df_core<-unique(df_core[stats::complete.cases(df_core[, these_core_fields]), ])
+    if (nrow(df_core)<1)next
+    df_core[setdiff(core_fields, names(df_core))]<-NA
 
     #df_det contains all of the info from this file we can use
     df_det <- merge(df, df_core)
@@ -135,11 +135,11 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     #below are checks for all of the filters that might be applied.  Failing any skips the file
     #note that cumulatively when combined, the file can still fail
     #this step should speed up processing considerably
-    if(length(years) > 0 & nrow(df_det[df_det$year %in% years,]) < 1) proceed <- FALSE
-    if(length(areanames) > 0 & nrow(df_det[tolower(df_det$area) %in% areanames |
+    if(length(years)>0 & nrow(df_det[df_det$year %in% years,])<1) proceed <- FALSE
+    if(length(areanames)>0 & nrow(df_det[tolower(df_det$area) %in% areanames |
                                          tolower(df_det$station) %in% areanames |
-                                         tolower(df_det$section) %in% areanames ,]) < 1) proceed <- FALSE
-    if(length(areaTypes) > 0 & !any(colnames(df_det) %in% areaTypes)) proceed <- FALSE
+                                         tolower(df_det$section) %in% areanames ,])<1) proceed <- FALSE
+    if(length(areaTypes)>0 & !any(colnames(df_det) %in% areaTypes)) proceed <- FALSE
 
     if (!fuzzyParameters){
       if((doParameters & length(parameters)>0) & !any(parameters %in% colnames(df_det))) proceed <- FALSE
@@ -160,24 +160,24 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     }
 
     #established this file is potentially useful, do the simple filters
-    if(length(years) > 0)  {
+    if(length(years)>0)  {
       df_det <- df_det[df_det$year %in% years,]
-      if (nrow(df_det) < 1) {
+      if (nrow(df_det)<1) {
         next
       }
     }
 
-    if(length(areanames) > 0) {
+    if(length(areanames)>0) {
       df_det<- df_det[tolower(df_det$area) %in% areanames |
                         tolower(df_det$station) %in% areanames |
                         tolower(df_det$section) %in% areanames,]
-      if (nrow(df_det) < 1) {
+      if (nrow(df_det)<1) {
         next
       }
     }
-    if(length(areaTypes) > 0) {
+    if(length(areaTypes)>0) {
       df_det[tolower(df_det$areaType) %in% areaTypes,]
-      if (nrow(df_det) < 1) {
+      if (nrow(df_det)<1) {
         next
       }
     }
@@ -188,11 +188,11 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
 
     if (doMonths){
       df_mon <- df_det[which(!is.na(df_det$month)),core_fields]
-      if (nrow(df_mon) < 1)next
+      if (nrow(df_mon)<1)next
       if (qcMode & is.character(df_mon$month)) message(paste0("Within ",i_file,", the 'month' field is a text field (not an integer)"))
       if (is.character(df_mon$month)) df_mon$month <- as.integer(df_mon$month)
-      if (length(months) > 0) df_mon <-df_mon[which(df_mon$month %in% months),]
-      if (nrow(df_mon) < 1)next
+      if (length(months)>0) df_mon <-df_mon[which(df_mon$month %in% months),]
+      if (nrow(df_mon)<1)next
       df_det <- unique(merge(df_det,df_mon))
       rm(list=c("df_mon"))
     }
@@ -200,9 +200,9 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     if (doParameters){
       theseParamsFields <- names(df_det)[!tolower(names(df_det)) %in% non_param_fields]
       fileParams <- df_det[F,]
-      if (!fuzzyParameters & length(parameters) > 0) {
+      if (!fuzzyParameters & length(parameters)>0) {
         theseParamsFields <- tolower(parameters)
-      }else if (fuzzyParameters & length(parameters) > 0){
+      }else if (fuzzyParameters & length(parameters)>0){
         theseParamsFields <- NA
         for (q in 1:length(parameters)){
           thisParamsFields <- tolower(colnames(df_det)[grep(pattern = parameters[q], x=colnames(df_det))])
@@ -213,12 +213,12 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
       for (p in 1:length(theseParamsFields)){
         if (qcMode){
           # there's potential for badly-entered data - 0 length strings, and written out "NA"
-          if (nrow(df_det[which(nchar(df_det[,theseParamsFields[p]]) < 1),]) > 0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', empty (i.e. not-NA) cells were found."))
-          if (nrow(df_det[which(df_det[,theseParamsFields[p]] == "NA"),]) > 0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', cells were found with 'NA' physically typed into it."))
+          if (nrow(df_det[which(nchar(df_det[,theseParamsFields[p]])<1),])>0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', empty (i.e. not-NA) cells were found."))
+          if (nrow(df_det[which(df_det[,theseParamsFields[p]] == "NA"),])>0) message(paste0("Within ",i_file," in the field '",theseParamsFields[p],"', cells were found with 'NA' physically typed into it."))
         }
         #remove them
 
-        this_params <- df_det[which(nchar(df_det[,theseParamsFields[p]]) > 0 &
+        this_params <- df_det[which(nchar(df_det[,theseParamsFields[p]])>0 &
                                       df_det[,theseParamsFields[p]] != "NA" &
                                       !is.na(df_det[,theseParamsFields[p]])),c(core_fields,theseParamsFields[p])]
 
@@ -226,7 +226,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
         if (nrow(this_params)<1)next
 
         this_params[is.na(this_params)] <- -999
-        this_paramsOrig < -this_params
+        this_paramsOrig<-this_params
         if (doMonths ){
           this_params <- stats::aggregate(
             x = list(cnt = this_params$month),
@@ -246,7 +246,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
         }
 
         this_params[this_params == -999] <- NA
-        if (nrow(this_params) < 1) next
+        if (nrow(this_params)<1)next
         this_params$parameter <- theseParamsFields[p]
         fileParams <-rbind.data.frame(fileParams,this_params)
       }
@@ -255,7 +255,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
     }
 
     if (!doParameters) df_det <- unique(df_det[,core_fields])
-    if (nrow(df_det) < 1) next
+    if (nrow(df_det)<1) next
     df_det$datafile <- i_file
     result_df <- rbind.data.frame(result_df, df_det)
     rm(list=c("df_det"))
