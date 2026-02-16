@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_availability.R
 \name{plot_availability}
 \alias{plot_availability}
-\title{Frequency plot of parameter(s) from specified locations}
+\title{plot_availability}
 \usage{
 plot_availability(
   areaType = NULL,
