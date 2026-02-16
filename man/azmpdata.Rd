@@ -2,6 +2,7 @@
 % Please edit documentation in R/azmpdata.R
 \docType{package}
 \name{azmpdata}
+\alias{azmpdata-package}
 \alias{azmpdata}
 \title{azmpdata: A package providing data products derived from data collected as part of
 The Atlantic Zone Monitoring Program (AZMP).}
@@ -36,3 +37,28 @@ Other variables of relevance for multivariate data analysis are also included. T
 include air temperature, North Atlantic Oscillation (NAO) and river fresh water flux.
 }
 
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://casaultb.github.io/azmpdata}
+  \item \url{https://github.com/casaultb/azmpdata}
+  \item Report bugs at \url{https://github.com/casaultb/azmpdata/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Benoit Casault \email{Benoit.Casualt@dfo-mpo.gc.ca}
+
+Authors:
+\itemize{
+  \item Emily Chisholm \email{Emily.Chisholm@dfo-mpo.gc.ca} (\href{https://orcid.org/0000-0002-1072-5879}{ORCID})
+  \item Chantelle Layton \email{Chantelle.Layton@dfo-mpo.gc.ca} (\href{https://orcid.org/0000-0002-3199-5763}{ORCID})
+  \item Mike McMahon \email{Mike.McMahon@dfo-mpo.gc.ca}
+}
+
+Other contributors:
+\itemize{
+  \item Catherine Johnson \email{Catherine.Johnson@dfo-mpo.gc.ca} [contributor]
+}
+
+}

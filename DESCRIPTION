@@ -29,7 +29,7 @@ Description: A package which allows users to easily access AZMP data. The goal i
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.3
 Suggests: 
     testthat (>= 2.1.0),
     knitr,
