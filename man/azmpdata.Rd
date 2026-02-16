@@ -29,6 +29,8 @@ as estimated from remote sensing surface chlorophyll are also included.
 \section{Chemical variables}{
 
 The chemical variables include main nutrients (nitrate, silicate and phosphate).
+Carbonate chemistry variables such as pH, dissolved inorganic carbon (DIC) and
+total alkalinity (TA) are also included as annual means.
 }
 
 \section{Other variables}{
