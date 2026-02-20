@@ -107,33 +107,37 @@ azmpmap()
 
 ![Figure 2: azmpmap() showing station locations](azmpmap.png)
 
-### area_indexer()
+<!-- ### area_indexer() -->
 
-At this point the user knows generally what is contained within the package from `variable_lookup()` as well as where data are sampled using `azmpmap()`. It is then recommended that the user utilize the information provided in the popups to dive deeper into their search, using `area_indexer()` or step three of the workflow.`area_indexer()` assembles a dataframe consisting of the years and areas where the azmpdata packages data has been collected, as well as the associated file where the data can be found. The user also has the ability to look at associated parameters and months with the specification.
+<!-- At this point the user knows generally what is contained within the package from `variable_lookup()` as well as where data are sampled using `azmpmap()`. It is then recommended that the user utilize the information provided in the popups to dive deeper into their search, using `area_indexer()` or step three of the workflow.`area_indexer()` assembles a dataframe consisting of the years and areas where the azmpdata packages data has been collected, as well as the associated file where the data can be found. The user also has the ability to look at associated parameters and months with the specification. -->
 
-For example, if a user was interested in the nitrate in station P5 from years 2010 to 2020, the following code would be used:
+<!-- For example, if a user was interested in the nitrate in station P5 from years 2010 to 2020, the following code would be used: -->
 
-```{r, warning=FALSE, message=FALSE, error=FALSE, eval=TRUE}
+```{r, warning=FALSE, message=FALSE, error=FALSE, eval=FALSE, echo = FALSE}
 k <- area_indexer(parameters="nitrate", areanames="P5", years=c(2010:2020), fuzzyParameters = F)
 head(k)
 ```
 
-Basically, `area_indexer()` is a good way to filter through the multiple dataframes to get exactly what the user is interested in.
+<!-- Basically, `area_indexer()` is a good way to filter through the multiple dataframes to get exactly what the user is interested in. -->
 
 
-## Temporally displaying data: plot_availability()
+<!-- ## Temporally displaying data: plot_availability() -->
 
-The user now knows what is contained within the package, where data are sampled, and how to properly filter through the data. It is then recommended that the user completed step 4, `plot_availability()` to understand when the data are sampled. This function generates a score card of samples per month based on `areaType`, `areaName`, and `parameters`.
+<!-- The user now knows what is contained within the package, where data are sampled, and how to properly filter through the data. It is then recommended that the user completed step 4, `plot_availability()` to understand when the data are sampled. This function generates a score card of samples per month based on `areaType`, `areaName`, and `parameters`. -->
+
 
 For example, if a user wanted to know the frequency (ie. samples/month) for the sea surface height at Halifax, they would type in the following:
 
 ```{r, message=TRUE, error=FALSE, warning=FALSE, eval=TRUE, fig.cap="Figure 3: Sampling freqency per month for sea_surface_height at Halifax"}
 plot_availability(areaType = "station", areaName="Halifax", parameters="sea_surface_height")
+
 ```
 
 ## Conclusion
 
-The package `azmpdata` contains a wealth of datasets to help analyze AZMP data. It is recommended that the users utilize the built in functions in the following order 1) `variable_lookup()`, 2) `azmpmap()` 3) `area_indexer()`, and 4) `plot_availability()` to easily search through the data and efficiently analyze both spatially and temporally. For more information on base R search functions please feel free to do your own research. For questions about the custom `azmpdata` search please contact developers or bring an issue to the github board (listed in the package description under BugReports). 
+The package `azmpdata` contains a wealth of datasets to help analyze AZMP data. It is recommended that the users utilize the built in functions in the following order 1) `variable_lookup()`, 2) `azmpmap()` 
+<!-- 3) `area_indexer()`, and 4) `plot_availability()`  -->
+to easily search through the data and efficiently analyze both spatially and temporally. For more information on base R search functions please feel free to do your own research. For questions about the custom `azmpdata` search please contact developers or bring an issue to the github board (listed in the package description under BugReports). 
 
 ## References
 

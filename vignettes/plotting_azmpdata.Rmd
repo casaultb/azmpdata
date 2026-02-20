@@ -13,7 +13,6 @@ vignette: >
 library(azmpdata)
 library(ggplot2)
 library(dplyr)
-
 ```
 ## Introduction
 
@@ -48,7 +47,6 @@ Using ggplot2 can give great simple exploratory plots, using a different 'gramma
 If a user wanted to compare different variables over time, ggplot2 has functions which make this very simple.
 
 ```{r}
-
 p <- ggplot(data = df) +
   geom_line(aes(x = year, y = temperature_in_air, colour = 'air_temperature'), show.legend = TRUE) +
   geom_point(aes(x = year, y = sea_surface_temperature_from_moorings, colour = 'sea_surface_temperature_from_moorings'), show.legend = TRUE)+
@@ -67,56 +65,55 @@ The next two examples contain generic code that could be modified to plot any da
 Another common plotting task would be to plot the annual means of a given dataframe. This method is fairly generic and could be used for any annual dataset.
 
 ```{r}
+df_data <- get('Derived_Annual_Broadscale') # get data
+variable <- 'temperature_at_sea_floor' # select variable to plot
 
- df_data <- get('Derived_Annual_Broadscale') # get data
- variable <- 'temperature_at_sea_floor' # select variable to plot
+# check for metadata and seperate
+metanames <- c('year','area', 'section', 'station' )
+meta_df <- names(df_data)[names(df_data) %in% metanames]
 
-  # check for metadata and seperate
-  metanames <- c('year','area', 'section', 'station' )
-  meta_df <- names(df_data)[names(df_data) %in% metanames]
+group <- meta_df[meta_df != 'year']
 
-  group <- meta_df[meta_df != 'year']
+df_data <- df_data %>%
+  dplyr::select(., all_of(meta_df), all_of(variable) ) %>%
+  dplyr::rename(., 'value' = all_of(variable) ) %>%
+  dplyr::rename(., 'group' = all_of(group))
 
-  df_data <- df_data %>%
-    dplyr::select(., all_of(meta_df), all_of(variable) ) %>%
-    dplyr::rename(., 'value' = all_of(variable) ) %>%
-    dplyr::rename(., 'group' = all_of(group))
+# set x-axis
+x_limits <- c(min(df_data$year)-1, max(df_data$year)+1)
+x_breaks <- seq(x_limits[1], x_limits[2], by=1)
+x_labels <- x_breaks
 
-  # set x-axis
-  x_limits <- c(min(df_data$year)-1, max(df_data$year)+1)
-  x_breaks <- seq(x_limits[1], x_limits[2], by=1)
-  x_labels <- x_breaks
+# set y-axis
+y_limits <- c(min(df_data$value, na.rm=T) - 0.1*mean(df_data$value, na.rm=T),
+              max(df_data$value, na.rm=T) + 0.1*mean(df_data$value, na.rm=T))
 
-  # set y-axis
-  y_limits <- c(min(df_data$value, na.rm=T) - 0.1*mean(df_data$value, na.rm=T),
-                max(df_data$value, na.rm=T) + 0.1*mean(df_data$value, na.rm=T))
+# plot data
+p <-  ggplot2::ggplot() +
+  # plot data - line
+  ggplot2::geom_line(data=df_data,
+                     mapping=ggplot2::aes(x=year, y=value, col = group),
+                     size=.5) +
+  # plot data - dots
+  ggplot2::geom_point(data=df_data,
+                      mapping=ggplot2::aes(x=year, y=value, col = group),
+                      size=1) +
+  # set coordinates system and axes
+  ggplot2::coord_cartesian() +
+  ggplot2::scale_x_continuous(name="Year", limits=x_limits, breaks=x_breaks, labels=x_labels, expand=c(0,0)) +
+  ggplot2::scale_y_continuous(name="", limits=y_limits, expand=c(0,0))
 
-  # plot data
-  p <-  ggplot2::ggplot() +
-    # plot data - line
-    ggplot2::geom_line(data=df_data,
-                       mapping=ggplot2::aes(x=year, y=value, col = group),
-                        size=.5) +
-    # plot data - dots
-    ggplot2::geom_point(data=df_data,
-                       mapping=ggplot2::aes(x=year, y=value, col = group),
-                        size=1) +
-    # set coordinates system and axes
-    ggplot2::coord_cartesian() +
-    ggplot2::scale_x_continuous(name="Year", limits=x_limits, breaks=x_breaks, labels=x_labels, expand=c(0,0)) +
-    ggplot2::scale_y_continuous(name="", limits=y_limits, expand=c(0,0))
-
-  # customize theme
-  p <- p +
-    ggplot2::theme_bw() +
-    ggplot2::ggtitle(paste(group, variable, sep=" : " )) +
-    ggplot2::theme(
-      text=ggplot2::element_text(size=8),
-      axis.text.x=ggplot2::element_text(colour="black", angle=90, hjust=0.5, vjust=0.5),
-      plot.title=ggplot2::element_text(colour="black", hjust=0, vjust=0, size=8),
-      panel.grid.major=ggplot2::element_blank(),
-      panel.border=ggplot2::element_rect(size=0.25, colour="black"),
-      plot.margin=grid::unit(c(0.1,0.1,0.1,0.1), "cm"))
+# customize theme
+p <- p +
+  ggplot2::theme_bw() +
+  ggplot2::ggtitle(paste(group, variable, sep=" : " )) +
+  ggplot2::theme(
+    text=ggplot2::element_text(size=8),
+    axis.text.x=ggplot2::element_text(colour="black", angle=90, hjust=0.5, vjust=0.5),
+    plot.title=ggplot2::element_text(colour="black", hjust=0, vjust=0, size=8),
+    panel.grid.major=ggplot2::element_blank(),
+    panel.border=ggplot2::element_rect(size=0.25, colour="black"),
+    plot.margin=grid::unit(c(0.1,0.1,0.1,0.1), "cm"))
 
 print(p)
 ```
@@ -148,51 +145,66 @@ A user may also want to plot a timeseries. This method is also fairly generic an
     dplyr::mutate(year_dec=lubridate::decimal_date(lubridate::ymd(date))) %>%
     dplyr::select(year, year_dec, value, group)
 
-  # set x-axis
-  x_limits <- c(min(df_data$year), max(df_data$year)+1)
-  x_breaks <- seq(x_limits[1]+.5, x_limits[2]-.5, by=1)
-  x_labels <- x_breaks-.5
 
-  # set y-axis
-  y_limits <- c(min(df_data$value, na.rm=T) - 0.1*mean(df_data$value, na.rm=T),
-                max(df_data$value, na.rm=T) + 0.1*mean(df_data$value, na.rm=T))
+group <- meta_df[!meta_df %in% c('year', 'month', 'day')]
 
-  ## set shaded rectangles breaks
-  df_rectangles <- tibble::tibble(xmin=seq(x_limits[1], x_limits[2], by=2),
-                                  xmax=seq(x_limits[1], x_limits[2], by=2)+1,
-                                  ymin=y_limits[1], ymax=y_limits[2])
+df_data <- df_data %>%
+  dplyr::select(., all_of(meta_df), all_of(variable) ) %>%
+  dplyr::rename(., 'value' = all_of(variable) ) %>%
+  dplyr::rename(., 'group' = all_of(group)) #TODO some dataframes do not have groups!?
 
-  # plot data
- 
-  p <-  ggplot2::ggplot() +
-    # plot shaded rectangles
-    ggplot2::geom_rect(data=df_rectangles,
-                       mapping=ggplot2::aes(xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax),
-                       fill="gray90", alpha=0.8) +
-    # plot data - line
-    ggplot2::geom_line(data=df_data,
-                       mapping=ggplot2::aes(x=year_dec, y=value, col = group),
-                        size=.5) +
-    # plot data - dots
-    ggplot2::geom_point(data=df_data,
-                        mapping=ggplot2::aes(x=year_dec, y=value, col = group),
-                        size=1) +
-    # set coordinates system and axes
-    ggplot2::coord_cartesian() +
-    ggplot2::scale_x_continuous(name="Year", limits=x_limits, breaks=x_breaks, labels=x_labels, expand=c(0,0)) +
-    ggplot2::scale_y_continuous(name="", limits=y_limits, expand=c(0,0))
 
-  # customize theme
-  p <- p +
-    ggplot2::theme_bw() +
-    ggplot2::ggtitle(paste(group, variable,  sep=" : " )) +
-    ggplot2::theme(
-      text=ggplot2::element_text(size=8),
-      axis.text.x=ggplot2::element_text(colour="black", angle=90, hjust=0.5, vjust=0.5),
-      plot.title=ggplot2::element_text(colour="black", hjust=0, vjust=0, size=8),
-      panel.grid.major=ggplot2::element_blank(),
-      panel.border=ggplot2::element_rect(size=0.25, colour="black"),
-      plot.margin=grid::unit(c(0.1,0.1,0.1,0.1), "cm"))
+# prepare data
+df_data <- df_data %>%
+  tidyr::unite(date, year, month, day, sep="-", remove=F) %>%
+  dplyr::mutate(year_dec=lubridate::decimal_date(lubridate::ymd(date))) %>%
+  dplyr::select(year, year_dec, value, group)
+
+# set x-axis
+x_limits <- c(min(df_data$year), max(df_data$year)+1)
+x_breaks <- seq(x_limits[1]+.5, x_limits[2]-.5, by=1)
+x_labels <- x_breaks-.5
+
+# set y-axis
+y_limits <- c(min(df_data$value, na.rm=T) - 0.1*mean(df_data$value, na.rm=T),
+              max(df_data$value, na.rm=T) + 0.1*mean(df_data$value, na.rm=T))
+
+## set shaded rectangles breaks
+df_rectangles <- tibble::tibble(xmin=seq(x_limits[1], x_limits[2], by=2),
+                                xmax=seq(x_limits[1], x_limits[2], by=2)+1,
+                                ymin=y_limits[1], ymax=y_limits[2])
+
+# plot data
+
+p <-  ggplot2::ggplot() +
+  # plot shaded rectangles
+  ggplot2::geom_rect(data=df_rectangles,
+                     mapping=ggplot2::aes(xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax),
+                     fill="gray90", alpha=0.8) +
+  # plot data - line
+  ggplot2::geom_line(data=df_data,
+                     mapping=ggplot2::aes(x=year_dec, y=value, col = group),
+                     size=.5) +
+  # plot data - dots
+  ggplot2::geom_point(data=df_data,
+                      mapping=ggplot2::aes(x=year_dec, y=value, col = group),
+                      size=1) +
+  # set coordinates system and axes
+  ggplot2::coord_cartesian() +
+  ggplot2::scale_x_continuous(name="Year", limits=x_limits, breaks=x_breaks, labels=x_labels, expand=c(0,0)) +
+  ggplot2::scale_y_continuous(name="", limits=y_limits, expand=c(0,0))
+
+# customize theme
+p <- p +
+  ggplot2::theme_bw() +
+  ggplot2::ggtitle(paste(group, variable,  sep=" : " )) +
+  ggplot2::theme(
+    text=ggplot2::element_text(size=8),
+    axis.text.x=ggplot2::element_text(colour="black", angle=90, hjust=0.5, vjust=0.5),
+    plot.title=ggplot2::element_text(colour="black", hjust=0, vjust=0, size=8),
+    panel.grid.major=ggplot2::element_blank(),
+    panel.border=ggplot2::element_rect(size=0.25, colour="black"),
+    plot.margin=grid::unit(c(0.1,0.1,0.1,0.1), "cm"))
 
 print(p)
 ```
@@ -208,20 +220,20 @@ Note these plots may appear very small in the notebook format.
 ```{r}
 dat <- get('Derived_Annual_Stations')
 
-  actual_EARs <- unique(dat$station) # get regions to plot 
-  dat_only <- dat[,!names(dat) %in% c('station', 'year', 'cruiseNumber', 'longitude', 'latitude', 'pressure')] # isolate data variables to plot (not metadata)
-  no_plots <- length(dat_only)*length(actual_EARs) # calculate number of plots ot be displayed
-  # set par info based on number of plots (max 25 per page)
-  if(no_plots > 25) {par(mfcol = c(5, 5), mar = c(1.3,2,3.2,1), omi = c(.1,.1,.1,.1), ask = T)}
-  if(no_plots <= 25){par(mfcol = c(length(dat_only), length(actual_EARs)), mar = c(1.3,2,3.2,1), omi = c(.1,.1,.1,.1))}
-  
-  counter <- 1
-  for(i in actual_EARs){ # loop through regions
-    ear_dat <- dat[dat$station == i,]
-    for(ii in 1:length(dat_only)){ # loop by variables
-      var_dat <- data.frame('value' = ear_dat[[names(dat_only)[[ii]]]], 'station' = ear_dat$station, 'year' = ear_dat$year) # get only one variable for one region
-      if(!is.na(diff(range(var_dat$value)))){ # if all values are NA skip over plotting
-        # plot
+actual_EARs <- unique(dat$station) # get regions to plot 
+dat_only <- dat[,!names(dat) %in% c('station', 'year', 'cruiseNumber', 'longitude', 'latitude', 'pressure')] # isolate data variables to plot (not metadata)
+no_plots <- length(dat_only)*length(actual_EARs) # calculate number of plots ot be displayed
+# set par info based on number of plots (max 25 per page)
+if(no_plots > 25) {par(mfcol = c(5, 5), mar = c(1.3,2,3.2,1), omi = c(.1,.1,.1,.1), ask = T)}
+if(no_plots <= 25){par(mfcol = c(length(dat_only), length(actual_EARs)), mar = c(1.3,2,3.2,1), omi = c(.1,.1,.1,.1))}
+
+counter <- 1
+for(i in actual_EARs){ # loop through regions
+  ear_dat <- dat[dat$station == i,]
+  for(ii in 1:length(dat_only)){ # loop by variables
+    var_dat <- data.frame('value' = ear_dat[[names(dat_only)[[ii]]]], 'station' = ear_dat$station, 'year' = ear_dat$year) # get only one variable for one region
+    if(!is.na(diff(range(var_dat$value)))){ # if all values are NA skip over plotting
+      # plot
       if(nrow(var_dat) < 1) plot(0, 
                                  xlab = "", ylab = "", 
                                  xaxt = "n", yaxt = "n",
@@ -229,12 +241,12 @@ dat <- get('Derived_Annual_Stations')
       if(nrow(var_dat) > 0) plot(var_dat$year, var_dat$value, 
                                  xlab = "", ylab = "", 
                                  main = paste("Station",i,names(dat_only)[[ii]]))
-      }
     }
-    counter <- counter+1
   }
-  # set par info
-  par(mfcol = c(1,1), omi = c(0,0,0,0), mar = c(5.1, 4.1, 4.1, 2.1), ask = F)
+  counter <- counter+1
+}
+# set par info
+par(mfcol = c(1,1), omi = c(0,0,0,0), mar = c(5.1, 4.1, 4.1, 2.1), ask = F)
 ```
 
 ## Conclusion

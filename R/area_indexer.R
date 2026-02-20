@@ -72,7 +72,7 @@ area_indexer <- function(years = NULL, areanames = NULL, areaTypes = NULL, dataf
   coord_fields <- c("latitude","longitude")
   non_param_fields <- c(core_fields, "datafile","latitude","longitude", "cruisenumber","month",
                         "day", "event_id", "depth", "standard_depth","sample_id","nominal_depth",
-                        "doy", "season","descriptor" )
+                        "doy", "season","descriptor", "date")
 
   if (doParameters) {
     result_df$parameter <- character()
