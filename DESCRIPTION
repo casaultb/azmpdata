@@ -37,7 +37,8 @@ Suggests:
     ggplot2,
     grid,
     tools,
-    usethis
+    usethis,
+    covr
 URL: https://casaultb.github.io/azmpdata, https://github.com/casaultb/azmpdata
 BugReports: https://github.com/casaultb/azmpdata/issues
 Imports: 
