@@ -34,6 +34,10 @@ Suggests:
     testthat (>= 2.1.0),
     knitr,
     rmarkdown,
+    ggplot2,
+    grid,
+    tools,
+    usethis
 URL: https://casaultb.github.io/azmpdata, https://github.com/casaultb/azmpdata
 BugReports: https://github.com/casaultb/azmpdata/issues
 Imports: 
@@ -50,11 +54,6 @@ Imports:
     tidyr,
     tibble,
     utils,
-Suggests:
-  ggplot2,
-  grid,
-  tools,
-  usethis
 Depends: 
     R (>= 3.5)
 VignetteBuilder: knitr
