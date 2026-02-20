@@ -33,8 +33,8 @@ The *azmpdata* R package can be installed from
 [GitHub](https://github.com) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("casaultb/azmpdata")
+library(remotes)
+remotes::install_github(repo = "casaultb/azmpdata", ref = "master", build_vignettes = TRUE)
 ```
 
 ## Datasets

@@ -31,18 +31,16 @@ close(con)
 # load physical data
 
 # 1. read in mission look up tables and combine
+#######
+## NOTE : These lookup tables need to be updated for missions after year 2020
+#######
 cat('    reading in lookup table data', sep = '\n')
-
 url_name <- 'ftp://ftp.dfo-mpo.gc.ca/AZMP_Maritimes/AZMP_Reporting/lookup/' # have to move this to new directory
 result <- getURL(url_name,
                  verbose=TRUE,ftp.use.epsv=TRUE, dirlistonly = TRUE)
-
 filenames <- unlist(strsplit(result, "\r\n"))
-lookup <- list()
-lookup[[1]] <- read.csv(paste0(url_name, filenames[1]))
-lookup[[2]] <- read.csv(paste0(url_name, filenames[2]))
-# lookupfiles <- list.files(lookupPath, pattern = '^mission.*', full.names = TRUE)
-# lookup <- lapply(lookupfiles, read.csv)
+oklookup <- grepl(pattern = '^mission.*', x = filenames)
+lookup <- lapply(filenames[oklookup], function(k) read.csv(paste0(url_name, k)))
 missions <- do.call('rbind', lookup)
 
 # 2. read in the data and combine
@@ -53,40 +51,33 @@ result <- getURL(url_name,
 
 filenames <- unlist(strsplit(result, "\r\n"))
 
-# only pick out relevant files
-filenames <- grep(filenames, pattern = '*IntegratedVariables*', value = TRUE, invert = TRUE)
-
+# get relevant files
+okfiles <- filenames %in% c('prince5.csv', 'station2.csv')
+filenames <- filenames[okfiles]
 d <- list()
 for(i in 1:length(filenames)){
   con <- url(paste0(url_name, filenames[[i]]))
   d[[i]] <- read.csv(con)
 }
 
-############################
-# this requires to be fixed
-############################
-# # datafile <- paste(dataPath, c('prince5.csv', 'station2.csv'), sep = '/')
-# # d <- lapply(datafile, read.csv)
-#  d <- do.call('rbind', d)
+d <- do.call('rbind', d)
 #
-# # 3. match up cruiseNumber and mission_number
-# # note : if anything goes sideways matching up idx, the structure of idx will change
-# #        so it could become a list instead of a vector
-# idx <- apply(d, 1, function(k) {ok <- which(missions[['mission_name']] == k[['cruiseNumber']]);
-#                                 if(length(ok) > 1) {
-#                                   ok[1]
-#                                 } else if(length(ok) == 0){
-#                                   NA
-#                                 } else {
-#                                   ok
-#                                 }})
-#
-# d <- cbind(d, descriptor = missions[['mission_descriptor']][idx])
-#
-# fixedStationsPO <- d
-fixedStationsPO <- rbind(d[[3]], d[[2]])
+# 3. match up cruiseNumber and mission_number
+# note : if anything goes sideways matching up idx, the structure of idx will change
+#        so it could become a list instead of a vector
+idx <- apply(d, 1, function(k) {ok <- which(missions[['mission_name']] == k[['cruiseNumber']]);
+                                if(length(ok) > 1) {
+                                  ok[1]
+                                } else if(length(ok) == 0){
+                                  NA
+                                } else {
+                                  ok
+                                }})
 
-# rename variables
+d <- cbind(d, descriptor = missions[['mission_descriptor']][idx])
+fixedStationsPO <- d
+#
+# # rename variables
 fixedStationsPO <- fixedStationsPO %>%
   dplyr::rename(sea_temperature = temperature) %>%
   dplyr::rename(depth = pressure) %>%
@@ -138,6 +129,11 @@ Discrete_Occupations_Stations <- Discrete_Occupations_Stations %>%
 
 # save as dataframe not tibble
 Discrete_Occupations_Stations <- as.data.frame(Discrete_Occupations_Stations)
+# add year, month, day to data.frame
+Discrete_Occupations_Stations <- data.frame(Discrete_Occupations_Stations,
+                                            year = as.POSIXlt(Discrete_Occupations_Stations[['date']], tz = 'UTC')$year + 1900,
+                                            month = as.POSIXlt(Discrete_Occupations_Stations[['date']], tz = 'UTC')$mon + 1,
+                                            day = as.POSIXlt(Discrete_Occupations_Stations[['date']], tz = 'UTC')$mday)
 
 # save data to csv
 readr::write_csv(Discrete_Occupations_Stations, "inst/extdata/csv/Discrete_Occupations_Stations.csv")
