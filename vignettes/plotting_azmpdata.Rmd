@@ -130,7 +130,7 @@ A user may also want to plot a timeseries. This method is also fairly generic an
   metanames <- c('year', 'month', 'day', 'area', 'section', 'station', 'date' )
   meta_df <- names(df_data)[names(df_data) %in% metanames]
 
-  group <- meta_df[!meta_df %in% c('year', 'month', 'day')]
+  group <- meta_df[!meta_df %in% c('year', 'month', 'day', 'date')]
 
   df_data <- df_data %>%
     dplyr::select(., any_of(meta_df), all_of(variable) ) %>%
@@ -140,28 +140,14 @@ A user may also want to plot a timeseries. This method is also fairly generic an
 
   # prepare data
   df_data <- df_data %>%
-    #tidyr::unite(date, year, month, day, sep="-", remove=F) %>%
+    tidyr::unite(date, year, month, day, sep="-", remove=F) %>%
     dplyr::mutate(year = format(df_data$date, '%Y')) %>%
     dplyr::mutate(year_dec=lubridate::decimal_date(lubridate::ymd(date))) %>%
     dplyr::select(year, year_dec, value, group)
 
 
-group <- meta_df[!meta_df %in% c('year', 'month', 'day')]
-
-df_data <- df_data %>%
-  dplyr::select(., all_of(meta_df), all_of(variable) ) %>%
-  dplyr::rename(., 'value' = all_of(variable) ) %>%
-  dplyr::rename(., 'group' = all_of(group)) #TODO some dataframes do not have groups!?
-
-
-# prepare data
-df_data <- df_data %>%
-  tidyr::unite(date, year, month, day, sep="-", remove=F) %>%
-  dplyr::mutate(year_dec=lubridate::decimal_date(lubridate::ymd(date))) %>%
-  dplyr::select(year, year_dec, value, group)
-
 # set x-axis
-x_limits <- c(min(df_data$year), max(df_data$year)+1)
+x_limits <- c(min(df_data$year_dec), max(df_data$year_dec)+1)
 x_breaks <- seq(x_limits[1]+.5, x_limits[2]-.5, by=1)
 x_labels <- x_breaks-.5
 

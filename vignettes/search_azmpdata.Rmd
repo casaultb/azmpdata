@@ -1,9 +1,9 @@
 ---
-title: "azmpdata - Spatially and Temporally searching data within the azmpdata package"
+title: "Spatially and Temporally searching data within the azmpdata package"
 author: Emily Chisholm and Jaimie Harbin
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{azmpdata - searching}
+  %\VignetteIndexEntry{Spatially and Temporally searching data within the azmpdata package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
