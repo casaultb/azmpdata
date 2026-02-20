@@ -130,20 +130,21 @@ A user may also want to plot a timeseries. This method is also fairly generic an
   
 
   # check for metadata
-  metanames <- c('year', 'month', 'day', 'area', 'section', 'station' )
+  metanames <- c('year', 'month', 'day', 'area', 'section', 'station', 'date' )
   meta_df <- names(df_data)[names(df_data) %in% metanames]
 
   group <- meta_df[!meta_df %in% c('year', 'month', 'day')]
 
   df_data <- df_data %>%
-    dplyr::select(., all_of(meta_df), all_of(variable) ) %>%
+    dplyr::select(., any_of(meta_df), all_of(variable) ) %>%
     dplyr::rename(., 'value' = all_of(variable) ) %>%
     dplyr::rename(., 'group' = all_of(group)) #TODO some dataframes do not have groups!?
 
 
   # prepare data
   df_data <- df_data %>%
-    tidyr::unite(date, year, month, day, sep="-", remove=F) %>%
+    #tidyr::unite(date, year, month, day, sep="-", remove=F) %>%
+    dplyr::mutate(year = format(df_data$date, '%Y')) %>%
     dplyr::mutate(year_dec=lubridate::decimal_date(lubridate::ymd(date))) %>%
     dplyr::select(year, year_dec, value, group)
 
