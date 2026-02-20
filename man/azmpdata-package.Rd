@@ -2,7 +2,6 @@
 % Please edit documentation in R/azmpdata-package.R
 \docType{package}
 \name{azmpdata-package}
-\alias{azmpdata}
 \alias{azmpdata-package}
 \title{azmpdata: A data package to share derived metrics from AZMP research documents}
 \description{

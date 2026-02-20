@@ -1,9 +1,9 @@
 ---
-title: "azmpdata - Spatially and Temporally searching data within the azmpdata package"
+title: "Spatially and Temporally searching data within the azmpdata package"
 author: Emily Chisholm and Jaimie Harbin
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{azmpdata - searching}
+  %\VignetteIndexEntry{Spatially and Temporally searching data within the azmpdata package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -125,10 +125,12 @@ head(k)
 
 <!-- The user now knows what is contained within the package, where data are sampled, and how to properly filter through the data. It is then recommended that the user completed step 4, `plot_availability()` to understand when the data are sampled. This function generates a score card of samples per month based on `areaType`, `areaName`, and `parameters`. -->
 
-<!-- For example, if a user wanted to know the frequency (ie. samples/month) for the nitrate at station P5, they would type in the following: -->
 
-```{r, message=FALSE, error=FALSE, warning=FALSE, eval=FALSE, echo=FALSE, fig.cap="Figure 3: Sampling freqency per month for nitrate at station P5"}
-plot_availability(areaType = "station", areaName="P5", parameters="nitrate")
+For example, if a user wanted to know the frequency (ie. samples/month) for the sea surface height at Halifax, they would type in the following:
+
+```{r, message=TRUE, error=FALSE, warning=FALSE, eval=TRUE, fig.cap="Figure 3: Sampling freqency per month for sea_surface_height at Halifax"}
+plot_availability(areaType = "station", areaName="Halifax", parameters="sea_surface_height")
+
 ```
 
 ## Conclusion

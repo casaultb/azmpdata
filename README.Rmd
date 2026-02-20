@@ -16,7 +16,8 @@ knitr::opts_chunk$set(
 # *azmpdata*
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/casaultb/azmpdata.svg?branch=master)](https://travis-ci.org/casaultb/azmpdata)
+[![R-CMD-check](https://github.com/casaultb/azmpdata/actions/workflows/R-CMD-CHECK.yaml/badge.svg)](https://github.com/casaultb/azmpdata/actions/workflows/R-CMD-CHECK.yaml/badge.svg)
+
 <!-- badges: end -->
 
 The R package *azmpdata* provides a series of data products derived from raw data collected as part of the Atlantic Zone Monitoring Program ([AZMP](https://www.dfo-mpo.gc.ca/science/data-donnees/azmp-pmza/index-eng.html)). The data products provided in this package are used to generate the different figures contained in the Research Documents produced annually by Fisheries and Ocean Canada's Maritimes region.  The Research Documents describe the physical, chemical and biological conditions observed in Maritimes region since the inception of the AZMP program (see example documents for the [physical](http://www.dfo-mpo.gc.ca/csas-sccs/Publications/ResDocs-DocRech/2018/2018_016-eng.html) conditions and for the [optical, chemical and biological](http://www.dfo-mpo.gc.ca/csas-sccs/Publications/ResDocs-DocRech/2018/2018_017-eng.html) conditions).
@@ -26,8 +27,8 @@ The R package *azmpdata* provides a series of data products derived from raw dat
 The *azmpdata* R package can be installed from [GitHub](https://github.com) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("casaultb/azmpdata")
+library(remotes)
+remotes::install_github(repo = "casaultb/azmpdata", ref = "master", build_vignettes = TRUE)
 ```
 
 ## Datasets
