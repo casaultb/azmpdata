@@ -1,7 +1,7 @@
 azmpdata R package
 ================
 Benoit Casault, Emily Chisholm
-15 December, 2020
+20 February, 2026
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -9,8 +9,8 @@ Benoit Casault, Emily Chisholm
 
 <!-- badges: start -->
 
-[![Travis build
-status](https://travis-ci.org/casaultb/azmpdata.svg?branch=master)](https://travis-ci.org/casaultb/azmpdata)
+[![R-CMD-check](https://github.com/casaultb/azmpdata/actions/workflows/R-CMD-CHECK.yaml/badge.svg)](https://github.com/casaultb/azmpdata/actions/workflows/R-CMD-CHECK.yaml/badge.svg)
+
 <!-- badges: end -->
 
 The R package *azmpdata* provides a series of data products derived from
@@ -48,33 +48,47 @@ To access a dataset in data frame format:
 
 ``` r
 library(azmpdata)
-#> 
-#>  casaultb/azmpdata status:
-#>  (Package ver: 0.2019.0.9000) Up to date
-#>  (Data ver:2020-11-26) is up to date
+#> casaultb/azmpdata status:
+#>  (Package ver: 0.2019.0.9100) Up to date
+#>  (Data ver:2021-01-14 ) Up to date
+#>  azmpdata:: Indexing all available monthly azmpdata...
 data("Derived_Annual_Broadscale")
 head(Derived_Annual_Broadscale)
-#>   year          area density_gradient_0_50 temperature_at_sea_floor
-#> 1 1948 Scotion Shelf              -0.00139                       NA
-#> 2 1949 Scotion Shelf              -0.00968                       NA
-#> 3 1950 Scotion Shelf              -0.01883                       NA
-#> 4 1951 Scotion Shelf              -0.00092                       NA
-#> 5 1952 Scotion Shelf               0.00155                       NA
-#> 6 1953 Scotion Shelf              -0.00313                       NA
-#>   cold_intermediate_layer_volume minimum_temperature_in_cold_intermediate_layer
-#> 1                           <NA>                                           <NA>
-#> 2                           <NA>                                           <NA>
-#> 3                           <NA>                                           <NA>
-#> 4                           <NA>                                           <NA>
-#> 5                           <NA>                                           <NA>
-#> 6                           <NA>                                           <NA>
+#>   year              area density_gradient_0_50 sea_temperature_0 salinity_0
+#> 1 1948 scotian_shelf_box               0.02715              6.45      31.23
+#> 2 1949 scotian_shelf_box               0.01339              8.97      31.83
+#> 3 1950 scotian_shelf_box               0.00587              8.15      31.92
+#> 4 1951 scotian_shelf_box               0.02733              9.55      31.21
+#> 5 1952 scotian_shelf_box               0.03159              8.91      31.02
+#> 6 1953 scotian_shelf_box               0.02433              8.89      31.27
+#>   temperature_at_sea_floor cold_intermediate_layer_volume
+#> 1                       NA                             NA
+#> 2                       NA                             NA
+#> 3                       NA                             NA
+#> 4                       NA                             NA
+#> 5                       NA                             NA
+#> 6                       NA                             NA
+#>   minimum_temperature_in_cold_intermediate_layer north_atlantic_oscillation
+#> 1                                             NA                         NA
+#> 2                                             NA                         NA
+#> 3                                             NA                         NA
+#> 4                                             NA                         NA
+#> 5                                             NA                         NA
+#> 6                                             NA                         NA
+#>   sea_surface_temperature_from_satellite
+#> 1                                     NA
+#> 2                                     NA
+#> 3                                     NA
+#> 4                                     NA
+#> 5                                     NA
+#> 6                                     NA
 ```
 
 To access a dataset in csv format:
 
 ``` r
 system.file("extdata/csv", "Derived_Annual_Broadscale.csv", package = "azmpdata")
-#> [1] "C:/Users/ChisholmE/Documents/R/R-4.0.2/library/azmpdata/extdata/csv/Derived_Annual_Broadscale.csv"
+#> [1] "C:/Users/ogradye/AppData/Local/Temp/1/RtmpWY0v01/temp_libpath305426945375/azmpdata/extdata/csv/Derived_Annual_Broadscale.csv"
 ```
 
 ### Variable Organization
@@ -105,18 +119,18 @@ look as below:
 
 ``` r
 res <- variable_lookup(keywords = c('nitrate', 'phosphate'), search_help = TRUE)
-#> Joining, by = c("keyword", "variable", "dataframe")
+#> Joining with `by = join_by(keyword, variable, dataframe)`
 
 head(res)
-#> # A tibble: 6 x 3
+#> # A tibble: 6 × 3
 #>   keyword variable                  dataframe                   
 #>   <chr>   <chr>                     <chr>                       
 #> 1 nitrate integrated_nitrate_0_50   Derived_Annual_Sections     
 #> 2 nitrate integrated_nitrate_0_50   Derived_Annual_Stations     
 #> 3 nitrate integrated_nitrate_0_50   Derived_Occupations_Sections
-#> 4 nitrate integrated_nitrate_50_150 Derived_Annual_Sections     
-#> 5 nitrate integrated_nitrate_50_150 Derived_Annual_Stations     
-#> 6 nitrate integrated_nitrate_50_150 Derived_Occupations_Sections
+#> 4 nitrate integrated_nitrate_0_50   Derived_Occupations_Stations
+#> 5 nitrate integrated_nitrate_50_150 Derived_Annual_Sections     
+#> 6 nitrate integrated_nitrate_50_150 Derived_Annual_Stations
 ```
 
 #### Dataset Documentation
